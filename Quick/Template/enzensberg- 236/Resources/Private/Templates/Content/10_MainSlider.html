@@ -1,0 +1,102 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+	xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    
+	<f:section name="Configuration">
+		<flux:form id="sliderhome" label="Home slider" description="Home Slider Element" icon="../typo3conf/ext/enzensberg/Resources/Public/images/home-slider-icon.png" options="{Fluidcontent: {sorting: 10},group: 'Content Elements'}">
+			<flux:field.file name="mainImage" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+			<flux:field.input name="bgColor" label="Background Color Code" />
+			<flux:field.input name="textColor" label="Text Color Code" />
+			<flux:form.sheet name="options" label="Options">
+				<flux:form.section name="sliders" label="Inner Page Slider">
+					<flux:form.object name="slider" label="Add New Slide">
+						<flux:field.file name="icon" uploadFolder="uploads/slider_images/" label="Upload Icon" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+						<flux:field.input name="Text" label="Text" />
+						<flux:field.checkbox name="Active" label="Active" />
+						<flux:field.input name="link" label="Link">
+							<flux:wizard.link />
+						</flux:field.input>
+						<flux:field.checkbox name="ActiveExternal" label="Active External Link" />
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+    
+	<f:section name="Preview">
+		<h4>Home Page Slider </h4>
+	</f:section>
+    
+	<f:section name="Main">
+    
+		<div class="top-main-image">
+			<f:image src="uploads/slider_images/{mainImage}" width="1600c" height="700c" alt="Enzensberg" />
+		</div>
+		<div class="top-image-icon-section clearfix">
+			<ul>
+				<li></li>
+				<f:if condition="{sliders}">
+					<f:for each="{sliders}" as="slider" iteration="iteration">
+						<li class="<f:if condition='{slider.slider.Active} == 1'>active</f:if>">
+							<f:if condition="{slider.slider.link}">
+								<f:then>
+									<f:if condition="{slider.slider.ActiveExternal} == 1">
+										<f:then>
+											<f:link.external uri="{slider.slider.link}" target="_blank" class="curcle" style="<f:if condition='{slider.slider.Active} == 0'>background:{bgColor} none repeat scroll 0 0; color:{textColor}</f:if>">
+												<span class="icon">
+													<f:if condition="{slider.slider.icon}">
+														<f:image src="uploads/slider_images/{slider.slider.icon}"  alt="{slider.slider.Text}"  />
+													</f:if>
+												</span>
+												<span class="hover-text">
+													<f:format.stripTags>
+														<f:format.html>{slider.slider.Text}</f:format.html>
+													</f:format.stripTags>
+												</span>
+											</f:link.external>
+										</f:then>
+										<f:else>
+											<f:link.page pageUid="{slider.slider.link}" class="curcle" style="<f:if condition='{slider.slider.Active} == 0'>background:{bgColor} none repeat scroll 0 0; color:{textColor}</f:if>">
+												<span class="icon">
+													<f:if condition="{slider.slider.icon}">
+														<f:image src="uploads/slider_images/{slider.slider.icon}"  alt="{slider.slider.Text}"  />
+													</f:if>
+												</span>
+												<span class="hover-text">
+													<f:format.stripTags>
+														<f:format.html>{slider.slider.Text}</f:format.html>
+													</f:format.stripTags>
+												</span>
+											</f:link.page>
+										</f:else>
+									</f:if>
+								</f:then>
+								<f:else>
+									<a href="#" class="curcle" style="<f:if condition='{slider.slider.Active} == 0'>background:{bgColor} none repeat scroll 0 0; color:{textColor}</f:if>">
+										<span class="icon">
+											<f:if condition="{slider.slider.icon}">
+												<f:image src="uploads/slider_images/{slider.slider.icon}"  alt="{slider.slider.Text}"  />
+											</f:if>
+										</span>
+										<span class="hover-text">
+											<f:format.stripTags>
+												<f:format.html>{slider.slider.Text}</f:format.html>
+											</f:format.stripTags>
+										</span>
+									</a>
+								</f:else>
+							</f:if>
+						</li>
+					</f:for>
+				</f:if>
+			</ul>
+		</div>
+        
+	</f:section>
+    
+</div>

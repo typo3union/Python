@@ -1,0 +1,80 @@
+<div class="cusErrorDiv"></div>
+<div class="aftrLoginSection">
+
+    <div class="note">
+        <p class="heading"><b><f:translate key="tx_voucher_domain_model_voucher_after_login.note" /> </b></p>
+        <p><f:translate key="tx_voucher_domain_model_voucher_after_login.message_display" /></p>
+
+    </div>
+    <div class="valuePriceHide">
+        <f:form.checkbox property="price_hide" value="1" class="price"/>
+        <span><f:translate key="tx_voucher_domain_model_voucher_after_login.price_hide" /></span> </div>
+    <div class="voucherMessage">
+        <p class="heading"><f:translate key="tx_voucher_domain_model_voucher_after_login.your_message" /></p>  
+        <f:form.textarea property="message" cols="35" rows="8"  id="message" additionalAttributes="{placeholder: 'Zum Geburtstag alles Gute wünschen Dir Deine Freunde!',onkeyup:'checkBoxLength(\'message\',\'200\',\'restlength\');'}" ></f:form.textarea>
+        <p id="charCount"><span style="font-size:11px; float:left;display:inline-block;">max. <span id="restlength">200</span> Zeichen noch verfügbar</span></p>
+    </div>
+    <div class="PreviewList hidden">
+      
+               
+                <div class="voucherLeft">             
+
+                    <div class="v_title"></div>
+                    <div class="Preview"> <a href="javascript:void(0);"  id="p_vorschau">Vorschau</a> </div>
+         
+            </div>       
+        
+    </div>
+   
+    <div class="hidden currentUrl" >{url}</div>
+
+    <div class="voucherOrderType">
+        <div class="orderSelect">
+
+            <div class="singleField orderType">
+                <div class="f-row1 clearfix">
+                    <f:form.checkbox property="order_type" class="validate[required] order-select orderTypePdf" value="pdf" id="pdf" />
+                    <label for="pdf" class="btn btn-default"><f:translate key="tx_voucher_domain_model_voucher_after_login.download_pdf" /></label>
+                </div>
+                <div clas="f-row">
+                    <f:form.checkbox property="order_type" class="validate[required] order-select orderTypeMail" value="mail" id="mail" />
+                    <label for="mail" class="btn btn-default"><f:translate key="tx_voucher_domain_model_voucher_after_login.by_mail" /></label>
+                </div>
+            </div>
+        </div>
+        <div class="voucherPayment">
+            <p class="heading"><b><f:translate key="tx_voucher_domain_model_voucher_after_login.payment" /></b></p>
+<!--            <p><b><f:translate key="tx_voucher_domain_model_voucher_after_login.select_payment" /></b></p>-->
+            <div class="mainpaymentType">
+                <f:if condition="{registerUserData.is_admin}==0">
+                    <f:then>
+                        <div class="g-row1 clearfix">
+                            <f:form.radio property="payment_type" class="validate[required] paymentType" value="0" id="paypal" checked="checked"  />
+                            <f:image src="uploads/tx_voucher/Paypal.png" height="45" />
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div class="g-row1 clearfix">
+                            <f:form.radio property="payment_type" class="validate[required] paymentType" value="0" id="paypal"   />
+                            <f:image src="uploads/tx_voucher/Paypal.png" height="45" />
+                        </div>
+                        <div class="g-row2">
+                            <f:form.radio property="payment_type" class="validate[required] paymentType" value="1" id="offline_cash"  />
+                            <label for="offline_cash"><f:translate key="tx_voucher_domain_model_voucher_after_login.offline" /></label>
+                        </div>
+                    </f:else>
+                </f:if>
+            </div>
+
+            <div class="logout"> 
+            
+            <f:link.page class="back_btn"  pageUid="1">{f:translate(key: 'tx_voucher_domain_model_voucher_after_login.back')} </f:link.page> 
+            
+                <!--<a href="javascript:void(0);" onclick="window.history.go(-1);
+               return false;" class="back_btn" />{f:translate(key: 'tx_voucher_domain_model_voucher_after_login.back')} </a>-->
+               
+                <f:form.submit value="{f:translate(key: 'tx_voucher_domain_model_voucher_preview.submitbtn')}" class="submit" name="voucherTemplateSubmit"/>               
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<f:form action="greetingsWishes" id="greetingStep1" additionalParams="{greeting.uriParams}">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="next-link">
+                <f:form.submit name="step1Submit" additionalAttributes="{class:'btn btn-default'}" value="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.goto.step2' />" title="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.goto.step2' />"  />
+            </div>
+            <div class="validationMessage"><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.required.field.radio' /></div>
+            <div class="col-md-4 col-sm-4">
+                <p>
+                    <f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.chooseDesign' />
+                </p>
+                <div class="slecter-redio-btn">
+                    <ul>
+                        <f:for each="{greeting.cards}" as="card" iteration="itemIteration">
+                            <li>
+                            <f:if condition="{greeting.selectCard}=={card.uid}">
+                                <f:then>
+                                    <f:form.radio id="{card.uid}" value="{card.title}" name="card" value="{card.uid}" class="radio"  checked="1"/>
+                                </f:then>
+                                <f:else>
+                                 <f:form.radio id="{card.uid}" value="{card.title}" name="card" value="{card.uid}" class="radio" />
+                                </f:else>
+                            </f:if>
+                                
+                                <label for="{card.uid}">{card.title}</label>
+                            </li>
+                        </f:for>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-md-8 col-sm-8">
+                <div class="desing-section">
+                    <f:for each="{greeting.cards}" as="card" iteration="itemIteration">
+                        <div class="image-thumb f{card.uid}">
+                            <f:image src="{card.image.uid}" treatIdAsReference="1" width="200c" height="150c" alt="{card.title}" />
+                        </div>
+                    </f:for> 
+                </div>
+            </div>
+        </div>
+    </div>
+</f:form>

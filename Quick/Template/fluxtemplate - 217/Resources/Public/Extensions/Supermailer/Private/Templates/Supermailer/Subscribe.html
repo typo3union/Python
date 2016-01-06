@@ -1,0 +1,53 @@
+<f:layout name="default" />
+
+<f:section name="content">
+
+	<div class="tx-powermail">
+		
+		<f:form action="/und-ausserdem/newsletter/anmelden/" action="subscribe" name="supermailer" object="{supermailer}">
+  			<fieldset class="powermail_fieldset powermail_fieldset_1">
+  				<div class="powermail_message_error newsletter">
+					<f:format.raw>{supermailer.error}</f:format.raw>
+				</div>
+			
+  				<div class="powermail_fieldwrap powermail_fieldwrap_input">
+					<label class="powermail_label" for="salutation">
+						<f:translate key="LLL:EXT:maag_supermailer/Resources/Private/Language/locallang.xlf:template.salutation" />
+						<span class="mandatory">*</span>
+					</label>
+  					<f:form.select id="salutation" property="salutation" options="{0: '{f:translate(key:\"LLL:EXT:maag_supermailer/Resources/Private/Language/locallang.xlf:template.salutation.woman\")}', 1: '{f:translate(key:\"LLL:EXT:maag_supermailer/Resources/Private/Language/locallang.xlf:template.salutation.man\")}'}" value="{supermailer.salutation}" class="powermail_field powermail_select validate[required]" />
+  				</div>
+  				
+  				<div class="powermail_fieldwrap powermail_fieldwrap_input">
+					<label class="powermail_label" for="lastname">
+						<f:translate key="LLL:EXT:maag_supermailer/Resources/Private/Language/locallang.xlf:template.lastname" />
+						<span class="mandatory">*</span>
+					</label>
+					<f:form.textfield id="lastname" property="lastname" value="{supermailer.lastname}" class="powermail_field powermail_input validate[required]" required="required" />
+				</div>
+				
+				<div class="powermail_fieldwrap powermail_fieldwrap_input">
+					<label class="powermail_label" for="firstname">
+						<f:translate key="LLL:EXT:maag_supermailer/Resources/Private/Language/locallang.xlf:template.firstname" />
+						<span class="mandatory">*</span>
+					</label>
+					<f:form.textfield id="firstname" property="firstname" value="{supermailer.firstname}" class="powermail_field powermail_input validate[required]" required="required" />
+				</div>
+				
+				<div class="powermail_fieldwrap powermail_fieldwrap_input">
+					<label class="powermail_label" for="email">
+						<f:translate key="LLL:EXT:maag_supermailer/Resources/Private/Language/locallang.xlf:template.email" />
+						<span class="mandatory">*</span>
+					</label>
+					<f:form.textfield id="email" property="email" value="{supermailer.email}" class="powermail_field powermail_input validate[required]" required="required" />
+				</div>
+				
+				<div class="powermail_fieldwrap powermail_fieldwrap_submit">
+					<f:form.submit value="Senden" class="powermail_field powermail_submit" />
+				</div>
+  			</fieldset>
+		</f:form>
+		
+	</div>
+	
+</f:section>

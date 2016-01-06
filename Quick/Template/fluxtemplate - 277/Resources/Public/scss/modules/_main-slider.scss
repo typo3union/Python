@@ -1,0 +1,64 @@
+
+
+.carousel-caption { 
+	left: 0; 
+	padding-bottom: 30px; 
+	right: 0; 
+	bottom: 20%; 
+	z-index: 1; 
+	text-align:left;
+	
+	h1{
+		font-size: 90px;
+    	margin: 0;
+    	text-transform: uppercase;
+	}
+	h3{
+		font-size: 35px;
+    	margin: 0;
+	}
+	.btn {	    
+	    font: 700 18px/18px "Lato", sans-serif;
+	    color: #FFF;
+	    text-transform: uppercase;
+	    padding: 25px 66px;
+	    background: #ef7f01;
+	    border-radius: 0;
+	    @include transition-bgclr();
+	}
+	.btn:hover{background:#014a8f;}
+}
+.carousel-caption {}
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition: opacity 2s ease;
+
+        }
+        
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    
+}
+.carousel-control {
+        z-index: 2;
+}

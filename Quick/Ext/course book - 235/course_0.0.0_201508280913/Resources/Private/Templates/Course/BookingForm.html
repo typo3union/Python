@@ -1,0 +1,89 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+  <f:if condition="{satus}">
+  	<f:then>
+    <div class="tx-powermail content-center clearfix">
+    	<div class="powermail_create">
+	    	 <f:format.html>{settings.flexform.order.thxMessage} </f:format.html>
+             </div>
+        </div>
+  	</f:then>
+  	<f:else>
+  		<div class="tx-powermail content-center clearfix">
+    <div class="contact-main"> <span class="error hidden">Bitte wählen Sie entweder einen Kurs oder geben Sie einen Betrag ein!</span>
+      <form data-parsley-validate="data-parsley-validate" data-validate="html5" enctype="multipart/form-data" name="field" class="powermail_form_3" action="" method="post">
+        <div id="powermail_fieldwrap_28" class="powermail_fieldwrap powermail_fieldwrap_typoscript powermail_fieldwrap_28 ">
+          <f:cObject typoscriptObjectPath="lib.courseTitle"/>
+        </div>
+        <div id="powermail_fieldwrap_13" class="form-group powermail_fieldwrap_13 "> <span class="fa fa-user"></span>
+          <input required="required" data-parsley-required-message="Dieses Feld muss ausgefüllt werden!" data-parsley-trigger="change" placeholder="Name*" class="form-control powermail_field powermail_input " id="powermail_field_name" type="text" name="tx_powermail_pi1[field][name]" value="">
+        </div>
+        <div id="powermail_fieldwrap_14" class="form-group powermail_fieldwrap_14 "> <span class="fa fa-user"></span>
+          <input required="required" data-parsley-required-message="Dieses Feld muss ausgefüllt werden!" data-parsley-trigger="change" placeholder="Vorname*" class="form-control powermail_field powermail_input " id="powermail_field_vorname" type="text" name="tx_powermail_pi1[field][vorname]" value="">
+        </div>
+        <div id="powermail_fieldwrap_15" class="form-group powermail_fieldwrap_15 "> <span class="fa fa-user"></span>
+          <input placeholder="Straße, Hausnummer" class="form-control powermail_field powermail_input " id="powermail_field_straehausnummer" type="text" name="tx_powermail_pi1[field][straehausnummer]" value="">
+        </div>
+        <div id="powermail_fieldwrap_16" class="form-group powermail_fieldwrap_16 "> <span class="fa fa-user"></span>
+          <input placeholder="Ort" class="form-control powermail_field powermail_input " id="powermail_field_ort" type="text" name="tx_powermail_pi1[field][ort]" value="">
+        </div>
+        <div id="powermail_fieldwrap_17" class="form-group powermail_fieldwrap_17 "> <span class="fa fa-user"></span>
+          <input placeholder="Postleitzahl" class="form-control powermail_field powermail_input " id="powermail_field_postleitzahl" type="text" name="tx_powermail_pi1[field][postleitzahl]" value="">
+        </div>
+        <div id="powermail_fieldwrap_18" class="form-group powermail_fieldwrap_18 "> <span class="fa fa-user"></span>
+          <input required="required" data-parsley-required-message="Dieses Feld muss ausgefüllt werden!" data-parsley-trigger="change" data-parsley-error-message="Keine gültige E-Mail-Adresse!" placeholder="E-Mail*" class="form-control powermail_field powermail_input " id="powermail_field_e_mail" type="email" name="tx_powermail_pi1[field][e_mail]" value="">
+        </div>
+        <div id="powermail_fieldwrap_19" class="form-group powermail_fieldwrap_19 "> <span class="fa fa-user"></span>
+          <input placeholder="Mobiltelefon" class="form-control powermail_field powermail_input " id="powermail_field_mobiltelefon" type="text" name="tx_powermail_pi1[field][mobiltelefon]" value="">
+        </div>
+        <div id="powermail_fieldwrap_20" class="form-group powermail_fieldwrap_20 "> <span class="fa fa-user"></span>
+          <input placeholder="Geburtsdatum" class="form-control powermail_field powermail_input " id="powermail_field_geburtsdatum" type="text" name="tx_powermail_pi1[field][geburtsdatum]" value="">
+        </div>
+        <div id="powermail_fieldwrap_21" class="form-group powermail_fieldwrap_21 "> <span class="fa fa-user"></span>
+          <input placeholder="Ermäßigung" class="form-control powermail_field powermail_input " id="powermail_field_ermigung" type="text" name="tx_powermail_pi1[field][ermigung]" value="">
+        </div>
+       
+       <input class="coursePrice" type="hidden" name="tx_powermail_pi1[field][coursetitle]" value="">          
+       
+        <div id="powermail_fieldwrap_41" class="form-group powermail_fieldwrap_41 "> <span class="fa fa-user"></span>
+          <input placeholder="Datum" class="form-control powermail_field powermail_input " id="powermail_field_cursdate" type="text" name="tx_powermail_pi1[field][cursdate]" value="">
+        </div>
+        <div id="powermail_fieldwrap_24" class="form-group powermail_fieldwrap_24 "> <span class="fa fa-envelope-o"></span>
+         
+          <textarea required="required" data-parsley-required-message="Dieses Feld muss ausgefüllt werden!" data-parsley-trigger="change" rows="5" cols="20" placeholder="Nachricht*" class="form-control powermail_field powermail_textarea " id="powermail_field_nachricht" style="height:auto;" name="tx_powermail_pi1[field][nachricht]"></textarea>
+          
+        </div>
+        <div id="powermail_fieldwrap_42" class="powermail_fieldwrap powermail_fieldwrap_typoscript powermail_fieldwrap_42 ">
+          <f:cObject typoscriptObjectPath="lib.kursgebuhr"/>
+        </div>
+        <div id="powermail_fieldwrap_27" class="powermail_fieldwrap powermail_fieldwrap_typoscript powermail_fieldwrap_27 ">
+         
+              <f:cObject typoscriptObjectPath="lib.coursePrice"/>
+             
+        </div>
+        
+              
+         <input class="priceVal" type="hidden" name="tx_powermail_pi1[field][coursePrice]" value="" >
+        
+        <div id="powermail_fieldwrap_30" class="powermail_fieldwrap powermail_fieldwrap_check powermail_fieldwrap_30 ">
+          <fieldset>
+            <legend class="powermail_label powermail_check_legend" title=""> Ich erkläre mich mit den AGB der BSM Segelschule Montfort einverstanden.<span class="mandatory">*</span> </legend>
+            <div class="powermail_check_outer ">
+              <div class="powermail_check_inner powermail_check_inner_1">
+                <input type="hidden" name="tx_powermail_pi1[field][icherklremichmitdenagbderbsmsegelschulemontforteinverstanden]" value="">
+                <input required="required" data-parsley-required-message="Eines dieser Felder muss ausgefüllt werden!" data-parsley-errors-container=".powermail_field_error_container_icherklremichmitdenagbderbsmsegelschulemontforteinverstanden" data-parsley-class-handler=".powermail_fieldwrap_30 div:first" class="powermail_checkbox powermail_checkbox_30" id="powermail_field_icherklremichmitdenagbderbsmsegelschulemontforteinverstanden_1" type="checkbox" name="tx_powermail_pi1[field][icherklremichmitdenagbderbsmsegelschulemontforteinverstanden][]" value="Ich erkläre mich mit den AGB der BSM Segelschule Montfort einverstanden.">
+                <label for="powermail_field_icherklremichmitdenagbderbsmsegelschulemontforteinverstanden_1"> Ich erkläre mich mit den AGB der BSM Segelschule Montfort einverstanden. </label>
+              </div>
+              <div class="powermail_field_error_container powermail_field_error_container_icherklremichmitdenagbderbsmsegelschulemontforteinverstanden"></div>
+            </div>
+          </fieldset>
+        </div>
+        <input class="btn btn-default" type="submit" name="booking_submit" value="Verbindlich Buchen!">
+      </form>
+    </div>
+  </div>
+    </f:else>
+  </f:if>
+  
+</f:section>

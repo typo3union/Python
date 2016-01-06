@@ -1,0 +1,231 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Main Settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+				<settings.flexform.main.paypalId>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>PAYPAL ID</label>
+							<config>
+								<type>input</type>								
+							</config>
+						</TCEforms>
+					</settings.flexform.main.paypalId>	
+					<settings.flexform.main.voucherStorage>
+						<TCEforms>
+							<label>Voucher Storage pageID</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.voucherStorage>
+					<settings.flexform.main.voucherPrivatePolicy>
+						<TCEforms>
+							<label>Voucher Private Policy pageID</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.voucherPrivatePolicy>	
+					<settings.flexform.main.voucherTermConditions>
+						<TCEforms>
+							<label>Voucher Terms and Condition pageID</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.voucherTermConditions>
+					<settings.flexform.main.emailLogo>
+						<TCEforms>
+							<label>Email Logo</label>
+							<config type="array">
+								<type>group</type>
+								<internal_type>file</internal_type>
+								<allowed>png,jpg,jpeg</allowed>
+								<max_size>10240</max_size>
+								<uploadfolder>uploads/tx_voucher</uploadfolder>
+								<show_thumbs>1</show_thumbs>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.emailLogo>					
+				</el>
+			</ROOT>
+		</main>
+		<register>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Register User Mail</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>					
+					<settings.flexform.register.receiverEmail>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Receivers Email</label>
+							<config>
+								<type>input</type>								
+							</config>
+						</TCEforms>
+					</settings.flexform.register.receiverEmail>					
+					<settings.flexform.register.senderName>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Sender Name (For Confirmation Mail to User)</label>
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.flexform.register.senderName>
+					<settings.flexform.register.senderEmail>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Sender Email (For Confirmation Mail to User)</label>
+							<config>
+								<type>input</type>
+								<eval>trim,In2code\Powermail\Utility\Tca\EvaluateEmail</eval>
+							</config>
+						</TCEforms>
+					</settings.flexform.register.senderEmail>
+					<settings.flexform.register.senderSubject> 
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Subject for Email to Sender (Empty subject disables mail)</label>
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.flexform.register.senderSubject>
+					<settings.flexform.register.mailBody>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Bodytext for Email to Sender</label>
+							<config>
+								<type>text</type>
+								<default></default>
+							</config>
+							<defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+						</TCEforms>
+					</settings.flexform.register.mailBody>
+					<!--<settings.flexform.register.thxMessage>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Thank you Message.</label>
+							<config>
+								<type>text</type>
+								<default>Vielen Dank für registation.
+Ihr Berechtigungsnachweis wird Ihnen per Post zugesandt.
+Sie können jetzt anmelden.</default>
+							</config>
+							<defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+						</TCEforms>
+					</settings.flexform.register.thxMessage>-->
+				</el>
+			</ROOT>
+		</register>
+		<order>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Voucher Order Mail</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>					
+					<settings.flexform.order.recieverEmail>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Receivers Email</label>
+							<config>
+								<type>input</type>
+								
+							</config>
+						</TCEforms>
+					</settings.flexform.order.recieverEmail>					
+					<settings.flexform.order.senderName>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Sender Name (For Confirmation Mail to User)</label>
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.flexform.order.senderName>
+					<settings.flexform.order.senderEmail>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Sender Email (For Confirmation Mail to User)</label>
+							<config>
+								<type>input</type>
+								<eval>trim,In2code\Powermail\Utility\Tca\EvaluateEmail</eval>
+							</config>
+						</TCEforms>
+					</settings.flexform.order.senderEmail>
+					<settings.flexform.order.senderSubject>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Subject for Email to Sender (Empty subject disables mail)</label>
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.flexform.order.senderSubject>
+					<settings.flexform.order.mailBody>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Bodytext for Email to Sender</label>
+							<config>
+								<type>text</type>
+								<default></default>
+							</config>
+							<defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+						</TCEforms>
+					</settings.flexform.order.mailBody>
+					<!--<settings.flexform.order.thxMessage>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Thank you Message.</label>
+							<config>
+								<type>text</type>
+								<default>Vielen Dank für den Auftrag.
+Ihr Gutschein wird Ihnen per E-Mail.
+Bitte überprüfen Sie es.</default>
+							</config>
+							<defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+						</TCEforms>
+					</settings.flexform.order.thxMessage>-->
+				</el>
+			</ROOT>
+		</order>		
+	</sheets>
+</T3DataStructure>

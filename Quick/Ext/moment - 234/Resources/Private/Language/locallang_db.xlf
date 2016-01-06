@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-07T09:04:52Z" product-name="augenblicke">
+		<header/>
+		<body>
+			<trans-unit id="tx_augenblicke_domain_model_augenblicke">
+				<source>Augenblicke</source>
+			</trans-unit>
+			<trans-unit id="tx_augenblicke_domain_model_augenblicke.title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_augenblicke_domain_model_augenblicke.subtitle">
+				<source>Untertitel</source>
+			</trans-unit>
+			<trans-unit id="tx_augenblicke_domain_model_augenblicke.images">
+				<source>Bilder (3:2 oder 2:3)</source>
+			</trans-unit>
+			<trans-unit id="tx_augenblicke_domain_model_augenblicke.description">
+				<source>Beschreibung</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

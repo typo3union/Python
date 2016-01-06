@@ -1,0 +1,417 @@
+###
+# TEMPLATE: root_menu
+# DESCRIPTION: The MENU ROOT template. This template will be called by the MASTER ROOT template. It reads the templates for the menu parts, like the default menu 
+setup, language menu, header- and footermenu's. In this template record are only other template records included.
+###
+
+
+
+# EXT : menu.footerMenu
+# DESC: Footer menu
+
+menu.footerMenu = HMENU
+menu.footerMenu {
+	
+	special = directory
+	special.value = 3
+		
+	1 = TMENU
+	1 {
+		wrap = <ul>|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			ATagParams =
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li>|</li>
+			stdWrap.htmlSpecialChars = 1			
+		}
+				
+		ACT < .NO
+		ACT {
+			ATagParams = 
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			ATagParams = class="parent_menu active"
+			wrapItemAndSub = <li class="active">|</li> 	
+		}
+	}
+	
+}
+
+
+
+
+
+
+# BREADCRUMB MENU
+menu.breadcrumb = HMENU
+menu.breadcrumb {
+	special = rootline
+	#special.range = 1|-1
+	special.range = 1 | -1
+	includeNotInMenu =0
+	excludeUidList  = 62,63,64,65,66,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104
+	1 = TMENU
+	1 {
+		noBlur = 1
+		wrap = <div class="breadcum-wrap"><div class="container clearfix"><div class="breadcum clearfix"><ul class="clearfix"><li><a href="index.php?id=1">Home</a></li>|</ul></div></div></div>
+	</div>
+		NO {
+			wrapItemAndSub = <li>|</li>
+		}
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <li class="active">|</li>
+			#doNotLinkIt = 1
+		}
+	}
+}
+
+
+
+# Language Menu
+menu.lang_menu_flag = COA
+menu.lang_menu_flag {
+    10 = HMENU
+    10 {
+        special = language
+        special.value = 0,1
+        1 = TMENU
+        1 {
+            expAll = 0
+           	wrap = <ul>|</ul>
+		    NO = 1
+            NO {
+                stdWrap.cObject = TEXT
+                stdWrap.cObject {
+                    value =  <img src="typo3conf/ext/fluxtemplate/Resources/Public/images/flag-dutch.png" alt="Hotel Schwedi" />  || <img src="typo3conf/ext/fluxtemplate/Resources/Public/images/flag-eng.png" alt="Hotel Schwedi" />
+
+                } 
+                allWrap = <li>|</li>
+             
+            }
+            RO < .NO
+            RO = 1
+            RO.ATagParams = class="hover"
+            
+            ACT < .NO
+            ACT = 1
+            ACT {
+                
+                #doNotLinkIt = 1
+                allWrap = <li class="active">|</li>
+               
+            }
+			
+			USERDEF2 < .ACT
+			USERDEF2.allWrap =  <li class="active">|</li>	
+			#USERDEF1.doNotLinkIt = 1	
+        }
+    }
+}
+
+menu.lang_menu = COA
+menu.lang_menu {
+    10 = HMENU
+    10 {
+        special = language
+        special.value = 0,1
+        1 = TMENU
+        1 {
+            expAll = 0
+           	wrap = <ul>|</ul>
+		    NO = 1
+            NO {
+                stdWrap.cObject = TEXT
+                stdWrap.cObject {
+                    value =  Deutsch || English
+
+                } 
+                allWrap = <li>|</li>
+             
+            }
+            RO < .NO
+            RO = 1
+            RO.ATagParams = class="hover"
+            
+            ACT < .NO
+            ACT = 1
+            ACT {
+                
+                #doNotLinkIt = 1
+                allWrap = <li class="active">|</li>
+               
+            }
+			
+			USERDEF2 < .ACT
+			USERDEF2.allWrap =  <li class="active">|</li>	
+			#USERDEF1.doNotLinkIt = 1	
+        }
+    }
+}
+
+lib.languageMenu= HMENU
+lib.languageMenu{
+  special = language
+  special.value = 0,1
+  1 = TMENU
+  1.wrap = <ul class="language">|</ul>
+  1.NO = 1  
+  1.NO.stdWrap.cObject = TEXT
+  1.NO.stdWrap.cObject.value = <img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/oesterreich_g.gif" alt="oesterreich_g" /> || <img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/Flag_of_the_United_Kingdom.png" alt="Flag_of_the_United_Kingdom" />
+  1.NO.stdWrap.current = 0
+  1.NO.wrapItemAndSub = <li>|</li> |*| <li>|</li>
+  1.ACT < .1.NO
+  1.ACT.ATagParams = class = "active"
+} 
+
+
+
+menu.site_map = HMENU
+menu.site_map {
+	
+	special = directory
+	special.value = 2
+		
+	1 = TMENU
+	1 {
+		wrap =  <ul class="nav navbar-nav">|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			ATagParams = class="parent_menu"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="menu_{field:uid}" id="menu_{field:uid}">|</li>
+			stdWrap.htmlSpecialChars = 1			
+		}
+		
+		IFSUB < .NO
+		IFSUB {
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+	
+		ACT < .NO
+		ACT {
+			
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | 
+						
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active first dropdown menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+
+		CUR < .NO
+		CUR {
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="first active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+				
+		CURIFSUB < .IFSUB
+		CURIFSUB = 1
+		CURIFSUB {
+		
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | 			
+			
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active first dropdown menu_{field:uid}" id="menu_{field:uid}" >|</li> |*| <li class="active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+		ACTIFSUB < .IFSUB
+		ACTIFSUB = 1
+		ACTIFSUB {
+		
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | 			
+			
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active first dropdown menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+		
+	}
+	
+	2 < .1
+	2.wrap = <span data-toggle="dropdown" class="dd-arrow"><span class="caret fa fa-angle-down"></span></span><ul role="menu" class="dropdown-menu level-02">|</ul>
+	2.NO.ATagParams >	
+	2.ACT.wrapItemAndSub = <li class="active menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.CUR.wrapItemAndSub = <li class="active menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.NO.wrapItemAndSub = <li class="hov"  class="menu_{field:uid}" id="menu_{field:uid}" >|</li>|*|<li  class="menu_{field:uid}" id="menu_{field:uid}">|</li>|*|<li  class="menu_{field:uid}" id="menu_{field:uid}">|</li>
+	
+	
+	2.ACT.wrapItemAndSub = <li class="hov active menu_{field:uid} first" id="menu_{field:uid}">|</li> |*| <li class="active menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.CUR.wrapItemAndSub = <li class="hov first active menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="active menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.IFSUB.wrapItemAndSub = <li class="dropdown dropdown-submenu menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="dropdown dropdown-submenu menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.CURIFSUB.wrapItemAndSub = <li class="active dropdown dropdown-submenu menu_{field:uid} dropdown dropdown-submenu" id="menu_{field:uid}">|</li> |*| <li class="active dropdown dropdown-submenu menu_{field:uid} dropdown dropdown-submenu" id="menu_{field:uid}">|</li>
+
+	
+	
+}
+
+
+
+
+
+menu.main_menu = HMENU
+menu.main_menu {
+	
+	special = directory
+	special.value = 2
+		
+	1 = TMENU
+	1 {
+		wrap =  <ul class="nav navbar-nav">|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			ATagParams = class="parent_menu"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="menu_{field:uid}" id="menu_{field:uid}">|</li>
+			stdWrap.htmlSpecialChars = 1			
+		}
+		
+		IFSUB < .NO
+		IFSUB {
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+	
+		ACT < .NO
+		ACT {
+			
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | 
+						
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active first dropdown menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+
+		CUR < .NO
+		CUR {
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="first active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+				
+		CURIFSUB < .IFSUB
+		CURIFSUB = 1
+		CURIFSUB {
+		
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | 			
+			
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active first dropdown menu_{field:uid}" id="menu_{field:uid}" >|</li> |*| <li class="active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+		ACTIFSUB < .IFSUB
+		ACTIFSUB = 1
+		ACTIFSUB {
+		
+			ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | 			
+			
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active first dropdown menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="active dropdown menu_{field:uid}" id="menu_{field:uid}">|</li>
+		}
+		
+	}
+	
+	2 < .1
+	2.wrap = <span data-toggle="dropdown" class="dd-arrow"><span class="caret fa fa-angle-down"></span></span><ul role="menu" class="dropdown-menu level-02">|</ul>
+	2.NO.ATagParams >	
+	2.ACT.wrapItemAndSub = <li class="active menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.CUR.wrapItemAndSub = <li class="active menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.NO.wrapItemAndSub = <li class="hov"  class="menu_{field:uid}" id="menu_{field:uid}" >|</li>|*|<li  class="menu_{field:uid}" id="menu_{field:uid}">|</li>|*|<li  class="menu_{field:uid}" id="menu_{field:uid}">|</li>
+	
+	
+	2.ACT.wrapItemAndSub = <li class="hov active menu_{field:uid} first" id="menu_{field:uid}">|</li> |*| <li class="active menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.CUR.wrapItemAndSub = <li class="hov first active menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="active menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.IFSUB.wrapItemAndSub = <li class="dropdown dropdown-submenu menu_{field:uid}" id="menu_{field:uid}">|</li> |*| <li class="dropdown dropdown-submenu menu_{field:uid}" id="menu_{field:uid}">|</li>
+	2.CURIFSUB.wrapItemAndSub = <li class="active dropdown dropdown-submenu menu_{field:uid} dropdown dropdown-submenu" id="menu_{field:uid}">|</li> |*| <li class="active dropdown dropdown-submenu menu_{field:uid} dropdown dropdown-submenu" id="menu_{field:uid}">|</li>
+
+	
+	
+	2.ACTIFSUB.wrapItemAndSub = <li class="active dropdown dropdown-submenu menu_{field:uid} dropdown dropdown-submenu" id="menu_{field:uid}">|</li> |*| <li class="active dropdown dropdown-submenu menu_{field:uid} dropdown dropdown-submenu" id="menu_{field:uid}">|</li>
+	
+	2.CUR.linkWrap >
+	2.ACT.linkWrap = |
+		
+	3 < .2	
+	3.wrap = <span data-toggle="dropdown" class="dd-arrow dropdown-toggle"><span class="caret fa fa-angle-down"></span></span> <ul class="dropdown-menu level-03">|</ul>
+	3.NO.ATagParams >
+	#3.NO.doNotLinkIt = 1 |*| 0 |*| 0
+}
+
+
+menu.main_menu_image= USER_INT
+menu.main_menu_image{
+	  userFunc = user_various->getInnerMenuImage
+	  # reverseOrder is a boolean variable (see PHP code below)
+	  reverseOrder = 1
+	  # debugOutput is a boolean variable with /stdWrap (see PHP code below)
+	  debugOutput = 1
+}
+

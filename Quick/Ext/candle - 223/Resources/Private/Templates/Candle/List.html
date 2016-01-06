@@ -1,0 +1,204 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="candleViewList">
+    <f:for each="{allNumbers}" as="allNumber" iteration="iteration">
+      <f:if condition='<v:math.modulo a="{iteration.cycle}" b="{randomCheck}" />==0'>
+          <f:then>
+          	<f:if condition='<v:math.modulo a="{iteration.cycle}" b="3" />==0'>
+            	<f:then>
+                	 <v:variable.set value="{settings.BigBurnImage}" name="FULL"></v:variable.set>
+                </f:then>
+                <f:else>
+                	 <v:variable.set value="{settings.halfBurnImage}" name="FULL"></v:variable.set>
+                </f:else>                
+            </f:if>           
+          </f:then>
+          <f:else>
+            <v:variable.set value="{settings.BigNotBurnImage}" name="FULL"></v:variable.set>
+          </f:else>
+        </f:if>     
+      <div class="listView withoutName">
+        <div class="can_img">               
+          <f:image src="uploads/tx_candle/{FULL}" alt="Candle Image"  class="candle_img" />
+          <div class="triggerbtn">
+            <button class="md-trigger popup-modal" data-modal="detail-{iteration.index}">scale</button>
+          </div>
+        </div>
+        <div class="can_text"></div>
+      </div>
+    </f:for>
+    <f:for each="{candles}" as="candle" iteration="iteration">
+      <div class="listView withName">
+       <f:if condition='{candle.days}'>
+          <f:then>
+          	<f:if condition='{candle.days}==0'>
+            	<v:variable.set value="{settings.BigBurnImage}" name="IMAGE"></v:variable.set>  
+            </f:if> 
+           <f:if condition='{candle.days}==1'>
+            	<v:variable.set value="{settings.halfBurnImage}" name="IMAGE"></v:variable.set>  
+            </f:if> 
+            <f:if condition='{candle.days}==2'>
+            	<v:variable.set value="{settings.emptyBurnImage}" name="IMAGE"></v:variable.set>  
+            </f:if> 
+             <f:if condition='{candle.days}>2'>
+            	<v:variable.set value="{settings.BigNotBurnImage}" name="IMAGE"></v:variable.set>  
+            </f:if>                       
+          </f:then>
+          <f:else>
+           <v:variable.set value="{settings.BigBurnImage}" name="IMAGE"></v:variable.set>
+          </f:else>
+        </f:if>
+                
+        <div class="can_img">
+          <f:image src="uploads/tx_candle/{IMAGE}" alt="Candle Image"  class="candle_img" />
+          <div class="triggerbtn">
+            <button class="md-trigger popup-modal" data-modal="register-{iteration.index}">scale</button>
+          </div>
+        </div>
+        <div class="dedicatedName">
+          <p>{candle.dedicatedName}</p>
+        </div>
+      </div>
+    </f:for>     
+  </div>
+  <ul class="pager"></ul> 
+  <div class="CandleModelView">
+    <f:for each="{allNumbers}" as="allNumber" iteration="iteration">
+      <div class="md-modal md-effect-{iteration.index}" id="detail-{iteration.index}">
+        <div class="md-content clearfix">
+          <div class="pop-upDetail">
+         
+          	<div class="can_img">
+	          <f:image src="uploads/tx_candle/{settings.BigNotBurnImage}" alt="Candle Image"  class="notBurn"/>  
+                   <div class="lightCandle red"></div>
+             </div>
+            <div class="registrationForm">
+              <f:form action="list"  enctype="multipart/form-data" name="registrationForm" id="registrationForm" method="post" additionalAttributes="{novalidate: ''}">
+                <div class="form-group">
+                  <label for="name">Ihren Namen<span class="mandatory">*</span> </label>
+                  <input class="form-control" id="name" type="text" name="name" value="" maxlength="50" >
+                  <span class="err_name red"></span>
+                </div>
+                <div  class="form-group">
+                  <label for="address">Ihren Adresse</label>
+                  <textarea rows="5" cols="20" class="form-control" id="address" name="address" ></textarea>
+                </div>
+                <div  class="form-group">
+                  <label for="e_mail"> Candle Für<span class="mandatory">*</span></label>
+                  <input class="form-control" id="candle_for" type="text" name="candle_for" value="" maxlength="50">
+                   <span class="err_candle_for red"></span>
+                </div>
+                <div  class="form-group">
+                  <label for="address">Nachricht</label>
+                  <textarea rows="5" cols="20"class="form-control" id="message" name="message" ></textarea>
+				<!--<span class="err_message red"></span>-->
+                </div>
+                <div  class="form-group">
+                  <input class="candle_submit" type="submit" name="candle_submit" value="Senden">
+                </div>
+              </f:form>
+            </div>
+          </div>
+          <button class="md-close"> Close </button>
+        </div>
+      </div>
+    </f:for>
+    <f:for each="{candles}" as="candle" iteration="iteration">
+      <div class="md-modal md-effect-{iteration.index}" id="register-{iteration.index}">
+        <div class="md-content clearfix">
+          <div class="pop-upDetail">
+            <div class="candleDetailView">
+              <div class="dedicatedTo">
+                <p>{candle.dedicatedName}</p>
+              </div>
+              <div class="can_img">
+               <f:if condition='{candle.days}'>
+                  <f:then>
+                    <f:if condition='{candle.days}==0'>
+                        <v:variable.set value="{settings.BigBurnImage}" name="IMAGE"></v:variable.set>  
+                    </f:if> 
+                   <f:if condition='{candle.days}==1'>
+                        <v:variable.set value="{settings.halfBurnImage}" name="IMAGE"></v:variable.set>  
+                    </f:if> 
+                    <f:if condition='{candle.days}==2'>
+                        <v:variable.set value="{settings.emptyBurnImage}" name="IMAGE"></v:variable.set>  
+                    </f:if> 
+                     <f:if condition='{candle.days}>2'>
+                        <v:variable.set value="{settings.BigNotBurnImage}" name="IMAGE"></v:variable.set>  
+                    </f:if>                       
+                  </f:then>
+                  <f:else>
+                   <v:variable.set value="{settings.BigBurnImage}" name="IMAGE"></v:variable.set>
+                  </f:else>
+                </f:if>
+                <f:image src="uploads/tx_candle/{IMAGE}" alt="Candle Image"  class="candle_img" />
+              </div>
+              <div class="can_detail">
+                <div class="message">
+                  <p>
+                    <f:format.raw>{candle.message}</f:format.raw>
+                  </p>
+                </div>
+                <div class="dedicatedName">
+                  <p> - {candle.userName}</p>
+                </div>
+                <div class="userAddress">
+                  <p>
+                    <f:format.raw>{candle.userAddress}</f:format.raw>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="md-close">Close</button>
+        </div>
+      </div>
+    </f:for>
+    <div class="md-modal md-effect" id="registrationForm">
+      <div class="md-content clearfix">
+        <div class="pop-upDetail">
+          <div class="registrationForm">
+            <f:form action="list"  enctype="multipart/form-data" name="registrationForm" id="registrationForm" method="post" additionalAttributes="{novalidate: ''}">
+              <div class="form-group">
+                <label for="name">Ihren Namen<span class="mandatory">*</span> </label>
+                <input class="form-control" id="name" type="text" name="name" value="" >
+              </div>
+              <div  class="form-group">
+                <label for="address">Ihren Adresse</label>
+                <textarea rows="5" cols="20"  id="address" name="address" class="form-control" ></textarea>
+              </div>
+              <div  class="form-group">
+                <label for="e_mail"> Candle Für</label>
+                <input class="form-control" id="candle_for" type="text" name="candle_for" value="" >
+              </div>
+              <div  class="form-group">
+                <label for="address">Nachricht</label>
+                <textarea rows="5" cols="20" class="form-control" id="message" name="message" ></textarea>
+              </div>
+              <div  class="form-group">
+                <input class="candle_submit" type="submit" name="candle_submit" value="Senden">
+              </div>
+            </f:form>
+          </div>
+        </div>
+        <button class="md-close"> Close </button>
+      </div>
+    </div>
+  </div>
+   <div class="BurnImage hidden">
+	  <f:image src="uploads/tx_candle/{settings.BigBurnImage}" alt="Candle Image"  class="burn" />
+      <input type="hidden" name="checkBurn" value="0" class="checkBurn" />
+   </div>
+</f:section>

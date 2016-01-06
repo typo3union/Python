@@ -1,0 +1,60 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="Pdfbutton" label="PDF Side Button" description="PDF Button Element" icon="" options="{Fluidcontent: {sorting: 119},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:form.section name="button" label="Common Side Button">
+                    <flux:form.object name="Button" label="Add New Slide">
+                        <flux:field.file name="picture" uploadFolder="uploads/pics/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                        <flux:field.input name="picture_alt" label="Alternative Text" />
+                        <flux:field.input name="Text_content" label="Text Content" />
+                        <flux:field.input name="link" label="Link">
+                            <flux:wizard.link />
+                        </flux:field.input>
+                    </flux:form.object>
+                </flux:form.section>
+              
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+        <div class="pdf-outer clearfix">
+
+            <f:if condition="{button}">
+                <f:for each="{button}" as="buttons" iteration="iteration">
+                    <f:link.page pageUid="{buttons.Button.link}" class="pdf-0{iteration.cycle}" target="_blank">
+                        <f:image src="uploads/pics/{buttons.Button.picture}" title="{buttons.Button.Text_content}"  alt="{buttons.Button.picture_alt}" width="169c"  height="119c" />
+                        <span class="pdf-link">{buttons.Button.Text_content}</span>
+                    </f:link.page>
+
+                </f:for>
+            </f:if>                             
+        </div>
+
+
+
+    </f:section>
+
+    <f:section name="Preview">
+
+        <div class="pdf-outer clearfix">
+            <f:if condition="{button}">
+                <f:for each="{button}" as="buttons" iteration="iteration">
+                    <f:link.page pageUid="{buttons.Button.link}" class="pdf-0{iteration.cycle}">
+                        <f:image src="uploads/pics/{buttons.Button.picture}" alt="{buttons.Button.picture_alt}" width="169c"  height="119c" />
+                        <span class="pdf-link">{buttons.Button.Text_content}</span>
+                    </f:link.page>
+
+                </f:for>
+            </f:if>                         
+
+        </div>
+    </f:section>
+
+</div>

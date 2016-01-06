@@ -1,0 +1,97 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Page" />
+
+	<f:section name="Configuration">
+
+		<flux:form id="InnerPage" label="InnerPage">
+
+			<!-- Grid displayed in the page module -->
+			<flux:grid>
+				
+				<flux:grid.row>
+					<flux:grid.column colPos="6" colspan="12" name="Content"/>
+				</flux:grid.row>
+				
+				<flux:grid.row>
+					<flux:grid.column colPos="7" colspan="12" name="Testimonial"/>
+				</flux:grid.row>
+				
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Resources">
+		<f:render partial="Assets" section="Assets"/>
+	</f:section>
+	
+	
+	
+	<f:section name="Content">
+	
+		<div class="content index-main">
+			<div class="container">
+				<div class="row">
+					<div class="part clearfix">
+						<div class="left-bar">
+						
+							<div class="left-head">
+								{f:if(condition: record.nav_title, then: record.nav_title, else: record.title)}							    
+							</div>
+							
+							<f:render section="InnerLeftNavigation" partial="InnerLeftNavigation" optional="TRUE" arguments="{_all}"/>
+							
+						</div>
+						
+						<div class="right-bar">
+						<f:cObject typoscriptObjectPath="lib.bannerpicture" />
+							<div class="right-content">
+												
+								<f:render section="Breadcrumb" partial="Breadcrumb" optional="TRUE" arguments="{_all}"/>
+								
+							
+										
+										  	<h2 class="page-header text-center">
+										  	<f:if condition="{record.gold_heading}">
+										  		<br>
+												<span class="gold">
+												{record.gold_heading->f:format.html()}
+												</span>
+												</f:if>
+												<f:if condition="{record.normal_heading}">
+													<f:then>													
+													{record.normal_heading->f:format.html()}
+													</f:then>
+													<f:else>
+													{f:if(condition: record.nav_title, then: record.nav_title, else: record.title)}
+													</f:else>
+												</f:if>
+											</h2>
+											
+								
+								
+								<f:cObject typoscriptObjectPath="lib.subparts" />
+								<v:content.render column="6"/>
+								
+								
+							</div>
+							
+							<f:if condition="{v:content.get(column: 7)}">
+							<div class="right-testi">
+								<div class="testimonial">
+									<v:content.render column="7"/>
+								</div>
+							</div>
+							</f:if>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</f:section>
+
+</div>

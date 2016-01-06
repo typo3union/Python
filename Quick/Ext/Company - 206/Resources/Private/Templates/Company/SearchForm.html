@@ -1,0 +1,20 @@
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="input-group right-inner-addon">
+    <f:form action="searchList" controller="Company" pageUid="{settings.searchSingleView}" name="submit_form">
+      <input type="search" name="search_keyword" class="input-box" placeholder="<f:translate key='tx_companymanagement_domain_model_company.l_placeholder' />">
+      <button type="submit" name="search_submit" class="button-search"><f:translate key="tx_companymanagement_domain_model_company.l_submit" /></button>
+    </f:form>
+  </div>
+</f:section>

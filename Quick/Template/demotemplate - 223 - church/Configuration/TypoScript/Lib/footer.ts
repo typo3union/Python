@@ -1,0 +1,3 @@
+ 
+contentFooterUid = {$contentFooterUid}
+FooterlinkUid = {$FooterlinkUid}

@@ -1,0 +1,75 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+
+  <div class="search">  
+  <f:if condition="{settings.mainTitle}">
+   <f:then>
+ 	 <span class="red-title">{settings.mainTitle}</span><div class="clearfix"></div>
+    </f:then>
+    <f:else>
+    	<span class="red-title"><f:translate key="tx_property_domain_model_property.property_serch" /></span>
+    </f:else>
+  </f:if>    
+    <div class="clearfix"></div>
+    <f:form action="list"  enctype="multipart/form-data" name="field" controller="Property" pageUid="{settings.listView}" method="post" additionalParams="{search: '1'}" id="search_form">
+    <div class="clearfix"></div>     
+     <div class="clearfix"></div>
+     <div class="col-xs-12 col-sm-3">	
+     	<div class="object_search">       
+            <label><f:translate key="tx_property_domain_model_property.s_property_cat" /></label>
+            <span class="objradio">
+            <input name="property_cat" type="radio" value="0" id="rent" ><label  for="rent"><f:translate key="tx_property_domain_model_property.rent" /></label></span>
+            <span class="objradio">
+            <input name="property_cat" type="radio" value="1"  id="sale" ><label  for="sale"><f:translate key="tx_property_domain_model_property.sale" /></label></span>
+             <span class="check_error"></span>  
+        </div>  
+       </div>
+      <div class="col-xs-12 col-sm-3">
+        <label><f:translate key="tx_property_domain_model_property.s_property_type" /></label>
+        <select name="property_type" id="sortby1" >
+          <option value="" selected><f:translate key="tx_property_domain_model_property.all" /></option>
+          <f:for each="{propertyTypes.propertyType}" as="type" key="uid">
+             <option value="{uid}">{type}</option>          
+          </f:for> 
+        </select>
+      </div>
+      
+      <!-- Add the extra clearfix for only the required viewport -->
+      
+      <div class="col-xs-12 col-sm-3">
+        <label><f:translate key="tx_property_domain_model_property.s_price" /></label>
+        <select name="property_price" id="sortby2">
+        <option value="" selected><f:translate key="tx_property_domain_model_property.all" /></option>
+          <f:for each="{propertyTypes.price}" as="property_price">
+             <option value="{property_price}">{property_price}</option>          
+          </f:for>
+        </select>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <label><f:translate key="tx_property_domain_model_property.region" /></label>
+        <select name="property_city" id="sortby3">
+         <option value="" selected><f:translate key="tx_property_domain_model_property.all" /></option>
+           <f:for each="{propertyTypes.city}" as="city" >
+             <option value="{city}">{city}</option>          
+          </f:for>
+        </select>
+      </div>
+      
+      <div class="clearfix"></div>
+	      <input type="button" name="serach_submmit"  class="btn btn-lg btn-primary searchbtn"  onclick="checkradio();" value="<f:translate key="tx_property_domain_model_property.search"  />"/>
+      <div class="clearfix"></div>
+	  </f:form>
+  </div>
+</f:section>

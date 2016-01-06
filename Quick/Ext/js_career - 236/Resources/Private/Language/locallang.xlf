@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-29T13:34:25Z" product-name="js_career">
+		<header/>
+		<body>
+			<trans-unit id="tx_jscareer_domain_model_clinik">
+				<source>Clinik</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_clinik.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager">
+				<source>Manager</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.designation">
+				<source>Designation</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.voraussetzungen">
+				<source>Voraussetzungen</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.picture">
+				<source>Picture</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant">
+				<source>Applicant</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.resume">
+				<source>Resume</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.contact_date">
+				<source>Contact Date</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.ip">
+				<source>IP Address</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.useragent">
+				<source>User Agent</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job">
+				<source>Job</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.place">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.join_check">
+				<source>Datum</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.join_date">
+				<source>Join Date</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.text_check">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.text">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.ab_sofort">
+				<source>Ab Sofort</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.timing">
+				<source>Timing</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.contract">
+				<source>Vertragsart</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.short_description">
+				<source>Short Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.description_header">
+				<source>Description Header</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.description_part1">
+				<source>Description Part1</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.description_part2">
+				<source>Description Part2</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.pdf">
+				<source>Pdf</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.caetgory">
+				<source>Caetgory</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.contact_person">
+				<source>Contact Person</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.applicant">
+				<source>Applicant</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.ab_sofort_check">
+				<source>Ab Sofort Check</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.timing.I.0">
+				<source>Vollzeit</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.timing.I.1">
+				<source>Teilzeit</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.error.include_template">
+				<source>Are you sure that you have included the "Main" static template?</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.error.storagePID">
+				<source>Please configure your storage folder in plugin option</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.error.no-record">
+				<source>Job not found</source>
+			</trans-unit>
+			<trans-unit id="pagination_first">
+				<source>First</source>
+			</trans-unit>
+			<trans-unit id="pagination_last">
+				<source>Last</source>
+			</trans-unit>
+			<trans-unit id="pagination_previous">
+				<source>Previous</source>
+			</trans-unit>
+			<trans-unit id="pagination_next">
+				<source>Next</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.job.title">
+				<source>Stellenbezeichnung</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.clinik">
+				<source>Klinik</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.joindate">
+				<source>Antrittsdatum</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.scope">
+				<source>Umfang</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.moreInfo">
+				<source>Mehr Erfahren</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.absofort">
+				<source>Ab Sofort</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.employer">
+				<source>Arbeitgeber</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.jobLocation">
+				<source>Arbeitsort</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.apply">
+				<source>Online Bewerben</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.your_contact_person">
+				<source>Ihre Ansprechpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.submit">
+				<source>Submit</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.label.name">
+				<source>Name of candidate</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.label.phone">
+				<source>Phone number</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.label.email">
+				<source>Email Address</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.label.resume">
+				<source>Resume ( PDF upload )</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.name.placeholder">
+				<source>Name of candidate</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.name.valid">
+				<source>First name can not be blank!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.name.blank">
+				<source>First name can not be blank!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.phone.placeholder">
+				<source>Phone number</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.phone.valid">
+				<source>Please enter valid Phone!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.phone.blank">
+				<source>Phone can not be blank!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.email.placeholder">
+				<source>Email Address</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.email.valid">
+				<source>Please enter valid email!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.email.blank">
+				<source>Email address can not be blank!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.resume.valid">
+				<source>Upload resume in PDF format!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.resume.blank">
+				<source>Resume can not be blank!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.succes.1">
+				<source>Thanks for applied for Job. we will back to you ASAP.</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.mailContent.dear.user">
+				<source>Dear %1$s</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.mailContent.dear.admin">
+				<source>Dear Admin</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.mailContent.regards">
+				<source>Best regards,</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.mailContent.signature">
+				<source>Enzensberg</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.career.header">
+				<source>Karrier</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.career.description">
+				<source>Aktuell sind alle Assistenzarztstellen besetzt, gerne können Sie sich aber initiativ bewerben.</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.career.search.placeholder">
+				<source>Suchbegriff eingeben...</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.career.search.icon">
+				<source>Suche</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.detail.pdf">
+				<source>PDF</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

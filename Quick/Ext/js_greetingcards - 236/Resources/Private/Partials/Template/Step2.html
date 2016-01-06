@@ -1,0 +1,52 @@
+<f:form action="greetingsWishes" id="greetingStep2" additionalParams="{greeting.uriParams}">
+    <div class="container">
+        <div class="row clearfix">
+
+        <div class="step-2 back-link">           
+                <f:form.submit name="backeStep1Submit" additionalAttributes="{class:'btn btn-default'}" value="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.back.step1' />" title="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.back.step1' />"  />           
+        </div>
+            <div class="next-link">
+                <f:form.submit name="step2Submit" additionalAttributes="{class:'btn btn-default'}" value="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.goto.step3' />" title="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.goto.step3' />"  />
+            </div>
+            <div class="second-step clearfix">
+                <div class="col-md-8 col-sm-8">
+                    <div class="contact-form clearfix">
+			            	<div class="validationMessage"><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.required.field.alert' /></div>
+                            <div class="form-group">
+                                <label><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2.name' /></label>
+                                <f:form.textfield property="name" name="name" value="{greeting.data.name}" additionalAttributes="{class:'form-control validate',maxlength:'50'}" />
+                            </div>
+                            <div class="form-group">
+                                <label><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2.patient_name' /></label>
+                                <f:form.textfield property="patient_name" name="patient_name" value="{greeting.data.patient_name}" additionalAttributes="{class:'form-control validate',maxlength:'50'}" />
+                            </div>
+                            <div class="form-group">
+                                <label><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2.room' /></label>
+                                <f:form.textfield property="room" name="room" value="{greeting.data.room}" additionalAttributes="{class:'form-control',maxlength:'50'}" />
+                            </div>
+			   <div class="form-group">
+                                <label><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.header' /></label>
+                                <f:form.textfield property="header" name="header" value="{greeting.data.header}" additionalAttributes="{class:'form-control', maxlength:'50'}" />
+                            </div>
+                            <div class="form-group last-area">
+                                <label><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2.description' /></label>
+                                <f:form.textarea cols="20" rows="5" name="description" value="{greeting.data.description}" additionalAttributes="{class:'form-control validate',id:'textarea'}" />
+                                <label><div class="charleft originalTextareaInfo"></div></label>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="select-item">
+                        <f:image src="{greeting.cards.image.uid}" treatIdAsReference="1" width="222c" height="159c" alt="{greeting.cards.title}" />
+                    </div>
+                    <div class="select-item">
+                        <f:image src="{settings.fixImage}" width="222" height="163" alt="{greeting.cards.title}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:form>
+<script>
+jQuery(window).scrollTop(jQuery('.tx-js-greetingcards').offset().top);
+</script>

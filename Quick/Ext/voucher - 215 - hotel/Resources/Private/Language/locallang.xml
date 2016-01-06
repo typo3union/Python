@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Voucher extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_voucher_domain_model_voucher">Voucher</label>
+			<label index="tx_voucher_domain_model_voucher.title">Titel : </label>
+			<label index="tx_voucher_domain_model_voucher.price">Preis : </label>
+			<label index="tx_voucher_domain_model_voucher.tax">Steuer : </label>
+			<label index="tx_voucher_domain_model_voucher.valid_till_date">Gültig bis : </label>
+			<label index="tx_voucher_domain_model_voucher.image">Image </label>
+			<label index="tx_voucher_domain_model_voucher.short_description"> Beschreibung : </label>
+			<label index="tx_voucher_domain_model_voucher.long_descption">Ausführliche Beschreibung : </label>
+			<label index="tx_voucher_domain_model_voucher.voucher_category">Gutschein-Kategorie : </label>
+			<label index="tx_voucher_domain_model_vouchercustomer">VoucherCustomer</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.is_admin">isAdmin</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.de_active">deActive</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.gender">gender</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.email">email</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.username">username</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.password">password</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.firstname">firstname</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.lastname">lastname</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.company">company</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.address">address</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.zip">zip</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.location">location</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.country">country</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.phone">phone</label>
+			<label index="tx_voucher_domain_model_voucherorder">VoucherOrder</label>
+			<label index="tx_voucher_domain_model_voucherorder.de_active">deActive</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_name">voucherName</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_number">voucherNumber</label>
+			<label index="tx_voucher_domain_model_voucherorder.payment_type">paymentType</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_price">voucherPrice</label>
+			<label index="tx_voucher_domain_model_voucherorder.paid_price">paidPrice</label>
+			<label index="tx_voucher_domain_model_voucherorder.spend_amount">spendAmount</label>
+			<label index="tx_voucher_domain_model_voucherorder.reaming_amount">reamingAmount</label>
+			<label index="tx_voucher_domain_model_voucherorder.customer_id">customerId</label>
+			
+					
+			<!-- Status Message -->			
+			<label index="tx_voucher_domain_model_voucher_status.MailSent">Konto erfolgreich erstellt. Sie können sich nun anmelden.</label>
+			<label index="tx_voucher_domain_model_voucher_status.AlreadyRegister">Ihre E-Mail ist bereits registriert.</label>
+			<label index="tx_voucher_domain_model_voucher_status.InvalidLogin">Ungültiger Benutzername oder Passwort. Bitte versuche es erneut.</label>
+			<label index="tx_voucher_domain_model_voucher_status.paymentFail">Es gab ein Problem mit der Bezahlung. Bitte versuchen Sie es erneut.</label>
+			<label index="tx_voucher_domain_model_voucher_status.orderMailSent">Ihre Zahlung war erfolgreich. Ein Mail zur Bestätigung wurde an Sie gesendet.</label>
+			
+			<!-- Voucher List Page -->
+			
+			<label index="tx_voucher_domain_model_voucher_list.product_selection">Bitte wählen Sie Ihren Gutschein:</label>
+			<label index="tx_voucher_domain_model_voucher_list.price_selection">Bitte wählen Sie Preise für Gutschein</label>
+			
+			<label index="tx_voucher_domain_model_voucher_list.price_hide">Bitte überprüfen Sie den Preis auf dem Gutschein hide (nicht mit Gutscheinen)</label>			
+			<label index="tx_voucher_domain_model_voucher_list.click">Klicken Sie hier</label>
+			<label index="tx_voucher_domain_model_voucher_list.download_pdf"> zum Download PDF</label>
+			
+			<!-- Voucher Login Form -->
+			<label index="tx_voucher_domain_model_voucher_login.login_or_register">Anmelden oder Neues Konto:</label>
+			<label index="tx_voucher_domain_model_voucher_login.already_account">Bereits Kunde</label>
+			<label index="tx_voucher_domain_model_voucher_login.already_account_sub">Melden Sie sich an, um einen unserer vielen verschiedenen Gutscheine zu bestellen!</label>			
+			<label index="tx_voucher_domain_model_voucher_login.email">E-Mail Adresse*</label>
+			<label index="tx_voucher_domain_model_voucher_login.password">Passwort*</label>
+			<label index="tx_voucher_domain_model_voucher_login.create_account">Kostenlose Registrierung</label>
+			<label index="tx_voucher_domain_model_voucher_login.create_account_sub">Noch keinen Account? Registrieren Sie sich kostenlos, um einen Gutschein anzufordern!</label>
+			<label index="tx_voucher_domain_model_voucher_login.gender">Anrede*</label>
+			<label index="tx_voucher_domain_model_voucher_login.mr">Herr</label>
+			<label index="tx_voucher_domain_model_voucher_login.mrs">Frau</label>
+			<label index="tx_voucher_domain_model_voucher_login.vorname">Vorname*</label>
+			<label index="tx_voucher_domain_model_voucher_login.lastname">Name*</label>
+			<label index="tx_voucher_domain_model_voucher_login.small_email">Email Adresse*</label>
+                        <label index="tx_voucher_domain_model_voucher_login.password">Passwort*</label>
+                        <label index="tx_voucher_domain_model_voucher_login.repeatpassword">Passwort wiederholen*</label>
+			<label index="tx_voucher_domain_model_voucher_login.phone">Telefon</label>
+			<label index="tx_voucher_domain_model_voucher_login.company">Firma</label>
+			<label index="tx_voucher_domain_model_voucher_login.invoice">Rechnung gewünscht?</label>
+			<label index="tx_voucher_domain_model_voucher_login.address">Anschrift</label>
+			<label index="tx_voucher_domain_model_voucher_login.zip">PLZ*</label>
+			<label index="tx_voucher_domain_model_voucher_login.location">Ort</label>
+			<label index="tx_voucher_domain_model_voucher_login.country">Land</label>
+			<label index="tx_voucher_domain_model_voucher_login.submit">Registrieren</label>
+			
+			<!-- Voucher After Login View -->
+			
+			<label index="tx_voucher_domain_model_voucher_after_login.price_hide">Bitte den Preis auf dem Gutschein ausblenden (nicht bei Wertgutscheinen)</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.your_message">Ihre Grußnachricht</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.preview">Vorschau</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.policy">Datenschutzbestimmungen</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.terms">Allgemeinen Geschäftsbedingungen </label>
+			<label index="tx_voucher_domain_model_voucher_after_login.dispatch">Versandweg</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.select_voucher">Bitte wählen Sie, ob Sie den E-Mail senden erhalten möchten,
+        oder ob Sie ihn selbst ausdrucken: *</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.download_pdf">Download als PDF</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.by_mail">E-Mail senden</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.payment">Zahlungsmethode</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.select_payment">Gewählte Zahlungsart</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.paypal">Paypal</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.offline">Barzahlung</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.logout">Abmelden</label>
+			
+			<label index="tx_voucher_domain_model_voucher_after_login.note">Hinweis : </label>
+			<label index="tx_voucher_domain_model_voucher_after_login.message_display">Ihre Nachricht wird auf allen Gutscheinen abgedruckt</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.back">Zurück</label>
+			
+			<!-- Voucher Preview Page -->
+			<label index="tx_voucher_domain_model_voucher_preview.your_message">Ihr Grußtext auf dem Gutschein :</label>
+			<label index="tx_voucher_domain_model_voucher_preview.no_message">Keine Nachricht</label>
+			<label index="tx_voucher_domain_model_voucher_preview.your_data">Ihre Daten</label>
+			<label index="tx_voucher_domain_model_voucher_preview.gender">Anrede : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.firstname">Vorname :</label>
+			<label index="tx_voucher_domain_model_voucher_preview.lastname">Name : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.company">Firma : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.address">Anschrift : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.zip">PLZ :  </label>
+                        <label index="tx_voucher_domain_model_voucher_preview.ort">Ort :  </label>
+			<label index="tx_voucher_domain_model_voucher_preview.phone">Telefon : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.email">Email : </label>
+                        <label index="tx_voucher_domain_model_voucher_preview.country">Land : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.your_product">Ihr Gutschein</label>
+			<label index="tx_voucher_domain_model_voucher_preview.price_of">zum Preis von </label>
+			<label index="tx_voucher_domain_model_voucher_preview.paypal_payment">Zahlungsmethode: </label>
+			<label index="tx_voucher_domain_model_voucher_preview.cash_payment">Zahlungsmethode: Bargeld</label>
+			<label index="tx_voucher_domain_model_voucher_preview.quantity">Menge : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.price_von">zum Preis von </label>
+			<label index="tx_voucher_domain_model_voucher_preview.total_amount">Gesamtbetrag</label>
+			<label index="tx_voucher_domain_model_voucher_preview.total">Nettobetrag : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.tax">Umsatzsteuer : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.total_amount_pay">Gesamtbetrag brutto : </label>			
+			<label index="tx_voucher_domain_model_voucher_preview.top_text">Mit Klick auf "Zur Bezahlung" werden Sie zu einem Zahlungsdienstleister weitergeleitet und können dort eine FIKTIVE TESTBEZAHLUNG per Kreditkarte vornehmen. Sie müssen natürlich keine echten Angaben machen, der Ablauf funktioniert komplett kostenlos!</label>
+			<label index="tx_voucher_domain_model_voucher_preview.bottom_text">Bitte überprüfen Sie Ihre Daten unterhalb.</label>
+			<label index="tx_voucher_domain_model_voucher_preview.continue">kostenpflichtig Bestellen</label>
+                        <label index="tx_voucher_domain_model_voucher_preview.submitbtn">Weiter</label>
+			
+			
+			
+		</languageKey>
+                
+                
+                
+                <languageKey index="en" type="array">
+			<label index="tx_voucher_domain_model_voucher">Voucher</label>
+			<label index="tx_voucher_domain_model_voucher.title">Titel : </label>
+			<label index="tx_voucher_domain_model_voucher.price">Preis : </label>
+			<label index="tx_voucher_domain_model_voucher.tax">Steuer : </label>
+			<label index="tx_voucher_domain_model_voucher.valid_till_date">Gültig bis : </label>
+			<label index="tx_voucher_domain_model_voucher.image">Image </label>
+			<label index="tx_voucher_domain_model_voucher.short_description"> Beschreibung : </label>
+			<label index="tx_voucher_domain_model_voucher.long_descption">Ausführliche Beschreibung : </label>
+			<label index="tx_voucher_domain_model_voucher.voucher_category">Gutschein-Kategorie : </label>
+			<label index="tx_voucher_domain_model_vouchercustomer">VoucherCustomer</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.is_admin">isAdmin</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.de_active">deActive</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.gender">gender</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.email">email</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.username">username</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.password">password</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.firstname">firstname</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.lastname">lastname</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.company">company</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.address">address</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.zip">zip</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.location">location</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.country">country</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.phone">phone</label>
+			<label index="tx_voucher_domain_model_voucherorder">VoucherOrder</label>
+			<label index="tx_voucher_domain_model_voucherorder.de_active">deActive</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_name">voucherName</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_number">voucherNumber</label>
+			<label index="tx_voucher_domain_model_voucherorder.payment_type">paymentType</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_price">voucherPrice</label>
+			<label index="tx_voucher_domain_model_voucherorder.paid_price">paidPrice</label>
+			<label index="tx_voucher_domain_model_voucherorder.spend_amount">spendAmount</label>
+			<label index="tx_voucher_domain_model_voucherorder.reaming_amount">reamingAmount</label>
+			<label index="tx_voucher_domain_model_voucherorder.customer_id">customerId</label>
+			
+					
+			<!-- Status Message -->			
+			<label index="tx_voucher_domain_model_voucher_status.MailSent">Konto erfolgreich erstellt. Sie können sich nun anmelden.</label>
+			<label index="tx_voucher_domain_model_voucher_status.AlreadyRegister">Ihr Konto ist bereits erstellt.</label>
+			<label index="tx_voucher_domain_model_voucher_status.InvalidLogin">Ungültiger Benutzername oder Passwort. Bitte versuche es erneut.</label>
+			<label index="tx_voucher_domain_model_voucher_status.paymentFail">Es gab ein Problem mit der Bezahlung. Bitte versuchen Sie es erneut.</label>
+			<label index="tx_voucher_domain_model_voucher_status.orderMailSent">Ihre Zahlung war erfolgreich. Ein Mail zur Bestätigung wurde an Sie gesendet.</label>
+			
+			<!-- Voucher List Page -->
+			
+			<label index="tx_voucher_domain_model_voucher_list.product_selection">Bitte wählen Sie Ihren Gutschein:</label>
+			<label index="tx_voucher_domain_model_voucher_list.price_selection">Bitte wählen Sie Preise für Gutschein</label>
+			
+			<label index="tx_voucher_domain_model_voucher_list.price_hide">Bitte überprüfen Sie den Preis auf dem Gutschein hide (nicht mit Gutscheinen)</label>			
+			<label index="tx_voucher_domain_model_voucher_list.click">Klicken Sie hier</label>
+			<label index="tx_voucher_domain_model_voucher_list.download_pdf"> zum Download PDF</label>
+			
+			<!-- Voucher Login Form -->
+			<label index="tx_voucher_domain_model_voucher_login.login_or_register">Anmelden oder Neues Konto:</label>
+			<label index="tx_voucher_domain_model_voucher_login.already_account">Bereits Kunde</label>
+			<label index="tx_voucher_domain_model_voucher_login.already_account_sub">Melden Sie sich an, um einen unserer vielen verschiedenen Gutscheine zu bestellen!</label>			
+			<label index="tx_voucher_domain_model_voucher_login.email">E-Mail Adresse*</label>
+			<label index="tx_voucher_domain_model_voucher_login.password">Password*</label>
+			<label index="tx_voucher_domain_model_voucher_login.create_account">Kostenlose Registrierung</label>
+			<label index="tx_voucher_domain_model_voucher_login.create_account_sub">Noch keinen Account? Registrieren Sie sich kostenlos, um einen Gutschein anzufordern!</label>
+			<label index="tx_voucher_domain_model_voucher_login.gender">Anrede*</label>
+			<label index="tx_voucher_domain_model_voucher_login.mr">Herr</label>
+			<label index="tx_voucher_domain_model_voucher_login.mrs">Frau</label>
+			<label index="tx_voucher_domain_model_voucher_login.vorname">FirstName*</label>
+			<label index="tx_voucher_domain_model_voucher_login.lastname">Name*</label>
+			<label index="tx_voucher_domain_model_voucher_login.small_email">Email Adresse*</label>
+                        <label index="tx_voucher_domain_model_voucher_login.password">Password*</label>
+                        <label index="tx_voucher_domain_model_voucher_login.repeatpassword">RepeatPassword*</label>
+                        <label index="tx_voucher_domain_model_voucher_login.phone">Telefon</label>
+			<label index="tx_voucher_domain_model_voucher_login.company">Firma</label>
+			<label index="tx_voucher_domain_model_voucher_login.invoice">Rechnung gewünscht?</label>
+			<label index="tx_voucher_domain_model_voucher_login.address">Anschrift</label>
+			<label index="tx_voucher_domain_model_voucher_login.zip">PLZ*</label>
+			<label index="tx_voucher_domain_model_voucher_login.location">Ort</label>
+			<label index="tx_voucher_domain_model_voucher_login.country">Land</label>
+			<label index="tx_voucher_domain_model_voucher_login.submit">Registrieren</label>
+			
+			<!-- Voucher After Login View -->
+			
+			<label index="tx_voucher_domain_model_voucher_after_login.price_hide">Bitte den Preis auf dem Gutschein ausblenden (nicht bei Wertgutscheinen)</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.your_message">Ihre Grußnachricht</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.preview">Vorschau</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.policy">Datenschutzbestimmungen</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.terms">Allgemeinen Geschäftsbedingungen </label>
+			<label index="tx_voucher_domain_model_voucher_after_login.dispatch">Versandweg</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.select_voucher">Bitte wählen Sie, ob Sie den E-Mail senden erhalten möchten,
+        oder ob Sie ihn selbst ausdrucken: *</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.download_pdf">Download als PDF</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.by_mail">E-Mail senden</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.payment">Zahlungsmethode</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.select_payment">Gewählte Zahlungsart</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.paypal">Paypal</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.offline">Barzahlung</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.logout">Abmelden</label>
+			
+			<label index="tx_voucher_domain_model_voucher_after_login.note">Hinweis : </label>
+			<label index="tx_voucher_domain_model_voucher_after_login.message_display">Ihre Nachricht wird auf allen Gutscheinen abgedruckt</label>
+			<label index="tx_voucher_domain_model_voucher_after_login.back">Zurück</label>
+			
+			<!-- Voucher Preview Page -->
+			<label index="tx_voucher_domain_model_voucher_preview.your_message">Ihr Grußtext auf dem Gutschein :</label>
+			<label index="tx_voucher_domain_model_voucher_preview.no_message">Keine Nachricht</label>
+			<label index="tx_voucher_domain_model_voucher_preview.your_data">Ihre Daten</label>
+			<label index="tx_voucher_domain_model_voucher_preview.gender">Anrede : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.firstname">FirstName :</label>
+			<label index="tx_voucher_domain_model_voucher_preview.lastname">Name : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.company">Firma : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.address">Anschrift : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.zip">PLZ :  </label>
+                        <label index="tx_voucher_domain_model_voucher_preview.ort">Ort :  </label>
+			<label index="tx_voucher_domain_model_voucher_preview.phone">Telefon : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.email">Email : </label>
+                        <label index="tx_voucher_domain_model_voucher_preview.country">Land : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.your_product">Ihr Gutschein</label>
+			<label index="tx_voucher_domain_model_voucher_preview.price_of">zum Preis von </label>
+			<label index="tx_voucher_domain_model_voucher_preview.paypal_payment">Zahlungsmethode: </label>
+			<label index="tx_voucher_domain_model_voucher_preview.cash_payment">Zahlungsmethode: Bargeld</label>
+			<label index="tx_voucher_domain_model_voucher_preview.quantity">Menge : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.price_von">zum Preis von </label>
+			<label index="tx_voucher_domain_model_voucher_preview.total_amount">Gesamtbetrag</label>
+			<label index="tx_voucher_domain_model_voucher_preview.total">Nettobetrag : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.tax">Umsatzsteuer : </label>
+			<label index="tx_voucher_domain_model_voucher_preview.total_amount_pay">Gesamtbetrag brutto : </label>			
+			<label index="tx_voucher_domain_model_voucher_preview.top_text">Mit Klick auf "Zur Bezahlung" werden Sie zu einem Zahlungsdienstleister weitergeleitet und können dort eine FIKTIVE TESTBEZAHLUNG per Kreditkarte vornehmen. Sie müssen natürlich keine echten Angaben machen, der Ablauf funktioniert komplett kostenlos!</label>
+			<label index="tx_voucher_domain_model_voucher_preview.bottom_text">Bitte überprüfen Sie Ihre Daten unterhalb.</label>
+			<label index="tx_voucher_domain_model_voucher_preview.continue">kostenpflichtig Bestellen</label>
+                        <label index="tx_voucher_domain_model_voucher_preview.submitbtn">Weiter</label>
+			
+			
+			
+		</languageKey>
+	</data>
+</T3locallang>

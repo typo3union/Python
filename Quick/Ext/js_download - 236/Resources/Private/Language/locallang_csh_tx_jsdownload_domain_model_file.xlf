@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-24T15:25:14Z" product-name="js_download">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="short_description.description">
+				<source>shortDescription</source>
+			</trans-unit>
+			<trans-unit id="date.description">
+				<source>date</source>
+			</trans-unit>
+			<trans-unit id="media.description">
+				<source>media</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="video.description">
+				<source>video</source>
+			</trans-unit>
+			<trans-unit id="video_mp4.description">
+				<source>videoMp4</source>
+			</trans-unit>
+			<trans-unit id="video_webm.description">
+				<source>videoWebm</source>
+			</trans-unit>
+			<trans-unit id="video_ogg.description">
+				<source>videoOgg</source>
+			</trans-unit>
+			<trans-unit id="no_of_download.description">
+				<source>noOfDownload</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>category</source>
+			</trans-unit>
+			<trans-unit id="file_type.description">
+				<source>fileType</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

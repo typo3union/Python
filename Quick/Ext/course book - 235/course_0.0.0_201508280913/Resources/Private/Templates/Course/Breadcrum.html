@@ -1,0 +1,72 @@
+<f:layout name="Default" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="breadcrum">
+    <ul>
+      <f:if condition="{pageId}">
+     		<f:if condition="{pageId}!=1">
+           	 <li> <a href="/">Startseite</a> </li>
+            </f:if>
+        <f:if condition="{pageData4}">
+          <f:if condition="{pageData4}">
+            <f:if condition="{pageData4.uid}!=1">
+              <li>
+                <f:link.page pageUid="{pageData4.uid}" >{pageData4.title}</f:link.page>
+              </li>
+            </f:if>
+          </f:if>
+        </f:if>
+        <f:if condition="{pageData3}">
+          <f:if condition="{pageData3}">
+            <f:if condition="{pageData3.uid}!=1">
+              <li>
+                <f:link.page pageUid="{pageData3.uid}" >{pageData3.title}<</f:link.page>
+              </li>
+            </f:if>
+          </f:if>
+        </f:if>
+        <f:if condition="{pageData2}">
+          <f:if condition="{pageData2}">
+            <f:if condition="{pageData2.uid}!=1">
+              <li>
+                <f:link.page pageUid="{pageData2.uid}" >{pageData2.title}</f:link.page>
+              </li>
+            </f:if>
+          </f:if>
+        </f:if>
+        <f:if condition="{pageData1}">
+          <f:if condition="{pageData1}">
+            <f:if condition="{pageData1.uid}!=1">
+              <li>
+                <f:link.page pageUid="{pageData1.uid}" >{pageData1.title}</f:link.page>
+              </li>
+            </f:if>
+          </f:if>
+        </f:if>
+      </f:if>
+      <f:if condition="{catId}">
+        <li> <a href="/" >Startseite</a> </li>
+        <f:if condition="{catDataParent}">
+          <li>
+            <f:link.page pageUid="{settings.CategoryDetailPage}" additionalParams="{category_id:'{catDataParent.uid}'}" noCacheHash="1" > {catDataParent.category} </f:link.page>
+          </li>
+        </f:if>
+        <li class="deactive">{catData.category}</li>
+      </f:if>
+      <f:if condition="{courseId}">
+        <li> <a href="/" >Startseite</a> </li>
+        <f:if condition="{catDataParent}">
+          <li>
+            <f:link.page pageUid="{settings.CategoryDetailPage}" additionalParams="{category_id:'{catDataParent.uid}'}" noCacheHash="1" > {catDataParent.category} </f:link.page>
+          </li>
+        </f:if>
+        <f:if condition="{catData}">
+          <li>
+            <f:link.page pageUid="{settings.CategoryDetailPage}" additionalParams="{category_id:'{catData.uid}'}" noCacheHash="1" > {catData.category} </f:link.page>
+          </li>
+        </f:if>
+        <li class="deactive">{courseData.name}</li>
+      </f:if>
+    </ul>
+  </div>
+</f:section>

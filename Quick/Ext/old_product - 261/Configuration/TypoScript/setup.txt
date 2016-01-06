@@ -1,0 +1,69 @@
+
+plugin.tx_product {
+	view {
+		templateRootPath = {$plugin.tx_product.view.templateRootPath}
+		partialRootPath = {$plugin.tx_product.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_product.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_product.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_product._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-product table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-product table th {
+		font-weight:bold;
+	}
+
+	.tx-product table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+
+page.headerData.200 = TEXT
+page.headerData.200.value (
+	
+	<link rel="stylesheet" type="text/css" href="typo3conf/ext/product/Resources/Public/css/main.css" />	
+        
+)
+
+
+page.footerData.200 = TEXT
+page.footerData.200.value (
+	
+        <script type="text/javascript" src="typo3conf/ext/product/Resources/Public/js/jquery.min.js"></script>
+        <script type="text/javascript" src="typo3conf/ext/product/Resources/Public/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="typo3conf/ext/product/Resources/Public/js/custom.js"></script>
+)
+
+config.tx_product.features.skipDefaultArguments = 1
+plugin.tx_product.features.skipDefaultArguments = 1

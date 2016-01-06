@@ -1,0 +1,12 @@
+<f:if condition="{success.message}==1">
+	<div class="successMessage">
+        <div class="successGreeting">
+            <span>
+                <f:format.raw>{success.successMessage}</f:format.raw>
+            </span>
+        </div>
+	</div>
+<script>
+	jQuery(window).scrollTop(jQuery('.tx-js-greetingcards').offset().top);
+</script>
+</f:if>

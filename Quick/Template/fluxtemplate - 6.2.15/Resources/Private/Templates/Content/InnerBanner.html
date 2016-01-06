@@ -1,0 +1,26 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="InnerBanner" label="Inner Banner" description="Inner Banner Element" icon="" options="{Fluidcontent: {sorting: 113},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+      <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Background Image" allowed="jpg, jpeg, png, gif"/>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+  
+    <section  class="inner-banner">
+          <div class="section" id="section0">
+            <div class="image-bg">
+            <f:if condition="{picture}">
+              <f:image src="uploads/slider_images/{picture}" width="1905c" height="967c"/>
+            </f:if> 
+            </div>
+          </div>
+    </section>
+
+  </f:section>
+</div>

@@ -1,0 +1,147 @@
+{namespace cs=CS\AldianaWeatherWeb\ViewHelpers}
+
+            
+<div class="col-sm-6 date">
+    <p>blub {cs:variable(obj: settings.days, prop: miniDatas.day)}
+		<br class="hidden-xs">
+		<f:format.date format="d.m.Y">{miniDatas.date.0}</f:format.date>
+        <span class="h3">8. Mai, 14 Uhr</span>
+        <span>29°C, sonnig</span>
+    </p>
+</div>
+<div class="col-sm-6 symbol">
+    <p>
+        <span class="weather-icon-96-sonnig"></span>
+    </p>
+</div>
+<div class="col-sm-6">
+    <p>
+        <span class="weather-icon-48-temperaturwasser"></span>
+        <span class="text">22°C</span>
+    </p>
+</div>
+<div class="col-sm-6">
+    <p>
+        <span class="weather-icon-48-windgeschwindigkeit"></span>
+        <span class="text">13 km/h</span>
+    </p>
+</div>
+
+   
+<!--
+<table class="tx-aldiana-weather" >
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.club_id" />
+		</td>
+		<td>
+			{data.clubId}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.club_name" />
+		</td>
+		<td>
+			{data.clubName}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.date" />
+		</td>
+		<td>
+			{data.date -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.day" />
+		</td>
+		<td>
+			{data.day}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.symbol" />
+		</td>
+		<td>
+			{data.symbol}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.t_min" />
+		</td>
+		<td>
+			{data.tMin}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.t_max" />
+		</td>
+		<td>
+			{data.tMax}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.rain" />
+		</td>
+		<td>
+			{data.rain}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wind_direction" />
+		</td>
+		<td>
+			{data.windDirection}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wind_speed" />
+		</td>
+		<td>
+			{data.windSpeed}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wx_morning" />
+		</td>
+		<td>
+			{data.wxMorning}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wx_day" />
+		</td>
+		<td>
+			{data.wxDay}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wx_evening" />
+		</td>
+		<td>
+			{data.wxEvening}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wx_night" />
+		</td>
+		<td>
+			{data.wxNight}
+		</td>
+	</tr>
+</table>
+-->
+    

@@ -1,0 +1,76 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="referenzen" label="Partners" description="Partners Elements" icon="" options="{Fluidcontent: {sorting: 104},group: 'Custom elements'}">
+      <flux:field.input name="header" label="Header" />
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="refsec" label="Partners">
+          <flux:form.object name="refobt" label="Add New Partner">
+            <flux:field.file name="logo" uploadFolder="uploads/tx_partner/" label="Upload Logo Image" allowed="jpg, jpeg, png, gif"/>
+            <flux:field.file name="picture" uploadFolder="uploads/tx_partner/" label="Upload Picture" allowed="jpg, jpeg, png, gif"/>
+            <flux:field.input name="title" label="Title" />
+            <flux:field.input name="blockquote" label="Blockquote" />
+            <flux:field.input name="text" label="Text" />
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Preview">
+    <h1 class="page-heading col-lg-12 middle flnone" style="float:none;">{header}</h1>
+    <f:for each="{refsec}" as="refsecvalue" iteration="iteration">
+      <div class="cmp posrel">
+        <div class="col-lg-6 partner-info">
+          <h2>{refsecvalue.refobt.title}</h2>
+          <f:if condition="{refsecvalue.refobt.blockquote}">
+            <blockquote>„{refsecvalue.refobt.blockquote}“</blockquote>
+          </f:if>
+          <f:format.raw>{refsecvalue.refobt.text}</f:format.raw>
+        </div>
+        <br clear="all">
+        <hr>
+      </div>
+    </f:for>
+  </f:section>
+  
+  <f:section name="Main">
+    
+      <div class="col-md-3"></div>
+      <h1 class="page-heading col-lg-12 middle flnone marleft-1">{header}</h1>
+      <f:for each="{refsec}" as="refsecvalue" iteration="iteration">
+        <div class="cmp posrel">
+          <f:if condition="{refsecvalue.refobt.logo}">
+            <div class="col-lg-3 partnerlogo">
+              <div class="prtcover">
+                <div class="prtlogo">
+                  <div class="prtlogoinnr"> <img src="uploads/tx_partner/{refsecvalue.refobt.logo}"   height="101" width="158" class="img-responsive" > </div>
+                </div>
+              </div>
+            </div>
+          </f:if>
+          <div class="col-lg-6 partner-info">
+            <h2>{refsecvalue.refobt.title}</h2>
+            <f:if condition="{refsecvalue.refobt.blockquote}">
+              <blockquote>„{refsecvalue.refobt.blockquote}“</blockquote>
+            </f:if>
+            <f:format.raw>{refsecvalue.refobt.text}</f:format.raw>
+          </div>
+          <f:if condition="{refsecvalue.refobt.picture}">
+            <div class="col-lg-3 partner-profile">
+            <div class="prtcover">
+                <div class="prtlogo">
+                  <div class="prtlogoinnr">
+                  <img src="uploads/tx_partner/{refsecvalue.refobt.picture}" width="155" height="103"></div></div></div></div>
+          </f:if>
+        </div>
+        <div class="addLine"> <hr></div>
+      </f:for>
+    
+  </f:section>
+</div>

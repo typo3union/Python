@@ -1,0 +1,26 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Page" />
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <flux:form id="onecolumn" label="One Column" icon="">
+      <flux:grid>
+        <flux:grid.row>
+          <flux:grid.column colPos="0" name="inhalt" label="Inhalt"/>
+        </flux:grid.row>
+      </flux:grid>
+    </flux:form>
+  </f:section>
+  <f:section name="Content">
+    <f:render partial="PageObjects" section="Header" />
+    <section id="contentSection" class="fadeInUp animated">
+      <div class="container">
+        <f:cObject typoscriptObjectPath="lib.content0"/>
+      </div>
+    </section>
+    <div class="md-overlay"></div>
+  </f:section>
+</div>

@@ -1,0 +1,39 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:form action="list" id="quickSearch" >
+    <div class="drop-search-section">
+      <label class="label-clr"><f:translate key='tx_quicksearch_domain_model_quicksearch.quicksearch' /></label>
+      <div class="rado-btn">
+        <div>
+          <f:form.radio name="page_type" value="0" id="radio01"/>
+          <label for="radio01"><span></span><f:translate key='tx_quicksearch_domain_model_quicksearch.patient' /></label>
+        </div>
+        <div>
+          <f:form.radio name="page_type" value="1" id="radio02"/>
+          <label for="radio02"><span></span><f:translate key='tx_quicksearch_domain_model_quicksearch.referrers' /></label>
+        </div>
+      </div>
+    </div>
+    <div class="select-option">
+      <f:form.select id="page_select" property="page_select" name="page_select"  options="{pageList}" />
+
+      <f:form.select class="hidden" id="page_select_0" property="page_select_0" name="page_select_0"  options="{pageList_0}" />
+
+      <f:form.select class="hidden" id="page_select_1" property="page_select_1" name="page_select_1"  options="{pageList_1}" />
+
+      <f:form.submit name="quickSearchSubmit" additionalAttributes="{class:'hidden submit-btn-tgl'}" value="Suchen"  />
+    </div>
+  </f:form>
+
+</f:section>

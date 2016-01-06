@@ -1,0 +1,35 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="TabNavigation">
+
+		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+			<v:page.menu entryLevel="{v:variable.typoscript(path: 'lib.menu.main.entryLevel')}">
+				<ul class="nav navbar-nav">
+					<f:for each="{menu}" as="mainPage" iteration="iteration">
+						<li class="{mainPage.class}">
+							<a tabindex="{iteration.cycle -> v:math.sum(b: 10)}"
+							   href="{mainPage.link}"
+							   data-placement="bottom"
+							   title="{mainPage.abstract}"
+							   class="{mainPage.class}">
+								<f:if condition="{mainPage.nav_title}">
+									<f:then>
+										{mainPage.nav_title}
+									</f:then>
+									<f:else>
+										{mainPage.title}
+									</f:else>
+								</f:if>
+							</a>
+						</li>
+					</f:for>
+				</ul>
+			</v:page.menu>
+		</nav>
+
+	</f:section>
+</div>

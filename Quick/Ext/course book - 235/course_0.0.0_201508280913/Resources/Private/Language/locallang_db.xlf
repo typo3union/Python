@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-23T14:08:56Z" product-name="course">
+		<header/>
+		<body>
+			<trans-unit id="tx_course_domain_model_course">
+				<source>Course</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.organiser">
+				<source>Organiser</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.shorttext">
+				<source>Shorttext</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.discounts">
+				<source>Discounts</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.lastminprice">
+				<source>Lastminprice</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.actlastmin">
+				<source>Actlastmin</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.links">
+				<source>Links</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.bannerimages">
+				<source>Bannerimages</source>
+			</trans-unit>
+                        <trans-unit id="tx_course_domain_model_course.adword">
+				<source>AdWords</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.downloads">
+				<source>Downloads</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.cat">
+				<source>Cat</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.dateduration">
+				<source>Dateduration</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_course.realtedcourse">
+				<source>Realtedcourse</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_downloads">
+				<source>Downloads</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_downloads.downloadtitle">
+				<source>Downloadtitle</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_downloads.datadownload">
+				<source>Datadownload</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_locations">
+				<source>Locations</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_locations.locationstitle">
+				<source>Locationstitle</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_category.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_category.information">
+				<source>Information</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_dates">
+				<source>Dates</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_dates.durationinfo">
+				<source>Durationinfo</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_dates.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_dates.duration">
+				<source>Duration</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_durations">
+				<source>Durations</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_durations.duration">
+				<source>Duration</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_datestartend">
+				<source>Datestartend</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_datestartend.titleinfo">
+				<source>Titleinfo</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_datestartend.startdate">
+				<source>Startdate</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_datestartend.enddate">
+				<source>Enddate</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_datestartend.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_datestartend.lastmintuteprice">
+				<source>Lastmintuteprice</source>
+			</trans-unit>
+			<trans-unit id="tx_course_domain_model_datestartend.durationtiming">
+				<source>Durationtiming</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

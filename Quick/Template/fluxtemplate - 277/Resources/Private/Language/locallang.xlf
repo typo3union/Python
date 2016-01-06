@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-08T09:33:24Z" product-name="fluxtemplate">
+		<header/>
+		<body>
+		<trans-unit id="more-link">
+				<source>mehr</source>
+		</trans-unit>
+		<!--Bootstrap Accordion-->
+			<trans-unit id="flux.accordion"><source>Bootstrap Accordion with content elements</source></trans-unit>
+			<trans-unit id="flux.accordion.description"><source>Bootstrap Accordion element container</source></trans-unit>
+			<trans-unit id="flux.accordion.sheets.panels"><source>Accordions</source></trans-unit>
+			<trans-unit id="flux.accordion.sections.panels"><source>Accordions</source></trans-unit>
+			<trans-unit id="flux.accordion.objects.panel"><source>Accordion</source></trans-unit>
+			<trans-unit id="flux.accordion.objects.panel.title"><source>Accordion header/title</source></trans-unit>
+			<trans-unit id="flux.accordion.objects.panel.active"><source>Accordion is active?</source></trans-unit>
+			<trans-unit id="flux.accordion.objects.panel.class"><source>CSS Class</source></trans-unit>
+		<!--Bootstrap Accordion Content-->
+			<trans-unit id="flux.accordioncontent"><source>Bootstrap Accordion Ccontent (Inside Pannel Content)</source></trans-unit>
+			<trans-unit id="flux.accordioncontent.description"><source>Add Bootstrap Accordion content element inside Accordion container</source></trans-unit>
+			<trans-unit id="flux.accordioncontent.sheets.panelscontents"><source>Accordions contents</source></trans-unit>
+			<trans-unit id="flux.accordioncontent.sections.panelscontents"><source>Accordions contents</source></trans-unit>
+			<trans-unit id="flux.accordioncontent.objects.panelscontent"><source>Accordions content</source></trans-unit>
+			<trans-unit id="flux.accordioncontent.objects.panelscontent.name"><source>Person Name</source></trans-unit>
+			<trans-unit id="flux.accordioncontent.objects.panelscontent.position"><source>Person Position</source></trans-unit>
+			<trans-unit id="flux.accordioncontent.objects.panelscontent.file"><source>Person Image</source></trans-unit>
+			<trans-unit id="flux.accordioncontent.objects.panelscontent.description"><source>Person Information</source></trans-unit>
+		
+		
+		
+		
+		</body>
+	</file>
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-07-08T09:33:24Z" product-name="fluxtemplate">
+		<header/>
+		<body>
+		<trans-unit id="more-link">
+				<source> mehr </source>
+		</trans-unit>
+		<trans-unit id="tx_jsevent_domain_model_event.sept_month"><source>September</source></trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,85 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Partial"/>
+
+	<f:section name="Navigation">
+		<div class="container">
+		<div class="row">
+		<div class="stick">
+		<nav class="navbar navbar-default">
+			<v:security.allow anyFrontendUser="TRUE">
+					<f:then>
+						<div class="cust-name table light"></div>
+					</f:then>
+					<f:else>
+						
+					</f:else>
+			</v:security.allow>
+			<div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        
+                        <f:link.page pageUid="1" absolute="1">
+	                        <div class="navbar-brand">	                        
+		                        	<div class="thumb">
+		                            	<f:render section="Getthumbimage" partial="Getthumbimage" arguments="{_all}"/>
+		                            </div>		                        
+	                        </div>
+                        </f:link.page>
+                        
+            </div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			
+				<v:security.allow anyFrontendUser="TRUE">
+					<f:then>
+						<f:render section="UserLogInNavigation" partial="UserLogInNavigation" arguments="{_all}"/>
+					</f:then>
+					<f:else>
+						<f:render section="DropdownNavigation" partial="DropdownNavigation" arguments="{_all}"/>			    	
+					</f:else>
+				</v:security.allow>
+				
+				<f:render section="Searchbox" partial="Searchbox" arguments="{formname : 'default' }" />
+				
+				<ul class="plus-link list-inline nav navbar-nav navbar-right">
+					<li>						
+						<f:cObject typoscriptObjectPath="lib.calenderlink" />
+					</li>
+				</ul>
+					
+				<ul class="plus-link list-inline nav navbar-nav navbar-right">
+					<li class="size">
+						
+						<f:cObject typoscriptObjectPath="lib.a_plus" />
+					</li>
+				</ul>
+				
+				<ul class="minus-link list-inline nav navbar-nav navbar-right">
+					<li class="size">
+						<f:cObject typoscriptObjectPath="lib.a_minus" />
+						
+					</li>
+				</ul>
+									
+				<f:render section="LoginLink" partial="LoginLink" arguments="{_all}"/>
+					
+			</div>
+			
+			
+					
+			
+			
+		</nav>
+		</div>
+		</div>
+		</div>
+		
+		
+	</f:section>
+</div>

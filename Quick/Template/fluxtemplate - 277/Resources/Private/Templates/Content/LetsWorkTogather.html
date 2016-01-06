@@ -1,0 +1,101 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+  xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+  xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+  xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form label="Work Togather" id="Work_togather" description="Work Togather" icon="" options="{Fluidcontent: {sorting: 110},group: 'Custom elements'}">
+      <flux:field.input name="header" label="Title" />
+      <flux:form.sheet name="options" label="Options">
+        
+            <flux:field.input name="header" label="Title" />
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+            <flux:field.input name="alt_title" label="Alternative Title"/>
+            <flux:field.input name="header2" label="Title 2" />
+            <flux:field.file name="picture2" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+            <flux:field.input name="alt_title2" label="Alternative Title 2"/>
+            
+
+          
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <div class="credit-wrap">
+                <div class="container">
+                    <div class="credit clearfix">
+                        <div class="col-sm-6 text-center wow bounceInLeft">
+                            <h4>{header}</h4>
+                            <figure>
+                              <f:if condition="{picture}">
+                                 <f:image src="uploads/slider_images/{picture}" class="img-responsive" alt="{alt_title}"/>
+                              </f:if>
+                            </figure>
+                        </div>
+                        <div class="col-sm-6 text-center wow bounceInRight" data-wow-delay="0.5s">
+                            <h4>{header2}</h4>
+                            <figure>
+                              <f:if condition="{picture2}">
+                                <f:image src="uploads/slider_images/{picture2}" class="img-responsive" alt="{alt_title}"/>
+                              </f:if>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="lets-work">
+                     
+                        <div class="lets-work-inner"><f:cObject typoscriptObjectPath="lib.footerSlogan"/></div>
+                      
+                    </div>
+                </div>
+            </div>
+  </f:section>
+  <f:section name="Preview">
+    
+    <table border="2">
+      <tr>
+          <td width="50%">
+            
+      
+                    <f:if condition="{header}">
+                      <f:then>
+                        <h1>{header}</h1>
+                      </f:then>
+                      <f:else>
+                        <h2>Insert Left Title</h2>
+                      </f:else>
+                    </f:if>
+               
+                  <f:if condition="{picture}">
+                    <f:then>
+                       <f:image src="uploads/slider_images/{picture}" class="img-responsive" alt="{alt_title}"/>
+                    </f:then>
+                    <f:else>
+                      <h2>Please Upload Left Image</h2>
+                    </f:else>
+                  </f:if>
+                
+          </td>
+          <td width="50%">
+                    <f:if condition="{header2}">
+                      <f:then>
+                        <h1>{header2}</h1>
+                      </f:then>
+                      <f:else>
+                        <h2>Insert Right Title</h2>
+                      </f:else>
+                    </f:if>
+               
+                  <f:if condition="{picture2}">
+                    <f:then>
+                      <f:image src="uploads/slider_images/{picture2}" class="img-responsive" alt="{alt_title}"/>
+                    </f:then>
+                    <f:else>
+                      <h2>Please Upload Right Image</h2>
+                    </f:else>
+                  </f:if>
+          </td>
+      </tr>
+    </table>
+  </f:section>
+
+</div>

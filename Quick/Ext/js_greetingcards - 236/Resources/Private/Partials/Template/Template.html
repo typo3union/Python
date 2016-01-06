@@ -1,0 +1,15 @@
+<section class="contact-form-section clearfix">
+
+    <div class="form-tab clearfix">
+        <ul>
+			<f:for each="{1:'1',2:'2',3:'3'}" as="number" key="label">
+                <li class="<f:if condition='{number} == {step}'>active</f:if>">
+                	<h6><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.step{number}' /></h6>
+				</li>
+			</f:for>
+        </ul>
+    </div>
+
+	<f:render partial="Template/Step{step}" arguments="{greeting:greeting}" />
+    
+</section>

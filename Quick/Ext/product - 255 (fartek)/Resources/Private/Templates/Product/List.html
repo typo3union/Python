@@ -1,0 +1,111 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects. If
+you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml: Resources: Private:
+Templates: List.html: keep Otherwise your changes will be overwritten
+the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+
+	<f:flashMessages renderMode="div" />
+
+	<div class="container inr-content clearfix">
+		<div class="row">
+			<div class="col-sm-12 col-xs-12 my-fad-in">
+				<f:for each="{categories}" as="category">
+				<v:page.header.title
+							title="Fartek LebensmittelvertriebsgsmbH | {category.category_name} / {category.category_name}"
+							whitespaceString=" " setIndexedDocTitle="1">
+						Fartek LebensmittelvertriebsgsmbH | {category.category_name} / {category.category_name}
+						</v:page.header.title>
+						
+					<f:if condition="{subcategories}">
+					<f:then>
+						
+						<h1>
+							<f:link.action pageUid="{settings.flexform.main.productlist}"
+								controller="Product" action="list"
+								arguments="{category : category.uid}" noCacheHash="1">{category.category_name}</f:link.action>
+						</h1>
+
+						<ul class="category-list">
+
+							<f:for each="{subcategories}" as="subcategory">
+							
+						
+								<li><f:link.action
+										pageUid="{settings.flexform.main.productlist}"
+										controller="Product" action="list"
+										arguments="{category : subcategory.uid}" noCacheHash="1">{subcategory.category_name}</f:link.action>
+								</li>
+
+							</f:for>
+
+						</ul>
+						</f:then>
+						<f:else>
+						<h1>
+						
+							<f:link.action pageUid="{settings.flexform.main.productlist}"
+								controller="Product" action="list"
+								arguments="{category : category.uid}" noCacheHash="1">{category.category_name}</f:link.action>
+						</h1>
+						
+						</f:else>
+					</f:if>
+				</f:for>
+			</div>
+		</div>
+	
+		<f:for each="{final_product}" as="product" iteration="iteration">
+	
+		<div class="produ-list">
+					<f:for each="{cats}" as="c" >
+						<v:page.header.title
+							title="Fartek LebensmittelvertriebsgsmbH | {c.category_name} / {product.cat_name}"
+							whitespaceString=" " setIndexedDocTitle="1">
+						Fartek LebensmittelvertriebsgsmbH | {c.category_name} / {product.cat_name}
+						</v:page.header.title>
+						</f:for>
+				<h3>{product.cat_name}</h3>
+				<div class="row">
+			<f:for each="{product.main}" as="p" >
+				
+				
+					<div class="col-md-3  col-sm-4  col-xs-6">
+						<div class="prod-list-wrap">
+
+							<f:link.action pageUid="{settings.flexform.main.productdetailid}"
+								controller="Product" action="show"
+								arguments="{product : p.uid,cat:p.category}"
+								noCacheHash="1">
+								<span class="prod-list-img img-res">
+								<f:if condition="{p.pictures.image.imagepath}"> 
+								<f:then>
+								<f:image src="fileadmin/{p.pictures.image.imagepath}"	width="255" height="255" /></f:then>
+								<f:else><f:image src="typo3conf/ext/product/Resources/Public/Images/no-image.png" class="no-img" width="255c" height="255c" /></f:else>
+										</f:if>
+								</span>
+								<h4 class="prod-list-title">{p.name}</h4>
+							</f:link.action>
+						</div>
+					
+
+			
+			</div>
+						
+			</f:for>
+			</div>
+				</div>
+		</f:for>
+	</div>
+
+
+</f:section>
+</div>

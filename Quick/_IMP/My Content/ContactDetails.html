@@ -1,0 +1,49 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:layout name="Content" />
+
+
+	<f:section name="Configuration">
+		<flux:form id="kontaktdetails" label="Contact Details" description="Contact Details Element" icon="" options="{Fluidcontent: {sorting: 101},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+				<flux:form.section name="ctdetail" label="Contact Details Element">
+					
+						<flux:form.object name="ctdetails" label="Add New Slide">
+						
+							<flux:field.input name="ctype" label="Contact Type" />
+							<flux:field.input name="cinfo" label="Contact Info" />
+							
+						</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+
+
+	<f:section name="Main">
+	
+		<div class=" contactnumber">
+			<f:for each="{ctdetail}" as="cdata" iteration="iteration">		
+			
+				<f:if condition="{cdata.ctdetails.ctype} == 'phone'">
+					<div><i class="mdi mdi-phone"></i>&nbsp; {cdata.ctdetails.cinfo}</div>
+				</f:if>
+				
+				<f:if condition="{cdata.ctdetails.ctype} == 'fax'">
+					<div><i class="mdi mdi-printer"></i>&nbsp; {cdata.ctdetails.cinfo}</div>
+				</f:if>
+
+				<f:if condition="{cdata.ctdetails.ctype} == 'email'">
+					<div><i class="mdi mdi-email"></i>&nbsp;&nbsp;<a href="mailto:{cdata.ctdetails.cinfo}">{cdata.ctdetails.cinfo}</a></div>
+				</f:if>	
+
+				<f:if condition="{cdata.ctdetails.ctype} == 'web'">
+					<div><i class="mdi mdi-web"></i>&nbsp;&nbsp;<a href="http://{cdata.ctdetails.cinfo}" target="_blank">{cdata.ctdetails.cinfo}</a></div>
+				</f:if>			
+			
+			</f:for>
+		</div>
+		
+	</f:section>

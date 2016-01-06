@@ -1,0 +1,59 @@
+
+<table class="tx-events" >
+	<tr>
+		<td>
+			<f:translate key="tx_events_domain_model_events.title" />
+		</td>
+		<td>
+		{events.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_events_domain_model_events.teaser" />
+		</td>
+		<td>
+		{events.teaser}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_events_domain_model_events.image" />
+		</td>
+		<td>
+				<f:image src="{events.image.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_events_domain_model_events.description" />
+		</td>
+		<td>
+		{events.description}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_events_domain_model_events.date" />
+		</td>
+		<td>
+		{events.date -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_events_domain_model_events.time" />
+		</td>
+		<td>
+		{events.time}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_events_domain_model_events.location" />
+		</td>
+		<td>
+		{events.location}
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,30 @@
+<div class="tx-jsevent-box">
+    <div class="termine-dis">{Event.title}</div>
+    <br />
+    <div class="termine-dis">{Event.location}</div>
+    <br />
+    <div class="date">
+        <f:format.date format="d.">{Event.start_date}</f:format.date> <f:format.date format="%b %Y">{Event.start_date}</f:format.date>
+        <br />
+        <f:format.date format="H:i">{Event.start_date}</f:format.date> - <f:format.date format="H:i">{Event.end_date}</f:format.date> <f:translate key='tx_jsevent_domain_model_event.clock' />
+    </div>
+    <br />
+    <div class="tx-jsevent-decription">
+        <f:format.raw>{Event.description}</f:format.raw>
+    </div>
+
+    <br />
+	<f:if condition="{Event.image}">
+        <div class="tx-jsevent-image">
+            <f:image src="{Event.imageReference}" alt="" treatIdAsReference="1" class="icon" width="303" height="207" />
+        </div>
+	</f:if>
+
+    <br />
+    
+    <div class="more-link-p">
+        <f:link.page pageUid="{setting.listPage}" class="sprite read-more">
+            <f:translate key='tx_jsevent_domain_model_event.eventList' />
+        </f:link.page>
+    </div>
+</div>

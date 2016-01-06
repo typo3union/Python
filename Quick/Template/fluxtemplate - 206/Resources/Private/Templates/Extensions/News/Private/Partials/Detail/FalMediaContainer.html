@@ -1,0 +1,31 @@
+<f:if condition="{media}">
+  <!-- fal media files -->
+  
+  <div class="row newsDetailgallery clearfix pullDown">
+    <div class="col-sm-12 col-md-12">
+      <div class="metaslider metaslider-flex metaslider-182 ml-slider nav-hidden">
+        <div class="detailslider" id="metaslider_182">
+          <ul class="slides">
+            <f:for each="{media}" as="mediaElement">
+              <f:if condition="{mediaElement.originalResource.type} == 2">
+                <f:render partial="Detail/FalMediaImage" arguments="{mediaElement: mediaElement, settings:settings}"/>
+              </f:if>
+              <f:if condition="{mediaElement.originalResource.type} == 4">
+                <f:render partial="Detail/FalMediaVideo" arguments="{mediaElement: mediaElement, settings:settings}"/>
+              </f:if>
+            </f:for>
+          </ul>
+        </div>
+        <div class="detailslider filmstrip" id="metaslider_182_filmstrip">
+          <ul class="slides">
+            <f:for each="{media}" as="mediaElement">
+              <f:if condition="{mediaElement.originalResource.type} == 2">
+                <f:render partial="Detail/ThumbFalMediaImage" arguments="{mediaElement: mediaElement, settings:settings}"/>
+              </f:if>
+            </f:for>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</f:if>

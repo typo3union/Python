@@ -1,0 +1,29 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="footercontent" label="Footer Content" description="Footer Content Element" icon="" options="{Fluidcontent: {sorting: 108},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:field.text name="social_content" label="Text" enableRichText="1"/>
+        <flux:field.text name="top_add_1" label="Text" enableRichText="1"/>
+        <flux:field.text name="top_add_2" label="Text" enableRichText="1"/>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <div class="social-icon">
+      <f:format.html>{social_content}</f:format.html>
+    </div>
+    <div class="f-top-add01">
+      <f:format.html>{top_add_1}</f:format.html>
+    </div>
+    <div class="f-top-add02">
+      <f:format.html>{top_add_2}</f:format.html>
+    </div>
+  </f:section>
+</div>

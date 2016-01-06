@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Language labels for Contact Form</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="label_fieldset">Contact Form</label>
+			<label index="Name">Name:</label>
+			<label index="email">Your email:</label>
+			<label index="Message">Your Message:</label>
+			<label index="Phone">Your Phone Number:</label>
+			<label index="receive-copy">I want to receive a copy of this request</label>
+			<label index="submit">Submit</label>
+			
+	
+			<label index="greetings">Dear</label>
+			<label index="email_user_subject">Your contact request</label>
+			<label index="email_user_text">We have received your request via the contact form on www.example.org. We will process your request and get in contact with you soon.</label>
+			<label index="email_user_footer">---------------------------------- This message was created automatically. --------------------------------</label>
+
+			<label index="email_admin_subject">Contact request</label>
+			<label index="email_admin_text">A user filled out the contact form on www.example.org.</label>
+			<label index="email_admin_footer">---------------------------------- This message was created automatically. --------------------------------</label>
+
+			<label index="error_Name_required">Please enter your name!</label>
+			<label index="error_email_required">Please enter your email address!</label>
+			<label index="error_email_email">Please enter a valid email address!</label>
+			<label index="error_Phone_integer">Please enter a Phone Number in digits only!</label>
+			<label index="error_Message_required">Please enter a message!</label>
+		</languageKey>
+		
+		<languageKey index="de" type="array">
+			<label index="label_fieldset">Contact Form</label>
+			<label index="Name">Name</label>
+			<label index="email">E-Mail</label>
+			<label index="Message">Ihre persönliche Nachricht</label>
+			<label index="Phone">Telefonnummer</label>
+			<label index="receive-copy">I want to receive a copy of this request</label>
+			<label index="submit">Senden</label>
+			
+	
+			<label index="greetings">Sehr geehrte(r) Herr/Frau</label>
+			<label index="email_user_subject">Ihr Ansprechpartner Anfrage</label>
+			<label index="email_user_text">Vielen Dank für Ihre Nachricht! Wir werden diese so schnell wie möglich beantworten!</label>
+			<label index="email_user_footer">Sollten Sie weiterführende Fragen zu unserem Programm oder anderen Themen haben, so stehen Ihnen jederzeit alle Kontaktmöglichkeit zur Verfügung!</label>
+			<label index="email_user_thanks_line1">mit herzlichen Grüßen,</label>
+			<label index="email_user_thanks_line2">Ihr</label>
+			<label index="email_user_thanks_line3">Pfarrgemeinschaft Kempten - West</label>
+
+			<label index="email_admin_subject">Kontakt Anfrage</label>
+			<label index="email_admin_text">Ein Benutzer das Kontaktformular ausgefüllt</label>
+			<label index="email_admin_footer">---------------------------------- This message was created automatically. --------------------------------</label>
+
+			<label index="error_Name_required">Bitte geben Sie Ihren Namen!</label>
+			<label index="error_email_required">Bitte geben Sie Ihre E-Mail-Adresse!</label>
+			<label index="error_email_email">Bitte geben Sie eine gültige E-Mail-Adresse!</label>
+			<label index="error_Phone_integer">Bitte geben Sie eine Telefonnummer in nur Ziffern!</label>
+			<label index="error_Message_required">Bitte geben Sie eine Nachricht!</label>
+		</languageKey>
+		
+	</data>
+</T3locallang>

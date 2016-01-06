@@ -1,0 +1,35 @@
+
+<div class="gallery clearfix gallery-top">	
+    <f:for each="{related_courses}" as="relcourse">		
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 pdg-nn">
+             <div class="img-galery">
+            <f:if condition="{relcourse.imgArray.0}">
+				<f:then>
+        	        <f:image src="uploads/tx_course/{relcourse.imgArray.0}" width="427c" height="350c"  alt="{relcourse.name}" title="{relcourse.name}" class="img-responsive" />
+				</f:then>
+                
+       
+        <f:else>
+         <f:if condition="{relcourse.imgArray2.0}">
+        <f:then>
+            <f:image src="uploads/tx_course/{relcourse.imgArray2.0}" width="427c" height="350c"  alt="{relcourse.name}" title="{relcourse.name}" class="img-responsive" />
+        </f:then>
+        <f:else>
+        	<f:image src="uploads/tx_course/{settings.images}" width="427c" height="350c"  alt="{relcourse.name}" title="{relcourse.name}" class="img-responsive" />
+        </f:else>
+        </f:if>
+        
+        	
+        </f:else>
+            </f:if>
+            <div class="gallery-hover">
+                <h3><f:format.crop maxCharacters="30"> {relcourse.name}</f:format.crop></h3>
+               
+               <f:format.html> <f:format.crop maxCharacters="70" > {relcourse.shorttext}</f:format.crop> </f:format.html>
+
+                <f:link.action pageUid="{settings.DetailPage}" controller="Course" class="btn btn-default" action="show" arguments="{course : relcourse.uid}" noCacheHash="1">mehr</f:link.action>
+            </div>
+             </div>
+        </div>
+    </f:for>
+</div>

@@ -1,0 +1,91 @@
+
+plugin.tx_companymanagement {
+	view {
+		templateRootPath = {$plugin.tx_companymanagement.view.templateRootPath}
+		partialRootPath = {$plugin.tx_companymanagement.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_companymanagement.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_companymanagement.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_companymanagement._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-company-management table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-company-management table th {
+		font-weight:bold;
+	}
+
+	.tx-company-management table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+ # Module configuration
+module.tx_companymanagement {
+	persistence {
+		storagePid = {$module.tx_companymanagement.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_companymanagement.view.templateRootPath}
+		partialRootPath = {$module.tx_companymanagement.view.partialRootPath}
+		layoutRootPath = {$module.tx_companymanagement.view.layoutRootPath}
+	}
+}
+
+page.footerData.11 = TEXT
+page.footerData.11.value (
+	<script type="text/javascript" src="typo3conf/ext/company_management/Resources/Public/Js/pagination.js"></script>
+	<script type="text/javascript" src="typo3conf/ext/company_management/Resources/Public/Js/common.js"></script>
+)
+
+
+
+# AJAX Page type used for Employers and Job search
+tmp.ajaxConf = PAGE
+tmp.ajaxConf {
+    typeNum = 1249058000
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+    }
+}
+ 
+
+ajax_fullPage < tmp.ajaxConf
+ajax_fullPage {
+    typeNum = 1234567890
+    10 < styles.content.get
+}
+
+plugin.tx_companymanagement.mvc.callDefaultActionIfActionCantBeResolved = 1 
+
+

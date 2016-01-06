@@ -1,0 +1,58 @@
+
+.tx-energy-consuption-calculation .main-table-section, .tx-energy-consuption-calculation #chart_div { max-width: 767px; margin:0 auto; width: 100%; float: left;}
+.tx-energy-consuption-calculation .main-table-section { margin-top: 50px;}
+/*.tx-energy-consuption-calculation .left-table-section { margin-right: 25px; float: left; max-width: 715px; width: 100%; position: relative; }*/
+.tx-energy-consuption-calculation .left-table-section {  float: left;width: 100%; }
+.tx-energy-consuption-calculation .right-tab-section { margin-left: 0px; float: right; max-width: 192px; width: 100%;}
+.tx-energy-consuption-calculation .right-tab-section ul { list-style: none; margin-top: 0px;}
+.tx-energy-consuption-calculation .right-tab-section ul li { display: table; width: 100%; text-align: center; margin-bottom: 10px; transition:all ease-in-out 0.4s 0s; -webkit-transition:all ease-in-out 0.4s 0s; -o-transition:all ease-in-out 0.4s 0s;} 
+.tx-energy-consuption-calculation .right-tab-section ul li a { text-align: center; display: table-cell; vertical-align: middle; color: #fff !important; text-decoration: none; padding:15px 0px; background: #4d5256; transition:all ease-in-out 0.4s 0s; -webkit-transition:all ease-in-out 0.4s 0s; -o-transition:all ease-in-out 0.4s 0s;}
+.tx-energy-consuption-calculation .right-tab-section ul li a:hover, .right-tab-section ul li a.activeTab { background: #f8ba03; color: #fff !important;}
+.tx-energy-consuption-calculation .table-top-head { margin-bottom: 50px; float: left; width: 100%;}
+.tx-energy-consuption-calculation .lable-tag { width: 30%; float: left; font-weight: normal;}
+.tx-energy-consuption-calculation .input-select, .select-style { width: 70%; float: left;}
+.tx-energy-consuption-calculation .input-select select, .input-select input { width: 100%; padding: 3px 10px; height: 40px; border-radius: 0px; border:1px solid #bbbbbb; margin-bottom: 10px; line-height: 35px; background: #fff; box-sizing:border-box; -webkit-box-sizing:border-box; -webkit-appearance: none; appearance: none; }
+.tx-energy-consuption-calculation .left-table-section table, .left-table-section tbody, .left-table-section tr, .left-table-section td, .left-table-section th {   border-collapse:collapse; padding: 0px 7px; font-size: 13px; font-weight: normal; border: none;}
+.tx-energy-consuption-calculation .left-table-section th { background: #f8ba03; border-right: 1px solid #fff;}
+.tx-energy-consuption-calculation .left-table-section th br { display: none;}
+.tx-energy-consuption-calculation #estimation tbody tr:nth-child(2n) { background: #95a7b1;}
+.tx-energy-consuption-calculation #estimation tbody tr:nth-child(2n) td { /*border-right: 1px solid #fff;*/ color: #fff; }
+.tx-energy-consuption-calculation .left-table-section td { padding: 10px 3px; border: none; border-right: 1px solid #ffffff;}
+.tx-energy-consuption-calculation .calculation-table tr:nth-child(2n) {background:#fff;}
+
+.tx-energy-consuption-calculation .select-style {overflow: hidden;background: #fff url("images/select-bx.png") no-repeat 98% 48%; box-sizing:border-box; border: 1px solid #bbbbbb; margin-bottom: 10px; height: 44px;}
+.tx-energy-consuption-calculation .select-style select {padding: 5px 8px; padding-right: 25px; overflow: hidden; width: 104%; border:none;   background: transparent;
+    background-image: none;-webkit-appearance: none; margin-bottom: 0px;}
+.tx-energy-consuption-calculation .select-style select:focus {outline: none;}
+.tx-energy-consuption-calculation .calculation-table > table { max-width: 715px; width: 100%;}
+.tx-energy-consuption-calculation .left-table-section #con1 th { font-size: 11px;}
+.tx-energy-consuption-calculation .left-table-section #con1 td input { width: 50px;}
+.tx-energy-consuption-calculation .left-table-section #con1 th select { width: 125px;}
+.tx-energy-consuption-calculation input {font-size: 11px; -webkit-appearance: none; appearance: none; border-radius: 0px;}
+#content {margin: 100px 0 40px !important;}
+.tx-energy-consuption-calculation #chart_div {height: 500px; display: none;}                       
+#chart_div a {display: none !important; }
+.calculation-table { float: left;}
+.calculation-table table#con2 { width: 100%;}
+.calculation-table table#con2 tbody tr:nth-child(2n), .calculation-table table#con1 tbody tr:nth-child(2n) { background: #95a7b1;}
+.calculation-table table#con2 tbody tr:nth-child(2n) td, .calculation-table table#con1 tbody tr:nth-child(2n) td { color: #fff;}
+
+@media only screen and (max-width: 990px){
+    .tx-energy-consuption-calculation .main-table-section, .tx-energy-consuption-calculation #chart_div { overflow-x: auto; overflow-y: hidden; max-width: 548px; padding-bottom: 15px; }
+}
+@media only screen and (max-width: 768px){
+    #content { margin: 0px !important;}
+    .tx-energy-consuption-calculation .main-table-section, .tx-energy-consuption-calculation .right-tab-section, .tx-energy-consuption-calculation #chart_div { max-width: 100%; margin-bottom: 25px;}
+    .tx-energy-consuption-calculation .main-table-section { margin-top: 10px;}
+    .tx-energy-consuption-calculation .right-tab-section { margin-bottom: 0px;}
+    .tx-energy-consuption-calculation .right-tab-section ul { padding-left: 0px; width: 100%;}
+    .tx-energy-consuption-calculation .right-tab-section ul li a { font-size: 16px !important;}
+    .tx-energy-consuption-calculation .calculation-table > table { max-width: 100%;}
+    .tx-energy-consuption-calculation .left-table-section td nobr { width: 100%; display: block;}
+}
+
+
+@media only screen and (max-width: 570px){
+    .tx-energy-consuption-calculation .lable-tag, .tx-energy-consuption-calculation .input-select, .select-style { width: 100%; margin-bottom: 5px;}
+    .tx-energy-consuption-calculation .left-table-section #con1 td input { width: 30px;} 
+}

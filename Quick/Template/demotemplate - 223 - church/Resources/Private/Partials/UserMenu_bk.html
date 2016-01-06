@@ -1,0 +1,18 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="UserMenu">
+
+
+		<v:page.menu class="user-links list-inline pull-right" pageUid="{v:variable.typoscript(path: 'lib.menu.user.pageUid')}"></v:page.menu>
+		
+		<!-----Chnaged working path ------->
+		<v:page.menu class="user-links list-inline nav navbar-nav" pageUid="{v:variable.typoscript(path: 'lib.menu.user.pageUid')}"></v:page.menu>
+		<!-----Chnaged working path ------->
+
+	</f:section>
+
+</div>

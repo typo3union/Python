@@ -1,0 +1,45 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		<flux:form id="aboutus" label="Aboutus Content" description="Aboutus Content Element" icon="" options="{Fluidcontent: {sorting: 115},group: 'Custom elements'}">
+			<flux:field.input name="title" label="Title" />
+			<flux:field.text name="content" label="Content" enableRichText="1" ></flux:field.text>
+			<flux:field.input name="text1" label="Text - 1" />
+			<flux:field.input name="text2" label="Text - 2" />
+			<flux:field.file name="image" uploadFolder="uploads/pics/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>				
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<div  class="aboutus" >
+			<div class="row">
+			  <div class="about-title col-lg-12 about-title">
+				<h3 class="title">{title}</h3>
+			  </div>
+			  <div class="col-lg-8 col-md-8 col-sm-8 pblack">
+				<f:format.raw>{content}</f:format.raw>
+				
+				<cite class="about-name">{text1}<span>{text2}</span></cite> 
+				
+				</div>
+			<f:if condition="{image} != '' " >
+			<div class="col-lg-4 col-md-4 col-sm-4 about-pic">
+				<f:image src="uploads/pics/{image}" width="241" height="161" alt="" />
+			</div>
+			</f:if>
+			</div>
+		  </div>
+  
+		
+	</f:section>
+	
+</div>

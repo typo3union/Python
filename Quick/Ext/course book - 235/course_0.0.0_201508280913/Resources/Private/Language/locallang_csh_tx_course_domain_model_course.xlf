@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-23T14:08:56Z" product-name="course">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="organiser.description">
+				<source>organiser</source>
+			</trans-unit>
+			<trans-unit id="shorttext.description">
+				<source>shorttext</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="discounts.description">
+				<source>discounts</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>price</source>
+			</trans-unit>
+			<trans-unit id="lastminprice.description">
+				<source>lastminprice</source>
+			</trans-unit>
+			<trans-unit id="actlastmin.description">
+				<source>actlastmin</source>
+			</trans-unit>
+			<trans-unit id="links.description">
+				<source>links</source>
+			</trans-unit>
+			<trans-unit id="images.description">
+				<source>images</source>
+			</trans-unit>
+			<trans-unit id="bannerimages.description">
+				<source>bannerimages</source>
+			</trans-unit>
+			<trans-unit id="downloads.description">
+				<source>downloads</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>location</source>
+			</trans-unit>
+			<trans-unit id="cat.description">
+				<source>cat</source>
+			</trans-unit>
+			<trans-unit id="dateduration.description">
+				<source>dateduration</source>
+			</trans-unit>
+			<trans-unit id="realtedcourse.description">
+				<source>realtedcourse</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

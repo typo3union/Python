@@ -1,0 +1,58 @@
+
+plugin.tx_jsevent {
+	view {
+		templateRootPath = {$plugin.tx_jsevent.view.templateRootPath}
+		partialRootPath = {$plugin.tx_jsevent.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_jsevent.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_jsevent.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_jsevent._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-js-event table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-js-event table th {
+		font-weight:bold;
+	}
+
+	.tx-js-event table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+plugin.tx_jsevent{
+	settings{
+		configuration			= 1
+	}
+}
+
+config.tx_jsevent.features.skipDefaultArguments = 1
+plugin.tx_jsevent.features.skipDefaultArguments = 1

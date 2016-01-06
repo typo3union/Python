@@ -1,0 +1,15 @@
+
+plugin.tx_candle {
+	view {
+		# cat=plugin.tx_candle/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:candle/Resources/Private/Templates/
+		# cat=plugin.tx_candle/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:candle/Resources/Private/Partials/
+		# cat=plugin.tx_candle/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:candle/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_candle//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

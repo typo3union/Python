@@ -1,0 +1,56 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="box" label="International Box + Newsletter (All)" description="International Box + Newsletter Element for Allpages" icon="" options="{Fluidcontent: {sorting: 103},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:field.input name="title" label="Title" />
+        <flux:field.text name="content" label="Content" />
+        <flux:field.input name="link" label="Link">
+                            <flux:wizard.link />
+                        </flux:field.input>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  
+  <f:section name="Main">
+      <div class="news-sec height clearfix">
+        <div class="news-row  clearfix">
+          <div class="inter-news">
+            <f:if condition="{link}">  
+                <f:then>
+                <f:link.page pageUid="{link}"><div class="small-title pull-left clearfix"><i class="fa fa-angle-double-right"></i>{title}</div></f:link.page>
+                </f:then>
+                <f:else>
+                    <div class="small-title pull-left clearfix"><i class="fa fa-angle-double-right"></i>{title}</div>
+                </f:else>
+            </f:if>
+            <br>
+            <p>
+              <f:format.raw>{content}</f:format.raw>
+            </p>
+          </div>
+        </div>
+        <f:cObject typoscriptObjectPath="lib.newsletter" />
+      </div>
+  </f:section>
+  
+  <f:section name="Preview">
+      <div class="news-sec clearfix">
+        <div class="news-row  clearfix">
+          <div class="inter-news">
+            <p><b>{title}</b></p>
+            <p>
+              <f:format.raw>{content}</f:format.raw>
+            </p>
+          </div>
+        </div>
+      </div>
+  </f:section>
+  
+</div>

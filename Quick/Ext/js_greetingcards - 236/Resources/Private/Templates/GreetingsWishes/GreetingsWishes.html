@@ -1,0 +1,13 @@
+<f:layout name='Default'/>
+<f:section name='main'>
+	<f:if condition="{template}==1">
+		<f:then>
+        	<div class="formLoading"></div>
+	        <f:render partial="Success/Success" arguments="{success:success}" />
+			<f:render partial="Template/Template" arguments="{greeting:greeting, step:step}" />
+		</f:then>
+		<f:else>
+            <f:render partial="Error/Template" arguments="{errorMessage:template}" />
+		</f:else>
+	</f:if>
+</f:section>

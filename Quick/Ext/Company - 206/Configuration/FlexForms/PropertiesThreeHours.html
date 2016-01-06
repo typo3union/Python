@@ -1,0 +1,79 @@
+{namespace cs=CS\AldianaWeatherWeb\ViewHelpers}
+                     
+                        <!-- <h5>Vorhersage in Drei-Stunden-Schritten</h5> -->
+                                <div class="weather-container">
+                                    <div class="row weather-row weather-three-hour-forecast">
+                                        <div class="col-sm-6 debug">
+                                            <div class="row weather-row">
+                                                <div class="col-xs-3 day">
+                                                    <div>
+                                                        <span class="h5">{forecastDatas.0.time1}:00</span>
+                                                        <span class="temperature">{forecastDatas.0.temperature1}&deg;C</span>
+                                                        <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId1)}">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId1)}</span>
+                                                        <span class="description">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId1)}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-3 day">
+                                                    <div>
+                                                        <span class="h5">{forecastDatas.0.time2}:00</span>
+                                                        <span class="temperature">{forecastDatas.0.temperature2}&deg;C</span>
+                                                        <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId2)}">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId2)}</span>
+                                                        <span class="description">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId2)}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-3 day">
+                                                    <div>
+                                                        <span class="h5">{forecastDatas.0.time3}:00</span>
+                                                        <span class="temperature">{forecastDatas.0.temperature3}&deg;C</span>
+                                                        <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId3)}">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId3)}</span>
+                                                        <span class="description">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId3)}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-3 day">
+                                                    <div>
+                                                        <span class="h5">{forecastDatas.0.time4}:00</span>
+                                                        <span class="temperature">{forecastDatas.0.temperature4}&deg;C</span>
+                                                        <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId4)}">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId4)}</span>
+                                                        <span class="description">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId4)}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 debug">
+                                            <div class="row weather-row">
+                                                <div class="col-xs-3 day">
+                                                    <div>
+                                                        <span class="h5">{forecastDatas.0.time5}:00</span>
+                                                        <span class="temperature">{forecastDatas.0.temperature5}&deg;C</span>
+                                                        <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId5)}">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId5)}</span>
+                                                        <span class="description">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId5)}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-3 day">
+                                                    <div>
+                                                        <span class="h5">{forecastDatas.0.time6}:00</span>
+                                                        <span class="temperature">{forecastDatas.0.temperature6}&deg;C</span>
+                                                        <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId6)}">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId6)}</span>
+                                                        <span class="description">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId6)}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-3 day">
+                                                    <div>
+                                                        <span class="h5">{forecastDatas.0.time7}:00</span>
+                                                        <span class="temperature">{forecastDatas.0.temperature7}&deg;C</span>
+                                                        <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId7)}">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId7)}</span>
+                                                        <span class="description">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId7)}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-3 day">
+                                                    <div>
+                                                        <span class="h5">{forecastDatas.0.time8}:00</span>
+                                                        <span class="temperature">{forecastDatas.0.temperature8}&deg;C</span>
+                                                        <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId8)}">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId8)}</span>
+                                                        <span class="description">{cs:variable(obj: settings.weatherClassnames, prop: forecastDatas.0.weatherId8)}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>

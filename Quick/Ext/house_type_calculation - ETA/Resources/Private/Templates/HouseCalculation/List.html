@@ -1,0 +1,102 @@
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+<div class="main-table-section">
+	<div class="left-table-section">
+	<div class="first-table">
+		<table style="text-align: left;" id="house_cal" border="1" cellpadding="2" cellspacing="2">
+	    <tr>	        
+	        <td colspan="5"><f:translate key="tx_housetypecalculation_domain_model_housecalculation.back_15" /></td>
+	    </tr>
+	    <tr>
+	        <th><f:translate key="tx_housetypecalculation_domain_model_housecalculation.heizte" /></th>
+	        <td><input maxlength="7" name="oilNeeded" value="" id="oilNeeded" onchange="calculateHouse()" type="textfield"></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.liter" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.oil_per_year" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.image_oil" /></td>
+	    </tr>
+	    <tr>
+	        <th><f:translate key="tx_housetypecalculation_domain_model_housecalculation.image_oil" /></th>
+	        <td></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.euro" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.per_year" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.image_euro" /></td>
+	    </tr>
+	    <tr>
+	        <th><f:translate key="tx_housetypecalculation_domain_model_housecalculation.compare_with_pallets" /></th>
+	        <td></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.euro" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.per_year" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.image_oil" /></td>
+	    </tr>
+
+	    <tr>
+	        <th><f:translate key="tx_housetypecalculation_domain_model_housecalculation.possibly_appealing" /></th>
+	        <td></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.euro" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.per_year" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.image_car_family" /></td>
+	    </tr>
+	    <tr>
+	        <th><f:translate key="tx_housetypecalculation_domain_model_housecalculation.possibly_appealing" /></th>
+	        <td></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.euro" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.per_year" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.image_car_family" /></td>
+	    </tr>
+	    <tr>
+	        <th><f:translate key="tx_housetypecalculation_domain_model_housecalculation.possibly_appealing" /></th>
+	        <td></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.euro" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.per_year" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.image_car_family" /></td>
+	    </tr>
+	    <tr>
+	        <th><f:translate key="tx_housetypecalculation_domain_model_housecalculation.possibly_appealing" /></th>
+	        <td></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.euro" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.per_year" /></td>
+	        <td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.image_oil" /></td>
+	    </tr>	    
+		</table>
+	</div>
+<div class="second-table">
+<table id="btm_cal">
+	<tr>
+		<td colspan="4"><p><f:translate key="tx_housetypecalculation_domain_model_housecalculation.comparison_title" /></p></td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.average_oil_price" /></td>
+		<td><span id="avgPriceOil">{settings.averageOilPrice}</span></td>
+		<td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.cent" /></td>
+		<td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.average_15_year_price" /></td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.average_price_pellets" /></td>
+		<td> <span id="avgPricePellets">{settings.averagePelletsPrice}</span></td>
+		<td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.cent" /></td>
+		<td><f:translate key="tx_housetypecalculation_domain_model_housecalculation.fuel_price" /></td>
+	</tr>
+</table>
+</div>
+
+<f:if condition="{data}">
+	<div class="display_data">
+		 <f:for each="{data}" as="content">
+			<div class="main_content">
+				<f:format.html>{content.filelabel}</f:format.html>				
+				<f:if condition="{content.image}">
+					<f:image src="uploads/tx_ext/{content.image}" alt="{content.image}"/>
+				</f:if>				
+			</div>
+		 </f:for>
+	</div>
+</f:if>
+</f:section>

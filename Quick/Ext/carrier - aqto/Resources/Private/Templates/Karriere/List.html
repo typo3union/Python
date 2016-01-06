@@ -1,0 +1,84 @@
+<f:layout name="Default" />
+<f:section name="main">
+
+<f:flashMessages renderMode="div" />
+
+<f:for each="{karriere_cat}" as="karriereCat">
+	
+	<f:if condition="{settings.category} == {karriereCat.uid}">
+		<h3 class="pad_bottom_10 space_20">{karriereCat.name}</h3>
+		<f:format.html>{settings.categoryText}</f:format.html>
+	</f:if>
+</f:for>	
+	<f:for each="{karrieres}" as="karriere"  iteration="iterate">
+		<f:if condition="{settings.category} == {karriere.cat}">
+			<f:if condition="{settings.imagShow} == 1">
+			<f:then>
+				<div class="productdetail imgShows">
+					<f:if condition="{karriere.preview}">
+						<div class="imgBox">
+						<f:if condition="{karriere.preview.originalResource.originalFile.uid}">
+								<f:image src="{karriere.preview.originalResource.originalFile.uid}" width="90c" height="91c" alt="{karriere.title}"/>
+															 
+						</f:if>
+						</div> 
+					</f:if>
+					<div class="description <f:if condition='{karriere.preview}'> widthSpecify </f:if> ">
+						<h3>
+							<f:if condition="{settings.category} == 3">
+								<f:then>
+									<f:format.crop maxCharacters="60">{karriere.subtitle}</f:format.crop>
+								</f:then>
+								<f:else>
+									<f:format.crop maxCharacters="50">{karriere.title}</f:format.crop>
+								</f:else>
+							</f:if>
+							
+						</h3>
+						<p><f:link.action   pageUid="86" action="show" arguments="{karriere : karriere}" noCacheHash="1" >mehr</f:link.action></p>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="productdetail">
+					<!--<div class="imgBox">
+					<f:if condition="{karriere.preview.originalResource.originalFile.uid}">
+						<f:link.action  pageUid="86" action="show" arguments="{karriere : karriere}" noCacheHash="1" >
+							<f:image src="{karriere.preview.originalResource.originalFile.uid}" width="90c" height="91c" alt="{karriere.title}"/>
+						</f:link.action>								 
+					</f:if>
+					</div> -->
+					<div class="description">
+						<h3>
+							<f:if condition="{settings.category} == 3">
+								<f:then>
+									<f:format.crop maxCharacters="60">{karriere.subtitle}</f:format.crop>
+								</f:then>
+								<f:else>
+									<f:format.crop maxCharacters="50">{karriere.title}</f:format.crop>
+								</f:else>
+							</f:if>
+							
+						</h3>
+						<p><f:link.action   pageUid="86" action="show" arguments="{karriere : karriere}" noCacheHash="1" >mehr</f:link.action></p>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</f:else>
+		</f:if>		
+		</f:if>
+		<!-- 								 
+		<tr>
+			<td><f:link.action action="show" arguments="{karriere : karriere}"> {karriere.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{karriere : karriere}"> {karriere.subtitle}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{karriere : karriere}"> {karriere.preview.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{karriere : karriere}"> {karriere.image.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{karriere : karriere}"> {karriere.files.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{karriere : karriere}"> {karriere.description}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{karriere : karriere}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{karriere : karriere}">Delete</f:link.action></td>
+		</tr> -->
+	</f:for>
+
+</f:section>

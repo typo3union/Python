@@ -1,0 +1,19 @@
+###
+# TEMPLATE: root_extensionConfiguration
+# DESCRIPTION: The EXTENSION CONFIGURATION ROOT template. This template will be called by the MASTER ROOT template. It reads the templates for the extensions. In this template record are only other template records included.
+###
+
+# Include News TypoScript
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluxtemplate/Configuration/TypoScript/Extensions/news.txt">
+
+# Include FE_LOGIN TypoScript
+#<INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluxtemplate/Configuration/TypoScript/Extensions/fe_login.txt">
+
+# Include Indexed Search TypoScript
+# <INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluxtemplate/Configuration/TypoScript/Extensions/tx_indexedsearch.txt">
+
+# Include Powermail TypoScript
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluxtemplate/Configuration/TypoScript/Extensions/powermail.txt">
+
+# Include DIRECT_MAIL TypoScript
+# <INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluxtemplate/Configuration/TypoScript/Extensions/direct_mail.txt">

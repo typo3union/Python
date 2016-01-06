@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-02T07:28:15Z" product-name="karriere">
+		<header/>
+		<body>
+			<trans-unit id="tx_karriere_domain_model_karriere">
+				<source>Karriere</source>
+			</trans-unit>
+			<trans-unit id="tx_karriere_domain_model_karriere.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_karriere_domain_model_karriere.subtitle">
+				<source>Subtitle</source>
+			</trans-unit>
+			<trans-unit id="tx_karriere_domain_model_karriere.preview">
+				<source>Preview</source>
+			</trans-unit>
+			<trans-unit id="tx_karriere_domain_model_karriere.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_karriere_domain_model_karriere.files">
+				<source>Files</source>
+			</trans-unit>
+			<trans-unit id="tx_karriere_domain_model_karriere.description">
+				<source>Description</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

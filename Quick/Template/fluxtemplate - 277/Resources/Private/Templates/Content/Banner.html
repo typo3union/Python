@@ -1,0 +1,39 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form label="Banner" id="Banner_image" description="Banner image" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+
+						<flux:field.file name="Picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>						
+						<flux:field.input name="alt_title" label="Alternative Title" />
+
+			</flux:form.sheet>	
+		</flux:form>
+	</f:section>
+
+<f:section name="Main">
+	<f:if condition="{Picture}">
+		<f:image src="uploads/slider_images/{Picture}" alt="{alt_title}" class="img-responsive"  width="1848" height="502"/>
+	</f:if>
+</f:section>
+	
+	<f:section name="Preview">
+	<h1>Banner</h1>
+	
+	<f:if condition="{Picture}">
+	<f:then>
+		<h3>Banner Image Inserted</h3>
+        <f:image src="uploads/slider_images/{Picture}" alt="{alt_title}" class="img-responsive"  width="800" height="150c"/>
+	</f:then>
+	<f:else>
+	<h3>Please Upload Banner Image</h3>
+	</f:else>
+	</f:if>
+
+	</f:section>
+
+</div>

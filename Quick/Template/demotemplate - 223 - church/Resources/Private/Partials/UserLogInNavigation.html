@@ -1,0 +1,32 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="UserLogInNavigation">
+    <v:page.menu class="user-links list-inline" entryLevel="{v:variable.typoscript(path: 'lib.menu.main.entryLevel')}" pageUid="{v:variable.typoscript(path: 'lib.menu.user.pageUid')}" expandAll="FALSE" useShortcutUid="FALSE" showHiddenInMenu="TRUE">
+      <f:if condition="{menu}">
+        <ul class="nav navbar-nav afterlogin_navigation">
+          <f:for each="{menu}" as="menuPage" iteration="iteration">
+            <li class="{menuPage.class}{f:if(condition: iteration.isFirst, then: 'First')}{f:if(condition: iteration.isLast, then: 'Last')}"> <a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{menuPage.link}" class="{menuPage.class}" > {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)} </a> {f:if(condition: menuPage.hasSubPages, then: '<span data-toggle="dropdown" class="responsive-menu"><span class="caret"></span></span>')} 
+              
+              <!-- Sub menu -->
+              
+              <v:page.menu pageUid="{menuPage.uid}" includeSpacers="false" expandAll="false" showHiddenInMenu="TRUE" useShortcutUid="FALSE" useShortcutData="TRUE" entryLevel="0">
+                <f:if condition="{menu}">
+                  <ul class="dropdown-menu" role="menu">
+                    <f:for each="{menu}" as="subMenuPage" iteration="subIteration">
+                      <li class="{subMenuPage.class}"> <a tabindex="{subIteration.cycle -> v:math.sum(b: 130)}" href="{subMenuPage.link}" class="{subMenuPage.class}"> {f:if(condition: subMenuPage.nav_title, then: subMenuPage.nav_title, else: subMenuPage.title)} </a> </li>
+                    </f:for>
+                  </ul>
+                </f:if>
+              </v:page.menu>
+            </li>
+          </f:for>
+        </ul>
+      </f:if>
+    </v:page.menu>
+  </f:section>
+</div>

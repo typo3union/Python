@@ -1,0 +1,104 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+    <f:section name="Configuration">
+    
+        <flux:form id="Buttons" label="Buttons" description="Buttons" icon="../typo3conf/ext/enzensberg/Resources/Public/images/buttons-icon.png" options="{Fluidcontent: {sorting: 06},group: 'Content Elements'}">
+        
+			<flux:field.select name="backgroundColor" label="Style Class" items="white, dark" default="white" />
+            <flux:field.select name="select" label="Header Type" items="{1:'Header 1',2:'Header 2'}" default="2"></flux:field.select>
+			<flux:field.input name="header" label="Header" />
+        
+			<flux:form.sheet name="options" label="Options">
+          
+				<flux:form.section name="buttons" label="Inner Page Slider">
+					
+                    <flux:form.object name="button" label="Add New Slide">
+          
+                        <flux:field.input name="caption" label="Caption" />
+                        <flux:field.input name="title" label="Link Title" />
+                        
+                        <flux:field.input name="link">
+                            <flux:wizard.link activeTab="page"/>
+                        </flux:field.input>
+                        
+					</flux:form.object>
+                    
+				</flux:form.section>
+                
+            </flux:form.sheet>
+            
+        </flux:form>
+        
+    </f:section>
+  
+	<f:section name="Preview">
+    	<div>
+	        <strong>Theme : {backgroundColor}</strong>
+    		<h4>Buttons</h4>
+            <f:if condition="{header}">
+	            <h3>{header}</h3><br />
+	        </f:if>
+            <f:for each="{buttons}" as="button" iteration="iteration">
+				<div class="col-sm-4" style="width:30%; float:left;">
+					<f:link.page pageUid="{button.button.link}" title="{button.button.title}" class="readmore">{button.button.caption}</f:link.page>
+				</div>
+            </f:for>
+            <br />
+            <div style="clear:both; width:100%; height:5px;">&nbsp;</div>
+        </div>
+  
+	</f:section>
+
+  
+	<f:section name="Main">
+    
+		<f:if condition="{backgroundColor}=='dark'">
+			<f:then>
+				<v:variable.set name="bgColor" value="dark"></v:variable.set>
+			</f:then>
+			<f:else>
+				<v:variable.set name="bgColor" value="white"></v:variable.set>
+			</f:else>
+		</f:if>
+		
+        <section  class="{bgColor}-section clearfix">
+			<div class="container">
+				<div class="row">
+	                <f:if condition="{header}">
+                        <div class="col-lg-12">
+                            <f:if condition="{select}==1">
+                                <h1>{header}</h1>
+                            </f:if>
+                            <f:if condition="{select}==2">
+                                <h2>{header}</h2>
+                            </f:if>
+                        </div>
+                    </f:if>
+					<div class="col-lg-12">
+                        <f:if condition="{buttons}">
+                            <div class="buttonsBlock">
+                                <f:for each="{buttons}" as="button" iteration="iteration">
+                                    <div class="col-sm-4">
+                                        <div class="button">
+                                            <v:link.typolink configuration="{parameter: button.button.link, title: button.button.title, ATagParams: 'class=readmore' }">
+                                                {button.button.caption}
+                                            </v:link.typolink>
+                                        </div>
+                                    </div>
+                                </f:for>
+                            </div>
+                        </f:if>
+					</div>
+				</div>
+			</div>
+		</section>  
+	</f:section>
+</div>

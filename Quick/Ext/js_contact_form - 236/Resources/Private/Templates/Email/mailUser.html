@@ -1,0 +1,37 @@
+<f:layout name='Default'/>
+<f:section name='main'>
+  <div style='font-family: Arial;'>
+    <f:translate key="LLL:EXT:js_contact_form/Resources/Private/Language/locallang.xlf:tx_jscontactform_domain_model_contactform.dear.sir.madam" />
+    {firstname} <br>
+    <br>
+    <f:format.printf arguments="{
+
+			1: '<br>'  
+
+			}">
+      <f:translate key="LLL:EXT:js_contact_form/Resources/Private/Language/locallang.xlf:tx_jscontactform_domain_model_contactform.user.message_before_contact_data" />
+    </f:format.printf>
+    <f:format.printf arguments="{
+
+			1: '<br>'  
+
+			}">
+    </f:format.printf>
+    <br>
+    <br>
+    <strong>
+    <f:translate key="LLL:EXT:js_contact_form/Resources/Private/Language/locallang.xlf:tx_jscontactform_domain_model_contactform.regards" />
+    </strong> <br>
+    <f:format.printf arguments="{
+
+			1: '<br>'  
+
+			}">
+      <f:translate key="LLL:EXT:js_contact_form/Resources/Private/Language/locallang.xlf:tx_jscontactform_domain_model_contactform.regards_name" />
+    </f:format.printf>
+  </div>
+</f:section>
+
+<a href="{logoLink}">
+    <img src="{siteLogo}" alt="Fanchklinik Enzensberg"  />
+</a><br>

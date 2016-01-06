@@ -1,0 +1,63 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	 
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		
+		<flux:form id="teammember" label="Gallery" description="Gallery w/t Link or Lightbox" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+				<flux:form.section name="teamsec" label="Add More">
+					<flux:form.object name="teamobt" label="Add More Gallery">
+					
+						<flux:field.file name="picture" uploadFolder="uploads/tx_gallery/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+						<flux:field.input name="picture_alt" label="Picture Title" />
+						
+						<flux:flexform.field.input name="link" label="Link Element [ Lightbox active if link element is blank ]" >
+							<flux:flexform.field.wizard.link />
+						</flux:flexform.field.input>
+						
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+	
+	<div class="portfolioSection clearfix">
+            	<div class="col-lg-12 my-fad-in">
+					<ul class="fancybox ">
+					<f:for each="{teamsec}" as="teamsecvalue" iteration="iteration">																			
+							<li>
+								<span class="img"><f:image src="uploads/tx_gallery/{teamsecvalue.teamobt.picture}" title="{teamsecvalue.teamobt.picture_alt}" alt="{teamsecvalue.teamobt.picture_alt}" width="190c" height="190c"/></span>
+								<f:if condition="{teamsecvalue.teamobt.link}">
+									<f:then>
+										<f:link.page pageUid="{teamsecvalue.teamobt.link}" class="hiddend">
+											<span class="pop-upimg"><img alt="" src="typo3conf/ext/fluxtemplate/Resources/Public/images/pop-up-img.png"></span>
+											<span class="pop-content">Infos zu unseren <br>Altholzk&uuml;chen</span>
+										</f:link.page>										
+									</f:then>
+									<f:else>
+										<div class="popup-gallery">
+										<a class=" hiddend" href="uploads/tx_gallery/{teamsecvalue.teamobt.picture}" title="{teamsecvalue.teamobt.picture_alt}">
+											<span class="pop-upimg fa fa-expand"></span>
+											<span class="pop-content">Infos zu unseren <br>Altholzk&uuml;chen</span>
+										</a>
+										</div>
+									</f:else>
+								</f:if>								
+							</li>						
+					</f:for>
+					</ul>
+				</div>
+	</div>					
+	</f:section>
+	
+</div>

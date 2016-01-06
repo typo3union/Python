@@ -1,0 +1,74 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="Commonbutton" label="Common Side Button" description="Common Side Button Element" icon="" options="{Fluidcontent: {sorting: 116},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:form.section name="button" label="Common Side Button">
+                    <flux:form.object name="Button" label="Add New Slide">
+                        <flux:field.input name="Text_content" label="Text Content" />
+                        <flux:field.input name="link" label="Link">
+                            <flux:wizard.link />
+                        </flux:field.input>
+                    </flux:form.object>
+                </flux:form.section>
+                <flux:field.input name="number" label="Phone Number" />
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+      
+      <div class="clearfix">
+            <!-- show in responsive only -->
+              <f:if condition="{number}">
+                  <f:then>
+                        <div class="col-md-12 col-sm-12">
+            <div class="numbr-wrap"><span class="fa fa-phone fa-3"></span><span class="ph-no">{number}</span></div>
+              <div class="call2action display clearfix">
+                  </f:then>
+                  <f:else>
+                      
+                      </div> 
+             <f:if condition='{f:count(subject:"{button}")} < 3'>
+                 <div class="call2action-outer clearfix">
+             </f:if>    
+        <div class="call2action clearfix">
+                  </f:else>
+              </f:if>
+            
+                <f:if condition="{button}">
+                    <f:for each="{button}" as="buttons" iteration="iteration">
+                     <f:if condition="{iteration.index}==0">
+                    <f:then><div class="c2a-row{iteration.cycle} clearfix"> <f:link.page pageUid="{buttons.Button.link}" target="_blank" ><div class="c2a-left"></div><div class="c2a-right">{buttons.Button.Text_content}</div></f:link.page></div></f:then>
+                    <f:else><div class="c2a-row{iteration.cycle} clearfix"> <f:link.page pageUid="{buttons.Button.link}"><div class="c2a-left"></div><div class="c2a-right">{buttons.Button.Text_content}</div></f:link.page></div></f:else>
+                        
+                        </f:if>
+                    </f:for>
+                </f:if>                         
+            </div>
+               
+</div>
+    </f:section>
+
+    <f:section name="Preview">
+
+        <div class="col-md-12 col-sm-12">
+            <!-- show in responsive only -->
+            <div class="numbr-wrap"><span class="fa fa-phone fa-3"></span><span class="ph-no">{button.number}</span></div>
+            <div class="call2action display clearfix">
+                <f:if condition="{button}">
+                    <f:for each="{button}" as="buttons" iteration="iteration">
+                         <div class="c2a-row{iteration.cycle} clearfix"> <f:link.page pageUid="{buttons.Button.link}"><div class="c2a-left"></div><div class="c2a-right">{buttons.Button.Text_content}</div></f:link.page></div>
+
+                    </f:for>
+                </f:if>                         
+
+            </div>
+    </f:section>
+
+</div>

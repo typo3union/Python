@@ -1,0 +1,109 @@
+# define default Language Label and Flag
+#mod.SHARED {
+#        defaultLanguageFlag = gb
+#        defaultLanguageLabel = English
+#}
+
+mod.SHARED{
+  defaultLanguageFlag = de
+  defaultLanguageLabel = German
+}
+RTE.default.init {
+	# define a stylesheet
+	content_css = {$filepaths.css}Screen.css
+}
+
+## Frame ###########################################################################################
+TCEFORM.tt_content.section_frame {
+	#removeItems = 1,5,6,10,11,12,20,21
+	addItems.50 = Facebook
+	addItems.60 = HomeDetail
+	addItems.70 = Impressum
+	addItems.80 = Sitemap
+}
+# set in setupTS
+# tt_content.stdWrap.innerWrap.cObject {
+#   50 = TEXT
+#   50 {
+#     value = <div class="box">|</div>
+#   }
+# }
+
+## Headings ########################################################################################
+# Rename Headings
+#TCEFORM.tt_content.header_layout.altLabels.0 = Überschrift (pro Seite eine)
+#TCEFORM.tt_content.header_layout.altLabels.2 = Zwischenüberschrift
+#TCEFORM.tt_content.header_layout.altLabels.3 = Unterüberschrift
+
+# Remove unneded Headings
+TCEFORM.tt_content.header_layout.removeItems = 1,4,5,6
+
+# set default Heading to <h2>
+mod.wizards.newContentElement.wizardItems.common.elements.text.tt_content_defValues.header_layout = 2
+mod.wizards.newContentElement.wizardItems.common.elements.textpic.tt_content_defValues.header_layout = 2
+mod.wizards.newContentElement.wizardItems.common.elements.image.tt_content_defValues.header_layout = 2
+
+## new Content Element wizard ######################################################################
+# use tabs
+mod.wizards.newContentElement.renderMode = tabs
+
+# only show text & textpic
+mod.wizards.newContentElement.wizardItems.common.show = text,textpic,image,header
+
+# Pages will NOT have "(copy)" appended:
+TCEMAIN.table.pages.disablePrependAtCopy = 1
+# Content will NOT have "(copy)" appended:
+TCEMAIN.table.tt_content.disablePrependAtCopy = 1
+
+RTE.default {
+	loadConfig = EXT:tinymce_rte/static/standard.ts
+}
+
+# use zoom enlarge as default for new content elements
+# TCAdefaults.tt_content.image_zoom = 1
+
+RTE.classesAnchor{
+  tdu{
+      name = tdu
+      value = text-decoration: underline;
+  } 
+  Detail{
+      name = detail
+      value = color:#e85145;
+  }
+  glyphicon{
+      name = glyphicon 
+      value = font-size: 13px;
+  }
+  glyphicon-earphone{
+      name = glyphicon-earphone
+      value = font-size: 13px;
+  }
+	
+}
+
+RTE.default{
+  
+  contentCSS = typo3conf/ext/enzensberg/Resources/Public/css/rte.css
+  buttons {
+    textstyle.tags.span.allowedClasses := addToList(tdu,detail,glyphicon,glyphicon-earphone)
+  }
+  proc.allowedClasses := addToList(tdu,detail,glyphicon,glyphicon-earphone)
+}
+
+
+### News Layout ###
+tx_news.templateLayouts {
+        1 = Home latest News
+        2 = Aktuelles
+		3 = Archive
+}
+
+### ADD customize header ###
+TCEFORM.tt_content.header_layout {
+    addItems {
+        10 = News Header
+		11 = Header [ text-center ]
+    }
+}
+

@@ -1,0 +1,302 @@
+/* $Id$ */
+@media screen, projection {
+
+/* @group clearings */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix { 
+	display: block; 
+}
+.clear {
+	clear: both;
+}
+/* @end */
+
+/* @group stage */
+.stageContent img {
+	display: block;
+}
+.stageContent h1 {
+	position: absolute;
+	float: right;
+	top: 33px;
+	right: 53px;
+}
+.stageContent .textBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	min-height: 50px;
+	padding: 14px 0 25px 0;
+	background: transparent url(../images/basic/stage_bg.png) repeat top left;
+}
+.stageContent .textLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 395px;
+    height: 100%;
+    padding: 0;
+    background: transparent url(../images/basic/stage_bg.png) repeat top left;
+}
+.stageContent .textRight {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 395px;
+	height: 100%;
+	padding: 0;
+	background: transparent url(../images/basic/stage_bg.png) repeat top left;
+}
+.stageContent small {
+	display: block;
+}
+.stageContent .textBottom p,
+.stageContent .textBottom small {
+	margin: 0 52px 0 52px;
+}
+.stageContent .textRight h1 {
+	float: none;
+	position: relative;
+	top: 0;
+	right: 0;
+	margin: 110px 52px 0 52px;
+	text-align: left;
+}
+.stageContent .textLeft h1 {
+	float: none;
+	position: relative;
+	top: 0;
+	right: 0;
+	margin: 110px 52px 0 52px;
+	text-align: left;
+}
+.stageContent .textLeft p,
+.stageContent .textLeft small,
+.stageContent .textRight p,
+.stageContent .textRight small {
+	clear: both;
+	margin: 0 52px;
+}
+
+.stageContent .textRight h1 {
+	position: relative;
+	top: 0;
+	right: 0;
+}
+/* @end */
+
+
+/* @group content */
+.content p {
+	margin-bottom: 1.417em;
+	line-height: 1.333em;
+}
+/* @end */
+
+
+/* group button */
+button,
+a.button {
+	display: block;
+	width: 108px;
+	height: 35px;
+	background: transparent url(../images/basic/button_bg_108x33.png) no-repeat 0 2px;
+	padding: 0 20px 0 6px;
+	border: none;
+	line-height: 2.2em;
+	cursor: pointer;
+}
+a.wide,
+button.wide {
+	width: 190px;
+	background: transparent url(../images/basic/button_bg_190x33.png) no-repeat  0 2px;
+	padding: 0 25px 0 6px;
+}
+a.xwide,
+button.xwide {
+	width: 220px;
+	background: transparent url(../images/basic/button_bg_220x33.png) no-repeat  0 2px;
+	padding: 0 25px 0 6px;
+}
+p.has_button {
+    height: 33px;
+    padding: 0px 0px 10px 0px;
+}
+button.alignRight {
+    float: right;
+}
+button.backLink {
+    background-image: url(../images/basic/button_bg_108x33_back.png);
+    padding: 0 6px 0 20px;
+}	
+button.standby {
+	background-image: url(../images/basic/button_bg_108x19_inactive.png);
+}
+tbody.kursList button {
+	width: 108px;
+	height: 21px;
+	background: transparent url(../images/basic/button_bg_108x19.png) no-repeat 0 2px;
+	padding: 0 20px 0 6px;
+	font-size: 1.05em;
+	line-height: 1.5em;
+}
+/* @end */
+
+
+/* @group utilities */
+a.forwardLink {
+    padding-left: 15px;
+    background: transparent url(../images/basic/list_arrow_right.png) no-repeat 0 50%;
+}	
+a.forwardLink:hover {
+    background-image: url(../images/basic/list_arrow_right_red.png);
+}   
+a.topLink {
+	display: block;
+	padding-right: 20px;
+	background: transparent url(../images/basic/arrow_top.png) no-repeat bottom right;
+}
+/* @end */
+
+
+/* @group context column */
+.context {
+	float: right;
+	width: 190px;
+}
+.context ul {
+	background-color: #ebebeb;
+	padding: 10px 10px 15px 10px;
+	margin-bottom: 1.417em;
+}
+.context ul li {
+	margin-left: 16px;
+	list-style: outside url(../images/basic/list_arrow_right.png);
+}
+.context ul li.external_link {	
+	list-style-image: url(../images/basic/list_external_link_red.png);
+}
+.context ul li.section_border {
+    margin-bottom: 0.5em;
+}  
+.context a.button {
+	width: 148px;
+	height: 35px;
+	background: transparent url(../images/basic/button_bg_190x33.png) no-repeat 0 2px;
+	padding: 0 30px 0 12px;
+	line-height: 2.4em;
+}
+/* @end */
+
+
+/*  @group lists */
+ul li.arrow {
+	list-style: inside url(../images/basic/list_arrow_right.png);
+}
+ul li.externalLink {
+	list-style: inside url(../images/basic/list_external_link_red.png);
+}
+ul li.download {
+	list-style: inside url(../images/basic/list_download_red.png);
+}
+/* @end */
+
+
+/* @group kostenbeispiel */
+table#kostenbeispiel, table#kostenbeispiel-sks {
+    width: 400px;
+}
+table#kostenbeispiel thead, table#kostenbeispiel-sks thead {
+    display: none;
+}
+table#kostenbeispiel caption, table#kostenbeispiel-sks caption {
+    margin-bottom: 15px;
+}
+table#kostenbeispiel td.preis, table#kostenbeispiel-sks td.preis {
+    text-align: right;
+}
+table#kostenbeispiel tr.summe td, table#kostenbeispiel-sks tr.summe td {
+    padding-top: 10px;
+}
+/* @end */
+
+/* @group literaturliste */
+div#literaturliste {
+    width: 400px;
+    height: auto;
+    margin: 30px;
+}
+div#literaturliste div {
+    margin-bottom: 1em;
+}	
+div#literaturliste h2 {
+	color: #E21B20;
+	font-size: 1.5em;
+	margin-bottom: 15px;
+}
+div#literaturliste img {
+	float: left;
+}
+div#literaturliste h3 {
+	margin-right: 0px;
+	margin-left: 117px;
+    line-height: 1.5em;
+}
+div#literaturliste p {
+    margin-right: 0px;
+    margin-left: 117px;
+    line-height: 1.5em;
+}   
+/* @end */
+	
+/* @group pruefungstermine */
+div#pruefungstermine {
+    width: 400px;
+    height: auto;
+    margin: 30px;
+}
+div#pruefungstermine h2 {
+    color: #E21B20;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    margin-right: 0px;
+}
+div#pruefungstermine li {
+	line-height: 1.5em;
+}
+div#pruefungstermine p {
+    margin-right: 0px;
+    line-height: 1.5em;
+}
+/* @end */
+
+/* @group forms */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input.text {
+    width: 300px;
+}
+input.checkbox {
+    float: left;
+    margin-right: 10px;
+}
+textarea {
+    width: 300px;
+}
+/* @end */
+
+.noSp {
+  display: none;
+}
+
+}

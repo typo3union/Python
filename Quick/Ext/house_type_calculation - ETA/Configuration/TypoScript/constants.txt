@@ -1,0 +1,15 @@
+
+plugin.tx_housetypecalculation {
+	view {
+		# cat=plugin.tx_housetypecalculation/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:house_type_calculation/Resources/Private/Templates/
+		# cat=plugin.tx_housetypecalculation/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:house_type_calculation/Resources/Private/Partials/
+		# cat=plugin.tx_housetypecalculation/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:house_type_calculation/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_housetypecalculation//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

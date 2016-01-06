@@ -1,0 +1,43 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form label="Two Column Container 5_7" description="Two Column Container for col md 5 and col md 7" wizardTab="Bootstrap" id="col_md_5_7" icon="{v:extension.path.resources(path: 'Icons/icon-pageheader.gif')}" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}" >
+				<flux:field.input name="header1" label="Header"/>
+				<flux:field.input name="header2" label="Theme Header"/>				
+				<flux:grid>
+					<flux:grid.row>
+							<flux:grid.column style="width: 50%" name="column1" label="50%">
+								
+							</flux:grid.column>
+							<flux:grid.column style="width: 50%" name="column2" label="50%" >
+								
+							</flux:grid.column>				
+					</flux:grid.row>				
+				</flux:grid>
+				<flux:field.input name="header3" label="Right Header" />						
+	</flux:form>
+</f:section>
+
+
+<f:section name="Main">
+	<div class="row aboutus">
+	  <div class="container">
+		<div class="section-title col-lg-12">
+		  <h2 class="title">{header1} <span>{header2}</span> </h2>
+		</div>
+		<div class="col-md-5 col-sm-5  col-xs-5 left-img"> 	<flux:content.render render="1" area="column1" />  </div>
+		<div class="col-md-7  about-left-cont"> <span class="about-title-bold">{header3}</span>
+			<flux:content.render render="1" area="column2" />  
+		 <f:link.page pageUid="{redmore}" class="readmore fl"> Read more </f:link.page> </div>
+	  </div>
+	</div>	
+</f:section>
+
+
+
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>

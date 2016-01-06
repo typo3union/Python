@@ -1,0 +1,65 @@
+
+plugin.tx_housetypecalculation {
+	view {
+		templateRootPath = {$plugin.tx_housetypecalculation.view.templateRootPath}
+		partialRootPath = {$plugin.tx_housetypecalculation.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_housetypecalculation.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_housetypecalculation.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_housetypecalculation._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-house-type-calculation table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-house-type-calculation table th {
+		font-weight:bold;
+	}
+
+	.tx-house-type-calculation table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+
+
+page.includeCSS.house_type_calculation  = EXT:house_type_calculation/Resources/Public/Css/house.css
+
+#page.includeJSlibs.jquery = EXT:house_type_calculation/Resources/Public/Js/house_cal.js
+
+page.footerData.1111 = TEXT
+page.footerData.1111.value (
+	<script src="typo3conf/ext/house_type_calculation/Resources/Public/Js/formatting.js" type="text/javascript"></script>
+	<script src="typo3conf/ext/house_type_calculation/Resources/Public/Js/house_cal.js" type="text/javascript"></script>
+)
+
+
+config.tx_housetypecalculation.features.skipDefaultArguments = 1
+plugin.tx_housetypecalculation.features.skipDefaultArguments = 1 

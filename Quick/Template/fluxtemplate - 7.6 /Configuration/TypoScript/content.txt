@@ -1,0 +1,261 @@
+###
+# TEMPLATE: root_blocks
+# DESCRIPTION: The PAGE BLOCKS ROOT template. Lib (Blocks) templates contain TypoScript to generate the building blocks for your website, except menu's. In this template record are only other template records included.
+###
+
+
+# EXT: lib.right_content
+# DESC: TypoScript template which compiles the contents for the right column on the pages
+
+# Setup each colPos blocks.
+lib.content0 < styles.content.get
+lib.content0.select.where = colPos = 0
+lib.content1 < styles.content.get
+lib.content1.select.where = colPos = 1
+lib.content2 < styles.content.get
+lib.content2.select.where = colPos = 2
+lib.content3 < styles.content.get
+lib.content3.select.where = colPos = 3
+lib.content4 < styles.content.get
+lib.content4.select.where = colPos = 4
+lib.content5 < styles.content.get
+lib.content5.select.where = colPos = 5
+
+
+# Main Logo
+lib.Logo= TEXT
+lib.Logo.value = Horizons
+
+# Copyright content
+lib.copyRightText = TEXT
+lib.copyRightText.data = date:U
+lib.copyRightText.strftime = %Y
+lib.copyRightText.wrap=  &copy; Fartek Lebensmittelvertriebsgmbh &nbsp;
+
+# Main Logo
+lib.mainLogo = TEXT
+lib.mainLogo.value = {$config.mainLogo}
+
+
+# Footer contact
+lib.footerKontakt = CONTENT
+lib.footerKontakt{
+	table = tt_content
+	select.pidInList = 4
+	select.uidInList = 6
+}
+
+lib.headerlogo = COA
+lib.headerlogo {
+  10 = IMAGE
+  10 {
+      file {
+        import =  uploads/media/
+        import.data = levelmedia:-1, slide
+        import.listNum = 0
+        treatIdAsReference = 1
+      }
+      titleText.data = page:subtitle
+      altText.data = page:subtitle
+      stdWrap.typolink.parameter.data = leveluid:0
+  }
+}
+
+#Footer FCE
+lib.footerfce = RECORDS
+lib.footerfce  {
+    tables = tt_content
+    source = 12
+}
+
+
+# ContactForm End
+
+### Subpages current page title
+lib.currentPage = TEXT
+lib.currentPage.data = page : title
+
+### Breadcrumb
+
+lib.breadcrumb = COA
+lib.breadcrumb{
+10 = COA
+10{
+10 = HMENU
+#10.excludeUidList = 2,7
+10 {  
+  special = rootline
+  special.range = 0|-1
+  1 = TMENU
+  1.noBlur = 1
+  1.target = _self
+  1.NO {
+      stdWrap.field = nav_title // title
+      ATagTitle.field = nav_title // title
+      ATagParams =  class=""
+      linkWrap = | |*| &nbsp;&raquo;&nbsp;<span>|</span>
+	  }
+ # ACT = 1
+ # ACT{
+ #     wrapItemAndSub = <li>|</li>
+ #     ATagTitle.field = 1
+    
+ #     stdWrap.htmlSpecialChars = 1
+ #     ATagParams = 
+ # }
+	1.CUR = 1
+	1.CUR {
+	stdWrap.field = nav_title // title
+	  ATagTitle.field = nav_title // title
+	  linkWrap = | |*| &nbsp;&raquo;&nbsp;<span class="act_bread">|</span>
+	doNotLinkIt = 1
+	}
+ }
+}
+}
+
+
+### Subpage : Banner 
+
+
+lib.banner = COA
+lib.banner {
+   10 = IMAGE
+   10 {
+       file {
+           import =  uploads/media/
+           import.data = levelmedia:-1, slide
+           import.listNum = 0
+           width.field = 1200
+           width.wrap = |m
+           height.field = 178
+           height.wrap = |m
+           treatIdAsReference = 1
+        }
+    }
+}
+
+
+### Menu
+content.menu = CONTENT
+content.menu.table =  tt_content
+content.menu.select.pidInList = 51
+content.menu.select.uidInList = 43
+
+### Footer Content
+content.footer = CONTENT
+content.footer.table =  tt_content
+content.footer.select.pidInList = 5
+content.footer.select.uidInList = 4
+
+### Footer Newsletter
+content.newsletter = CONTENT
+content.newsletter.table =  tt_content
+content.newsletter.select.pidInList = 5
+content.newsletter.select.uidInList = 5
+
+
+### Footer Login Form
+content.loginForm = CONTENT
+content.loginForm.table =  tt_content
+content.loginForm.select.pidInList = 5
+content.loginForm.select.uidInList = 78
+
+### Footer Social Links
+content.social = CONTENT
+content.social.table =  tt_content
+content.social.select.pidInList = 5
+content.social.select.uidInList = 9
+
+### Footer Social Links
+content.about = CONTENT
+content.about.table =  tt_content
+content.about.select.pidInList = 5
+content.about.select.uidInList = 10
+
+### Footer copyright
+content.copyright = CONTENT
+content.copyright.table =  tt_content
+content.copyright.select.pidInList = 5
+content.copyright.select.uidInList = 23
+
+### Sitemap
+content.Sitemap = CONTENT
+content.Sitemap.table =  tt_content
+content.Sitemap.select.pidInList = 5
+content.Sitemap.select.uidInList = 23
+
+
+lib.pagetitle = TEXT 
+lib.pagetitle.data = page : title
+
+
+### Footer Contact 
+
+[globalVar = TSFE:id=35]
+content.testimonialContent = CONTENT
+content.testimonialContent.table =  tt_content
+content.testimonialContent.select.pidInList = 25
+content.testimonialContent.select.uidInList = 4
+[global]
+
+### Footer Contact 
+content.rightTopText = CONTENT
+content.rightTopText.table =  tt_content
+content.rightTopText.select.pidInList = 30
+content.rightTopText.select.uidInList = 8
+
+lib.socialshareprivacybar < plugin.tx_socialshareprivacy_pi1
+
+### Footer Contact 
+content.footerContact = CONTENT
+content.footerContact.table =  tt_content
+content.footerContact.select.pidInList = 19
+content.footerContact.select.uidInList = 8
+
+/*
+lib.footerMapElement = CONTENT
+lib.footerMapElement.table =  tt_content
+lib.footerMapElement.select.pidInList = 15
+lib.footerMapElement.select.uidInList = 2
+
+lib.footerSocialMeadiaElement = CONTENT
+lib.footerSocialMeadiaElement.table =  tt_content
+lib.footerSocialMeadiaElement.select.pidInList = 15
+lib.footerSocialMeadiaElement.select.uidInList = 15
+
+# Static content
+lib.inner_left_sidebar < styles.content.get
+lib.inner_left_sidebar {
+	select.where = colPos=0
+	select.pidInList = 1
+}
+
+# Custom TypoScript DB Query
+lib.innerBanner = CONTENT
+lib.innerBanner {
+    table = tt_content
+    select {
+        #pidInList = 10
+        orderBy = sorting
+		where = colPos = 0
+    }
+    renderObj = COA
+    renderObj {
+		10 = TEXT
+		10 {
+			wrap = <div>|</div>
+			field = bodytext
+			parseFunc < lib.parseFunc_RTE
+			stdWrap.ifNull = 
+		}
+		20 = IMAGE
+		20.file {
+		  import = uploads/media/
+		  import.field = image
+		  import.listNum = 0
+		}
+	}
+    wrap = <div class="row"><div class="col-lg-12" id="topimg">|</div></div>
+}
+*/

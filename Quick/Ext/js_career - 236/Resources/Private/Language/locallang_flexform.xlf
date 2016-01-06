@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-14T16:15:06Z" product-name="js_carrier">
+		<header/>
+		<body>
+						
+			<trans-unit id="flexform.setting.general">
+				<source>General Settings</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.setting.additional">
+				<source>Additional</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.emailConfiguration">
+				<source>Emails Configuration</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.labels">
+				<source>Labels</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.storagePID">
+				<source>Starting Point</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.subjectUser">
+				<source>Subject of email that will be sent to user</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.subjectAdmin">
+				<source>Subject of email that will be sent to Administrator</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.adminName">
+				<source>Admin Name</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.adminEmail">
+				<source>Admin Email</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.senderName">
+				<source>Sender Name</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.senderEmail">
+				<source>Sender Email</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.noreply">
+				<source>noreply Name</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.noreplyEmail">
+				<source>noreply Email</source>
+			</trans-unit>
+		
+			<trans-unit id="flexform.sendMailUser">
+				<source>Send Mail to User</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.sendMailAdmin">
+				<source>Send Mail to Manager</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.limit">
+				<source>Max records displayed</source>
+			</trans-unit>
+						
+			<trans-unit id="flexform.paginate">
+				<source>Show the pagination</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.recordPerPage">
+				<source>Show 'n' record per page</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.listPage">
+				<source>Link for List page</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.appliedJobLink">
+				<source>Link for applied for Job</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.headerInsearchBox">
+				<source>Header text in search area</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.footerInDetailPage">
+				<source>Footer Text in detail page of job</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

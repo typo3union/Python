@@ -1,0 +1,283 @@
+
+<main class="container">
+<div class="row">
+
+	<aside class="col-sm-3">
+		<div class="sidebar-module module clearfix">
+			<div class="gradient"></div>
+			<span class="module-head">Kategorien</span>
+			<ul>
+				<f:for each="{categories}" as="category">
+					<li><f:link.action
+							pageUid="{settings.flexform.main.productlist}"
+							controller="Product" action="list"
+							arguments="{category : category.uid}" noCacheHash="1">{category.name}</f:link.action></li>
+				</f:for>
+			</ul>
+		</div>
+	</aside>
+	<!-- Left bar-->
+
+	<div class="col-sm-9 rt">
+		<div class="content">
+			<div class="product-view clearfix">
+				<div class="col-sm-6">
+					<div class="product-left">
+						<div class="page-header">
+							<h2>{product.0.name}</h2>
+							<div class="top-angebot">
+								<f:if condition="{product.0.featured_product} == 1">
+									<f:image
+										src="typo3conf/ext/product/Resources/Public/images/topangebot.png" />
+
+								</f:if>
+							</div>
+						</div>
+						<div class="product-detail">
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-4 control-label"><f:translate key='tx_product_domain_model_product.cat'/>:</label>
+									<div class="col-sm-8">
+										<label class="">{product.0.category_name}</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label"><f:translate key='tx_product_domain_model_product.desc'/>:</label>
+									<div class="col-sm-8">
+										<f:format.raw>    {product.0.description}</f:format.raw>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label"><f:translate key='tx_product_domain_model_product.machine'/> Nr:</label>
+									<div class="col-sm-8">
+										<label>{product.0.machine_no}</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label"><f:translate key='tx_product_domain_model_product.location'/>:</label>
+									<div class="col-sm-8">
+										<label>{product.0.location}</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label"><f:translate key='tx_product_domain_model_product.year'/>:</label>
+									<div class="col-sm-8">
+										<label>{product.0.year}</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<f:if condition="{satus}">
+  									<h3> <f:format.html>{settings.flexform.order.thxMessage} </f:format.html></h3>
+  									</f:if>
+						<div class="product-form">
+							<div class="panel-group" id="accordion" role="tablist"
+								aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingOne">
+										<h4 class="panel-title">
+											<a role="button" data-toggle="collapse"
+												data-parent="#accordion" href="#collapseOne"
+												aria-expanded="true" aria-controls="collapseOne">
+												Anfrage senden </a>
+										</h4>
+									</div>
+									
+									<div id="collapseOne" class="panel-collapse collapse in"
+										role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+										
+											<p>
+												<f:translate key='tx_product_domain_model_product.content'/>
+											</p>
+											<f:form class="form-horizontal" method="post" action="show"
+												additionalParams="{uriParams}">
+												<div class="form-group form-group-sm">
+													<label for="firma" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.company'/>:</label>
+													<div class="col-md-8">
+														<f:form.textfield type="text" class="form-control"
+															name="firma" />
+
+													</div>
+												</div>
+												<div class="form-group form-group-sm">
+													<label for="Vorname" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.firstname'/>:</label>
+													<div class="col-md-8">
+														<f:form.textfield type="text" class="form-control"
+															name="Vorname" />
+
+													</div>
+												</div>
+												<div class="form-group form-group-sm">
+													<label for="Nachname" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.lastname'/>:</label>
+													<div class="col-md-8">
+														<f:form.textfield type="text" class="form-control"
+															name="Nachname" />
+
+													</div>
+												</div>
+												<div class="form-group form-group-sm">
+													<label for="Adresse" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.address'/>:</label>
+													<div class="col-md-8">
+														<f:form.textfield type="text" class="form-control"
+															name="Adresse" />
+
+													</div>
+												</div>
+												<div class="form-group form-group-sm">
+													<label for="Postleitzahl" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.postal'/>:</label>
+													<div class="col-md-8">
+
+														<f:form.textfield type="text" class="form-control"
+															name="Postleitzahl" />
+													</div>
+												</div>
+												<div class="form-group form-group-sm">
+													<label for="Ort" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.ort'/>:</label>
+													<div class="col-md-8">
+
+														<f:form.textfield type="text" class="form-control"
+															name="Ort" />
+													</div>
+												</div>
+												<div class="form-group form-group-sm">
+													<label for="Land" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.land'/>:</label>
+													<div class="col-md-8">
+														<f:form.textfield type="text" class="form-control"
+															name="Land" />
+
+													</div>
+												</div>
+												
+												<div class="form-group form-group-sm">
+													<label for="Mail" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.email'/>:</label>
+													<div class="col-md-8">
+														<f:form.textfield type="text" class="form-control"
+															name="mail" />
+													</div>
+												</div>
+												<div class="form-group form-group-sm">
+													<label for="Telefon" class="col-md-4 control-label"><f:translate key='tx_product_domain_model_product.telephone'/>:</label>
+													<div class="col-md-8">
+
+														<f:form.textfield type="text" class="form-control"
+															name="Telefon" />
+													</div>
+												</div>
+												<div class="form-group form-group-sm">
+													<div class="col-sm-offset-2 col-sm-10 text-right">
+														<f:form.submit value="<f:translate key='tx_product_domain_model_product.submit'/>"
+															class="btn btn-default btn-sm" name="submit" />
+
+													</div>
+												</div>
+											</f:form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="product-right">
+						<div class="pro-slider">
+
+							<div id="carousel" class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner">
+									<f:if condition="{product}">
+
+										<f:for each="{product.0.first_img}" as="images"
+											iteration="iteration">
+
+											<div
+												class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+												<a data-slide-to="{iteration.index}" href="#gallery"> <f:image
+														src="uploads/tx_product/{images}" width="370" height="277"
+														additionalAttributes="{data-toggle: 'modal',data-target:'#SliderModal'}" />
+												</a>
+											</div>
+
+										</f:for>
+									</f:if>
+								</div>
+								<a class="left carousel-control" href="#carousel" role="button"
+									data-slide="prev"> <span class="icon-prev"></span>
+								</a> <a class="right carousel-control" href="#carousel"
+									role="button" data-slide="next"> <span class="icon-next"></span>
+								</a>
+							</div>
+							<!-- ===== -->
+							<div class="clearfix">
+								<div id="thumbcarousel" class="carousel slide"
+									data-interval="false">
+									<div class="carousel-inner clearfix">
+
+										<f:if condition="{product.0.first_img}">
+											<f:if
+												condition='{f:count(subject:"{product.0.first_img}")} > 0'>
+												<div
+													class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+
+													<f:for each="{product.0.first_img}" as="images"
+														iteration="iteration">
+
+														<f:if condition='{iteration.index} < 4'>
+															<div data-target="#carousel"
+																data-slide-to="{iteration.index}" class="thumb">
+																<f:image src="uploads/tx_product/{images}" width="83c"
+																	height="57c" />
+															</div>
+														</f:if>
+													</f:for>
+												</div>
+											</f:if>
+											<f:if
+												condition='{f:count(subject:"{product.0.first_img}")} > 3 '>
+												<div
+													class="item <f:if condition='{iteration.index} == 4'>active</f:if>">
+													<f:for each="{product.0.first_img}" as="images"
+														iteration="iteration">
+														<f:if condition='{iteration.index} < 4'>
+															<f:then>
+															</f:then>
+															<f:else>
+																<div data-target="#carousel"
+																	data-slide-to="{iteration.index}" class="thumb">
+																	<f:image src="uploads/tx_product/{images}" width="83c"
+																		height="57c" />
+																</div>
+															</f:else>
+														</f:if>
+													</f:for>
+												</div>
+											</f:if>
+										</f:if>
+									</div>
+									<f:if
+										condition='{f:count(subject:"{product.0.first_img}")} > 4'>
+										<a class="left carousel-control" href="#thumbcarousel"
+											role="button" data-slide="prev"> <span
+											class="glyphicon glyphicon-chevron-left"></span>
+										</a>
+										<a class="right carousel-control" href="#thumbcarousel"
+											role="button" data-slide="next"> <span
+											class="glyphicon glyphicon-chevron-right"></span>
+										</a>
+									</f:if>
+								</div>
+							</div>
+
+
+
+							<!-- /clearfix -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
+

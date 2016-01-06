@@ -1,0 +1,31 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		<flux:form id="getthisbox" label="Get This Box Content" description="Get This Box Content Element" icon="" options="{Fluidcontent: {sorting: 111},group: 'Custom elements'}">
+			<flux:field.input name="link" label="Link">
+				<flux:wizard.link />
+			</flux:field.input>
+			<flux:field.input name="linktitle" label="Link Title" />
+			<flux:field.text name="getthiscontent" label="Left Text" enableRichText="1"></flux:field.text>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<div class="botbg">
+			<div class="col-md-10 get-this-content"><f:format.html><f:format.crop maxCharacters="100" append="&nbsp;...">{getthiscontent}</f:format.crop></f:format.html></div>
+			<div class="col-md-2">
+				<f:link.page pageUid="{link}" class="btn btn-third">{linktitle}</f:link.page>
+			</div>
+		</div>
+	</f:section>
+	
+</div>

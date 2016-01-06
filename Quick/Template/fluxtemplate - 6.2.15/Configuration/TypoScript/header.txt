@@ -1,0 +1,64 @@
+# EXT: page.headerData
+
+# DESC: The PAGE HEADERDATA template. All config.headerData contents goes in here. This could be almost everything that belongs in the <head>, but does not have any configuration like page.config, page.includeCSS or page.includeJS or needs special configuration, like dynamic handling.
+
+# <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+# get meta tags by default from the page with the uid 1
+
+#page{
+#  meta {
+    # Schlüsselwörter für eine Webseite definieren
+#    keywords = TEXT
+#    keywords.field = keywords
+    # keywords.field = keywords
+    # Kurze Beschreibung der Webseite
+#    description = TEXT
+#    description.field = description
+    # description.field = description
+    # Copyright
+#    copyright =
+    # Herausgeber
+#    publisher =
+    # Autor
+#    author = 
+    # Inhalt der Seite
+#    page-topic =
+    # Zielpublikum
+#    Audience = All
+    # Sprache der Webseit
+#    Content-language = DE, EN
+    # Seitentyp
+#    Page-type = HTML, CSS
+    # Suchmaschine soll Seite indexieren und Links folgen
+#    Robots = INDEX,FOLLOW
+#  }
+#}
+
+# override meta tags if defined at page level
+page.meta {
+	keywords.override.field = keywords
+	description.override.field = description
+}
+
+# Multilingual - get the meta tags from the language overlay
+[globalVar = GP:L > 0]
+	page.meta.keywords.cObject {
+		tables = pages_language_overlay
+		conf.pages_language_overlay = TEXT
+		conf.pages_language_overlay.field = keywords
+	}
+
+	page.meta.description.cObject {
+		tables = pages_language_overlay
+		conf.pages_language_overlay = TEXT
+		conf.pages_language_overlay.field = description
+	}
+[global]
+

@@ -1,0 +1,53 @@
+<f:layout name='Default'/>
+
+<f:section name='main'>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+</head>
+<body>
+    <div style='font-family: helvetica; color:#004582;'>
+        <div style="font-family: helvetica; transform: rotate(180deg); -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); transform-origin: 50%; -webkit-transform-origin: 50%; -o-transform-origin: 50%; height:480px; ">
+            <br>
+            <div style="font-weight:bold;font-size:21px;height:40px; color:#04679a;">{header}</div>
+            <div style="font-size:21px;height:310px;font-family: helvetica;line-height:34px; color:#04679a;"><f:format.html>{description}</f:format.html></div>
+            <table style="width:100%; font-family: helvetica;font-size:16px;margin-bottom:36px;font-weight:bold; color:#04679a;">
+                <tr>
+                    <td width="50%">
+			<table>
+			<tr>
+				<td class="name-text" style="width:10%;">
+			 	<f:translate key="LLL:EXT:js_greetingcards/Resources/Private/Language/locallang.xlf:tx_jsgreetingcards_domain_model_greetingswishes.mailContent.von" />:
+                        	{name}
+                        	</td>
+			</tr>
+			<tr>
+				<td class="name-text" style="width:10%;">
+                        	<f:translate key="LLL:EXT:js_greetingcards/Resources/Private/Language/locallang.xlf:tx_jsgreetingcards_domain_model_greetingswishes.lbl.step3.regard" />:
+                        	{patient_name}
+				</td>
+			</tr>
+		</table>
+                    </td>
+                    <td width="50%" align="left" style="transform: rotate(180deg); transform-origin: 50%;">
+                        <img width="172" height="55" src="typo3conf/ext/js_greetingcards/Resources/Public/Images/logo.jpg" alt="Kind" style="transform: rotate(180deg); -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); transform-origin: 50%; -webkit-transform-origin: 50%; -o-transform-origin: 50%;">
+                    </td>
+                </tr>
+            </table>
+             <div style="font-family: helvetica;border-top:1px dotted;font-size:11px;height:5px;text-align:left;"><f:translate key="LLL:EXT:js_greetingcards/Resources/Private/Language/locallang.xlf:tx_jsgreetingcards_domain_model_greetingswishes.mailContent.foldheredown" /></div>
+        </div>
+        <div style="text-align:center; display:block; height:460px;"><br><br>
+           
+            
+                    <f:image src="{greeting.image.uid}" treatIdAsReference="1" width="894" height="440" style="margin-bottom:6px;"  />             
+            
+           
+            <div style="font-family: helvetica;border-top:1px dotted;font-size:11px;height:5px;text-align:left;"><f:translate key="LLL:EXT:js_greetingcards/Resources/Private/Language/locallang.xlf:tx_jsgreetingcards_domain_model_greetingswishes.mailContent.foldheredown" /></div>
+        </div>
+    </div>
+
+</body>
+</html>
+</f:section>

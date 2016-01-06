@@ -1,0 +1,150 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.setting.general</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.clinik>
+						<TCEforms>
+							<label>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xml:flexform.categories</label>
+							<config>
+								<type>select</type>
+								<foreign_table>tx_jsclinik_domain_model_clinik</foreign_table>
+								<foreign_table_where> AND (tx_jsclinik_domain_model_clinik.sys_language_uid = 0 OR tx_jsclinik_domain_model_clinik.l10n_parent = 0) ORDER BY tx_jsclinik_domain_model_clinik.title</foreign_table_where>
+								<size>1</size>
+								<minitems>0</minitems>
+								<maxitems>1</maxitems>
+							</config>
+						</TCEforms>
+					</settings.clinik>
+					<settings.storagePID>
+						<TCEforms>
+							<label>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.storagePID</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>2</size>
+								<autoSizeMax>30</autoSizeMax>
+								<maxitems>99</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+								<default />
+							</config>
+						</TCEforms>
+					</settings.storagePID>
+				</el>
+			</ROOT>
+		</sDEF>
+		<displayproperties>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.sheetDisplay</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>	
+					<settings.mapWidth>
+						<TCEforms>
+							<label>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.mapWidth</label>
+							<config>
+								<type>input</type>
+								<size>4</size>
+								<max>5</max>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.mapWidth>	
+					<settings.mapHeight>
+						<TCEforms>
+							<label>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.mapHeight</label>
+							<config>
+								<type>input</type>
+								<size>4</size>
+								<max>5</max>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.mapHeight>		
+					
+					<settings.mapType>
+						<TCEforms>
+							<label>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.mapType</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.mapTypeRoadmap</numIndex>
+										<numIndex index="1">ROADMAP</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.mapTypeSatellite</numIndex>
+										<numIndex index="1">SATELLITE</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.mapTypeHybrid</numIndex>
+										<numIndex index="1">HYBRID</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.mapTypeTerrain</numIndex>
+										<numIndex index="1">TERRAIN</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.mapType>
+					<settings.scaleLevel>
+						<TCEforms>
+							<label>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.scaleLevel</label>
+							<config>
+								<type>input</type>
+								<size>3</size>
+								<eval>trim</eval>
+								<max>3</max>
+							</config>
+						</TCEforms>
+					</settings.scaleLevel>										
+					<settings.navigationControl>
+						<TCEforms>
+							<label>LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.navigationControl</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>									
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.navigationControlDefault</numIndex>
+										<numIndex index="1">DEFAULT</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.navigationControlSmall</numIndex>
+										<numIndex index="1">SMALL</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.navigationControlZoomPan</numIndex>
+										<numIndex index="1">ZOOM_PAN</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:js_clinik/Resources/Private/Language/locallang_flexform.xlf:flexform.navigationControlAndroid</numIndex>
+										<numIndex index="1">ANDROID</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.navigationControl>
+				</el>				
+			</ROOT>
+		</displayproperties>
+	</sheets>
+</T3DataStructure>

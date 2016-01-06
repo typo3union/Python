@@ -1,0 +1,56 @@
+lib.searchBox = COA
+lib.searchBox {
+   stdWrap.prefixComment = 2 | lib.SEARCHBOX
+   10 = TEXT
+   10.typolink.parameter = 1
+   10.typolink.returnLast = url
+   10.wrap = <form onsubmit="return notEmpty()" action="|" method="post" id="indexedsearch" name="searchform">
+  
+   20 = COA
+   20 {
+      10 = TEXT
+      10.data = GP : tx_indexedsearch |sword
+      10.htmlSpecialChars = 1
+      10.wrap = <input  name="tx_indexedsearch[sword]" value="|" id="sword" class="searchinput" type="text" /><input type="submit" id="indexedsearchbutton"  class="searchbutton"  alt="Search" title="Search" value="Search" />
+      
+      20 = COA
+      20 {
+         20 = TEXT
+         20.value = <input type="hidden" name="tx_indexedsearch[sections]" value="0" />
+      }
+   }
+   wrap = |</form>
+}
+
+plugin.tx_indexedsearch {
+	search.rootPidList = 1
+	show.advancedSearchLink = 0
+	
+	templateFile = {$filepaths.extensionsView}IndexedSearch/tx_indexedsearch_pi1_template.html
+
+	_DEFAULT_PI_VARS.type = 1
+	_DEFAULT_PI_VARS.ext = 1
+
+	show {
+		rules = 0
+		clearSearchBox = 0
+	}
+
+	blind {
+		type = 1
+		defOp = 1
+		sections = 1
+		freeIndexUid = 1
+		media = 1
+		order = 1
+		group = 1
+		lang = 1
+		desc = 1
+		results = 1
+		extResume = 1
+	}
+
+	_DEFAULT_PI_VARS.lang = 0
+	_DEFAULT_PI_VARS.results = 10
+	_CSS_DEFAULT_STYLE >
+}

@@ -1,0 +1,196 @@
+lib.Main_menu = COA
+lib.Main_menu {
+    10 = HMENU
+    10.special = directory
+    10.special.value = 1
+    10 {
+        wrap = <ul class="nav navbar-nav">|</ul>
+        #entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+        
+           # target = _top
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li> 
+               # allWrap = <div class="menu_header_no">|</div>
+               
+            }
+            ACT < .NO
+            ACT = 1
+            ACT {
+                 wrapItemAndSub = <li class="active">|</li> 
+                # ATagParams = class="active" 
+                # allWrap = <div class="menu_header_act">|</div>
+            }
+            IFSUB < .NO
+            IFSUB = 1
+            IFSUB {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li class="dropdown">|</li> 
+               # allWrap = <div class="menu_header_no">|</div>
+               # ATagParams = class="dropdown-toggle"  data-toggle="dropdown"
+                
+            }
+            ACTIFSUB < .IFSUB
+            ACTIFSUB = 1
+            ACTIFSUB {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li class="active dropdown">|</li> 
+               # allWrap = <div class="menu_header_no">|</div>
+               # ATagParams = class="dropdown-toggle"  data-toggle="dropdown"
+               # stdWrap.wrap = <b class="caret"></b>
+               
+            }
+        }
+        
+        2 = TMENU
+        2 {
+            noBlur = 1
+            wrap = <span class="toggle-module" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></span><ul class="dropdown-menu" role="menu">|</ul>
+           NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li> 
+               # allWrap = <div class="menu_header_no">|</div>
+               
+            }
+            ACT < .NO
+            ACT = 1
+            ACT {
+                 wrapItemAndSub = <li class="active">|</li> 
+                # ATagParams = class="active" 
+              #  allWrap = <div class="menu_header_act">|</div>
+            }
+        }
+    }
+}
+
+# BREADCRUMB MENU
+menu.breadcrumb = HMENU
+menu.breadcrumb {
+	special = rootline
+	special.range = 1|-1
+	#includeNotInMenu = 0
+	1 = TMENU
+	1 {
+		noBlur = 1
+		wrap = <ol class="breadcrumb"><li><a href="">Home</a>|</li></ol>
+		NO {
+			wrapItemAndSub = <li>|</li>
+		}
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <li class="active">|</li>
+			doNotLinkIt = 1
+		}
+	}
+}
+
+### Footer_menu
+
+lib.Footer_menu = COA
+lib.Footer_menu {
+    10 = HMENU
+	10.special = directory
+	10.special.value = 16
+    10 {
+        wrap = <ul class="list-unstyled">|</ul>
+        #entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+		
+           # target = _top
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li> 
+               # allWrap = <div class="menu_header_no">|</div>
+			   
+            }
+            ACT < .NO
+            ACT = 1
+            ACT {
+		wrapItemAndSub = <li>|</li> 
+		# ATagParams = class="active" 
+              #  allWrap = <div class="menu_header_act">|</div>
+            }
+          
+           
+        }	
+       
+    }
+}
+
+###################################################
+# Menu
+###################################################
+
+lib.menu {
+	homePageUID = {$homePageUID}
+
+	main {
+		navigation = {$topNavigationPageUID}		
+	}	
+	sub {
+		entryLevel = {$navigationTwoEntryLevel}
+	}
+	user {
+		pageUid = {$navigationUserEntryId}
+	}
+	footer {
+		pageUid = {$navigationFooterEntryId}
+		contentFooterUid = {$contentFooterUid}
+	}
+	search {
+		searchPagePID = {$searchPagePID}
+	}
+}
+
+lib.sitemap = COA
+lib.sitemap {
+    10 = HMENU
+    10.special = directory
+    10.special.value = 2
+    10 {
+        entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <div class="sitemap"><ul class="f-nav">|</ul></div>
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li> 
+            }
+            ACT < .NO
+            ACT = 1
+            ACT {
+                 wrapItemAndSub = <li>|</li> 
+                 
+         
+            }
+        }
+         2 = TMENU
+        2 {
+            noBlur = 1
+            wrap = <ul>|</ul>
+            target = _top
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li>
+               
+              
+            }
+            CUR < .NO
+            CUR = 1
+            CUR {
+                wrapItemAndSub = <li>|</li>
+            }
+            ACT < .CUR
+            ACT = 1
+        }
+    }
+}

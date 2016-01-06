@@ -1,0 +1,80 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />  
+  <f:if condition="{properties}">
+  <f:then>
+    <div class="latestoffer">
+     <f:if condition="{settings.mainTitle}">
+      <f:then>
+         <span class="red-title">{settings.mainTitle}</span><div class="clearfix"></div>
+        </f:then>
+        <f:else>
+          <span class="red-title"><f:translate key="tx_property_domain_model_property.list_property" /></span><div class="clearfix"></div>
+        </f:else>
+     </f:if>     
+     <div class="imgblock">  
+    	<f:for each="{properties}" as="property">   
+         <div class="col-md-4 col-sm-6 col-xs-12">
+         	 <div class="block">
+            <f:link.action action="show" arguments="{ uid: '{property.uid}'}" pageUid="{settings.singleView}"  >
+                <f:image src="uploads/tx_property/{property.images.0}" width="346c" height="219c" alt="List Image"/>
+            </f:link.action>
+            <div class="btm-color">
+                <h3><f:format.raw>{property.title}</f:format.raw><f:if condition="{property.subtitle}"><span><f:format.raw>{property.subtitle}</f:format.raw></span></f:if></h3>
+                <div class="deatils">
+                    <f:if condition="{property.floor}">
+                         <span><f:translate key="tx_property_domain_model_property.floor" /> : <f:format.raw>{property.floor}</f:format.raw></span> 
+                    </f:if>
+                    <f:if condition="{property.room}">
+                         <span><f:translate key="tx_property_domain_model_property.room" /> : <f:format.raw>{property.room}</f:format.raw></span> 
+                    </f:if>
+                    <f:if condition="{property.basement}">
+                        <span><f:translate key="tx_property_domain_model_property.basement" /> : <f:format.raw>{property.basement}</f:format.raw></span> 
+                    </f:if>
+                    <f:if condition="{property.balcony}">
+                        <span><f:translate key="tx_property_domain_model_property.balcony" /> : <f:format.raw>{property.balcony}</f:format.raw></span> 
+                    </f:if> 
+                    <f:if condition="{property.parking}">
+                        <span><f:translate key="tx_property_domain_model_property.parking" /> : <f:format.raw>{property.parking}</f:format.raw></span> 
+                    </f:if>
+           		</div>
+                <div class="price"><f:format.raw>{property.price}</f:format.raw></div>
+                <f:link.action action="show" arguments="{ uid: '{property.uid}'}" pageUid="{settings.singleView}" class="btn btn-lg btn-primary"><f:translate key="tx_property_domain_model_property.details" /></f:link.action>
+            </div>
+         </div>
+         </div>
+	    </f:for>             
+      </div>
+      <ul class="pager"></ul>       
+   </div>
+    </f:then>
+     <f:else>
+         <div class="latestoffer">
+             <f:if condition="{settings.mainTitle}">
+               <f:then>
+                 <span class="red-title">{settings.mainTitle}</span><div class="clearfix"></div>
+                </f:then>
+                <f:else>
+                     <span class="red-title"><f:translate key="tx_property_domain_model_property.list_property" /></span><div class="clearfix"></div>
+                </f:else>
+              </f:if>  
+              <div class="imgblock blank_div"> 
+                 <p>Für diese Suche wurde keine Übereinstimmung gefunden.</p>
+                 <br/>
+             </div>
+          </div>
+     </f:else>
+   </f:if>
+   <script type="text/javascript" src="typo3conf/ext/property/Resources/Public/Js/property_pagination.js"></script>
+</f:section>

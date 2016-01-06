@@ -1,0 +1,44 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page" />
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  
+  <f:section name="Header">
+    <nav class="navbar navbar-static-top " role="navigation">
+      <div class="container-wrap clearfix">
+        <div class="lang-menu">
+          <f:cObject typoscriptObjectPath="menu.lang_menu" />
+        </div>
+        <div class="container clearfix">
+          <div class="navbar-brand">
+            <f:link.page pageUid="1" ><img src="{f:cObject(typoscriptObjectPath: 'lib.mainLogo')}"  class="img-responsive" width="185c" height="169c"  alt="Hotel Schwedi Logo" title="Hotel Schwedi"></f:link.page>
+          </div>
+          <button data-target="#main-nav" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <div class="lang-menu flags-wrap">
+                <f:cObject typoscriptObjectPath="menu.lang_menu_flag" />
+            </div>            
+            <f:cObject typoscriptObjectPath="menu.main_menu" />
+            <div class="menu_images"><f:cObject typoscriptObjectPath="menu.main_menu_image" /></div>
+          </div>
+        </div>
+        <div class="top-icon-wrap"> <f:cObject typoscriptObjectPath="lib.menuImage" /></div>
+      </div>
+    </nav>
+  </f:section>
+  
+  <f:section name="Footer">
+    <footer class="clearfix ">
+      <div class="footer-section clearfix ">
+        <div class="container">
+          <div class="pull-left f-btm-logo"> <img src="{f:cObject(typoscriptObjectPath: 'lib.mainFooterLogo')}" class="img-responsive" width="83c" height="70c"  alt="Hotel Schwedal"/> </div>
+          <div class="f-nav pull-right">
+            <f:cObject typoscriptObjectPath="menu.footerMenu" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </f:section>
+  
+</div>

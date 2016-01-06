@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-29T13:34:25Z" product-name="js_career">
+		<header/>
+		<body>
+			<trans-unit id="tx_jscareer_domain_model_clinik">
+				<source>Clinik</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_clinik.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager">
+				<source>Manager</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.designation">
+				<source>Designation</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.voraussetzungen">
+				<source>Voraussetzungen</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_manager.picture">
+				<source>Picture</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant">
+				<source>Applicant</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.resume">
+				<source>Resume</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.contact_date">
+				<source>Contact Date</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.ip">
+				<source>Ip</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_applicant.useragent">
+				<source>Useragent</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job">
+				<source>Job</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.place">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.join_check">
+				<source>Datum</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.join_date">
+				<source>Join Date</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.text_check">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.text">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.ab_sofort">
+				<source>Ab Sofort</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.timing">
+				<source>Timing</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.contract">
+				<source>Contract</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.short_description">
+				<source>Short Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.description_header">
+				<source>Description Header</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.description_part1">
+				<source>Description Part1</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.description_part2">
+				<source>Description Part2</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.pdf">
+				<source>Pdf</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.caetgory">
+				<source>Caetgory</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.contact_person">
+				<source>Contact Person</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.applicant">
+				<source>Applicant</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.ab_sofort_check">
+				<source>Ab Sofort Check</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.timing.I.0">
+				<source>Vollzeit</source>
+			</trans-unit>
+			<trans-unit id="tx_jscareer_domain_model_job.timing.I.1">
+				<source>Teilzeit</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

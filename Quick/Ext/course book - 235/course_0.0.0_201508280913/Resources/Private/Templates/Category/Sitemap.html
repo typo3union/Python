@@ -1,0 +1,26 @@
+<f:layout name="Default" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <ul>
+    <f:for each="{categories}" as="category">
+      <f:if condition="{category.maincategory}">
+        <li>
+          <f:link.page pageUid="{settings.CategoryDetailPage}" additionalParams="{category_id:'{category.uid}'}" noCacheHash="1" > {category.category}</f:link.page>
+          <ul>
+            <f:if condition="{category.subCat}">
+              <f:for each="{category.subCat}" as="subCat">
+                <f:for each="{parentCat}" as="parentCategory">
+                  <f:if condition="{subCat} == {parentCategory.uid}">
+                    <li>
+                      <f:link.page pageUid="{settings.CategoryDetailPage}" additionalParams="{category_id:'{parentCategory.uid}'}" noCacheHash="1" > {parentCategory.category}</f:link.page>
+                    </li>
+                  </f:if>
+                </f:for>
+              </f:for>
+            </f:if>
+          </ul>
+        </li>
+      </f:if>
+    </f:for>
+  </ul>
+</f:section>

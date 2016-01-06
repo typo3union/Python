@@ -1,0 +1,50 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+    <f:layout name="Page" />
+    <f:section name="Configuration">
+        <flux:form id="iner" label="Inner Site" icon="">
+            <flux:grid>
+                <flux:grid.row>
+                    <flux:grid.column colPos="6" name="banner" label="Banner Area"/>
+                </flux:grid.row>
+               <flux:grid.row>
+                    <flux:grid.column colPos="1" name="conetnt" label="Content Area"/>
+                </flux:grid.row>
+            </flux:grid>
+        </flux:form>
+    </f:section>
+
+<f:section name="Content">
+<f:render partial="PageObjects" section="Header" />   
+<main class="container-fluid">
+        <div class="row">
+            <div class="innerbanner">
+                <f:cObject typoscriptObjectPath="lib.banner"/>
+            </div>
+            <div class="clearfix">
+                <div class="container">
+                    <div class="content">
+                        <div class="inr-page-content">
+                                <f:cObject typoscriptObjectPath="lib.content1"/>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="client-logo">
+                <div class="container">
+                    <div class="lets-work">
+                        <div class="lets-work-inner"><f:cObject typoscriptObjectPath="lib.footerSlogan"/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main> 
+<f:render partial="PageObjects" section="Footer" />
+                
+</f:section>
+    
+</div>
+

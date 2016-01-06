@@ -1,0 +1,28 @@
+<f:if condition="{Event.description}!=''">
+    <f:then>
+		<f:link.action action="event" pageUid="{setting.listPage}" controller="Event" arguments="{event:Event.uid}">
+            <div class="date">
+                <f:format.date format="d.">{Event.start_date}</f:format.date>
+                <br/>
+                <f:format.date format="%b">{Event.start_date}</f:format.date>
+            </div>
+            <div class="termine-dis">{Event.title}</div>
+            <div class="termine-time">
+                <f:format.date format="H:i">{Event.start_date}</f:format.date> - <f:format.date format="H:i">{Event.end_date}</f:format.date> <f:translate key='tx_jsevent_domain_model_event.clock' />
+            </div>
+        </f:link.action>
+    </f:then>
+    
+    <f:else>
+        <div class="date">
+            <f:format.date format="d.">{Event.start_date}</f:format.date>
+            <br/>
+            <f:format.date format="%b">{Event.start_date}</f:format.date>
+        </div>
+        <div class="termine-dis">{Event.title}</div>
+        <div class="termine-time">
+            <f:format.date format="H:i">{Event.start_date}</f:format.date> - <f:format.date format="H:i">{Event.end_date}</f:format.date> <f:translate key='tx_jsevent_domain_model_event.clock' />
+        </div>
+    </f:else>
+</f:if>
+

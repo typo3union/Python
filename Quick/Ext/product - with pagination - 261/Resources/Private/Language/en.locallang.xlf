@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file target-language="en" datatype="plaintext" original="messages" date="2015-09-01T04:55:49Z" product-name="product">
+		<header/>
+		<body>
+			<trans-unit id="tx_product_domain_model_product">
+				<target>Product</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.featured_product">
+				<target>Featured Product</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.name">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.images">
+				<target>Images</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.description">
+				<target>Description</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.machine_no">
+				<target>Machine No</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.location">
+				<target>Location</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.year">
+				<target>Year</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.rating">
+				<target>Rating</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.category">
+				<target>Category</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category">
+				<target>Category</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category.name">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="pagination_first">
+				<target>First</target>
+			</trans-unit>
+
+			<trans-unit id="pagination_last">
+				<target>Last</target>
+			</trans-unit>
+
+			<trans-unit id="pagination_previous">
+				<target>Previous</target>
+			</trans-unit>
+
+			<trans-unit id="pagination_next">
+				<target>Next</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.cat">
+				<target>Category</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.desc">
+				<target>Description</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.machine">
+				<target>Number of machine</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.location">
+				<target>Location of machine</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.year">
+				<target>Year of construction</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.company">
+				<target>Company</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.firstname">
+				<target>Surname</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.lastname">
+				<target>First name</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.address">
+				<target>Address</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.postal">
+				<target>Post code</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.ort">
+				<target>City</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.land">
+				<target>Country</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.email">
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.telephone">
+				<target>Phone</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.submit">
+				<target>Send request</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.content">
+				<target>If you are interested in this machine please fill the following form.</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.topproduct">
+				<target>Top offer</target>
+			</trans-unit>
+
+			<trans-unit id="tx_product_domain_model_product.blank_vorname">
+			    <target>First name can not be blank</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.blank_email">
+			    <target>Email address can not be blank</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.valid_email">
+			    <target>Please enter valid email</target>
+			</trans-unit>
+			
+
+		</body>
+	</file>
+</xliff>

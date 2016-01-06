@@ -1,0 +1,99 @@
+ 
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="Contactdetail" label="Contact Detail" description="Contact Detail" icon="" options="{Fluidcontent: {sorting: 107},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+
+                <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                <flux:field.input name="title" label="Main Title" />
+                <flux:field.file name="locationpicture" uploadFolder="uploads/slider_images/" label="Upload Location Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                <flux:field.text name="location" label="Location Text" enableRichText="1" />
+                <flux:field.file name="emailpicture" uploadFolder="uploads/slider_images/" label="Upload Email Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                <flux:field.input name="email" label="Email Text" />
+                <flux:field.file name="numberpicture" uploadFolder="uploads/slider_images/" label="Upload Number Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                <flux:field.input name="number" label="Number Text" /> 
+                <flux:field.file name="timepicture" uploadFolder="uploads/slider_images/" label="Upload Time Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                <flux:field.input name="time" label="Time Text" />
+             
+
+             
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+
+
+        <div class="search two add">
+            <div class="fix-in">
+                <f:image src="uploads/slider_images/{picture}" width="24c" height="24c"/>
+
+            </div>
+        </div>
+        <div class="hidediv">
+            <div class="box box-add">
+                <div class="media-heading">
+                    {title}
+                </div>
+                <div class="hidediv-inner">
+                    <address>
+                         <f:if condition="{locationpicture}">
+                        <div class="media"> 
+                            <div class="media-left">
+                                <span> <f:image src="uploads/slider_images/{locationpicture}"/></span>
+                            </div>
+                            <div class="media-body">
+                                <span><f:format.raw>{location}</f:format.raw></span>
+                            </div>
+                        </div>
+                         </f:if>
+                    </address>
+                    <address>
+                        <f:if condition="{emailpicture}">
+                        <div class="media"> 
+                            <div class="media-left">
+                                <span> <f:image src="uploads/slider_images/{emailpicture}"/></span>
+                            </div>
+                            <div class="media-body">
+                                <span><f:link.email email="{email}">{email}</f:link.email></span>
+                            </div>
+                        </div>
+                        </f:if>
+                    </address>
+                    <address>
+                         <f:if condition="{numberpicture}">
+                        <div class="media"> 
+                            <div class="media-left">
+                                <span> <f:image src="uploads/slider_images/{numberpicture}"/></span>
+                            </div>
+                            <div class="media-body">
+                                <span>{number}</span>
+                            </div>
+                        </div>
+                             </f:if>
+                    </address>
+                    <address>
+                         <f:if condition="{timepicture}">
+                        <div class="media"> 
+                            <div class="media-left">
+                                <span> <f:image src="uploads/slider_images/{timepicture}"/></span>
+                            </div>
+                            <div class="media-body">
+                                <span>{time}</span>
+                            </div>
+                        </div>
+                         </f:if>
+                    </address>
+                </div>
+            </div>
+        </div>
+
+    </f:section>
+</div>
+

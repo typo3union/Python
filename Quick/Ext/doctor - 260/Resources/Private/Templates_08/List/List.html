@@ -1,0 +1,51 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for List</h1>
+
+<f:flashMessages renderMode="div" />
+
+<table  class="tx_arzte" >
+	<tr>
+		<th><f:translate key="tx_arzte_domain_model_list.name" /></th>
+		<th><f:translate key="tx_arzte_domain_model_list.image" /></th>
+		<th><f:translate key="tx_arzte_domain_model_list.short_information" /></th>
+		<th><f:translate key="tx_arzte_domain_model_list.address" /></th>
+		<th><f:translate key="tx_arzte_domain_model_list.phonenumber" /></th>
+		<th><f:translate key="tx_arzte_domain_model_list.logo" /></th>
+		<th><f:translate key="tx_arzte_domain_model_list.headline" /></th>
+		<th><f:translate key="tx_arzte_domain_model_list.detailedinformation" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{lists}" as="list">
+		<tr>
+			<td><f:link.action action="show" arguments="{list : list}"> {list.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{list : list}"> {list.image.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{list : list}"> {list.shortInformation}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{list : list}"> {list.address}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{list : list}"> {list.phonenumber}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{list : list}"> {list.logo.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{list : list}"> {list.headline}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{list : list}"> {list.detailedinformation}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{list : list}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{list : list}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New List</f:link.action>
+</f:section>

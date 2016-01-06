@@ -1,0 +1,343 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace n=Tx_News_ViewHelpers}
+<f:layout name="Default" />
+<f:section name="main">
+  <f:for each="{company.sliderImages}" as="image" iteration="iteration">
+    <f:if condition='{iteration.index} == 0'>
+      <n:metaTag
+			property="og:image"
+			content="{f:uri.image(src:'{image.uid}' treatIdAsReference:1 maxWidth:'400')}"
+			forceAbsoluteUrl="1" />
+    </f:if>
+  </f:for>
+  <div class="row">
+    <div class="col-lg-12 logosub">
+      <div class="col-sm-12 col-md-12 companyImage">
+        <span><f:image src="{company.logo.originalResource.originalFile.uid}"  alt="{company.stateId.name}" width="300c" height="100c" /></span>
+		<h2 class="subhead">{company.name}</h2>
+      </div>
+     
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="col-sm-9 col-md-9">
+      <div class="subsliderSection">
+        <f:if condition='{f:count(subject:"{company.sliderImages}")} > 1'>
+          <f:then>
+            <ul class="bxslider">
+              <f:for each="{company.sliderImages}" as="image">
+                <f:if condition="{image.uid}">
+                  <li>
+                    <f:image src="{image.uid}" alt="{image.originalResorce.alternative}" width='1253c' height="495c" treatIdAsReference="1"/>
+                  </li>
+                </f:if>
+              </f:for>
+            </ul>
+          </f:then>
+          <f:else>
+            <f:for each="{company.sliderImages}" as="image">
+              <f:image src="{image.uid}" alt="{image.originalResorce.alternative}" width='1253c' height="495c" treatIdAsReference="1"/>
+            </f:for>
+          </f:else>
+        </f:if>
+      </div>
+      <div class="socialMedia">
+        <button type="button" class="btn btn-default btn-facebook" onclick="socialsharing_facebook_click();"> <i class="icon-facebook"></i> Share </button>
+        <button type="button" class="btn btn-default btn-twitter" onclick="socialsharing_twitter_click('{company.name} {currentUrl}');"> <i class="icon-twitter"></i> Tweet </button>
+        <button type="button" class="btn btn-default btn-google-plus" onclick="socialsharing_google_click();"> <i class="icon-google-plus"></i> Google+ </button>
+        
+        <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54ec54d546b55294" async="async"></script>
+		<div class="addthis_sharing_toolbox"></div>--> 
+        
+      </div>
+      <div class="innderpage clearfix">
+        <f:if condition="{company.companyProfile}">
+          <h2>
+            <f:translate key="tx_companymanagement_domain_model_company.l_company_profile" />
+          </h2>
+          <div class="pagepoints clearfix" itemprop="description">
+            <f:format.html>{company.companyProfile}</f:format.html>
+          </div>
+        </f:if>
+        <f:if condition="{company.productsAndServices}">
+          <h2>
+            <f:translate key="tx_companymanagement_domain_model_company.l_products_and_services" />
+          </h2>
+          <div class="pagepoints clearfix">
+            <f:format.html>{company.productsAndServices}</f:format.html>
+          </div>
+        </f:if>
+        <f:if condition="{company.chronicle}">
+          <h2>
+            <f:translate key="tx_companymanagement_domain_model_company.l_chronicle" />
+          </h2>
+          <div class="pagepoints clearfix">
+            <f:format.html>{company.chronicle}</f:format.html>
+          </div>
+        </f:if>
+        <f:if condition="{company.award}">
+          <h2>
+            <f:translate key="tx_companymanagement_domain_model_company.l_award" />
+          </h2>
+          <div class="pagepoints clearfix">
+            <f:format.html>{company.award}</f:format.html>
+          </div>
+        </f:if>
+        <f:if condition="{company.gallery}">
+          <div id="gallery-2" class="royalSlider rsUni">
+            <f:for each="{company.gallery}" as="image">
+              <f:if condition="{image.uid}"> <a class="rsImg" data-rsbigimg="{f:uri.image(src: '{image.originalResource.originalFile.uid}')}" href="{f:uri.image(src: '{image.originalResource.originalFile.uid}')}" data-rsw="400" data-rsh="500">
+                <f:image src="{image.uid}"  class="rsTmb" alt="{image.originalResorce.alternative}" width='96c' height="72c" treatIdAsReference="1"/>
+                </a> </f:if>
+            </f:for>
+          </div>
+        </f:if>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-3 news">
+      <div class="newsDetail">
+        <h2>KONTAKT</h2>
+        <div class="company-logo">
+          <f:image src="{company.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{company.stateId.name}"/>
+        </div>
+        <div class="border-Section clearfix">
+          <div class="company-FormSection">
+            <ul>
+              <li>
+                <label>
+                  <f:translate key="tx_companymanagement_domain_model_company.l_address" />
+                </label>
+              </li>
+              <li>
+                <v:format.trim content="{company.address}"></v:format.trim>
+                <br/>
+                <v:format.trim content="{company.zip}"></v:format.trim>
+                <v:format.trim content="{company.city}"></v:format.trim>
+              </li>
+              <f:if condition="{company.contact}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_contact" />
+                  </label>
+                </li>
+                <li>
+                  <v:format.trim content="{company.contact}" characters="NULL"></v:format.trim>
+                </li>
+              </f:if>
+              <f:if condition="{company.telephone}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_telephone" />
+                  </label>
+                </li>
+                <li>
+                  <v:format.trim content="{company.telephone}" characters="NULL"></v:format.trim>
+                </li>
+              </f:if>
+              <f:if condition="{company.fax}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_fax" />
+                  </label>
+                </li>
+                <li>
+                  <v:format.trim content="{company.fax}" characters="NULL"></v:format.trim>
+                </li>
+              </f:if>
+              <f:if condition="{company.email}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_email" />
+                  </label>
+                </li>
+                <li>
+                  <f:link.email email="{company.email}">{company.email}</f:link.email>
+                </li>
+              </f:if>
+              <f:if condition="{company.website}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_internet" />
+                  </label>
+                </li>
+                <li>
+                  <f:link.external uri="{company.website}" target="_blank">
+                    <v:format.trim content="{company.website}"></v:format.trim>
+                  </f:link.external>
+                </li>
+              </f:if>
+              <f:if condition="{company.founded}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_founded" />
+                  </label>
+                </li>
+                <li>
+                  <v:format.trim content="{company.founded}" characters="NULL"></v:format.trim>
+                </li>
+              </f:if>
+              <f:if condition="{company.employee}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_employee" />
+                  </label>
+                </li>
+                <li>
+                  <v:format.trim content="{company.employee}" characters="NULL"></v:format.trim>
+                </li>
+              </f:if>
+              <f:if condition="{company.share}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_export" />
+                  </label>
+                </li>
+                <li>
+                  <v:format.trim content="{company.share}" characters="NULL"></v:format.trim>
+                </li>
+              </f:if>
+              <f:if condition="{company.expertNotice}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_exprt_market" />
+                  </label>
+                </li>
+                <li>
+                  <v:format.trim content="{company.expertNotice}" characters="NULL"></v:format.trim>
+                </li>
+              </f:if>
+              <f:if condition="{company.branch}">
+                <li>
+                  <label>
+                    <f:translate key="tx_companymanagement_domain_model_company.l_branch" />
+                  </label>
+                </li>
+                <li>
+                  <v:format.trim content="{company.branch}" characters="NULL"></v:format.trim>
+                </li>
+              </f:if>
+              <div class="extraField">
+              <f:if condition="{company.content1}">
+                <li>
+                  <label>
+                   <v:format.trim content="{company.title1}" characters="NULL"></v:format.trim>
+                  </label>
+                </li>
+                <li>
+                 <f:format.html>{company.content1}</f:format.html>
+                </li>
+              </f:if>
+              <f:if condition="{company.content2}">
+                <li>
+                  <label>
+                    <v:format.trim content="{company.title2}" characters="NULL"></v:format.trim>
+                  </label>
+                </li>
+                <li>
+                 <f:format.html>{company.content2}</f:format.html>
+                </li>
+              </f:if>
+              <f:if condition="{company.content3}">
+                <li>
+                  <label>
+                    <v:format.trim content="{company.title3}" characters="NULL"></v:format.trim>
+                  </label>
+                </li>
+                <li>
+                  <f:format.html>{company.content3}</f:format.html>
+                </li>
+              </f:if>
+              <f:if condition="{company.content4}">
+                <li>
+                  <label>
+                     <v:format.trim content="{company.title4}" characters="NULL"></v:format.trim>
+                  </label>
+                </li>
+                <li>
+                  <f:format.html>{company.content4}</f:format.html>
+                </li>
+              </f:if>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="newsDetail">
+        <h2>
+          <f:translate key="tx_companymanagement_domain_model_company.l_map" />
+        </h2>
+        <div class="company-logo">
+          <f:image src="{company.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{company.stateId.name}"/>
+        </div>
+        <div class="border-Section contact clearfix noPadding">
+          <div class="map">
+            <iframe src='{baseUrl}{f:uri.action(action:"googlemap",arguments: {street: '{company.address}',city: '{company.city}',plz: '{company.zip}',title: '{company.name}'},controller:"Company",noCache: 1, noCacheHash: 1, absolute:true)}' width="100%" height="431" frameborder="0" style="margin:0;padding:0;display:block;line-height: 0;">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row video-test clearfix">
+    <f:if condition="{company.youtubeVideo}">
+      <f:then>
+        <div class="col-sm-6 col-md-6 video">
+          <div class="gray-strip">
+            <h2>
+              <f:translate key="tx_companymanagement_domain_model_company.l_video" />
+            </h2>
+            <div class="company-logo">
+              <f:image src="{company.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{company.stateId.name}"/>
+            </div>
+            <div class="vedioSection">
+              <div class="youtubeVideo">
+                <v:media.youtube  videoId="{company.youtubeVideo}"  width="685" height="385" ></v:media.youtube>
+              </div>
+            </div>
+          </div>
+        </div>
+      </f:then>
+      <f:else>
+        <f:if condition="{company.video}">
+			<div class="vedioclassmp4" style="display:none">vedioclassmp4</div>
+          <div class="col-sm-6 col-md-6 video">
+            <div class="gray-strip">
+              <h2>
+                <f:translate key="tx_companymanagement_domain_model_company.l_video" />
+              </h2>
+              <div class="company-logo">
+                <f:image src="{company.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{company.stateId.name}"/>
+              </div>
+              <div class="vedioSection">
+                <div class="uploadVideo">
+                  <v:media.video  src="{company.video.originalResource.publicUrl}"  tabindex="123" onclick="NULL" width="685" height="386" autoplay="1" controls="1" loop="0" muted="0" poster="NULL" preload="'auto'"></v:media.video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </f:if>
+      </f:else>
+    </f:if>
+    <f:if condition="{company_statement}">
+      <div class="col-sm-6 col-md-6 onestatment">
+        <div class="gray-strip">
+          <h2>
+            <f:translate key="tx_companymanagement_domain_model_company.l_statement" />
+          </h2>
+          <div class="company-logo">
+            <f:image src="{company.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{company.stateId.name}"/>
+          </div>
+          <div class="vedioSection border-Section">
+            <div class="authorImages"> <span class="aimage">
+              <f:image src="{company_statement.image.originalResource.originalFile.uid}" width="150c" height="150c" alt="{rightStatements.name}"/>
+              </span> <span class="authername">{company_statement.name} <br />
+              {company_statement.designation}</span> </div>
+            <div class="discription">
+              <f:format.html>{company_statement.description} </f:format.html>
+            </div>
+          </div>
+        </div>
+      </div>
+    </f:if>
+  </div>
+</f:section>

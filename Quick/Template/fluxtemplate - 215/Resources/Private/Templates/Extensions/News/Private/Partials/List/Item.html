@@ -1,0 +1,112 @@
+{namespace n=Tx_News_ViewHelpers}<!--
+	=====================
+		Partials/List/Item.html
+-->
+<div class="news-article clearfix articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}">
+<n:excludeDisplayedNews newsItem="{newsItem}"/>
+<!-- header -->
+
+<h4>
+  <n:link newsItem="{newsItem}" settings="{settings}"> {newsItem.title} </n:link>
+</h4>
+<div class="news-wrap clearfix">
+  <f:if condition="{newsItem.falMedia}">
+  <!-- fal media preview element -->
+  <f:then>
+    <div class="news-img-wrap height">
+      <f:if condition="{newsItem.falMediaPreviews}">
+        <f:then>
+          <n:link newsItem="{newsItem}" settings="{settings}">
+            <f:alias map="{mediaElement: newsItem.falMediaPreviews.0}">
+              <f:if condition="{mediaElement.originalResource.type} == 2">
+                <f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+              </f:if>
+              <f:if condition="{mediaElement.originalResource.type} == 4">
+                <f:render partial="Detail/FalMediaVideo" arguments="{mediaElement: mediaElement}"/>
+              </f:if>
+            </f:alias>
+          </n:link>
+        </f:then>
+        <f:else>
+          <f:if condition="{settings.displayDummyIfNoMedia}"> <span class="no-media-element">
+            <n:link newsItem="{newsItem}" settings="{settings}">
+              <f:image src="{settings.list.media.dummyImage}" title="" alt="" />
+            </n:link>
+            </span> </f:if>
+        </f:else>
+      </f:if>
+    </div>
+  </f:then>
+  <f:else>
+  <f:if condition="{newsItem.media}">
+  <!-- media preview element -->
+  <f:then>
+  <div class="news-wrap">
+    <div class="news-img-wrap">
+      <f:if condition="{newsItem.mediaPreviews}">
+        <f:then>
+          <n:link newsItem="{newsItem}" settings="{settings}">
+            <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+              <f:if condition="{mediaElement.type} == 0">
+                <f:image src="uploads/tx_news/{mediaElement.image}" title="{mediaElement.title}" alt="{mediaElement.alt}" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
+              </f:if>
+              <f:if condition="{mediaElement.type} == 1">
+                <f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+              </f:if>
+              <f:if condition="{mediaElement.type} == 2">
+                <f:render partial="Detail/MediaHtml" arguments="{mediaElement: mediaElement}"/>
+              </f:if>
+            </f:alias>
+          </n:link>
+        </f:then>
+        <f:else>
+          <f:if condition="{settings.displayDummyIfNoMedia}"> <span class="no-media-element">
+            <n:link newsItem="{newsItem}" settings="{settings}">
+              <f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
+            </n:link>
+            </span> </f:if>
+        </f:else>
+      </f:if>
+    </div>
+    </f:then>
+    <f:else>
+      <f:if condition="{settings.displayDummyIfNoMedia}">
+        <f:then>
+          <div class="news-img-wrap">
+            <n:link newsItem="{newsItem}" settings="{settings}"> <span class="no-media-element">
+              <f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
+              </span> </n:link>
+          </div>
+        </f:then>
+      </f:if>
+    </f:else>
+    </f:if>
+    </f:else>
+    </f:if>
+    
+    <!-- teas=ser text -->
+    <div class="news-text height">
+    <span class="news-list-date">
+  <f:format.date format="d.m.Y" >{newsItem.datetime}</f:format.date>
+  </span>
+      <f:if condition="{newsItem.teaser}">
+        <f:then> {newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()} </f:then>
+        <f:else> {newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()} </f:else>
+      </f:if>
+      <n:link newsItem="{newsItem}" settings="{settings}" class="more small-title"> <i class="fa fa-angle-double-right"></i>
+        <f:translate key="more-link"/>
+      </n:link>
+    </div>
+  </div>
+  
+  <!-- footer information --> 
+  
+  
+  <f:if condition="{newsItem.firstCategory}"> <span class="news-list-category">{newsItem.firstCategory.title}</span> </f:if>
+  <f:if condition="{newsItem.tags}"> <span class="news-list-tags">
+    <f:for each="{newsItem.tags}" as="tag"> {tag.title} </f:for>
+    </span> </f:if>
+  <f:if condition="{newsItem.author}"> <span class="news-list-author">
+    <f:translate key="author" arguments="{0:newsItem.author}"/>
+    </span> </f:if>
+</div>

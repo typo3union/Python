@@ -1,0 +1,98 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page" />
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+ 
+  <f:section name="Header">
+    <header class="container-fluid" id="main-header">
+      <div class="container">
+        <section class="row">
+          <div class="col-md-12">
+            <nav class="navbar navbar-default">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <f:link.page pageUid="1" class="navbar-brand"><img src="{f:cObject(typoscriptObjectPath: 'lib.mainLogo')}" alt="ES-Plastic" class="img-responsive" /></f:link.page>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <f:cObject typoscriptObjectPath="menu.main_menu" />                
+              </div>
+            </nav>
+          </div>
+        </section>
+      </div>
+    </header>
+  </f:section>
+  
+  <f:section name="Footer">
+    <footer id="main-footer">
+      <div class="container-fluid footer-address">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <f:cObject typoscriptObjectPath="lib.FooterText"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid footer-links">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10">
+              <nav>
+                <f:cObject typoscriptObjectPath="menu.footer_main_menu" />
+              </nav>
+            </div>
+            <div class="col-md-2 text-center"> <a href="#" class="search-link" data-toggle="modal" data-target="#search"><img src="../typo3conf/ext/fluxtemplate/Resources/Public/images/icon-search.png" alt="search"></a>
+              <f:link.page pageUid="19" target="_blank" class="facebook-link"><img src="../typo3conf/ext/fluxtemplate/Resources/Public/images/button-facebook.png" alt="facebook"></f:link.page>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <f:render partial="PageObjects" section="MultiLang" />
+    <f:render partial="PageObjects" section="SearchModel" />
+  </f:section>
+  
+  <f:section name="MultiLang">
+    <div class="multi-lang">
+    <f:cObject typoscriptObjectPath="menu.lang_menu"/> 
+      <ul>
+        <li><a href="javascript:void(0);"><img src="../typo3conf/ext/fluxtemplate/Resources/Public/images/multi-lang-arrow.png" alt=""></a></li>
+      </ul>
+    </div>
+  </f:section>
+  
+   <f:section name="SearchModel">
+   	 <div class="modal fade" id="search" tabindex="-1" role="dialog" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        
+          <div class="modal-body">
+            <button type="button" class="btn btn-default pop-search" data-dismiss="modal">X</button>
+            <div id="custom-search-input">
+              <div class="input-group col-md-12">
+               	 <f:cObject typoscriptObjectPath="lib.search" />
+               </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+   </f:section>
+   
+   <f:section name="Breadcrumbs">   
+       <section class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          <f:cObject typoscriptObjectPath="menu.breadcrumb"/>            
+          </div>
+        </div>
+      </div>
+    </section>
+   </f:section>
+   
+  
+</div>

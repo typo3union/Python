@@ -1,0 +1,54 @@
+{namespace n=Tx_News_ViewHelpers}
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<f:if condition="{news}">
+		<f:then>
+			<div class="news-list-view clearfix">
+				<f:if condition="{settings.hidePagination}">
+					<f:then>
+						<f:for each="{news}" as="newsItem" iteration="iterator">
+							<f:if condition="{settings.templateLayout} == 1">
+								<f:then>
+									<f:render partial="List/HomeLatest" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:then>
+								<f:else>
+									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:else>
+							</f:if>
+						</f:for>
+					</f:then>
+					<f:else>
+						<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}">
+							<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+								<f:if condition="{settings.templateLayout} == 1">
+								<f:then>
+									<f:render partial="List/HomeLatest" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:then>
+								<f:else>
+									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:else>
+							</f:if>
+							</f:for>
+						</n:widget.paginate>
+                                            <f:if condition="{settings.templateLayout} == 2">
+							<p class="text-center clear">
+								<i class="fa fa-chevron-circle-right"></i>&nbsp;
+								<f:link.page pageUid="{settings.backPid}" class="more"><f:translate key="archive-link" /></f:link.page>
+							</p>
+						</f:if>
+					</f:else>
+				</f:if>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="no-news-found">
+				<f:translate key="list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>

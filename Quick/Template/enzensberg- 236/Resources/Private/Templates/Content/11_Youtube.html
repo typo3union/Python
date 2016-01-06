@@ -1,0 +1,54 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+	xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" 
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Configuration">
+		<flux:form label="Youtube Video" id="twocolumn" description="Youtube Video" icon="../typo3conf/ext/enzensberg/Resources/Public/images/youtube-video-icon.png" options="{Fluidcontent: {sorting: 11},group: 'Content Elements'}">
+			<flux:field.input name="youtube" label="Youtube Video ID" />
+			<flux:field.input name="width" default="560" label="Width of video" />
+			<flux:field.input name="height" default="466" label="Height of video" />
+			<flux:field.file name="posterImage" uploadFolder="uploads/tx_videos/" label="Upload posterImage : Upload image with size : 1920*466" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<h4>Youtube Video</h4>
+		<f:if condition="{youtube} !='' ">
+			<br /><iframe width="150" height="150" src="https://www.youtube.com/embed/{youtube}" frameborder="0" allowfullscreen></iframe>
+		</f:if>
+	</f:section>
+
+	<f:section name="Main">
+    
+		<f:if condition="{youtube} !='' ">
+			<section class="vedio-section">
+				<div class="videoImage" id="play-video" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'" >
+					<img style="max-width:1920px; max-height:466px;" src="uploads/tx_videos/{posterImage}" alt="vedio"/>
+					<div class="play-btn">
+						<img src="typo3conf/ext/enzensberg/Resources/Public/images/video-play-btn.png" alt="vedio" style="cursor:pointer;"/>
+					</div>
+				</div>
+				<div id="thevideo" style="display: none;">
+					<f:if condition="{youtube} !='' ">
+						<iframe width="{width}" height="{height}" src="https://www.youtube.com/embed/{youtube}?rel=0" frameborder="0" allowfullscreen id="video"></iframe>
+					</f:if>
+				</div>
+				<script>
+					jQuery(document).ready(function() {
+						jQuery('#play-video').on('click', function(ev) {
+					    	jQuery("#video")[0].src += "&autoplay=1";
+					     ev.preventDefault();
+					 });
+					});
+				</script>
+			</section>
+            <v:content.info as="NULL" contentUid="123" field="NULL"> <!-- tag content - may be ignored! --> </v:content.info>
+		</f:if>
+        
+	</f:section>
+</div>

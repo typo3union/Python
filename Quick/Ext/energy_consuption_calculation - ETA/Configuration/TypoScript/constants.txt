@@ -1,0 +1,15 @@
+
+plugin.tx_energyconsuptioncalculation {
+	view {
+		# cat=plugin.tx_energyconsuptioncalculation/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:energy_consuption_calculation/Resources/Private/Templates/
+		# cat=plugin.tx_energyconsuptioncalculation/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:energy_consuption_calculation/Resources/Private/Partials/
+		# cat=plugin.tx_energyconsuptioncalculation/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:energy_consuption_calculation/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_energyconsuptioncalculation//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

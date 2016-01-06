@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-25T10:21:24Z" product-name="property">
+		<header/>
+		<body>
+			<trans-unit id="tx_property_domain_model_propertytype">
+				<source>Property Type</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_propertytype.title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property">
+				<source>Property</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.subtitle">
+				<source>Untertitel</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.object_type">
+				<source>Objektkategorie</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.price">
+				<source>Preis</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.running_cost">
+				<source>Betriebskosten</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.description">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.images">
+				<source>Bilder</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.pdf">
+				<source>PDF</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.land_area">
+				<source>Grundstücksfläche</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.year_of_construction">
+				<source>Baujahr</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.zustand">
+				<source>Zustand</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.balcony">
+				<source>Balkon</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.garage">
+				<source>Garage</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.terrase">
+				<source>Terrasse</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.elevator">
+				<source>Fahrstuhl</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.transport">
+				<source>Öffentliche Verkehrsmittel</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.energy">
+				<source>Energieklasse</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.charging">
+				<source>Vergebührung ‐ MV</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.hwb">
+				<source>HWB kwh/m²/Jahr</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.commission">
+				<source>Provision</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.floor">
+				<source>Stockwerke</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.garage">
+				<source>Garage</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.room">
+				<source>Zimmeranzahl</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.floor_area">
+				<source>Wohn/Nutzfläche</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.available">
+				<source>Verfügbarkeit</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.heating">
+				<source>Heizung</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.ground">
+				<source>Böden</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.expiration">
+				<source>Befristung</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.basement">
+				<source>Keller</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.parking">
+				<source>Parkplätze</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.street">
+				<source>Adresse</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.city">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.lage">
+				<source>Lage</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.plz">
+				<source>PLZ</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.country">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.property_type">
+				<source>Objektart</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.building_type">
+				<source>Bautyp</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_buildingtype">
+				<source>Grundstücksfläche</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_buildingtype.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer">
+				<source>Inquirer</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.address">
+				<source>Adresse</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.telephone">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.message">
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.ip">
+				<source>Ip</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.property">
+				<source>Object Name</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_propertyinquirymm">
+				<source>Property Inquiry Mm</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_propertyinquirymm.property_id">
+				<source>Property Id</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_propertyinquirymm.inquirer_id">
+				<source>Inquirer Id</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

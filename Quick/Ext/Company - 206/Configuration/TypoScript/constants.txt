@@ -1,0 +1,30 @@
+
+plugin.tx_companymanagement {
+	view {
+		# cat=plugin.tx_companymanagement/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:company_management/Resources/Private/Templates/
+		# cat=plugin.tx_companymanagement/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:company_management/Resources/Private/Partials/
+		# cat=plugin.tx_companymanagement/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:company_management/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_companymanagement//a; type=string; label=Default storage PID
+		storagePid = 18
+	}
+}
+
+module.tx_companymanagement {
+	view {
+		# cat=module.tx_companymanagement/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:company_management/Resources/Private/Backend/Templates/
+		# cat=module.tx_companymanagement/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:company_management/Resources/Private/Backend/Partials/
+		# cat=module.tx_companymanagement/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:company_management/Resources/Private/Backend/Layouts/
+	}
+	persistence {
+		# cat=module.tx_companymanagement//a; type=string; label=Default storage PID
+		storagePid = 18
+	}
+}

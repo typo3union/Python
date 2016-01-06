@@ -1,0 +1,61 @@
+
+plugin.tx_jsdownload {
+	view {
+		templateRootPath = {$plugin.tx_jsdownload.view.templateRootPath}
+		partialRootPath = {$plugin.tx_jsdownload.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_jsdownload.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_jsdownload.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_jsdownload._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-js-download table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-js-download table th {
+		font-weight:bold;
+	}
+
+	.tx-js-download table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+plugin.tx_jsdownload{
+	settings{
+		configuration	= 1
+		basePath		= {$plugin.tx_jsdownload.settings.basePath}
+	}
+}
+
+config.tx_jsdownload.features.skipDefaultArguments = 1
+plugin.tx_jsdownload.features.skipDefaultArguments = 1

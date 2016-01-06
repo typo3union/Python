@@ -1,0 +1,180 @@
+<f:layout name="Default" />
+<f:section name="main">
+
+  <div class="content" id="printdiv">
+  <div class="logo">   
+ 		 <ul class="nav navbar-nav navbar-right rightdetails">
+              <li class="mail"><f:cObject typoscriptObjectPath="lib.adminMail" /></li>
+              <li class="call"><f:cObject typoscriptObjectPath="lib.adminCall" /></li>
+              <li class="address"><p>Adresse: </p><f:cObject typoscriptObjectPath="lib.adminAddress" /></li>                  
+           </ul>       	
+       	<f:link.page pageUid="1" ><img src="{f:cObject(typoscriptObjectPath: 'lib.mainLogo')}" alt=""></f:link.page>
+        <hr/>
+  </div> 
+  	<div class="view-detail-left">
+        <div class="title">
+            <img src="typo3conf/ext/property/Resources/Public/Icons/home-deatils.png" >
+        </div>		
+        <h3><f:translate key="tx_property_domain_model_property.property_for" /> {property.object_type}</h3>
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-12">
+    <div class="metaslider metaslider-flex metaslider-182 ml-slider nav-hidden">
+        <div class="detailslider" id="metaslider_182">
+          <ul class="slides">
+              <f:for each="{property.images}" as="image" iteration="iteration">                
+                <li>
+                  <f:image src="uploads/tx_property/{image}" width="770c" height="539c" alt="List Image"/>
+                </li>          
+             </f:for>
+          </ul>
+        </div>
+        <div class="detailslider filmstrip" id="metaslider_182_filmstrip">
+          <ul class="slides">
+              <f:for each="{property.images}" as="image" iteration="iteration">                
+                <li>
+                  <f:image src="uploads/tx_property/{image}" width="150c" height="100c" alt="List Image"/>
+                </li>          
+             </f:for>
+          </ul>
+        </div>
+       </div>     
+      <h4>{property.title}</h4>
+      <f:if condition="{property.subtitle}"><b>{property.subtitle}</b></f:if>
+      <div class="property_detail_description"><f:format.html>{property.description}</f:format.html></div>
+       <div class="googleMap">  
+        <f:if condition="{settings.mapTitle}">
+          <f:then>
+          	 <h4>{settings.mapTitle}</h4>
+          </f:then>
+          <f:else>
+          	  <h4><f:translate key="tx_property_domain_model_property.map" /></h4>  
+          </f:else>
+       </f:if>
+       <f:if condition="{property.lage}"><p>{property.lage}</p></f:if>
+            <iframe src='{baseUrl}{f:uri.action(action:"googlemap",arguments: {street: '{property.street}',city: '{property.city}',plz: '{property.plz}',title: '{property.title}'},controller:"Property",noCache: 1, noCacheHash: 1, absolute:true)}' width="100%" height="440" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ></iframe>
+        </div>       
+   
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 sidebar">
+      <div class="col">
+        <h3><f:translate key="tx_property_domain_model_property.object_info_title" /></h3>
+        <ul class="property_right_attributes">
+          <f:if condition="{property.object_type}">
+                <li><b><f:translate key="tx_property_domain_model_property.object_type" /> :</b> <f:format.raw>{property.object_type}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.property_type}">
+                <li><b><f:translate key="tx_property_domain_model_property.property_type" /> :</b> <f:format.raw>{property.property_type}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.floor_area}">
+                <li><b><f:translate key="tx_property_domain_model_property.floor_area" /> :</b> <f:format.raw>{property.floor_area}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.land_area}">
+                <li><b><f:translate key="tx_property_domain_model_property.land_area" /> :</b> <f:format.raw>{property.land_area}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.building_type}">
+                <li><b><f:translate key="tx_property_domain_model_property.building_type" /> :</b> <f:format.raw>{property.building_type}</f:format.raw></li> 
+          </f:if>  
+          <f:if condition="{property.year_of_construction}">
+                <li><b><f:translate key="tx_property_domain_model_property.year_of_construction" /> :</b> <f:format.raw>{property.year_of_construction}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.zustand}">
+                <li><b><f:translate key="tx_property_domain_model_property.zustand" /> :</b> <f:format.raw>{property.zustand}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.available}">
+                <li><b><f:translate key="tx_property_domain_model_property.available" /> :</b> <f:format.raw>{property.available}</f:format.raw></li> 
+          </f:if>  
+          <f:if condition="{property.floor}">
+                <li><b><f:translate key="tx_property_domain_model_property.floor" /> :</b> <f:format.raw>{property.floor}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.room}">
+                <li><b><f:translate key="tx_property_domain_model_property.room" /> :</b> <f:format.raw>{property.room}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.heating}">
+                <li><b><f:translate key="tx_property_domain_model_property.heating" /> :</b> <f:format.raw>{property.heating}</f:format.raw></li> 
+          </f:if>           
+          <f:if condition="{property.ground}">
+                <li><b><f:translate key="tx_property_domain_model_property.ground" /> :</b> <f:format.raw>{property.ground}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.basement}">
+                <li><b><f:translate key="tx_property_domain_model_property.basement" /> :</b> <f:format.raw>{property.basement}</f:format.raw></li> 
+          </f:if>
+          <f:if condition="{property.balcony}">
+                <li><b><f:translate key="tx_property_domain_model_property.balcony" /> :</b> <f:format.raw>{property.balcony}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.terrase}">
+               <li><b><f:translate key="tx_property_domain_model_property.terrase" /> :</b> <f:format.raw>{property.terrase}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.parking}">
+               <li><b><f:translate key="tx_property_domain_model_property.parking" /> :</b> <f:format.raw>{property.parking}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.elevator}">
+               <li><b><f:translate key="tx_property_domain_model_property.elevator" /> :</b> <f:format.raw>{property.elevator}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.transport}">
+               <li><b><f:translate key="tx_property_domain_model_property.transport" /> :</b> <f:format.raw>{property.transport}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.expiration}">
+               <li><b><f:translate key="tx_property_domain_model_property.expiration" /> :</b> <f:format.raw>{property.expiration}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.energy}">
+               <li><b><f:translate key="tx_property_domain_model_property.energy" /> :</b> <f:format.raw>{property.energy}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.charging}">
+               <li><b><f:translate key="tx_property_domain_model_property.charging" /> :</b> <f:format.raw>{property.charging}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.hwb}">
+               <li><b><f:translate key="tx_property_domain_model_property.hwb" /> :</b> <f:format.raw>{property.hwb}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.commission}">
+               <li><b><f:translate key="tx_property_domain_model_property.commission" /> :</b> <f:format.raw>{property.commission}</f:format.raw></li> 
+          </f:if> 
+          <f:if condition="{property.running_cost}">
+                <li><b><f:translate key="tx_property_domain_model_property.running_cost" /> :</b> <f:format.raw>{property.running_cost}</f:format.raw></li>
+           </f:if>                
+        </ul>
+        <br>
+      </div>
+      <div class="col">
+        <div class="download">
+           <f:if condition="{property.pdf.0}">
+                <div class="main_pdf">
+                   <f:for each="{property.pdf}" as="pdf" iteration="iteration">
+                    <div class="pdf">
+                     	<f:link.external uri="{baseUrl}uploads/tx_property/PDF/{pdf}" target="_blank">
+                        	<img src="typo3conf/ext/fluxtemplate/Resources/Public/Images/download.png" >          
+                         </f:link.external>
+                     </div>
+                 </f:for>	
+                 </div>
+           </f:if>  
+        	 <div class="print">
+                 <a href="javascript:void(0);"  onclick="javascript:printDiv()">
+                 	 <img src="typo3conf/ext/fluxtemplate/Resources/Public/Images/print.png" >
+                 </a>
+             </div>
+            <span><f:format.raw>{property.price}</f:format.raw></span>          
+        <a href="javascript:void(0)" class="btn btn-lg btn-primary inquirbtn" data-lid="{settings.contactSingleView}" data-uid = "uid" data-pid="{property.uid}"><f:translate key="tx_property_domain_model_property.buy" /></a>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="map_address" id="map_address">
+            <div class="address">
+                <h3><f:translate key="tx_property_domain_model_property.address" /></h3>
+                 <div class="add">
+                 <ul>
+                      <f:if condition="{property.street}"><li>{property.street}</li></f:if>
+                      <f:if condition="{property.lage}"><li>{property.lage}</li></f:if>
+                      <f:if condition="{property.city}"><li>{property.city}</li></f:if>                      
+                      <f:if condition="{property.plz}"><li>{property.plz}</li></f:if>
+                      <f:if condition="{property.country}"><li>{property.country}</li></f:if>     
+                  </ul>
+                 </div>
+            </div>
+          </div>
+     </div>      
+      </div>
+    </div>
+    <div class="clearfix"></div>    
+  </div>
+
+</f:section>

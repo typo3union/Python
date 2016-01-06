@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-09-12T10:26:48Z" product-name="js_greetingcards">
+		<header/>
+		<body>
+			<trans-unit id="header.description">
+				<source>header</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="patient_name.description">
+				<source>patientName</source>
+			</trans-unit>
+			<trans-unit id="room.description">
+				<source>room</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="generated_pdf.description">
+				<source>generatedPdf</source>
+			</trans-unit>
+			<trans-unit id="admin_name.description">
+				<source>adminName</source>
+			</trans-unit>
+			<trans-unit id="admin_email.description">
+				<source>adminEmail</source>
+			</trans-unit>
+			<trans-unit id="mail_subject.description">
+				<source>mailSubject</source>
+			</trans-unit>
+			<trans-unit id="creation_date.description">
+				<source>creationDate</source>
+			</trans-unit>
+			<trans-unit id="sender_ip.description">
+				<source>senderIp</source>
+			</trans-unit>
+			<trans-unit id="user_agent.description">
+				<source>userAgent</source>
+			</trans-unit>
+			<trans-unit id="marketing_referer_domain.description">
+				<source>marketingRefererDomain</source>
+			</trans-unit>
+			<trans-unit id="marketing_referer.description">
+				<source>marketingReferer</source>
+			</trans-unit>
+			<trans-unit id="page.description">
+				<source>page</source>
+			</trans-unit>
+			<trans-unit id="marketing_mobile_device.description">
+				<source>marketingMobileDevice</source>
+			</trans-unit>
+			<trans-unit id="marketing_frontend_language.description">
+				<source>marketingFrontendLanguage</source>
+			</trans-unit>
+			<trans-unit id="marketing_browser_language.description">
+				<source>marketingBrowserLanguage</source>
+			</trans-unit>
+			<trans-unit id="card.description">
+				<source>card</source>
+			</trans-unit>
+			<trans-unit id="generated_p_d_f.description">
+				<source>generatedPDF</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

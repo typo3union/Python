@@ -1,0 +1,67 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form label="Team page Content" id="teamcontent" description="Team page Content" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+								
+				<flux:form.section name="teams" label="Page Content">
+					<flux:form.object name="teamsObj" label="Add New Content">
+						<flux:field.input name="title" label="Main Title" />
+						<flux:field.input name="subtitle" label="Sub Title" />
+						<flux:field.text name="content" label="Add Content" enableRichText="1"></flux:field.text> 
+						<flux:field.file name="picture" uploadFolder="uploads/team_image/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>			
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>	
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<div class="team-wrap">
+	 		<f:if condition="{teams}">
+				<f:for each="{teams}" as="Data" iteration="itaration">
+					<div class="teamlist-item clearfix">
+						<div class="col-xs-12 col-sm-3">
+							<div class="img-circle">
+								<f:if condition="{Data.teamsObj.picture}">
+									<f:image src="uploads/team_image/{Data.teamsObj.picture}" alt="{Data.teamsObj.title}" title="{Data.teamsObj.title}" width="220c" height="220c" />
+								</f:if>
+							</div>                                           
+						</div>
+						<div class="col-xs-12 col-sm-9">
+							<f:if condition="{Data.teamsObj.title}">
+								<h4>{Data.teamsObj.title}</h4>
+							</f:if>
+							<f:if condition="{Data.teamsObj.subtitle}">
+								<em>{Data.teamsObj.subtitle}</em>
+							</f:if>
+							<div class="contentArea">
+								<f:if condition="{Data.teamsObj.title}">
+									<f:format.html>{Data.teamsObj.content}</f:format.html>
+								</f:if>
+							</div>
+						</div>
+					</div>   
+				</f:for>
+			</f:if>
+		</div>
+	</f:section>
+	
+	<f:section name="Preview">
+		
+		<f:if condition='{f:count(subject:"{teams}")} == 0'>
+			<f:then>
+				<h3>Please Insert Records For Team page</h3>
+			</f:then>
+			<f:else>
+				<h3>Total <f:count>{teams}</f:count> Record Inserted</h3>
+			</f:else>
+		</f:if>
+
+	</f:section>
+
+</div>

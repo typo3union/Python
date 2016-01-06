@@ -1,0 +1,33 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="social" label="Social Links" description="Social Element" icon="" options="{Fluidcontent: {sorting: 102},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+      <flux:field.input name="title" label="Title"/>
+        <flux:form.section name="social" label="FixTop Slider">
+          <flux:form.object name="Social" label="Add New Slide">
+                    <flux:field.select name="select" label="Select Image Type"  items="{fa-facebook: 'facebook', fa-google-plus: 'google-plus', fa-linkedin:'linkedin', fa-twitter:'twitter', fa-skype:'skype', fa-pinterest:'pinterest', fa-youtube-play:'youtube-play', fa-flickr:'flickr'}"></flux:field.select>
+                        <flux:field.input name="link" label="Link">
+                       <flux:wizard.link />
+                     </flux:field.input>
+             </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+    <div class="col col-social-icons">
+                        <h4>{title}</h4>
+                         <f:if condition="{social}">
+                          <f:for each="{social}" as="socials" iteration="iteration">
+                            <f:link.page pageUid="{socials.Social.link}"><i class="fa {socials.Social.select}"></i></f:link.page>
+                          </f:for>
+                        </f:if>
+                        
+                    </div>
+
+</f:section>
+</div>

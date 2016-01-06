@@ -1,0 +1,137 @@
+
+### New by pooja ###
+
+
+	
+menu.megaMenu123 = HMENU
+menu.megaMenu123 {
+	
+	special = directory
+	special.value = 2
+		
+	1 = TMENU
+	1 {
+		wrap =  <ul class="nav navbar-nav">|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			ATagParams =			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li>|</li> 
+			stdWrap.htmlSpecialChars = 1
+			
+		}
+		
+		IFSUB < .NO
+		IFSUB {
+			ATagParams = 			
+			ATagBeforeWrap = 1			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub =  <li class="dropdown menu-large menu-{field:uid}">|</li> 
+		}
+	
+		ACT < .NO
+		ACT {
+			ATagParams =
+			ATagBeforeWrap = 1
+			linkWrap = | 
+			
+			wrapItemAndSub = <li class="active dropdown menu-large menu-{field:uid}"> |</li> 
+		}
+
+		#CUR < .NO
+		#CUR {
+			#ATagParams = 			
+			#ATagBeforeWrap = 1
+			#linkWrap = |
+			#wrapItemAndSub.insertData = 1 
+			#wrapItemAndSub = <li class="active menu-{field:uid"}> |</li>
+		#}
+				
+		CURIFSUB < .IFSUB
+		CURIFSUB = 1
+		CURIFSUB {
+			ATagParams = 			
+			ATagBeforeWrap = 1
+			linkWrap = | 
+			
+			wrapItemAndSub = <li class="active dropdown menu-large menu-{field:uid}"> |</li> 
+		}
+	}
+	
+	2 < .1
+	2.wrap = <span class="dd-arrow dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></span><ul class="dropdown-menu megamenu">|</ul>	
+	2.CUR.ATagParams >
+	2.ACT.ATagParams = 
+	2.CUR.ATagParams =
+	2.NO {
+      wrapItemAndSub =  <div class="img-col {field:uid}">|</div> |*| <div class="col-sm-3"><li class="level-01">|</li></div>
+     	#before.wrap = <li class="imgLi">|  
+		stdWrap.cObject = COA
+		stdWrap.cObject {
+					
+	  
+		  10 = IMAGE
+			 10.file {
+				import = uploads/tx_fluxtemplate/
+				 import.field = menu_image 
+				import.listNum = 0
+				treatIdAsReference = 1
+			}
+		
+		20 = TEXT
+		20.field = title
+		20.wrap = |
+		}
+	
+	         
+    } 
+	
+	#2.NO.wrapItemAndSub  =  <div class="img-col"><li class="level-01">|</li></div> |*| <div class="col-sm-3"><li class="level-01">|</li></div>
+	2.ACT.wrapItemAndSub = <div class="img-col"><li class="level-01">|</li></div> |*| <div class="col-sm-3"><li class="level-01">|</li></div>
+	2.CUR.wrapItemAndSub =  <div class="img-col"><li class="level-01">|</li></div> |*| <div class="col-sm-3"><li class="level-01">|</li></div>
+	2.CURIFSUB.wrapItemAndSub = <div class="img-col"><li class="level-01">|</li></div> |*| <div class="col-sm-3"><li class="level-01">|</li></div>
+	2.IFSUB.wrapItemAndSub = <div class="img-col"><li class="level-01">|</li></div> |*| <div class="col-sm-3"><li class="level-01">|</li></div>
+	2.CUR.linkWrap >
+	2.ACT.linkWrap = |
+	
+	
+	3 < .2
+	3.wrap = <ul class="megamenu-02">|</ul>
+	3.NO.ATagParams >
+	3.ACT.ATagParams = 
+	3.CUR.ATagParams =
+	3.NO.wrapItemAndSub  =  <li class="level-02">|</li>
+	3.ACT.wrapItemAndSub =  <li class="level-02 active">|</li>
+	3.CUR.wrapItemAndSub =  <li class="level-02 active">|</li>
+	3.CURIFSUB.wrapItemAndSub = <li class="level-02 active">|</li>
+	3.IFSUB.wrapItemAndSub = <li class="level-02">|</li>
+	3.CUR.linkWrap >
+	3.ACT.linkWrap = |
+		
+	
+	4 < .3
+	4.wrap = <ul class="ul-level-03">|</ul>
+	4.NO.ATagParams >
+	4.ACT.ATagParams = 
+	4.CUR.ATagParams =
+	4.NO.wrapItemAndSub  =  <li class="level-03"> |</li>
+	4.ACT.wrapItemAndSub =  <li class="level-03 active"> |</li>
+	4.CUR.wrapItemAndSub =  <li class="level-03 active"> |</li>	
+	4.IFSUB.wrapItemAndSub = <li class="level-03"> |</li>
+	4.CURIFSUB.wrapItemAndSub = <li class="level-03 active"> |</li>
+	4.CUR.linkWrap >
+	4.ACT.linkWrap = |
+	
+	
+	#3.NO.doNotLinkIt = 1 |*| 0 |*| 0
+}

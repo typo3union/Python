@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'voucher'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            
+			<label index="tx_voucher_domain_model_voucher">Voucher</label>
+			<label index="tx_voucher_domain_model_voucher.title">Title</label>
+			<label index="tx_voucher_domain_model_voucher.price">Price</label>
+			<label index="tx_voucher_domain_model_voucher.tax">Tax</label>
+			<label index="tx_voucher_domain_model_voucher.valid_till_date">Valid Till Date</label>
+			<label index="tx_voucher_domain_model_voucher.image">Image</label>
+			<label index="tx_voucher_domain_model_voucher.short_description">Short Description</label>
+			<label index="tx_voucher_domain_model_voucher.long_descption">Long Descption</label>
+			<label index="tx_voucher_domain_model_voucher.voucher_category">Voucher Category</label>
+
+			<label index="tx_voucher_domain_model_vouchercustomer">Voucher Customer</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.is_admin">Is Admin</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.de_active">Deactive User</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.gender">Gender</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.email">Email</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.username">Username</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.password">Password</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.firstname">Firstname</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.lastname">Lastname</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.company">Company</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.address">Address</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.zip">Zip</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.location">Location</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.country">Country</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.phone">Phone</label>
+			<label index="tx_voucher_domain_model_vouchercustomer.invoice">Invoices</label>
+
+			<label index="tx_voucher_domain_model_voucherorder">Voucher Order</label>
+			<label index="tx_voucher_domain_model_voucherorder.de_active">De Active</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_name">Voucher Name</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_number">Voucher Number</label>
+			<label index="tx_voucher_domain_model_voucherorder.payment_type">Payment Type</label>
+			<label index="tx_voucher_domain_model_voucherorder.voucher_price">Voucher Price</label>
+			<label index="tx_voucher_domain_model_voucherorder.paid_price">Paid Price</label>
+			<label index="tx_voucher_domain_model_voucherorder.spend_amount">Spend Amount</label>
+			<label index="tx_voucher_domain_model_voucherorder.reaming_amount">Remaining Amount</label>
+			<label index="tx_voucher_domain_model_voucherorder.customer_id">Customer Id</label>			
+			<label index="tx_voucher_domain_model_voucherorder.customer">Customer</label>
+
+		</languageKey>
+	</data>
+</T3locallang>

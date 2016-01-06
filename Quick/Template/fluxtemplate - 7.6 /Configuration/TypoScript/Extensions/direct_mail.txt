@@ -1,0 +1,9 @@
+# EXT: FORMS - direct_mail
+
+# Const - Direct Mail Subscription
+plugin.feadmin.dmailsubscription.create.required = email
+plugin.feadmin.dmailsubscription.create.overrideValues.hidden = 0
+plugin.feadmin.dmailsubscription.infomail.required = email
+plugin.feadmin.dmailsubscription.edit.required = email
+plugin.feadmin.dmailsubscription.file =
+/*plugin.feadmin.dmailsubscription.file.templateFile = {$filepaths.extensionsView}DirectMailSubscription/fe_admin_dmailsubscrip.tmpl*/

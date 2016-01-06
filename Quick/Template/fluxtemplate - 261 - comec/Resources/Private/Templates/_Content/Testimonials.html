@@ -1,0 +1,51 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		<flux:form id="testimonial" label="Testimonial" description="Testimonial Element" icon="" options="{Fluidcontent: {sorting: 101},group: 'Custom Elements'}">
+			<flux:form.sheet name="options" label="Options">
+				<flux:form.section name="testimonials" label="Testimonial">
+					<flux:form.object name="testimonial" label="Add New Record">
+						<flux:field.input name="title" label="Title" />
+						<flux:field.input name="author"  label="Author" />
+						<flux:field.input name="text"  label="Text" />						
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">	
+		<div id="carousel-example" class="carousel slide testimonial-slider" data-ride="carousel"> 
+		<div class="ani"><span><img src="typo3conf/ext/fluxtemplate/Resources/Public/Images/testimonial.png" width="27" height="26"></span>
+			<f:if condition="{testimonials}">			
+				  <ol class="carousel-indicators">
+					<f:for each="{testimonials}" as="testimonial" iteration="iteration">
+						<li data-target="#carousel-example" data-slide-to="{iteration.index}" class="<f:if condition='{iteration.index} == 0'>active</f:if>"></li>
+					</f:for>					
+				  </ol>
+				  <div class="carousel-inner">
+					<f:for each="{testimonials}" as="testimonial" iteration="iteration">
+						<div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+						  <div class="container center">
+							<div class="col-md-6 col-md-offset-3 slide-custom">
+							  <p>{testimonial.testimonial.title}</p>
+							  <cite><span>{testimonial.testimonial.author}</span> – {testimonial.testimonial.text}</cite> 
+							</div>
+						  </div>
+						</div>						
+					</f:for>					
+				  </div>						
+			</f:if>	
+			</div>		
+		</div>	 
+	</f:section>
+
+</div>

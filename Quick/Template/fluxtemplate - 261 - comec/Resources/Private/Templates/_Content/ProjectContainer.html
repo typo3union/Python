@@ -1,0 +1,50 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		<flux:form id="projectcontainer" label="Project Container" description="Project Container Element" icon="" options="{Fluidcontent: {sorting: 110},group: 'Custom elements'}">
+			<flux:field.input name="title" label="Title" />
+			<flux:field.text name="subcontent" label="Teaser" />
+			<flux:field.input name="link" label="Link">
+				<flux:wizard.link />
+			</flux:field.input>
+			<flux:field.input name="linktitle" label="Link Title" />
+			
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column label="Latest Projects" name="projectcontent" >
+						
+					</flux:grid.column>
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<section class="projects">
+			
+			<div class="col-md-10 col-md-offset-1">
+				<div class="col-md-6 text-center">
+					<h1>{title}</h1>
+					<p><f:format.crop maxCharacters="270" append="&nbsp;...">{subcontent}</f:format.crop></p>
+					<f:link.page pageUid="{link}" class="btn btn-secondery">{linktitle}</f:link.page>
+				</div>
+				
+				<flux:content.render area="projectcontent" />
+			</div>
+			
+		</section>
+	</f:section>
+	
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>
+</div>

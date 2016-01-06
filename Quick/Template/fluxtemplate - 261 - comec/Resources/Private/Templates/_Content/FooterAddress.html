@@ -1,0 +1,42 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form wizardTab="Bootstrap" id="footeraddress" icon="{v:extension.path.resources(path: 'Icons/icon-pageheader.gif')}">
+		<flux:field.input name="header" />
+		<flux:field.input name="lbl_address" />
+		<flux:field.input name="address" />
+		<flux:field.input name="lbl_phone" />
+		<flux:field.input name="phone" />
+		<flux:field.input name="lbl_email" />
+		<flux:field.input name="email" />
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+		<h4>{header}</h4>
+		<div class="contact-info-address"> <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+		<div class="address"><span class="gray">{lbl_address} :</span> <span class="addressline">{address}</span> </div>
+		</div>
+		<div class="contact-info-address"> <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+		<div class="address"><span class="gray">{lbl_phone} :</span> <span class="addressline">{phone} </span> </div>
+		</div>
+		<div class="contact-info-address"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+		<div class="address"><span class="gray">{lbl_email} : </span> <span class="addressline"><a target="_top" href="mailto:{email}">{email}</a></span> </div>
+		</div>
+</f:section>
+
+<f:section name="Main">
+		<h4>{header}</h4>
+		<div class="contact-info-address"> <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+			<div class="address"><span class="gray">{lbl_address} :</span> <span class="addressline">{address}</span> </div>
+		  </div>
+		  <div class="contact-info-address"> <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+			<div class="address"><span class="gray">{lbl_phone} :</span> <span class="addressline">{phone} </span> </div>
+		  </div>
+		  <div class="contact-info-address"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+			<div class="address"><span class="gray">{lbl_email} : </span> <span class="addressline"><a target="_top" href="mailto:{email}">{email}</a></span> </div>
+		  </div>	
+</f:section>

@@ -1,0 +1,86 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+<f:section name="Navigation">
+  
+<v:page.menu entryLevel="0" expandAll="TRUE" useShortcutUid="FALSE" pageUid="2" classActive="active"  classCurrent="current" >
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<f:if condition="{menu}">
+				<f:for each="{menu}" as="MenuPage" iteration="Iteration">
+					<li class="{MenuPage.class} {f:if(condition: MenuPage.hasSubPages, then: 'dropdown')}">
+						<a href="{MenuPage.link}" >
+							{f:if(condition: MenuPage.nav_title, then: MenuPage.nav_title, else: MenuPage.title)}
+						</a>
+						<f:if condition="{MenuPage.hasSubPages}">
+							<div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+							</div>
+							<div class="dropdown-menu">
+								<div class="dropdown-icon"></div>
+								<div class="nav">
+
+						</f:if>
+						<v:page.menu entryLevel="1" expandAll="TRUE" useShortcutUid="FALSE" pageUid="{MenuPage.uid}" classActive="active" classCurrent="active">
+							<f:for each="{menu}" as="subMenuPage" iteration="subIteration">
+								<v:page.resources.fal table="pages" field="media" uid="{subMenuPage.uid}" as="images">
+									{images -> v:iterator.first() -> v:variable.set(name: 'image')}
+								<div class="sub-nav">
+									<a href="{subMenuPage.link}" <f:if condition="{subIteration.index} == 0">active</f:if> >
+									{f:if(condition: subMenuPage.nav_title, then: subMenuPage.nav_title, else: subMenuPage.title)}
+									</a>
+									<div class="nav-bg">
+										<div class="color-overlay"></div>
+										<f:if condition="{image.url}">
+										<f:then>
+										<f:image src="{image.url}" alt="{image.alternative}{f:if(condition: image.description, then: ' {image.description}', else: '')}" />
+										</f:then><f:else>
+										<f:image src="fileadmin/user_upload/Golfclub_Ottobeuren_Vorstand_Navigation.jpg"/>
+										</f:else>
+										</f:if>
+									</div>
+								</div>
+								
+								</v:page.resources.fal>
+
+							</f:for>
+						</v:page.menu>
+						<f:if condition="{MenuPage.hasSubPages}">
+							</div>
+							<v:page.menu entryLevel="1" expandAll="TRUE" useShortcutUid="FALSE" pageUid="{MenuPage.uid}" classActive="active" classCurrent="active">
+							
+							 <f:for each="{menu}" as="subMenuPage" iteration="subIteration1">
+								<v:page.resources.fal table="pages" field="media" uid="{subMenuPage.uid}" as="images">
+									{images -> v:iterator.first() -> v:variable.set(name: 'image')}
+								<div class="dropdown-bg">
+									<div class="color-overlay"></div>
+									<f:if condition="{subIteration1.cycle} == 1">
+									<f:if condition="{image.url}">
+										<f:then>
+										<f:image id="showfullimage" src="{image.url}" alt="{image.alternative}{f:if(condition: image.description, then: ' {image.description}', else: '')}" />
+										</f:then><f:else>
+										<f:if condition="{MenuPage.uid} == 47">
+										<f:image id="showfullimage" src="{image.url}" alt="{image.alternative}{f:if(condition: image.description, then: ' {image.description}', else: '')}" />
+										</f:if>
+										</f:else>
+										</f:if>
+									
+									</f:if>
+								</div>
+								</v:page.resources.fal>
+								</f:for>
+								</v:page.menu>
+							</div>
+						</f:if>
+						
+					</li>
+				</f:for>
+			</f:if>
+		</ul>
+	</div>
+</v:page.menu>
+
+  </f:section>
+  </div>

@@ -1,0 +1,96 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="Slidertab" label="Silder Tab (inner)" description="Slider Tab Element" icon="" options="{Fluidcontent: {sorting: 114},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:form.section name="slidertabs" label="Tab Title">
+                    <flux:form.object name="slidertabs" label="Add New Slide">
+                        <flux:field.input name="Main_title" label="Title" />
+                    </flux:form.object>
+                </flux:form.section>
+
+
+                <flux:form.section name="Slider" label="Slider Tab">
+                    <flux:form.object name="Slider" label="Add New Slide">
+                        
+
+                        <flux:form.section name="SlidertabsContent" label="Tab Content">
+                            <flux:form.object name="SlidertabsContent" label="Add New Slide Content">
+                                <flux:field.file name="picture" uploadFolder="uploads/tx_fluxtemplate/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                                <flux:field.input name="picture_alt" label="Alternative Text" />
+                                <flux:field.input name="title" label="Title" />
+                                <flux:field.text name="content" label="Right Side Text" enableRichText="1" />
+                            </flux:form.object>
+                        </flux:form.section>
+
+                    </flux:form.object>
+                </flux:form.section>
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+
+    <f:section name="Main">
+    
+           
+        <div class="devider01 clearfix"></div>
+        <div class="tab-data">
+            <div class="nav-tab-wrap clearfix">
+                <ul class="nav-tabs">
+                    <f:if condition="{slidertabs}">
+                        <f:for each="{slidertabs}" as="slidertab" iteration="iteration">                           
+                             <li class="<f:if condition='{iteration.index} == 0'>active</f:if>"><a data-toggle="tab" href="#section_{iteration.index}">{slidertab.slidertabs.Main_title}</a></li>
+                        </f:for>
+                    </f:if>
+
+                </ul>
+            </div>			
+            <div class="tab-content">
+
+            <f:if condition="{Slider}">
+                <f:for each="{Slider}" as="slider" iteration="iteration1">  
+                                                  
+                    <div id="section_{iteration1.index}" class="tab-pane fade row <f:if condition='{iteration1.index} == 0'> active in</f:if>">
+                        <f:if condition="{slider.Slider.SlidertabsContent}">
+                          
+                            <f:for each="{slider.Slider.SlidertabsContent}" as="Slidertab" iteration="iteration2">
+                                  <div class="col-sm-3">
+                                    <div class="colm4-box">
+                                        <div class="colm4-box-toptext">
+                                            <p>{Slidertab.SlidertabsContent.title}</p>
+                                        </div>                                          
+                                        </div>
+                                        <div class="colm4-box-img">
+                                        <f:if condition="{Slidertab.SlidertabsContent.picture}">
+                                        <f:image src="uploads/tx_fluxtemplate/{Slidertab.SlidertabsContent.picture}" alt="{Slidertab.SlidertabsContent.picture_alt}" width="270c"  height="116c"/> 
+                                        </f:if>
+                                        </div>
+
+                                        <f:if condition="{Slidertab.SlidertabsContent.content}">
+                                            <div class="colm4-box-btmtext">
+                                                <f:format.raw>{Slidertab.SlidertabsContent.content}</f:format.raw>
+                                            </div>  
+                                        </f:if>
+                                    </div>
+                                
+                            </f:for>
+                        </f:if>
+                        </div>
+
+
+                        </f:for>
+                    </f:if>
+
+              
+               
+                
+            </div>			
+        </div>
+
+    </f:section>
+</div>

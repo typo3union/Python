@@ -1,0 +1,59 @@
+
+ <div class="container inr-content clearfix">
+ 	<div class="row">
+            <div class="col-sm-12 col-xs-12 my-fad-in">	
+                  
+               <f:for each="{main_cat}" as="m">
+				<h1>{m.category_name}</h1>
+				</f:for>
+				<ul class="category-list">
+				<f:for each="{main_cat.0.sub_cat}" as="cat" iteration="iteration">
+					<li>
+					<f:link.action pageUid="{settings.flexform.main.productlist}"
+							controller="Product" action="list"
+							arguments="{category : cat.uid}" noCacheHash="1">
+					{cat.category_name}</f:link.action>
+					</li>
+					</f:for>
+				</ul>
+										
+			</div>						
+        </div>
+       
+        <div class="prod-detail"><h3>{product.name}</h3>
+			<div class="row">
+				<div class="col-md-6  col-sm-6 col-xs-12 my-fad-in">			
+					<div class="dbl-roundimg img-res">
+						<f:if condition="{product.image.originalResource.publicUrl}"> 
+						<f:then>
+						<f:image src="{product.image.originalResource.publicUrl}"/>
+						</f:then>
+						<f:else>
+						<f:image src="typo3conf/ext/product/Resources/Public/Images/no-image.png" class="no-img" width="410" height="410" />
+						</f:else>
+						</f:if>
+						<div class="sml-round">
+						<f:if condition="{product.featuredImage.originalResource.publicUrl}"> 
+						<f:then>
+						<f:image src="{product.featuredImage.originalResource.publicUrl}" />
+						</f:then>
+						<f:else>
+						<f:image src="typo3conf/ext/product/Resources/Public/Images/no-image.png" class="no-img" width="255c" height="255c" />
+						</f:else>
+						</f:if>
+						 </div>
+					</div>				
+				</div>			
+				<div class="col-md-6  col-sm-6 col-xs-12 my-fad-in">	
+					
+					<f:if condition="{product.season}"><p><strong>Saison:</strong>  {product.season}</p></f:if>
+					<f:if condition="{product.content}"><f:format.html>{product.content}</f:format.html></f:if>
+				</div>		
+			</div>
+		</div>	
+		
+		<div class="table-wrap">
+			<f:if condition="{product.tableContent}"><f:format.html>{product.tableContent}</f:format.html></f:if>
+		</div>	
+ </div>
+

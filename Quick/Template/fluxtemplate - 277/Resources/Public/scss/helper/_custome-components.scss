@@ -1,0 +1,14 @@
+a{
+	@include transition-gen();
+}
+a, a:hover, a:focus{outline:0 none;	}
+h2{font-weight:normal; color:$base-color;}
+
+.btn, .btn-default {
+	color: #fff;
+  	background-color: $o-color;
+  	border-radius: 0;
+} 
+.btn:hover{background-color: $base-color;}
+.list-unstyled  ul{list-style: outside none none; padding-left: 0;}
+

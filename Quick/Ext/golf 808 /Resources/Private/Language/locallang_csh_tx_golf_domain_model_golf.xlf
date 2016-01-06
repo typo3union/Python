@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-03T09:11:18Z" product-name="golf">
+		<header/>
+		<body>
+			<trans-unit id="putting_holes.description">
+				<source>puttingHoles</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="video_image.description">
+				<source>videoImage</source>
+			</trans-unit>
+			<trans-unit id="video.description">
+				<source>video</source>
+			</trans-unit>
+			<trans-unit id="hole_image.description">
+				<source>holeImage</source>
+			</trans-unit>
+			<trans-unit id="par.description">
+				<source>par</source>
+			</trans-unit>
+			<trans-unit id="hcp.description">
+				<source>hcp</source>
+			</trans-unit>
+			<trans-unit id="red.description">
+				<source>red</source>
+			</trans-unit>
+			<trans-unit id="green.description">
+				<source>green</source>
+			</trans-unit>
+			<trans-unit id="pinposition_image.description">
+				<source>pinpositionImage</source>
+			</trans-unit>
+			<trans-unit id="slider_images.description">
+				<source>sliderImages</source>
+			</trans-unit>
+			<trans-unit id="content.description">
+				<source>content</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_table.description">
+				<source>table</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

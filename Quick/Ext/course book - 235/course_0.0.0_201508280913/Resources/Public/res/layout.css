@@ -1,0 +1,200 @@
+/* $Id$ */
+@media screen, projection {
+
+/* @group basic layout */
+html {
+    height: 101%;
+}
+#header, 
+.stageContent,
+.content,
+#footer {
+    display: block;
+    width: 996px;
+    margin: 0 auto;
+    position: relative;
+}
+body.reservierung .textWrapper {
+	position: relative;
+}
+/* @end */
+
+
+/* @group header */
+#header {
+    height: 130px;
+}
+#header .logo {
+    float: left;
+    margin: 57px 0 0 35px;
+}
+.metaNavigation {
+	position: absolute;
+	right: 0;
+	top: 12px;
+}
+.metaNavigation li {
+    position: relative;
+    float: left;
+    margin-left: 1.25em;
+    height: 20px;
+    z-index: 10;
+}
+.metaNavigation li a {
+    position: relative;
+    display: block;
+    padding: 3px 5px;
+    z-index: 10;
+    border: 1px solid #fff;
+}
+.metaNavigation li.hover a.flyOutLink {
+    border-color: #D5D5D5 #D5D5D5 #EAECEB #D5D5D5;
+    background-color: #EAECEB;
+}
+.metaNavigation div.flyOut {
+    display: none;
+    position: absolute;
+    top: 17px;
+    right: 0;
+    border: 1px solid;
+    border-color: #D5D5D5;
+    background-color: #EAECEB;
+    z-index: 0;
+    width: 203px;
+    padding-bottom:11px;
+}
+.metaNavigation li.kontakt div.flyOut a {
+    border: none;
+    padding: 0 7px 0 0;
+    text-align: right;
+    font-size: 1.083em;
+    color: #333333;
+    text-decoration: underline;
+    background: url(../images/basic/kontakt_arrow.png) no-repeat 129px 3px;
+}
+.metaNavigation li.kontakt div.flyOut a:hover {
+    color: #e21b22;
+    background-image: url(../images/basic/kontakt_arrow_red.png);
+}
+.metaNavigation li.kontakt div.flyOut .tel {
+    position: relative;
+    padding-right:7px;
+    padding-left:7px;
+    line-height:22px;
+    margin: 15px 0px 5px 0px;
+    font-size: 1.667em;
+    color: #7f7e90;
+    text-align: right;
+    background: url(../images/basic/kontakt_icon.png) no-repeat 8px 0px;
+}
+.metaNavigation li.kontakt div.flyOut .email { position: relative;
+    padding-right:7px; padding-left:7px; line-height:22px;
+    margin: 0px 0px 17px 0px; font-size: 1.3em; color: #7f7e90;
+    text-align: right; background-image: none; }
+.metaNavigation li.kontakt div.flyOut .email:hover { background-image: none; }
+
+.metaNavigation li.kontakt .url,
+.metaNavigation li.kontakt .adr,
+.metaNavigation li.kontakt .openingHours,
+.metaNavigation li.kontakt .org {
+    display: none;
+}
+.navigation {
+    margin-left: 229px;
+    padding-top: 77px;
+}
+.navigation li {
+    float: left;
+    margin-right: 0.7em;
+}
+.navigation li a {
+    position: relative;
+    padding: 3px 5px;
+    border: 1px solid transparent;
+    z-index: 9;
+}
+.navigation .flyOut a {
+    margin-top: -5px;
+    padding: 0px;
+    display: block;
+}
+.navigation li.hover a.flyOutLink {
+    border-color: #D5D5D5 #D5D5D5 #EAECEB #D5D5D5;
+    background-color: #EAECEB;
+}
+.navigation div.flyOut {
+    display: none;
+    position: absolute;
+    margin-top: 5px;
+    border: 1px solid;
+    border-color: #D5D5D5;
+    background-color: #EAECEB;
+    z-index: 5;
+    width: auto;
+    padding: 11px;
+}
+/* @end */
+
+
+/* @group stage */
+.stage {
+    background-color: #ebebeb;
+}
+/* @end */
+
+/* @group content */
+.stageContent:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+/* @end */
+
+
+/* @group content */
+.content:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+/* @end */
+
+
+/* @group footer */
+#footer {
+    margin-top: 64px;
+    margin-bottom: 1em;
+    background: transparent url(../images/basic/footer_bg.png) repeat-x top left;
+    overflow: hidden;
+}
+#footer li {
+    float: left;
+    margin: 10px 0 25px 30px;
+}
+#footer li ul li {
+    margin: 0;
+    float: none;
+    background: none;
+}
+.footer5Columns li {
+    width: 163px;
+}
+.footer4Columns li {
+    width: 211px;
+}
+.footer3Columns li {
+    width: 292px;
+}
+.footer2Columns li {
+    width: 453px;
+}
+
+/* @end */
+
+}

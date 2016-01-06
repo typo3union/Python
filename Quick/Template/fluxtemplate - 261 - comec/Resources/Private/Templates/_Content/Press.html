@@ -1,0 +1,67 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		
+		<flux:form id="sliderhome" label="Press" description="Press Element" icon="" options="{Fluidcontent: {sorting: 100},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+				<flux:form.section name="sliders" label="Home Page Slider">
+					<flux:form.object name="slider" label="Add New Slide">
+						<flux:field.input name="date" label="Date" eval="date" />	
+						<flux:field.input name="title" label="Title" />	
+						<flux:field.input name="subtitle" label="Sub Title" />	
+						<flux:field.input name="link" label="External Link">
+							<flux:wizard.link />
+						</flux:field.input>																
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+	
+	<!-- Carousel
+    ================================================== -->
+	
+	  <div class="col-lg-12 row mar40">
+		  <div class="table-data">
+			  <ul id="pressLoad">
+				<f:for each="{sliders}" as="slider" iteration="iteration">
+					<li>
+						  <span class="tbl_date col-md-2"><f:format.date format="d.m.Y">{slider.slider.date}</f:format.date></span>
+						  <div class="col-md-8">
+							  <span class="tbl_title"><f:format.raw>{slider.slider.title}</f:format.raw></span>
+							  <span class="tbl_sub-title"><f:format.raw>{slider.slider.subtitle}</f:format.raw></span>
+						  </div>	  
+						  <span class="ltbl_ink  col-md-2 floright"><i class="mdi mdi-link"></i> <f:link.page pageUid="{slider.slider.link}" target="_blank">Link zur Originalquelle</f:link.page></span>						 
+					</li>					
+				</f:for>
+			  </ul>
+		  </div>
+	  </div>	
+		<f:if condition="{sliders -> f:count()} > 5"> 
+		  <f:then>
+				 <div class="col-lg-12 loadnews mar40">
+					  <div id="loadMore" class="container"> <img src="/typo3conf/ext/fluxtemplate/Resources/Public/Images/reload.png"> Mehr Pressestimmen laden</div>
+				 </div>
+		  </f:then>
+		  <f:else>
+				<div class="col-lg-12 mar40">
+					  <div class="container"> <div class="clearfix"><hr></div></div>
+				 </div>
+				
+		  </f:else>
+		 	
+		</f:if>
+	</f:section>
+	
+</div>

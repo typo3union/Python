@@ -1,0 +1,51 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:layout name="Content" />
+	
+	<f:section name="Configuration">
+		<flux:form label="Three Column Container" id="threeColumnsNormal" description="Three Column" icon="" options="{Fluidcontent: {sorting: 105},group: 'Custom elements'}">
+
+
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column style="width: 33.33%" name="column1" label="Left Column">
+					</flux:grid.column>
+					<flux:grid.column style="width: 33.33%" name="column2" label="Center Column">
+					</flux:grid.column>
+					<flux:grid.column style="width: 33.33%" name="column3" label="Right Column" >
+					</flux:grid.column>
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+
+<section class="slice base">
+          <div class="wp-section">
+              <div class="container">
+                  <div class="row">
+              
+                      <div class="col-md-4 col-sm-6 link_section customicon">
+                         <flux:content.render render="1" area="column1" /> 	
+                      </div>
+
+					<div class="col-md-4 col-sm-6 customicon link_section">
+                         <flux:content.render render="1" area="column2" /> 	
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 customicon link_section ">
+                         <flux:content.render render="1" area="column3" /> 	
+                      </div>                         
+                  </div>
+              </div>  
+          </div>
+      </section>
+
+	</f:section>
+
+	
+</div>

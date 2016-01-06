@@ -1,0 +1,47 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml" 
+	 xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" 
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Configuration">
+		
+		<flux:form label="Three Column" id="twocolumn" description="three column" icon="" options="{Fluidcontent: {sorting: 107},group: 'Custom elements'}">
+			<flux:grid>
+				<flux:grid.row>
+						<flux:grid.column>
+								<flux:form.content name="col1" label="First"></flux:form.content>
+						</flux:grid.column>
+						<flux:grid.column>	<flux:form.content name="col2" label="Second"></flux:form.content>						
+						</flux:grid.column>
+						<flux:grid.column style="width: 33%" name="column3" colPos="3" label="Third" >
+						</flux:grid.column>
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+
+	</f:section>
+
+						<f:section name="Main">
+							
+							<div class="col-md-4">
+								<flux:content.render render="1" area="col1" />
+							</div>
+							<div class="col-md-4">
+								<flux:content.render render="2" area="column2" />
+							</div>
+							<div class="col-md-4">
+								<flux:content.render render="3" area="column3" />
+							</div>
+						</f:section>
+	
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>
+
+
+</div>

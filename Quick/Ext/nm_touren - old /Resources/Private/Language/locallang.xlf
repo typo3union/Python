@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-21T10:58:00Z" product-name="nm_touren">
+		<header/>
+		<body>
+			<trans-unit id="tx_nmtouren_domain_model_tour">
+				<source>Tour</source>
+			</trans-unit>
+			<trans-unit id="tx_nmtouren_domain_model_tour.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_nmtouren_domain_model_tour.termine">
+				<source>Termine</source>
+			</trans-unit>
+			<trans-unit id="tx_nmtouren_domain_model_termine">
+				<source>Termine</source>
+			</trans-unit>
+			<trans-unit id="tx_nmtouren_domain_model_termine.datum">
+				<source>Datum</source>
+			</trans-unit>
+			<trans-unit id="tx_nmtouren_domain_model_termine.geblockt">
+				<source>Geblockt</source>
+			</trans-unit>
+			
+			
+			<trans-unit id="tx_nmtouren_domain_model_termine.tour_name">
+				<source>Tour Name</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,6 @@
+<f:for each="{Facilities}" as="facility" iteration="itemIteration">
+	<li>
+        <f:form.checkbox name="facility[]" value="{facility.uid}" id="c{facility.uid}" />
+		<label for="c{facility.uid}">{facility.title}</label>
+	</li>
+</f:for>

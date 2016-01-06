@@ -1,0 +1,45 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+	xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" 
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Configuration">	
+		
+		<flux:form id="homeNews" label="Home page News List" description="Home page News List " icon="../typo3conf/ext/enzensberg/Resources/Public/images/home-news.png" options="{Fluidcontent: {sorting: 13},group: 'Content Elements'}">
+
+			<flux:form.sheet name="options" label="Options">
+				<flux:field.input name="link_text" label="Link Text" />
+				<flux:field.input name="link" label="Link">
+					<flux:wizard.link />
+				</flux:field.input>
+			</flux:form.sheet>
+
+            <flux:grid>
+                <flux:grid.row>
+                    <flux:grid.column style="width: 100%" name="column1" label="Inhalt"> </flux:grid.column>
+                </flux:grid.row>
+            </flux:grid>
+
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">   
+		 <div class="more-link-p">
+			<f:link.page pageUid="{link}" class="sprite read-more">{link_text}</f:link.page>
+		</div>	
+	</f:section>
+	
+	<f:section name="Main">
+        <flux:content.render render="1" area="column1" />
+		<f:if condition="{link}">
+			<div class="more-link-p">
+				<f:link.page pageUid="{link}" class="sprite read-more">{link_text}</f:link.page>
+			</div> 
+		</f:if>
+	</f:section>
+</div>

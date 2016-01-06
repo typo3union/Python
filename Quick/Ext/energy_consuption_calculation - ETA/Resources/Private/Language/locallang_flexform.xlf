@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-14T16:15:06Z" product-name="energy_consuption_calculation">
+		<header/>
+		<body>
+						
+			<trans-unit id="flexform.setting.general">
+				<source>General Settings</source>
+			</trans-unit>
+			<trans-unit id="flexform.contentDisplay">
+				<source>Content Display</source>
+			</trans-unit>			
+			<trans-unit id="flexform.newContent">
+				<source>Add Content</source>
+			</trans-unit>			
+			<trans-unit id="flexform.content">
+				<source>Content</source>
+			</trans-unit>		
+			<trans-unit id="flexform.image">
+				<source>Grapth Image</source>
+			</trans-unit>			
+			<trans-unit id="flexform.Bausubstanz">
+				<source>Bausubstanz</source>
+			</trans-unit>	
+			<trans-unit id="flexform.newBausubstanz">
+				<source>Add Bausubstanz</source>
+			</trans-unit>		
+				
+			
+			<trans-unit id="flexform.houseType">
+				<source>House Type</source>
+			</trans-unit>
+			<trans-unit id="flexform.newHouseType">
+				<source>Add House Type</source>
+			</trans-unit>			
+			<trans-unit id="flexform.title">
+				<source>Title</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.cal_according_lastYear">
+				<source>Calculation according Last Years consumption</source>
+			</trans-unit>
+			<trans-unit id="flexform.addFuel">
+				<source>Add Fuel Type</source>
+			</trans-unit>
+			<trans-unit id="flexform.addFuelDetail">
+				<source>Add Fuel Details</source>
+			</trans-unit>
+			<trans-unit id="flexform.fuelType">
+				<source>Fuel type</source>
+			</trans-unit>
+			<trans-unit id="flexform.unit">
+				<source>Unit</source>
+			</trans-unit>
+			<trans-unit id="flexform.material">
+				<source>Material</source>
+			</trans-unit>
+			<trans-unit id="flexform.calorificValue">
+				<source>Calorific value in kWh / unit</source>
+			</trans-unit>
+			<trans-unit id="flexform.austriaPrice">
+				<source>Austria Price</source>
+			</trans-unit>
+			<trans-unit id="flexform.germanyPrice">
+				<source>Germany Price</source>
+			</trans-unit>		
+
+			
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,51 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Team</h1>
+
+<f:flashMessages />
+
+<table  class="tx_companymanagement" >
+	<tr>
+		<th><f:translate key="tx_companymanagement_domain_model_team.name" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_team.designation" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_team.description" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_team.image" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_team.telephone" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_team.mobile" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_team.fax" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_team.email" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{teams}" as="team">
+		<tr>
+			<td><f:link.action action="show" arguments="{team : team}"> {team.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{team : team}"> {team.designation}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{team : team}"> {team.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{team : team}"> {team.image.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{team : team}"> {team.telephone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{team : team}"> {team.mobile}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{team : team}"> {team.fax}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{team : team}"> {team.email}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{team : team}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{team : team}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Team</f:link.action>
+</f:section>

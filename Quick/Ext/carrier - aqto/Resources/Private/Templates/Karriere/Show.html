@@ -1,0 +1,18 @@
+
+<f:layout name="Default" />
+
+
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+<f:render partial="Karriere/Properties" arguments="{karriere:karriere}" />
+
+<f:for each="{karriere_cat}" as="karriereCat"  >
+<p class="backlnk"><a href="javascript: history.go(-1);">Zurück zu den {karriereCat.name}n</a></p>
+
+</f:for>
+</div>
+<!-- 
+<f:link.action action="list">Back to list</f:link.action><br />
+<f:link.action action="new">New Karriere</f:link.action>
+-->
+</f:section>

@@ -1,0 +1,31 @@
+<f:layout name='Default'/>
+
+<f:section name='main'>
+
+	<div class="formLoading"></div>	
+
+	<div class="form-section clearfix">
+	
+		<f:if condition="{template}==1">
+		  
+			<f:then>
+		  	
+				<f:render partial="Error/Error" arguments="{errors:errors}" />
+		  	
+				<f:render partial="Error/ErrorWhileContact" arguments="{message:message}" />
+		  	
+				<f:render partial="Template/Template" arguments="{formFields:formFields}" />
+			
+			</f:then>
+		  
+			<f:else>
+	  	  
+				<f:render partial="Error/Configuration" arguments="{errors:template}" />
+				  
+			</f:else>
+	  	  
+		</f:if>
+
+	</div>
+	
+</f:section>

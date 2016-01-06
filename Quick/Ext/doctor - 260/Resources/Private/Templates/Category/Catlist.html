@@ -1,0 +1,30 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+ <div class="row">
+		<div class="col-lg-12 teaser_wrap">
+        <h2>Unsere Fachbereiche</h2>
+        <hr class="red_line">
+        <div class="row">
+				<dl class="dl-horizontal">				
+					<dt>&nbsp;</dt>
+					<f:for each="{catl}" as="catlist">
+							<dd><f:link.action pageUid="{pluginid}" action="list" controller="DoctoreList" pluginName='arzte'  arguments="{catid : catlist.uid}"  >{catlist.name}</f:link.action></dd>
+						</f:for>
+				</dl>
+        </div>
+      </div>
+    </div>
+</f:section>

@@ -1,0 +1,87 @@
+
+ 
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+   
+
+     <div class="newsletter-box-container">
+            <div class="col-md-11 col-sm-10 col-xs-10 col-md-push-1 col-sm-push-1 col-xs-push-1">
+                <h1>{settings.mainTitle}<br/>{settings.text}</h1>
+            </div>
+          <f:form class="email-form" method="post" action="list"  name="email-form"  id="email-form" >
+            <div class="col-md-7 col-sm-6 col-xs-10 col-md-push-1 col-sm-push-1 col-xs-push-1">
+                <div class="panel panel-default">
+                    <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+                            <f:if condition="{newsletters.thankyou_message}"><div class="alert alert-success text-center"><p><f:translate key="tx_newsletter_domain_model_newsletter.thankYou" /></p></div> </f:if>
+                            <f:if condition="{newsletters.alreadyRegister_message}"><div class="alert alert-success text-center"><p><f:translate key="tx_newsletter_domain_model_newsletter.alreadyRegister" /></p></div> </f:if>  
+                        </div>
+                        <div class="form-group">
+                            <label for="status" class="col-sm-2 control-label"><f:translate key="tx_newsletter_domain_model_newsletter.gender" /></label>
+                            <div class="col-sm-9">                               
+                               <f:form.select name="status" options="{0: 'Herr', 1: 'Frau'}" class="form-control"  id="status"/>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <label for="concept" class="col-sm-2 control-label"><f:translate key="tx_newsletter_domain_model_newsletter.company" /></label>
+                            <div class="col-sm-9">                               
+                                <f:form.textfield type="text" name="firma" value="" class="form-control"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-sm-2 control-label"><f:translate key="tx_newsletter_domain_model_newsletter.firstname" /></label>
+                            <div class="col-sm-9">
+                                <f:form.textfield type="text" name="Vorname" value="" class="form-control validate" additionalAttributes="{maxlength:'50', placeholder:'',mendatory_message:'<f:translate key=\'tx_newsletter_domain_model_newsletter.blank_vorname\' />' }" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="concept" class="col-sm-2 control-label"><f:translate key="tx_newsletter_domain_model_newsletter.name" /></label>
+                            <div class="col-sm-9">
+                               
+                                <f:form.textfield type="text" name="name" value="" class="form-control validate" additionalAttributes="{maxlength:'50', placeholder:'',mendatory_message:'<f:translate key=\'tx_newsletter_domain_model_newsletter.blank_name\' />' }" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-sm-2 control-label"><f:translate key="tx_newsletter_domain_model_newsletter.email" /></label>
+                            <div class="col-sm-9">
+                                <f:form.textfield id="email" type="text" name="email" value="" class="form-control validate" id="email" additionalAttributes="{maxlength:'50', placeholder:'',mendatory_message:'<f:translate key=\'tx_newsletter_domain_model_newsletter.blank_email\' />',valid_message:'<f:translate key=\'tx_newsletter_domain_model_newsletter.valid_email\' />'}" /> 
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <label for="description" class="col-sm-2 control-label">&nbsp;</label>
+                            <div class="col-sm-9">
+                                <p class="required-fields"><f:translate key="tx_newsletter_domain_model_newsletter.require" /></p>
+                            </div>
+                        </div> 
+                        
+                    </div>
+                </div>            
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-10 col-md-push-1 col-xs-push-1">
+              <div class="form-group">
+                <div class="col-sm-12 text-right">
+                        <f:form.button class="btn newsletter-button" type="submit" name="submit">
+                        <span class="pull-left"><f:translate key="tx_newsletter_domain_model_newsletter.newsletter" /><br><f:translate key="tx_newsletter_domain_model_newsletter.bestellen" /></span><img src="/typo3conf/ext/fluxtemplate/Resources/Public/images/button-arrow-newsletter.png" alt="" class="pull-right">
+                    </f:form.button>
+                </div>
+              </div>
+            </div>
+              
+            </f:form>
+
+          </div>
+
+</f:section>

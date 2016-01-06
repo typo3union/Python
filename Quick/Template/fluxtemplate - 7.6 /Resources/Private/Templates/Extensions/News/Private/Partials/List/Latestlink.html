@@ -1,0 +1,29 @@
+{namespace n=Tx_News_ViewHelpers}<!--
+	=====================
+		Partials/List/Latestlink.html
+-->
+      
+
+                      <div class="icon-block icon-block-1">
+                                      
+                                      <div class="icon-block-body customicon">
+                                          <h2>
+                                          <i class="fa fa-bullhorn"></i>
+                                          <f:format.crop maxCharacters="20">{newsItem.title}</f:format.crop> 
+                                          </h2>
+                                          <p><f:if condition="{newsItem.teaser}">
+                                       <f:then> 
+                                        <f:format.crop maxCharacters="100">{newsItem.teaser}</f:format.crop> 
+                                        </f:then>
+                                        <f:else>
+                                          <f:format.crop maxCharacters="100">{newsItem.bodytext}</f:format.crop> 
+                                        </f:else>
+                                      </f:if>
+                                       </p>
+                                           <p><n:link newsItem="{newsItem}" settings="{settings}" class="readmore">
+                                                  <span class="orange-class"><f:translate key="more-link"/></span>
+                                        </n:link> </p>
+                               </div>
+                                      </div>
+
+

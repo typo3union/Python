@@ -1,0 +1,27 @@
+# News Extension custom Typoscript
+plugin.tx_news {
+	# News Extension custom Template
+	view {
+		templateRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Templates/
+		}
+		partialRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Partials/
+		}
+		layoutRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Layouts/
+		}
+	}
+	
+	
+	# News Extension custom CSS
+	settings {
+		 #Path to CSS file
+		#cssFile = {$filepaths.extensionsView}News/Public/Css/news-basic.css
+
+		link {
+                        skipControllerAndAction = 1
+                }
+	}
+}
+

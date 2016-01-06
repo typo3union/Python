@@ -1,0 +1,287 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Main Settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+						<label>Display Mode</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="1">
+									<numIndex index="0">Property Search</numIndex>
+									<numIndex index="1">PropertyType->list</numIndex>
+								</numIndex>
+								<numIndex index="2">
+									<numIndex index="0">Property List</numIndex>
+									<numIndex index="1">Property->list</numIndex>
+								</numIndex>
+								<numIndex index="3">
+									<numIndex index="0">Property Detail</numIndex>
+									<numIndex index="1">Property->show;Property->googlemap</numIndex>
+								</numIndex>
+								<numIndex index="4">
+									<numIndex index="0">Property Inquiery</numIndex>
+									<numIndex index="1">Inquirer->list;Inquirer->save</numIndex>
+								</numIndex>	
+								<numIndex index="5">
+									<numIndex index="0">Property Latest</numIndex>
+									<numIndex index="1">Property->latest</numIndex>
+								</numIndex>	
+							</items>
+						</config>
+						</TCEforms>
+					</switchableControllerActions>
+					<!-- single news -->
+					<settings.mainTitle>
+						<TCEforms>
+							<label>Main Title</label>
+							<displayCond>FIELD:switchableControllerActions:=:PropertyType->list,Property->list,Property->latest</displayCond>
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.mainTitle>						
+					<settings.singleView>
+						<TCEforms>
+							<label>Detaild pageID</label>
+							<displayCond>FIELD:switchableControllerActions:=:Property->list,Property->latest</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.singleView>	
+					<settings.listView>
+						<TCEforms>
+							<label>List pageID</label>
+							<displayCond>FIELD:switchableControllerActions:=:PropertyType->list</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.listView>													
+					<settings.contactSingleView>
+						<TCEforms>
+							<label>Inquiery Contact page</label>
+							<displayCond>FIELD:switchableControllerActions:=:Property->show;Property->googlemap</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.contactSingleView>
+					<settings.mapTitle>
+						<TCEforms>
+							<label>Map Title in Detail Page</label>
+							<displayCond>FIELD:switchableControllerActions:=:Property->show;Property->googlemap</displayCond>							
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.mapTitle>
+					<!--<settings.typestorageFolder>
+						<TCEforms>
+							<label>Objecttype and Buildingtype Storage</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.typestorageFolder>					
+					<settings.propertystorageFolder>
+						<TCEforms>
+							<label>Property List Storage</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.propertystorageFolder>-->					
+					<settings.propertyOrder>
+						<TCEforms>
+							<label>Property Order</label>
+							<displayCond>FIELD:switchableControllerActions:=:Property->latest</displayCond>
+							<config>
+							  <type>select</type>
+							  <items type="array">
+								<numIndex index="0" type="array">
+								  <numIndex index="0">Aufsteigend</numIndex>
+								  <numIndex index="1">ASC</numIndex> 
+								</numIndex>
+								<numIndex index="1" type="array">
+								  <numIndex index="0">Absteigend</numIndex>
+								  <numIndex index="1">DESC</numIndex>
+								</numIndex>							
+							  </items>						  
+							</config>
+						</TCEforms>
+					</settings.propertyOrder>	
+					<settings.propertyCount>
+						<TCEforms>
+							<label>Total number of the property</label>
+							<displayCond>FIELD:switchableControllerActions:=:Property->latest</displayCond>
+							<config>
+							  <type>select</type>
+							  <items type="array">
+								<numIndex index="0" type="array">
+								  <numIndex index="0">Three</numIndex>
+								  <numIndex index="1">3</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+								  <numIndex index="0">Six</numIndex>
+								  <numIndex index="1">6</numIndex>
+								</numIndex>	
+								<numIndex index="2" type="array">
+								  <numIndex index="0">Nine</numIndex>
+								  <numIndex index="1">9</numIndex>
+								</numIndex>	
+								<numIndex index="3" type="array">
+								  <numIndex index="0">Twelve</numIndex>
+								  <numIndex index="1">12</numIndex>
+								</numIndex>							
+							  </items>						  
+							</config>
+						</TCEforms>
+					</settings.propertyCount>
+						<settings.inquiererStorageFolder>
+						<TCEforms>
+							<label>Inquiere Speicherordner</label>
+							<displayCond>FIELD:switchableControllerActions:=:Inquirer->list;Inquirer->save</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.inquiererStorageFolder>
+					<settings.newsiInquiererStorageFolder>
+						<TCEforms>
+							<label>Shop Inquiere Speicherordner</label>
+							<displayCond>FIELD:switchableControllerActions:=:Inquirer->list;Inquirer->save</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.newsiInquiererStorageFolder>
+					<settings.senderName>
+						<TCEforms>
+							<label>LLL:EXT:powermail/Resources/Private/Language/locallang_db.xlf:flexform.sender.name</label>
+							<displayCond>FIELD:switchableControllerActions:=:Inquirer->list;Inquirer->save</displayCond>
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.senderName>
+					<settings.senderEmail>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:powermail/Resources/Private/Language/locallang_db.xlf:flexform.sender.email</label>
+							<displayCond>FIELD:switchableControllerActions:=:Inquirer->list;Inquirer->save</displayCond>
+							<config>
+								<type>input</type>
+								<eval>trim,In2code\Powermail\Utility\Tca\EvaluateEmail</eval>
+							</config>
+						</TCEforms>
+					</settings.senderEmail>
+					<settings.senderSubject>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:powermail/Resources/Private/Language/locallang_db.xlf:flexform.sender.subject</label>
+							<displayCond>FIELD:switchableControllerActions:=:Inquirer->list;Inquirer->save</displayCond>
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.senderSubject>
+					<settings.receiverEmail>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:powermail/Resources/Private/Language/locallang_db.xlf:flexform.receiver.email</label>
+							<displayCond>FIELD:switchableControllerActions:=:Inquirer->list;Inquirer->save</displayCond>
+							<config>
+								<type>input</type>
+								<eval>trim,In2code\Powermail\Utility\Tca\EvaluateEmail</eval>
+							</config>
+						</TCEforms>
+					</settings.receiverEmail>
+					<settings.mailBody> 
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:powermail/Resources/Private/Language/locallang_db.xlf:flexform.sender.body</label>
+							<displayCond>FIELD:switchableControllerActions:=:Inquirer->list;Inquirer->save</displayCond>
+							<config>
+								<type>text</type>
+								<default></default>
+							</config>
+							<defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+						</TCEforms>
+					</settings.mailBody>
+					<settings.thxMessage>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:powermail/Resources/Private/Language/locallang_db.xlf:flexform.thx.body</label>
+							<displayCond>FIELD:switchableControllerActions:=:Inquirer->list;Inquirer->save</displayCond>
+							<config>
+								<type>text</type>
+								<default>Vielen Dank für Immobilienabfrage.
+Wir werden Sie in Kürze kontaktieren.</default>
+							</config>
+							<defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+						</TCEforms>
+					</settings.thxMessage>				
+				</el>
+			</ROOT>
+		</main>
+
+		
+	</sheets>
+</T3DataStructure>

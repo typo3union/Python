@@ -1,0 +1,154 @@
+{namespace cs=CS\AldianaWeatherWeb\ViewHelpers}
+<f:layout name="Default" />
+<f:section name="main">  
+    <div class="weather-row spacing">
+        <h3>Wetter und Klimadaten – {datas.0.clubName}</h3>          
+    </div>
+    <div class="weather-row spacing">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            <span class="weather-icon-28-temperaturmax">Höchsttemperatur</span>
+                            <span class="weather-table-head">Höchst-<br>temperatur</span>
+                        </th>
+                        <th>
+                            <span class="weather-icon-28-temperaturmin">Mindesttemperatur</span>
+                            <span class="weather-table-head">Tiefst-<br>temperatur</span>
+                        </th>
+                        <th>
+                            <span class="weather-icon-28-sonnig">sonnig</span>
+                            <span class="weather-table-head">Sonnen-<br>stunden</span>
+                        </th>
+                        <th>
+                            <span class="weather-icon-28-leichterregen">leichter Regen</span>
+                            <span class="weather-table-head">Regentage</span>
+                        </th>
+                        <th>
+                            <span class="weather-icon-28-regen">Regen</span>
+                            <span class="weather-table-head">Mittlerer<br>
+                            Niederschlag</span>
+                        </th>
+                        <th>
+                            <span class="weather-icon-28-temperaturwasser">Regen</span>
+                            <span class="weather-table-head">Wasser-<br>
+                            temperatur</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Januar</td>
+                        <td>{climateDatas.0.tempMax1}&deg;C</td>
+                        <td>{climateDatas.0.tempMin1}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun1}</td>
+                        <td>{climateDatas.0.daysRain1}</td>
+                        <td>{climateDatas.0.meanRainfall1}</td>
+                        <td>{climateDatas.0.tempWater1}</td>
+                    </tr>
+                    <tr>
+                        <td>Februar</td>
+                        <td>{climateDatas.0.tempMax2}&deg;C</td>
+                        <td>{climateDatas.0.tempMin2}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun2}</td>
+                        <td>{climateDatas.0.daysRain2}</td>
+                        <td>{climateDatas.0.meanRainfall2}</td>
+                        <td>{climateDatas.0.tempWater2}</td>
+                    </tr>
+                    <tr>
+                       <td>März</td>
+                        <td>{climateDatas.0.tempMax3}&deg;C</td>
+                        <td>{climateDatas.0.tempMin3}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun3}</td>
+                        <td>{climateDatas.0.daysRain3}</td>
+                        <td>{climateDatas.0.meanRainfall3}</td>
+                        <td>{climateDatas.0.tempWater3}</td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>{climateDatas.0.tempMax4}&deg;C</td>
+                        <td>{climateDatas.0.tempMin4}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun4}</td>
+                        <td>{climateDatas.0.daysRain4}</td>
+                        <td>{climateDatas.0.meanRainfall4}</td>
+                        <td>{climateDatas.0.tempWater4}</td>
+                    </tr>
+                    <tr>
+                        <td>Mai</td>                
+                        <td>{climateDatas.0.tempMax5}&deg;C</td>
+                        <td>{climateDatas.0.tempMin5}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun5}</td>
+                        <td>{climateDatas.0.daysRain5}</td>
+                        <td>{climateDatas.0.meanRainfall5}</td>
+                        <td>{climateDatas.0.tempWater5}</td>
+                    </tr>
+                    <tr>
+                         <td>Juni</td>
+                        <td>{climateDatas.0.tempMax6}&deg;C</td>
+                        <td>{climateDatas.0.tempMin6}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun6}</td>
+                        <td>{climateDatas.0.daysRain6}</td>
+                        <td>{climateDatas.0.meanRainfall6}</td>
+                        <td>{climateDatas.0.tempWater6}</td>
+                    </tr>
+                    <tr>
+                        <td>Juli</td>
+                        <td>{climateDatas.0.tempMax7}&deg;C</td>
+                        <td>{climateDatas.0.tempMin7}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun7}</td>
+                        <td>{climateDatas.0.daysRain7}</td>
+                        <td>{climateDatas.0.meanRainfall7}</td>
+                        <td>{climateDatas.0.tempWater7}</td>
+                    </tr>
+                    <tr>
+                        <td>August</td>
+                        <td>{climateDatas.0.tempMax8}&deg;C</td>
+                        <td>{climateDatas.0.tempMin8}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun8}</td>
+                        <td>{climateDatas.0.daysRain8}</td>
+                        <td>{climateDatas.0.meanRainfall8}</td>
+                        <td>{climateDatas.0.tempWater8}</td>
+                    </tr>
+                    <tr>
+                        <td>September</td>
+                        <td>{climateDatas.0.tempMax9}&deg;C</td>
+                        <td>{climateDatas.0.tempMin9}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun9}</td>
+                        <td>{climateDatas.0.daysRain9}</td>
+                        <td>{climateDatas.0.meanRainfall9}</td>
+                        <td>{climateDatas.0.tempWater9}</td>
+                    </tr>
+                    <tr>
+                        <td>Oktober</td>
+                        <td>{climateDatas.0.tempMax10}&deg;C</td>
+                        <td>{climateDatas.0.tempMin10}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun10}</td>
+                        <td>{climateDatas.0.daysRain10}</td>
+                        <td>{climateDatas.0.meanRainfall10}</td>
+                        <td>{climateDatas.0.tempWater10}</td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>{climateDatas.0.tempMax11}&deg;C</td>
+                        <td>{climateDatas.0.tempMin11}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun11}</td>
+                        <td>{climateDatas.0.daysRain11}</td>
+                        <td>{climateDatas.0.meanRainfall11}</td>
+                        <td>{climateDatas.0.tempWater11}</td>
+                    </tr>
+                    <tr>
+                        <td>Dezember</td>
+                        <td>{climateDatas.0.tempMax12}&deg;C</td>
+                        <td>{climateDatas.0.tempMin12}&deg;C</td>
+                        <td>{climateDatas.0.hoursSun12}</td>
+                        <td>{climateDatas.0.daysRain12}</td>
+                        <td>{climateDatas.0.meanRainfall12}</td>
+                        <td>{climateDatas.0.tempWater12}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>         
+</f:section>

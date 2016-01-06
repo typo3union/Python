@@ -1,0 +1,67 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<ul class="list-listings-2">
+		  <li class="">
+		  <!-- <div class="listing-header bg-base">
+		     <h5>{events.title}</h5>                     
+		  </div> -->
+		  <div class="listing-image">
+		      
+		          <div class="news-img-wrap">	
+		          		 <f:if condition="{events.image}" >
+		          		 	<f:then>
+		                		<img src="{f:uri.image(src: '{events.image.originalResource.originalFile.uid}')}" alt="event-image"  width="320" height="200" class="img-responsive" />	
+		                	</f:then>
+		                	<f:else>
+		                		<div class="event-no-image"></div>
+		                	</f:else>
+		                </f:if>
+		          </div>
+		        
+		  </div>
+		  <div class="cell">
+		      <div class="listing-body clearfix">
+		          <h3>
+		             {events.title}		 
+		          </h3>
+		          
+		          
+		      </div>
+		      <div class="listing-footer">
+		           <ul class="aux-info">
+                      <f:if condition="{events.date}"><li><i class="fa fa-calendar"></i><strong><f:translate key="tx_events_domain_model_events.datum" /></strong><f:format.date format="d.m.Y">{events.date}</f:format.date></li></f:if>
+                      <f:if condition="{events.time}"><li><i class="fa fa-clock-o"></i><strong><f:translate key="tx_events_domain_model_events.fe_time" /></strong><f:format.date format="H : i">{events.time}</f:format.date></li></f:if>
+                       <li>
+                       <f:if condition="{events.location}">
+                         <div class="cat_title"><i class="fa fa-globe"></i><strong><f:translate key="tx_events_domain_model_events.ort" /></strong>{events.location}</div>                         	                                                
+                      </f:if>
+                      </li> 
+                  </ul>
+		      </div>
+		  </div>       
+					
+					
+		 </li>
+		</ul>
+		<f:format.html>{events.description}</f:format.html>
+		<div class="news-backlink-wrap">
+						
+						<f:link.action action="list" noCacheHash="1"  pageUid="{settings.listPID}" >
+		   					&lt;&lt; <f:translate key="tx_events_domain_model_events.back" />
+		       	 </f:link.action>
+					</div>
+</f:section>

@@ -1,0 +1,17 @@
+
+<label for="title">
+	<f:translate key="tx_events_domain_model_event.title" />
+</label><br />
+	<f:form.textfield property="title" /><br />
+<label for="date">
+	<f:translate key="tx_events_domain_model_event.date" />
+</label><br />
+	<f:form.textfield property="date"  value="{event.date->f:format.date()}" /><br />
+<label for="time">
+	<f:translate key="tx_events_domain_model_event.time" />
+</label><br />
+	<f:form.textfield property="time" /><br />
+<label for="private">
+	<f:translate key="tx_events_domain_model_event.private" />
+</label><br />
+	<f:form.textfield property="private" /><br />

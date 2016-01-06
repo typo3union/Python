@@ -1,0 +1,107 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="row clearfix tableSection">
+    <div class="col-lg-12 filtertableSection">
+      <h2><f:translate key="tx_companymanagement_domain_model_company.l_main_title" /></h2>
+    </div>
+    <div class="c-l-sm-1 col-md-1 alfafilter">
+      <ul>
+        <f:if condition='{f:count(subject: companyNames)} >1'>
+			{v:format.plaintext(content: '{companyNames}')}
+        </f:if>
+      </ul>
+    </div>
+    <div class="col-sm-11 col-md-11 col-lg-11 tableSectionDetail">
+      <f:if condition='{companies}'>
+        <div class="filteroption filteroptiontable">
+          <ul>
+            <li>Sortieren nach:</li>
+            <li><span class="select-style">
+              <select class="form" name="companyList" id="allCompanyList" >
+                <option value="">
+                <f:translate key="tx_companymanagement_domain_model_company.l_sort" />
+                </option>
+                <option value="0">
+                <f:translate key="tx_companymanagement_domain_model_company.l_branch" />
+                </option>
+                <option value="1">
+                <f:translate key="tx_companymanagement_domain_model_company.l_firstname_acending" />
+                </option>
+                <option value="2">
+                <f:translate key="tx_companymanagement_domain_model_company.l_firstname_decending" />
+                </option>
+                <option value="3">
+                <f:translate key="tx_companymanagement_domain_model_company.l_zip" />
+                </option>
+                <option value="4">
+                <f:translate key="tx_companymanagement_domain_model_company.l_sort_employee" />
+                </option>
+              </select>
+              </span></li>
+          </ul>
+          <div class="search-box">
+            <button id="search_submit" value="submit" ></button>
+          </div>
+        </div>
+      </f:if>
+      <section class="cd-main-content">
+        <div class="cd-tab-filter-wrapper">
+          <div class="cd-tab-filter">
+            <ul class="cd-filters">
+              <li class="placeholder"><f:link.external uri="javascript:void(0);" additionalAttributes="{data-type: 'all'}"><f:translate key="tx_companymanagement_domain_model_company.l_all" /></f:link.external></li>
+              <f:if condition='{activeState}'>
+                <f:then> </f:then>
+                <f:else>
+                  <li class="filter" data-filter="0"><f:link.external uri="javascript:void(0);" class="selected" additionalAttributes="{data-type: 'first'}"><f:translate key="tx_companymanagement_domain_model_company.l_select_all" /></f:link.external></li>
+                </f:else>
+              </f:if>
+              <f:if condition='{activeState}==0'>
+                <f:for each="{states}" as="state">
+                  <li class="filter" data-filter="{state.uid}" >
+                  <f:link.external class="<f:if condition='{state.uid} == {activeState}'>selected</f:if>"  uri="javascript:void(0);" additionalAttributes="{data-type: '{state.name}'}">{state.name}</f:link.external></li>
+                </f:for>
+              </f:if>
+            </ul>
+          </div>
+        </div>
+        <div class="allCompany ajax_load_img"><img src="typo3conf/ext/company_management/Resources/Public/Icons/ajax_load.gif" alt="" /></div>
+        <section class="cd-gallery">
+          <div class="filterglry">
+            <div class="table-responsive" >
+              <table class="table table-striped" id="historicalList">
+                <thead>
+                  <tr>
+                    <th><f:translate key="tx_companymanagement_domain_model_company.l_company" /></th>
+                    <th><f:translate key="tx_companymanagement_domain_model_company.l_award_date" /></th>
+                    <th><f:translate key="tx_companymanagement_domain_model_company.l_ceremony" /></th>
+                    <th>&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody id="historicalList124">
+                  <f:for each="{companies}" as="company" iteration="iteration">
+                    <tr class="first {company.stateId.name} {v:format.substring(content: '{company.name}', start: 0, length: 1)}">
+                      <td><span>{company.name}</span><span>{company.address}</span><span>{company.zip} {company.city}</span></td>
+                      <td data-order="<f:format.date format="Ymd">{company.awardDate}</f:format.date>"><span><f:format.date format="d.m.Y">{company.awardDate}</f:format.date></span></td>
+                      <td><f:if condition="{company.awardType} == 0"><span>widerruflich</span> </f:if>
+                        <f:if condition="{company.awardType} == 1"><span>unwiderruflich</span> </f:if></td>
+                      <td><f:if condition="{company.displayMode} == 0"> <span class="historicalStateImage">
+                          <f:link.action action="show" arguments="{ uid: '{company.uid}'}" pageUid="{settings.companySingleView}"  class="readmoreN"> <f:translate key="tx_companymanagement_domain_model_company.more_link" /></f:link.action>
+                          <f:image src="{company.stateId.historicalLogo.originalResource.originalFile.uid}"  width="56c" height="90c" alt="{company.stateId.name}"/>
+                          </span> </f:if></td>
+                    </tr>
+                  </f:for>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <f:if condition="{pageType} == 1234567890"> 
+            <script type="text/javascript" src="/typo3conf/ext/fluxtemplate/Resources/Public/js/custom.js"></script> 
+          </f:if>
+        </section>
+      </section>
+    </div>
+  </div>
+</f:section>

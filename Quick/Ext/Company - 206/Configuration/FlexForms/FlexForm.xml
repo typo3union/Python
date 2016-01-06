@@ -1,0 +1,223 @@
+<T3DataStructure>
+  <meta>
+    <langDisable>1</langDisable>
+    <!--  <langChildren>1</langChildren>!-->
+  </meta>
+  <sheets>
+    <sDEF>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>Settings</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+          <switchableControllerActions>
+            <TCEforms>
+              <label>Display</label>
+              <config>
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array">
+                    <numIndex index="0">State List</numIndex>
+                    <numIndex index="1">State->list</numIndex>
+                  </numIndex>
+                  <numIndex index="1" type="array">
+                    <numIndex index="0">State Detail</numIndex>
+                    <numIndex index="1">State->show</numIndex>
+                  </numIndex>
+                  <numIndex index="2" type="array">
+                    <numIndex index="0">Company Preview List</numIndex>
+                    <numIndex index="1">Company->preview</numIndex>
+                  </numIndex>
+				  <numIndex index="3" type="array">
+                    <numIndex index="0">Company Historical List</numIndex>
+                    <numIndex index="1">Company->historicalList</numIndex>
+                  </numIndex>
+				  <numIndex index="4" type="array">
+                    <numIndex index="0">Company Sorting List</numIndex>
+                    <numIndex index="1">Company->list</numIndex>
+                  </numIndex>
+                  <numIndex index="5" type="array">
+                    <numIndex index="0">Company Detail</numIndex>
+                    <numIndex index="1">Company->show;Company->googlemap</numIndex>
+                  </numIndex>				  
+                  <numIndex index="6" type="array">
+                    <numIndex index="0">All Statement List</numIndex>
+                    <numIndex index="1">Statement->list</numIndex>
+                  </numIndex>
+				  <numIndex index="7" type="array">
+                    <numIndex index="0">Statement List(Only State)</numIndex>
+                    <numIndex index="1">Statement->stateList</numIndex>
+                  </numIndex>
+                  <numIndex index="8" type="array">
+                    <numIndex index="0">Statement List(Only Company)</numIndex>
+                    <numIndex index="1">Statement->companyList</numIndex>
+                  </numIndex>
+                  <numIndex index="9" type="array">
+                    <numIndex index="0">Statement Detail</numIndex>
+                    <numIndex index="1">Statement->show</numIndex>
+                  </numIndex>  
+				  <numIndex index="10" type="array">
+                    <numIndex index="0">News List</numIndex>
+                    <numIndex index="1">Company->news</numIndex>
+                  </numIndex>                
+                  <numIndex index="11" type="array">
+                    <numIndex index="0">Team List</numIndex>
+                    <numIndex index="1">Team->list</numIndex>
+                  </numIndex>
+				  <numIndex index="12" type="array">
+                    <numIndex index="0">Main Search Form</numIndex>
+                    <numIndex index="1">Company->searchForm</numIndex>
+                  </numIndex>
+				  <numIndex index="13" type="array">
+                    <numIndex index="0">Main Search List</numIndex>
+                    <numIndex index="1">Company->searchList</numIndex>
+                  </numIndex>
+                </items>
+                <selectedListStyle>width:300px</selectedListStyle>
+                <itemListStyle>width:300px</itemListStyle>
+                <maxitems>1</maxitems>
+                <size>1</size>
+                <multiple>1</multiple>
+              </config>
+            </TCEforms>
+          </switchableControllerActions>
+		  <settings.newsCount>
+            <TCEforms>
+              <label>Number of Records</label>
+              <displayCond>FIELD:switchableControllerActions:=:Company->news</displayCond>
+              <config>
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array">
+                    <numIndex index="0">Three</numIndex>
+                    <numIndex index="1">3</numIndex>
+                  </numIndex>
+				  <numIndex index="1" type="array">
+                    <numIndex index="0">Five</numIndex>
+                    <numIndex index="1">5</numIndex>
+                  </numIndex>
+				  <numIndex index="2" type="array">
+                    <numIndex index="0">Ten</numIndex>
+                    <numIndex index="1">10</numIndex>
+                  </numIndex>
+                </items>
+                <maxitems>1</maxitems>
+                <size>1</size>
+                <multiple>1</multiple>
+              </config>
+            </TCEforms>
+          </settings.newsCount>
+		  <settings.newsSingleView>
+            <TCEforms>
+              <label>News Detail page Id</label>
+              <displayCond>FIELD:switchableControllerActions:=:Company->news,Company->searchList</displayCond>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+              </config>
+            </TCEforms>
+          </settings.newsSingleView>
+          <settings.stateSingleView>
+            <TCEforms>
+              <label>State Detail page Id</label>
+              <displayCond>FIELD:switchableControllerActions:=:State->list</displayCond>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+              </config>
+            </TCEforms>
+          </settings.stateSingleView>
+          <settings.companySingleView>
+            <TCEforms>
+              <label>Company Detail page Id</label>
+              <displayCond>FIELD:switchableControllerActions:=:Company->list,Company->news,Company->preview,Company->historicalList,Company->searchList</displayCond>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+              </config>
+            </TCEforms>
+          </settings.companySingleView>		  
+		  <settings.stateId>
+            <TCEforms>
+              <label>State</label>
+              <displayCond>FIELD:switchableControllerActions:=:Company->historicalList</displayCond>
+              <config>
+                <type>select</type>
+                <foreign_table>tx_companymanagement_domain_model_state</foreign_table>
+                <foreign_table_where>AND  tx_companymanagement_domain_model_state.deleted=0 AND  tx_companymanagement_domain_model_state.hidden=0 AND  tx_companymanagement_domain_model_state.sys_language_uid=0 </foreign_table_where>
+                <size>1</size>
+                <autoSizeMax>1</autoSizeMax>
+                <minitems>0</minitems>
+                <maxitems>1</maxitems>
+                <show_thumbs>1</show_thumbs>
+                <allowNonIdValues>1</allowNonIdValues>
+              </config>
+            </TCEforms>
+          </settings.stateId>		  
+          <settings.statementSingleView>
+            <TCEforms>
+              <label>Statement Detail page Id</label>
+              <displayCond>FIELD:switchableControllerActions:=:Statement->list,Company->searchList</displayCond>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+              </config>
+            </TCEforms>
+          </settings.statementSingleView>		  		  
+		  <settings.searchSingleView>
+            <TCEforms>
+              <label>Search Page Id</label>
+              <displayCond>FIELD:switchableControllerActions:=:Company->searchForm</displayCond>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+              </config>
+            </TCEforms>
+          </settings.searchSingleView>
+		  <settings.teamView>
+            <TCEforms>
+              <label>Team Page Id</label>
+              <displayCond>FIELD:switchableControllerActions:=:Company->searchList</displayCond>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+              </config>
+            </TCEforms>
+          </settings.teamView>
+          
+        </el>
+      </ROOT>
+    </sDEF>
+  </sheets>
+</T3DataStructure>

@@ -1,0 +1,91 @@
+{namespace pg=JS\JsDownload\ViewHelpers}
+<f:layout name='Default'/>
+<f:section name='main'>
+	<f:if condition="{template}==1">
+		<f:then>
+			<f:if condition="{fileDetail}>0">
+				<f:then>
+					<f:render partial="Template/Detail" arguments="{Files:files, setting:setting}" />
+				</f:then>
+				<f:else>
+                
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="download-icon clearfix">
+                                    <ul>
+                                        <li class="{defaultClass}">
+                                            <f:link.page>
+                                                <span class="d-icon">
+                                                    <f:image src="typo3conf/ext/js_download/Resources/Public/Images/all-d.png" width="38" height="30" alt="{FileType.title}" />
+                                                </span>
+                                                <span class="d-text"><f:translate key='tx_jsdownload_domain_model_file.all_document' /></span>
+                                            </f:link.page>
+                                        </li>
+                                        <f:for each="{fileType}" as="list" iteration="itemIteration">
+                                            <f:render partial="Template/FileType" arguments="{FileType:list}" />
+                                        </f:for>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="download-detail clearfix">
+                        <div class="container">
+                            <div class="row">
+                                <div class="all-download-section clearfix">
+                                    <f:if condition="{paginate}==1">
+                                        <f:then>
+                                            <pg:Paginate objects="{files}" as="paginatedObjekt" configuration="{itemsPerPage: recordPerPage, insertAbove: 1, insertBelow: 1, maximumNumberOfLinks: 1, maximumVisiblePages: 7}">
+                                                <f:for each="{paginatedObjekt}" as="list" iteration="itemIteration">
+                                                    <f:render partial="Template/List" arguments="{Files:list}" />
+                                                </f:for>
+                                            </pg:Paginate>
+                                        </f:then>
+                                        <f:else>
+                                            <f:for each="{files}" as="list" iteration="itemIteration">
+                                                <f:render partial="Template/List" arguments="{Files:list}" />
+                                            </f:for>
+                                        </f:else>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+       		<div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="download-icon clearfix">
+                            <ul>
+                                <li class="{defaultClass}">
+                                    <f:link.page>
+                                        <span class="d-icon">
+                                            <f:image src="typo3conf/ext/js_download/Resources/Public/Images/all-d.png" width="38" height="30" alt="{FileType.title}" />
+                                        </span>
+                                        <span class="d-text"><f:translate key='tx_jsdownload_domain_model_file.all_document' /></span>
+                                    </f:link.page>
+                                </li>
+                                <f:for each="{fileType}" as="list" iteration="itemIteration">
+                                    <f:render partial="Template/FileType" arguments="{FileType:list}" />
+                                </f:for>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="download-detail clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="all-download-section clearfix">
+							<f:render partial="Error/Template" arguments="{error:template}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</f:else>
+	</f:if>
+</f:section>

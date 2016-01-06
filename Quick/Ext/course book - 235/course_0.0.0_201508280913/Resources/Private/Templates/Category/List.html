@@ -1,0 +1,78 @@
+<f:layout name="Default" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <ul class="nav navbar-nav">
+    <li>
+      <f:link.page pageUid="1">Startseite</f:link.page>
+    </li>
+    <f:for each="{finalArray}" as="fa">
+      <f:if condition="{fa.type} == 'cat'">
+        <f:then>
+          <f:for each="{categories}" as="category">
+            <f:if condition="{fa.uid}=={category.uid}">
+              <f:if condition="{category.maincategory}">
+                <li>
+                  <f:link.page pageUid="{settings.CategoryDetailPage}" additionalParams="{category_id:'{category.uid}'}" noCacheHash="1" class="menu-tooltip" > {category.category}</f:link.page>
+                  <span data-toggle="dropdown" class="responsive-menu"><span class="caret"></span></span>
+                  <ul class="dropdown-menu secondLevel" role="menu">
+                    <f:if condition="{category.subCat}">
+                      <f:then>
+                        <f:for each="{category.subCat}" as="subCat">
+                          <f:for each="{parentCat}" as="parentCategory">
+                            <f:if condition="{subCat} == {parentCategory.uid}">
+                              <li>
+                                <f:link.page pageUid="{settings.CategoryDetailPage}" additionalParams="{category_id:'{parentCategory.uid}'}" noCacheHash="1" > {parentCategory.category}</f:link.page>
+                                <ul class="dropdown-menu thirdLevel" role="menu" >
+                                  <f:if condition="{category.parentcategory}">
+                                    <f:for each="{courseParent}" as="courseInner">
+                                      <f:if condition="{courseInner.cat} == {subCat}">
+                                        <li class="{courseInner.uid}">
+                                          <f:link.action pageUid="{settings.DetailPage}" controller="Course" action="show" arguments="{course : courseInner.uid}" noCacheHash="1">{courseInner.name}</f:link.action>
+                                        </li>
+                                      </f:if>
+                                    </f:for>
+                                  </f:if>
+                                </ul>
+                              </li>
+                            </f:if>
+                          </f:for>
+                        </f:for>
+                        <f:for each="{courses}" as="course">
+                          <f:if condition="{course.cat} == {category.uid}">
+                            <li>
+                              <f:link.action pageUid="{settings.DetailPage}" controller="Course" action="show" arguments="{course : course.uid}" noCacheHash="1">{course.name}</f:link.action>
+                            </li>
+                          </f:if>
+                        </f:for>
+                      </f:then>
+                      <f:else>
+                        <f:for each="{courses}" as="course">
+                          <f:if condition="{course.cat} == {category.uid}">
+                            <li>
+                              <f:link.action pageUid="{settings.DetailPage}" controller="Course" action="show" arguments="{course : course.uid}" noCacheHash="1">{course.name}</f:link.action>
+                            </li>
+                          </f:if>
+                        </f:for>
+                      </f:else>
+                    </f:if>
+                  </ul>
+                </li>
+              </f:if>
+            </f:if>
+          </f:for>
+        </f:then>
+        <f:else>
+          <f:for each="{courses}" as="course">
+            <f:if condition="{fa.uid}=={course.uid}">
+              <f:if condition="{course.addmenu}==1">
+                <li>
+                  <f:link.action pageUid="{settings.DetailPage}" controller="Course" action="show" arguments="{course : course.uid}" noCacheHash="1">{course.name}</f:link.action>
+                </li>
+              </f:if>
+            </f:if>
+          </f:for>
+        </f:else>
+      </f:if>
+    </f:for>
+  </ul>
+</f:section>

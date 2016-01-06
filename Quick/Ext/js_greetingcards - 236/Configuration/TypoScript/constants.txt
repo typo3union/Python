@@ -1,0 +1,55 @@
+
+plugin.tx_jsgreetingcards {
+	view {
+		# cat=plugin.tx_jsgreetingcards/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:js_greetingcards/Resources/Private/Templates/
+		# cat=plugin.tx_jsgreetingcards/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:js_greetingcards/Resources/Private/Partials/
+		# cat=plugin.tx_jsgreetingcards/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:js_greetingcards/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_jsgreetingcards//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+
+plugin.tx_jsgreetingcards {
+
+	uri {
+		# cat=plugin.tx_jsgreetingcards//b; type=string; label= CSS
+		css = typo3conf/ext/js_greetingcards/Resources/Public/Css/GreetingCards.css
+		# cat=plugin.tx_jsgreetingcards//c; type=string; label= Javascript
+		javascript = typo3conf/ext/js_greetingcards/Resources/Public/Script/GreetingCards.js
+	}
+	
+	settings {
+	
+		
+		# cat=plugin.tx_jsgreetingcards//d; type=string; label= Fixed Image
+		fixImage = typo3conf/ext/js_greetingcards/Resources/Public/Images/fix-content.jpg
+		
+		# cat=plugin.tx_jsgreetingcards//e; type=string; label= Logo
+		logo = typo3conf/ext/js_greetingcards/Resources/Public/Images/logo.jpg
+	
+		receiver {
+			# cat=greetingcard_main/enable/0200; type=boolean; label= Receiver Mail: Enable Email to Receiver
+			enable = 1
+			
+			# cat=greetingcard_main//0230; type=text; label= Default Sender Name: Sendername if no sender name given
+			senderName = Sender
+
+			# cat=greetingcard_main//0240; type=text; label= Default Sender Email: Sender-email if no sender email given
+			senderEmail = sender@sender.com
+			
+			# cat=greetingcard_main//0250; type=text; label= Receiver Mail Reply Mail: Reply Email address for mail to receiver (e.g. reply@mail.com)
+			replyToEmail = noreply@noreply.com
+
+			# cat=greetingcard_main//0260; type=text; label= Receiver Mail Reply Name: Reply Name for mail to receiver (e.g. Mr. Reply)
+			replyToName = noreply
+		}
+	}
+}

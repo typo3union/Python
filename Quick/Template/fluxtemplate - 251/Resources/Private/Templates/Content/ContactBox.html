@@ -1,0 +1,39 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="ContactBox" label="Contact Box" description="Contact Box Element" icon="" options="{Fluidcontent: {sorting: 102},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="Boxes" label="Contact Box">
+          <flux:form.object name="Box" label="Add New Slide">
+            <flux:field.input name="Title" label="Title"/>
+            <flux:field.text name="content" label="Content" enableRichText="1" />
+           
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  
+  <f:section name="Main">
+    <div class="contact-box-container">
+      <f:if condition="{Boxes}">
+       <div id="contact-page-slider" class="owl-carousel">
+        <f:for each="{Boxes}" as="Box" iteration="iteration">
+         <div class="col-md-12 contact-box">
+            <div class="contact-inside">
+              <f:format.html>{Box.Box.content}</f:format.html>
+            </div>
+          </div>
+        </f:for>
+        </div>
+      </f:if>
+    </div>
+  </f:section>
+  
+</div>

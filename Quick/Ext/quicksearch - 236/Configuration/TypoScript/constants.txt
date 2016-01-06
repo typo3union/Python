@@ -1,0 +1,16 @@
+
+plugin.tx_quicksearch {
+	view {
+		# cat=plugin.tx_quicksearch/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:quicksearch/Resources/Private/Templates/
+		# cat=plugin.tx_quicksearch/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:quicksearch/Resources/Private/Partials/
+		# cat=plugin.tx_quicksearch/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:quicksearch/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_quicksearch//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+

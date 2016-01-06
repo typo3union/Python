@@ -1,0 +1,172 @@
+lib.mainmenu = COA
+lib.mainmenu {
+    10 = HMENU
+	10.special = directory
+	10.special.value = 14
+    10 {
+        wrap = <nav>|</nav>
+        entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <ul class="nav navbar-nav">|</ul>
+         #  target = _top
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li> 
+         # 	    allWrap = <div class="menu_header_no">|</div>
+			}
+            ACT < .NO
+            ACT = 1
+            ACT {
+				 wrapItemAndSub = <li class="active">|</li> 
+		 #       allWrap = <div class="menu_header_act">|</div>
+            }
+            IFSUB < .NO
+            IFSUB = 1
+            IFSUB {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li class="dropdown">|</li>
+				ATagParams = class="dropdown-toggle"
+         #      allWrap = <div class="menu_header_no">|</div>
+			   
+            }
+            ACTIFSUB < .IFSUB
+            ACTIFSUB = 1
+            ACTIFSUB {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li class="active">|</li> 
+				ATagParams = class="dropdown-toggle" 
+         # 	    allWrap = <div class="menu_header_no">|</div>
+			   
+            }
+        }
+        2 = TMENU
+        2 {
+            noBlur = 1
+            wrap = <span class="dd-arrow" data-toggle="dropdown"><span class="caret"></span></span><ul class="dropdown-menu my-fadeInDown">|</ul>
+            target = _top
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li>
+				ATagParams = class="active" 
+               # allWrap = <div class="menu_sub_no">|</div>
+            }
+            CUR < .NO
+            CUR = 1
+            CUR {
+				wrapItemAndSub = <li>|</li>
+              #  allWrap = <div class="menu_sub_act">|</div>
+            }
+            ACT < .CUR
+            ACT = 1
+        }
+    }
+}
+
+
+
+lib.footermenu1 = COA
+lib.footermenu1 {
+    10 = HMENU
+	10.special = directory
+	10.special.value = 21
+    10 {
+        entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <ul class="f-v-nav">|</ul>
+			NO {
+                
+                wrapItemAndSub = <li>|</li> 
+			}
+			ACT < .NO
+            ACT = 1
+            ACT {
+				 wrapItemAndSub = <li>|</li> 
+				  ATagParams = class="active"
+            }
+        }
+    }
+}
+
+lib.footermenu2 = COA
+lib.footermenu2 {
+    10 = HMENU
+	10.special = directory
+	10.special.value = 22
+    10 {
+        entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <ul class="f-v-nav">|</ul>
+			NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li> 
+			}
+			ACT < .NO
+            ACT = 1
+            ACT {
+				 wrapItemAndSub = <li>|</li> 
+				  ATagParams = class="active"
+            }
+        }
+    }
+}
+lib.footermenu3 = COA
+lib.footermenu3 {
+    10 = HMENU
+	10.special = directory
+	10.special.value = 23
+    10 {
+        entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <ul class="f-v-nav">|</ul>
+			NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li> 
+			}
+			ACT < .NO
+            ACT = 1
+            ACT {
+				 wrapItemAndSub = <li>|</li> 
+				 ATagParams = class="active"
+		 
+            }
+        }
+    }
+}
+lib.bottommenu = COA
+lib.bottommenu {
+    10 = HMENU
+    10.special = directory
+    10.special.value = 54
+    10 {
+        entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <ul class="f-nav">|</ul>
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = <li>|</li> 
+            }
+            ACT < .NO
+            ACT = 1
+            ACT {
+                 wrapItemAndSub = <li>|</li> 
+                 ATagParams = class="active"
+         
+            }
+        }
+    }
+}

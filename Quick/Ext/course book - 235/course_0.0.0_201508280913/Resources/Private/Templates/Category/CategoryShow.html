@@ -1,0 +1,28 @@
+
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  
+  <f:for each="{course_category}" as="cat">
+    <v:page.header.title title="{cat.category} - Segelschule BSM" whitespaceString=" " setIndexedDocTitle="1"> {cat.category} - Segelschule BSM </v:page.header.title>
+    <f:if condition="{cat.metaTitle}">
+     <v:page.header.meta name="keywords" content="{cat.metaTitle}" />
+  </f:if>
+  <f:if condition="{cat.metaDesc}">
+    <v:page.header.meta name="description" content="{cat.metaDesc}" />
+  </f:if>
+
+    <div class="content-center clearfix">
+      <div class="page-header text-center">
+        <h1>{cat.category}</h1>
+        <h3>Bodensee Segelschule Montfort</h3>
+      </div>
+      <div class="description clearfix">
+        <div class="pdg-lt two_column_split">
+          <f:format.html>{cat.information}</f:format.html>
+        </div>
+      </div>
+    </div>
+  </f:for>
+</f:section>

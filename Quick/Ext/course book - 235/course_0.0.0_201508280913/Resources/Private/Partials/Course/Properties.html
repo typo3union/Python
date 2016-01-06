@@ -1,0 +1,89 @@
+
+<div class="full-content clearfix">
+  <div class="content-center clearfix">
+    <div class="row">
+      <f:if condition="{course.description}">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box">
+          <f:link.action pageUid="{settings.Kursinformationen}" controller="Course" action="kursinformationen" arguments="{course : course.uid}" noCacheHash="1">
+            <div class="center-box">
+              <div class="middle"> <img alt="a" class="default" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/i-icon.png"> <img alt="a" class="hove" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/white-i-icon.png">
+                <f:if condition="{course.kursinformationentext}">
+                  <f:then> <span>{course.kursinformationentext}</span> </f:then>
+                  <f:else> <span>
+                    <f:translate key="tx_course_domain_model_datestartend.Kursinformationen" />
+                    </span> </f:else>
+                </f:if>
+              </div>
+            </div>
+          </f:link.action>
+        </div>
+      </f:if>
+      <f:if condition="{course.dateduration}">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box">
+          <f:link.action pageUid="{settings.TermineundAnmeldung}" controller="Course" action="termineundAnmeldung" arguments="{course : course.uid}" noCacheHash="1">
+            <div class="center-box">
+              <div class="middle"> <img alt="a" class="default" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/calci-icon.png"> <img alt="a" class="hove" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/white-calci-icon.png"> <span>
+                <f:translate key="tx_course_domain_model_datestartend.Termine_und_Anmeldung" />
+                </span> </div>
+            </div>
+          </f:link.action>
+        </div>
+      </f:if>
+      <f:if condition="{course.weitereinformationen}">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box">
+          <f:link.action pageUid="{settings.WeitereInformationen}" controller="Course" action="weitereInformationen" arguments="{course : course.uid}" noCacheHash="1">
+            <div class="center-box">
+              <div class="middle"> <img alt="a" class="default" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/edit-icon.png"> <img alt="a" class="hove" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/white-edit-icon.png">
+                <f:if condition="{course.weitereInformationentext}">
+                  <f:then> <span>{course.weitereInformationentext}</span> </f:then>
+                  <f:else> <span>
+                    <f:translate key="tx_course_domain_model_datestartend.noch_nicht_belegt" />
+                    </span> </f:else>
+                </f:if>
+              </div>
+            </div>
+          </f:link.action>
+        </div>
+      </f:if>
+      <f:if condition="{course.kursinhalte}">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box">
+          <f:link.action pageUid="{settings.Kursinhalte}" controller="Course" action="kursinformationen" arguments="{course : course.uid}" noCacheHash="1">
+            <div class="center-box">
+              <div class="middle"> <img alt="a" class="default" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/sheep-icon.png"> <img alt="a" class="hove" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/white-sheep-icon.png">
+                <f:if condition="{course.kursinhaltetext}">
+                  <f:then> <span>{course.kursinhaltetext}</span> </f:then>
+                  <f:else> <span>
+                    <f:translate key="tx_course_domain_model_datestartend.Kursinhalte" />
+                    </span> </f:else>
+                </f:if>
+              </div>
+            </div>
+          </f:link.action>
+        </div>
+      </f:if>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box">
+        <f:link.action pageUid="{settings.KurseBottomKontakt}" arguments="{course : course.uid}"  noCacheHash="1" >
+          <div class="center-box">
+            <div class="middle"> <img alt="a" class="default" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/message-icon.png"> <img alt="a" class="hove" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/white-message-icon.png"> <span>
+              <f:translate key="tx_course_domain_model_datestartend.Kontakt" />
+              </span> </div>
+          </div>
+        </f:link.action>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box">
+        <f:link.action pageUid="{settings.LastMinute}" noCacheHash="1" >
+          <div class="center-box">
+            <div class="middle"> 
+            <!--<img alt="a" class="default" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/timer-icon.png"> <img alt="a" class="hove" src="/typo3conf/ext/fluxtemplate/Resources/Public/img/white-timer-icon.png">-->
+            <i class="fa fa-gift" style="font-size: 74px; line-height: 0.7;"></i>
+              <span> 
+                  <f:translate key="tx_course_domain_model_datestartend.Last_Minute" />
+                  </span> 
+             
+            </div>
+          </div>
+        </f:link.action>
+      </div>
+    </div>
+  </div>
+</div>

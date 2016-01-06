@@ -1,0 +1,55 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml" 
+	 xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" 
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		
+		<flux:form label="Two Row Container" id="tworow" description="50% - 50% Column" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+			<flux:grid>
+                            <flux:grid.row>
+                            <flux:grid.column name="column1" colspan="2" label="Title"> </flux:grid.column>
+                          </flux:grid.row>
+				                  
+                           <flux:grid.row>
+                            <flux:grid.column name="column2" colspan="2" label="Middle title"> </flux:grid.column>
+                          </flux:grid.row>
+                            
+                             <flux:grid.row>
+                            <flux:grid.column name="column3" colspan="2" label="Bottom content"> </flux:grid.column>
+                          </flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+	<div class="content-head row">
+	  
+            <div class="col-lg-8">
+                    <flux:content.render render="1" area="column1" /> 
+      		</div> 
+     </div> 
+      
+      <div class="row">
+      		<div class="col-lg-8">
+                    <flux:content.render render="1" area="column2" /> 	
+            </div>
+            </div> 
+              <flux:content.render render="1" area="column3" /> 	
+
+      
+	
+            
+	</f:section>
+	
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>
+
+</div>

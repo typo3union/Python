@@ -1,0 +1,56 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Partial"/>
+
+	<f:section name="DropdownNavigation">
+		<v:page.menu  pageUid="{v:variable.typoscript(path: 'lib.menu.main.navigation')}"  expandAll="FALSE" useShortcutUid="FALSE">
+			<f:if condition="{menu}">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav ">
+						<f:for each="{menu}" as="menuPage" iteration="iteration">
+							<li class="{menuPage.class} {f:if(condition: menuPage.hasSubPages, then: 'dropdown')}">
+
+								<a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{menuPage.link}" class="{menuPage.class} {f:if(condition: menuPage.hasSubPages, then: 'dropdown-toggle')}"> {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)} </a>
+								{f:if(condition: menuPage.hasSubPages, then: '<span data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="caret"></i></span>')}
+								<v:page.menu pageUid="{menuPage.uid}" includeSpacers="false" expandAll="false">
+									<f:if condition="{menu}">
+										<ul class="dropdown-menu" role="menu">
+											<li>
+												<f:for each="{menu}" as="subMenuPage" iteration="subIteration">
+													<div class="{subMenuPage.class} menu-module">
+														<a tabindex="{iteration.cycle -> v:math.sum(b: 200)}" href="{subMenuPage.link}" class="{subMenuPage.class}">
+														<h4>{f:if(condition: subMenuPage.nav_title, then: subMenuPage.nav_title, else: subMenuPage.title)}</h4>
+														</a>
+														
+														<v:page.menu pageUid="{subMenuPage.uid}" includeSpacers="false" expandAll="false">
+															<f:if condition="{menu}">
+																<ul class="list-unstyled">
+																	<f:for each="{menu}" as="subOfSubMenuPage" iteration="subOfSubIteration">
+																		<li class="{subOfSubMenuPage.class}">
+																			<a tabindex="{subOfSubIteration.cycle -> v:math.sum(b: 130)}" href="{subOfSubMenuPage.link}" class="{subOfSubMenuPage.class}"> {f:if(condition: subOfSubMenuPage.nav_title, then: subOfSubMenuPage.nav_title, else: subOfSubMenuPage.title)} </a>
+																		</li>
+																	</f:for>
+																</ul>
+															</f:if>
+														</v:page.menu>
+														
+
+													</div>
+												</f:for>
+											</li>
+										</ul>
+									</f:if>
+								</v:page.menu>
+
+							</li>
+
+						</f:for>
+					</ul>
+				</div>
+			</f:if>
+		</v:page.menu>
+
+	</f:section>
+</div>

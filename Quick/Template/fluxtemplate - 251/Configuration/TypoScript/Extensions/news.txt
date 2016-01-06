@@ -1,0 +1,86 @@
+# News Extension custom Typoscript
+plugin.tx_news {
+	# News Extension custom Template
+	view {
+		templateRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Templates/
+		}
+		partialRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Partials/
+		}
+		layoutRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Layouts/
+		}
+	}
+	
+	
+	# News Extension custom CSS
+	settings {
+		 #Path to CSS file
+		#cssFile = {$filepaths.extensionsView}News/Public/Css/news-basic.css
+                cssFile = 
+		
+	}
+
+}
+
+[globalVar = TSFE:type = 100]
+config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = none
+    admPanel = 0
+    metaCharset = utf-8
+    additionalHeaders = Content-Type:text/xml;charset=utf-8
+    disablePrefixComment = 1
+	baseURL = www.menyhart.ch
+}
+
+pageNewsRSS = PAGE
+pageNewsRSS {
+    typeNum = 100
+    10 < tt_content.list.20.news_pi1
+    10 {
+            switchableControllerActions {
+                    News {
+                            1 = list
+                    }
+            }
+            settings < plugin.tx_news.settings
+            settings {
+                    #categories = 9
+                    categoryConjunction = notor
+                    #limit = 30
+                    detailPid = 24
+                    startingpoint = 24
+                    format = xml
+            }
+    }
+}
+
+[global]
+
+
+plugin.tx_news {
+        
+        settings.list.paginate {
+            #Do not set the "max records displayed" in the flexform of the plugin, the pagination will disappears
+            itemsPerPage = 10
+            insertAbove = false
+            insertBelow = TRUE
+            lessPages = TRUE
+            forcedNumberOfLinks = 5
+            pagesBefore = 2
+            pagesAfter = 2
+        }
+        settings.listDrill.paginate {
+            #Do not set the "max records displayed" in the flexform of the plugin, the pagination will disappears
+            itemsPerPage = 10
+            insertAbove = false
+            insertBelow = TRUE
+            lessPages = TRUE
+            forcedNumberOfLinks = 5
+            pagesBefore = 2
+            pagesAfter = 2
+        }
+}
+

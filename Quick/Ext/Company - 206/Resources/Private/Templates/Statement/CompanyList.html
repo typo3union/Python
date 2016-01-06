@@ -1,0 +1,85 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="row statementsub clearfix">
+    <f:if condition="{pageType} != 1234567890">
+      <div class="col-lg-12">
+        <h1>
+          <f:translate key="tx_companymanagement_domain_model_statement.company_list" />
+        </h1>
+      </div>
+      <div class="filteroption">
+        <ul>
+          <li>
+            <f:translate key="tx_companymanagement_domain_model_statement.l_sort" />
+          </li>
+          <li><span class="select-style">
+            <select class="form" name="companyStatement" id="companyStatement" >
+              <option value="">
+              <f:translate key="tx_companymanagement_domain_model_statement.l_sort" />
+              </option>
+              <option value="0">
+              <f:translate key="tx_companymanagement_domain_model_statement.l_firstname_acending" />
+              </option>
+              <option value="1">
+              <f:translate key="tx_companymanagement_domain_model_statement.l_firstname_decending" />
+              </option>
+            </select>
+            </span></li>
+        </ul>
+      </div>
+    </f:if>
+    <div class="statement_list ajax_load_img"><img src="typo3conf/ext/company_management/Resources/Public/Icons/ajax_load.gif" alt="" /></div>
+    <div class="companySatementList">
+      <f:for each="{companyStatements}" as="companyStatement" iteration="iteration" >
+        <div class="col-sm-3 col-md-3">
+          <div class="light-box">
+            <h2>
+             
+            </h2>
+            <f:if condition="{companyStatement.companyId.stateId.smallLogo.originalResource.originalFile.uid}"> <span class="company-logo">
+              <f:image src="{companyStatement.companyId.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{companyStatement.companyId.stateId.name}"/>
+              </span> </f:if>
+            <f:link.external uri="javascript:void(0);" > <span class="statmnt-img">
+              <f:image src="{companyStatement.image.originalResource.originalFile.uid}" width="150c" height="150c" alt="{companyStatement.name}"/>
+              </span> <span class="statmnt-dis"><span class="statementName"> {companyStatement.name}</span>{companyStatement.designation}<br/>
+              {companyStatement.companyId.name}</span>
+              <div class="triggerbtn">
+                <button class="md-trigger popup-modal" data-modal="company-modal-{iteration.index}">scale</button>
+              </div>
+            </f:link.external>
+          </div>
+        </div>
+        <div class="md-modal md-effect-{iteration.index}" id="company-modal-{iteration.index}">
+          <div class="md-content clearfix">
+            <div class="pop-up-leftimage"> <span>
+              <f:image src="{companyStatement.image.originalResource.originalFile.uid}" width="140c" height="170c" alt="{companyStatement.name}"/>
+              </span> <span> {companyStatement.companyId.name}</span>
+            
+            </div>
+            <div class="pop-upDetail">
+              <f:format.html>{companyStatement.description} </f:format.html>
+            </div>
+            <button class="md-close">
+            <f:translate key="tx_companymanagement_domain_model_statement.l_close" />
+            </button>
+          </div>
+        </div>
+      </f:for>
+      <f:if condition="{pageType} == 1234567890"> 
+        <script type="text/javascript" src="/typo3conf/ext/company_management/Resources/Public/Js/common.js"></script> 
+      </f:if>
+    </div>
+  </div>
+</f:section>

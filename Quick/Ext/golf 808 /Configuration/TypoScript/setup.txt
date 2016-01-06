@@ -1,0 +1,59 @@
+
+plugin.tx_golf {
+	view {
+		templateRootPath = {$plugin.tx_golf.view.templateRootPath}
+		partialRootPath = {$plugin.tx_golf.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_golf.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_golf.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_golf._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-golf table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-golf table th {
+		font-weight:bold;
+	}
+
+	.tx-golf table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+config.tx_golf.features.skipDefaultArguments = 1
+plugin.tx_golf.features.skipDefaultArguments = 1
+
+
+config.tx_golf.settings.link.skipControllerAndAction = 1
+plugin.tx_golf.settings.link.skipControllerAndAction = 1
+
+
+

@@ -1,0 +1,37 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="example" label="Example" description="Example Element" options="{group: 'Custom elements', icon: '{f:uri.resource(path: \'Icons/custom-content.png\', absolute: 1)}'}">
+	
+		<flux:form.sheet name="options" label="Options">				
+				<flux:field.input name="title" label="Title" />
+				<flux:form.section name="secPartner" label="Partner">
+					<flux:form.object name="obtPartner" label="Add New Partner">
+						<flux:field.input name="caption" label="Caption" />
+						<flux:field.input name="link" label="Link">
+							<flux:wizard.link />
+						</flux:field.input>
+						<flux:field.file name="image" uploadFolder="uploads/tx_fluxtemplate/" label="Upload Logo" allowed="jpg, jpeg, png, gif" showThumbnails="TRUE" />
+						
+
+						
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<flux:widget.grid />
+</f:section>
+
+<f:section name="Main">
+	<div class="bs-example">
+		
+	</div>
+</f:section>
+</div>

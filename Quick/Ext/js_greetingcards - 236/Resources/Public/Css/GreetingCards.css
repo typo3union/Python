@@ -1,0 +1,87 @@
+/*
+ *  (c) 2015 Jainish Senjaliya <jainish.online@gmail.com>
+ *  All rights reserved
+ *  Basic Layout 
+*/
+
+.tx-js-greetingcards {}
+ 
+.tx-js-greetingcards .errorMessage {
+	width:88.7%;
+	float:left;
+	background-color: #ffe9e9;
+	border: 1px solid #fbc4c4;
+	padding: 13px 40px 13px 18px;
+	margin-bottom:20px;
+	border-radius:4px;
+}
+.tx-js-greetingcards .errorMessage .errorDiv span {
+	color: #de5959;
+	font-size:14px;
+	line-height:18px;
+	width:100%;
+	padding-left:20px;
+	background:url(../Icons/error-icon.png) no-repeat left center;
+	display:block !important;
+}
+.tx-js-greetingcards .successMessage {
+	width:93%;
+	float:left;
+	padding:0px;
+	background-color: #EBF6E0;
+	border: 1px solid #b3dc82;
+	margin-bottom:20px;
+	border-radius:4px;
+	padding: 13px 18px 13px 18px;
+}
+.tx-js-greetingcards .successMessage span {
+	width:100%;
+	color: #5f9025;
+	font-size:14px;
+	line-height:18px;
+	background:url(../Icons/success_icon.png) no-repeat left center;
+	padding-left:20px;
+}
+.tx-js-greetingcards .formLoading {
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background: url("../Images/loading.gif") no-repeat scroll center center #000000 !important;
+	opacity: 0.33;
+	z-index: 111111;
+	display: none;
+}
+
+
+.tx-js-greetingcards .f3-widget-paginator {
+	width:100%;
+	margin:0px;
+	list-style:none;
+	text-align:center;
+	margin:20px 0 20px 0;
+	float:left;
+	clear:both;
+}
+
+.validationMessage { color: #ff0000;
+	font-size:14px;
+	line-height:18px;
+	width:100%;
+	padding-left:20px;
+	background:url(../Icons/error-icon.png) no-repeat left center;
+	display:none; margin-bottom:15px; margin-left:0px;
+} 
+
+form#greetingStep1 .validationMessage { margin-left:13px;} 
+
+.tx-js-greetingcards .form-group input.error[type="text"], .tx-js-greetingcards .form-group textarea.error {
+	border-color: red;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 4, 0, 0.5);
+	-moz-box-shadow:    0px 0px 10px 0px rgba(255, 4, 0, 0.5);
+	box-shadow:         0px 0px 10px 0px rgba(255, 4, 0, 0.5);
+}
+
+.tx-js-greetingcards .preview p{margin-bottom: 0}
+.tx-js-greetingcards .preview .name{margin-bottom: 18px;}

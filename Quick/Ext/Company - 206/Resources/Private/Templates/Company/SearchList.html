@@ -1,0 +1,55 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="search_results">
+  
+  	<f:if condition="{results}">
+		<f:then>
+			<div class="pagination">
+             <p class="search_for"><f:translate key="tx_companymanagement_domain_model_company.l_search_for" /> "{keywords}"</p>
+             <p><f:translate key="tx_companymanagement_domain_model_company.l_total_result" /> <f:count subject="{results}" /></p>
+				<f:for each="{results}" as="result" iteration="iteration">
+				
+					<div class="results">
+					 <f:if condition="{result.type}=='page'">
+					 	
+						<div class="title"><f:link.page pageUid="{result.uid}"><span class="number">{iteration.cycle}.</span> <f:format.raw>{result.title}</f:format.raw></f:link.page></div>
+					 </f:if>
+					 <f:if condition="{result.type}=='news'">
+						<div class="title">
+						 <f:link.action action="detail" controller="News" extensionName="News" noCacheHash="1" arguments="{ news: '{result.uid}'}" pageUid="{settings.newsSingleView}" ><span class="number">{iteration.cycle}.</span> <f:format.raw>{result.title}</f:format.raw></f:link.action>
+						</div>
+					 </f:if>
+					 <f:if condition="{result.type}=='company'">
+						<div class="title">
+						  <f:link.action action="show" arguments="{ uid: '{result.uid}'}" pageUid="{settings.companySingleView}" ><span class="number">{iteration.cycle}.</span> <f:format.raw>{result.title}</f:format.raw></f:link.action>
+						</div>
+					 </f:if>
+					  <f:if condition="{result.type}=='statement'">
+						<div class="title">
+						  <f:link.action action="show" arguments="{ uid: '{result.uid}'}" pageUid="{settings.statementSingleView}" ><span class="number">{iteration.cycle}.</span> <f:format.raw>{result.title}</f:format.raw></f:link.action>
+						</div>
+					 </f:if>
+					 
+					 <div class="content"> <f:format.raw><f:format.crop maxCharacters="500" append="..."> {result.description}</f:format.crop></f:format.raw></div>
+					</div>
+				 </f:for>
+			</div>
+			 <ul class="pager"></ul>
+		 </f:then>
+		 <f:else>
+		 	<f:if condition="{emptyKeyword} == 'empty'">
+				<f:then>
+		 			<f:translate key="tx_companymanagement_domain_model_company.l_enter_keyword" />
+				</f:then>
+				<f:else>
+					<f:translate key="tx_companymanagement_domain_model_company.l_no_result" />
+				</f:else>
+			</f:if>
+		 </f:else>
+	 </f:if>
+  </div>
+</f:section>
+
+

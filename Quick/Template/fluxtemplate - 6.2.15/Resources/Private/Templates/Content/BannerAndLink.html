@@ -1,0 +1,51 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="Banner" label="Banner And Links" description="Banner And Links Element" icon="" options="{Fluidcontent: {sorting: 101},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+      <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Background Image" allowed="jpg, jpeg, png, gif"/>
+        <flux:form.section name="banner" label="banner">
+          <flux:form.object name="Banner" label="Add New Slide">
+                <flux:field.input name="Text" label="link text"/>
+                <flux:field.input name="link" label="Link">
+                 <flux:wizard.link />
+               </flux:field.input>
+          </flux:form.object>
+        </flux:form.section>
+		
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+  
+    <section id="fullpage">
+          <div class="section" id="section0">
+            <div class="three_column">
+              <div class="container">
+                <div class="row">
+                 <f:if condition="{banner}">
+                  <f:for each="{banner}" as="banners" iteration="iteration">
+                      <div class="col-sm-4 col-xs-4">
+                         <f:link.page pageUid="{banners.Banner.link}" class="box box{iteration.cycle}">
+                          <div class="img_thumb"></div>
+                          <div class="thumb_detail">{banners.Banner.Text}</div>
+                        </f:link.page>
+                      </div>
+                  </f:for>
+                  </f:if>
+               </div>
+              </div>
+              <hr class="bottom_border">
+            </div>
+            <div class="image-bg">
+             <f:image src="uploads/slider_images/{picture}" width="1905c" height="967c"/>
+            </div>
+          </div>
+          
+        </section>
+
+  </f:section>
+</div>

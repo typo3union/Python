@@ -1,0 +1,368 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+* {
+  .box-sizing(border-box);
+}
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+
+// Body reset
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+  padding-top: 74px;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Reset unusual Firefox-on-Android default style.
+//
+// See https://github.com/necolas/normalize.css/issues/214
+
+button,
+input,
+select[multiple],
+textarea {
+  background-image: none;
+}
+
+
+// Links
+
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    .tab-focus();
+  }
+}
+
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
+}
+
+
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  .img-responsive();
+}
+
+// Rounded corners
+.img-rounded {
+  border-radius: @border-radius-large;
+}
+
+// Image thumbnails
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+.img-thumbnail {
+  padding: @thumbnail-padding;
+  line-height: @line-height-base;
+  background-color: @thumbnail-bg;
+  border: 1px solid @thumbnail-border;
+  border-radius: @thumbnail-border-radius;
+  .transition(all .2s ease-in-out);
+
+  // Keep them at most 100% wide
+  .img-responsive(inline-block);
+}
+
+// Perfect circle
+.img-circle {
+  border-radius: 50%; // set radius in percents
+}
+
+
+// Horizontal rules
+
+hr {
+  margin-top:    @line-height-computed;
+  margin-bottom: @line-height-computed;
+  border: 0;
+  border-top: 1px solid @hr-border;
+}
+
+
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+.form-search {
+	padding-top: 9px;
+}
+
+
+.usernavbar {
+	background: #eee;
+
+	.list-inline {
+		margin-bottom: 0px;
+
+		a {
+			color: #666;
+			font-size: 12px;
+			line-height: 24px;
+		}
+	}
+}
+
+
+.hero .carousel {
+	margin-left: -(@grid-gutter-width / 2);
+	margin-right: -(@grid-gutter-width / 2);
+}
+
+
+.bs-sidenav {
+	margin-top: 12px;
+	margin-bottom: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #f7f5fa;
+	border-radius: 5px;
+	
+	.nav > li > .nav a { padding: 6px 15px 6px 30px; }
+}
+
+
+.col-main, .col-sidebar {
+	padding-top: 22px;
+}
+
+
+/* Hero */
+.home #content .hero {
+	position: relative;
+	background: #45494d url(/typo3conf/ext/demotemplate/Resources/Public/Images/introbg.jpg) no-repeat center center;
+	background-size: cover;
+	-webkit-box-shadow: inset 0 -1px 5px rgba(0,0,0,0.6);
+	-moz-box-shadow: inset 0 -1px 5px rgba(0,0,0,0.6);
+	box-shadow: inset 0 -1px 5px rgba(0,0,0,0.6);
+
+	text-shadow: #666 0px 0px 5px;
+
+	padding-top:    40px;
+	padding-bottom: 40px;
+
+	h1,p {
+		color: #fff;
+	}
+}
+
+header .hero {
+	background: #45494d url(/typo3conf/ext/demotemplate/Resources/Public/Images/introbg.jpg) no-repeat center center;
+	background-size: cover;
+	padding: 50px 0;
+	color: @white;
+	text-shadow: #666 0px 0px 5px;
+
+	h1 {
+		font-size: 40px;
+	}
+	p, .csc-header-n1 h2 {
+		font-weight: 300;
+		line-height: 1.5;
+		font-size: 21px;
+		margin-top: 0px;
+	}
+}
+
+.breadcrumb-section {
+	background: #f7f5fa;
+}
+
+.breadcrumb a {
+	color: #949494;
+	font-size: 12px;
+}
+
+.main .container {
+	padding-top: 40px;
+}
+
+.footer-section {
+	border-top: 1px solid #ddd;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	background: #F7F7F7;
+
+	.nav-stacked a {
+		font-size: 12px;
+		padding: 2px 0px;
+		h4 {
+			color: #666;
+		}
+		&:hover {
+			background: transparent;
+			text-decoration: underline;
+			color: #000;
+		}
+	}
+}
+
+
+.elements .hero {
+	background: #45494d url(/typo3conf/ext/demotemplate/Resources/Public/Images/bg-1.jpg) no-repeat center center;
+	background-size: cover;
+}
+.extensions .hero {
+	background: #45494d url(/typo3conf/ext/demotemplate/Resources/Public/Images/bg-2.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+#page_54 {
+	.hero { padding: 0; }
+}
+
+
+.navbar-default .searchbar-toggle {
+	.navbar-toggle();
+	margin-right: 0px !important;
+	border-color: @navbar-default-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: @navbar-default-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: @navbar-default-toggle-icon-bar-bg;
+    }
+}
+
+
+@media (min-width: @grid-float-breakpoint) {
+
+	header .hero {
+		h1 {
+			font-size: 60px;
+		}
+	}
+
+	.home #content .hero {
+		text-align: left;
+		padding-top:    140px;
+		padding-bottom: 140px;
+
+		p.lead {
+			font-size: 30px;
+		}
+
+		h1 {
+			font-size: 100px;
+		}
+
+		.btn-default {
+			background: none;
+			color: #fff;
+		}
+
+	}
+}
+
+
+.footer-links, .user-links {
+	margin: 0;
+	padding-left: 0;
+	font-size: 12px;
+}
+
+.footer-links li:first-child {
+	padding-left: 0;
+}
+.user-links li:last-child {
+	margin-right: 10px;
+}
+.user-links {
+	margin-right: 20px;
+}
+
+.footer-links li, .user-links li {
+	display: inline;
+	padding: 0 2px;
+}
+
+
+.bs-searchbar .tx-macinasearchbox-pi1 {
+	padding-bottom: 9px;
+}
+
+.bs-searchbar-inline {
+	width: 200px;
+	float: right;
+}
+
+.navbar-fixed-top .navbar-default {
+	margin-bottom: 0px;
+}
+
+// Korrektur für Tabs
+.tab-pane { padding-top: 10px; }
+
+// Demo style
+.style1 { color: #a94442; }
+
+.csc-frame-frame1 .row > div > div { background: #eee; padding: 5px 4px; }
+.csc-frame-frame1 .row { 
+	margin-bottom: 20px;
+	p { margin: 0; }
+}
+

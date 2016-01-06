@@ -1,0 +1,138 @@
+<T3DataStructure>
+  <meta>
+    <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+    <main>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>Main Settings</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+         <!-- <settings.flexform.main.fullBurnImage>
+            <TCEforms>
+              <label>Full Burn Image</label>
+              <config type="array">
+                <type>group</type>
+                <internal_type>file</internal_type>
+                <allowed>png,jpg,jpeg,gif</allowed>
+                <max_size>10240</max_size>
+                <uploadfolder>uploads/tx_candle</uploadfolder>
+                <show_thumbs>1</show_thumbs>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+              </config>
+            </TCEforms>
+          </settings.flexform.main.fullBurnImage>
+          <settings.flexform.main.fullNotBurnImage>
+            <TCEforms>
+              <label>Full Not Burn Image</label>
+              <config type="array">
+                <type>group</type>
+                <internal_type>file</internal_type>
+                <allowed>png,jpg,jpeg,gif</allowed>
+                <max_size>10240</max_size>
+                <uploadfolder>uploads/tx_candle</uploadfolder>
+                <show_thumbs>1</show_thumbs>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+              </config>
+            </TCEforms>
+          </settings.flexform.main.fullNotBurnImage>-->
+		  
+		    
+		   <settings.flexform.main.randomCandles>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>No of Random Candles</label>
+              <config>
+                <type>input</type>
+              </config>
+            </TCEforms>
+          </settings.flexform.main.randomCandles>
+		  
+		   <settings.flexform.main.BigNotBurnImage>
+            <TCEforms>
+              <label>Big Not Burn Image</label>
+              <config type="array">
+                <type>group</type>
+                <internal_type>file</internal_type>
+                <allowed>png,jpg,jpeg,gif</allowed>
+                <max_size>10240</max_size>
+                <uploadfolder>uploads/tx_candle</uploadfolder>
+                <show_thumbs>1</show_thumbs>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+              </config>
+            </TCEforms>
+          </settings.flexform.main.BigNotBurnImage>
+		
+		   <settings.flexform.main.BigBurnImage>
+            <TCEforms>
+              <label>Big Burn Image</label>
+              <config type="array">
+                <type>group</type>
+                <internal_type>file</internal_type>
+                <allowed>png,jpg,jpeg,gif</allowed>
+                <max_size>10240</max_size>
+                <uploadfolder>uploads/tx_candle</uploadfolder>
+                <show_thumbs>1</show_thumbs>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+              </config>
+            </TCEforms>
+          </settings.flexform.main.BigBurnImage>
+          <settings.flexform.main.halfBurnImage>
+            <TCEforms>
+              <label>Half Burn Image</label>
+              <config type="array">
+                <type>group</type>
+                <internal_type>file</internal_type>
+                <allowed>png,jpg,jpeg,gif</allowed>
+                <max_size>10240</max_size>
+                <uploadfolder>uploads/tx_candle</uploadfolder>
+                <show_thumbs>1</show_thumbs>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+              </config>
+            </TCEforms>
+          </settings.flexform.main.halfBurnImage>
+          <settings.flexform.main.emptyBurnImage>
+            <TCEforms>
+              <label>Empty Burn Image</label>
+              <config type="array">
+                <type>group</type>
+                <internal_type>file</internal_type>
+                <allowed>png,jpg,jpeg,gif</allowed>
+                <max_size>10240</max_size>
+                <uploadfolder>uploads/tx_candle</uploadfolder>
+                <show_thumbs>1</show_thumbs>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+              </config>
+            </TCEforms>
+          </settings.flexform.main.emptyBurnImage>
+         
+         
+         
+          <!-- <settings.flexform.main.burnCandles>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>No of Burn Candles</label>
+              <config>
+                <type>input</type>
+              </config>
+            </TCEforms>
+          </settings.flexform.main.burnCandles>-->
+        </el>
+      </ROOT>
+    </main>
+  </sheets>
+</T3DataStructure>

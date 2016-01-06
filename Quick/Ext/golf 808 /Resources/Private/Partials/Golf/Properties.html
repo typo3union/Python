@@ -1,0 +1,159 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:for each="{golf}" as="golf1">
+<section class="video-page" id="fullpage">
+			<div class="section" id="section0">
+
+				<div class="videoContainer">
+				<div class="video-img">
+					<f:for each="{golf1.pictures.videoImage}" as="pic">
+							<f:image src="fileadmin/{pic.imagepath}"></f:image>
+					 </f:for>
+				 </div>
+				 <div class="video" style="display:none;">
+					<div class="video-close">
+						<button type="button" class="close detail-close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
+					</div>
+						<f:format.raw>{golf1.video}</f:format.raw>
+					</div>
+					<!-- <div class="caption">Prometheus</div> -->
+					<div class="control">
+						<div class="btmControl">
+							<f:if condition="{golf1.video}"><div class="btnPlay btn" title="Play/Pause video"></div></f:if>
+							<!-- <div class="progress-bar">
+								<div class="progress">
+									<span class="bufferBar"></span>
+									<span class="timeBar"></span>
+								</div>
+							</div>
+							<div class="volume" title="Set volume">
+									<span class="volumeBar"></span>
+							</div>
+							<div class="sound sound2 btn" title="Mute/Unmute sound"><span class="icon-sound"></span></div>
+							<div class="btnFS btn" title="Switch to full screen"><span class="icon-fullscreen"></span></div> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="container loch-details">
+					<div class="loch-number">
+						<f:if condition="{golf1.name}"><h2 class="title">
+							<f:if condition="{golf1.putting_holes}">
+								<f:then>
+								<f:translate key="tx_golf_domain_model_golf.kurzbahn" /><f:link.action pageUid="{settings.flexform.main.golfshow}" controller="Golf" action="show" arguments="{golf : golf1.uid}" noCacheHash="1"><span>{golf1.name}</span></f:link.action></h2>
+								</f:then>
+								<f:else>
+								<f:translate key="tx_golf_domain_model_golf.bahn" /><f:link.action pageUid="{settings.flexform.main.golfshow}" controller="Golf" action="show" arguments="{golf : golf1.uid}" noCacheHash="1"><span>{golf1.name}</span></f:link.action></h2>
+								</f:else>
+								</f:if>
+						</f:if>
+					</div>
+					<div class="loch-camping">
+						<f:for each="{golf1.pictures.holeImage}" as="pic">
+							   <f:if condition="{pic.imagepath}"> <f:image src="fileadmin/{pic.imagepath}"></f:image></f:if>
+						</f:for>
+					</div>
+					<div class="loch-camping-details">
+						<div class="loch-camping-pageing">
+							 <f:if condition="{golf1.prev}"><f:link.action pageUid="{settings.flexform.main.golfshow}" controller="Golf" action="show" arguments="{golf : golf1.prev}" noCacheHash="1" class="prv">Prv</f:link.action></f:if>
+							<f:if condition="{golf1.next}"><f:link.action pageUid="{settings.flexform.main.golfshow}" controller="Golf" action="show" arguments="{golf : golf1.next}" noCacheHash="1" class="next">Next</f:link.action></f:if>
+							
+						</div>
+						<div class="loch-pinposition">
+							<ul class="nav">
+								<f:if condition="{golf1.par}"><li><label><f:translate key="tx_golf_domain_model_golf.par" /> :</label> <span>{golf1.par}</span></li></f:if>
+								<f:if condition="{golf1.hcp}"><li><label><f:translate key="tx_golf_domain_model_golf.hcp" /> :</label> <span>{golf1.hcp}</span></li></f:if>
+								<f:if condition="{golf1.red}"><li><label><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/red-dots.png" alt=""> :</label> <span>{golf1.red}</span></li></f:if>
+								<f:if condition="{golf1.green}"><li><label><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/yellow-dots.png" alt=""> :</label> <span>{golf1.green}</span></li></f:if>
+							</ul>
+							<ul class="nav">
+								<f:if condition="{golf1.pictures.pinpositionImage}"><li><label><f:translate key="tx_golf_domain_model_golf.Pinposition" />:</label> <span>
+								<f:for each="{golf1.pictures.pinpositionImage}" as="pic">
+							        <f:image src="fileadmin/{pic.imagepath}"></f:image>
+							    </f:for>
+								</span></li></f:if>
+								<f:if condition="{golf1.m_green}"><li class="m_green"><label><f:translate key="tx_golf_domain_model_golf.m_green" />:</label> <span>
+								{golf1.m_green}							       
+								</span></li></f:if>
+							</ul>
+						</div>
+						<f:link.action
+										pageUid="{settings.flexform.main.golflist}"
+										controller="Golf" action="list"
+										noCacheHash="1" class="btn button"><f:translate key="tx_golf_domain_model_golf.back" /></f:link.action>
+						
+					</div>
+				</div>
+
+			</div>
+			<hr class="bottom_border">
+		</section>
+		<section class="slider center">
+		<f:for each="{golf1.pictures.sliderImages}" as="pic">
+	        <div><f:image src="fileadmin/{pic.imagepath}" width="855c" height="454c"></f:image></div>
+	        
+		</f:for>
+		
+		</section>
+	<f:if condition="{golf1.degree_view}">
+	
+		<div class="container">
+			<div class="row">	
+				<f:link.action pageUid="{golf1.degree_view}" noCacheHash="1" class="btn button_360 fancybox fancybox.iframe" style="background-image:url('uploads/tx_golf/{btnimg}')"><f:translate key="tx_golf_domain_model_golf.degree_view" /></f:link.action>
+			</div>	
+			</div>
+	</f:if>
+		<v:if stack="{0: '{golf1.content}', 1: 'OR', 2: '{golf1.tx_golf_table}'}">
+
+        <f:then>
+            <section class="section2">
+                <div class="container">
+                <div class="golf_club_full"> 
+                <f:if condition="{golf1.description_title}">
+					<div class="h2_title">
+						<img src="typo3conf/ext/fluxtemplate/Resources/Public/images/img-2.png"/>
+						<h2>{golf1.description_title}</h2> 
+					</div>
+				</f:if>
+
+            	<div class="row">               	
+        		<f:if condition="{golf1.content}">
+        			<f:then>
+        				<f:if condition="{golf1.tx_golf_table}">
+        					<f:then>
+        						<div class="col-sm-6"> 
+									<div class="half_section"><f:format.html>{golf1.content}</f:format.html></div>
+								</div>
+								<div class="col-sm-6"> 
+									<div class="half_section"><f:format.html>{golf1.tx_golf_table}</f:format.html></div>
+								</div>
+							</f:then>
+							<f:else>
+								<div class="col-sm-12"> 
+									<div class="half_section"><f:format.html>{golf1.content}</f:format.html></div>
+								</div>									
+							</f:else>
+        				</f:if>
+        			</f:then>
+        			<f:else>
+        				<f:if condition="{golf1.tx_golf_table}">
+        					<div class="col-sm-12"> 
+							<div class="half_section"><f:format.html>{golf1.tx_golf_table}</f:format.html></div>
+							</div>
+        				</f:if>
+        			</f:else>
+        		</f:if>
+				
+		        </div>
+				    </div>
+				</div>        
+				</div>
+            </section>
+        </f:then>
+        <f:else>
+            
+        </f:else>
+                        
+        </v:if>
+
+		</f:for>

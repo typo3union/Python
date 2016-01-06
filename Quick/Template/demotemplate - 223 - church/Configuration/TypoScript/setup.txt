@@ -1,0 +1,40 @@
+###################################################
+# Include all TypoScript files
+###################################################
+[GLOBAL]
+
+
+# Configuration
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Config/config.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Config/language.ts">
+
+
+# Lib
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Lib/footer.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Lib/menu.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Lib/search.ts">
+
+
+## Page
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Page/header.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Page/assets.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Page/page.ts">
+
+# Plugin
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Plugin/tx_cssstyledcontent.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Plugin/tx_felogin.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Plugin/tx_form.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Plugin/tx_indexedsearch.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Plugin/tx_seobasics.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Plugin/tx_ttcontent.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Plugin/tx_demotemplate.ts">
+
+##############################################
+# Additional TypoScript by Kirche begin #
+##############################################
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:demotemplate/Configuration/TypoScript/Page/additional_page_settings.ts">
+
+
+
+

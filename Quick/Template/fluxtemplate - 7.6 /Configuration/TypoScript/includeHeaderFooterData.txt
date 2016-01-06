@@ -1,0 +1,50 @@
+page.includeCSS {
+   
+    file001 = {$filepaths.css}bootstrap.min.css
+    file002 = {$filepaths.css}font-awesome.min.css
+    file003 = {$filepaths.css}fullcalendar.css
+    file004 = {$filepaths.css}owl.carousel.css
+    file005 = {$filepaths.css}owl.theme.css
+    file006 = {$filepaths.css}sky-forms.css
+    file006 = {$filepaths.css}jquery.paginate.css
+    file007 = {$filepaths.css}layerslider.css
+    file008 = {$filepaths.css}global-style.css
+    file009 = {$filepaths.css}slick.css
+    file010 = {$filepaths.css}slick-theme.css
+    
+
+}
+
+
+page.includeJSFooter {
+    
+    file001 = {$filepaths.js}jquery.js
+    file002 = {$filepaths.js}jquery-ui.min.js
+	file003 = {$filepaths.js}bootstrap.min.js
+    file004 = {$filepaths.js}modernizr.custom.js
+    file005 = {$filepaths.js}bootstrap.min.js
+    file006 = {$filepaths.js}bootstrap-hover-dropdown.min.js
+    file007 = {$filepaths.js}owl.carousel.js
+    file008 = {$filepaths.js}jquery.magnific-popup.min.js
+    file009 = {$filepaths.js}layerslider.transitions.js
+    file010 = {$filepaths.js}layerslider.kreaturamedia.jquery.js
+    file011 = {$filepaths.js}greensock.js
+    file012 = {$filepaths.js}html5lightbox.js
+    file013 = {$filepaths.js}jquery.paginate.js
+    file014 = {$filepaths.js}loginFormValidate.js
+    file015 = {$filepaths.js}moment.min.js
+    file016 = {$filepaths.js}fullcalendar.min.js
+    file017 = {$filepaths.js}gcal.js
+    file018 = {$filepaths.js}slick.min.js
+    file019 = {$filepaths.js}custom.js
+
+}
+
+page.headerData {
+	25 = TEXT
+	25.value (
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+	)
+
+}
+ 

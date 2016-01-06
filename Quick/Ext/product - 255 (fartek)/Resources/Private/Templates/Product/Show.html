@@ -1,0 +1,29 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:for each="{main_cat.0.sub_cat}" as="cat" iteration="iteration">
+<v:page.header.title title="Fartek LebensmittelvertriebsgsmbH | {cat.category_name} / {product.name}"
+							whitespaceString=" " setIndexedDocTitle="1">
+						Fartek LebensmittelvertriebsgsmbH |{cat.category_name} / {product.name}
+						</v:page.header.title>
+						</f:for>
+<f:flashMessages renderMode="div" />
+<f:render partial="Product/Properties" arguments="{product:product,main_cat:main_cat}" />
+
+</f:section>
+</div>

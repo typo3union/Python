@@ -1,0 +1,103 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+<div class="kelender-filter">
+<div class="right-button-area clearfix">
+        <select class="select-right form-control" id="scheduleView">
+            <option value="">Terminübersicht</option>
+            <option value="wk">Wochenansicht</option> 
+            <option value="mk">Monatsansicht</option>                                               
+        </select>
+        <div class="pull-right">
+            <button class="btn btn-default active" type="button">Alle</button>
+             <f:if condition='{user}'>
+	            <button class="btn btn-default" id="private" type="button">Interne</button>
+            </f:if>
+             <f:for each="{categories}" as="category">
+                <button class="btn btn-default" id="cat_{category.uid}" type="button" >{category.title}</button>
+             </f:for>                                                                        	
+        </div>
+    </div>
+  <div class="table-head-box clearfix">
+    <f:for each="{locations}" as="location" iteration="iteration">
+      <div class="table-grid-1" id="loc_{location.uid}">
+        <f:if condition='{location.icon.originalResource.originalFile.uid}'>
+          <f:image src="{location.icon.originalResource.originalFile.uid}" alt="head-box-{iteration.index}"  class="tbl-head-img-bk" />
+        </f:if>
+        <f:if condition='{location.hovericon.originalResource.originalFile.uid}'>
+          <f:image src="{location.hovericon.originalResource.originalFile.uid}" alt="head-box-{iteration.index}" class="tbl-head-img-nn" />
+        </f:if>
+        <span>{location.title}</span> </div>
+    </f:for>
+  </div>
+  
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+    
+        <f:for each="{events}" as="event">
+       
+	        <v:variable.set name="ck_date" value="<f:format.date format='U'>{event.date}</f:format.date>"></v:variable.set>
+          <tr class="loc_{event.location.uid} cat_{event.category.uid}<f:if condition='{event.private} == 1'> tbl-gold private</f:if><f:if condition="{ck_date} <= {all_date.wk_date}"> wk</f:if><f:if condition="{ck_date} <= {all_date.mk_date}"> mk</f:if>">
+          
+            <f:if condition='{event.location.icon.originalResource.originalFile.uid}'>
+              <td><f:image src="{event.location.icon.originalResource.originalFile.uid}" alt="icon" class="small-icon" /></td>
+            </f:if>
+            <td><span class="light">{event.location.title}</span></td>
+            <td>
+            	<span class="bolder">              
+                	<f:format.date format="%a, %d.%m.%Y">{event.date}</f:format.date>
+                </span><br>
+                <span class="light-bolder">{event.time} Uhr</span>
+            </td>           
+            <!--<td><span class="light-bolder">{event.category.title}</span></td>-->
+            <td><span class="light-bolder"><f:format.crop maxCharacters="150" >{event.description}</f:format.crop></span></td>
+            <f:if condition="{event.icsFile}">
+            	<f:then>
+                	 <td>
+                     	<!--<span class="light-bolder"><a href="{event.icsFile.originalResource.publicUrl}">Zum Kalender hinzufügen.</a></span>-->
+                        <span class="light-bolder"><a href="uploads/tx_events/ICS/{event.icsFile}"><img alt="Terminkalender" src="typo3conf/ext/demotemplate/Resources/Public/Images/cal.png"></a></span>                                              
+                        
+                      </td> 
+                </f:then>
+                <f:else>
+                	<td></td>
+                </f:else>
+            </f:if> 
+           
+          </tr>
+        </f:for>
+      </tbody>
+    </table>
+    
+  </div>
+   <f:if condition='{user}'>
+    <div class="event-active">
+        <div class="off-event">
+        <span class="star">*</span>
+           <span class="off-box"></span>
+           <span class="off-desc">= öffentliche Termine</span>
+       </div>
+       <div class="on-event">
+        <span class="star">*</span>
+           <span class="on-box"></span>
+        <span class="off-desc">= interne Termine</span>
+       </div>
+    </div>
+ </f:if>
+   
+</div>
+
+
+ 
+</f:section>

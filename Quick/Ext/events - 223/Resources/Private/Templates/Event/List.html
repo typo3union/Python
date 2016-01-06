@@ -1,0 +1,61 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+<div class="home-filter">
+  <div class="table-head-box clearfix">
+    <f:for each="{locations}" as="location" iteration="iteration">
+      <div class="table-grid-1 <f:if condition='{location.uid} == 1'>active</f:if>" id="loc_{location.uid}">
+        <f:if condition='{location.icon.originalResource.originalFile.uid}'>
+          <f:image src="{location.icon.originalResource.originalFile.uid}" alt="head-box-{iteration.index}" width='86' height="78"  class="tbl-head-img-bk" />
+        </f:if>
+        <f:if condition='{location.hovericon.originalResource.originalFile.uid}'>
+          <f:image src="{location.hovericon.originalResource.originalFile.uid}" alt="head-box-{iteration.index}" width='86' height="78" class="tbl-head-img-nn" />
+        </f:if>
+        <span>{location.title}</span> </div>
+    </f:for>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+        <f:for each="{events}" as="event">
+          <tr class="loc_{event.location.uid} <f:if condition='{event.location.uid} != 1'>hidden</f:if>">
+            <f:if condition='{event.location.icon.originalResource.originalFile.uid}'>
+              <td><f:image src="{event.location.icon.originalResource.originalFile.uid}" alt="icon" width='25' height="20" /></td>
+            </f:if>
+            <td><span class="light">{event.location.title}</span></td>
+            <td>
+            	<span class="bolder">
+                	<f:format.date format="D">{event.date}</f:format.date>, <f:format.date format="d.m.Y">{event.date }</f:format.date>
+                </span>
+            </td>
+            <td>
+            	<span class="light-bolder">{event.time} Uhr</span>
+            </td>
+            <td><span class="light-bolder"><f:format.crop maxCharacters="150" >{event.description}</f:format.crop></span></td>
+            <f:if condition="{event.icsFile}">
+            	<f:then>
+                	 <td>
+                     	 <span class="light-bolder"><a href="uploads/tx_events/ICS/{event.icsFile}"><img alt="Terminkalender" src="typo3conf/ext/demotemplate/Resources/Public/Images/cal.png"></a></span>                                                                       
+                      </td>
+                </f:then>
+                <f:else>
+                	<td></td>
+                </f:else>
+            </f:if>
+          </tr>
+        </f:for>
+      </tbody>
+    </table>
+  </div>
+</div>
+</f:section>

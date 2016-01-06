@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-06-13T11:05:54Z" product-name="js_contact_form">
+		<header/>
+		<body>
+		
+			<trans-unit id="plugin-title">
+				<source>Contactformulier</source>
+			</trans-unit>
+			<trans-unit id="plugin-description">
+				<source>Hier kunt u alle vereiste velden en verplichte velden en andere configuraties configureren.</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform">
+			    <source>Contactformulier</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.firstname">
+			    <source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.lastname">
+			    <source>Achternaam</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.company">
+			    <source>Bedrijfsnaam</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.url">
+			    <source>url</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.email">
+			    <source>E-mail</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.phone">
+			    <source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.address">
+				<source>Adres</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.zip">
+				<source>Postcode</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.city">
+				<source>Stad</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.country">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.message">
+			    <source>Nachricht</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.subject">
+				<source>Onderwerp van gebruiker E-mail</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.page">
+				<source>Gebruiker is bereikbaar van volgende pagina</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.contact_date">
+			    <source>Gebruiker is bereikbaar van volgende Datum</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.ip">
+			    <source>IP adres</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.useragent">
+			    <source>Gebruiker</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.save">
+			    <source>Absenden</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.required.field.alert">
+			    <source>Vul alle verplichte velden in aub.</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_firstname">
+			    <source>Name ist ein Pflichtfeld</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_lastname">
+			    <source>Achternaam is erforderlich</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_company">
+			    <source>Bedrijfsnaam is erforderlich</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_url">
+			    <source>Url is verplicht</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.valid_url">
+			    <source>Vul een geldige url in aub</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_email">
+			    <source>E-mail ist ein Pflichtfeld</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.valid_email">
+			    <source>Vul een geldig e-mailadres in aub</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_phone">
+			    <source>Telefone is erforderlich</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.valid_phone">
+				<source>Vul een geldig phone!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_fax">
+			    <source>fax is verplicht</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_address">
+				<source>Adres is een verplicht veld</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_zip">
+				<source>Postcode is een verplicht veld</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.valid_zip">
+				<source>Voer geldige Zip en kan meer dan 6 karakter niet zijn!</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_city">
+				<source>Stad is een verplicht veld</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_country">
+				<source>Land is een verplicht veld</source>
+			</trans-unit>
+			<trans-unit id="tx_jscontactform_domain_model_contactform.blank_message">
+			    <source>Nachricht ist ein Pflichtfeld</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.include_template">
+				<source>Weet u zeker dat u de "Main" statische template hebben opgenomen?</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.missing_configuration">
+				<source>E-mail informatie zoals Admin e-mail, e-mail afzender, onderwerp, enz.. Is niet ingesteld. Vul plugin configureren e-mailinstellingen</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.errorMessage">
+			    <source>We verzoeken u vriendelijk nogmaals contact op te nemen.</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.dear.sir.madam">
+			    <source>Sehr geehrte(r)Frau/Herr </source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.admin.dear.sir.madam">
+			    <source>Hallo liebes Fanchklinik Enzensberg Team!</source>
+			</trans-unit>			
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.user.message_before_contact_data">
+			    <source>Vielen Dank für Ihre Anfrage! Wir werden diese so schnell wie möglich bearbeiten! %1$s %1$s Sollten Sie weiterführende Fragen zu unseren Produkten oder Dienstleistungen haben, so stehen Ihnen jederzeit gerne zur Verfügung!
+</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.user.message_after_contact_data">
+			    <source>Danke, dass Sie uns kontaktiert haben. Wir werden uns so bald wie möglich kontaktieren.</source>
+			</trans-unit> 
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.admin.message_before_contact_data">
+				<source>Folgende Person hat das Kontakt-Formular unter %1$s ausgefüllt:</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.admin.message_after_contact_data">
+				<source>Es gibt eine neue Nachricht hinterlassen</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.regards">
+                <source>Mit Freundlichen Grüßen,</source>
+            </trans-unit>
+            
+            <trans-unit id="tx_jscontactform_domain_model_contactform.regards_name">
+                <source>Fanchklinik Enzensberg</source>
+            </trans-unit>
+            
+            <trans-unit id="tx_jscontactform_domain_model_contactform.after_regards">
+                <source>Fachklinik Enzensberg %1$s E-mail: info@fachklinik-enzensberg.de %1$s www.fachklinik-enzensberg.de %1$s Tele: 0 83 62/12-0 %1$s Tele:  0 83 62/12-30 30</source>
+            </trans-unit>
+            
+            <trans-unit id="tx_jscontactform_domain_model_contactform.after_regards2">
+                <source>Die onformatie in dieser E-Mail und alle Anhänge sind vertraulich und ausschließlich für den bezeichneten Adressaten bestimmt. Wenn Sie diese Nachricht erhalten haben, löschen Sie die Nachricht, einschließlich der Anhänge und informieren Sie uns.</source>
+            </trans-unit>
+			
+			<trans-unit id="tx_jscontactform_domain_model_contactform.after_regards3">
+				<source>Drucken Sie diese E-Mail nur bei Bedarf, denken Sie an die Umwelt.</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

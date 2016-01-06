@@ -1,0 +1,104 @@
+{namespace yag=Tx_Yag_ViewHelpers}
+{namespace extlist=Tx_PtExtlist_ViewHelpers}
+{namespace ptextbase=Tx_PtExtbase_ViewHelpers}
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<extlist:comment>
+<!--  
+Template for rendering single item
+
+Here is a list of objects / variables that can be accessed in this template:
+
+Tx_Yag_Domain_Model_Item mainItem              Item to be rendered
+
+@package YAG
+@author Michael Knoll <mimi@kaktusteam.de>
+@author Daniel Lienert <daniel@lienert.cc>
+-->
+</extlist:comment>
+
+<f:layout name="Default" />
+<f:section name="main">
+
+	<div class="tx-yag-singleview">
+		<div class="tx-yag-image">
+		    <f:if condition="{lastItem}">
+		        <f:then>
+			        <yag:image item="{mainItem}" resolutionName="medium" />
+			    </f:then>
+			    <f:else>
+			        <extlist:link.action action="show" arguments="{itemListOffset: pager.nextPage}">
+				        <yag:image item="{mainItem}" resolutionName="medium" />
+				    </extlist:link.action>
+			    </f:else>
+		    </f:if>
+		</div>
+		
+		<f:if condition='{config.settings.item.showTitle}'>
+			<div class="tx_yag-single-title">
+				{mainItem.title}
+			</div>
+		</f:if>		
+		
+		<f:if condition='{config.settings.item.showDescription}'>
+			<div class="tx_yag-single-description">
+				{mainItem.description}
+			</div>
+		</f:if>
+		
+		<div class="tx-yag-navigator">
+			
+			
+			<div class="pagination">
+			  <ul>
+			  	<li>
+			  	<f:if condition="{pager.currentPage} != 1">
+			        <f:then>
+				        <extlist:link.action action="show" arguments="{itemListOffset: pager.previousPage}"><f:translate key="tx_yag_general.previous" default="&laquo; previous" /></extlist:link.action>
+				    </f:then>
+				    <f:else>
+				        <span><f:translate key="tx_yag_general.previous" default="&laquo; previous" /></span>
+				    </f:else>
+			    </f:if>
+			    </li>
+			    
+			    <fed:loop count="{pager.itemCount}" iteration="iteration">
+			    	<li>
+			    	<extlist:link.action action="show" arguments="{itemListOffset: iteration.cycle}">{iteration.cycle}</extlist:link.action>
+						</li>
+			    </fed:loop>
+			  	
+			    
+			    
+			    <li>
+			    	<f:if condition="{lastItem}">
+			        <f:then>
+			            <span><f:translate key="tx_yag_general.next" default="next &raquo;" /></span>
+			        </f:then>
+			        <f:else>
+			        	<extlist:link.action action="show" arguments="{itemListOffset: pager.nextPage}"><f:translate key="tx_yag_general.next" default="next &raquo;" /></extlist:link.action>
+			        </f:else>
+						</f:if>
+			    	
+			    </li>
+			  </ul>
+			</div>
+			
+			
+			<div style="clear:both;"> </div>
+		</div>
+	   
+	   <f:if condition='{config.settings.item.showItemMeta}'>
+	   	<f:render partial="{config.itemConfig.itemMetaPartial}" arguments="{mainItem: mainItem}" />
+	   </f:if>
+	   <f:if condition='{config.settings.item.showOriginalDownloadLink}'>
+	   	<div class="tx-yag-single-download"><a target="_blank" href="{mainItem.sourceUri}"><f:translate key="tx_yag_controller_item.downloadOrig" default="" /> ({mainItem.width} x {mainItem.height})</a></div>
+	   </f:if>
+	   
+	</div>
+</f:section>
+
+<f:section name="beButtonsLeft">
+	<ptextbase:be.buttons.icon uri="{f:uri.action(action: 'show', controller: 'ItemList', arguments: '{backFromItemUid : mainItem.uid}')}"/>
+</f:section>
+

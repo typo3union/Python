@@ -1,0 +1,56 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="kontakt" label="Kontakt" description="Kontakt Element" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+			
+		<!-- First Address	 -->
+			<flux:field.input name="heading" label="Title " />
+            <flux:field.input name="add" label="Address Line 1" />
+            <flux:field.input name="add1" label="Address Line 2" />
+            <flux:field.input name="mail" label="E-mail Address" />
+            <flux:field.input name="phone" label="Phone Number" />
+            <flux:field.input name="mobile" label="Mobile Number" />
+		<!-- First Address End -->
+        
+		<!-- Second Address  -->
+            <flux:field.input name="heading2" label="Title 2" />
+            <flux:field.input name="add2" label="Address Line 1" />
+            <flux:field.input name="add3" label="Address Line 2" />
+            <flux:field.input name="add4" label="Address Line 3" />
+            <flux:field.input name="add5" label="Address Line 4" />
+            <flux:field.input name="phone1" label="Phone Number In Vienna" />
+        <!-- Second Address End -->
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <h4>{heading}</h4>
+    <address>
+    <span class="fa fa-map-marker"></span> <span>{add}</br>
+    &nbsp;&nbsp;&nbsp; {add1}</span>
+    </address>
+	 <address>
+    <span class="fa fa-envelope"></span> <span><f:link.email email="{mail}">{mail}</f:link.email></span></br>
+    </address>
+    <address>
+    <span class="fa fa-phone"></span> <span>{phone}</span>
+    </address>
+	<address>
+	<span class="fa fa-mobile" style="font-size:24px;"></span> <span>{mobile}</span></br>
+	</address>
+    <h4>{heading2}</h4>
+    <address>
+    <span class="fa fa-map-marker"></span> <span>{add2}</br>
+    &nbsp;&nbsp;&nbsp;{add3}</br>
+    &nbsp;&nbsp;&nbsp;{add4}</br>
+    &nbsp;&nbsp;&nbsp;{add5}</span>
+    </address>
+    <address>
+		<span class="fa fa-phone"></span> <span>{phone1}</span>
+	</address>
+  </f:section>
+</div>

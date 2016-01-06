@@ -1,0 +1,37 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="sliderhome" label="Home slider" description="Home Slider Element" icon="" options="{Fluidcontent: {sorting: 101},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="sliders" label="Home Page Slider">
+          <flux:form.object name="slider" label="Add New Slide">
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            <flux:field.input name="picture_alt" label="Alternative Text" />
+            <flux:field.input name="title" label="Title" />
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <section id="slider" class="fadeInDown animated">
+      <header>
+        <ul class="bxslider">
+          <f:if condition="{sliders}">
+            <f:for each="{sliders}" as="slider" iteration="iteration">
+              <li>
+                <f:image src="uploads/slider_images/{slider.slider.picture}"  alt="{slider.slider.picture_alt}" title="{slider.slider.title}" width="1903c" height="354c" />
+              </li>
+            </f:for>
+          </f:if>
+        </ul>
+      </header>
+    </section>
+  </f:section>
+</div>

@@ -1,0 +1,23 @@
+# EXT: FORMS - direct_mail
+
+# Const - Direct Mail Subscription
+#plugin.feadmin.dmailsubscription.create.required = email
+#plugin.feadmin.dmailsubscription.create.overrideValues.hidden = 0
+#plugin.feadmin.dmailsubscription.infomail.required = email
+#plugin.feadmin.dmailsubscription.edit.required = email
+#plugin.feadmin.dmailsubscription.file =
+#plugin.feadmin.dmailsubscription.file.templateFile = {$filepaths.extensionsView}DirectMailSubscription/fe_admin_dmailsubscrip.tmpl
+
+
+plugin.feadmin.dmailsubscription.create.fields =email,name
+plugin.feadmin.dmailsubscription.create.required =email,name
+plugin.feadmin.dmailsubscription.edit.fields =email,name
+plugin.feadmin.dmailsubscription.edit.required = email,name
+# This is Email Error for not proper email id..
+plugin.feadmin.dmailsubscription.evalErrors.email.email=
+
+[globalVar = GP:L = 1]
+
+plugin.feadmin.dmailsubscription.evalErrors.email.uniqueLocal = Apparently you’re already registered with this email address!
+
+[global]

@@ -1,0 +1,90 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page" />
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Footer">
+    <footer id="footer" class="footer-section">
+      <f:cObject typoscriptObjectPath="content.footerContact"/>
+    </footer>
+  </f:section>
+  <f:section name="Breadcrumb">
+    <section class="white-section breadcrumb-container clearfix">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <f:cObject typoscriptObjectPath="menu.breadcrumb"/>
+          </div>
+        </div>
+      </div>
+    </section>
+  </f:section>
+  <f:section name="QuickSearch">
+    <f:cObject typoscriptObjectPath='content.QuickSearch'/>
+  </f:section>
+  <f:section name="QuickSearchMobile">
+    <f:cObject typoscriptObjectPath='content.QuickSearch'/>
+ </f:section>
+  <f:section name="ShortcutMob">
+    <div class="responsive-sub-tab">
+      <button class="t1"><img src="/typo3conf/ext/enzensberg/Resources/Public/images/social-sub.png" alt="icon"/></button>
+      <div class="sub-icon-n">
+        <f:cObject typoscriptObjectPath='lib.share.social'/>
+      </div>
+    </div>
+    <div class="responsive-sub-tab">
+      <button class="t2"><img src="/typo3conf/ext/enzensberg/Resources/Public/images/search-sub.png" alt="icon"/></button>
+      <div class="sub-icon-n2">
+        <div class="search-section-respons">
+          <f:cObject typoscriptObjectPath='lib.search'/>
+          <f:render partial="PageObjects" section="QuickSearchMobile" />
+        </div>
+      </div>
+    </div>
+    <div class="responsive-sub-tab">
+      <f:cObject typoscriptObjectPath='lib.share.mobMmapLink'/>
+    </div>
+  </f:section>
+  <f:section name="Navigation">
+  <div class="menu-combine">
+    <ul id="nav" class="nav">
+      <f:cObject typoscriptObjectPath="menu.main_menu"/>
+    </ul>
+    <div class="bottom-footer-link clearfix">
+      <f:cObject typoscriptObjectPath="lib.footerMenu"/>
+    </div>
+    </div>
+  </f:section>
+  <f:section name="MobLanguage">
+    <div class="responsive-sub-tab">
+      <button class="t"><img src="/typo3conf/ext/enzensberg/Resources/Public/images/res-g.png" alt="icon"/></button>
+      <div class="sub-icon-n-f">
+        <f:cObject typoscriptObjectPath="lib.languageMenu"/>
+      </div>
+    </div>
+  </f:section>
+  <f:section name="Shortcut">
+    <div class="font-increase">
+      <ul>
+        <li><a href="#"><img src="typo3conf/ext/enzensberg/Resources/Public/images/font-i-d.png" alt="img" /></a></li>
+        <li><a href="#" id="jfontsize-plus"><img src="typo3conf/ext/enzensberg/Resources/Public/images/font-i.png" alt="img" /></a></li>
+        <li><a href="#" id="jfontsize-minus"><img src="typo3conf/ext/enzensberg/Resources/Public/images/font-d.png" alt="img" /></a></li>
+      </ul>
+    </div>
+    <div class="social-icon">
+      <f:cObject typoscriptObjectPath='lib.share.social'/>
+    </div>
+    <div class="search-section">
+      <div class="search-icon"><img src="typo3conf/ext/enzensberg/Resources/Public/images/search-icon.png" alt="icon"/></div>
+      <div class="search-detail">
+        <div class="search-section-inner">
+          <f:cObject typoscriptObjectPath='lib.search'/>
+          <f:render partial="PageObjects" section="QuickSearch" />
+        </div>
+      </div>
+    </div>
+    <div class="map-link"> <span class="map-icon">
+      <f:cObject typoscriptObjectPath='lib.share.mapLink'/>
+      </span> </div>
+  </f:section>
+</div>

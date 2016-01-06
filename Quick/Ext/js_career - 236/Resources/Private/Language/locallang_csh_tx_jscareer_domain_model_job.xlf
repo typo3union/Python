@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-29T13:34:25Z" product-name="js_career">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="place.description">
+				<source>place</source>
+			</trans-unit>
+			<trans-unit id="join_check.description">
+				<source>joinCheck</source>
+			</trans-unit>
+			<trans-unit id="join_date.description">
+				<source>joinDate</source>
+			</trans-unit>
+			<trans-unit id="text_check.description">
+				<source>textCheck</source>
+			</trans-unit>
+			<trans-unit id="text.description">
+				<source>text</source>
+			</trans-unit>
+			<trans-unit id="ab_sofort.description">
+				<source>abSofort</source>
+			</trans-unit>
+			<trans-unit id="timing.description">
+				<source>timing</source>
+			</trans-unit>
+			<trans-unit id="contract.description">
+				<source>contract</source>
+			</trans-unit>
+			<trans-unit id="short_description.description">
+				<source>shortDescription</source>
+			</trans-unit>
+			<trans-unit id="description_header.description">
+				<source>descriptionHeader</source>
+			</trans-unit>
+			<trans-unit id="description_part1.description">
+				<source>descriptionPart1</source>
+			</trans-unit>
+			<trans-unit id="description_part2.description">
+				<source>descriptionPart2</source>
+			</trans-unit>
+			<trans-unit id="pdf.description">
+				<source>pdf</source>
+			</trans-unit>
+			<trans-unit id="caetgory.description">
+				<source>caetgory</source>
+			</trans-unit>
+			<trans-unit id="contact_person.description">
+				<source>contactPerson</source>
+			</trans-unit>
+			<trans-unit id="applicant.description">
+				<source>applicant</source>
+			</trans-unit>
+			<trans-unit id="ab_sofort_check.description">
+				<source>abSofortCheck</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

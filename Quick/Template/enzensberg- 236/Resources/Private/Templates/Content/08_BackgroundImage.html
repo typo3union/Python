@@ -1,0 +1,36 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+	xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    
+	<f:section name="Configuration">
+		<flux:form id="backgroundImage" label="Background Image" description="Big Background Image" icon="../typo3conf/ext/enzensberg/Resources/Public/images/background-image-icon.png" options="{Fluidcontent: {sorting: 08},group: 'Content Elements'}">
+			<flux:field.file name="backgroundImage" uploadFolder="fileadmin/user_upload/BackgroundImage" label="Upload Photo" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+		</flux:form>
+	</f:section>
+    
+	<f:section name="Preview">
+    
+		<h4>Background Image</h4>
+		<f:if condition="{backgroundImage}">
+			<br />
+			<f:image src="fileadmin/user_upload/BackgroundImage/{backgroundImage}"  alt="" height="350"  />
+		</f:if>
+	
+    </f:section>
+	
+    <f:section name="Main">
+	
+    	<f:if condition="{backgroundImage}">
+			<div class="backGroundImage" >
+				<div style='background:rgba(0, 0, 0, 0) url("fileadmin/user_upload/BackgroundImage/{backgroundImage}") no-repeat fixed 50% 100% / cover; height:450px;'></div>
+			</div>
+		</f:if>
+	
+    </f:section>
+    
+</div>

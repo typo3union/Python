@@ -1,0 +1,92 @@
+{namespace pg=JS\JsCareer\ViewHelpers}
+<f:layout name='Default'/>
+<f:section name='main'>
+	<f:if condition="{template}==1">
+		<f:then>
+			<f:if condition="{jobDetail}">
+				<f:then>
+                	<f:if condition="{jobDetail}==1">
+                        <f:then>
+							<f:render partial="Template/Detail" arguments="{job:job,success:success}" />
+                             <f:if condition="{settings.footerInDetailPage}!=''">
+                                 <section class="white-section clearfix">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p>{settings.footerInDetailPage}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </f:if>
+                        </f:then>
+                        <f:else>
+                            <section class="white-section clearfix">
+                                <div class="container">
+                                    <div class="row">
+                                    	<div class="col-lg-12">
+                                            <div class="tx-js-career">
+                                                <div class="formLoading"></div>
+                                                
+                                                <h1>{job.title}</h1>
+                                                <p>{job.short_description}</p>
+        
+                                                <f:render partial="Error/Error" arguments="{errors:errors}" />
+                                                
+                                                <f:render partial="Success/Success" arguments="{success:success}" />
+                                                
+                                                <f:form action="job" id="jobApplication" enctype="multipart/form-data" additionalParams="{uriParams}" >
+                                                    <f:render partial="Template/Apply" arguments="{job:job}" />
+                                                    <div class="inputRow">
+                                                        <f:form.submit name="jobApplied" additionalAttributes="{class:''}" value="<f:translate key='tx_jscareer_domain_model_job.submit' />" title="<f:translate key='tx_jscareer_domain_model_job.submit' />"  />
+                                                    </div>
+                                                </f:form>
+                                            </div>
+										</div>
+									</div>
+								</div>
+                            </section> 
+                        </f:else>
+                    </f:if>
+				</f:then>
+				<f:else>
+					<section class="white-section clearfix">
+	                    <div class="tx-js-career">                            
+                            <f:render partial="Template/Search" arguments="{jobList:job,search:search,clinikData:clinikData,activeClinik:activeClinik}" />                            
+                            <div class="download-detail clearfix">
+                                <div class="container">
+                                    <div class="row">
+                                        <f:if condition="{paginate}==1">
+                                            <f:then>
+                                                <pg:Paginate objects="{job}" as="paginatedObjekt" configuration="{itemsPerPage: recordPerPage, insertAbove: 1, insertBelow: 1, maximumNumberOfLinks: 4, maximumVisiblePages: 7}">
+                                                    <f:render partial="Template/List" arguments="{jobList:paginatedObjekt,order:order}" />
+                                                </pg:Paginate>
+                                            </f:then>
+                                            <f:else>
+                                                <f:render partial="Template/List" arguments="{jobList:job,order:order}" />
+                                            </f:else>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+					</section>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+	        <f:render partial="Template/Search" arguments="{jobList:job,search:search,clinikData:clinikData,activeClinik:activeClinik}" />
+            <section class="white-section clearfix">
+                <div class="tx-js-career">
+                    <div class="download-detail clearfix">
+                        <div class="container">
+                            <div class="row">
+                                <f:render partial="Error/Template" arguments="{error:template}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+		</f:else>
+	</f:if>
+</f:section>

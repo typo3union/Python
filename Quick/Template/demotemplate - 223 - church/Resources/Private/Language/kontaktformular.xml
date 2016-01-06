@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <data type="array">
+    <languageKey index="default" type="array">
+    
+      <label index="label_fieldset">Kontaktanfrage</label>
+      <label index="name">Ihr Name:</label>
+      <label index="email">Ihre Email Adresse:</label>
+      <label index="betreff">Betreff:</label>
+      <label index="mitteilung">Ihre Mitteilung:</label>
+      <label index="submit">absenden</label>
+  
+      <label index="email_admin_subject">Kontaktanfrage</label>
+      <label index="email_admin_text">Ein Benutzer hat das Kontaktformular auf www.DOMAINNAME.TLD ausgefüllt.</label>
+      <label index="email_admin_footer">---------------------------------- Diese Nachricht wurde automatisch erstellt. --------------------------------</label>
+      
+      <label index="email_user_subject">Ihre Kontaktanfrage</label>
+      <label index="email_user_text1">Sehr geehrte Damen und Herren, herzlichen Dank für Ihre Anfrage.</label>
+      <label index="email_user_text2">Wir werden uns so rasch wie möglich um Ihr Anliegen kümmern und uns bei Ihnen melden.</label>
+      <label index="email_user_footer">---------------------------------- Diese Nachricht wurde automatisch erstellt. --------------------------------</label>
+
+      <label index="error_name_required">Bitte geben Sie Ihren Namen ein.</label>
+      <label index="error_email_required">Bitte geben Sie eine Email Adresse ein.</label>
+      <label index="error_email_email">Eingegebene Email Adresse ist ungültig!</label>
+
+      <label index="footer_greeting">Mit freundlichen Grüßen</label>
+      <label index="footer_companyname"></label>
+      <label index="footer_companyname2"></label>
+      <label index="footer_street"></label>
+      <label index="footer_zip_city"></label>
+      <label index="footer_telephone"></label>
+      <label index="footer_email"></label>
+      <label index="footer_internet"></label>
+    </languageKey>
+    <languageKey index="de" type="array">
+    
+      <label index="label_fieldset">Kontaktanfrage</label>
+      <label index="name">Ihr Name:</label>
+      <label index="email">Ihre Email Adresse:</label>
+      <label index="betreff">Betreff:</label>
+      <label index="mitteilung">Ihre Mitteilung:</label>
+      <label index="submit">absenden</label>
+  
+      <label index="email_admin_subject">Kontaktanfrage</label>
+      <label index="email_admin_text">Ein Benutzer hat das Kontaktformular auf www.DOMAINNAME.TLD ausgefüllt.</label>
+      <label index="email_admin_footer">---------------------------------- Diese Nachricht wurde automatisch erstellt. --------------------------------</label>
+      
+      <label index="email_user_subject">Ihre Kontaktanfrage</label>
+      <label index="email_user_text1">Sehr geehrte Damen und Herren, herzlichen Dank für Ihre Anfrage.</label>
+      <label index="email_user_text2">Wir werden uns so rasch wie möglich um Ihr Anliegen kümmern und uns bei Ihnen melden.</label>
+      <label index="email_user_footer">---------------------------------- Diese Nachricht wurde automatisch erstellt. --------------------------------</label>
+
+      <label index="error_name_required">Bitte geben Sie Ihren Namen ein.</label>
+      <label index="error_email_required">Bitte geben Sie eine Email Adresse ein.</label>
+      <label index="error_email_email">Eingegebene Email Adresse ist ungültig!</label>
+
+      <label index="footer_greeting">Mit freundlichen Grüßen</label>
+      <label index="footer_companyname"></label>
+      <label index="footer_companyname2"></label>
+      <label index="footer_street"></label>
+      <label index="footer_zip_city"></label>
+      <label index="footer_telephone"></label>
+      <label index="footer_email"></label>
+      <label index="footer_internet"></label>
+    </languageKey>
+  </data>
+</T3locallang>

@@ -1,0 +1,82 @@
+
+plugin.tx_course {
+	view {
+		templateRootPath = {$plugin.tx_course.view.templateRootPath}
+		partialRootPath = {$plugin.tx_course.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_course.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_course.persistence.storagePid}
+	}
+	settings {
+		storagePid = {$plugin.tx_course.persistence.storagePid}
+		DetailPage = {$plugin.tx_course.persistence.DetailPage}
+		CategoryDetailPage = {$plugin.tx_course.persistence.CategoryDetailPage}
+		CourseList = {$plugin.tx_course.persistence.CourseList}
+		Kursinformationen = {$plugin.tx_course.persistence.Kursinformationen}
+		Kursinhalte = {$plugin.tx_course.persistence.Kursinhalte}
+		Anmeldung = {$plugin.tx_course.persistence.Anmeldung}	
+		TermineundAnmeldung = {$plugin.tx_course.persistence.TermineundAnmeldung}	
+		LastMinute	= {$plugin.tx_course.persistence.LastMinute}	
+		lastMinuteDays = {$plugin.tx_course.persistence.lastMinuteDays}
+		KurseBottomKontakt = {$plugin.tx_course.persistence.KurseBottomKontakt}	
+		WeitereInformationen = {$plugin.tx_course.persistence.WeitereInformationen}
+		#T_WeitereInformationenTitle = {$plugin.tx_course.persistence.WeitereInformationenText}
+		#T_KursinhalteText = {$plugin.tx_course.persistence.KursinhalteText}
+		#T_LastMinuteTitle = {$plugin.tx_course.persistence.LastMinuteTitle}
+		#T_KursinformationenText = {$plugin.tx_course.persistence.KursinformationenText}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_course._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+
+	}
+
+	.tx-course table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-course table th {
+		font-weight:bold;
+	}
+
+	.tx-course table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+
+plugin.tx_course.mvc.callDefaultActionIfActionCantBeResolved = 1 
+
+page.headerData.130 = TEXT
+page.headerData.130.value(
+	
+)
+
+page.footerData.130 = TEXT
+page.footerData.130.value(
+
+ 
+)	

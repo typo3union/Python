@@ -1,0 +1,60 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="sliderhome" label="Slider (Home)" description="Home Slider Element" icon="" options="{Fluidcontent: {sorting: 101},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="sliders" label="Home Page Slider">
+          <flux:form.object name="slider" label="Add New Slide">
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            <flux:field.input name="picture_alt" label="Alternative Text" />            
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  
+  <f:section name="Main">
+    <header class="my-fad-in">
+     <div class="main-slider">
+          <div id="myCarousel" class="carousel slide clearfix">
+            <ol class="carousel-indicators">
+              <f:if condition="{sliders}">
+                <f:for each="{sliders}" as="slider" iteration="iteration">
+                  <li class="<f:if condition='{iteration.index} == 0'>active</f:if>" data-slide-to="{iteration.index}" data-target="#myCarousel"></li>
+                </f:for>
+              </f:if>
+            </ol>
+           <div class="carousel-inner">
+              <f:if condition="{sliders}">
+                <f:for each="{sliders}" as="slider" iteration="iteration">
+                  <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+                    <f:if condition="{slider.slider.picture}">
+                      <div class="fill" >
+                        <f:image src="uploads/slider_images/{slider.slider.picture}" alt="{slider.slider.picture_alt}" height="550c" width="1800c" />
+                      </div>
+                    </f:if>                
+                    </div>
+                </f:for>
+              </f:if>
+            </div>
+            
+            <div class="c-control-wrap">
+					<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+						<span class="icon-prev"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/slider-arrow-left.png" width="116c" height="37c"  alt="Hotel Schwed"/></span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" data-slide="next">
+						<span class="icon-next"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/slider-arrow-right.png" width="116c" height="37c"  alt="Hotel Schwed"/></span>
+					</a>
+				</div>
+                
+          </div>
+          </div>
+     </header>
+  </f:section>
+</div>

@@ -1,0 +1,84 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Page" />
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:section name="Configuration">
+  <flux:form id="home" label="Kurse Page" icon="">
+    <flux:grid>
+      <flux:grid.row>
+        <flux:grid.column colPos="0" name="Slider" label="Slider" />
+      </flux:grid.row>
+      <flux:grid.row>
+        <flux:grid.column colPos="1" name="content" label="Inhalt"/>
+      </flux:grid.row>
+      <flux:grid.row>
+        <flux:grid.column colPos="2" name="Map" label="Map"/>
+      </flux:grid.row>
+    </flux:grid>
+  </flux:form>
+</f:section>
+<f:section name="Content">
+<div class="container-fluid">
+  <div class="row">
+    <f:render partial="PageObjects" section="Header" />
+    <div class="full-right clearfix">
+      <div class="fix">
+        <div class="toggle-fix">
+          <div class="search one con">
+            <div class="fix-in"> <img src="typo3conf/ext/fluxtemplate/Resources/Public/img/search-fix.png" alt="a" /> </div>
+          </div>
+          <div class="hidediv">
+            <div class="box box-con">
+              <div class="media-heading"> Search </div>
+              <div class="hidediv-inner">
+                <f:cObject typoscriptObjectPath="lib.search" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="toggle-fix">
+          <f:cObject typoscriptObjectPath="content.contactdetail" />
+        </div>
+        <div class="toggle-fix">
+          <div class="search three req">
+            <div class="fix-in"> <img src="typo3conf/ext/fluxtemplate/Resources/Public/img/message-fix.png" alt="a" /> </div>
+          </div>
+          <div class="hidediv">
+            <div class="box box-req">
+              <div class="media-heading"> Kurzanfrage </div>
+              <div class="hidediv-inner">
+                <f:cObject typoscriptObjectPath="content.contact" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="toggle-fix">
+          <f:cObject typoscriptObjectPath="content.social" />
+        </div>
+      </div>
+      <div class="header">
+        <f:cObject typoscriptObjectPath="lib.marquee"/>
+        <f:cObject typoscriptObjectPath="lib.content0"/>
+      </div>
+    </div>
+    <div class="container">
+      <f:cObject typoscriptObjectPath="content.breadcrum" />
+      <div class="row">
+        <div class="right-bar">
+          <div class="content clearfix innerMargin">
+            <f:cObject typoscriptObjectPath="lib.content1"/>
+            <div class="map">
+              <f:cObject typoscriptObjectPath="lib.content2"/>
+            </div>
+            <f:cObject typoscriptObjectPath="lib.footerCourseMenu" />
+            <f:render partial="PageObjects" section="Footer" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </f:section>
+</div>

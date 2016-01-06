@@ -1,0 +1,36 @@
+
+plugin.tx_course {
+	view {
+		# cat=plugin.tx_course/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:course/Resources/Private/Templates/
+		# cat=plugin.tx_course/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:course/Resources/Private/Partials/
+		# cat=plugin.tx_course/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:course/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_course//a; type=string; label=Default storage PID
+		storagePid = 27
+		DetailPage = 36
+		CategoryDetailPage = 45
+		CourseList = 37
+		Kursinformationen = 38
+		Kursinhalte = 39
+		Anmeldung = 40
+		TermineundAnmeldung = 42
+		#LastMinute = 44		
+		LastMinute = 56		
+		lastMinuteDays = 1
+		KurseBottomKontakt = 53
+		WeitereInformationen = 54
+		# cat=plugin.tx_course//b; type=string; label= Weitere Informationen Title
+		#WeitereInformationenText = 
+		# cat=plugin.tx_course//c; type=string; label= Kursinhalte Title
+		#KursinhalteText = 
+		# cat=plugin.tx_course//d; type=string; label= Last Minute Title
+		#LastMinuteTitle = 
+		# cat=plugin.tx_course//e; type=string; label= Kursinformationen Title
+		#KursinformationenText = 
+		
+	}
+}

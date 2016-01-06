@@ -1,0 +1,17 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="LoginLink">
+	
+	<v:content.render column="6" pageUid="{v:variable.typoscript(path: 'lib.menu.login.pageUid')}" as="contentElements">
+		<f:for each="{contentElements}" as="contentElement">
+			<f:format.raw>{contentElement}</f:format.raw>
+		</f:for>
+	</v:content.render>
+	
+	</f:section>
+
+</div>

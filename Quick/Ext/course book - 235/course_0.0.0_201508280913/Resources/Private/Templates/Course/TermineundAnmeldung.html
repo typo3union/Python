@@ -1,0 +1,250 @@
+ {namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="TermineundAnmeldung" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <f:for each="{courses}" as="course">
+    <div class="content-center clearfix">
+      <div class="page-header text-center">
+        <h2>{course.name}</h2>
+        <h4>{course.organiser}</h4>
+      </div>
+      <div class="calender clearfix">
+        <div class="stage">
+         <f:if condition="{coursesArray_0}">
+          <div class="stageContent practical">
+            <div class="filters">
+              <div id="myCarousel_date" class="carousel vertical" data-interval="false">
+                <div class="table-responsive" >
+                  <div class="hder">
+                    <div class="hrow-container text-uppercase">
+                      <div class="hrow first-hdr">
+                        <f:translate key="tx_course_domain_model_datestartend.Kurstyp_Praxis" />
+                      </div>
+                      <div class="hrow text-center">
+                        <f:translate key="tx_course_domain_model_datestartend.Beginn" />
+                      </div>
+                      <div class="hrow text-center">
+                        <f:translate key="tx_course_domain_model_datestartend.Ende" />
+                      </div>
+                      <div class="hrow text-center">
+                        <f:translate key="tx_course_domain_model_datestartend.Preis" />
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div class="tablenav first" id="t1">
+                    <div class="kursListPrev arrow carousel-indicators-top"><a class="left carousel-control" href="#myCarousel_date" data-slide="prev"><span class="fa fa-angle-up"></span></a></div>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="item active" id="0">
+                      <f:for each="{coursesArray_0}" as="d_duration" iteration="iteration">                      
+                   
+                      
+                      <div class="row-fluid">
+                        <div id="{d_duration.uid} kursList_{d_duration.uid}<f:format.date format='Y-m-d'>{d_duration.startdate}</f:format.date><f:format.date format='Y-m-d'>{d_duration.enddate}</f:format.date>" class="kursListTermine {termine:'<f:format.date format='Y-m-d'>{d_duration.startdate}</f:format.date>|ganztags,<f:format.date format='Y-m-d'>{d_duration.enddate}</f:format.date>|pruefung1'} locked" data-month="<f:format.date format='m'>{d_duration.startdate}</f:format.date>" data-year="<f:format.date format='Y'>{d_duration.startdate}</f:format.date>" >
+                          <div class="kurstyp td"> <f:format.crop maxCharacters="60" > {d_duration.titleinfo} </f:format.crop></div>
+                          <div class="dateBegin bg text-center td">
+                            <f:format.date format='d.m.Y'>{d_duration.startdate}</f:format.date>
+                          </div>
+                          <div class="text-center td ">
+                            <f:format.date format='d.m.Y'>{d_duration.enddate}</f:format.date>
+                          </div>
+                          <div class="text-center td">
+                            <f:if condition="{d_duration.price}">
+                              <f:then>{d_duration.price} </f:then>
+                              <f:else>{course.price} </f:else>
+                            </f:if>
+                          </div>
+                          <div width="178px" style="padding: 0px;" class="action text-center td">
+                            <form action="" method="post">
+                              <fieldset style="display:none;">
+                                <input type="hidden" value="POST" name="_method">
+                              </fieldset>
+                              <div>
+                                <f:link.action pageUid="{settings.Anmeldung}" controller="Course" action="Anmeldung" arguments="{course : course.uid, cUid: d_duration.uid}" noCacheHash="1" class="form-control" >
+                                  <f:translate key="tx_course_domain_model_datestartend.buchen" />
+                                </f:link.action>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      
+                         
+                       <f:if condition='<v:math.modulo a="{iteration.cycle}" b="4" />==0'>
+                    </div>
+                    <div class="item" id="{iteration.cycle}">
+                      </f:if>
+                     
+                      </f:for>
+                    </div>
+                  </div>
+                  <div class=" tablenav first carousel-indicators" style="right: 50%;	top: auto;	bottom: 0px; margin-right: -19px;" id="t1">
+                    <div class="kursListNext arrow"> <a class="right carousel-control" href="#myCarousel_date" data-slide="next"><span class="fa fa-angle-down"></span></a></div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          </f:if>
+          
+          
+          <f:if condition="{coursesArray_1}">
+          <div class="stageContent theorie">
+            <div class="filters">
+              <div id="myCarousel_date_1" class="carousel vertical" data-interval="false">
+                <div class="table-responsive" >
+                  <div class="hder">
+                    <div class="hrow-container text-uppercase">
+                      <div class="hrow first-hdr">
+                        <f:translate key="tx_course_domain_model_datestartend.Kurstyp_Theory" />
+                      </div>
+                      <div class="hrow text-center">
+                        <f:translate key="tx_course_domain_model_datestartend.Beginn" />
+                      </div>
+                      <div class="hrow text-center">
+                        <f:translate key="tx_course_domain_model_datestartend.Ende" />
+                      </div>
+                      <div class="hrow text-center">
+                        <f:translate key="tx_course_domain_model_datestartend.Preis" />
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div class="tablenav first" id="t2">
+                    <div class="kursListPrev arrow carousel-indicators-top"><a class="left carousel-control" href="#myCarousel_date_1" data-slide="prev"><span class="fa fa-angle-up"></span></a></div>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="item active" id="0">
+                      <f:for each="{coursesArray_1}" as="d_duration" iteration="iteration">                      
+                   
+                      
+                      <div class="row-fluid">
+                        <div id="{d_duration.uid} kursList_{d_duration.uid}<f:format.date format='Y-m-d'>{d_duration.startdate}</f:format.date><f:format.date format='Y-m-d'>{d_duration.enddate}</f:format.date>" class="kursListTermine {termine:'<f:format.date format='Y-m-d'>{d_duration.startdate}</f:format.date>|ganztags,<f:format.date format='Y-m-d'>{d_duration.enddate}</f:format.date>|pruefung1'} locked" data-month="<f:format.date format='m'>{d_duration.startdate}</f:format.date>" data-year="<f:format.date format='Y'>{d_duration.startdate}</f:format.date>" >
+                          <div class="kurstyp td"> <f:format.crop maxCharacters="60" > {d_duration.titleinfo} </f:format.crop></div>
+                          <div class="dateBegin bg text-center td">
+                            <f:format.date format='d.m.Y'>{d_duration.startdate}</f:format.date>
+                          </div>
+                          <div class="text-center td ">
+                            <f:format.date format='d.m.Y'>{d_duration.enddate}</f:format.date>
+                          </div>
+                          <div class="text-center td">
+                            <f:if condition="{d_duration.price}">
+                              <f:then>{d_duration.price} </f:then>
+                              <f:else>{course.price} </f:else>
+                            </f:if>
+                          </div>
+                          <div width="178px" style="padding: 0px;" class="action text-center td">
+                            <form action="" method="post">
+                              <fieldset style="display:none;">
+                                <input type="hidden" value="POST" name="_method">
+                              </fieldset>
+                              <div>
+                                <f:link.action pageUid="{settings.Anmeldung}" controller="Course" action="Anmeldung" arguments="{course : course.uid, cUid: d_duration.uid}" noCacheHash="1" class="form-control" >
+                                  <f:translate key="tx_course_domain_model_datestartend.buchen" />
+                                </f:link.action>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      
+                         
+                       <f:if condition='<v:math.modulo a="{iteration.cycle}" b="4" />==0'>
+                    </div>
+                    <div class="item" id="{iteration.cycle}">
+                      </f:if>
+                     
+                      </f:for>
+                    </div>
+                  </div>
+                  <div class="t2 tablenav first carousel-indicators" style="right: 50%;	top: auto;	bottom: 0px; margin-right: -19px;" id="t2">
+                    <div class="kursListNext arrow"> <a class="right carousel-control" href="#myCarousel_date_1" data-slide="next"><span class="fa fa-angle-down"></span></a></div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          </f:if>
+          
+          <div class="content">
+            <div style="display: block;" class="kursplan">
+              <div class="page-header text-center">
+                <h2>
+                  <f:translate key="tx_course_domain_model_datestartend.Kursplan" />
+                </h2>
+              </div>
+              <div class="ajaxCalender">
+                                                
+<f:for each="{course.dateduration}" as="d_duration" iteration="iteration" >
+									<div style="display: block;" id="calendarSheetSet_{d_duration.uid}<f:format.date format='Y-m-d'>{d_duration.startdate}</f:format.date><f:format.date format='Y-m-d'>{d_duration.enddate}</f:format.date>" class="calendarSheetSet">
+										<div class="col-md-4 col-sm-6 col-xs-12">                   
+											<table class="calendarSheet">						
+												<f:format.raw>{coursesMonth1}</f:format.raw>
+											</table>
+										</div>
+										
+										<div class="col-md-4 col-sm-6 col-xs-12">                    
+											<table class="calendarSheet">
+												<f:format.raw>{coursesMonth2}</f:format.raw>
+											</table>
+										</div>
+										
+										<div class="col-md-4 col-sm-6 col-xs-12">                   
+											<table class="calendarSheet last">
+												<f:format.raw>{coursesMonth3}</f:format.raw>												
+											</table>	
+										</div>				
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdg-nn">										
+											<ul class="legende list-unstyled">
+												<v:content.resources table="tx_course_domain_model_durations" field="duration" uid="1" as="title">
+												<f:for each="{title}" as="durationTitle" >
+													<li class="abends"><span class="ashik clr ashik-border"></span>{durationTitle}</li>
+												</f:for></v:content.resources>
+												<v:content.resources table="tx_course_domain_model_durations" field="duration" uid="2" as="title">
+												<f:for each="{title}" as="durationTitle" >
+													<li class="halbtags"><span class="ashik ashik-full"></span>{durationTitle}</li>
+												</f:for></v:content.resources>
+												<v:content.resources table="tx_course_domain_model_durations" field="duration" uid="3" as="title">
+												<f:for each="{title}" as="durationTitle" >
+													<li class="ganztags"><span class="ashik clr ashik-bottom"></span>{durationTitle}</li>
+												</f:for></v:content.resources>
+												<v:content.resources table="tx_course_domain_model_durations" field="duration" uid="4" as="title">
+												<f:for each="{title}" as="durationTitle" >
+													<li class="pruefung1"><span class="ashik clr ashik-cross"></span>{durationTitle}</li>
+												</f:for></v:content.resources>
+																																		
+											</ul>
+										</div>
+										
+										<f:for each="{d_duration.durationtiming}" as="dtiming">
+                                       
+											<div class="tmday" data-day="<f:format.date format='d'>{dtiming.date}</f:format.date>-<f:format.date format='m'>{dtiming.date}</f:format.date>-<f:format.date format='Y'>{dtiming.date}</f:format.date>" data-d="<f:format.date format='d'>{dtiming.date}</f:format.date>" data-m="<f:format.date format='m'>{dtiming.date}</f:format.date>" data-y="<f:format.date format='Y'>{dtiming.date}</f:format.date>" data-tm="class_tm{dtiming.duration.uid}" ></div>																			
+										</f:for>  	
+                                    </div>
+									
+									
+
+																		
+																											
+									</f:for> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <f:render partial="Course/Properties" arguments="{course:course}" />
+
+  </f:for>
+  <div class="p1 hidden" >0</div>
+          <div class="t1 hidden" >0</div>
+          
+          
+  <f:for each="{courseList}" as="course">
+      <f:render partial="Course/ImageList" arguments="{course:course}" />
+  </f:for>
+    <f:render partial="Course/RelatedCourses" arguments="{related_courses:related_courses}" />
+</f:section>

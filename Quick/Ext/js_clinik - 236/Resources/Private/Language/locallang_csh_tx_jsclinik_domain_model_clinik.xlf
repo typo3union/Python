@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-28T18:07:53Z" product-name="js_clinik">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>location</source>
+			</trans-unit>
+			<trans-unit id="logo.description">
+				<source>logo</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="link.description">
+				<source>link</source>
+			</trans-unit>
+			<trans-unit id="clinik_id.description">
+				<source>clinikId</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="latitude.description">
+				<source>latitude</source>
+			</trans-unit>
+			<trans-unit id="longitude.description">
+				<source>longitude</source>
+			</trans-unit>
+			<trans-unit id="display_map_content.description">
+				<source>displayMapContent</source>
+			</trans-unit>
+			<trans-unit id="map_content.description">
+				<source>mapContent</source>
+			</trans-unit>
+			<trans-unit id="map_icon.description">
+				<source>mapIcon</source>
+			</trans-unit>
+			<trans-unit id="facilities.description">
+				<source>facilities</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

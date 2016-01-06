@@ -1,0 +1,53 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:section name="Header">
+  
+  <section class="container-fluid header" id="header">
+        <header class="container">
+            <div class="row">
+                <div class="top-nav text-right clearfix">
+                    <nav class="select-language">
+                        <ul class="text-uppercase">
+                            <li class="lang-select"><a href="">ita</a></li>
+                            <li><a href="">fr</a></li>
+                            <li><a href="">deu</a></li>
+                            <li><a href="">eng</a></li>
+                        </ul>
+                        <a href="#" class="btn btn-default">Home</a>
+                    </nav><!--navigation-->
+                </div>
+                <div class="navbar-brand">
+                   <f:link.page pageUid="1" ><img src="{f:cObject(typoscriptObjectPath: 'lib.mainLogo')}"/></f:link.page>
+                </div>
+                <div class="navbar-right">
+                    <h2 class="text-uppercase">Gebrauchtmaschinen</h2>
+                </div>
+            </div>
+        </header>
+    </section><!--end header-->
+  
+</f:section>
+
+
+
+
+
+<f:section name="Footer">
+ 
+  <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="pull-left">Comec-Binder S.r.l. - Via Molino, 22 - 31050 Badoere di Morgano (TV) - Italien - Tel +39 0422 8383 - Fax +39 0422 838400 - comec@comec.it </div>
+                <div class="pull-right">
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--end footer-->
+</f:section>
+</div>

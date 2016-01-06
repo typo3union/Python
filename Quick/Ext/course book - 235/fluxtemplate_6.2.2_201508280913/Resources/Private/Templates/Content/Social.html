@@ -1,0 +1,52 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="social" label="Social" description="Social Element" icon="" options="{Fluidcontent: {sorting: 107},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:form.section name="socials" label="Social">
+                    <flux:form.object name="Social" label="Add New Slide">
+                        <flux:field.file name="socialpicture" uploadFolder="uploads/slider_images/" label="Upload Social Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                        <flux:field.input name="link" label="Social Link">
+                            <flux:wizard.link />
+                        </flux:field.input>
+
+                    </flux:form.object>
+                </flux:form.section>
+                <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Icon" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+
+        <div class="search four not">
+            <div class="fix-in">
+                <f:image src="uploads/slider_images/{picture}"  alt="{picture_alt}" width="33c" height="36c"/>
+
+            </div>
+        </div>
+        <div class="hidediv">
+            <div class="box box-not" style="display: none;">
+                <div class="media-heading">
+                    <f:if condition="{socials}">
+                        <f:for each="{socials}" as="Social" iteration="iteration">  
+                            <div class="left">
+                                <div class="mdl">
+                                    <f:link.page pageUid="{Social.Social.link}" target="_blank">
+                                        <f:image src="uploads/slider_images/{Social.Social.socialpicture}"/>
+                                    </f:link.page>
+                                </div>
+                            </div>
+                        </f:for>
+                    </f:if>
+                </div>
+            </div>
+            </div>
+
+    </f:section>
+</div>

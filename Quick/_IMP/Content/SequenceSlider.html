@@ -1,0 +1,89 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+<f:section name="Configuration">
+	
+	<v:variable.set name="lang1" value="{v:l(key: 'content-sequence.option.sliderstyles.0', default: 'Content left')}" />
+	<v:variable.set name="lang2" value="{v:l(key: 'content-sequence.option.sliderstyles.1', default: 'Content Right')}" />
+	<v:variable.set name="lang3" value="{v:l(key: 'content-sequence.option.sliderstyles.2', default: 'Animate-In')}" />
+	<v:variable.set name="lang5" value="{v:l(key: 'content-sequence.pagination.0', default: 'Preview')}" />
+	<v:variable.set name="lang6" value="{v:l(key: 'content-sequence.pagination.1', default: 'Points')}" />
+	<v:variable.set name="lang7" value="{v:l(key: 'content-sequence.pagination.2', default: 'Numbers')}" />
+	<v:variable.set name="lang12" value="{v:l(key: 'content-sequence.pagination.5', default: 'Off')}" />
+	<v:variable.set name="lang13" value="{v:l(key: 'content-sequence.pagination.image.pos1', default: 'top')}" />
+	<v:variable.set name="lang14" value="{v:l(key: 'content-sequence.pagination.image.pos2', default: 'bottom')}" />
+	<v:variable.set name="lang15" value="{v:l(key: 'content-sequence.pagination.image.pos3', default: 'left')}" />
+	<v:variable.set name="lang16" value="{v:l(key: 'content-sequence.pagination.image.pos4', default: 'right')}" />
+	
+	<flux:form id="sequenceslider" options="{group: 'Sliders', icon: '{f:uri.resource(path: \'Icons/sequence_slider.png\', absolute: 1)}'}">
+		<flux:form.sheet name="sequenceconfigsheet" label="{v:l(key: 'content-sequence.sequence', default: 'Sequence-Slider Config')}">
+				
+				<flux:field.custom name="void1"><b>: : : : {v:l(key: 'content-sequence.desc.seq-settings', default: 'Sequence-Settings')} : : : :</b></flux:field.custom>
+				
+				<flux:field.checkbox name="sequenceautoplay" label="{v:l(key: 'content-sequence.autoplay', default: 'Autoplay')}" />
+				<flux:field.checkbox name="sequencesynchronouslywiththesupersized" label="{v:l(key: 'content-sequence.supersized', default: 'Pagination synchronously with the Supersized')}" />	
+				<flux:field.checkbox name="sequenceinnercontentwidth" label="{v:l(key: 'content-sequence.innercontentwidth', default: 'Sequence-Inner Content-Width')}" />
+				
+				<flux:field.checkbox name="sequencearrows" label="{v:l(key: 'content-sequence.arrows', default: 'Display Next/Prev Arrows')}" />
+				<flux:field.input name="sequencetimeint" label="{v:l(key: 'content-sequence.timeint', default: 'Set Slide-Interval')}" minimum="1" maximum="30" default="5" eval="int,trim">				
+					<flux:wizard.slider hideParent="TRUE" step="1" width="200" />
+				</flux:field.input>
+				<flux:field.custom name="void2">
+					<b>: : : : {v:l(key: 'content-sequence.desc.pag-settings', default: 'Pagination-Settings')} : : : :</b>
+				</flux:field.custom>
+				
+				<flux:field.select name="sequencepagination" label="{v:l(key: 'content-sequence.pagination', default: 'Pagination of your Slider')}" items="{off:lang12,preview:lang5,points:lang6,numbers:lang7}" default="off" requestUpdate="TRUE" />
+				
+				<flux:field.checkbox name="sequencepaginationinnercontentwidth" label="{v:l(key: 'content-sequence.paginationinnercontentwidth', default: 'Pagination-Inner Content-Width')}" />
+				
+				<flux:form.section name="sequenceitems">
+					<flux:form.object name="sequenceitem" label="{v:l(key: 'content-sequence.item', default: 'Add a new Slide-Element')}">
+							<flux:field.file name="sequencebgimage" label="{v:l(key: 'content-sequence.option.bgimage', default: 'Background-Image')}" />
+							<flux:field.file name="sequenceimage01" label="{v:l(key: 'content-sequence.option.image01', default: 'First Image')}" />
+							<flux:field.file name="sequenceimage02" label="{v:l(key: 'content-sequence.option.image02', default: 'Second Image')}" />
+							<flux:field.file name="sequenceimage03" label="{v:l(key: 'content-sequence.option.image03', default: 'Third Image')}" />
+
+							<flux:field.input name="sequenceheadline" label="{v:l(key: 'content-sequence.option.headline', default: 'Headline')}" />
+							<flux:field.input name="sequencesubheadline" label="{v:l(key: 'content-sequence.option.subheadline', default: 'Sub-Headline')}" />
+							<flux:field.text name="sequencetext" label="{v:l(key: 'content-sequence.option.text', default: 'Text')}" defaultExtras="richtext:rte_transform[flag=rte_enabled|mode=ts_css]" cols="3" rows="4" enableRichText="1" />
+							
+							<flux:field.input name="sequencebutton01" label="{v:l(key: 'content-sequence.option.textbutton01', default: 'Text for the first button')}" />
+							<flux:field.input name="sequencebutton01link" label="{v:l(key: 'content-sequence.option.linkbutton01', default: 'Link for the first button')}">
+								<flux:wizard.link label="Select your link" activeTab="url" />
+							</flux:field.input>
+
+							<flux:field.input name="sequencebutton02" label="{v:l(key: 'content-sequence.option.textbutton02', default: 'Text for the second buton')}" />
+							<flux:field.input name="sequencebutton02link" label="{v:l(key: 'content-sequence.option.linkbutton02', default: 'Link for the second button')}">
+								<flux:wizard.link label="Select your link" activeTab="url" />
+							</flux:field.input>
+
+							<flux:field.select name="sequenceslidestyles" label="{v:l(key: 'content-sequence.option.sliderstyles', default: 'Select your Slide-Styles')}" items="{style1:lang1,style2:lang2}" />
+							<flux:field.input name="sequenceaddclass" label="{v:l(key: 'content-sequence.option.addclass', default: 'Add a class if you want')}" />
+							
+							<f:if condition="{sequencepagination}=='preview'">
+								<flux:field.input name="sequencepaginationheadline" label="{v:l(key: 'content-sequence.pagination.headline', default: 'Headline for the Pagination')}" />
+								<flux:field.input name="sequencepaginationtext" label="{v:l(key: 'content-sequence.pagination.text', default: 'Text for the Pagination')}" />
+								<flux:field.file name="sequencepaginationimage" label="{v:l(key: 'content-sequence.pagination.image', default: 'Image for the Pagination')}" />
+								<flux:field.input name="sequencepaginationimagelabel" label="{v:l(key: 'content-sequence.pagination.imagetitle', default: 'Title for the Pagination-Image')}" />
+								<flux:field.select name="sequencepaginationimgposition" label="{v:l(key: 'content-sequence.pagination.image-pos', default: 'Image-Position')}" items="{pos1:lang13,pos2:lang14,pos3:lang15,pos4:lang16}" />
+							</f:if>
+					</flux:form.object>
+				</flux:form.section>
+				
+			</flux:form.sheet>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	
+</f:section>
+
+<f:section name="Main">
+
+	
+		
+	
+</f:section>
+</div>

@@ -1,0 +1,16 @@
+
+<f:if condition="{settings.detail.media.image.lightbox}">
+  <f:then> 
+            <li>
+    <f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" width="{settings.media.maxWidth}c" height="{settings.media.maxHeight}c" />
+    </li>
+  </f:then>
+  <f:else>
+    <li>
+      <f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="1075c" maxHeight="500c" />
+    </li>
+  </f:else>
+</f:if>
+<f:if condition="{mediaElement.originalResource.description}">
+  <p class="news-img-caption"> {mediaElement.originalResource.description} </p>
+</f:if>

@@ -1,0 +1,61 @@
+
+plugin.tx_karriere {
+	view {
+		templateRootPath = {$plugin.tx_karriere.view.templateRootPath}
+		partialRootPath = {$plugin.tx_karriere.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_karriere.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_karriere.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_karriere._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-karriere table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-karriere table th {
+		font-weight:bold;
+	}
+
+	.tx-karriere table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+
+page.headerData.3454 = TEXT
+page.headerData.3454.value(
+ <style>
+	#wraper #leftCol {
+		float: left;
+		padding: 35px 0 0 0;		
+		width: 650px;
+	}
+ </style> 
+)

@@ -1,0 +1,47 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+<f:layout name="Default" />
+Render Powermail Form
+{forms} 			All Forms with their Pages and their Fields
+<f:section name="main">
+
+        <f:flashMessages class="powermail_message powermail_message_error" />
+        <f:if condition="{forms}">
+          <f:then>
+             
+            <f:for each="{forms}" as="form">
+                
+                <f:if condition="{form.title} == 'Contact form' ">
+                          <f:then><div></f:then>
+                          <f:else><div class="contact-main"></f:else>
+                    
+                      </f:if>
+                
+      			<span class="error hidden">Bitte wählen Sie entweder einen Kurs oder geben Sie einen Betrag ein!</span>
+              <f:form
+						action="{action}"
+						name="field"
+						enctype="multipart/form-data"
+						additionalAttributes="{vh:Validation.EnableParsleyAndAjax(form:form)}"
+						class="powermail_form_{form.uid} {form.css} {vh:Misc.MorestepClass(activate:settings.main.moresteps, class:'powermail_morestep')}">
+                <f:render partial="Misc/FormError" arguments="{_all}" />
+                <f:for each="{form.pages}" as="page">
+                  <f:for each="{page.fields}" as="field">
+                      <f:if condition="{form.uid} == 1 ">
+                          <f:then><f:render partial="Form/{vh:String.Upper(string:field.type)}" arguments="{field:field}" /></f:then>
+                          <f:else><f:render partial="Form2/{vh:String.Upper(string:field.type)}" arguments="{field:field}" /></f:else>
+                    
+                      </f:if>
+                  </f:for>
+                </f:for>
+                <f:form.hidden name="mail[form]" value="{form.uid}" class="powermail_form_uid" />
+                <f:render partial="Misc/HoneyPod" arguments="{form:form}" />
+              </f:form>
+                </div>
+            </f:for>
+          </f:then>
+          <f:else>
+            <f:translate key="error_no_form" />
+          </f:else>
+        </f:if>
+     
+</f:section>

@@ -1,0 +1,128 @@
+/*!
+ * Project : LWB - Steinl Machinery
+ * CSS Creator : Bhumika Chakravarti By Weboffice India
+ * 
+ */
+
+
+/* Responsive Styles */
+
+
+/* ==== */
+
+/*  For Hompage Slider */
+@media(max-width:1160px) {
+	.main-slider .carousel-indicators, .c-control-wrap{max-width: unset; width:66%}
+}
+@media (min-width: 1024px) and (max-width:1160px) {
+	.main-slider .carousel-caption, .main-slider .carousel .fill img{height:325px}	
+}
+@media (max-width: 1023px){
+	.main-slider .carousel-caption .home-more{position: relative; bottom:unset; margin-top: 15px; display:block; float:left; } /* remove absolute position below 1024 */
+	.main-slider .carousel-caption, .main-slider .carousel .fill img{height:auto}	
+	.inter-news {background-position: right 15px;}
+/*.col-right .news-sec {
+    margin-bottom: 28px;
+}*/
+}
+@media (min-width: 680px) and (max-width:1023px) {
+	.main-slider .carousel-caption{padding:10px}
+	.main-slider .carousel-caption h2 {font-size: 18px;margin: 6px 0;}
+}
+@media (min-width: 680px) and (max-width:767px) {
+	.main-slider .carousel-caption p,
+	.main-slider .carousel-caption .home-more{font-size: 12px;line-height:14px}
+}
+@media (max-width:679px) {
+	.main-slider .carousel-caption{max-width: 100%;width: 100%; float: left;padding: 10px 0;}
+	.main-slider .carousel .fill,
+	.main-slider .carousel-indicators{width: 100%;}
+	.main-slider .carousel-caption h2{font-size: 20px;margin: 8px 0;}
+	.main-slider .c-control-wrap{display:none;}
+}
+
+/* ==== */
+@media (min-width: 768px) and (max-width:1139px){
+	.banner-right {max-width:none }
+}
+
+
+@media (min-width: 768px) and (max-width:1080px){
+	.teasr-text {height: 101px;}
+}
+
+
+@media(max-width:767px) {
+	/* Top Navigation */
+	.navbar{padding-top: 25px;}
+	.container > .navbar-header{margin-left: 0;margin-right: 0;padding-bottom: 5px;}
+	.navbar-brand {display: table;float: none; margin: 0 auto 10px !important;}
+	.top-wrap {float: none; margin-top: 5px;width: 100%;}
+	.top-link {display: table;float: none;padding: 0;text-align: center;margin: 5px auto;}
+	.top-link li{float: none;}
+	.lang-menu{ display: table;float: none;margin: auto;}
+	
+	.nav  > li > a{z-index: 999;}
+	.nav-toggle-wrap, .caret, .dd-arrow{display:block}
+	.navbar-toggle .icon-bar {background: #f8a41e;}
+	.navbar-toggle {background-color: #fff;border-radius: 0;}
+	.row.nav-row {margin-left: -15px;margin-right: -15px;}
+	.menu-large {position: relative !important;}
+	.dd-arrow { height: 40px; width: 50px; padding-left: 2px;}
+	.caret {border-left: 8px solid transparent;border-right: 8px solid transparent;border-top: 8px solid;display: inline-block;height: 0;margin-left: 15pxpx; margin-top: 8px;vertical-align: middle;width: 0;}
+    .navbar-collapse{padding-left: 0;padding-right: 0;}
+	.navbar-nav {margin: 0;}
+	.img-col{margin-bottom: 10px;}
+	.img-col, .megamenu .col-sm-3{width: 100%; max-width: 100%;}
+	.megamenu{padding:0}
+	.search-form {bottom: -46px;left: 0px;}
+	
+	/* Nav End */
+	
+	/* Slider */
+	header.carousel .carousel {height: 70%;}
+	.inr-header .banner-right{max-width:none; width:100%; overflow: auto;height: auto;}
+	.banner-link{bottom:0;position: relative;}
+	.pro-slider #thumbcarousel .carousel-control .glyphicon-chevron-left, 
+	.pro-slider #thumbcarousel .carousel-control .glyphicon-chevron-right{top:34%}
+	
+	.teasr-box  .teasr-text {border-bottom: 1px solid #e9e9ea; /*border-top: 1px solid #e9e9ea;*/height: auto !important;}
+	.teasr-box  .teasr-img{text-align: center;}
+
+	.col-right .news-sec {margin: 40px 0 50px 0;}
+	.col-right .news-row{width: 100%;}
+	.col-right .col-md-4.col-sm-4 {max-width: 100%;}
+	.col-right .teasr-text{border-bottom:0}
+	
+	.colm4-box, .colm3-box{ display:block}
+	.colm4-box-img , .colm3-box-img {text-align: center;}	  
+	.colm3-box-text, .colm4-box-text, .colm4-box-toptext, .colm4-box-btmtext{height: auto !important;}
+	.colm3-box-text, .colm4-box-text{border:1px solid #daebf5; padding:10px}
+	 
+	.inter-news {background-position: right 5px; background-size:auto;}
+	
+	/* Footer */
+	footer  .footer-bottom  .pull-left{display: table;float: none !important;margin: 0 auto;text-align: center;width: 148px;}
+	footer  .footer-bottom  .pull-right{float: none !important;}
+	.f-nav{display: table;float: none;text-align: center; margin: 5px auto;}
+	.f-nav a {padding: 0 12px;}
+	.social-icon, .f-top-add01, .f-top-add02{ min-width: 100%;text-align: center;}
+	.social-icon .fb, .social-icon .ytub{float: none;}
+	
+	/* Disappear div in mobile view */
+	.banner-left{display:none}
+}
+@media(max-width:480px) {
+	.news-single .news-text-wrap,
+	.news-single .news-backlink-wrap {width:100%; float:left; display:block; margin-top:5px;}
+	
+	.pro-slider  #carousel .carousel-control{top: 0;}
+	.pro-slider #carousel .carousel-caption{display:none} 
+	.nav-tab-wrap .nav-tabs > li{width:100%}
+}
+@media(max-width:400px) {
+	.pro-slider #thumbcarousel .carousel-control .glyphicon-chevron-left, 
+	.pro-slider #thumbcarousel .carousel-control .glyphicon-chevron-right{top:24%}
+	.kontakt-links  .important a{display:block}
+	.inter-news {background-position: right 15px; background-size:40%;}
+}

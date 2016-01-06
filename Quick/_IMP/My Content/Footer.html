@@ -1,0 +1,57 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="footer" label="Footer" description="Footer Element" icon="" options="{Fluidcontent: {sorting: 107},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+				<flux:field.input name="title" label="Title" />
+				<flux:field.input name="email" label="Email" />
+				<flux:field.input name="number" label="Phone Number" />
+				<flux:field.input name="address" label="Address Line 1" />
+				<flux:field.input name="address1" label="Address Line 2" />
+				<flux:field.input name="c-right" label="Copy Right" />
+		</flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+   <footer>
+<div class="alpha-footer" style="background-image:url(typo3conf/ext/fluxtemplate/Resources/Public/images/alpha-bg-img.jpg)">
+			<div class="alpha-bg">
+				<div class="container">
+					<div class="row">
+						<h2>{title}</h2>	
+						<div class="col-md-4  col-sm-4 col-xs-4">
+							<f:cObject typoscriptObjectPath="lib.footermenu1"/>
+						</div>
+						<div class="col-md-4  col-sm-4 col-xs-4">
+							<f:cObject typoscriptObjectPath="lib.footermenu2"/>
+						</div>
+						<div class="col-md-4  col-sm-4 col-xs-4">
+							<f:cObject typoscriptObjectPath="lib.footermenu3"/>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container f-content">
+			<p>
+				<span class="email"><a href="mailto:{email}"><i class="fa fa-envelope"></i>&nbsp;&nbsp;{email}</a></span>
+				<br><span class="phone"><i class="fa fa-phone"></i>{number}</span>
+			</p>           
+            <p class="f-text"><strong>{address}</strong><br>{address1}</p>
+            <div class="f-bottom">			
+			<span>&copy; {c-right}</span>
+			<f:cObject typoscriptObjectPath="lib.bottommenu"/>
+			</div>
+             <div class="social-icon">
+				<a class="fb" href="http://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a class="gplus" href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
+				<a class="twt" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>				
+			</div>		
+		</div>
+        </footer>
+  </f:section>
+</div>

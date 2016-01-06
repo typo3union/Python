@@ -1,0 +1,119 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="sliderhome" label="Slider (Inner)" description="Inner Slider Element" icon="" options="{Fluidcontent: {sorting: 111},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+      <flux:field.checkbox name="thumb" label="Activate Thumbslider">Activate Thumbslider</flux:field.checkbox>
+        <flux:form.section name="formteiles" label="Inner Page Slider">
+          <flux:form.object name="formteile" label="Add New Slide">
+            <flux:field.file name="picture" uploadFolder="uploads/tx_fluxtemplate/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            <flux:field.input name="picture_alt" label="Alternative Text" />
+          </flux:form.object>
+        </flux:form.section>
+        <flux:field.text name="content_list" label="Text" enableRichText="1" />
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <div class="row">
+      <div class="col-sm-8 pro-slider">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <f:if condition="{formteiles}">
+              <f:for each="{formteiles}" as="formteile" iteration="iteration">
+                <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>"> 
+                	<a data-slide-to="{iteration.index}" href="#gallery">
+                  <f:image src="uploads/tx_fluxtemplate/{formteile.formteile.picture}" alt="{formteile.formteile.picture_alt}" width="752c"  height="378c"  additionalAttributes="{data-toggle: 'modal',data-target:'#SliderModal'}" />
+                  </a>
+                </div>
+              </f:for>
+            </f:if>
+          </div>
+          <f:if condition="{formteiles}">
+                <f:if condition='{f:count(subject:"{formteiles}")} > 2'>
+          	  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev"> <span class="icon-prev"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/arrow-left-gray.png" class="img-responsive" alt="LWB-Steinl Machinery"/></span> </a> <a class="right carousel-control" href="#carousel" role="button" data-slide="next"> <span class="icon-next"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/arrow-right-gray.png" class="img-responsive" alt="LWB-Steinl Machinery"/></span> </a>
+              </f:if>
+              </f:if>
+         
+         </div>
+      <f:if condition="{thumb}">
+        <div class="clearfix">
+          <div id="thumbcarousel" class="carousel slide" data-interval="false">
+            <div class="carousel-inner clearfix">
+              <f:if condition="{formteiles}">
+                <f:if condition='{f:count(subject:"{formteiles}")} > 4'>
+                  <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+                    <f:for each="{formteiles}" as="formteile" iteration="iteration">
+                      <f:if condition='{iteration.index} < 4'>
+                        <div data-target="#carousel" data-slide-to="{iteration.index}" class="thumb">
+                          <f:image src="uploads/tx_fluxtemplate/{formteile.formteile.picture}" alt="{formteile.formteile.picture_alt}" width="172c"  height="86c" />
+                        </div>
+                      </f:if>
+                    </f:for>
+                  </div>
+                </f:if>
+                <f:if condition='{f:count(subject:"{formteiles}")} > 3 '>
+                  <div class="item <f:if condition='{iteration.index} == 4'>active</f:if>">
+                    <f:for each="{formteiles}" as="formteile" iteration="iteration">
+                      <f:if condition='{iteration.index} < 4'>
+                        <f:then> </f:then>
+                        <f:else>
+                          <div data-target="#carousel" data-slide-to="{iteration.index}" class="thumb">
+                            <f:image src="uploads/tx_fluxtemplate/{formteile.formteile.picture}" alt="{formteile.formteile.picture_alt}" width="172c"  height="86c" />
+                          </div>
+                        </f:else>
+                      </f:if>
+                    </f:for>
+                  </div>
+                </f:if>
+              </f:if>
+            </div>
+            <f:if condition='{f:count(subject:"{formteiles}")} > 4'> 
+            <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#thumbcarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
+             </f:if>
+             </div>
+        </div>
+        </f:if>
+      </div>
+      <div class="col-sm-4 inr-right-cont">
+        <div class="ordr-list">
+          <f:format.raw>{content_list}</f:format.raw>
+        </div>
+      </div>
+    </div>
+  
+    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="SliderModal" class="modal fade" >
+      <div class="modal-dialog" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          </div>
+          <div class="modal-body"> 
+            <div class="container content">
+              <div data-pause="true" data-interval="false" data-ride="carousel" class="carousel slide" id="gallery">
+                <div class="carousel-inner clearfix">
+                  <f:for each="{formteiles}" as="formteile" iteration="iteration">
+                    <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+                      <f:image src="uploads/tx_fluxtemplate/{formteile.formteile.picture}" alt="{formteile.formteile.picture_alt}" width="752c"  height="378c" />
+                    </div>
+                  </f:for>
+                </div>
+                <!-- /carousel-inner --> 
+              </div>
+              <!-- /.row --> 
+            </div>
+            <!-- /.container --> 
+          </div>
+        </div>
+        <!-- /.modal-content --> 
+      </div>
+    </div>
+    
+  </f:section>
+</div>

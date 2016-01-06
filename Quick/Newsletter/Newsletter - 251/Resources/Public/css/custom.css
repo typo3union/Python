@@ -1,0 +1,30 @@
+span.input-group-btn {
+  left: 9px;
+}
+
+.error-list {
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  left: 0;
+}
+
+.error-list ul{
+  padding-left: 0;
+  list-style: none;
+}
+
+.error-list ul li{
+  color: red;
+}
+
+.alert.alert-success.text-center{
+    color: #3c763d;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 20px;
+  text-align: left;
+  background: none;
+  border: none;
+}

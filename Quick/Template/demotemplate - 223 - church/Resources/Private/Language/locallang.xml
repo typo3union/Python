@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Fluid Content: Bootstrap extension</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+
+			<label index="skip_navigation">Skip navigation</label>
+
+			<label index="copyright">t3Bootstrap template by</label>
+
+			<label index="search">Search</label>
+			<label index="submit">Submit</label>
+			
+			<!-- Link titles -->
+			<label index="more_link_titleText">Read more</label>
+			<label index="more_link_altText">Read more</label>
+			<label index="next_link_titleText">Read more</label>
+			<label index="next_link_altText">Read more</label>			
+			
+		</languageKey>
+		<languageKey index="de" type="array">
+
+			<label index="tt_content.cols">Breite gemessen an Grid-Spaltenanzahl pro Bildspalte</label>
+			<label index="skip_navigation">Zum Inhalt springen</label>
+
+			<label index="copyright">t3Bootstrap Template von</label>
+
+			<label index="search">Suchen</label>
+			<label index="submit">Einreichen</label>
+			<!-- Link titles -->
+			<label index="more_link_titleText">Weiterlesen</label>
+			<label index="more_link_altText">Weiterlesen</label>
+			<label index="next_link_titleText">Weiterlesen</label>
+			<label index="next_link_altText">Weiterlesen</label>		
+			
+			<!-- News ext -->
+			<label index="news.share">Teilen</label>
+			<label index="news.read_more">...hier weiterlesen</label>
+			
+			<label index="other">Weitere</label>
+
+		</languageKey>
+	</data>
+</T3locallang>

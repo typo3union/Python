@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-01-31T14:11:41Z" product-name="company_management">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="designation.description">
+				<source>designation</source>
+			</trans-unit>			
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="statement_type.description">
+				<source>statementType</source>
+			</trans-unit>
+			<trans-unit id="statement_position.description">
+				<source>statementPosition</source>
+			</trans-unit>
+			<trans-unit id="company_id.description">
+				<source>companyId</source>
+			</trans-unit>
+			<trans-unit id="state_id.description">
+				<source>stateId</source>
+			</trans-unit>
+			<trans-unit id="state_prependtext.description">
+				<source>State Prepend Text</source> 
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,446 @@
+###
+# TEMPLATE: root_menu
+# DESCRIPTION: The MENU ROOT template. This template will be called by the MASTER ROOT template. It reads the templates for the menu parts, like the default menu 
+setup, language menu, header- and footermenu's. In this template record are only other template records included.
+###
+
+
+
+# EXT: menu.mainmenu
+# DESC: The MENU template.Configuration for default menu, which can be used with small modifications for other menu's, without writing the whole menu configuration all over again for all kinds of menu's.
+
+lib.categoryCourse = CONTENT
+lib.categoryCourse.table =  tt_content
+lib.categoryCourse.select.pidInList = 27
+lib.categoryCourse.select.uidInList = 46
+
+menu.main_menu = COA
+#menu.main_menu.wrap =  <ul class="nav navbar-nav">|</ul>
+menu.main_menu{
+
+10 < lib.categoryCourse
+
+
+20 = HMENU
+20 {
+	
+	special = directory
+	special.value = 4
+		
+	1 = TMENU
+	1 {
+		wrap =  <ul class="nav navbar-nav">|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			#ATagParams = class="parent_menu"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="menu-{field:uid}">|</li> |*| <li class="menu-{field:uid}">|</li>
+			stdWrap.htmlSpecialChars = 1			
+		}
+		
+		IFSUB < .NO
+		IFSUB {
+			#ATagParams = data-toggle="dropdown" class="dropdown-toggle" = role="button" = 
+			#ATagParams = class="dropdown-toggle"
+			
+			#ATagBeforeWrap = 1
+			#linkWrap = | <span data-toggle="dropdown" class="responsive-menu" ><span class="caret"></span></span>
+			#linkWrap = | <span class="dd-arrow" data-toggle="dropdown"><span class="caret"></span></span>
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="menu-{field:uid} dropdown">|</li>
+		}
+	
+		ACT < .NO
+		ACT {
+			#ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			
+			#ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			#linkWrap = | <b class="caret"></b>
+			#linkWrap = | <span class="dd-arrow" data-toggle="dropdown"><span class="caret"></span></span>
+			
+			#ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="menu-{field:uid} active">|</li>
+		}
+
+		CUR < .NO
+		CUR {
+			#ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			#ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			#ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active menu-{field:uid}">|</li>
+		}
+				
+		CURIFSUB < .IFSUB
+		CURIFSUB = 1
+		CURIFSUB {
+			#ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			
+			#ATagParams = class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			#linkWrap = | <b class="caret"></b>
+			linkWrap = | <span data-toggle="dropdown" class="responsive-menu" ><span class="caret"></span></span>
+			
+			#ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active menu-{field:uid} dropdown">|</li>
+		}
+	}
+	
+	2 < .1
+	2.wrap = <span data-toggle="dropdown" class="responsive-menu" ><span class="caret"></span></span><ul role="menu" class="dropdown-menu secondLevel">|</ul>
+	2.NO.ATagParams >
+	#2.ACT.ATagParams = class="active"
+	#2.CUR.ATagParams = class="active"
+	2.ACT.wrapItemAndSub = <li class="active">|</li>
+	2.CUR.wrapItemAndSub = <li class="active">|</li>
+	2.NO.wrapItemAndSub = <li class="hov menu-{field:uid}">|</li>|*|<li class="menu-{field:uid}">|</li>|*|<li class="menu-{field:uid}">|</li>
+	2.ACT.wrapItemAndSub =  <li class="active menu-{field:uid}">|</li>
+	2.CUR.wrapItemAndSub =  <li class="active menu-{field:uid}">|</li>
+	2.CUR.linkWrap >
+	2.ACT.linkWrap = |
+		
+	3 < .2	
+	3.wrap = <span data-toggle="dropdown" class="responsive-menu" ><span class="caret"></span></span><ul role="menu" class="dropdown-menu thirdLevel">|</ul>
+	#3.NO.doNotLinkIt = 1 |*| 0 |*| 0
+}
+
+
+}
+
+
+
+/*
+menu.main_menu = HMENU
+menu.main_menu {
+	
+	special = directory
+	special.value = 2
+		
+	1 = TMENU
+	1 {
+		wrap = <ul class="nav navbar-nav navbar-right">|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			ATagParams = class="parent_menu"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="menu-{field:uid}">|</li> |*| <li class="menu-{field:uid}">|</li>
+			stdWrap.htmlSpecialChars = 1			
+		}
+		
+		IFSUB < .NO
+		IFSUB {
+			ATagParams =  class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | <b class="caret" data-toggle="dropdown"></b> 
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="menu-{field:uid} dropdown">|</li>
+		}
+	
+		ACT < .NO
+		ACT {
+			ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			#linkWrap = | <b class="caret"></b>
+			
+			ATagParams = class="parent_menu active"
+			wrapItemAndSub = <li class="active first menu-{field:uid} dropdown">|</li> |*| <li class="active menu-{field:uid} dropdown">|</li>
+		}
+
+		CUR < .NO
+		CUR {
+			ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | 
+			
+			ATagParams = class="parent_menu active"
+			wrapItemAndSub = <li class="first active menu-{field:uid} dropdown">|</li> |*| <li class="active menu-{field:uid} dropdown">|</li>
+		}
+				
+		CURIFSUB < .IFSUB
+		CURIFSUB = 1
+		CURIFSUB {
+			ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = | <b class="caret"></b>
+			
+			ATagParams = class="parent_menu active"
+			wrapItemAndSub = <li class="active first menu-{field:uid} dropdown">|</li> |*| <li class="active menu-{field:uid} dropdown">|</li>
+		}
+		
+		ACTIFSUB < .IFSUB
+		ACTIFSUB = 1
+		ACTIFSUB {
+			#ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			
+			ATagParams = class="dropdown-toggle"
+					
+			ATagBeforeWrap = 1
+			linkWrap = | <b class="caret"></b>
+			#linkWrap = | <span class="dd-arrow" data-toggle="dropdown"><span class="caret"></span></span>
+			
+			ATagParams = class="parent_menu"
+			wrapItemAndSub = <li class="active first menu-{field:uid} dropdown">|</li> |*| <li class=" active menu-{field:uid} dropdown">|</li>
+		}
+	}
+	
+	2 < .1
+	2.wrap = <ul role="menu" class="dropdown-menu">|</ul>
+	2.NO.ATagParams >
+	2.ACT.ATagParams = class="active"
+	2.CUR.ATagParams = class="active"
+	2.NO.wrapItemAndSub = <li class="hov menu-{field:uid}">|</li>|*|<li class="menu-{field:uid}">|</li>|*|<li class="menu-{field:uid}">|</li>
+	2.ACT.wrapItemAndSub = <li class="hov active first menu-{field:uid}">|</li> |*| <li class="active menu-{field:uid}">|</li>
+	2.CUR.wrapItemAndSub = <li class="hov first active menu-{field:uid}">|</li> |*| <li class="active menu-{field:uid}">|</li>
+	2.CUR.linkWrap >
+	2.ACT.linkWrap = |
+		
+	3 < .2	
+	#3.NO.doNotLinkIt = 1 |*| 0 |*| 0
+}
+*/
+
+# EXT: menu.topmenu
+# DESC: Top menu
+
+# EXT : menu.footerMenu
+# DESC: Footer menu
+
+menu.footerMenu = HMENU
+menu.footerMenu {
+	
+	special = directory
+	special.value = 5
+		
+	1 = TMENU
+	1 {
+		#wrap = <ul class="list-unstyled">|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			#ATagParams = class="parent_menu"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			#wrapItemAndSub = <li class="first menu-{field:uid}">|</li> |*| <li class="menu-{field:uid}">|</li>
+			wrapItemAndSub = &nbsp; | &nbsp; &#124; |*| &nbsp; | &nbsp; &#124; |*| &nbsp; | &nbsp; 
+			stdWrap.htmlSpecialChars = 1			
+		}
+				
+		ACT < .NO
+		ACT {
+			ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			ATagParams = class="parent_menu active"
+			#wrapItemAndSub = <li class="active first menu-{field:uid} dropdown">|</li> |*| <li class="active menu-{field:uid} dropdown">|</li>
+			#wrapItemAndSub = &nbsp; | &nbsp; &#124; |*| &nbsp; | &nbsp; &#124;
+                        wrapItemAndSub = &nbsp; | &nbsp; &#124; |*| &nbsp; | &nbsp; &#124; |*| &nbsp; | &nbsp; 
+		}
+	}
+	
+}
+
+
+
+lib.sidebarNav= COA
+lib.sidebarNav{
+
+	#5 = TEXT
+	#5.wrap = <div class="untertitle">&#124;&#124;&#124;&#124; &nbsp; | &nbsp; &#124;&#124;&#124;&#124; </div>
+	#5.data = leveltitle:2
+	  
+	10= HMENU
+	10.entryLevel = 2
+	#10.special = directory  
+	#10.special.value = 4  
+	10.1 = TMENU
+	10.1 {
+	 wrap = <ul class="unterlink">|</ul>
+		noBlur = 1
+		expAll = 1
+		IFSUB = 1  
+	   
+	  NO {
+		wrapItemAndSub = <li>|</li>|*|<li>|</li>|*|<li class="last">|</li>
+		stdWrap.wrap = <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
+		ATagTitle.field = 1     
+	  } 
+	
+	  ACT = 1
+	  ACT{
+		wrapItemAndSub =  <li>|</li>|*|<li>|</li>|*|<li class="last">|</li>
+		stdWrap.wrap = <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
+		ATagTitle.field = 1
+		#  ACT = 1       
+		 stdWrap.htmlSpecialChars = 1
+		 ATagParams = class="active"
+	   #  allWrap = <li> | </li>  
+	  }
+	
+	  IFSUB{
+		 wrapItemAndSub = <li>|</li>|*|<li>|</li>|*|<li class="last">|</li>
+		 stdWrap.wrap = <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
+		ATagTitle.field = 1
+	   }       
+	  }
+}
+
+
+# EXT : menu.footerMenu
+# DESC: Footer menu
+
+menu.followUs = HMENU
+menu.followUs {
+	
+	special = list
+	special.value = 9
+		
+	1 = TMENU
+	1 {
+		wrap = |
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			ATagParams = class="parent_menu"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = |
+			stdWrap.htmlSpecialChars = 1	
+			doNotLinkIt = 1			
+		}
+	}
+	
+}
+
+
+# BREADCRUMB MENU
+menu.breadcrumb = HMENU
+menu.breadcrumb {
+	special = rootline
+	special.range = 1|-1
+	#includeNotInMenu = 0
+	1 = TMENU
+	1 {
+		noBlur = 1
+		wrap = <a href="">Home</a>|
+		NO {
+			wrapItemAndSub = <span><em></em>|</span>
+		}
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <span><em></em>|</span>
+			doNotLinkIt = 1
+		}
+	}
+}
+
+
+# Language Menu
+menu.lang_menu = COA
+menu.lang_menu {
+    10 = HMENU
+    10 {
+        special = language
+        special.value = 0,1
+        1 = TMENU
+        1 {
+            expAll = 0
+            wrap = <div class="lang"><span aria-hidden="true" class="glyphicon glyphicon-globe"></span><div class="btn-group"><button class="btn btn-default btn-xs dropdown-toggle language_menu" type="button" data-toggle="dropdown" >DE  <span class="caret"></span></button><ul class="dropdown-menu" role="menu">|</ul></div></div>
+           	wrap = <ul class="language">|</ul>
+		    NO = 1
+            NO {
+                stdWrap.cObject = TEXT
+                stdWrap.cObject {
+                    value =  DE || EN
+
+                } 
+                allWrap = <li>|</li>
+             
+            }
+            RO < .NO
+            RO = 1
+            RO.ATagParams = class="hover"
+            
+            ACT < .NO
+            ACT = 1
+            ACT {
+                #ATagParams = |*| class="active" |*| class="active"
+                #doNotLinkIt = 1
+                allWrap = <li class="active">|</li>
+               
+            }
+			
+			USERDEF1 < .NO
+			USERDEF1.allWrap =  <li>|</li>	
+			USERDEF1.doNotLinkIt = 1	
+        }
+    }
+}
+
+lib.languageMenu= HMENU
+lib.languageMenu{
+  special = language
+  special.value = 0,1
+  1 = TMENU
+  1.wrap = <ul class="language">|</ul>
+  1.NO = 1  
+  1.NO.stdWrap.cObject = TEXT
+  1.NO.stdWrap.cObject.value = <img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/oesterreich_g.gif" alt="oesterreich_g" /> || <img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/Flag_of_the_United_Kingdom.png" alt="Flag_of_the_United_Kingdom" />
+  1.NO.stdWrap.current = 0
+  1.NO.wrapItemAndSub = <li>|</li> |*| <li>|</li>
+  1.ACT < .1.NO
+  1.ACT.ATagParams = class = "active"
+} 

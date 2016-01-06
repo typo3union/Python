@@ -1,0 +1,37 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="kontakt" label="Kontakt" description="Kontakt Element" icon="" options="{Fluidcontent: {sorting: 1054},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:field.input name="title" label="Title" />
+        <flux:form.section name="addresses" label="Address">
+        <flux:form.object name="address" label="Add New Addres">        
+          <flux:field.text name="content" label="Content" enableRichText="1" />
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <div class="row">
+      <div class="col-lg-12 contactSection">
+        <h1>{title}</h1>
+        <div class="addressSection">
+          <f:if condition="{addresses}">
+            <f:for each="{addresses}" as="address">
+              <address class="addressmrgn">
+              <f:format.html>{address.address.content}</f:format.html>
+              </address>
+            </f:for>
+          </f:if>
+        </div>
+      </div>
+    </div>
+  </f:section>
+</div>

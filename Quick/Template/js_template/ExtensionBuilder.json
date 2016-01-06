@@ -1,0 +1,45 @@
+{
+    "modules": [
+
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "",
+        "emConf": {
+            "category": "misc",
+            "custom_category": "",
+            "dependsOn": "typo3 =>  6.0.0 - 7.2.99",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "stable",
+            "targetVersion": "6.2",
+            "version": "1.0.1"
+        },
+        "extensionKey": "js_template",
+        "name": "Template",
+        "originalExtensionKey": "",
+        "persons": [
+            {
+                "company": "",
+                "email": "jainish.online@gmail.com",
+                "name": "Jainish Senjaliya",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+
+        ],
+        "vendorName": "JS"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2015-09-22 05:01",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (1)"
+    }
+}

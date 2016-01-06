@@ -1,0 +1,51 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page" />
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="container clearfix">
+        <div class="navbar-header">
+          <div class="navbar-brand"> 
+          <f:link.page pageUid="1" ><img src="{f:cObject(typoscriptObjectPath: 'lib.mainLogo')}" alt="LWB-Steinl Machinery Logo" title="LWB - Steinl Machinery"></f:link.page>       
+          </div>
+          <div class="top-wrap">
+            <f:cObject typoscriptObjectPath="menu.headerMenu" />
+            <div class="lang-menu"><i class="fa fa-angle-down"></i>
+              <f:cObject typoscriptObjectPath="menu.lang_menu" />
+            </div>
+          </div>
+          <f:cObject typoscriptObjectPath="lib.indexSearch" />
+        </div>
+        <div class="row nav-row">
+          <div class="clearfix nav-toggle-wrap">
+            <button data-target="#main-nav" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <f:cObject typoscriptObjectPath="menu.megaMenu123" />
+        </div>
+      </div>
+    </nav>
+  </f:section>
+  <f:section name="Footer">
+    <footer class="clearfix">
+      <div class="footer-top clearfix">
+        <div class="container">
+          <f:cObject typoscriptObjectPath="lib.footerContent" />
+        </div>
+      </div>
+      <div class="footer-bottom clearfix">
+        <div class="container">
+          <div class="pull-left f-btm-txt">
+            <f:cObject typoscriptObjectPath="lib.footerMemberText" />
+          </div>
+          <div class="pull-right">
+            <f:cObject typoscriptObjectPath="menu.footerMenu" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </f:section>
+</div>

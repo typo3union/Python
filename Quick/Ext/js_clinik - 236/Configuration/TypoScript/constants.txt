@@ -1,0 +1,45 @@
+
+plugin.tx_jsclinik {
+	view {
+		# cat=plugin.tx_jsclinik/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:js_clinik/Resources/Private/Templates/
+		# cat=plugin.tx_jsclinik/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:js_clinik/Resources/Private/Partials/
+		# cat=plugin.tx_jsclinik/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:js_clinik/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_jsclinik//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+
+
+plugin.tx_jsclinik {
+
+	googleapi {
+		# cat=plugin.tx_jsclinik//a; type=string; label=uri to google javascript api
+		uri = https://maps.google.com/maps/api/js?sensor=false
+	}
+	options {
+		# cat=plugin.tx_jsclinik//c; type=boolean; label=use scrollwheel for zooming in maps?
+		useScrollwheel = true
+	}
+	display {
+		# cat=plugin.tx_jsclinik//f; type=int+; label=default Width of map
+		width = 100%
+		# cat=plugin.tx_jsclinik//g; type=int+; label=default Height of map
+		height = 470px
+		# cat=plugin.tx_jsclinik//h; type=options[HYBRID,ROADMAP,SATELLITE,TERRAIN]; label=Default map type
+		mapType = HYBRID
+		# cat=plugin.tx_jsclinik//i; type=int+; label=default map zoom level (default = 15)
+		zoom = 15
+		# cat=plugin.tx_jsclinik//j; type=options[DEFAULT,SMALL,ZOOM_PAN,ANDROID]; label=Default map controls 
+		mapControl = DEFAULT	
+		# cat=plugin.tx_jsclinik//k; type=string; label=alternate map icon, path: relative to document root (e.g. "fileadmin/user_upload/googlePin.png"), the targeting point resides to the center bottom of the grafic file. 
+		icon = typo3conf/ext/js_clinik/Resources/Public/Images/map-icon.png
+	}
+}

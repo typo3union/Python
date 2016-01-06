@@ -1,0 +1,53 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		
+		<flux:form id="servicecontentbox" label="Service Content Box" description="Service Content Box Element" icon="" options="{Fluidcontent: {sorting: 105},group: 'Custom elements'}">
+			
+			<flux:form.sheet name="options" label="Options">
+				<flux:field.input name="title" label="Title" />
+				<flux:field.input name="subtitle" label="Sub Title" />
+				
+				<flux:form.section name="serviceboxs" label="Service Box">
+					<flux:form.object name="services" label="Add New Service Link">
+						<flux:field.input name="link" label="Link">
+							<flux:wizard.link />
+						</flux:field.input>
+						<flux:field.input name="linktitle" label="Link Title" />
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<section class="referenzen">
+			<h2>{title}</h2>
+			<p>{subtitle}</p>
+			<div class="clear"></div>
+			
+			<div class="col-md-10 col-md-offset-1">
+				<div class="clientslider">
+					<div class="owl-carousel">
+						<f:if condition="{serviceboxs}">
+							<f:for each="{serviceboxs}" as="servicebox" iteration="iteration">
+								<div class="item"><f:link.page pageUid="{servicebox.services.link}" class="hovicon effect-1 sub-a">{servicebox.services.linktitle}</f:link.page></div>
+							</f:for>
+						</f:if>
+					</div>
+				</div>
+			</div>	
+			
+		</section>
+	</f:section>
+	
+</div>

@@ -1,0 +1,211 @@
+/** Extension style **/
+
+
+a:hover {
+    color: #358ec8;
+}
+
+a {
+    transition: color 0.5s ease 0s;
+	
+}
+a:focus {
+outline: medium none;
+}
+a, a:visited {
+    color: #333;
+    outline: 0 none;
+    text-decoration: underline;
+}
+.tx-trform .container,.container{ width:960px; }
+#content-wrap{ width:960px;}
+#top .container{ width:100%; }
+
+
+#footer a {
+    font-family: "SabonLTPro-Roman","Georgia","Times New Roman",serif;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+input[type=file] {
+ float:left;
+}
+
+.filelable {
+float:left;
+width:100%;
+}
+
+
+
+/* Form CSS */
+
+.form-container fieldset{border:1px solid #c4c4c4; padding:15px;}
+.form-container legend {width: auto; border-bottom:0 none;padding: 0 10px;  margin-bottom: 0;} 
+
+.layout1, .layout2, .layout3, .layout4, .inline{padding:0 5px 15px 5px;}
+label{ cursor:pointer;}
+.layout1{float:left; width:100%; clear:both;}
+.form-container .layout2{ display: inline-block;vertical-align: top; width:49.5%;}
+
+.form-container .layout2 textarea{margin-right:15px}
+.input-group.date, .form-container .layout2 label{width:100%} 
+.dateinput-wrap{display: table;}
+
+.layout3{float:left; width:75%;}
+.layout4{float:left; width:25%;}
+.inline{ float:left; display:inline;}
+.inline label { float:left; }
+.checkbox{margin-top:0 !important;}
+.checkbox input[type="checkbox"]{margin-left:0 !important}
+span.option-title{margin-left:10px} /*5px*/
+.inline span.option-title{margin:8px 20px;}
+.checkbox-title{margin-bottom:25px;font-weight:bold; font-size: 13px;}
+.checkbox.inline .checkbox-group{margin-right:10px;  float: left;} 
+/*.checkbox.inline{padding-left:0;}*/
+.checkbox.inline  input[type="checkbox"]{margin-top: 3px;}
+/*.form-group.inline input#otherdocument{margin:7px 20px 0} */
+
+.checkbox.layout1  input[type="checkbox"]{margin-right:5px}
+.checkbox.layout1 .form-control,.tx-trform .layout3 .form-control{width: 95%;}
+
+
+/*** Ghanshyam ***/
+.tx-trform .form-control, .tx-trform .form-control { border:1px solid #358ec8;  }
+.checkbox-group .main-label{ float: left; width: 100%; }
+.checkbox-group .main-label label{ float:left;}
+.checkbox-group .main-label .option-title{ float:left;
+-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+.regular-checkbox {
+    display: none !important;
+}
+ 
+.regular-checkbox + label {
+    background-color: #fafafa;
+    border: 1px solid #358ec8;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 9px;
+    /*border-radius: 3px;*/
+    display: inline-block;
+    position: relative;
+}
+ 
+.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+ 
+.regular-checkbox:checked + label {
+    background-color: #e9ecee;
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    color: #99a1a7;
+}
+ 
+.regular-checkbox:checked + label:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #99a1a7;
+}
+ 
+ 
+.inline input[type="checkbox"] + label, .checkbox_textarea input[type="checkbox"] + label, .checkbox_textfield input[type="checkbox"] + label{
+    padding: 15px;
+}
+ 
+.inline input[type="checkbox"]:checked + label:after, .checkbox_textarea input[type="checkbox"]:checked + label:after, .checkbox_textfield input[type="checkbox"]:checked + label:after{
+    font-size: 25px;
+    left: 6px;
+}
+
+.tx-trform .date label{  float: left; margin: 8px 8px 8px 0; width: 12%;}
+	
+.tx-trform .inline .form-control{ margin-top:40px;}
+
+.checkbox_textfield label, .checkbox_textarea label{ float:left; margin-right:10px; }
+
+/*.layout4.main-label,.checkbox.layout4 { min-height:235px;}*/
+input[type="text"], input[type="password"], input[type="email"], textarea, select{ margin:0;}
+
+.tx-trform .container, .container, #content-wrap{ padding:0;}
+
+.form-group.layout1.other{ float:left; clear: none; width: 25%;}
+.attachment-clear { top:5px; position:relative;}
+
+.layout4 .input-group.date .formError{margin-top: -70px !important;}
+
+@media screen and (min-width:768px) and  (max-width:959px){
+	.tx-trform .container, .container, #content-wrap{ width:768px; padding:0px;}
+	.checkbox.layout1 .form-control, .tx-trform .layout3 .form-control{ width:94%;}
+	/*.tx-trform .inline .form-control { margin-top:0px;}*/
+}
+
+/*@media screen and (min-width:600px) and  (max-width:766px){
+	.form-container .layout1,.form-container .layout2,.form-container .layout3,.form-container .layout4, .form-container .inline{ width:100%; }
+	.tx-trform .container, .container, #content-wrap{ width:600px;}
+	#content-wrap .sixteen.columns{ width: 570px;}
+	.tx-trform .date label { width:100%;}
+	.checkbox.layout4{ width:50%; }
+	input[type="text"], input[type="password"], input[type="email"], textarea, select{ width:100%;}
+	.checkbox.layout1 .form-control{width:92%;}
+	.tx-trform .layout3 .form-control{ width:100%;}
+	.tx-trform .inline .form-control { margin-top:0px;}
+	.checkbox.inline { padding: 0 5px 15px; }
+}*/
+
+@media screen and (min-width:480px) and  (max-width:767px){
+	h1, .h1 { font-size:28px; margin-top:0; }
+	.form-container .layout1,.form-container .layout2,.form-container .layout3,.form-container .layout4, .form-container .inline{ width:100%; }
+	.tx-trform .container, .container, #content-wrap{ width:420px;}
+	
+	.tx-trform .date label { width:100%;}
+	.checkbox.layout4{ width:50%; }
+	input[type="text"], input[type="password"], input[type="email"], textarea, select{ width:100%;}
+	.checkbox.layout1 .form-control{width:88%;}
+	.tx-trform .layout3 .form-control{ width:100%;}
+	.tx-trform .inline .form-control { margin-top:0px;}
+	.checkbox.inline { padding: 0 5px 15px; }
+	.form-group { margin-bottom:0px;}
+	.form-group.layout1.other{ width:50%}
+	#loginform .form-group { margin-bottom:15px;}
+}
+
+@media screen and (min-width:360px) and  (max-width:479px){
+	h1, .h1 { font-size:20px; margin-top:0; }
+	.form-container .layout1,.form-container .layout2,.form-container .layout3,.form-container .layout4, .form-container .inline{ width:100%; }
+	.tx-trform .container, .container, #content-wrap{ width:300px;}
+	#content-wrap .sixteen.columns{ width: 100%;}
+	.tx-trform .date label { width:100%;}
+	
+	input[type="text"], input[type="password"], input[type="email"], textarea, select{ width:100%;}
+	/*.checkbox_textfield .form-control, .checkbox_textarea .form-control{ width:86%;}*/
+	.checkbox.layout1 .form-control{width:83%;}
+	.tx-trform .layout3 .form-control{ width:100%;}
+	.tx-trform .inline .form-control { margin-top:0px;}
+	.checkbox.inline { padding: 0 5px 15px; }
+	.form-group.layout1.other{ width:100%}
+	input[type="file"] { width:80%; }
+}
+
+@media screen and (min-width:320px) and  (max-width:359px){
+	h1, .h1 { font-size:18px; margin-top:0; }
+	#content-wrap, .tx-trform .container, .container{ width:300px; overflow: hidden;}
+	.form-container .layout1,.form-container .layout2,.form-container .layout3,.form-container .layout4, .form-container .inline{ width:100%; }
+	.checkbox.layout1 .form-control, .tx-trform .layout3 .form-control{ width:100%;}
+	input[type="text"], input[type="password"], input[type="email"], textarea, select{ width:100%;}
+	.tx-trform .date label { width:100%;}
+	.tx-trform .inline .form-control { margin-top:0px;}
+	.checkbox.inline { padding: 0 5px 15px; }
+	.form-group.layout1.other{ width:100%}
+	input[type="file"] { width:70%; }
+}
+

@@ -1,0 +1,59 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+	xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" 
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+    <f:section name="Configuration">
+    
+		<flux:form label="Footer Address" id="twocolumn" description="Footer Address" icon="../typo3conf/ext/enzensberg/Resources/Public/images/footer-address-icon.png" options="{Fluidcontent: {sorting: 112},group: 'Content Elements'}">
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column name="column1" colspan="2" label="Title"> </flux:grid.column>
+				</flux:grid.row>
+				<flux:grid.row>
+					<flux:grid.column style="width: 50%" name="column2" label="Left Inhalt">
+					</flux:grid.column>
+					<flux:grid.column style="width: 50%" name="column3" label="Right Inhalt" >
+					</flux:grid.column>
+				</flux:grid.row>
+			</flux:grid>
+			<flux:field.input name="FooterText" label="FooterText" />
+		</flux:form>
+        
+	</f:section>
+    
+	<f:section name="Main">
+    
+		<div class="container">
+			<div class="row">
+				<flux:content.render render="1" area="column1" />
+				<div class="col-md-6 col-sm-6">
+					<div class="contact-info fnt-16">
+						<flux:content.render render="1" area="column2" />
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<flux:content.render render="1" area="column3" />
+				</div>
+			</div>
+		</div>
+        
+		<f:cObject typoscriptObjectPath="lib.footerMap"/>
+        
+		<div class="footer-link clearfix">
+			<div class="col-lg-3">
+				<span>{FooterText}</span>
+			</div>
+			<div class="col-lg-9 links-icon">
+				<f:cObject typoscriptObjectPath="lib.footerMenu"/>
+			</div>
+		</div>
+	</f:section>
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>
+</div>

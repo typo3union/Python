@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-01-31T14:11:41Z" product-name="company_management">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="main_logo.description">
+				<source>mainLogo</source>
+			</trans-unit>
+			<trans-unit id="small_logo.description">
+				<source>smallLogo</source>
+			</trans-unit>
+			<trans-unit id="secondary_logo.description">
+				<source>secondaryLogo</source>
+			</trans-unit>
+			<trans-unit id="secondary_logo.description">
+				<source>secondaryLogo</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,41 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Searchbox">
+	
+		<ul class="search-link list-inline nav navbar-nav navbar-right">
+			<li class="dropdown">
+				<!--<div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" role="menu">-->
+		    		<f:image src="fileadmin/images/searchbox/search.png" alt="search-box" class="search-default" />
+					<f:image src="fileadmin/images/searchbox/search-hover.png" alt="search-box-hover" class="search-hover" />
+		  		<!--</div>-->
+		  		<span class="responsive-menu" data-toggle="dropdown"><span class="caret"></span></span>
+		  		<ul class="dropdown-menu" role="menu">
+			        <li>
+					
+							<div class="search-bar">
+								<form action="<f:uri.page pageUid="{v:variable.typoscript(path: 'searchPagePID')}" />" method="post" name="searchform-{formname}">
+								<div class="form-group">
+									<input class="form-control" placeholder="<f:translate key="LLL:EXT:demotemplate/Resources/Private/Language/locallang.xml:search" />" id="tx_indexedsearch_word-{formname}" name="tx_indexedsearch[sword]" type="text" />
+									
+								</div>
+								
+								<button class="btn btn-default" type="submit"><f:translate key="LLL:EXT:demotemplate/Resources/Private/Language/locallang.xml:submit" /></button>
+					
+								<input type="hidden" name="tx_indexedsearch[_sections]" value="0" />
+								<input type="hidden" name="tx_indexedsearch[pointer]" value="0" />
+								<input type="hidden" name="tx_indexedsearch[ext]" value="0" />
+								</form>
+							</div>
+							
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+	</f:section>
+
+</div>

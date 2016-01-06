@@ -1,0 +1,157 @@
+
+<div class="paymentPreview">
+  <p>
+  
+      <f:translate key="tx_voucher_domain_model_voucher_preview.bottom_text" />
+    </p>
+   <div class="previewMessage clearfix">
+    <p class="heading">
+      <f:translate key="tx_voucher_domain_model_voucher_preview.your_message" />
+    </p>
+   <div class='singleItem'>
+    <f:if condition="{voucherTemplateData.payment.message}">
+          
+      <f:then>
+        <f:format.html>{voucherTemplateData.payment.message}</f:format.html>
+      </f:then>
+      <f:else>
+        <p>
+          <f:translate key="tx_voucher_domain_model_voucher_preview.no_message" />
+        </p>
+      </f:else>
+         
+    </f:if>
+        </div>
+  </div>
+  <div class="hidden currentUrl" >{url}</div>
+
+  <div class="previewOtherData clearfix">
+    <h2><f:translate key="tx_voucher_domain_model_voucher_preview.your_data" /></h2>
+    <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.gender" />
+      </label>
+      <span class="itemData">{registerUserData.gender}</span> </div>
+    <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.firstname" />
+      </label>
+      <span class="itemData">{registerUserData.firstname}</span> </div>
+    <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.lastname" />
+      </label>
+      <span class="itemData">{registerUserData.lastname}</span> </div>
+      <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.email" />
+      </label>
+      <span class="itemData">{sessionUser.user.name}</span> </div>
+         <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.phone" />
+      </label>
+      <span class="itemData">{registerUserData.phone}</span> </div>
+    <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.company" />
+      </label>
+      <span class="itemData">{registerUserData.company}</span> </div>
+    <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.address" />
+      </label>
+      <span class="itemData">{registerUserData.address}</span> </div>
+    <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.zip" />
+      </label>
+      <span class="itemData">{registerUserData.zip}</span> </div>
+      <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.ort" />
+      </label>
+      <span class="itemData">{registerUserData.location}</span> </div>
+         <div class="singleItem">
+      <label>
+        <f:translate key="tx_voucher_domain_model_voucher_preview.country" />
+      </label>
+      <span class="itemData">{registerUserData.country}</span> </div>
+ 
+    
+  </div>
+  <div class="previewVoucherTitle clearfix">
+   <h2><f:translate key="tx_voucher_domain_model_voucher_preview.your_product" /></h2>
+    <ol>
+    <f:for each="{voucherTemplateData.voucher}" as="voucher">
+   		<li>
+        	<b>{voucher.title}</b><br/>
+            <span class="quantity"> <f:translate key="tx_voucher_domain_model_voucher_preview.quantity" />{voucher.quantity}</span><br/>
+           <span class="total_amt"><f:translate key="tx_voucher_domain_model_voucher_preview.price_von" />  {voucher.total_paid} €  <f:if condition="{voucher.tax}">(inkl. {voucher.tax} MwSt. <f:format.currency currencySign="" decimalSeparator="," thousandsSeparator="." prependCurrency="TRUE" separateCurrency="FALSE" decimals="2">{voucher.taxamt}</f:format.currency>  €)</f:if> </span>
+        </li>
+    </f:for>
+    </ol> 
+  </div>
+  <div class="totalAmount clearfix">
+  	<h2><f:translate key="tx_voucher_domain_model_voucher_preview.total_amount" /></h2>
+    <p> <b><f:translate key="tx_voucher_domain_model_voucher_preview.total" /> </b><span>{voucherTemplateData.total.price } €</span></p>
+   <!-- <p> <b><f:translate key="tx_voucher_domain_model_voucher_preview.tax" /> </b><span><f:format.currency currencySign="" decimalSeparator="," thousandsSeparator="." prependCurrency="TRUE" separateCurrency="FALSE" decimals="2"> {voucherTemplateData.total.tax }</f:format.currency> €</span></p>-->
+    <p> <b><f:translate key="tx_voucher_domain_model_voucher_preview.total_amount_pay" /></b><span>
+     
+      {voucherTemplateData.total.total_paid } €
+     
+     </span></p>
+  </div>
+   <div class="voucherPolicy">
+
+
+        <f:form.checkbox property="policy" class="validate[required] policy" value="policy"/>
+        <span> Ich habe die  <f:link.page pageUid="{settings.flexform.main.voucherPrivatePolicy}" target="_blank">
+                <f:translate key="tx_voucher_domain_model_voucher_after_login.policy" />
+            </f:link.page> und <f:link.page pageUid="{settings.flexform.main.voucherTermConditions}" target="_blank">
+                <f:translate key="tx_voucher_domain_model_voucher_after_login.terms" /> </f:link.page> gelesen und verstanden.</span> </div>
+  <br>
+  <div class="paymentSection clearfix">
+    <f:if condition="{voucherTemplateData.payment.payment_type }==0 ">
+      <f:then>
+        <form name="voucherFormPayment" class="voucherFormPayment" id="voucherFormPayment" method="post" action="https://secure.paypal.com/uk/cgi-bin/webscr">
+       
+          <input type="hidden" value="_xclick" name="cmd">
+          <input type="hidden" value="{settings.flexform.main.paypalId}" name="business">
+          <f:for each="{voucherTemplateData.voucher}" as="voucher" iteration="iteration">
+	          <input type="hidden" value="{voucher.title}" name="item_name[{iteration.index}]">
+              <input type="hidden" value="{voucher.newsingleFormatedPrice}" name="item_price[{iteration.index}]">
+              <input type="hidden" value="{voucher.quantity}" name="item_qty{iteration.index}]">
+          </f:for>
+          <input type="hidden" value="{voucherTemplateData.total.newprice}" name="amount">
+          <input type="hidden" value="1" name="no_note">
+          <input type="hidden" value="EUR" name="currency_code">
+          <input type="hidden" value="DE" name="lc">
+          <input type="hidden" value="{voucherTemplateData.total.tax}" name="tax">
+          <input name="upload" type="hidden" value="0">
+          <input name="return" type="hidden" value="{url}?pay=0">
+          <input name="cancel_return" type="hidden" value="{url}?pay=2">
+          <label for="payment" class="payment_lbl">
+            <f:translate key="tx_voucher_domain_model_voucher_preview.paypal_payment" /><f:image src="uploads/tx_voucher/Paypal.png" height="45" />
+            
+          </label>
+          <div class="next-step clearfix">
+              <a href="javascript:history.go(-1)" class="back_btn" />{f:translate(key: 'tx_voucher_domain_model_voucher_after_login.back')} </a>
+              <input type="submit" name="continue" value="{f:translate(key: 'tx_voucher_domain_model_voucher_preview.continue')}" class="payment_btn "/>
+          </div>
+        </form>
+      </f:then>
+      <f:else>
+        <form name="voucherFormPayment" class="voucherFormPayment" id="voucherFormPayment" method="post" action="{url}?pay=1">
+          <label for="payment" class="payment_lbl">
+            <f:translate key="tx_voucher_domain_model_voucher_preview.cash_payment" />
+          </label>
+          <div class="next-step clearfix">
+              <a href="javascript:history.go(-1)"  class="back_btn" />{f:translate(key: 'tx_voucher_domain_model_voucher_after_login.back')} </a>
+              <input type="submit" name="continue" value="{f:translate(key: 'tx_voucher_domain_model_voucher_preview.continue')}" class="payment_btn"/>
+          </div>
+        </form>
+      </f:else>
+    </f:if>
+  </div>
+</div>

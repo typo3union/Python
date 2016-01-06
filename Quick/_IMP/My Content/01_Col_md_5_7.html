@@ -1,0 +1,44 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form label="Two Column Container 6_6" description="Two Column Container for col md 5 and col md 7" wizardTab="Bootstrap" id="col_md_5_7" icon="{v:extension.path.resources(path: 'Icons/icon-pageheader.gif')}" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}" >
+				<flux:field.input name="header1" label="Header"/>
+				<flux:field.text name="header2" label="Sub Header"/>				
+				<flux:grid>
+					<flux:grid.row>
+							<flux:grid.column style="width: 50%" name="column1" label="50%">
+								
+							</flux:grid.column>
+							<flux:grid.column style="width: 50%" name="column2" label="50%" >
+								
+							</flux:grid.column>				
+					</flux:grid.row>				
+				</flux:grid>						
+	</flux:form>
+</f:section>
+
+
+<f:section name="Main">
+
+
+            	<div class="col-lg-12 headingSection">
+                	<h1>{header1}</h1>
+                    <p>{header2}</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 my-left">
+                	<flux:content.render render="1" area="column1" />
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 my-right">
+                	<flux:content.render render="1" area="column2" />  
+                </div>
+         
+</f:section>
+
+
+
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>

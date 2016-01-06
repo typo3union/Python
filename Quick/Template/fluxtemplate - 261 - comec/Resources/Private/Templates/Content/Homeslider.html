@@ -1,0 +1,63 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="sliderhome" label="Home slider" description="Home Slider Element" icon="" options="{Fluidcontent: {sorting: 105},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="sliders" label="FixTop Slider">
+          <flux:form.object name="slider" label="Add New Slide">
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+          </flux:form.object>
+        </flux:form.section>
+		
+           <flux:field.input name="circle1" label="Circle Title 1"/>
+           <flux:field.input name="bgcolor1" label="Circle 1 Color"/>
+           
+		   <flux:field.input name="circle2" label="Circle Title 2"/>
+
+		   <flux:field.input name="bgcolor2" label="Circle 2 Color"/>
+           
+		   <flux:field.input name="circle3text1" label="Circle Title 3/1"/>
+		   <flux:field.input name="circle3text2" label="Circle Title 3/2"/>
+		   <flux:field.input name="bgcolor3" label="Circle 3 Color"/>
+		   
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+  <header class="main-slider my-fad-up">
+    <div id="myCarousel" class="carousel slide"> 
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+          <f:if condition="{sliders}">
+              <f:for each="{sliders}" as="slide" iteration="iteration">
+        <div class="item <f:if condition='{iteration.cycle} == 1'>active</f:if>">
+				<div class="fill" >
+					<f:image src="uploads/slider_images/{slide.slider.picture}" alt="Fartek"  width="1920c" height="633c" class="img-responsive"/>
+				</div>
+		</div>
+			  </f:for>
+          </f:if>
+      </div>
+	  <!-- Black Alpha Layer -->
+			<div class="alpha-blk"></div>
+	  <!-- Controls -->
+      <div class="c-control-wrap"> <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="icon-prev"></span> </a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="icon-next"></span> </a> </div>
+      <div class="container slider-box clearfix">
+        <div class="s-box-top"><a class="first wow rollIn"  data-wow-delay="0.5s" style="background:{bgcolor1};"><span>{circle1}</span></a> <a class="third wow fadeInRightBig" data-wow-delay="0.5s" style="background:{bgcolor3};"><span>{circle2}</span></a>
+          <!--<a class="fourth"><span>Käse</span></a>--> 
+        </div>
+        <div class="s-box-btm">  <a class="second wow bounceInDown" data-wow-delay="0.9s" style="background:{bgcolor2};"><span> {circle3text1} <br> {circle3text2} </span></a> 
+          <!--<a class="fifth"><span>Öle</span></a>--> 
+        </div>
+      </div>
+      <!--<div class="s-box-top">
+				<a class="first1"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/round-1.png" alt="Fartek" class="img-responsive"/> </a>
+<a class="first1"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/round-1.png" alt="Fartek" class="img-responsive"/> </a>				
+			</div>--> 
+    </div>
+  </header>
+  </f:section>
+</div>

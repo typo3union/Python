@@ -1,0 +1,88 @@
+# EXT: page.headerData
+
+# DESC: The PAGE HEADERDATA template. All config.headerData contents goes in here. This could be almost everything that belongs in the <head>, but does not have any configuration like page.config, page.includeCSS or page.includeJS or needs special configuration, like dynamic handling.
+
+# <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
+
+
+
+# Header Data Setup
+page.headerData {
+	10 = TEXT
+	10.value (
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		
+		<link href="{$filepaths.css}bootstrap.min.css" rel="stylesheet" />
+		<link href="{$filepaths.css}bxslider.css" rel="stylesheet" />
+		<link href="{$filepaths.css}animated.css" rel="stylesheet" />
+		<link href="{$filepaths.css}demo.css" rel="stylesheet" />	
+		<link href="{$filepaths.css}flexslider.css" rel="stylesheet" />	
+		<link href="{$filepaths.css}modern-business.css" rel="stylesheet" />
+		<link href="{$filepaths.css}filter.css" rel="stylesheet" />	
+		<link href="{$filepaths.css}custom.css" rel="stylesheet" />	
+		<link href="{$filepaths.css}magnifi_popup.css" rel="stylesheet" />
+		<link href="{$filepaths.css}validationEngine.jquery.css" rel="stylesheet" />
+		<link href="{$filepaths.css}dataTables.bootstrap.css" rel="stylesheet">	
+		<link href="{$filepaths.css}royalslider.css" rel="stylesheet">	
+		<link href="{$filepaths.css}rs-universal.css" rel="stylesheet">	
+		<!--[if lt IE 9]>
+	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->	
+		<script src="{$filepaths.js}jquery.js"></script>
+		<script type="text/javascript" src="{$filepaths.js}bootstrap.min.js"></script>
+		<script type="text/javascript" src="{$filepaths.js}jquery.dataTables.min.js"></script> 
+		<script type="text/javascript" src="{$filepaths.js}dataTables.bootstrap.js"></script> 
+	)
+
+}
+ 
+
+# Footer Data setup
+page.footerData {
+	10 = TEXT
+	10.value (
+		<script type="text/javascript" src="{$filepaths.js}jquery.bxslider.js"></script> 
+		<script type="text/javascript" src="{$filepaths.js}jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="{$filepaths.js}jquery.flexslider.js"></script> 
+		<script type="text/javascript" src="{$filepaths.js}classie.js"></script>
+		<script type="text/javascript" src="{$filepaths.js}zepto.min.js"></script> 			
+		<script type="text/javascript" src="{$filepaths.js}jquery.magnific-popup.min.js"></script>	
+		<script type="text/javascript" src="{$filepaths.js}languages/jquery.validationEngine-de.js"></script>
+		<script type="text/javascript" src="{$filepaths.js}jquery.validationEngine.js"></script>
+		<script type="text/javascript" src="{$filepaths.js}jquery.mixitup.min.js"></script>	
+		<script type="text/javascript" src="{$filepaths.js}jquery.royalslider.min.js" ></script> 					
+		<script type="text/javascript" src="{$filepaths.js}main.js"></script>
+		<script type="text/javascript" src="{$filepaths.js}generl.js"></script>		
+		<script type="text/javascript" src="{$filepaths.js}custom.js" ></script> 
+				
+	)
+}
+
+[globalVar = TSFE:id = 1]
+#[PIDinRootline = 4]
+	
+[else]
+	
+[global]
+
+[globalVar = GP:L = 1]
+	
+[global]
+
+# override meta tags if defined at page level
+page.meta {
+	keywords.override.field = keywords
+	description.override.field = description
+}
+
+page.headerData{
+  1 = TEXT
+  1.value(
+  <link rel="alternate" href="http://www.landeswappen.com" hreflang="de-at" />
+  <link rel="alternate" href="http://www.landeswappen.com/en/" hreflang="en-gb" />
+  )
+}

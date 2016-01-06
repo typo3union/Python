@@ -1,0 +1,38 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+  <div class="tx-powermail clearfix">
+    <f:if condition="{satus}">
+      <f:then>
+        <div class="powermail_create">
+            <f:format.html>{settings.flexform.order.thxMessage} </f:format.html>
+          </div>
+      </f:then>
+      <f:else>
+        <div class="contact-main"> <span class="error hidden">Bitte wählen Sie entweder einen Kurs oder geben Sie einen Betrag ein!</span>
+          <form data-parsley-validate="data-parsley-validate" data-validate="html5" enctype="multipart/form-data" name="field" class="powermail_form_4 " action="" method="post">
+            <div id="powermail_fieldwrap_36" class="form-group powermail_fieldwrap_36 "> <span class="fa fa-user"></span>
+              <input required="required" data-parsley-required-message="Dieses Feld muss ausgefüllt werden!" data-parsley-trigger="change" placeholder="Name*" class="form-control powermail_field powermail_input " id="powermail_field_name" type="text" name="tx_powermail_pi1[field][name]" value="">
+            </div>
+            <div id="powermail_fieldwrap_35" class="form-group powermail_fieldwrap_35 "> <span class="fa fa-user-plus"></span>
+              <input required="required" data-parsley-required-message="Dieses Feld muss ausgefüllt werden!" data-parsley-trigger="change" placeholder="Vorname*" class="form-control powermail_field powermail_input " id="powermail_field_vorname" type="text" name="tx_powermail_pi1[field][vorname]" value="">
+            </div>
+            <div id="powermail_fieldwrap_34" class="form-group powermail_fieldwrap_34 "> <span class="fa fa-envelope-o"></span>
+              <input required="required" data-parsley-required-message="Dieses Feld muss ausgefüllt werden!" data-parsley-trigger="change" data-parsley-error-message="Keine gültige E-Mail-Adresse!" placeholder="E-Mail*" class="form-control powermail_field powermail_input " id="powermail_field_email" type="email" name="tx_powermail_pi1[field][e_mail]" value="">
+            </div>
+            <div id="powermail_fieldwrap_33" class="form-group powermail_fieldwrap_33 "> <span class="fa fa-phone"></span>
+              <input placeholder="Mobiltelefon" class="form-control powermail_field powermail_input " id="powermail_field_mobiltelefon" type="text" name="tx_powermail_pi1[field][mobiltelefon]" value="">
+            </div>
+            <div id="powermail_fieldwrap_38" class="form-group powermail_fieldwrap_38 "> <span class="fa fa-user"></span>
+              <input class="form-control powermail_field powermail_input" placeholder="{courses.name}" id="powermail_field_coursetitle" type="text" name="tx_powermail_pi1[field][coursetitle]" value="{courses.name}" readonly>
+            </div>
+            <div id="powermail_fieldwrap_32" class="form-group powermail_fieldwrap_32 "> <span class="fa fa-envelope-o"></span>
+              <textarea required="required" data-parsley-required-message="Dieses Feld muss ausgefüllt werden!" data-parsley-trigger="change" rows="5" cols="20" placeholder="Nachricht*" class="form-control powermail_field powermail_textarea " id="powermail_field_nachricht" style="height:auto;" name="tx_powermail_pi1[field][nachricht]"></textarea>
+            </div>
+            <input class="btn btn-default" type="submit" name="course_kontakt_form" value="Absenden!">
+          </form>
+        </div>
+      </f:else>
+    </f:if>
+  </div>
+</f:section>

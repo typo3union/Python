@@ -1,0 +1,106 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<script type="text/javascript">
+$(document).ready(function(){
+	var orimg = $(".orig").html();
+	if(orimg !=""){
+		$(".main-slider .csc-default").html(orimg);
+		$(".main-slider").addClass("banner-image");
+	}
+	//alert(orimg);
+	$(".detail-address p:first-child").wrap( "<div class='detail_add1'></div>" );
+	$(".detail-address p:not(:first-child)").wrap( "<div class='detail_add2'></div>" );
+	
+});
+</script>
+<div class="row">
+      <div class="col-lg-12 teaser_wrap">
+	  <f:if condition="{docdetailheader}">
+	 <f:then>
+        <h2>{docdetailheader}</h2>
+		</f:then>
+		<f:else>
+			 <h2>&Auml;rzteprofil {docshow.name}</h2>
+		 </f:else>
+		 </f:if>
+       
+        <hr class="red_line">
+		<f:format.html>{docdetailrte}</f:format.html>
+        <div class="row">
+          <div class="col-md-4 col-sm-4 inner">
+		   <f:if condition="{docshow.images.imagepath}">
+          	<div class="shadow-wrap">
+			<f:if condition="{docshow.images.imagepath}">
+          		<img src="{docshow.images.imagepath}"  title="{docshow.images.title}" class="img_inner" alt="{docshow.images.title}" width="253" height="145" />
+                <div class="shadow"></div>
+			 </f:if>
+            </div>
+			<div class="orig" style="display:none;">
+			<div class="docimg" >
+				<f:if condition="{docshow.detailimages.imagepath}">
+					<f:then>
+					<img src="{docshow.detailimages.originpath}"  title="{docshow.detailimages.title}" alt="{docshow.detailimages.title}"  class="doc-image" style="min-height:150px;" />
+					<p class="detailname">{docshow.name}</p>
+					</f:then>
+					<f:else>
+					<img src="{docshow.images.originpath}"  title="{docshow.images.title}" alt="{docshow.images.title}"  class="doc-image" style="min-height:150px;" />
+					<p class="detailname">{docshow.name}</p>
+					</f:else>
+				</f:if>
+			</div>
+			</div>
+			</f:if>
+            <h4>{docshow.name}</h4>
+            <div class="detail_add1">
+            	<p>{docshow.short_information}
+				</p>
+            </div>
+            <div class="detail-address">
+            	<f:format.html>{docshow.address}</f:format.html>
+			</div>
+           
+            <div class="detail_add3">
+				<f:if condition="{docshow.logos.imagepath}">
+            	<img src="fileadmin{docshow.logos.imagepath}"  title="{docshow.logos.title}" alt="{docshow.logos.title}" />
+				 </f:if>
+            </div>
+          </div>
+          <div class="col-md-8  col-sm-8 inner_right">
+            <h4 class="inner_right_head">{docshow.headline}</h4>
+          <f:format.html>{docshow.detailedinformation}</f:format.html>
+
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+ <div class="row">
+		<div class="col-lg-12 teaser_wrap">
+        <h2>weitere Fachbereiche</h2>
+        <hr class="red_line">
+        <div class="row">
+				<dl class="dl-horizontal">				
+					
+						<f:for each="{catl}" as="catlist">
+							<dd><f:link.action action="list" controller="DoctoreList" arguments="{catid : catlist.uid}"  >{catlist.name}</f:link.action></dd>
+						</f:for>
+				</dl>
+        </div>
+      </div>
+    </div>
+
+</f:section>

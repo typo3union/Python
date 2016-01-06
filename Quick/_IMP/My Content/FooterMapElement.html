@@ -1,0 +1,24 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		<flux:form id="footermap" label="Footer Map Content" description="Footer Map Content Element" icon="" options="{Fluidcontent: {sorting: 113},group: 'Custom elements'}">
+			<flux:field.input name="title" label="Title" />
+			<flux:field.text name="contentmap" label="Map"></flux:field.text>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<h4>{title}</h4>
+		<div class="map"> <f:format.raw>{contentmap}</f:format.raw> </div>
+	</f:section>
+	
+</div>

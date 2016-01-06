@@ -1,0 +1,173 @@
+<section class="white-section clearfix">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<div class="tx-js-career">
+	                <f:render partial="Success/Success" arguments="{success:success}" />
+                    <h1>{job.title}</h1>
+                    <p>{job.short_description}</p>
+                    <div class="table-responsive career-info">
+                        <table class="table table-striped">
+                            <tbody>
+                            	<f:if condition="{job.title}">
+                                    <tr>
+                                        <td class="t1"><img alt="icon" src="typo3conf/ext/js_career/Resources/Public/Images/job-title.png"></td>
+                                        <td class="t2"> <f:translate key='tx_jscareer_domain_model_job.job.title' /></td>
+                                        <td class="t3">{job.title}</td>
+                                    </tr>
+                                </f:if>
+                                <f:if condition="{job.clinik}">
+                                    <tr>
+                                        <td class="t1"><img alt="icon" src="typo3conf/ext/js_career/Resources/Public/Images/home.png"></td>
+                                        <td class="t2"> <f:translate key='tx_jscareer_domain_model_job.employer' /></td>
+                                        <td class="t3">{job.clinik}</td>
+                                    </tr>
+                                </f:if>
+                                <f:if condition="{job.place}">
+                                    <tr>
+                                        <td class="t1"><img alt="icon" src="typo3conf/ext/js_career/Resources/Public/Images/place.png"></td>
+                                        <td class="t2"> <f:translate key='tx_jscareer_domain_model_job.jobLocation' /></td>
+                                        <td class="t3">{job.place}</td>
+                                </tr>
+                                </f:if>
+
+                               
+                                <tr>
+                                    <td class="t1"><img alt="icon" src="typo3conf/ext/js_career/Resources/Public/Images/calender.png"></td>
+                                    <td class="t2"> <f:translate key='tx_jscareer_domain_model_job.joindate' /></td>
+                                    <td class="t3">
+                                        <f:if condition="{job.ab_sofort}=='1'">
+                                            <f:then>
+                                                <f:translate key='tx_jscareer_domain_model_job.absofort' />
+                                            </f:then>
+                                            <f:else>
+                                                <f:if condition="{job.text_check}=='1'">
+                                                    <f:then>
+                                                        {job.text}
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:if condition="{job.join_check}=='1'">
+                                                            <f:then>
+                                                                <f:format.date format="d.m.Y">{job.join_date}</f:format.date>
+                                                            </f:then>
+                                                            <f:else>
+                                                                <f:translate key='tx_jscareer_domain_model_job.absofort' />
+                                                            </f:else>  
+                                                        </f:if>
+                                                    </f:else>  
+                                                </f:if>
+                                            </f:else>  
+                                        </f:if>
+                                    </td>
+                                </tr>
+                               
+                                <f:if condition="{job.timing}">
+                                    <tr>
+                                        <td class="t1"><img alt="icon" src="typo3conf/ext/js_career/Resources/Public/Images/time.png"></td>
+                                        <td class="t2"><f:translate key='tx_jscareer_domain_model_job.scope' /></td>
+                                        <td class="t3"><f:translate key='tx_jscareer_domain_model_job.timing.I.{job.timing}' /></td>
+                                    </tr>
+                                </f:if>
+                                <f:if condition="{job.contract}">
+                                    <tr>
+                                        <td class="t1"><img alt="icon" src="typo3conf/ext/js_career/Resources/Public/Images/document.png"></td>
+                                        <td class="t2"><f:translate key='tx_jscareer_domain_model_job.contract' /></td>
+                                        <td class="t3">{job.contract}</td>
+                                    </tr>
+                                </f:if>
+                            </tbody>
+                        </table>
+                    </div>
+	            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dark-section clearfix">
+	<div class="container">
+    	<div class="row clearfix">
+            <div class="tx-js-career">
+                <div class="career-detail">
+                    <h2>{job.description_header}</h2>
+                    <div class="col-md-6 col-sm-6">
+                        <f:format.html>{job.description_part1}</f:format.html>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <f:format.html>{job.description_part2}</f:format.html>
+                        
+                        <f:if condition="{job.media.pdf.identifier}">
+                            <a href="fileadmin{job.media.pdf.identifier}" target="_blank" class="pdf-download">
+                                <f:translate key='tx_jscareer_domain_model_job.detail.pdf' />
+                            </a>
+                            <br />
+                        </f:if>
+
+                        <f:if condition="{settings.appliedJobLink}">
+                            <f:then>
+                                <f:link.page pageUid="{settings.appliedJobLink}" class="online-search">
+                                    <f:translate key='tx_jscareer_domain_model_job.apply' />
+                                </f:link.page>
+                            </f:then>
+                            <f:else>
+                                <f:link.action action="job" controller="Job" arguments="{apply: job.uid}" class="online-search">
+                                    <f:translate key='tx_jscareer_domain_model_job.apply' />
+                                </f:link.action>
+                            </f:else>
+                        </f:if>
+                    </div>
+                </div>
+			</div>
+        </div>
+    </div>
+</section>
+
+
+<f:if condition="{job.manager}">
+    <section class="white-section clearfix">
+    	<div class="container">
+            <div class="row clearfix">
+            	<div class="col-lg-12">
+                    <h2><f:translate key='tx_jscareer_domain_model_job.your_contact_person'/></h2>  
+                    <div class="tx-js-career">
+                        <div class="testimonial-slider">
+                            <div class="flexslider carousel">
+                            	<ul class="slides">
+                                    <f:for each="{job.manager}" as="manager" iteration="itemIteration">
+                                    	<li>
+                                            <span class="testimonial-image">
+                                            	<f:if condition="{manager.picture}">
+    	                                            <f:image src="{manager.picture}" treatIdAsReference="1" width="200c" height="202c" alt="{manager.name}" title="{manager.name}" />
+                                                </f:if>	
+                                            </span>
+                                            <div class="testimonial-text">
+                                                <f:if condition="{manager.name}">
+    												<div class="name">{manager.name}</div>
+                                                </f:if>
+    											<f:if condition="{manager.designation}">
+    												<p>{manager.designation}</p>
+    											</f:if>
+                                                <f:if condition="{manager.voraussetzungen}">
+                                                    <f:format.html>{manager.voraussetzungen}</f:format.html>
+                                                </f:if>
+
+                                                <ul class="ph">
+    	                                            <f:if condition="{manager.phone}!=''">
+                                                        <li class="phone">{manager.phone}</li>
+                                                    </f:if>
+    	                                            <f:if condition="{manager.email}!=''">
+                                                        <li class="email"><f:link.email email="{manager.email}" /></li>
+                                                    </f:if>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </f:for>
+                                </ul>
+                            </div>
+                        </div>          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</f:if>

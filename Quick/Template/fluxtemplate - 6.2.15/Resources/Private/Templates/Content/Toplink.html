@@ -1,0 +1,58 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="TopLink" label="TopLink" description="TopLink Element" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+      
+        <flux:form.section name="link" label="TopLink">
+          <flux:form.object name="Link" label="Add New Slide">
+                 <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Background Image" allowed="jpg, jpeg, png, gif"/>
+                 <flux:field.input name="Text" label="Alt"/>
+                <flux:field.input name="link" label="Link">
+                 <flux:wizard.link />
+               </flux:field.input>
+          </flux:form.object>
+        </flux:form.section>
+		
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+  
+              <ul>
+               <f:if condition="{link}">
+                  <f:for each="{link}" as="links" iteration="iteration">
+                  <li> <f:link.page pageUid="{links.Link.link}"><f:image src="uploads/slider_images/{links.Link.picture}" alt="{links.Link.Text}"/></a></f:link.page></li>
+                  </f:for>
+                  </f:if>
+
+                  <li class="dropdown font-resize">
+                  <a href="javascript:void(0)">A-</a>
+                  <div class="dropdown-menu">
+                   <a class="jfontsize-button" id="jfontsize-minus" >A-</a>
+                    <a class="jfontsize-button" id="jfontsize-plus" >A+</a>
+                    </div>
+
+                  </li>
+                  <li class="dropdown login">
+                    <a href="#"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/schlog_icon.png" alt="schlog"></a>
+                    <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></div>
+               <!--      <div class="dropdown-menu">
+                      <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" class="form-control" id="Email" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <label for="Email">Password</label>
+                        <input type="password" class="form-control" id="Email" placeholder="Password">
+                      </div>
+                      <button class="btn button btn-default">Login</button>
+                      <button class="btn button btn-default register-btn">Register</button> 
+                    </div> -->
+                  </li>
+                </ul>
+  </f:section>
+</div>

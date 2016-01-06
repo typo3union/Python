@@ -1,0 +1,31 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="ButtonFce" label="ButtonFce" description="ButtonFce Element" icon="" options="{Fluidcontent: {sorting: 107},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+               <flux:form.section name="Button" label="ButtonFce">
+          <flux:form.object name="Button" label="Add New Slide">  
+                 <flux:field.input name="Text" label="Text"/>
+                <flux:field.input name="link" label="Link">
+                 <flux:wizard.link />
+               </flux:field.input>
+      </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+  <div class="container button-fce">
+  <div class="row">
+  			<f:if condition="{Button}">
+                  <f:for each="{Button}" as="Buttons" iteration="iteration">
+              <f:link.page pageUid="{Buttons.Button.link}" class="golf_btn btn button">{Buttons.Button.Text}</f:link.page>
+              </f:for>
+              </f:if>
+              </div>
+              </div>
+  </f:section>
+</div>

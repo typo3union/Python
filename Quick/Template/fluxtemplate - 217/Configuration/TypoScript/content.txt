@@ -1,0 +1,122 @@
+###
+# TEMPLATE: root_blocks
+# DESCRIPTION: The PAGE BLOCKS ROOT template. Lib (Blocks) templates contain TypoScript to generate the building blocks for your website, except menu's. In this template record are only other template records included.
+###
+
+
+# EXT: lib.right_content
+# DESC: TypoScript template which compiles the contents for the right column on the pages
+
+# Setup each colPos blocks.
+lib.content0 < styles.content.get
+lib.content0.select.where = colPos = 0
+lib.content1 < styles.content.get
+lib.content1.select.where = colPos = 1
+lib.content2 < styles.content.get
+lib.content2.select.where = colPos = 2
+lib.content3 < styles.content.get
+lib.content3.select.where = colPos = 3
+lib.content4 < styles.content.get
+lib.content4.select.where = colPos = 4
+lib.content5 < styles.content.get
+lib.content5.select.where = colPos = 5
+
+
+# Get constant like LOGO, Copyright Text etc.,
+lib.getConstant = TEXT
+lib.getConstant.value = {$config.setConstant}
+
+# Page title
+lib.pagetitle = TEXT
+lib.pagetitle.data = page : title
+
+
+# Base URL
+lib.baseURL = TEXT
+lib.baseURL.value = {$config.domain}
+
+# Main Logo
+lib.mainLogo = TEXT
+lib.mainLogo.value = {$config.mainLogo}
+
+
+# Main Search  
+lib.searchBox = CONTENT
+lib.searchBox.table =  tt_content
+lib.searchBox.select.pidInList = 12
+lib.searchBox.select.uidInList = 98
+
+# Footer mmber Text
+lib.footerMemberText = CONTENT
+lib.footerMemberText.table =  tt_content
+lib.footerMemberText.select.pidInList = 18
+lib.footerMemberText.select.uidInList = 11
+
+
+# Footer Content
+lib.footerContent = CONTENT
+lib.footerContent.table =  tt_content
+lib.footerContent.select.pidInList = 18		
+lib.footerContent.select.uidInList = 25
+
+# Newsletter
+lib.newsletter = CONTENT
+lib.newsletter.table =  tt_content
+lib.newsletter.select.pidInList = 18
+lib.newsletter.select.uidInList = 111
+
+lib.indexSearch = CONTENT
+lib.indexSearch.table =  tt_content
+lib.indexSearch.select.pidInList = 18
+lib.indexSearch.select.uidInList = 313
+
+# copyright
+lib.copyRightText = TEXT
+lib.copyRightText.data = date:U
+lib.copyRightText.strftime = %y
+lib.copyRightText.wrap= {$config.copyRightText} 
+
+
+
+
+
+#quickMenu Start
+lib.quickMenu = COA
+lib.quickMenu{
+  
+10= HMENU
+10.special = list
+10.special.value = 16 , 15  
+10.1 = TMENU
+10.1 {
+ wrap = <ul class="top-small-menu pull-left">|</ul>
+    noBlur = 1
+    expAll = 1
+    IFSUB = 1  
+    
+    NO {
+      wrapItemAndSub = <li>|<span class="span">&nbsp;&#124;&nbsp;</span></li> || <li>|</li>
+      ATagTitle.field = 1
+     
+    } 
+   ACT = 1
+   ACT{
+      wrapItemAndSub =  <li class="active">|<span class="span">&nbsp;&#124;&nbsp;</span></li> || <li>|</li>
+
+      ATagTitle.field = 1
+      #  ACT = 1       
+       stdWrap.htmlSpecialChars = 1
+       ATagParams = class="active"
+     #  allWrap = <li> | </li>  
+    }
+  
+    IFSUB{
+       wrapItemAndSub = <li>|</li>
+      ATagTitle.field = 1           
+     }        
+  }
+}
+#quickMenu End
+
+
+plugin.tx_search.mvc.callDefaultActionIfActionCantBeResolved = 1

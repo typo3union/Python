@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-09-01T04:55:49Z" product-name="product">
+		<header/>
+		<body>
+			<trans-unit id="tx_product_domain_model_product">
+				<source>Product</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.featured_product">
+				<source>Featured Product</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.machine_no">
+				<source>Machine No</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.year">
+				<source>Year</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.rating">
+				<source>Rating</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category.name">
+				<source>Name</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

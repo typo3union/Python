@@ -1,0 +1,34 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		
+		<flux:form label="Two Column Container" id="TwoColumn" description="TWo Column Container" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+
+				<flux:grid>
+				<flux:grid.row>
+						<flux:grid.column style="width: 50%" name="column1" label="Left Inhalt">
+						</flux:grid.column>
+
+						
+                        <flux:grid.column style="width: 50%" name="column2" label="Right Inhalt" >
+						</flux:grid.column>
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+				<flux:content.render render="1" area="column1" />
+				<flux:content.render render="2" area="column2" />
+			
+	</f:section>
+	
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>
+
+</div>

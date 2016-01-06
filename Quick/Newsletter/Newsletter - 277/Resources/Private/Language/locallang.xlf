@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-15T09:12:40Z" product-name="newsletter">
+		<header/>
+		<body>
+			<trans-unit id="tx_newsletter_domain_model_newsletter">
+				<source>Newsletter</source>
+			</trans-unit>
+
+			<trans-unit id="tx_newsletter_domain_model_newsletter.gender">
+				<source>Anrede*</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.company">
+				<source>Firma</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.firstname">
+				<source>Vorname*</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.name">
+				<source>Name*</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.email">
+				<source>E-Mail-Adresse*</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.require">
+				<source>*Pflichtangaben</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.newsletter">
+				<source>Newsletter</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.bestellen">
+				<source>bestellen</source>
+			</trans-unit>
+
+			<trans-unit id="tx_newsletter_domain_model_newsletter.blank_vorname">
+			    <source>Vornamen wird angefordert</source>
+			</trans-unit>			
+			<trans-unit id="tx_newsletter_domain_model_newsletter.blank_name">
+			    <source>Namen wird angefordert</source>
+			</trans-unit>			
+			<trans-unit id="tx_newsletter_domain_model_newsletter.blank_email">
+			    <source>E-Mail ist erforderlich</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.valid_email">
+			    <source>Bitte geben Sie eine gültige E-Mail-Adresse ein</source>
+			</trans-unit>
+
+			<trans-unit id="tx_newsletter_domain_model_newsletter.thankYou">
+			    <source>Vielen Dank für Ihre Anmeldung!</source>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.alreadyRegister">
+			    <source>Ihre E-Mail ist bereits registriert</source>
+			</trans-unit>
+
+			
+
+		</body>
+	</file>
+</xliff>

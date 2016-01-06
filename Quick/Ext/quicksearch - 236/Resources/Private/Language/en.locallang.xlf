@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file target-language="en" datatype="plaintext" original="messages" date="2015-09-03T19:16:17Z" product-name="quicksearch">
+		<header/>
+		<body>
+			<trans-unit id="tx_quicksearch_domain_model_quicksearch">
+				<target>Quicksearch</target>
+			</trans-unit>
+
+			<trans-unit id="tx_quicksearch_domain_model_quicksearch.quicksearch">
+				<target>Quick Search</target>
+			</trans-unit>
+
+			<trans-unit id="tx_quicksearch_domain_model_quicksearch.patient">
+				<target>Patient / Relatives</target>
+			</trans-unit>
+
+			<trans-unit id="tx_quicksearch_domain_model_quicksearch.referrers">
+				<target>Referrers</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

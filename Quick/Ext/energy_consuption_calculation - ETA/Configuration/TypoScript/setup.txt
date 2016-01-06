@@ -1,0 +1,78 @@
+
+plugin.tx-energy-consuption-calculation {
+	view {
+		templateRootPath = {$plugin.tx-energy-consuption-calculation.view.templateRootPath}
+		partialRootPath = {$plugin.tx-energy-consuption-calculation.view.partialRootPath}
+		layoutRootPath = {$plugin.tx-energy-consuption-calculation.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx-energy-consuption-calculation.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx-energy-consuption-calculation._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-energy-consuption-calculation table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-energy-consuption-calculation table th {
+		font-weight:bold;
+	}
+
+	.tx-energy-consuption-calculation table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+
+
+page.footerData.1112 = TEXT
+page.footerData.1112.value (
+	<script language="JavaScript" src="typo3conf/ext/energy_consuption_calculation/Resources/Public/Js/charts.js"></script>
+	<script language="JavaScript" src="typo3conf/ext/energy_consuption_calculation/Resources/Public/Js/serial.js"></script>
+    <script language="JavaScript" src="typo3conf/ext/energy_consuption_calculation/Resources/Public/Js/properties.js"></script>
+    <script language="JavaScript" src="typo3conf/ext/energy_consuption_calculation/Resources/Public/Js/dispDiagram.js"></script>
+    <script language="JavaScript" src="typo3conf/ext/energy_consuption_calculation/Resources/Public/Js/getset.js"></script>
+    <script language="JavaScript" src="typo3conf/ext/energy_consuption_calculation/Resources/Public/Js/formatting.js"></script>
+    <script language="JavaScript" src="typo3conf/ext/energy_consuption_calculation/Resources/Public/Js/calc.js"></script>
+)
+
+
+#page.headerData.11 = TEXT 
+#page.headerData.11.value (
+# <meta http-equiv="content-type" content="text/html; charset=UTF-16" />
+#)
+
+page.headerData.1112 = TEXT 
+page.headerData.1112.value (
+	 <link rel="stylesheet" type="text/css" href="typo3conf/ext/energy_consuption_calculation/Resources/Public/Css/energy.css">
+); 
+ 
+config.tx-energy-consuption-calculation.features.skipDefaultArguments = 1
+plugin.tx-energy-consuption-calculation.features.skipDefaultArguments = 1
+
+

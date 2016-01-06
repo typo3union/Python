@@ -1,0 +1,81 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Company</h1>
+
+<f:flashMessages />
+
+<table  class="tx_companymanagement" >
+	<tr>
+		<th><f:translate key="tx_companymanagement_domain_model_company.detail_link" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.name" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.logo" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.main_image" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.slider_images" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.address" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.location" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.zip" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.place" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.city" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.telephone" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.fax" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.email" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.website" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.founded" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.employee" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.share" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.expert_notice" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.branch" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.gallery" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.video" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.award_date" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_company.award_type" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{companies}" as="company">
+		<tr>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.detailLink}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.logo.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.mainImage.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.sliderImages.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.address}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.location}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.zip}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.place}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.city}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.telephone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.fax}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.website}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.founded}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.employee}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.share}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.expertNotice}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.branch}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.gallery.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.video.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.awardDate -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{company : company}"> {company.awardType}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{company : company}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{company : company}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Company</f:link.action>
+</f:section>

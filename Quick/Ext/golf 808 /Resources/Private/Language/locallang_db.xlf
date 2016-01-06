@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-03T09:11:18Z" product-name="golf">
+		<header/>
+		<body>
+			<trans-unit id="tx_golf_domain_model_golf">
+				<source>Golf</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.putting_holes">
+				<source>Putting Holes</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.video_image">
+				<source>Video Image</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.video">
+				<source>Video</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.hole_image">
+				<source>Hole Image</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.par">
+				<source>Par</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.hcp">
+				<source>Hcp</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.red">
+				<source>Red</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.green">
+				<source>Green</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.m_green">
+				<source>m bis Grünmitte</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.pinposition_image">
+				<source>Pinposition Image</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.slider_images">
+				<source>Slider Images</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.content">
+				<source>Left Content</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.tx_golf_table">
+				<source>Right Content</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.description_title">
+				<source>Title Of Description</source>
+			</trans-unit>
+			<trans-unit id="tx_golf_domain_model_golf.degree_view">
+				<source>360 View</source>
+			</trans-unit>
+
+			
+		</body>
+	</file>
+</xliff>

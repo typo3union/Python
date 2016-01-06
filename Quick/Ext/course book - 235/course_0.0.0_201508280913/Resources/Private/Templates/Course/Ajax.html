@@ -1,0 +1,62 @@
+
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="TermineundAnmeldung" />
+
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+<f:for each="{courses}" as="course">
+
+                                
+<f:for each="{course.dateduration}" as="d_duration" iteration="iteration" >
+									<div style="display: block;" id="calendarSheetSet_{d_duration.uid}<f:format.date format='Y-m-d'>{d_duration.startdate}</f:format.date><f:format.date format='Y-m-d'>{d_duration.enddate}</f:format.date>" class="calendarSheetSet">
+										<div class="col-md-4 col-sm-6 col-xs-12">                   
+											<table class="calendarSheet">						
+												<f:format.raw>{coursesMonth1}</f:format.raw>
+											</table>
+										</div>
+										
+										<div class="col-md-4 col-sm-6 col-xs-12">                    
+											<table class="calendarSheet">
+												<f:format.raw>{coursesMonth2}</f:format.raw>
+											</table>
+										</div>
+										
+										<div class="col-md-4 col-sm-6 col-xs-12">                   
+											<table class="calendarSheet last">
+												<f:format.raw>{coursesMonth3}</f:format.raw>												
+											</table>	
+										</div>				
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdg-nn">										
+											<ul class="legende list-unstyled">
+												<v:content.resources table="tx_course_domain_model_durations" field="duration" uid="1" as="title">
+												<f:for each="{title}" as="durationTitle" >
+													<li class="abends"><span class="ashik clr ashik-border"></span>{durationTitle}</li>
+												</f:for></v:content.resources>
+												<v:content.resources table="tx_course_domain_model_durations" field="duration" uid="2" as="title">
+												<f:for each="{title}" as="durationTitle" >
+													<li class="halbtags"><span class="ashik ashik-full"></span>{durationTitle}</li>
+												</f:for></v:content.resources>
+												<v:content.resources table="tx_course_domain_model_durations" field="duration" uid="3" as="title">
+												<f:for each="{title}" as="durationTitle" >
+													<li class="ganztags"><span class="ashik clr ashik-bottom"></span>{durationTitle}</li>
+												</f:for></v:content.resources>
+												<v:content.resources table="tx_course_domain_model_durations" field="duration" uid="4" as="title">
+												<f:for each="{title}" as="durationTitle" >
+													<li class="pruefung1"><span class="ashik clr ashik-cross"></span>{durationTitle}</li>
+												</f:for></v:content.resources>
+																																		
+											</ul>
+										</div>
+										
+										<f:for each="{d_duration.durationtiming}" as="dtiming">
+                                        <div class="tmday" data-day="<f:format.date format='d'>{dtiming.date}</f:format.date>-<f:format.date format='m'>{dtiming.date}</f:format.date>-<f:format.date format='Y'>{dtiming.date}</f:format.date>" data-d="<f:format.date format='d'>{dtiming.date}</f:format.date>" data-m="<f:format.date format='m'>{dtiming.date}</f:format.date>" data-y="<f:format.date format='Y'>{dtiming.date}</f:format.date>" data-tm="class_tm{dtiming.duration.uid}" ></div>																			
+										</f:for>  	
+                                    </div>
+									
+									
+
+																		
+																											
+									</f:for> 
+</f:for>
+</f:section>

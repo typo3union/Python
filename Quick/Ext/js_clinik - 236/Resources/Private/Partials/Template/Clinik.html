@@ -1,0 +1,38 @@
+<div class="col-md-6 col-sm-6">
+	<div class="clink-location-map">
+		<span class="location-map">
+            <f:image src="typo3conf/ext/js_clinik/Resources/Public/Images/select-location-map.png" alt="" />
+		</span>
+		<div class="location-detail">
+			<f:for each="{Facilities}" as="facility" iteration="itemIteration">
+				<div class="map-point p{facility.clinik_id} {facility.selected} accordion-p{facility.uid}" id="p{facility.uid}" title="{facility.title}">{facility.title}</div>
+			</f:for>
+		</div>
+	</div>
+</div>
+<div class="col-md-6 col-sm-6">
+    <div class="clink-location-detail">
+        <h3><f:translate key='tx_jsclinik_domain_model_clinik.list_of_clinik' /></h3>
+        <div class="accordion">
+	        <f:for each="{Facilities}" as="facility" iteration="itemIteration">
+	            <f:if condition="{facility.selected}">
+                    <div class="accordion-section">
+                        <a href="#accordion-p{facility.uid}" id="-p{facility.uid}" class="accordion-section-title clinikp{facility.uid}">
+                            <span class="cl-img">
+                                <f:image src="{facility.logo}" alt="{facility.title}" />
+                            </span>
+                            {facility.location}
+                        </a>
+                        <div class="accordion-section-content" id="accordion-p{facility.uid}">
+                            <f:format.html>{facility.description}</f:format.html>
+                            <f:link.external uri="{facility.link}" target="_blank" class="mohr-about-clinik">
+                                <f:translate key='tx_jsclinik_domain_model_clinik.clinik_link' />
+                            </f:link.external>
+                        </div>
+                    </div>
+				</f:if>
+			</f:for>
+        </div>
+    </div>
+</div>
+          

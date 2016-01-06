@@ -1,0 +1,109 @@
+plugin.tx_voucher {
+	view {
+		templateRootPath = {$plugin.tx_voucher.view.templateRootPath}
+		partialRootPath = {$plugin.tx_voucher.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_voucher.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_voucher.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_voucher._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-voucher table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-voucher table th {
+		font-weight:bold;
+	}
+
+	.tx-voucher table td {
+		vertical-align:top;
+	}
+)
+
+
+page.headerData {
+	29 = TEXT
+	29.value (
+		<!--<link href="typo3conf/ext/voucher/Resources/Public/Css/magnifi_popup.css" rel="stylesheet" />
+		<link href="typo3conf/ext/voucher/Resources/Public/Css/validationEngine.jquery.css" rel="stylesheet" />
+		<link href="typo3conf/ext/voucher/Resources/Public/Css/jquery.fancybox.css" rel="stylesheet" />
+		<link href="typo3conf/ext/voucher/Resources/Public/Css/voucher.css" rel="stylesheet" />-->
+		<link href="typo3conf/ext/voucher/Resources/Public/Css/fancy-voucher.css" rel="stylesheet" />
+		
+	)
+}
+page.footerData {
+	29 = TEXT
+	29.value (		
+		
+		
+                <script type="text/javascript" src="typo3conf/ext/voucher/Resources/Public/Js/jquery.validate.js"></script>
+                
+		<script type="text/javascript" src="typo3conf/ext/voucher/Resources/Public/Js/jquery.fancybox.js"></script>
+		<script type="text/javascript" src="typo3conf/ext/voucher/Resources/Public/Js/voucher.js"></script>
+                <script type="text/javascript" src="typo3conf/ext/voucher/Resources/Public/Js/formvalidate_de.js"></script>
+
+                
+		
+	)
+}
+
+[globalVar = GP:L = 1]
+page.footerData {
+	29 = TEXT
+	29.value (		
+		
+		
+                <script type="text/javascript" src="typo3conf/ext/voucher/Resources/Public/Js/jquery.validate.js"></script>
+               
+		<script type="text/javascript" src="typo3conf/ext/voucher/Resources/Public/Js/jquery.fancybox.js"></script>
+		<script type="text/javascript" src="typo3conf/ext/voucher/Resources/Public/Js/voucher.js"></script>
+                 <script type="text/javascript" src="typo3conf/ext/voucher/Resources/Public/Js/formvalidate_en.js"></script>
+
+                
+		
+	)
+}
+[global]
+
+
+# AJAX Page type used for Employers and Job search
+tmp.ajaxConf = PAGE
+tmp.ajaxConf {
+    typeNum = 1249058000
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+		
+    }
+}
+ 
+
+ajax_fullPage < tmp.ajaxConf
+ajax_fullPage {
+    typeNum = 455
+    10 < styles.content.get
+	10.select.where = colPos = 1
+}
+
+plugin.tx_voucher
+.mvc.callDefaultActionIfActionCantBeResolved = 1 

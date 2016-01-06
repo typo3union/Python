@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-25T10:21:24Z" product-name="property">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="subtitle.description">
+				<source>subtitle</source>
+			</trans-unit>
+			<trans-unit id="object_type.description">
+				<source>objectType</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>price</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="images.description">
+				<source>images</source>
+			</trans-unit>
+			<trans-unit id="pdf.description">
+				<source>pdf</source>
+			</trans-unit>
+			<trans-unit id="area.description">
+				<source>area</source>
+			</trans-unit>
+			<trans-unit id="bed.description">
+				<source>bed</source>
+			</trans-unit>
+			<trans-unit id="bath.description">
+				<source>bath</source>
+			</trans-unit>
+			<trans-unit id="floor.description">
+				<source>floor</source>
+			</trans-unit>
+			<trans-unit id="garage.description">
+				<source>garage</source>
+			</trans-unit>
+			<trans-unit id="room.description">
+				<source>room</source>
+			</trans-unit>
+			<trans-unit id="floor_area.description">
+				<source>floorArea</source>
+			</trans-unit>
+			<trans-unit id="available.description">
+				<source>available</source>
+			</trans-unit>
+			<trans-unit id="heating.description">
+				<source>heating</source>
+			</trans-unit>
+			<trans-unit id="flooring.description">
+				<source>flooring</source>
+			</trans-unit>
+			<trans-unit id="expiration.description">
+				<source>expiration</source>
+			</trans-unit>
+			<trans-unit id="equipped.description">
+				<source>equipped</source>
+			</trans-unit>
+			<trans-unit id="parking.description">
+				<source>parking</source>
+			</trans-unit>
+			<trans-unit id="street.description">
+				<source>street</source>
+			</trans-unit>
+			<trans-unit id="city.description">
+				<source>city</source>
+			</trans-unit>
+			<trans-unit id="state.description">
+				<source>state</source>
+			</trans-unit>
+			<trans-unit id="plz.description">
+				<source>plz</source>
+			</trans-unit>
+			<trans-unit id="country.description">
+				<source>country</source>
+			</trans-unit>
+			<trans-unit id="property_type.description">
+				<source>propertyType</source>
+			</trans-unit>
+			<trans-unit id="building_type.description">
+				<source>buildingType</source>
+			</trans-unit>
+			<trans-unit id="amenties_and_open_space.description">
+				<source>Ausstattung und Freifläche</source>
+			</trans-unit>
+			
+			
+		</body>
+	</file>
+</xliff>

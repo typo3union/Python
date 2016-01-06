@@ -1,0 +1,94 @@
+
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="clearfix">
+    <div class="content-center clearfix">
+      <div class="row">
+        <div class="Footer-Menu new_course_box">
+          <f:for each="{all_category}" as="cat">
+            <f:if condition="{cat.uid} == {footer_category.parentcategory}">
+             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box active">
+                <f:if condition="{cat.bottomimage}">
+                  <f:then>
+                    <f:image src="uploads/tx_course/{cat.bottomimage}" width="307c" height="251c"  alt="{cat.name}" title="{cat.name}" class="img-responsive" />
+                  </f:then>
+                  <f:else>
+                  	<f:if condition="{cat.imgArray.0}">
+                    	<f:then>
+                        	<f:image src="uploads/tx_course/{cat.imgArray.0}" width="307c" height="251c"  alt="{cat.name}" title="{cat.name}" class="img-responsive" />
+                        </f:then>
+                        <f:else>
+                     	   <f:image src="uploads/tx_course/{settings.images}" width="307c" height="251c"  alt="{cat.name}" title="{cat.name}" class="img-responsive" />  
+                        </f:else>                       
+                    </f:if>
+                 	                    
+                  </f:else>
+                </f:if>
+                <f:link.page pageUid="{settings.CategoryDetailPage}" additionalParams="{category_id:'{cat.uid}'}" noCacheHash="1" >
+                  <div class="center-box">
+                    <div class="middle"> <span>{cat.category}</span> </div>
+                  </div>
+                </f:link.page>
+              </div>
+            </f:if>
+          </f:for>
+        
+          <f:for each="{course_category}" as="course">
+            <f:if condition="{course.cat} == {footer_category.uid}">
+             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box active">
+                <f:if condition="{course.bottomimage}">
+                  <f:then>
+                    <f:image src="uploads/tx_course/{course.bottomimage}" width="307c" height="251c"  alt="{course.name}" title="{course.name}" class="img-responsive" />
+                  </f:then>
+                  <f:else>
+                  	<f:if condition="{course.imgArray.0}">
+                    	<f:then>
+                        	<f:image src="uploads/tx_course/{course.imgArray.0}" width="307c" height="251c"  alt="{course.name}" title="{course.name}" class="img-responsive" />  
+                        </f:then>
+                        <f:else>
+                     	   <f:image src="uploads/tx_course/{settings.images}" width="307c" height="251c"  alt="{course.name}" title="{course.name}" class="img-responsive" />  
+                        </f:else>                       
+                    </f:if>                 	                  
+                  </f:else>
+                </f:if>
+                
+                <f:link.action pageUid="{settings.DetailPage}" controller="Course" action="show" arguments="{course : course.uid}" noCacheHash="1">
+                  <div class="center-box">
+                    <div class="middle"> <span>{course.name}</span> </div>
+                  </div>
+                </f:link.action>
+              </div>
+            </f:if>
+          </f:for>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="row">
+      <div class="Footer-Menu new_page_box">
+        <f:if condition="{subPages}">
+          <f:for each="{subPages}" as="subPage">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 link-box active">
+              <f:if condition="{subPage.bg_image}">
+                <f:then>
+                  <f:image src="uploads/tx_fluxtemplate/{subPage.bg_image}" width="350c" height="251c"  alt="{subPage.title}" title="{subPage.title}" class="img-responsive" />
+                </f:then>
+                <f:else>
+                  <f:image src="uploads/tx_course/{settings.images}" width="350c" height="251c"  alt="{subPage.title}" title="{subPage.title}" class="img-responsive" />
+                </f:else>
+              </f:if>
+              <f:link.page pageUid="{subPage.uid}" >
+                <div class="center-box"> 
+                  <div class="middle"> <span>{subPage.title}</span> </div>
+                </div>
+              </f:link.page>
+            </div>
+          </f:for>
+        </f:if>
+      </div>
+    </div>
+  </div>
+</f:section>

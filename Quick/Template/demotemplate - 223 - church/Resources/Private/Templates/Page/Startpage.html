@@ -1,0 +1,89 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Page" />
+
+	<f:section name="Configuration">
+
+		<flux:form id="startpage" label="Startseite">
+
+			<!-- Grid displayed in the page module -->
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column colPos="2" colspan="3" name="Image Box 1"/>
+					<flux:grid.column colPos="3" colspan="3" name="Image Box 2"/>
+					<flux:grid.column colPos="4" colspan="3" name="Image Box 3"/>
+					<flux:grid.column colPos="5" colspan="3" name="Image Box 4"/>
+				</flux:grid.row>
+				<flux:grid.row>
+					<flux:grid.column colPos="6" colspan="12" name="Content"/>
+				</flux:grid.row>
+				<flux:grid.row>
+					<flux:grid.column colPos="7" colspan="12" name="Event"/>
+				</flux:grid.row>
+				<flux:grid.row>
+					<flux:grid.column colPos="8" colspan="12" name="Testimonials"/>
+				</flux:grid.row>
+				<flux:grid.row>
+					<flux:grid.column colPos="9" colspan="12" name="News"/>
+				</flux:grid.row>
+				
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Resources">
+		<f:render partial="Assets" section="Assets"/>
+	</f:section>
+	
+
+	<f:section name="Content">
+	
+		<div class="content index-main">
+			<div class="container">
+				<div class="row">
+					<div class="grid-index clearfix">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pdg-nn">
+							<v:content.render column="2"/>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pdg-nn">
+							<v:content.render column="3"/>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pdg-nn">
+							<v:content.render column="4"/>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pdg-nn">
+							<v:content.render column="5"/>
+						</div>
+						
+					</div>
+					<div class="index-inner clearfix">
+						<v:content.render column="6"/>
+					</div>
+					<div class="small-container clearfix">
+						<v:content.render column="7"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="testimonial">
+			<v:content.render column="8"/>
+		</div>
+		
+		<div class="content">
+			<div class="container">
+				<div class="row">
+					<div class="small-container clearfix">
+						<v:content.render column="9"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			
+	</f:section>
+
+</div>
+</script>

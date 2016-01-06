@@ -1,0 +1,42 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="topcontent" label="Top Content (Inner)" description="Top Content Element" icon="" options="{Fluidcontent: {sorting: 105},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:field.text name="title" enableRichText="1" label="Title" rows="3" cols="25"/>
+        <flux:field.text name="content" enableRichText="1" label="Text"/>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <div class="content-head">
+      <div class="row">
+
+        <div class="col-md-8 col-sm-8">
+          <f:if condition="{title}">
+            <h1>
+              <f:format.raw>{title}</f:format.raw>
+            </h1>
+          </f:if>
+        </div>
+        <div class="col-md-8 col-sm-8">
+          <f:if condition="{content}">
+            <f:format.html>{content}</f:format.html>
+          </f:if>
+        </div>
+      </div>
+    </div>
+  </f:section>
+  <f:section name="Preview">
+    <h3>{title}</h3>
+    <p>
+      <f:format.raw>{content}</f:format.raw>
+    </p>
+  </f:section>
+</div>

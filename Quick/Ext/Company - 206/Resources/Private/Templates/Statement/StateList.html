@@ -1,0 +1,136 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <f:if condition="{pageType} != 1234567890">
+    <div class="row">
+      <div class="col-lg-12 logosub">
+        <h1>
+          <f:translate key="tx_companymanagement_domain_model_statement.state_list" />
+        </h1>
+      </div>
+      <div class="stateSatementList clearfix">
+      <div class="col-sm-3 col-md-3">
+        <div class="light-box">
+          <h2><f:translate key="tx_companymanagement_domain_model_statement.land" /> <f:format.crop maxCharacters="28" >{leftStateStatements.stateId.name}</f:format.crop></h2>
+          <f:if condition="{leftStateStatements.stateId.smallLogo.originalResource.originalFile.uid}"> <span class="company-logo">
+            <f:image src="{leftStateStatements.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{leftStateStatements.stateId.name}"/>
+            </span> </f:if>
+         <f:link.external uri="javascript:void(0);" > <span class="statmnt-img">
+          <f:image src="{leftStateStatements.image.originalResource.originalFile.uid}" width="150c" height="150c" alt="{leftStateStatements.name}"/>
+          </span> <span class="statmnt-dis">
+          <f:format.crop maxCharacters="28" ><span class="statementName"> {leftStateStatements.name}</span></f:format.crop>
+          
+          <f:if condition="{leftStateStatements.statePrependtext}">
+            <f:then> {leftStateStatements.statePrependtext} </f:then>
+            <f:else> {leftStateStatements.stateId.name} </f:else>
+          </f:if>
+          </span>
+          <div class="triggerbtn">
+            <button class="md-trigger popup-modal" data-modal="modal-left" >scale</button>
+          </div>
+        </f:link.external> </div>
+      </div>
+      <div class="md-modal md-effect-left" id="modal-left">
+        <div class="md-content clearfix">
+          <div class="pop-up-leftimage"> <span>
+            <f:image src="{leftStateStatements.image.originalResource.originalFile.uid}" width="140c" height="170c" alt="{leftStateStatements.name}"/>
+            </span> <span class="statementName"> {leftStateStatements.name}</span>
+            <f:if condition="{leftStateStatements.stateId.secondaryLogo.originalResource.originalFile.uid}"><span class="sub-companylogo">
+              <f:image src="{leftStateStatements.stateId.secondaryLogo.originalResource.originalFile.uid}" width="150c" height="60c" alt="{leftStateStatements.stateId.name}"/>
+              </span> </f:if>
+          </div>
+          <div class="pop-upDetail">
+            <f:format.html>{leftStateStatements.description} </f:format.html>
+          </div>
+          <button class="md-close">Close me!</button>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <div class="light-box">
+          <h2><f:translate key="tx_companymanagement_domain_model_statement.land" /> <f:format.crop maxCharacters="28" >{rightStateStatements.stateId.name}</f:format.crop></h2>
+          <f:if condition="{rightStateStatements.stateId.smallLogo.originalResource.originalFile.uid}"> <span class="company-logo">
+            <f:image src="{rightStateStatements.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{rightStateStatements.stateId.name}"/>
+            </span> </f:if>
+          <f:link.external uri="javascript:void(0);" >  <span class="statmnt-img">
+          <f:image src="{rightStateStatements.image.originalResource.originalFile.uid}" width="150c" height="150c" alt="{rightStateStatements.name}"/>
+          </span> <span class="statmnt-dis">
+          <f:format.crop maxCharacters="28" ><span class="statementName">  {rightStateStatements.name}</span></f:format.crop>
+        
+          <f:if condition="{rightStateStatements.statePrependtext}">
+            <f:then> {rightStateStatements.statePrependtext} </f:then>
+            <f:else> {rightStateStatements.stateId.name} </f:else>
+          </f:if>
+          </span>
+          <div class="triggerbtn">
+            <button class="md-trigger popup-modal" data-modal="modal-right">scale</button>
+          </div>
+          </f:link.external> </div>
+      </div>
+      <div class="md-modal md-effect-{iteration.index}" id="modal-right">
+        <div class="md-content clearfix">
+          <div class="pop-up-leftimage"> <span>
+            <f:image src="{rightStateStatements.image.originalResource.originalFile.uid}" width="140c" height="170c" alt="{rightStateStatements.name}"/>
+            </span> <span class="statementName"> {rightStateStatements.name}</span>
+            <f:if condition="{rightStateStatements.stateId.secondaryLogo.originalResource.originalFile.uid}"><span class="sub-companylogo">
+              <f:image src="{rightStateStatements.stateId.secondaryLogo.originalResource.originalFile.uid}" width="150c" height="60c" alt="{rightStateStatements.stateId.name}"/>
+              </span> </f:if>
+          </div>
+          <div class="pop-upDetail">
+            <f:format.html>{rightStateStatements.description} </f:format.html>
+          </div>
+          <button class="md-close">Close me!</button>
+        </div>
+      </div>
+      <f:for each="{centerStateStatements}" as="centerStateStatement" iteration="iteration" >
+        <div class="col-sm-3 col-md-3">
+          <div class="light-box">
+            <h2><f:translate key="tx_companymanagement_domain_model_statement.land" /> <f:format.crop maxCharacters="28" >{centerStateStatement.stateId.name}</f:format.crop> </h2>
+            <f:if condition="{centerStateStatement.stateId.smallLogo.originalResource.originalFile.uid}"> <span class="company-logo">
+              <f:image src="{centerStateStatement.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c"  alt="{centerStateStatement.stateId.name}"/>
+              </span> </f:if>
+            <f:link.external uri="javascript:void(0);" > <span class="statmnt-img">
+            <f:image src="{centerStateStatement.image.originalResource.originalFile.uid}" width="150c" height="150c" alt="{centerStateStatement.name}"/>
+            </span> <span class="statmnt-dis">
+            <f:format.crop maxCharacters="28" ><span class="statementName">  {centerStateStatement.name}</span></f:format.crop>
+           
+            <f:if condition="{centerStateStatement.statePrependtext}">
+              <f:then> {centerStateStatement.statePrependtext} </f:then>
+              <f:else> {centerStateStatement.stateId.name} </f:else>
+            </f:if>
+            </span>
+            <div class="triggerbtn">
+              <button class="md-trigger popup-modal" data-modal="modal-{iteration.index}">scale</button>
+            </div>
+           </f:link.external> </div>
+        </div>
+        <div class="md-modal md-effect-{iteration.index}" id="modal-{iteration.index}">
+          <div class="md-content clearfix">
+            <div class="pop-up-leftimage"> <span>
+              <f:image src="{centerStateStatement.image.originalResource.originalFile.uid}" width="140c" height="170c" alt="{centerStateStatement.name}"/>
+              </span> <span class="statementName"> {centerStateStatement.name}</span>
+              <f:if condition="{centerStateStatement.stateId.secondaryLogo.originalResource.originalFile.uid}"><span class="sub-companylogo">
+                <f:image src="{centerStateStatement.stateId.secondaryLogo.originalResource.originalFile.uid}" width="150c" height="60c" alt="{centerStateStatement.stateId.name}"/>
+                </span> </f:if>
+            </div>
+            <div class="pop-upDetail">
+              <f:format.html>{centerStateStatement.description} </f:format.html>
+            </div>
+            <button class="md-close">Close me!</button>
+          </div>
+        </div>
+      </f:for>
+    </div>
+    </div>
+  </f:if>
+</f:section>

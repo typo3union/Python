@@ -1,0 +1,56 @@
+###
+# TEMPLATE: root_blocks
+# DESCRIPTION: The PAGE BLOCKS ROOT template. Lib (Blocks) templates contain TypoScript to generate the building blocks for your website, except menu's. In this template record are only other template records included.
+###
+
+
+# EXT: lib.right_content
+# DESC: TypoScript template which compiles the contents for the right column on the pages
+
+# Setup each colPos blocks.
+lib.content0 < styles.content.get
+lib.content0.select.where = colPos = 0
+lib.content1 < styles.content.get
+lib.content1.select.where = colPos = 1
+lib.content2 < styles.content.get
+lib.content2.select.where = colPos = 2
+lib.content3 < styles.content.get
+lib.content3.select.where = colPos = 3
+lib.content4 < styles.content.get
+lib.content4.select.where = colPos = 4
+lib.content5 < styles.content.get
+lib.content5.select.where = colPos = 5
+
+
+# Get constant like LOGO, Copyright Text etc.,
+lib.getConstant = TEXT
+lib.getConstant.value = {$config.setConstant}
+
+# Base URL
+lib.baseURL = TEXT
+lib.baseURL.value = {$config.domain}
+
+# Main Logo
+lib.mainLogo = TEXT
+lib.mainLogo.value = {$config.mainLogo}
+
+# Page Title
+lib.pagetitle = TEXT
+lib.pagetitle.data = page : title
+
+
+# Language Menu
+#lib.languageMenu = TEXT
+#lib.languageMenu.value = <ul class="language"><li><a href="#"><img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/oesterreich_g.gif" alt="oesterreich_g" /></a></li><li>$<a href="#"><img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/Flag_of_the_United_Kingdom.png" alt="Flag_of_the_United_Kingdom" /></a></li></ul>
+
+
+# Footer Text 
+lib.FooterText = CONTENT
+lib.FooterText.table =  tt_content
+lib.FooterText.select.pidInList = 16
+lib.FooterText.select.uidInList = 1
+
+lib.Slider = CONTENT
+lib.Slider.table =  tt_content
+lib.Slider.select.pidInList = 1
+lib.Slider.select.uidInList = 8

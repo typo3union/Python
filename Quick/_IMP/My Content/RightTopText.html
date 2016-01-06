@@ -1,0 +1,23 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		<flux:form id="aboutus" label="Right Top Text" description="Top Text -- Right side" icon="" options="{Fluidcontent: {sorting: 120},group: 'Custom elements'}">
+			<flux:field.input name="title1" label="Text - 1" />
+			<flux:field.input name="title2" label="Text - 2" />					
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		{title1} <span>{title2} </span> 		
+	</f:section>
+	
+</div>

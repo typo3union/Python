@@ -1,0 +1,37 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Page" />
+	<f:section name="Configuration">
+		<flux:form id="front" label="Kontakt Site" icon="">
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column colPos="0" name="Content" label="Content"/>
+				</flux:grid.row>
+				
+				<flux:grid.row>
+					<flux:grid.column colPos="1" name="Google" label="Googlemap and Content"/>
+				</flux:grid.row>
+						
+			</flux:grid>
+		</flux:form>
+	</f:section>
+	<f:section name="Content">
+		
+		<f:render partial="PageObjects" section="Header" />
+		<main class="main">
+		
+			<f:cObject typoscriptObjectPath="lib.content0"/>
+		
+			<div class="container kontakt-page">
+				<f:cObject typoscriptObjectPath="lib.content1"/>
+			
+			</div>
+			
+		
+		</main>
+		<f:render partial="PageObjects" section="Footer" />
+
+	</f:section>
+</div>

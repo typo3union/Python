@@ -1,0 +1,88 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form label="Home Slider" id="Home_Slider" description="Home Slider with Text" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+								
+				<flux:form.section name="Sliders" label="Slider Image">
+					<flux:form.object name="SlidersObj" label="Add New Image">
+						<flux:field.input name="small_title" label="Small Title" />
+						<flux:field.input name="big_title" label="Big Title" />
+						<flux:field.input name="link" label="Link">
+			             <flux:wizard.link />
+			           </flux:field.input>
+						<flux:field.input name="link_title" label="Link Title" />
+						<flux:field.file name="Picture" uploadFolder="uploads/tx_homeslider/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>						
+						<flux:field.input name="alt_title" label="Alternative Title" />
+						
+					</flux:form.object>
+				</flux:form.section>
+
+			</flux:form.sheet>	
+		</flux:form>
+	</f:section>
+
+<f:section name="Main">
+    <div class="carousel">
+                <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="9000" data-pause="false">
+                    <div class="carousel-inner" role="listbox">
+                          <f:if condition="{Sliders}">
+							<f:for each="{Sliders}" as="SlidersData" iteration="iteration" >
+		                        <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+		                        	<div class="color-overlap"></div>
+		                        	<div class="carousel-caption" >
+		                                <div class="container">
+											<f:if condition="{SlidersData.SlidersObj.small_title}">
+			                                    <h3 data-animation="animated fadeInLeft" data-delay="2500" data-dur="1500">{SlidersData.SlidersObj.small_title}</h3>
+											</f:if>
+		                                    <f:if condition="{SlidersData.SlidersObj.big_title}">
+		                                    	<h1 data-animation="animated fadeInLeft" data-delay="3000" data-dur="2000">{SlidersData.SlidersObj.big_title}</h1>
+		                                    </f:if>
+		                                    <p data-animation="animated fadeIn" data-delay="3500" data-dur="2500">
+		                                  <f:if condition="{SlidersData.SlidersObj.link}">
+											<f:link.page pageUid="{SlidersData.SlidersObj.link}" class="btn btn-bg-primary btn-off"  additionalAttributes="{data-animation:'animated fadeIn',data-delay:'3500',data-dur:'2500'}">{SlidersData.SlidersObj.link_title}</f:link.page>
+		                                  </f:if>
+		                                </div>
+		                            </div> 
+				                            <f:if condition="{SlidersData.SlidersObj.Picture}">
+					                            	<f:image src="uploads/tx_homeslider/{SlidersData.SlidersObj.Picture}" alt="{SlidersData.SlidersObj.alt_title}" class="img-responsive"  width="1846c" height="943c"/>
+				                            </f:if>
+		                        </div>
+	                        </f:for>
+						</f:if>
+                    </div>
+                    <div class="banner-arrow">
+                        <div class="banner-arrow-inner">
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</f:section>
+	
+	<f:section name="Preview">
+		<h1>Slider</h1>
+	
+	<f:if condition='{f:count(subject:"{Sliders}")} == 0'>
+	<f:then>
+		<h3>Please Upload Slider Images and releted Content</h3>
+	</f:then>
+	<f:else>
+		<h3>Total <f:count>{Sliders}</f:count> Images Inserted</h3>
+	</f:else>
+	</f:if>
+
+	</f:section>
+
+</div>

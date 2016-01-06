@@ -1,0 +1,77 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="sliderhome" label="Slider (Home)" description="Home Slider Element" icon="" options="{Fluidcontent: {sorting: 101},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="sliders" label="Home Page Slider">
+          <flux:form.object name="slider" label="Add New Slide">
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            <flux:field.input name="picture_alt" label="Alternative Text" />
+            <flux:field.input name="header" label="Header" />
+            <flux:field.text name="title" label="Title" cols="30" rows="4"/>
+            <flux:field.text name="subtitle" label="Subtitle" cols="30" rows="6" enableRichText="1" />
+            <flux:field.input name="linktitle" label="Link Title" />
+            <flux:field.input name="link" label="Link">
+              <flux:wizard.link />
+            </flux:field.input>
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <header >
+      <div class="container clearfix">
+        <div class="main-slider">
+          <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+              <f:if condition="{sliders}">
+                <f:for each="{sliders}" as="slider" iteration="iteration">
+                  <li class="<f:if condition='{iteration.index} == 0'>active</f:if>" data-slide-to="{iteration.index}" data-target="#myCarousel"></li>
+                </f:for>
+              </f:if>
+            </ol>
+            <div class="carousel-inner">
+              <f:if condition="{sliders}">
+                <f:for each="{sliders}" as="slider" iteration="iteration">
+                  <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+                    <f:if condition="{slider.slider.picture}">
+                      <div class="fill" >
+                        <f:image src="uploads/slider_images/{slider.slider.picture}" alt="{slider.slider.picture_alt}" width="754c"  height="374c" />
+                      </div>
+                    </f:if>
+                    <div class="carousel-caption">
+                      <f:if condition="{slider.slider.header}">
+                        <div class="small-title"> <i class="fa fa-angle-double-right"></i>{slider.slider.header} </div>
+                      </f:if>
+                      <f:if condition="{slider.slider.title}">
+                        <h2>
+                          <f:format.raw> {slider.slider.title} </f:format.raw>
+                        </h2>
+                      </f:if>
+                      <f:if condition="{slider.slider.subtitle}">
+                       
+                          <f:format.html> {slider.slider.subtitle} </f:format.html>
+                        
+                      </f:if>
+                      <f:if condition="{slider.slider.link}">
+                        <f:link.page pageUid="{slider.slider.link}" class="home-more"><i class="fa fa-angle-double-right"></i>&nbsp;&nbsp;{slider.slider.linktitle}</f:link.page>
+                      </f:if>
+                    </div>
+                  </div>
+                </f:for>
+              </f:if>
+            </div>
+            <div class="c-control-wrap"> <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="icon-prev"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/left-arrow.png" class="img-responsive" alt="LWB-Steinl Machinery"/></span> </a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="icon-next"><span class="icon-prev"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/right-arrow.png" class="img-responsive" alt="LWB-Steinl Machinery"/></span></span> </a> </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </f:section>
+</div>

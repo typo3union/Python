@@ -1,0 +1,26 @@
+<f:layout name='Default'/>
+<f:section name='main'>
+	<f:if condition="{template}==1">
+		<f:then>
+            <div class="map-section clearfix">
+                <div class="map mapPosition">
+                    <f:render partial="Template/FooterGoogleMap" arguments="{cliniks:clinikFacility,contentId:contentId,Map:map.setting}" />
+                </div>
+                <div class="container map-info-section">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="map-img-section">
+                                <f:for each="{cliniks}" as="list" iteration="itemIteration">
+                                    <f:render partial="Template/FooterMap" arguments="{clinik:list,contentId:contentId}" />
+                                </f:for>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+		</f:then>
+		<f:else>
+            <f:render partial="Error/Template" arguments="{error:template}" />
+		</f:else>
+	</f:if>
+</f:section>

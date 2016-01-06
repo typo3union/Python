@@ -1,0 +1,40 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="Address" label="Address" description="Address Element" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+              <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Background Image" allowed="jpg, jpeg, png, gif"/>
+              <flux:field.input name="Text" label="Title"/>
+              <flux:field.text name="content" label="Content" enableRichText="1" /> 
+              <flux:field.input name="Text2" label="Link Text"/>
+              <flux:field.input name="link" label="Link">
+                 <flux:wizard.link />
+               </flux:field.input>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+  
+  <div class="golg_ottobeuren_section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-md-push-5 col-sm-push-0">
+              <div class="golg_ottobeuren">
+                <div class="h2_title">
+                    <f:image src="uploads/slider_images/{picture}"/>
+                 <h2>{Text}</h2>
+                </div>
+                <address><f:format.html>{content}</f:format.html></address>
+            <f:link.page pageUid="{link}" class="ottobeuren_btn btn">{Text2}</f:link.page>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+
+  </f:section>
+</div>

@@ -1,0 +1,68 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form label="Video Listing" id="video_listing" description="Video Listing" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+				<flux:form.section name="videos" label="Video Listing">
+					<flux:form.object name="videoObj" label="Add Content">
+						<flux:field.input name="title" label="Video Title" />
+						<flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>						
+					
+						<flux:field.input name="Youtubelink" label="Link">
+			             <flux:wizard.link />
+			           	</flux:field.input>
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>	
+		</flux:form>	
+	</f:section>
+
+<f:section name="Main">
+    <div class="vodeolist row">
+     	<f:if condition="{videos}">
+			<f:for each="{videos}" as="videosData" iteration="iteration" >
+		        <div class="col-lg-4">
+		            <div class="newsbox height">
+		            	<f:if condition="{videosData.videoObj.title}">
+		            		<f:format.crop maxCharacters="60" respectWordBoundaries="false"><h4>{videosData.videoObj.title}</h4></f:format.crop>
+		            	</f:if>
+		                <div class="v-image">
+                            <f:if condition="{videosData.videoObj.picture}">
+                            	<img src="uploads/slider_images/{videosData.videoObj.picture}" alt="{videosData.videoObj.title}" class="img-responsive">
+                            </f:if>
+                        </div>
+                        <div class="video-play">
+                        		<div class="vlink">
+		                        	<f:if condition="{videosData.videoObj.Youtubelink}">
+				                            <f:link.page pageUid="{videosData.videoObj.Youtubelink}" class="html5lightbox">
+				                                <img src="typo3conf/ext/fluxtemplate/Resources/Public/images/video-play.png" alt="Video" class="img-responsive">
+				                            </f:link.page>
+		                        	</f:if>
+                        		</div>
+                        </div>
+		            </div>
+		        </div>
+           </f:for>
+		</f:if>
+    </div>
+</f:section>
+	
+	<f:section name="Preview">
+	<h1>Video</h1>
+	
+	<f:if condition='{f:count(subject:"{videos}")} == 0'>
+	<f:then>
+		<h3>Please Upload Video and releted Content</h3>
+	</f:then>
+	<f:else>
+		<h3>Total <f:count>{videos}</f:count> Video Inserted</h3>
+	</f:else>
+	</f:if>
+
+	</f:section>
+
+</div>

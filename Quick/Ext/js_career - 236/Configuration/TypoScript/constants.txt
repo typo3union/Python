@@ -1,0 +1,33 @@
+
+plugin.tx_jscareer {
+	view {
+		# cat=plugin.tx_jscareer/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:js_career/Resources/Private/Templates/
+		# cat=plugin.tx_jscareer/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:js_career/Resources/Private/Partials/
+		# cat=plugin.tx_jscareer/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:js_career/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_jscareer//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+
+plugin.tx_jscareer {
+
+	uri {
+		# cat=plugin.tx_jscareer//b; type=string; label= CSS
+		css = typo3conf/ext/js_career/Resources/Public/Css/career.css
+		# cat=plugin.tx_jscareer//c; type=string; label= Javascript
+		javascript = typo3conf/ext/js_career/Resources/Public/Script/career.js
+	}
+	
+	additional {
+		# cat=plugin.tx_jscareer//d; type=string; label= Record per page
+		perpage = 10
+	}	
+}

@@ -1,0 +1,33 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+
+<f:for each="{courses}" as="course" iteration="iterator">
+	<div class="content-center clearfix">			
+			<div class="description clearfix">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pdg-lt">
+					<f:for each="{course.imgArray}" as="picture" iteration="iteration">		
+						<f:if condition="{iteration.index} == 0">
+							<f:if condition="{picture}"><f:link.action pageUid="{settings.DetailPage}" controller="Course" action="show" arguments="{course : course.uid}" noCacheHash="1"><f:image src="uploads/tx_course/{picture}" alt=""  class="img-responsive" style="width:200px;"/></f:link.action></f:if>
+						</f:if>
+					
+					
+					</f:for>
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pdg-lt">
+						<h3><f:link.action pageUid="{settings.DetailPage}" controller="Course" action="show" arguments="{course : course.uid}" noCacheHash="1">{course.name}</f:link.action></h3>
+						<br>
+					<p><f:format.stripTags><f:format.crop maxCharacters="450">{course.shorttext}</f:format.crop></f:format.stripTags></p>
+				</div>				
+			</div>
+	</div>
+	
+<f:if condition="{iterator.isLast}">
+	<f:render partial="Course/Properties" arguments="{course:course}" />
+</f:if>
+
+</f:for>
+
+</f:section>

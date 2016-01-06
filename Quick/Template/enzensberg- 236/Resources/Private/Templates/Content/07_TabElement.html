@@ -1,0 +1,98 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+    <f:section name="Configuration">
+        
+        <flux:form id="tabelement" label="Tab Element" description="Tab Element" icon="../typo3conf/ext/enzensberg/Resources/Public/images/tab-element-icon.png" options="{Fluidcontent: {sorting: 07},group: 'Content Elements'}">
+        
+			<flux:field.select name="backgroundColor" label="Style Class" items="white, dark" default="white" />
+            <flux:field.select name="select" label="Header Type" items="{1:'Header 1',2:'Header 2'}" default="2"></flux:field.select>
+			<flux:field.input name="header" label="Header" />
+        
+            <flux:form.sheet name="options" label="Options">
+                
+                <flux:form.section name="section" label="Tab Element">
+                
+                    <flux:form.object name="container" label="Add New Tab Element">
+                    
+                        <flux:field.input name="name" label="Name" />
+                        
+                        <flux:field.text name="bodytext" enableRichText="TRUE"/>
+
+                    </flux:form.object>
+                    
+                </flux:form.section>
+            </flux:form.sheet>
+            
+        </flux:form>
+        
+    </f:section>
+    
+	<f:section name="Preview">
+	    <strong>Theme : {backgroundColor}</strong>
+    	<h4>Tab Element</h4>
+		<f:if condition="{header}">
+            <h3>{header}</h3>
+        </f:if>
+        <f:if condition="{section}">
+            <ul>
+                <f:for each="{section}" as="tab" iteration="iteration">
+                	<li>{tab.container.name}</li>
+            	</f:for>
+            </ul>
+        </f:if>
+    </f:section>
+    
+    <f:section name="Main">
+    
+		<f:if condition="{backgroundColor}=='dark'">
+			<f:then>
+				<v:variable.set name="bgColor" value="dark"></v:variable.set>
+			</f:then>
+			<f:else>
+				<v:variable.set name="bgColor" value="white"></v:variable.set>
+			</f:else>
+		</f:if>
+    
+		<section class="{bgColor}-section clearfix">
+			<div class="container">
+				<div class="row">
+	                <f:if condition="{header}">
+                        <div class="col-lg-12">
+                            <f:if condition="{select}==1">
+                                <h1>{header}</h1>
+                            </f:if>
+                            <f:if condition="{select}==2">
+                                <h2>{header}</h2>
+                            </f:if>
+                        </div>
+                    </f:if>
+					<div class="col-lg-12">
+               			<div class="inner-page-p-devide row">
+                            <div id="horizontalTab">
+                                <f:if condition="{section}">
+                                    <ul class="resp-tabs-list">
+                                        <f:for each="{section}" as="tab" iteration="iteration">
+                                            <li>{tab.container.name}</li>
+                                        </f:for>
+                                    </ul>
+                                    <div class="resp-tabs-container">
+                                        <f:for each="{section}" as="element" iteration="iteration">
+                                            <div><f:format.html>{element.container.bodytext}</f:format.html></div>
+                                        </f:for>
+                                    </div>
+                                </f:if>
+                            </div>
+                        </div>						
+					</div>
+				</div>
+			</div>
+		</section>
+        
+    </f:section>
+</div>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-01-31T14:11:41Z" product-name="company_management">
+		<header/>
+		<body>
+			<trans-unit id="detail_link.description">
+				<source>detailLink</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="logo.description">
+				<source>logo</source>
+			</trans-unit>
+			<trans-unit id="main_image.description">
+				<source>mainImage</source>
+			</trans-unit>
+			<trans-unit id="slider_images.description">
+				<source>sliderImages</source>
+			</trans-unit>
+			<trans-unit id="contact.description">
+				<source>contact</source>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>address</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>location</source>
+			</trans-unit>
+			<trans-unit id="zip.description">
+				<source>zip</source>
+			</trans-unit>
+			<trans-unit id="place.description">
+				<source>place</source>
+			</trans-unit>
+			<trans-unit id="city.description">
+				<source>city</source>
+			</trans-unit>
+			<trans-unit id="telephone.description">
+				<source>telephone</source>
+			</trans-unit>
+			<trans-unit id="fax.description">
+				<source>fax</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="website.description">
+				<source>website</source>
+			</trans-unit>
+			<trans-unit id="founded.description">
+				<source>founded</source>
+			</trans-unit>
+			<trans-unit id="employee.description">
+				<source>employee</source>
+			</trans-unit>
+			<trans-unit id="share.description">
+				<source>share</source>
+			</trans-unit>
+			<trans-unit id="expert_notice.description">
+				<source>expertNotice</source>
+			</trans-unit>
+			<trans-unit id="branch.description">
+				<source>branch</source>
+			</trans-unit>
+			<trans-unit id="gallery.description">
+				<source>gallery</source>
+			</trans-unit>
+			<trans-unit id="video.description">
+				<source>video</source>
+			</trans-unit>
+			<trans-unit id="award_date.description">
+				<source>awardDate</source>
+			</trans-unit>
+			<trans-unit id="award_type.description">
+				<source>awardType</source>
+			</trans-unit>
+			<trans-unit id="state_id.description">
+				<source>stateId</source>
+			</trans-unit>
+			<trans-unit id="company_content_id.description">
+				<source>companyContentId</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

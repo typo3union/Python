@@ -1,0 +1,67 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Partial"/>
+
+	<f:section name="IconBarNavigation">
+
+		<v:page.menu entryLevel="{v:variable.typoscript(path: 'lib.menu.main.entryLevel')}" expandAll="FALSE" useShortcutUid="FALSE">
+			<f:if condition="{menu}">
+				
+					<ul class="list-unstyled">
+						<f:for each="{menu}" as="menuPage" iteration="iteration">
+							
+							<li class="{menuPage.class}{f:if(condition: iteration.isFirst, then: 'First')}{f:if(condition: iteration.isLast, then: 'Last')}">
+							
+								<a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{menuPage.link}" class="{menuPage.class}">
+									<f:if condition="menuPage.menuimage">
+									  <f:then>
+									  	<span class="icon-default">
+									    	<f:image src="fileadmin/images/navigation/menuimage/{menuPage.menuimage}" alt="{menuPage.title} menuimage" />
+									    </span>
+									    <span class="icon-default-hov">
+									    	<f:image src="fileadmin/images/navigation/hoverimage/{menuPage.hoverimage}" alt="{menuPage.title} hoverimage" />
+									    </span>
+									    <span class="name-default">
+									    </span>
+									  </f:then>
+									  <f:else>
+									    {menuPage.title}
+									  </f:else>
+									</f:if>
+									
+									<f:if condition="menuPage.subtitle">
+									  <f:then>
+									  	<span class="name-default">
+									    	{menuPage.subtitle}
+									    </span>
+									  </f:then>
+									  <f:else>
+									    	{menuPage.title}
+									  </f:else>
+									</f:if>
+									
+									<f:if condition="menuPage.abstract">
+									  <f:then>
+									  	<span class="after-login">
+									    	{menuPage.abstract}
+									    </span>
+									  </f:then>
+									  <f:else>
+									    	{menuPage.title}
+									  </f:else>
+									</f:if>
+																	
+								</a>
+								
+							</li>
+
+						</f:for>
+					</ul>
+				
+			</f:if>
+		</v:page.menu>
+
+	</f:section>
+</div>

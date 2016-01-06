@@ -1,0 +1,66 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="what" label="What We Do" description="What We Do Element" icon="" options="{Fluidcontent: {sorting: 104},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+       <flux:field.input name="title" label="Title"/>
+        <flux:field.input name="subtitle" label="Sub Title" />
+        <flux:form.section name="what" label="FixTop Slider">
+          <flux:form.object name="What" label="Add New Slide">
+                       <flux:field.text name="content" label="Content" enableRichText="1"></flux:field.text>
+                       <flux:field.input name="link" label="Link">
+                       <flux:wizard.link />
+                     </flux:field.input>
+             </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+
+  <section class="slice base bb offer-section">
+        <div class="wp-section">
+            <div class="container">
+                <div class="section-title-wr">
+                    <h3 class="section-title center">
+                        <span class="c-white">{title}</span>
+                        <small class="c-white">{subtitle}</small>
+                    </h3>
+                </div>
+                <div class="row">
+                 <f:if condition="{what}">
+                      <f:for each="{what}" as="whats" iteration="iteration">
+                       <f:if condition='<v:math.modulo a="{iteration.cycle}" b="3" />==0'>
+									<f:then>
+										</div>
+
+										<div class="row">
+										
+									</f:then>
+									<f:else>
+
+									</f:else>
+                               </f:if>
+                        <div class="col-md-6 col-sm-6">
+                              <div class="icon-block icon-block-1">
+                                  
+                                  <div class="icon-block-body customicon">
+                                     <f:format.crop maxCharacters="200">
+                                          <f:format.html>{whats.What.content}</f:format.html></f:format.crop>
+                                  </div>
+                              </div>
+
+                          </div>
+                       
+                        </f:for>
+                        </f:if>
+                          
+              </div>
+            </div>
+        </div>
+    </section>
+</f:section>
+</div>

@@ -1,0 +1,48 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:layout name="Content" />
+	
+	<f:section name="Configuration">
+		<flux:form label="One Column Container" id="twoColumns" description="100% Column" icon="" options="{Fluidcontent: {sorting: 101},group: 'Custom elements'}">
+
+			<flux:field.select name="select" label="Header Type" items="{1:'Header 1',2:'Header 2'}" default="2"></flux:field.select>
+			
+			<flux:field.input name="header" label="Main Title" />
+
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column style="width: 100%" name="column1" label="Content"> </flux:grid.column>
+				</flux:grid.row>
+			</flux:grid>
+
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<div class="container content clearfix">
+			<div class="row">
+
+				<f:if condition="{header}">
+					<f:if condition="{select}==1">
+						<h1>{header}</h1>
+					</f:if>
+					<f:if condition="{select}==2">
+						<h2>{header}</h2>
+					</f:if>
+				</f:if>
+
+				<flux:content.render render="1" area="column1" />
+
+			</div>
+		</div>
+
+	</f:section>
+
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>
+</div>
+

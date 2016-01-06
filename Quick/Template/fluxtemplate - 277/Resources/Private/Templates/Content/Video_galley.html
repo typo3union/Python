@@ -1,0 +1,83 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:layout name="Content" />
+
+    <f:section name="Configuration">
+        <flux:form label="Video gallery" id="Video_gallery" description="Video gallery Content" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:field.input name="title" label="Main Title" />
+                <flux:form.section name="videos" label="Video Gallery">
+                    <flux:form.object name="videoObj" label="Add New Video">
+                        <flux:field.file name="Picture" uploadFolder="uploads/slider_images/" label="Upload Background Image" allowed="jpg, jpeg, png, gif"/>
+                        <flux:field.input name="Youtubelink" label="Add Youtube Video Link">
+                         <flux:wizard.link />
+                        </flux:field.input>                  
+                        <flux:field.input name="alt_title" label="Alternative Title" />
+                    </flux:form.object>
+                </flux:form.section> 
+            </flux:form.sheet>  
+        </flux:form>
+    </f:section>
+
+<f:section name="Main">
+<div class="video clearfix wow fadeInUp">
+                <article class="page-header">
+                    <h2 class="text-uppercase text-center ">{title}</h2>
+                </article> 
+                <div id="owl-video" class="owl-carousel">
+            <f:if condition="{videos}">
+                <f:for each="{videos}" as="videoData" iteration="iteration">
+                    <div class="owl">
+                        <div class="module-video">
+                            <figure>
+                                <f:if condition="{videoData.videoObj.Picture}">
+                                <f:image src="uploads/slider_images/{videoData.videoObj.Picture}" width="481c" height="541c" alt="Video" class="img-responsive"/>
+                                </f:if>
+                            </figure>
+                            <article class="video-play">
+                                <figure>
+                                    <h2>
+                                    <f:link.page pageUid="{videoData.videoObj.Youtubelink}" class=" html5lightbox">
+                                        <img src="typo3conf/ext/fluxtemplate/Resources/Public/images/video-play.png" alt="Video" class="img-responsive">
+                                    </f:link.page>
+                                    </h2>
+                                </figure>
+                            </article>
+                        </div>
+                    </div>
+                </f:for>
+            </f:if>
+                </div>
+            </div>
+</f:section>
+    
+<f:section name="Preview">
+    <f:if condition="{videos}">
+        <f:then>
+            <h2>Videos inserted</h2>
+        </f:then>
+        <f:else>
+            <h2>No videos are found !</h2>
+        </f:else>
+    </f:if>
+    <f:if condition='{f:count(subject:"{videos}")} == 0'>
+    <f:then>
+        <h3>Please Upload Video For Home page</h3>
+    </f:then>
+    <f:else>
+        <h3>Total <f:count>{videos}</f:count> Video Inserted On Front Page</h3>
+    </f:else>
+    </f:if>
+
+</f:section>
+
+</div>
+
+
+
+
+
+
+

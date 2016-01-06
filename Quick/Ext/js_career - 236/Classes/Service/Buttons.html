@@ -1,0 +1,60 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="innerSlider" label="Inner Slider" description="Inner Slider Element" icon="" options="{Fluidcontent: {sorting: 102},group: 'Enzensberg Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="sliders" label="Inner Page Slider">
+          <flux:form.object name="slider" label="Add New Slide">
+            <flux:field.file name="icon" uploadFolder="uploads/slider_images/" label="Upload Icon" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            <flux:field.input name="title1" label="Title 1" />
+            <flux:field.input name="title2" label="Title 2" />
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  
+	<f:section name="Preview">
+    	<strong>Inner Banner / Slider</strong>
+            <f:for each="{sliders}" as="slider" iteration="iteration">
+                <div>
+	                <br />
+                    <f:image src="uploads/slider_images/{slider.slider.icon}" alt="{slider.slider.title1}" width="200"  />
+                    <div class="caption-cont">
+                        {slider.slider.title1}<br />
+                        {slider.slider.title2}
+                    </div>
+                </div>
+            </f:for>
+        </ul>
+  
+	</f:section>
+
+  
+	<f:section name="Main">
+		<div class="inner-slider-section">
+			<f:if condition="{sliders}">
+				<div class="flexslider carousel">
+					<ul class="slides">	
+						<f:for each="{sliders}" as="slider" iteration="iteration">
+							<li>
+								<f:image src="uploads/slider_images/{slider.slider.icon}" alt="{slider.slider.title1}"  />
+                                <div class="caption-cont">
+									<span class="left-cont">{slider.slider.title1}</span>
+									<span class="right-cont">{slider.slider.title2}</span>
+								</div>
+							</li>
+						</f:for>
+					</ul>
+				</div>
+			</f:if>
+		</div>
+	</f:section>
+  
+</div>

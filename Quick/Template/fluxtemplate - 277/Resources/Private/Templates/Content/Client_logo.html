@@ -1,0 +1,90 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+  xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+  xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+  xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form label="Client Logo" id="Client_Logo" description="Client Logo" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+      <flux:field.input name="header" label="Title" />
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="clientlogos" label="Add">
+          <flux:form.object name="clientObj" label="Add logo Image">
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+            <flux:field.file name="picture2" uploadFolder="uploads/slider_images/" label="Upload Hover Image" allowed="jpg, jpeg, png, gif"/>
+            <flux:field.input name="alt_title" label="Alternative Title" />
+
+            <flux:field.input name="clientlink" label="Client Link">
+                <flux:wizard.link />
+            </flux:field.input>
+
+
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <div class="client-logo wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="client-module clearfix">
+            <article class="page-header">
+              <h2 class="text-uppercase text-center">{header}</h2>
+            </article>
+            <f:if condition="{clientlogos}">
+              <f:for each="{clientlogos}" as="clientlogo" iteration="iteration" >
+                <div class="col-sm-4">
+                  <div class="inner-logo">
+                    <div class="ch-item">
+                      <div class="ch-info">
+                        <div class="ch-info-front">
+                        <f:if condition="{clientlogo.clientObj.picture}">
+                           <f:image src="uploads/slider_images/{clientlogo.clientObj.picture}" class="img-responsive" alt="{clientlogo.clientObj.alt_title}"/>
+                        </f:if>
+                        </div>
+                        <div class="ch-info-back ch-info-front gray"> 
+                          <div class="img-link">
+                          <f:link.external uri="{clientlogo.clientObj.clientlink}" target="_blank">
+                            <f:if condition="{clientlogo.clientObj.picture2}">
+                              <f:image src="uploads/slider_images/{clientlogo.clientObj.picture2}" class="img-responsive" alt="{clientlogo.clientObj.alt_title}"/>
+                            </f:if>
+                          </f:link.external>
+                         </div>  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </f:for>
+            </f:if>
+          </div>
+          <!--end client-module-->
+        </div>
+      </div>
+    </div>
+  </f:section>
+  
+
+  <f:section name="Preview">
+    <f:if condition="{header}">
+      <f:then>
+        <h2>{header}</h2>
+      </f:then>
+      <f:else>
+          <h2>Please Insert Title</h2>
+      </f:else>      
+    </f:if>
+
+    <f:if condition='{f:count(subject:"{clientlogos}")} == 0'>
+      <f:then>
+          <h3>Please Upload Client Logo For Home page</h3>
+      </f:then>
+      <f:else>
+          <h3>Total <f:count>{clientlogos}</f:count> Client Logo Inserted On Front Page</h3>
+      </f:else>
+    </f:if>
+  </f:section>
+
+
+
+</div>

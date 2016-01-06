@@ -1,0 +1,90 @@
+###
+# ALL CONSTANT
+#
+# Define whole website's Contatnt like menu, extension, config etc.,
+###
+
+config {
+	# cat=config; type=string; label= Site Logo file[png]
+	mainLogo = logo.jpg
+	
+	# cat=config; type=string; label= Copyright text
+	copyRightText =
+	
+  # cat=config; type=boolean; label=Admin Panel: Turn on admin panel (mainly for testing purposes only)
+  adminPanel = 0
+  
+  # cat=config; type=boolean; label=Debugging: Turn on debugging (testing purposes only)
+  debug = 0  
+
+  # cat=config; type=string; label=Domain name for Base URL: (excluding slashes and protocol like http://)
+  domain = pr255.webofficeserver.info/
+
+  # cat=config; type=string; label=Absolute URI prefix: (use "/" if running on top level; use empty value to use relative URI)
+  absRefPrefix = 
+   
+}
+
+filepaths{
+
+	# cat=FLUIDPAGES/settings; type=text; label=Pfad zu den Templates
+	defaultTemplateRootPath = typo3conf/ext/fluxtemplate/	
+
+	# cat=FLUIDPAGES/settings; type=string; label=Font: Location of the Cascading Style Sheets relative to site
+	font = typo3conf/ext/fluxtemplate/Resources/Public/font-awesome/css/
+	
+	# cat=FLUIDPAGES/settings; type=string; label=CSS: Location of the Cascading Style Sheets relative to site
+	css = typo3conf/ext/fluxtemplate/Resources/Public/css/
+
+	# cat=FLUIDPAGES/settings; type=string; label=Images: Location of the images relative to site
+	images = typo3conf/ext/fluxtemplate/Resources/Public/images/
+
+	# cat=FLUIDPAGES/settings; type=string; label=JS: Location of the Javascript files relative to site
+	js = typo3conf/ext/fluxtemplate/Resources/Public/js/
+
+	# cat=FLUIDPAGES/settings; type=string; label= Default TypoScript
+	defaultTypoScript = typo3conf/ext/fluxtemplate/Configuration/TypoScript/
+
+	# cat=FLUIDPAGES/settings; type=string; label= Extension TypoScript
+	extensionsTypoScript = typo3conf/ext/fluxtemplate/Configuration/TypoScript/Extensions/
+
+	# cat=FLUIDPAGES/settings; type=string; label= Extension Template View Path
+	extensionsView = typo3conf/ext/fluxtemplate/Resources/Private/Templates/Extensions/
+	
+	# cat=FLUIDPAGES/settings; type=string; label= Extension Template CSS Path
+	extensionsCss = typo3conf/ext/fluxtemplate/Resources/Public/Extensions/
+
+	# cat=FLUIDPAGES/settings; type=string; label= Private folder path
+	private =  typo3conf/ext/fluxtemplate/Resources/Private/
+
+	# cat=FLUIDPAGES/settings; type=string; label= Public folder path
+	public =  typo3conf/ext/fluxtemplate/Resources/Public/
+}
+
+# cat=FLUIDPAGES/settings; type=text; label=Label FCE Reiter
+fceLabel = Specific content items
+
+# cat=FLUIDPAGES/settings; type=boolean; label=Allow pages which have is_siteroot = 1 to inherit chosen template from parent. Disable this to prevent subsites in multisite environment from using the same template as the immediate parent of that site root.
+plugin.tx_fluidpages.siteRootInheritance = 1
+
+# This defines the maximum width of images inserted in content records of type Images or Text-with-images.
+# There are seperate settings for images floated next to text (..InText)
+styles.content {
+  imgtext {
+    maxW = 1000
+    maxWInText = 1000
+    borderThick = 1
+    linkWrap.newWindow = 1
+  }
+  uploads {
+    jumpurl_secure = 1
+    jumpurl_secure_mimeTypes = pdf=application/pdf, doc=application/msword
+    jumpurl = 1
+  }
+  imgtext.linkWrap.lightboxEnabled = 1
+  imgtext.captionSplit = 1
+
+}
+
+
+content.defaultHeaderType = 3

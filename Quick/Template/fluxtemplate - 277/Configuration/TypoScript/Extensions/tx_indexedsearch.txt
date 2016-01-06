@@ -1,0 +1,33 @@
+lib.searchBox = COA
+lib.searchBox {
+   #stdWrap.prefixComment = 57 | lib.SEARCHBOX
+   10 = TEXT
+   10.typolink.parameter = 57
+   10.typolink.returnLast = url
+   10.wrap = <form onsubmit="return notEmpty()" action="|" method="post" id="indexedsearch" name="searchform">
+  
+   20 = COA
+   20 {
+      10 = TEXT
+      10.data = GP : tx_indexedsearch |sword
+      10.htmlSpecialChars = 1
+      10.wrap = <div class="form-group clearfix"><input name="tx_indexedsearch[sword]" value="|" id="exampleInputEmail1" class="form-control" placeholder="Search" type="text" /></div><div class="form-group clearfix last"><input type="submit" id="indexedsearchbutton"  class="btn btn-default" title="Submit" value="Search" /></div>
+      
+      20 = COA
+      20 {
+         20 = TEXT
+         20.value = <input type="hidden" name="tx_indexedsearch[sections]" value="0" />
+	 20.value = <input type="hidden" value="0" name="tx_indexedsearch[pointer]">
+   	 20.value = <input type="hidden" value="0" name="tx_indexedsearch[ext]">
+   	 20.value = <input type="hidden" value="_" name="tx_indexedsearch[_freeIndexUid]">
+      }
+   }
+   wrap = |</form>
+}
+plugin.tx_indexedsearch{
+show.rules = 0
+show.advancedSearchLink = 0
+	_DEFAULT_PI_VARS.lang = 0
+	_DEFAULT_PI_VARS.results = 10
+	_CSS_DEFAULT_STYLE >
+}

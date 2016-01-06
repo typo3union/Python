@@ -1,0 +1,91 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:layout name="Page" />
+
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Header">
+	<header class="container-fluid header">
+        <div class="row">
+            <!-- <div class="container">
+                <div class="row">
+                    <a class="navbar-brand top" href="#">
+                        <figure>
+                            <img src="images/logo.png" alt="Logo">
+                        </figure>
+                    </a>
+                </div>
+            </div> -->
+            <div class="nav-default-bg">
+                <div class="container">
+                    <div class="row">
+                        <nav class="navbar navbar-default">
+                            <div class="navbar-header col-sm-12">
+										<f:cObject typoscriptObjectPath="lib.logo"/>
+                            </div>
+                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+
+                            <div class="collapse navbar-collapse col-sm-10 col-xs-12" id="bs-example-navbar-collapse-1">
+                               <f:cObject typoscriptObjectPath="lib.Main_menu"/>
+                            </div><!-- /.navbar-collapse -->
+                        </nav>
+                    </div>
+                </div><!--container end-->
+            </div><!--nav-default-bg end-->
+        </div>
+    </header>
+	</f:section>
+
+	<f:section name="Footer">
+			
+				
+		<footer class="container-fluid footer">
+        <div class="row">
+            <div class="top-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                <figure>
+								<f:cObject typoscriptObjectPath="lib.footerlogo"/>
+								</figure>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                <div class="social">
+                                    <a href="{f:cObject(typoscriptObjectPath: 'lib.facebookpageURL')}" class="facebook" target="_blank" ></a>
+                                    <a href="{f:cObject(typoscriptObjectPath: 'lib.twitterpageURL')}" class="twitter" target="_blank" ></a>
+                                    <a href="{f:cObject(typoscriptObjectPath: 'lib.linkedinpageURL')}" class="linkedin" target="_blank" ></a>
+                                    <a href="{f:cObject(typoscriptObjectPath: 'lib.xingpageURL')}" class="xing" target="_blank" ></a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <f:cObject typoscriptObjectPath="lib.footerContent"/>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end top-footer-->
+            <div class="bottom-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-center">
+                            <p>&copy; <f:cObject typoscriptObjectPath="lib.copyRightText"/></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+	</f:section>
+
+
+</div>

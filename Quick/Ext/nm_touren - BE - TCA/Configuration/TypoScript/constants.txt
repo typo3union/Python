@@ -1,0 +1,32 @@
+
+plugin.tx_nmtouren {
+	view {
+		# cat=plugin.tx_nmtouren/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:nm_touren/Resources/Private/Templates/
+		# cat=plugin.tx_nmtouren/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:nm_touren/Resources/Private/Partials/
+		# cat=plugin.tx_nmtouren/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:nm_touren/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_nmtouren//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+module.tx_nmtouren {
+	view {
+		# cat=module.tx_nmtouren/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:nm_touren/Resources/Private/Backend/Templates/
+		# cat=module.tx_nmtouren/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:nm_touren/Resources/Private/Backend/Partials/
+		# cat=module.tx_nmtouren/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:nm_touren/Resources/Private/Backend/Layouts/
+	}
+	persistence {
+		# cat=module.tx_nmtouren//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+

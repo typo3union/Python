@@ -1,0 +1,47 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="kontaktdetails" label="kontakt details" description="kontakt detail Element" icon="" options="{Fluidcontent: {sorting: 107},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+          <flux:field.input name="title1" label="Title"/>
+          <flux:field.text name="content" label="Contact Detail 1" enableRichText="1"></flux:field.text>
+          <flux:field.input name="title2" label="Title"/>
+          <flux:field.text name="content2" label="Contact Detail 2" enableRichText="1"></flux:field.text>
+          <flux:field.text name="content3" label="Contact Contenr" enableRichText="1"></flux:field.text>
+
+         
+              
+                <flux:field.input name="link" label="Link">
+                  <flux:wizard.link />
+                </flux:field.input>
+     
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+                        <div class="row">
+                              <div class="col-md-6">
+                                  <div class="section-title-wr">
+                                    <f:if condition="{title1}"><h3 class="section-title left"><span>{title1}</span></h3></f:if>
+                                  </div>
+                                  <div class="contact-info">
+                                    <f:if condition="{content}"><f:format.html>{content}</f:format.html></f:if>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="section-title-wr">
+                                    <f:if condition="{title2}"><h3 class="section-title left"><span>{title2}</span></h3></f:if>
+                                  </div>
+                                  <div class="contact-info">
+                                    <f:if condition="{content2}"><f:format.html>{content2}</f:format.html></f:if>
+                                  </div>
+                              </div>
+                        </div>
+
+                         <f:if condition="{content3}"><f:format.html>{content3}</f:format.html></f:if>
+                        
+</f:section>
+</div>

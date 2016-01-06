@@ -1,0 +1,55 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:if condition="{events}">
+	<f:then>
+		<div class="icon-block icon-block-1">	                  
+			<div class="icon-block-body customicon">
+				<h2>
+				<f:format.html>{settings.icon}</f:format.html>
+					<f:format.crop maxCharacters="15">{settings.title}</f:format.crop></h2> 
+					<h4><f:if condition="{settings.link}">
+					<f:then><f:link.action action="show" noCacheHash="1" pageUid="{settings.link}" >
+						  		{events.title} </f:link.action></f:then>
+					<f:else><f:link.action action="show" noCacheHash="1" arguments="{ uid: '{events.uid}'}" pageUid="{settings.detailPID}" >
+						  		{events.title}</f:link.action></f:else>
+							
+				  		</f:if></h4>
+					
+					<span class="date"><f:format.date format="d.m.Y">{events.date}</f:format.date></span>|<span class="time"><f:format.date format="h:m">{events.time}</f:format.date></span>
+					<h4>{events.location}</h4>
+<!-- 					<p>
+					   <f:if condition="{events.teaser}">
+					       <f:then> 
+					        	<f:format.crop maxCharacters="115">{events.teaser}</f:format.crop> 
+					        </f:then>
+					        <f:else>
+					        	<f:format.crop maxCharacters="115">{events.description}</f:format.crop> 
+					        </f:else>
+					  </f:if>
+					</p> -->
+					<p><f:if condition="{settings.link}">
+					<f:then><f:link.action action="show" noCacheHash="1" pageUid="{settings.link}" >
+						  		<span class="orange-class"><f:translate key="tx_events_domain_model_events.more"/></span> </f:link.action></f:then>
+					<f:else><f:link.action action="show" noCacheHash="1" arguments="{ uid: '{events.uid}'}" pageUid="{settings.detailPID}" >
+						  		<span class="orange-class"><f:translate key="tx_events_domain_model_events.more"/></span> </f:link.action></f:else>
+							
+				  		</f:if>
+				  	</p>
+			</div>
+		</f:then>		
+	</f:if>
+</div>
+</f:section>

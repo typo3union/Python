@@ -1,0 +1,91 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form label="Team" id="Team Slider" description="Team Slider" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+					<flux:field.input name="title" label="Title For Team" />			
+				<flux:form.section name="team" label="Slider Image">
+					<flux:form.object name="Teamobj" label="Add New slide">
+						
+						<flux:field.file name="Picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>						
+						<flux:field.input name="alt_title" label="Alternative Title" />
+						<flux:field.input name="name" label="Name" />
+						<flux:field.text name="position" label="Position" enableRichText="1"></flux:field.text>	
+						<flux:field.text name="phn" label="Phone numbers" enableRichText="1"></flux:field.text>	
+					</flux:form.object>
+				</flux:form.section>
+
+			</flux:form.sheet>	
+		</flux:form>
+	</f:section>
+
+<f:section name="Main">
+   
+       <div class="team-module clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="content text-center team wow fadeInDown">
+                            <article class="page-header ">
+                            <f:if condition="{title}">
+                                <h2 class="text-uppercase module-blue">{title}</h2>
+                            </f:if>
+                            </article>
+                            <div id="owl-example" class="owl-carousel">
+                            <f:if condition="{team}">
+							<f:for each="{team}" as="teamdata" iteration="iteration" >
+                                <div class="owl">
+                                    <div class="module-team">
+                                        <figure>
+	                                        <f:if condition="{teamdata.Teamobj.Picture}">
+		                                        <f:image src="uploads/slider_images/{teamdata.Teamobj.Picture}" alt="{teamdata.Teamobj.alt_title}" class="img-responsive"  width="227c" height="295c"/>
+	                                        </f:if>
+                                        </figure>
+                                        <article class="team-data">
+                                            <div class="data-inner">
+	                                                <span class="name text-uppercase">
+		                                                <f:if condition="{teamdata.Teamobj.name}">
+		                                                	{teamdata.Teamobj.name}
+		                                                </f:if>
+	                                                </span>
+	                                                <div class="position">
+		                                                <f:if condition="{teamdata.Teamobj.position}">
+		                                                	<f:format.html>{teamdata.Teamobj.position}</f:format.html>
+		                                                </f:if>
+	                                                </div>
+	                                                <div class="phone-no">
+		                                                <f:if condition="{teamdata.Teamobj.phn}">
+		                                                	<f:format.html>{teamdata.Teamobj.phn}</f:format.html>
+		                                                </f:if>
+	                                            	</div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                </f:for>
+                                </f:if>
+                             </div>
+                        </div><!--end team-->
+                    </div>
+                </div>
+            </div><!--end team-module-->
+
+
+</f:section>
+	
+	<f:section name="Preview">
+	<h1>Team Slider</h1>
+		<f:if condition='{f:count(subject:"{team}")} == 0'>
+			<f:then>
+				<h3>Please Upload Team Images and releted Content</h3>
+			</f:then>
+			<f:else>
+				<h3>Total <f:count>{team}</f:count> Team Slider Images Inserted</h3>
+			</f:else>
+		</f:if>
+	</f:section>
+
+</div>

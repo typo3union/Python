@@ -1,0 +1,25 @@
+lib.searchBox = COA
+lib.searchBox {
+  10 < plugin.tx_kesearch_pi1
+ 
+  # result page 
+  10.resultPage = 45
+ 
+  # static or ajax mode
+  10.renderMethod = static
+ 
+  # HTML template and CSS file
+  10.templateFile = {$filepaths.extensionsView}KeSearch/template_pi1.tpl
+  10.cssFile ={$filepaths.extensionsCss}KeSearch/ke_search_pi1.css 
+ 
+  # Content element (search box plugin) from which additional
+  # configuration should be loaded (UID of content element).
+  # Important: If you have two search boxes on your result page
+  # (eg. in the top and in the left area), you should set this value!
+  # 10.loadFlexformsFromOtherCE = 123456
+}
+
+
+
+
+

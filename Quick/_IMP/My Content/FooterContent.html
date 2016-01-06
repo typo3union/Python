@@ -1,0 +1,64 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		<flux:form id="footercontent" label="Footer Contact Content" description="Footer Contact Content Element" icon="" options="{Fluidcontent: {sorting: 114},group: 'Custom elements'}">
+			<flux:field.input name="title" label="Title" />
+			<flux:field.input name="fblink" label="Facebook Link">
+				<flux:wizard.link />
+			</flux:field.input>
+			<flux:field.input name="twlink" label="Twitter Link">
+				<flux:wizard.link />
+			</flux:field.input>
+			<flux:field.text name="text1" label="Text 1" enableRichText="1" />
+			<flux:field.text name="text2" label="Text 2" enableRichText="1" />
+			
+			<flux:field.input name="text6" label="phone 1" />
+			<flux:field.input name="text7" label="phone 2" />
+			<flux:field.input name="text8" label="Email" />
+			<flux:field.input name="text9" label="Website URL" />			
+			<flux:field.text name="map" label="Map iframe src" />		
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+	
+		<div class="col-md-12"  id="scroll-contact">
+        <h3 class="contact-title">{title}</h3>
+        <div class="kontakt-detail">
+          <div class="col-sm-4 kontakt-info">
+          <div class="social">
+            <div class="fbicon"><f:link.external uri="{fblink}" target="_blank" ><i class="mdi mdi-facebook-box"></i></f:link.external></div>
+             <div class="tweetericon"><f:link.external uri="{twlink}" target="_blank"><i class="mdi mdi-twitter"></i></f:link.external></div>
+            </div>
+            <h5>{text1}</h5>
+            
+            <div class="margin"><f:format.html> {text2}</f:format.html></div>            
+            <div class="margin contactnumber">
+              <div><i class="mdi mdi-phone"></i> {text6}</div>
+              <div><i class="mdi mdi-printer"></i> {text7}</div>
+            </div>
+            <div class="margin contactnumber ">
+              <div class="links"><i class="mdi mdi-email"></i>&nbsp;&nbsp;<f:link.email email="{text8}" target="_top" >{text8} </f:link.email></div>
+              <div class="links"><i class="mdi mdi-web"></i>&nbsp;&nbsp;<f:link.external uri="{text9}" target="_blank" >{text9}</f:link.external></div>
+            </div>
+          </div>
+          <div class="col-sm-4 contact-form-footer ">
+			<f:cObject typoscriptObjectPath="lib.contactform"/>			
+          </div>
+          <div class="col-sm-4  map">
+		<iframe width="400" height="302" frameborder="0" style="border: 0px none; margin-top: -70px;" src="{map}"></iframe></div>
+        </div>
+      </div>
+	  
+	</f:section>
+	
+</div>

@@ -1,0 +1,35 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+
+  <ul class="country-images clearfix">
+    <f:for each="{states}" as="state">
+      <li>
+        <f:if condition="{state.detailLink }">
+          <f:then>
+            <f:link.page pageUid="{state.detailLink }" >
+            <span class="img-sec">
+              <f:image src="{state.mainLogo.originalResource.originalFile.uid}" width="95c" height="115c" alt="{state.name}"/>
+              </span> <span class="font-sec">{state.name}</span>  </f:link.page>
+          </f:then>
+          <f:else>
+            <f:image src="{state.mainLogo.originalResource.originalFile.uid}" width="95c" height="115c" alt="{state.name}"/>
+              </span> <span class="font-sec">{state.name}</span>
+          </f:else>
+        </f:if>
+      </li>
+    </f:for>
+  </ul>
+</f:section>
+

@@ -1,0 +1,78 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="kontakt" label="Repeated Image Text Content (Inner + 4 Image)" description="Repeated Image Text Content  Element" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="slides" label="Slide">
+          <flux:form.object name="slide" label="Add New Slide">
+            <flux:field.file name="picture" uploadFolder="uploads/tx_fluxtemplate/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            <flux:field.input name="picture_alt" label="Alternative Text" />
+            <flux:field.text name="content" label="Text" enableRichText="1" />
+            <flux:field.input name="link" label="Link">
+              <flux:wizard.link />
+            </flux:field.input>
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+ 
+  <f:section name="Main">
+    <div class="row colm4-wrap">
+      <f:if condition="{slides}">
+        <f:for each="{slides}" as="slide">
+          <div class="col-md-3 col-sm-4">
+            <div class="colm4-box">
+            <div class="colm4-box-img">
+              <f:if condition="{slide.slide.picture}">
+               <f:then>
+                    <f:image src="uploads/tx_fluxtemplate/{slide.slide.picture}" alt="{slide.slide.picture_alt}" width="268c"  height="145c" />
+                  </f:then>
+                  <f:else>
+                    <f:image src="typo3conf/ext/fluxtemplate/Resources/Public/images/no-img-368.jpg" alt="No Image" width="268c"  height="145c" />
+                  </f:else>
+              </f:if>
+              </div>
+              <f:if condition="{slide.slide.content}">
+                <div class="colm4-box-text" >
+                  <f:format.raw>{slide.slide.content}</f:format.raw>
+                </div>
+              </f:if>
+              <f:if condition="{slide.slide.link}">
+                <f:link.page pageUid="{slide.slide.link}" class="main-link colm4-wrap-link">&nbsp;</f:link.page>
+              </f:if>
+            </div>
+          </div>
+        </f:for>
+      </f:if>
+    </div>
+  </f:section>
+  
+  <f:section name="Preview">
+    <table>
+      <f:if condition="{slides}">
+        <f:for each="{slides}" as="slide">
+          <tr colpan="2" cellspacing="5">
+            <f:if condition="{slide.slide.picture}">
+              <f:then>
+                <td><v:media.image src="uploads/tx_fluxtemplate/{slide.slide.picture}" alt="{slide.slide.picture_alt}" width="100c"  height="75c" /></td>
+              </f:then>
+              <f:else>
+                <td><v:media.image src="typo3conf/ext/fluxtemplate/Resources/Public/images/no-img-368.jpg" alt="No Image" width="100c"  height="75c" /></td>
+              </f:else>
+            </f:if>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>{slide.slide.content}</td>
+          </tr>
+        </f:for>
+      </f:if>
+    </table>
+  </f:section>
+</div>

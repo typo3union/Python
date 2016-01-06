@@ -1,0 +1,41 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="GalleryAlbum" label="Gallery Album" description="Gallery Album Element" icon="" options="{Fluidcontent: {sorting: 101},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="gallery" label="FixTop Gallery">
+          <flux:form.object name="Gallery" label="Add New Slide">
+               <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+                <flux:field.input name="alt" label="Alt"/>
+               <flux:field.input name="title" label="Title"/>
+               <flux:field.input name="title2" label="Subheader"/>
+              <flux:field.input name="link" label="Link">
+               <flux:wizard.link />
+             </flux:field.input>
+   
+		   </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+          <div class="row">
+          <f:if condition="{gallery}">
+           <f:for each="{gallery}" as="slide" iteration="iteration">
+          <div class="col-sm-4">
+          
+            <div class="gallery">
+              <f:link.page pageUid="{slide.Gallery.link}"> <f:image src="uploads/slider_images/{slide.Gallery.picture}" alt="{slide.Gallery.alt}" class="img-responsive"/>
+               <h2 class="gallery_title">{slide.Gallery.title}</h2></f:link.page>
+               <h4 class="gallery_subtitle">{slide.Gallery.title2}</h4>
+            </div>
+            
+          </div>
+        </f:for>
+            </f:if>
+            </div>
+</f:section>
+</div>

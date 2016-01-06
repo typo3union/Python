@@ -1,0 +1,25 @@
+<div class="download-detail-section">
+    <div class="col-md-5 col-sm-12 gallery">
+		<a href="fileadmin{Files.media.video_mp4.identifier}" rel="lightbox[{Files.uid}]">
+			<video width="170" controls>
+				<source src="fileadmin{Files.media.video_mp4.identifier}" type="video/mp4">
+				<source src="fileadmin{Files.media.video_ogg.identifier}" type="video/ogg">
+				<source src="fileadmin{Files.media.video_webm.identifier}" type="video/webm">
+                Your browser does not support HTML5 video.
+            </video>
+		</a>
+    </div>
+    <div class="col-md-7 col-sm-12 download-detail-inner">
+        <div class="d-light-bx">
+            <span><a class="dnld" href="{Files.downlonadLink}"><img alt="icon" src="typo3conf/ext/js_download/Resources/Public/Images/dnld-icon.png" /></a></span>
+            <span class="gallery"><a href="fileadmin{Files.identifier}"><img alt="icon" src="typo3conf/ext/js_download/Resources/Public/Images/light-bx.png" /></a></span>
+        </div>
+        <ul>
+            <li><f:format.date format="d.m.Y">@{Files.date}</f:format.date></li>
+            <li>{Files.fileType}</li>
+        </ul>
+        <div class="clnk-name">{Files.title}</div>
+        <div class="clnk-place">{Files.short_description}</div>
+        <div class="bild-name">{Files.imageName}</div>
+    </div>
+</div>

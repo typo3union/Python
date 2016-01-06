@@ -1,0 +1,15 @@
+
+
+<f:layout name="Default" />
+
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+<f:for each="{courses}" as="course">
+    
+<f:render partial="Course/Properties" arguments="{course:course}" />
+</f:for>
+ <f:for each="{courseList}" as="course">
+      <f:render partial="Course/ImageList" arguments="{course:course}" />
+  </f:for>
+  <f:render partial="Course/RelatedCourses" arguments="{related_courses:related_courses}" />
+</f:section>

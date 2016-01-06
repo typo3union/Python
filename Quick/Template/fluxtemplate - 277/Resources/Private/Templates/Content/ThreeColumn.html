@@ -1,0 +1,48 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		
+		<flux:form label="Three Column Container" id="ThreeColumn" description="Three Column Container" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+
+				<flux:grid>
+				<flux:grid.row>
+						<flux:grid.column style="width: 33.33%" name="column1" label="Left Inhalt">
+						</flux:grid.column>
+
+						<flux:grid.column style="width: 33.33%" name="column2" label="Center Inhalt" >
+						</flux:grid.column>
+
+                        <flux:grid.column style="width: 33.33%" name="column3" label="Right Inhalt" >
+						</flux:grid.column>
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<div class="col-sm-4 col-xs-6">
+            <div class="module one">
+				<flux:content.render render="1" area="column1" />
+			</div>
+		</div>
+		<div class="col-sm-4 col-xs-6">
+            <div class="module two">
+				<flux:content.render render="2" area="column2" />
+			</div>
+		</div>
+		<div class="col-sm-4 col-xs-6">
+            <div class="module three">
+				<flux:content.render render="3" area="column3" />
+			</div>
+		</div>
+	</f:section>
+	
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>
+
+</div>

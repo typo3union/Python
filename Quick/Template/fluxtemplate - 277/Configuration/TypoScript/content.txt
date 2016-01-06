@@ -1,0 +1,110 @@
+###
+# TEMPLATE: root_blocks
+# DESCRIPTION: The PAGE BLOCKS ROOT template. Lib (Blocks) templates contain TypoScript to generate the building blocks for your website, except menu's. In this template record are only other template records included.
+###
+
+
+# EXT: lib.right_content
+# DESC: TypoScript template which compiles the contents for the right column on the pages
+
+# Setup each colPos blocks.
+lib.content0 < styles.content.get
+lib.content0.select.where = colPos = 0
+lib.content1 < styles.content.get
+lib.content1.select.where = colPos = 1
+lib.content2 < styles.content.get
+lib.content2.select.where = colPos = 2
+lib.content3 < styles.content.get
+lib.content3.select.where = colPos = 3
+lib.content4 < styles.content.get
+lib.content4.select.where = colPos = 4
+lib.content5 < styles.content.get
+lib.content5.select.where = colPos = 5
+lib.content6 < styles.content.get
+lib.content6.select.where = colPos = 6
+lib.banner < styles.content.get
+lib.banner.select.where = colPos = 6
+lib.banner.slide = -1
+lib.footerContent < styles.content.get
+lib.footerContent.select.where = colPos = 7
+lib.footerContent.slide = -1
+
+lib.logo = COA
+lib.logo {
+  10 = IMAGE
+  10 {
+      file {
+        import =  uploads/media/
+        import.data = levelmedia:-1, slide
+        import.listNum = 0
+        treatIdAsReference = 1
+      }
+      titleText.data = page:subtitle
+      altText.data = page:subtitle
+      stdWrap.typolink.parameter.data = leveluid:0
+      stdWrap.typolink {
+        ATagParams = class="navbar-brand"
+        }
+
+    }		
+}
+
+
+#Footer Logo
+		lib.footerLogo = TEXT
+		lib.footerLogo.value = {$filepaths.images}{$config.footerLogo}
+
+lib.footerlogo = COA
+lib.footerlogo {
+  10 = IMAGE
+  10 {
+      file {
+        import =  uploads/media/
+        import.data = levelmedia:-1, slide
+        import.listNum = 1
+        treatIdAsReference = 1
+      }
+      titleText.data = page:subtitle
+      altText.data = page:subtitle
+      
+      }   
+}
+
+
+#kontaktform 
+lib.kontaktform = RECORDS
+lib.kontaktform {
+    tables = tt_content
+    source = 18
+}
+
+#DirectmailSubscription
+lib.Directmailsub = RECORDS
+lib.Directmailsub {
+    tables = tt_content
+    source = 3
+}
+
+# Copyright content
+lib.copyRightText = TEXT
+lib.copyRightText.value = {$config.copyRightText}
+
+# Social Links
+# Facebook Link
+lib.facebookpageURL = TEXT
+lib.facebookpageURL.value = {$config.facebookpageURL}
+# Twitter Link
+lib.twitterpageURL = TEXT
+lib.twitterpageURL.value = {$config.twitterpageURL}
+# Linkedin Link
+lib.linkedinpageURL = TEXT
+lib.linkedinpageURL.value = {$config.linkedinpageURL}
+# Xing Link
+lib.xingpageURL = TEXT
+lib.xingpageURL.value = {$config.xingpageURL}
+
+# let‘s work togather
+lib.footerSlogan = TEXT
+lib.footerSlogan.value = {$config.footerSlogan}
+
+

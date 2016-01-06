@@ -1,0 +1,79 @@
+
+plugin.tx_jsclinik {
+	view {
+		templateRootPath = {$plugin.tx_jsclinik.view.templateRootPath}
+		partialRootPath = {$plugin.tx_jsclinik.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_jsclinik.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_jsclinik.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_jsclinik._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-js-clinik table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-js-clinik table th {
+		font-weight:bold;
+	}
+
+	.tx-js-clinik table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+plugin.tx_jsclinik{
+	settings{
+		configuration	= 1
+		
+		googleapi {
+			uri = {$plugin.tx_jsclinik.googleapi.uri}
+		}
+		options {
+			useScrollwheel = {$plugin.tx_jsclinik.options.useScrollwheel}
+		}
+		display{
+			width = {$plugin.tx_jsclinik.display.width}
+			height = {$plugin.tx_jsclinik.display.height}
+			mapType = {$plugin.tx_jsclinik.display.mapType}
+			zoom = {$plugin.tx_jsclinik.display.zoom}
+			navigationControl = {$plugin.tx_jsclinik.display.mapControl}
+			icon = {$plugin.tx_jsclinik.display.icon}
+		}		
+		valid{
+			mapTypes = HYBRID,ROADMAP,SATELLITE,TERRAIN 
+			navigationControl = SMALL,DEFAULT,ANDROID,ZOOM_PAN			
+		}		
+	}
+}
+
+config.tx_jsclinik.features.skipDefaultArguments = 1
+plugin.tx_jsclinik.features.skipDefaultArguments = 1

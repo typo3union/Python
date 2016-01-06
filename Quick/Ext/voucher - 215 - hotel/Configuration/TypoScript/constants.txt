@@ -1,0 +1,17 @@
+plugin.tx_voucher {
+	view {
+		# cat=plugin.tx_voucher/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:voucher/Resources/Private/Templates/
+		# cat=plugin.tx_voucher/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:voucher/Resources/Private/Partials/
+		# cat=plugin.tx_voucher/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:voucher/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_voucher//a; type=string; label=Default storage PID
+		
+		storagePid =
+		# cat=plugin.tx_voucher//a; type=string; label=Default Email Logo
+		emailLogo = fileadmin/templates_schwedi/img/logo.png
+	}
+}

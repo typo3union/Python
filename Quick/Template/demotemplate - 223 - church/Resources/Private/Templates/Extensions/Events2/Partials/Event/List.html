@@ -1,0 +1,58 @@
+{namespace e2=JWeiland\Events2\ViewHelpers}
+
+<f:if condition="{events}">
+	<f:then>
+		<f:for each="{events}" as="event">
+			<div class="item">
+				<div class="clearfix">
+					<div class="list-date pull-left">
+						
+							<f:render partial="Event/Date" arguments="{event: event}" />
+							
+						
+					</div>
+					<div class="entry floatleft">
+					
+					
+							<f:if condition="{event.images -> f:count()}">
+								<f:for each="{event.images}" as="image" iteration="iterator">
+									<f:if condition="{iterator.isFirst}">
+										<figure><f:image image="{image}" alt="{event.title}" title="{event.title}" width="{settings.list.image.width}" height="{settings.list.image.height}" minWidth="{settings.list.image.minWidth}" maxWidth="{settings.list.image.maxWidth}" minHeight="{settings.list.image.minHeight}" maxHeight="{settings.list.image.maxHeight}" /></figure>
+									</f:if>
+								</f:for>
+							</f:if>
+					
+						<h3><f:link.action action="show" controller="Event" pageUid="{settings.pidOfDetailPage}" arguments="{event: event, day: event.day}" title="{f:translate(key: 'singleView')}: {event.title}">{event.title}</f:link.action></h3>
+						<p class="teaser"><f:render partial="Event/Teaser" arguments="{event: event}" /></p>
+						<div class="footer">
+							<f:render partial="Event/Category" arguments="{event: event}" />
+							<f:if condition="{e2:getMergedEventTimes(event: event)->f:count()} == 1">
+								<f:then>
+									<f:alias map="{time: '{e2:getMergedEventTimes(event: event, directReturn: 1)}'}">|&nbsp;<f:translate key="tx_events2_domain_model_time.time_begin"/>: {time.timeBegin}</f:alias>
+								</f:then>
+								<f:else>
+									|&nbsp;<f:translate key="tx_events2_domain_model_time.time_begin"/>:&nbsp;
+									<f:link.action action="show" controller="Event" pageUid="{settings.pidOfDetailPage}" arguments="{event: event, day: event.day}" title="{f:translate(key: 'singleView')}">{f:translate(key: 'showDetailview')}</f:link.action>
+								</f:else>
+							</f:if>
+							
+							<f:if condition="{event.location}">
+								
+									|&nbsp;Ort: <f:link.action action="show" pageUid="{settings.pidOfLocationPage}" controller="Location" arguments="{location: event.location}" title="{event.location.location}">{event.location.location}</f:link.action>
+								
+							</f:if>
+							
+						</div>
+						
+					</div>
+				</div>
+				<div class="borderbottom floatright grid_10"></div>
+			</div>
+		</f:for>
+	</f:then>
+	<f:else>
+		<div>
+			<f:translate key="no_event_today"/>
+		</div>
+	</f:else>
+</f:if>

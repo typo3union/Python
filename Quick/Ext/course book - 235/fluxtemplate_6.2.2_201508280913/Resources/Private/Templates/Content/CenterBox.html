@@ -1,0 +1,64 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="Centerbox" label="Center-box" description="Center-box Element" icon="" options="{Fluidcontent: {sorting: 105},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:form.section name="Centerbox" label="Gallery">
+                    <flux:form.object name="CenterBox" label="Add New Slide">
+                        <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                        <flux:field.input name="picture_alt" label="Alternative Text" />
+                        <flux:field.input name="title" label="Title" />
+                        <flux:field.text name="content" label="Hover Text" enableRichText="1" />
+                        <flux:field.input name="buttontext" label="Button Text" />
+                        <flux:field.input name="link" label="Link">
+                        <flux:wizard.link />
+                       </flux:field.input>
+                    </flux:form.object>
+                </flux:form.section>
+                <flux:field.text name="title2" label="Main Title" enableRichText="1" />
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+
+        <div class="full-content clearfix">
+            <div class="content-center clearfix">
+                <div class="page-header wt-clr text-center">
+                    <f:format.html>{title2}</f:format.html>
+                </div>
+                <div class="row">
+                 <div class="box-column">
+                    <f:if condition="{Centerbox}">
+                        <f:for each="{Centerbox}" as="Centerboxes" iteration="iteration">
+                         
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-center mehr ">
+                                <div class="center-box">
+                                    <div class="middle">
+                                        <f:image src="uploads/slider_images/{Centerboxes.CenterBox.picture}"  alt="{Centerboxes.CenterBox.picture_alt}"/>
+                                        <span>{Centerboxes.CenterBox.title}</span>
+                                    </div>
+                                    <div class="bottom">
+                                        <f:format.raw>{Centerboxes.CenterBox.content}</f:format.raw></div>
+                                </div>
+                                <f:link.page pageUid="{Centerboxes.CenterBox.link}" class="btn btn-default">{Centerboxes.CenterBox.buttontext}</f:link.page>
+                            </div>
+                             <f:if condition='<v:math.modulo a="{iteration.cycle}" b="3" />==0'>
+                                  </div> <div class="box-column">
+                             </f:if>
+ 
+                           
+                        </f:for>
+                    </f:if>
+                    </div>
+                </div>	
+            </div>
+        </div>
+
+    </f:section>
+</div>

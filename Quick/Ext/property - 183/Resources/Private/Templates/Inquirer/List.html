@@ -1,0 +1,63 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+
+  <div class="inquiery_kontakt">
+    <div class="col-md-12 contact-left-content">          
+      <div class="tx-powermail">
+			<f:form action="list"  enctype="multipart/form-data" name="field" class="powermail_fieldset " id="contactform" method="post" additionalAttributes="{novalidate: ''}">
+              <div class="powermail_fieldwrap">
+                <label for="name"  title=""> <f:translate key="tx_property_domain_model_property.name" /><span class="mandatory">*</span> </label>
+                <input class="validate[required] powermail_field  " id="name" type="text" name="name" value="" > 
+              </div>             
+              <div  class="powermail_fieldwrap">
+                <label for="e_mail"  title=""> <f:translate key="tx_property_domain_model_property.email" /><span class="mandatory">*</span> </label>
+                <input class="validate[required,custom[email]] powermail_field" id="e_mail" type="email" name="email" value="" > 
+              </div>
+              <div  class="powermail_fieldwrap">
+                <label for="kontaktnummer"  title=""> <f:translate key="tx_property_domain_model_property.number" /><span class="mandatory">*</span> </label>
+                <input class="validate[required,custom[phone]] powermail_field" id="kontaktnummer" type="number" name="telephone" value="" >
+              </div>
+              <div  class="powermail_fieldwrap">
+                <label for="betref"  title=""> <f:translate key="tx_property_domain_model_property.c_address" /> </label>
+                <input class=" powermail_field  " id="betref" type="text" name="address" value="{inquirers.title}" > 
+              </div>
+              <div  class="powermail_fieldwrap">
+                <label for="nachricht"  title=""> <f:translate key="tx_property_domain_model_property.message" /> </label>
+                <textarea rows="5" cols="20" class=" powermail_field" id="nachricht" name="message" ></textarea>                
+              </div>       
+              <div class="powermail_fieldwrap">
+                <input class="powermail_field"  type="hidden" name="property" value="{inquirers.title}" readonly> 
+              </div>  
+              <div class="powermail_fieldwrap">
+                <input class="powermail_field"  type="hidden" name="inq_id" value="{inquirers.inq_id}" readonly> 
+              </div>  
+                  
+              <div  class="powermail_fieldwrap">
+                <input class="powermail_field powermail_submit" type="submit" name="" value="<f:translate key="tx_property_domain_model_property.submit" />">
+              </div>
+         </f:form>  
+        </div>
+      </div>
+      <br/>
+      
+</div>
+
+		<link type="text/css" rel="stylesheet" href="/typo3conf/ext/fluxtemplate/Resources/Public/Css/bootstrap.min.css" />
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300" rel="stylesheet" type="text/css" />
+		<link href="/typo3conf/ext/fluxtemplate/Resources/Public/Css/style.css" rel="stylesheet" type="text/css" />
+		<link href="/typo3conf/ext/fluxtemplate/Resources/Public/Css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="/typo3conf/ext/fluxtemplate/Resources/Public/Extensions/Powermail/Public/Css/CssDemo.css" media="all">
+
+</f:section>

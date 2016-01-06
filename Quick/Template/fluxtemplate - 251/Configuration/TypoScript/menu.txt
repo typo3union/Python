@@ -1,0 +1,339 @@
+###
+# TEMPLATE: root_menu
+# DESCRIPTION: The MENU ROOT template. This template will be called by the MASTER ROOT template. It reads the templates for the menu parts, like the default menu 
+setup, language menu, header- and footermenu's. In this template record are only other template records included.
+###
+
+
+
+# EXT: menu.mainmenu
+# DESC: The MENU template.Configuration for default menu, which can be used with small modifications for other menu's, without writing the whole menu configuration all over again for all kinds of menu's.
+
+menu.main_menu = HMENU
+menu.main_menu {
+	
+	special = directory
+	special.value = 2
+		
+	1 = TMENU
+	1 {
+		wrap =  <ul class="nav navbar-nav">|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			#ATagParams = class="parent_menu"
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li>|</li>
+			stdWrap.htmlSpecialChars = 1			
+		}
+		
+		IFSUB < .NO
+		IFSUB {
+			ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			#ATagParams = <span class="caret"></span>
+			
+			#ATagBeforeWrap = 1
+			linkWrap = |<span class="caret"></span> 
+			
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="dropdown">|</li>
+		}
+	
+		ACT < .NO
+		ACT {
+		                       
+            ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			#ATagParams = 
+			
+			#ATagBeforeWrap = 1
+			#linkWrap = |<span class="caret"></span> 
+			
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="active">|</li>
+		}
+
+		CUR < .NO
+		CUR {
+			ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			#ATagParams = 
+			
+			#ATagBeforeWrap = 1
+			#linkWrap = |<span class="caret"></span> 
+			
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="active">|</li>
+		}
+				
+		CURIFSUB < .IFSUB
+		CURIFSUB = 1
+		CURIFSUB {
+			ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			#ATagParams = 
+			
+			#ATagBeforeWrap = 1
+			linkWrap = |<span class="caret"></span> 
+			
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="dropdown active">|</li>
+		}
+		
+		ACTIFSUB < .ACT
+		ACTIFSUB = 1
+		ACTIFSUB {
+			ATagParams = data-toggle="dropdown" class="dropdown-toggle"
+			#ATagParams = 
+			
+			#ATagBeforeWrap = 1
+			linkWrap = |<span class="caret"></span> 
+			
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li class="dropdown active">|</li>
+		}
+		
+		
+	}
+	
+	2 < .1
+	2.wrap =<ul class="dropdown-menu">|</ul>
+	2.NO.ATagParams >
+	2.ACT.ATagParams = 
+	2.CUR.ATagParams = 
+	2.ACT.wrapItemAndSub = <li class="active">|</li>
+	2.CUR.wrapItemAndSub = <li class="active">|</li>
+	2.NO.wrapItemAndSub  = <li>|</li>	
+	2.CUR.linkWrap >
+	2.ACT.linkWrap = |
+		
+	3 < .2	
+	3.NO.doNotLinkIt = 1 |*| 0 |*| 0
+}
+
+# EXT: menu.topmenu
+# DESC: Top menu
+
+# EXT : menu.footerMenu
+# DESC: Footer menu
+
+menu.footer_main_menu = HMENU
+menu.footer_main_menu {
+	
+	special = directory
+	special.value = 26
+		
+	1 = TMENU
+	1 {
+		wrap = <ul>|</ul>
+		expAll = 1
+		noBlur = 1
+		
+		NO = 1
+		NO {
+			
+			ATagTitle {
+				field = title
+				fieldRequired = nav_title
+			}
+			
+			ATagParams = 
+				
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			wrapItemAndSub.insertData = 1
+			wrapItemAndSub = <li>|</li>
+			stdWrap.htmlSpecialChars = 1			
+		}
+				
+		ACT < .NO
+		ACT {
+			ATagParams = 
+			
+			ATagBeforeWrap = 1
+			linkWrap = |
+			
+			ATagParams = class="active"
+			wrapItemAndSub = <li class="active">|</li>
+		}
+	}
+        
+
+}
+
+
+menu.sitemap = COA
+menu.sitemap {
+	
+  10 = HMENU
+  10 {
+  
+		special = directory
+		special.value = 2
+			
+		1 = TMENU
+		1 {
+			wrap = <ul>|</ul>
+			expAll = 1
+			noBlur = 1
+			
+			NO = 1
+			NO {
+				
+				ATagTitle {
+					field = title
+					fieldRequired = nav_title
+				}
+				
+				ATagParams = 
+					
+				ATagBeforeWrap = 1
+				linkWrap = |
+				
+				wrapItemAndSub.insertData = 1
+				wrapItemAndSub = <li>|</li>
+				stdWrap.htmlSpecialChars = 1			
+			}
+			
+		}
+     
+	 }  
+	 
+	  20 = HMENU
+	  20 { 
+	 		special = list
+			special.value = 33
+			
+			1 = TMENU
+			1 {
+				wrap =|
+				expAll = 1
+				noBlur = 1
+				
+				NO = 1
+				NO {					
+					ATagTitle {
+						field = title
+						fieldRequired = nav_title
+					}
+					
+					ATagParams = 
+						
+					ATagBeforeWrap = 1
+					linkWrap = |
+					
+					wrapItemAndSub.insertData = 1
+					wrapItemAndSub = <li>|</li>
+					stdWrap.htmlSpecialChars = 1			
+				}
+			}
+		  }
+
+}
+
+
+
+
+# Language Menu
+menu.lang_menu = COA
+menu.lang_menu {
+    10 = HMENU
+    10 {
+        special = language
+        special.value = 1,0
+        1 = TMENU
+        1 {
+            expAll = 0           
+           	wrap = <ul>|</ul>
+		    NO = 1
+            NO {
+                stdWrap.cObject = TEXT
+                stdWrap.cObject {
+                    value =  EN || DE
+
+                } 
+                allWrap = <li>|</li>
+             
+            }
+            RO < .NO
+            RO = 1
+            RO.ATagParams = class="hover"
+            
+            ACT < .NO
+            ACT = 1
+            ACT {
+                ATagParams = |*| class="active" |*| class="active"
+                #doNotLinkIt = 1
+                #allWrap = <li class="active">|</li>
+               
+            }
+			
+			USERDEF1 < .NO
+			USERDEF1.allWrap =  <li>|</li>	
+			#USERDEF1.doNotLinkIt = 1	
+        }
+    }
+}
+
+lib.languageMenu= HMENU
+lib.languageMenu{
+  special = language
+  special.value = 0,1
+  1 = TMENU
+  1.wrap = <ul class="language">|</ul>
+  1.NO = 1  
+  1.NO.stdWrap.cObject = TEXT
+  1.NO.stdWrap.cObject.value = <img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/oesterreich_g.gif" alt="oesterreich_g" /> || <img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/Flag_of_the_United_Kingdom.png" alt="Flag_of_the_United_Kingdom" />
+  1.NO.stdWrap.current = 0
+  1.NO.wrapItemAndSub = <li>|</li> |*| <li>|</li>
+  1.ACT < .1.NO
+  1.ACT.ATagParams = class = "active"
+} 
+
+/*
+
+# BREADCRUMB MENU
+menu.breadcrumb = HMENU
+menu.breadcrumb {
+	special = rootline
+	special.range = 1|-1
+	#includeNotInMenu = 0
+	1 = TMENU
+	1 {
+		noBlur = 1
+		wrap = <ol class="breadcrumb"><li><a href="">Home</a></li>| </ol>
+		NO {
+			wrapItemAndSub = <li>|</li>
+		}
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <li class="active">|</li>
+			doNotLinkIt = 1
+		}
+	}
+}
+  */
+
+
+includeLibs.listRecords = typo3conf/ext/fluxtemplate/display_breadcrumb.php
+menu.breadcrumb= USER_INT
+menu.breadcrumb{
+	  userFunc = user_various->display_breadcrumb
+	  # reverseOrder is a boolean variable (see PHP code below)
+	  reverseOrder = 1
+	  # debugOutput is a boolean variable with /stdWrap (see PHP code below)
+	  debugOutput = 1
+}

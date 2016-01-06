@@ -1,0 +1,51 @@
+{namespace pg=JS\JsEvent\ViewHelpers}
+
+<f:layout name='Default'/>
+
+<f:section name='main'>
+	<f:if condition="{template}==1">
+		<f:then>
+			<f:if condition="{eventDetail}>0">
+				<f:then>
+					<f:render partial="Template/{templateDetail}" arguments="{Event:event, setting:setting}" />
+				</f:then>
+				<f:else>
+                    <f:if condition="{paginate}==1">
+                        <f:then>
+                            <pg:Paginate objects="{event}" as="paginatedObjekt" configuration="{itemsPerPage: recordPerPage, insertAbove: 1, insertBelow: 1, maximumNumberOfLinks: 4, maximumVisiblePages: 7}">
+                                <div class="event-list">
+                                    <div class="termine-section">
+                                        <f:for each="{paginatedObjekt}" as="list" iteration="itemIteration">
+                                            <div class="even {f:if(condition: itemIteration.isOdd , then: 'odd')}">
+                                                <f:render partial="Template/{templateList}" arguments="{Event:list, setting:setting}" />
+                                            </div>
+                                        </f:for>
+                                    </div>
+                                </div>
+                            </pg:Paginate>
+                        </f:then>
+                        <f:else>
+                            <div class="event-list">
+                                <div class="termine-section">
+                                    <f:for each="{event}" as="list" iteration="itemIteration">
+                                        <div class="even {f:if(condition: itemIteration.isOdd , then: 'odd')}">
+                                            <f:render partial="Template/{templateList}" arguments="{Event:list, setting:setting}" />
+                                        </div>
+                                    </f:for>
+                                </div>
+                            </div>
+                            <f:if condition="{templateList}=='Home'">
+                                <div class="more-link-p">
+                                    <f:link.page pageUid="{setting.listPage}" class="sprite read-more"><f:translate key='tx_jsevent_domain_model_event.eventList' /></f:link.page>
+                                </div>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:render partial="Error/Template" arguments="{error:template}" />
+		</f:else>
+	</f:if>
+</f:section>

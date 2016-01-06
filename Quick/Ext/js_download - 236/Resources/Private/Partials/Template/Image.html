@@ -1,0 +1,20 @@
+<div class="download-detail-section">
+    <div class="col-md-5 col-sm-12 gallery csc-textpic-imagewrap">
+        <a href="fileadmin{Files.media.media.identifier}" class="magnificpopup" >
+            <f:image src="fileadmin{Files.media.media.identifier}" width="170c" height="119c" alt="{Files.title}" />
+        </a>
+    </div>
+    <div class="col-md-7 col-sm-12 download-detail-inner csc-textpic-imagewrap">
+        <div class="d-light-bx">
+            <span><a class="dnld" href="{Files.downlonadLink}"><img alt="icon" src="typo3conf/ext/js_download/Resources/Public/Images/dnld-icon.png" /></a></span>
+            <span class="gallery"><a href="fileadmin{Files.media.media.identifier}" ><img alt="icon" src="typo3conf/ext/js_download/Resources/Public/Images/light-bx.png" /></a></span>
+        </div>
+        <ul>
+            <li><f:format.date format="d.m.Y">@{Files.date}</f:format.date></li>
+            <li>{Files.fileType}</li>
+        </ul>
+        <div class="clnk-name"><a href="{Files.downlonadLink}">{Files.title}</a></div>
+        <div class="clnk-place">{Files.short_description}</div>
+        <div class="bild-name">{Files.imageName}</div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form label="Two Column download and text" description="Two Column Container for download and text" wizardTab="Bootstrap" id="col_md_5_6" icon="{v:extension.path.resources(path: 'Icons/icon-pageheader.gif')}" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}" >
+				<flux:field.input name="person" label="Person"/>
+				<flux:field.input name="tel" label="Telephone"/>
+				
+				<flux:field.input name="fax" label="Fax"/>				
+				<flux:field.input name="email" label="Email"/>
+				<flux:grid>
+					<flux:grid.row>
+							<flux:grid.column style="width: 50%" name="column1" label="Download">
+								
+							</flux:grid.column>
+							<flux:grid.column style="width: 50%" name="column2" label="Text" >
+								
+							</flux:grid.column>				
+					</flux:grid.row>				
+				</flux:grid>						
+	</flux:form>
+</f:section>
+
+
+<f:section name="Main">
+	
+			<div class="col-lg-4 sidebar sidebar-left">
+				<flux:content.render render="1" area="column1" />	
+			</div>
+			<div class="col-lg-7 news-data floright wo-custom">
+				
+				<flux:content.render render="1" area="column2" />
+				
+				<div class="clearfix"><hr></div>
+					<ul class="news-info" style="margin-top:0;color:#000;">
+					 <f:if condition="{person}"><li><i class="mdi mdi-account"></i><span> {person}</span></li></f:if>
+					 <f:if condition="{tel}"><li><i class="mdi mdi-phone"></i><span> {tel}</span></li></f:if>
+					 <f:if condition="{fax}"><li><i class="mdi mdi-printer"></i><span>{fax}</span></li></f:if>
+					 <f:if condition="{email}"><li><i class="mdi mdi-email"></i><span><a href="mailto:{email}" target="_top"> {email}</a></span></li></f:if>
+					</ul>
+		
+			</div>			
+		
+</f:section>
+
+
+
+	<f:section name="Preview">
+		<flux:widget.grid />
+		<div class="news-data">	
+		<div class="clearfix"><hr></div>
+					<ul class="news-info" style="margin-top:0;color:#000;">
+					 <f:if condition="{person}"><li><i class="mdi mdi-account"></i><span> {person}</span></li></f:if>
+					 <f:if condition="{tel}"><li><i class="mdi mdi-phone"></i><span> {tel}</span></li></f:if>
+					 <f:if condition="{fax}"><li><i class="mdi mdi-printer"></i><span>{fax}</span></li></f:if>
+					 <f:if condition="{email}"><li><i class="mdi mdi-email"></i><span><a href="mailto:{email}" target="_top"> {email}</a></span></li></f:if>
+					</ul>
+		</div>
+	</f:section>

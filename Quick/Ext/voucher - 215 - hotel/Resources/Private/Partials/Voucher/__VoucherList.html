@@ -1,0 +1,60 @@
+
+<div class="title">Product selection for:</div>
+<div class="voucherListSection">
+  <f:for each="{vouchers}" as="voucher">
+    <div class="singleVoucherList">
+      <div class="voucherLeft">
+        <f:if condition="{sessionUser.user.id}!='' ">
+          <div class="voucherRadio">
+            <f:form.radio property="voucherTemplate" class="voucherRadio" value="{voucher.uid}"  />
+            <f:form.textfield property="voucherQuantity.{voucher.uid}" class="validate[groupRequired[payments],custom[integer]] voucherQuantity"  value="" />
+          </div>
+        </f:if>
+        <div class="v_title">
+          <label><f:translate key="tx_voucher_domain_model_voucher.title" /></label>
+          {voucher.title}</div>
+        <div class="v_cat_title">
+          <label><f:translate key="tx_voucher_domain_model_voucher.voucher_category" /></label>
+           {voucher.voucherCategory}</div>
+        <div class="v_price">
+          <label><f:translate key="tx_voucher_domain_model_voucher.price" /></label>
+         <f:if condition="{voucher.price}">
+           <f:then>
+ 	         	{voucher.price}
+                <f:form.textfield property="voucherPrice.{voucher.uid}" class="hidden"  value="{voucher.price}" />
+           </f:then>
+           <f:else>
+	           	<f:form.textfield property="voucherPrice.{voucher.uid}" class="validate[custom[integer]] voucherPrice"  value="" />
+           </f:else>
+          </f:if>
+         	 
+         </div>
+        <f:if condition="{voucher.tax}">
+          <div class="v_tax">
+           <label> <f:translate key="tx_voucher_domain_model_voucher.tax" /></label>
+            {voucher.tax}</div>
+        </f:if>
+        <f:if condition="{voucher.validTillDate}">
+          <div class="v_till_date">
+           <label> <f:translate key="tx_voucher_domain_model_voucher.valid_till_date" /></label>
+            <f:format.date format="d.m.Y">{voucher.validTillDate}</f:format.date>
+          </div>
+        </f:if>
+        <div class="v_short_description">
+         <label> <f:translate key="tx_voucher_domain_model_voucher.short_description" /></label>
+          {voucher.shortDescription}</div>
+        <div class="v_long_description">
+          <label><f:translate key="tx_voucher_domain_model_voucher.long_descption" /></label>
+          <f:format.html>{voucher.longDescption}</f:format.html>
+        </div>
+      </div>
+      <div class="voucherRight">
+        <f:if condition="{voucher.image}">
+          <div class="v_image">
+            <f:image src="uploads/tx_voucher/{voucher.image}"  alt="{voucher.title}" width="150" height="200" />
+          </div>
+        </f:if>
+      </div>
+    </div>
+  </f:for>
+</div>

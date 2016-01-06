@@ -1,0 +1,18 @@
+.parsley-required, .parsley-custom-error-message {
+    background-color: red;
+    color: #fff;
+    width: 98%;
+    margin-left: -36px;
+    font-size: 14px;
+    padding: 2px 5px;
+}
+/* added By maunil*/
+/*
+.backstretch {
+    position: absolute !important;
+}
+.carousel-inner {
+	min-height:822px;
+}
+*/
+/* added By maunil*/

@@ -1,0 +1,122 @@
+###
+# TEMPLATE: root_blocks
+# DESCRIPTION: The PAGE BLOCKS ROOT template. Lib (Blocks) templates contain TypoScript to generate the building blocks for your website, except menu's. In this template record are only other template records included.
+###
+
+
+# EXT: lib.right_content
+# DESC: TypoScript template which compiles the contents for the right column on the pages
+
+# Setup each colPos blocks.
+lib.content0 < styles.content.get
+lib.content0.select.where = colPos = 0
+lib.content1 < styles.content.get
+lib.content1.select.where = colPos = 1
+lib.content2 < styles.content.get
+lib.content2.select.where = colPos = 2
+lib.content3 < styles.content.get
+lib.content3.select.where = colPos = 3
+lib.content4 < styles.content.get
+lib.content4.select.where = colPos = 4
+lib.content5 < styles.content.get
+lib.content5.select.where = colPos = 5
+
+
+# Base URL
+lib.baseURL = TEXT
+lib.baseURL.value = {$config.domain}
+
+# Main Logo
+lib.mainLogo = TEXT
+lib.mainLogo.value = {$config.mainLogo}
+
+# Footer Logo
+lib.footerlogo = TEXT
+lib.footerlogo.value = {$config.footerlogo}
+
+
+
+
+### Subpages current page title
+lib.currentPage = TEXT
+lib.currentPage.data = page : title
+
+### Breadcrumb
+
+lib.breadcrumb = COA
+lib.breadcrumb{
+10 = COA
+10{
+10 = HMENU
+#10.excludeUidList = 2,7
+10 {  
+  special = rootline
+  special.range = 0|-1
+  1 = TMENU
+  1.noBlur = 1
+  1.target = _self
+  1.NO {
+      stdWrap.field = nav_title // title
+      ATagTitle.field = nav_title // title
+      ATagParams =  class=""
+      linkWrap = | |*| &nbsp;&raquo;&nbsp;<span>|</span>
+	  }
+ # ACT = 1
+ # ACT{
+ #     wrapItemAndSub = <li>|</li>
+ #     ATagTitle.field = 1
+    
+ #     stdWrap.htmlSpecialChars = 1
+ #     ATagParams = 
+ # }
+	1.CUR = 1
+	1.CUR {
+	stdWrap.field = nav_title // title
+	  ATagTitle.field = nav_title // title
+	  linkWrap = | |*| &nbsp;&raquo;&nbsp;<span class="act_bread">|</span>
+	doNotLinkIt = 1
+	}
+ }
+}
+}
+
+
+### Subpage : Banner 
+
+
+lib.banner = COA
+lib.banner {
+   10 = IMAGE
+   10 {
+       file {
+           import =  uploads/media/
+           import.data = levelmedia:-1, slide
+           import.listNum = 0
+           width.field = 1200
+           width.wrap = |m
+           height.field = 178
+           height.wrap = |m
+           treatIdAsReference = 1
+        }
+    }
+}
+
+
+### Menu
+content.menu = CONTENT
+content.menu.table =  tt_content
+content.menu.select.pidInList = 51
+content.menu.select.uidInList = 43
+
+### Footer Facebook Link 
+content.fblink = CONTENT
+content.fblink.table =  tt_content
+content.fblink.select.pidInList = 6
+content.fblink.select.uidInList = 1
+
+### Top Link 
+content.toplink = CONTENT
+content.toplink.table =  tt_content
+content.toplink.select.pidInList = 16
+content.toplink.select.uidInList = 9
+

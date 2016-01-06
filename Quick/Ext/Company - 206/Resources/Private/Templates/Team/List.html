@@ -1,0 +1,47 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <div class="teamMember clearfix">
+    <div class="row">
+      <f:for each="{teams}" as="team">
+        <div class="col-sm-4 col-md-4">
+          <div class="teamSection">
+            <h2>{team.designation}</h2>
+            <div class="border-Section team"> <span>
+              <f:if condition="{team.image.originalResource.originalFile.uid}">
+                <f:then>
+                  <f:image src="{team.image.originalResource.originalFile.uid}" width="150c" height="150c" alt="{team.originalResorce.alternative}"/>
+                </f:then>
+                <f:else>
+                  <h4>
+                    <f:image src="typo3conf/ext/company_management/Resources/Public/Icons/photo.jpg" width="150c" height="150c" alt="Team Image"/>
+                  </h4>
+                </f:else>
+              </f:if>
+              </span> <span>{team.name}</span>
+              <address>
+             <f:if condition="{team.telephone}">
+             <f:link.external uri="tel:{v:format.regularExpression(pattern: '{team.telephone}', replacement: 'NULL', subject: 'NULL', return: 1)}" defaultScheme="ftp"><b>T.</b> {team.telephone} </f:link.external> </f:if>
+              <f:if condition="{team.mobile}"><br/>
+               <f:link.external uri="tel:{v:format.regularExpression(pattern: '{team.mobile}', replacement: 'NULL', subject: 'NULL', return: 1)}" defaultScheme="ftp" ><b>M.</b> {team.mobile} </f:link.external> </f:if>
+             <f:if condition="{team.fax}"><br/> <b>F.</b> {team.fax}</f:if>
+              <f:if condition="{team.email}"> <br><b>E.</b> <f:link.email email="{team.email}" >{team.email}</f:link.email></f:if>
+              
+              </address>
+            </div>
+          </div>
+        </div>
+      </f:for>
+    </div>
+  </div>
+</f:section>

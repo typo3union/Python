@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-09-08T07:47:10Z" product-name="energy_consuption_calculation">
+		<header/>
+		<body>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate">
+				<source>Energy Calculate</source>
+			</trans-unit>
+				
+			<!-- Translations for FE-->
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.bausubstanz">
+				<source>Bausubstanz</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.bitte_auswahlen">
+				<source>Bitte auswählen!</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.beheizte_wohnflache">
+				<source>Beheizte Wohnfläche  (m%1$s)</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.heat_consumption">
+				<source>Wärmeverbrauch pro Jahr in kWh</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.hotel_consumption">
+				<source>Verbrauch in Liter Öl</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.kg_consumption">
+				<source>Verbrauch in kg Pellets</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.euro_saving_15_hotel">
+				<source>Einsparungen in Euro in 15 Jahren (Pellets statt Öl)</source>
+			</trans-unit>
+
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.heated_area">
+				<source>beheizte Wohnfläche [m%1$s]:  </source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.anual_energy">
+				<source>kWh Jahresenergieverbrauch</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.calculate_option_1">
+				<source>&lt; 10 Jahre: 90</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.calculate_option_2">
+				<source>&gt;= 10 Jahre: 80</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.calculate_option_3">
+				<source>&gt;= 20 Jahre: 70</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.calculate_option_4">
+				<source>&gt;= 30 Jahre: 65</source>
+			</trans-unit>
+
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.boiler_effiency">
+				<source>% Kesselwirkungsgrad (alter Kessel) Bestand</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.kwh_currently_used">
+				<source>kWh werden momentan genutzt</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.new_boiler">
+				<source>% Wirkungsgradverb.-NEUER Kessel</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.heating_load">
+				<source>kW errechnete Gebäudeheizlast</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.boiler_size">
+				<source>kW erforderliche Kesselgröße</source>
+			</trans-unit>
+
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.area_based_building_heat">
+				<source>W/m%1$s flächenmässig bezogene Gebäudeheizlast</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.year_based_energy">
+				<source>kWh/m%1$s jahresbezogener Energiebedarf</source>
+			</trans-unit>
+
+
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.brennstoffart">
+				<source>Brennstoffart</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.letztjahriger_verbrauch">
+				<source>Letztjähriger Verbrauch</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.einheit">
+				<source>Einheit</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.kesselart">
+				<source>Kesselart</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.heizwert_einheit">
+				<source>Heizwert in kWh/Einheit</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.price">
+				<source> Preis [Euro/Einheit]</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.osterreich">
+				<source>Österreich</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.deutschland">
+				<source>Deutschland</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.cent">
+				<source>Cent/kWh</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.warme_menge_kWh">
+				<source>Wärme- menge kWh</source>
+			</trans-unit>
+
+			
+			<!-- Right Column Labels -->
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.calculation_by_surface">
+				<source>Einfache Berechnung nach Wohnfläche</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.calculation_based_on_last_year">
+				<source>Genaue Berechnung nach letztjährigem Verbrauch</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.heating">
+				<source>Heizkosten pro kWh</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.fuel_cost_15_year">
+				<source>Brennstoffkosten in 15 Jahren</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.fuel_cost_per_year">
+				<source>Brennstoffkosten pro Jahr</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.stock_quantity_per_year">
+				<source>Lagermenge pro Jahr</source>
+			</trans-unit>
+			<trans-unit id="tx_energyconsuptioncalculation_domain_model_energycalculate.co2_15_year">
+				<source>CO %1$s Emissionen in 15 Jahren</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

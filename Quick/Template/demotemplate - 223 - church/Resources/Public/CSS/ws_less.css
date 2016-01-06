@@ -1,0 +1,11 @@
+/* ws_less Parameter Demo */
+.lessdemo-box {
+  height: 30px;
+  width: 30px;
+}
+.lessdemo-box1 {
+  background: #000000;
+}
+.lessdemo-box2 {
+  background: #666666;
+}

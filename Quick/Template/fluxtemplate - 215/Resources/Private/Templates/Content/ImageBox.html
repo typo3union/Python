@@ -1,0 +1,72 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="Image Box" label="Image Box" description="Image Box Element" icon="" options="{Fluidcontent: {sorting: 111},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:form.section name="imagebox" label="Image Box">
+                    <flux:form.object name="Imagebox" label="Add New Slide">
+                        <flux:field.file name="picture" uploadFolder="uploads/pics/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                        <flux:field.input name="picture_alt" label="Alternative Text" />
+                        <flux:field.input name="Text_content1" label="Text Content 1" />
+                        <flux:field.input name="Text_content2" label="Text Content 2" />
+                        <flux:field.input name="link" label="Link">
+                            <flux:wizard.link />
+                        </flux:field.input>
+                    </flux:form.object>
+                </flux:form.section>
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+
+        <div>
+            <f:if condition="{imagebox}">
+                <f:for each="{imagebox}" as="Imagebox" iteration="iteration">
+
+                    <div class="img-hovr-wrap">
+                        <div class="img-res-wrap">
+                        <f:if condition="{Imagebox.Imagebox.picture}">
+                          <a href="uploads/pics/{Imagebox.Imagebox.picture}" class="popup">  <f:image src="uploads/pics/{Imagebox.Imagebox.picture}" alt="{Imagebox.Imagebox.picture_alt}" width="457c" /></a></f:if>
+
+                            <f:if condition="{Imagebox.Imagebox.link}">
+                                 <f:link.page pageUid="{Imagebox.Imagebox.link}" class="schwed-img-hovr">
+                                     <span class="schwed-img-txt"><span class="schwed-txt01">{Imagebox.Imagebox.Text_content1}</span><span class="schwed-txt02"> {Imagebox.Imagebox.Text_content2} </span></span>
+                                &nbsp;</f:link.page>
+                            </f:if>
+                        </div>
+                    </div>
+                </f:for>
+            </f:if>
+        </div>
+
+    </f:section>
+
+    <f:section name="Preview">
+ <div class="col-md-6 col-sm-6 my-fadeInRight hidden1 visible animated fadeInRight">
+            <f:if condition="{imagebox}">
+                <f:for each="{imagebox}" as="Imagebox" iteration="iteration">
+
+                    <div class="img-hovr-wrap">
+                        <div class="img-res-wrap">
+                            <f:image src="uploads/pics/{Imagebox.Imagebox.picture}" alt="{Imagebox.Imagebox.picture_alt}" width="150c" height="100c" />
+
+                            <f:if condition="{Imagebox.Imagebox.link}">
+                                 <f:link.page pageUid="{Imagebox.Imagebox.link}" class="schwed-img-hovr">
+<!--                                     <span class="schwed-img-txt"><span class="schwed-txt01">{Imagebox.Imagebox.Text_content1}</span><span class="schwed-txt02"> {Imagebox.Imagebox.Text_content2} </span></span>-->
+                                &nbsp;</f:link.page>
+                            </f:if>
+                        </div>
+                    </div>
+                </f:for>
+            </f:if>
+        </div>
+
+    </f:section>
+
+</div>

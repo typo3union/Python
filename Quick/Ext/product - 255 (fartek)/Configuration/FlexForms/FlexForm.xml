@@ -1,0 +1,78 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Main Settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Display Mode</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="1">
+										<numIndex index="0">Product List</numIndex>
+										<numIndex index="1">Product->list</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Product Detail</numIndex>
+										<numIndex index="1">Product->show</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">Menu</numIndex>
+										<numIndex index="1">Product->menu</numIndex>
+									</numIndex>
+									<numIndex index="4">
+										<numIndex index="0">Featured Product</numIndex>
+										<numIndex index="1">Product->feature</numIndex>
+									</numIndex>
+
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					
+					<settings.flexform.main.productlist>
+						<TCEforms>
+							<label>Product ListpageID</label>
+							 <displayCond>FIELD:switchableControllerActions:=:Product->list</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.productlist>
+
+					<settings.flexform.main.productdetailid>
+						<TCEforms>
+							<label>Product Deatil pageID</label>
+							 <displayCond>FIELD:switchableControllerActions:=:Product->show</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.productdetailid>
+
+				</el>
+			</ROOT>
+		</main>
+
+	</sheets>
+</T3DataStructure>

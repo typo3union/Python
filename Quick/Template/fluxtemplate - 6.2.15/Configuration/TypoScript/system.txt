@@ -1,0 +1,148 @@
+###
+# TEMPLATE: root_systemConfiguration
+# DESCRIPTION: The CONFIGURATION ROOT template. This template will be called by the MASTER ROOT template. It reads the templates for changes in tt_content, lib.stdHeader etc.
+###
+
+
+
+#
+# EXT: lib.parseFunc_RTE
+# DESC: The LIB.PARSEFUNC_RTE template. Content which is added by using the RTE is parsed before the output to the screen. In this template you will find some settings to influence this parsing process.
+
+# remove class="bodytext" from paragraphs
+lib.parseFunc_RTE {
+	nonTypoTagStdWrap.encapsLines {
+		addAttributes.P.class >
+		addAttributes.P.class.setOnly >
+	}
+}
+
+
+#
+# EXT: tt_content
+# DESC: The TT_CONTENT template. tt_content is responsible for the styling of the content objects, together with css_styled_content. In this template we made some changes to influence the styling.
+
+#
+# EXT: SECTION FRAME
+
+tt_content.stdWrap.innerWrap.cObject {
+101 = TEXT
+101.value = <div class="container">|</div>
+102 = TEXT
+102.value = <div class="container"><div class="row">|</div></div>
+103 = TEXT
+103.value = <div class="img_section">|</div>
+104 = TEXT
+104.value = <div class="img_gallery">|</div>
+
+}
+
+#
+# EXT: HEADER LAYOUTS
+
+lib.stdheader.10.7 <  lib.stdheader.10.1
+lib.stdheader.10.7 {
+  dataWrap = <h1 class="page-heading col-lg-12 middle">|</h1>
+}
+
+lib.stdheader.10.8 <  lib.stdheader.10.1
+lib.stdheader.10.8 {
+  dataWrap = <h1 class="page-heading col-lg-12">|</h1>
+}
+
+lib.stdheader.10.9 <  lib.stdheader.10.1
+lib.stdheader.10.9 {
+  dataWrap = <h1 class="page-heading">|</h1>
+}
+
+lib.stdheader.10.10 <  lib.stdheader.10.1
+lib.stdheader.10.10 {
+  dataWrap = <div class="projectlist"><h3 class="page-heading col-lg-12 text-center">|</h3></div>
+}
+  
+
+
+
+# Remove targets
+styles.content.links.extTarget =
+
+tt_content {	
+	# Make some modifications to the rendering of the standard MAIL form records
+	#mailform.20 {
+		#accessibility = 1
+	#}
+	
+	# Remove the ancient onfocus="blurLink(this);" from sitemap links
+	# Unfortunately this hasn't been fully implemented in css_styled_content yet
+	# See also bug 11367
+	menu.20 {
+		default.1.noBlur = 1
+		1.1.noBlur = 1
+		4.1.noBlur = 1
+		5.1.noBlur = 1
+		6.1.noBlur = 1
+		7.1.noBlur = 1
+		7.2.noBlur = 1
+	}
+
+	# With this we can use - <link page-id> tag </link>
+	html.parseFunc.tags.link < lib.parseFunc.tags.link
+}
+
+# replace strong in place of bold tag..
+lib.parseFunc_RTE.tags{
+  b=TEXT
+  b{
+    current=1
+    wrap= <strong>|</strong>
+  }
+}
+
+lib.parseFunc_RTE {
+    externalBlocks {
+        table.stdWrap.HTMLparser.tags.table.fixAttrib.class {			
+            default = table table-hover
+            always = 1
+            list >
+        }
+    }
+}
+
+### Set default class for ul from rte
+lib.parseFunc_RTE {
+  externalBlocks := addToList(ul,li)
+  externalBlocks {
+    ul.stripNL = 1
+    ul.callRecursive = 1
+    ul.callRecursive.tagStdWrap.HTMLparser = 1
+    ul.callRecursive.tagStdWrap.HTMLparser.tags.ul {
+      fixAttrib.class.default = contentList
+    }
+  }
+}
+
+### Set default class for ul from rte
+lib.parseFunc_RTE {
+  externalBlocks := addToList(ol,li)
+  externalBlocks {
+    ol.stripNL = 1
+    ol.callRecursive = 1
+    ol.callRecursive.tagStdWrap.HTMLparser = 1
+    ol.callRecursive.tagStdWrap.HTMLparser.tags.ol {
+      fixAttrib.class.default = ordaeredList
+    }
+  }
+}
+# add clsss to image 
+tt_content.image.20.1.params.cObject = CASE
+tt_content.image.20.1.params.cObject {
+  key.field = layout
+  default = TEXT
+  default.value = class="img-responsive"
+  1 = TEXT
+  1.value = class="class2"
+  2 = TEXT
+  2.value = class="class3"
+}
+
+

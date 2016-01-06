@@ -1,0 +1,98 @@
+ {namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="content-center clearfix">
+    <div class="calender clearfix">
+      <div class="stage">
+        <div class="stageContent table-responsive">
+          <div class="filters last-min">
+            <div class="hder ">
+              <div class="hrow-container text-uppercase">
+                <div class="hrow first-hdr">
+                  <f:translate key="tx_course_domain_model_datestartend.Kurstyp" />
+                </div>
+                <div class="hrow text-center">
+                  <f:translate key="tx_course_domain_model_datestartend.Beginn" />
+                </div>
+                <div class="hrow text-center">
+                  <f:translate key="tx_course_domain_model_datestartend.Ende" />
+                </div>
+                <div class="hrow text-center">
+                  <f:translate key="tx_course_domain_model_datestartend.Preis" />
+                </div>
+                <div class="hrow text-center last-txte">
+                  <f:translate key="tx_course_domain_model_datestartend.Last_Minute_Price" />
+                </div>
+              </div>
+            </div>
+            <f:for each="{courses}" as="course">
+              
+                  <div class="carousel carousel-inner lastminute vertical slide">
+                    <f:for each="{course.dateduration}" as="d_duration" iteration="iteration">
+                       <f:if condition="{d_duration.actlastmin} == 1">                     
+                        	<f:then>
+                                <v:var.set name="setvar" value="1"></v:var.set>
+		                      	<div class="item active">	
+                                    <div class="row-fluid">
+                                      <div id="kursList_{d_duration.uid}<f:format.date format='Y-m-d'>{d_duration.startdate}</f:format.date><f:format.date format='Y-m-d'>{d_duration.enddate}</f:format.date>" class="kursListTermine {termine:'<f:format.date format='Y-m-d'>{d_duration.startdate}</f:format.date>|ganztags,<f:format.date format='Y-m-d'>{d_duration.enddate}</f:format.date>|pruefung1'} locked" data-month="<f:format.date format='m'>{d_duration.startdate}</f:format.date>" data-year="<f:format.date format='Y'>{d_duration.startdate}</f:format.date>" >
+                                        <div class="kurstyp td">
+                                          <f:if condition="{iteration.index} == 0">{course.name}</f:if>
+                                        </div>
+                                        <div class="dateBegin bg text-center td">
+                                          <f:format.date format='d.m.Y'>{d_duration.startdate}</f:format.date>
+                                        </div>
+                                        <div class="text-center td ">
+                                          <f:format.date format='d.m.Y'>{d_duration.enddate}</f:format.date>
+                                        </div>
+                                        <div class="text-center td">
+                                          <f:if condition="{d_duration.price}">
+                                            <f:then>{d_duration.price} </f:then>
+                                            <f:else>{course.price} </f:else>
+                                          </f:if>
+                                        </div>
+                                        <f:if condition="{d_duration.lastmintuteprice}">
+                                          <f:then>
+                                            <div  class="action text-center td lastMin">{d_duration.lastmintuteprice}</div>
+                                          </f:then>
+                                          <f:else>
+                                            <div  class="action text-center td">{course.lastmintuteprice}</div>
+                                          </f:else>
+                                        </f:if>
+                                      </div>
+                                    </div>
+                     			</div>
+                      		</f:then>                           
+                       </f:if>
+                    </f:for>                  
+                     
+                  </div>
+                
+            </f:for>
+            <f:if condition="{setvar}!=1">
+                        <div class="noLastMin"> <p>Im Augenblick sind keine Kurse verfügbar</p></div>
+                	 </f:if>
+                      <f:if condition="{settings.lastMinuteText}">
+  <div class="lastmin-text">
+  	<f:format.html>{settings.lastMinuteText}</f:format.html>
+  </div>
+  
+  </f:if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 
+  <f:for each="{singlecourse}" as="course" iteration="iterationiterator">
+    <f:if condition="{iterationiterator.index} == 0">
+      <f:render partial="Course/Properties" arguments="{course:course}" />
+    </f:if>
+  </f:for>
+   <f:for each="{courseList}" as="course">
+      <f:render partial="Course/ImageList" arguments="{course:course}" />
+  </f:for>
+  
+    <f:render partial="Course/RelatedCourses" arguments="{related_courses:related_courses}" />
+</f:section>

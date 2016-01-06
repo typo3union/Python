@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-28T18:07:53Z" product-name="js_clinik">
+		<header/>
+		<body>
+			<trans-unit id="tx_jsclinik_domain_model_facilities">
+				<source>Facilities</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_facilities.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_facilities.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik">
+				<source>Clinik</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.logo">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.clinik_id">
+				<source>Clinik Id</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.display_map_content">
+				<source>Display Map Content</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.map_content">
+				<source>Map Content</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.map_icon">
+				<source>Map Icon</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_clinik.facilities">
+				<source>Facilities</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_jsclinik_domain_model_type.title">
+				<source>Title</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

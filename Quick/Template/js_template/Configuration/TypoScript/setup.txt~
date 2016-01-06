@@ -1,0 +1,16 @@
+###################################################
+# Include all TypoScript files
+###################################################
+[GLOBAL]
+
+
+# Configuration
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:js_template/Configuration/TypoScript/Config" extensions="ts">
+
+## Page
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:js_template/Configuration/TypoScript/Page" extensions="ts">
+
+# Plugin
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:js_template/Configuration/TypoScript/Plugin" extensions="ts">
+
+

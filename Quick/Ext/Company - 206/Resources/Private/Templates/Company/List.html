@@ -1,0 +1,106 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="row">
+    <div class="col-lg-12 logosub">
+      <h1>UNTERNEHMENSPRÄSENTATIONEN</h1>
+      <div class="filteroption">
+        <ul>
+          <li>Sortieren nach:</li>
+          <li><span class="select-style">
+            <select class="form" name="companyList" id="companyList" >
+              <option value="">
+              <f:translate key="tx_companymanagement_domain_model_company.l_sort" />
+              </option>
+              <option value="0">
+              <f:translate key="tx_companymanagement_domain_model_company.l_branch" />
+              </option>
+              <option value="1">
+              <f:translate key="tx_companymanagement_domain_model_company.l_firstname_acending" />
+              </option>
+              <option value="2">
+              <f:translate key="tx_companymanagement_domain_model_company.l_firstname_decending" />
+              </option>
+              <option value="3">
+              <f:translate key="tx_companymanagement_domain_model_company.l_zip" />
+              </option>
+              <option value="4">
+              <f:translate key="tx_companymanagement_domain_model_company.l_sort_employee" />
+              </option>
+            </select>
+            </span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="company ajax_load_img"><img src="typo3conf/ext/company_management/Resources/Public/Icons/ajax_load.gif" alt="" /></div>
+  <div class="row filterwrap">
+    <div class="col-sm-1 col-md-1">
+      <div class="cd-main-content mainContentAlphaFilter">
+        <div class="cd-tab-filter1">
+          <ul class="cd-filters alphabeticFilter">
+            <v:format.replace substring="NULL" content="{companyNames}" ></v:format.replace>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="cd-main-content" class="col-sm-11 col-md-11 filterSection">
+      <section class="cd-main-content">
+        <div class="cd-tab-filter-wrapper">
+          <div class="cd-tab-filter">
+            <ul class="cd-filters">
+              <li class="placeholder">
+                <f:link.external uri="javascript:void(0);" additionalAttributes="{data-type: 'all'}">
+                  <f:translate key="tx_companymanagement_domain_model_company.l_all" />
+                </f:link.external>
+              </li>
+              <li class="filter" data-filter=".All">
+                <f:link.external uri="javascript:void(0);" additionalAttributes="{data-type: 'all'}" class="selected">
+                  <f:translate key="tx_companymanagement_domain_model_company.l_select_all" />
+                </f:link.external>
+              </li>
+              <f:for each="{states}" as="state">
+                <li class="filter" data-filter=".{state.name}" ><a href="javascript:void(0);" data-type="{state.name}">{state.name}</a></li>
+              </f:for>
+            </ul>
+          </div>
+        </div>
+        <section class="cd-gallery">
+          <ul class="filterglry">
+            <f:for each="{companies}" as="company">
+              <li class="{company.stateId.name} {v:format.substring(content: '{company.name}', start: 0, length: 1)} All mix check1 radio2 option3">
+                <f:if condition="{company.stateId.smallLogo.originalResource.originalFile.uid}">
+                  <h2>
+                    <f:image src="{company.stateId.smallLogo.originalResource.originalFile.uid}" width="48c" height="46c" alt="{company.stateId.name}"/>
+                  </h2>
+                </f:if>
+                <f:link.action action="show" arguments="{ uid: '{company.uid}'}" pageUid="{settings.companySingleView}"  class="border-Section"> <span class="companyFilterImage">
+                  <f:image src="{company.logo.originalResource.originalFile.uid}" height="99c" alt="{company.name}"/>
+                  </span>
+                  <div class="text-wrap"> <span class="text-bottom">
+                    <f:format.crop maxCharacters="70" > {company.name}</f:format.crop>
+                    </span> </div>
+                  <span>{company.city}</span> </f:link.action>
+              </li>
+            </f:for>
+          </ul>
+          <div class="cd-fail-message">
+            <f:translate key="tx_companymanagement_domain_model_company.l_nomatch" />
+          </div>
+        </section>
+        <!-- cd-gallery --> 
+      </section>
+    </div>
+  </div>
+</f:section>

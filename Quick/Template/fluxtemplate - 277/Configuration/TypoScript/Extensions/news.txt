@@ -1,0 +1,45 @@
+# News Extension custom Typoscript
+plugin.tx_news {
+	# News Extension custom Template
+	view {
+		templateRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Templates/
+		}
+		partialRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Partials/
+		}
+		layoutRootPaths {
+			100 = {$filepaths.extensionsView}News/Private/Layouts/
+		}
+	}
+	
+	
+	# News Extension custom CSS
+	settings {
+		
+		list {
+			# media configuration
+			media {				
+				dummyImage = EXT:fluxtemplate/Resources/Private/Templates/Extensions/News/Public/Images/dummy-preview-image.jpg
+			}
+		}
+		# --------------
+		#  Detail
+		# --------------
+		detail {
+			
+			# media configuration
+			media {
+				image {
+					
+					# Get lightbox settings from css_styled_content
+					lightbox {
+						enabled = 0
+						
+					}
+				}
+			}
+		}
+	
+	}
+}

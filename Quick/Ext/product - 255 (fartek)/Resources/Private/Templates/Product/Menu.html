@@ -1,0 +1,74 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Default" />
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain
+object If you modify this template, do not forget to change the
+overwrite settings in /Configuration/ExtensionBuilder/settings.yaml:
+Resources: Private: Templates: Show.html: keep Otherwise your changes
+will be overwritten the next time you save the extension in the
+extension builder
+
+<f:section name="main">
+
+	<f:flashMessages renderMode="div" />
+<v:page.header.title
+							title="Fartek LebensmittelvertriebsgsmbH | {c.category_name} / {product.cat_name}"
+							whitespaceString=" " setIndexedDocTitle="1">
+						Fartek LebensmittelvertriebsgsmbH | {c.category_name} / {product.cat_name}
+						</v:page.header.title>
+
+	<ul class="nav navbar-nav">
+		<f:for each="{first_menu}" as="first_menus">
+		<li <f:if condition='{page_id} =={first_menus.uid}'>class="active"</f:if>><f:link.page pageUid="{first_menus.uid}">{first_menus.title}</f:link.page></li>
+		</f:for>
+		
+		<f:for each="{main_categories}" as="category" iteration="iteration">
+	
+			<li class="<f:if condition='{category.sub_cat}'> dropdown</f:if><f:if condition='{menu_id} =={category.uid}'> active</f:if>">
+				<f:link.action pageUid="{settings.flexform.main.productlist}"
+					controller="Product" action="list"
+					arguments="{category : category.uid}"
+					class="<f:if condition='{category.sub_cat}'> dropdown</f:if>"
+					noCacheHash="1">
+				{category.category_name}</f:link.action> <f:if condition='{category.sub_cat}'>
+					<f:then>
+						<span data-toggle="dropdown" class="dd-arrow"><span
+							class="caret"></span></span>
+					</f:then>
+					<f:else>
+			</li>
+			</f:else>
+			</f:if>
+			<f:if condition='{category.sub_cat}'>
+
+
+				<ul	class="dropdown-menu hidden1 visible animated fadeInDown"
+					style="">
+					<f:for each="{category.sub_cat}" as="subcategory"><li <f:if condition='{menu_id} =={subcategory.uid}'>class="active"</f:if>>
+						<f:link.action pageUid="{settings.flexform.main.productlist}"
+							controller="Product" action="list"
+							arguments="{category : subcategory.uid}" noCacheHash="1"
+							class="<f:if condition='{category.sub_cat}'> dropdown</f:if>">{subcategory.category_name}</f:link.action>
+						</li>
+					</f:for>
+				</ul>
+				</li>
+
+			</f:if>
+
+
+
+		</f:for>
+		<f:for each="{second_menu}" as="second_menus">
+		<li <f:if condition='{page_id} =={second_menus.uid}'>class="active"</f:if>><f:link.page pageUid="{second_menus.uid}">{second_menus.title}</f:link.page></li>
+		</f:for>
+		
+	</ul>
+
+
+</f:section>
+</div>

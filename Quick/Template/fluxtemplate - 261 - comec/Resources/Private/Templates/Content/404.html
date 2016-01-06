@@ -1,0 +1,28 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="404" label="404 Page" description="404 Page Element" icon="" options="{Fluidcontent: {sorting: 100},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+        
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+        
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+  <header class="main-slider">
+    <div class="carousel slide"> 
+        <div class="carousel-inner">
+          <div class="fill" >
+					 <f:image src="uploads/slider_images/{picture}" alt="Fartek"  width="1920c" height="633c" class="img-responsive"/>
+				  </div>
+		    </div>
+			</div>
+	 
+    </div>
+  </header>
+  </f:section>
+</div>

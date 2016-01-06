@@ -1,0 +1,78 @@
+<div class="voucherLoginSection">
+  <div class="title"><h2><f:translate key="tx_voucher_domain_model_voucher_login.login_or_register" /></h2> </div>
+  <div class="userForm">
+    <div class="alreadyUser">
+      <p class="heading"><h2><f:translate key="tx_voucher_domain_model_voucher_login.already_account" /></h2></p>
+      <p class="sub-heading"><f:translate key="tx_voucher_domain_model_voucher_login.already_account_sub" /></p>
+      <f:form method="post" name="alreadyUserForm" class="alreadyUserForm" id="alreadyUserForm" object="{voucher}" action="list" controller="Voucher">
+        <div class="formField">          
+          <f:form.textfield property="username" class="validate[required] username" placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.email')}" />
+        </div>    
+        <div class="formField">
+          <f:form.password property="password" class="validate[required] password" additionalAttributes="{placeholder: '<f:translate key=\'tx_voucher_domain_model_voucher_login.password\'/>'}" />
+        </div>
+        <div class="formField">
+        <div class="login">
+          <f:form.submit value="Anmelden" class="submit" name="alreadyUserSubmit"/>
+          </div>
+        </div>
+      </f:form>
+    </div>
+    <div class="notUser">
+      <p class="heading" ><h2><f:translate key="tx_voucher_domain_model_voucher_login.create_account" /></h2></p>
+      <p class="sub-heading"><f:translate key="tx_voucher_domain_model_voucher_login.create_account_sub" /></p>
+      <f:form method="post" name="notUserForm" class="notUserForm" id="notUserForm" object="{voucher}">
+        <div class="singleField gender">        
+          <div class="genderField">
+            <f:form.radio property="gender" value="0" id="mr" />
+            <label for="mr"><f:translate key="tx_voucher_domain_model_voucher_login.mr" /></label>
+            <f:form.radio property="gender" value="1" id="mrs" />
+            <label for="mrs"><f:translate key="tx_voucher_domain_model_voucher_login.mrs" /></label>
+          </div>
+        </div>
+        <div class="singleField firstname">
+          <f:form.textfield property="firstname" placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.vorname')}" />
+        </div>
+        <div class="singleField lastname">
+          <f:form.textfield property="lastname" placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.lastname')}"  />
+        </div>
+        <div class="singleField email">
+          <f:form.textfield property="email" placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.small_email')}"  />
+        </div>
+        <div class="singleField password">
+          <f:form.password property="password"  additionalAttributes="{placeholder: '<f:translate key=\'tx_voucher_domain_model_voucher_login.password\'/>'}" id="password" class="password"/>
+        </div>
+        <div class="singleField password">
+          <f:form.password property="repeatpassword" additionalAttributes="{placeholder: '<f:translate key=\'tx_voucher_domain_model_voucher_login.repeatpassword\'/>'}"  id="confirm_password" class="password"/>
+        </div>
+        <div class="singleField phone">
+          <f:form.textfield property="phone" placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.phone')}"  />
+        </div>
+        <div class="singleField company">
+          <f:form.textfield property="company" class="company"  placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.company')}" />
+        </div>
+        <div class="singleField invoice">
+	        <f:form.checkbox property="invoice" class="invoice" value="1" id="invoice"/>
+            <label class="invoice" for="invoice"><f:translate key="tx_voucher_domain_model_voucher_login.invoice" /></label>
+        </div>
+        <div class="singleField address">
+          <f:form.textfield property="address" class="address"  placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.address')}" />
+        </div>
+        <div class="singleField zip">
+          <f:form.textfield property="zip" class="zip"  placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.zip')}" />
+        </div>
+        <div class="singleField location">
+          <f:form.textfield property="location" class="location" placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.location')}" />
+        </div>
+        <div class="singleField country">
+          <f:form.textfield property="country" class="country" placeholder="{f:translate(key: 'tx_voucher_domain_model_voucher_login.country')}"  />
+        </div>
+        <div class="singleField submit">
+       	 <div class="regi">
+           <f:form.submit value="{f:translate(key: 'tx_voucher_domain_model_voucher_login.submit')}" class="submit" name="notUserSubmit"/>
+           </div>
+        </div>
+      </f:form>
+    </div>
+  </div>
+</div>

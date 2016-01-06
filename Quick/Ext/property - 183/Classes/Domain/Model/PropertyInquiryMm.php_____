@@ -1,0 +1,88 @@
+<?php
+namespace TYPO3\Property\Domain\Model;
+
+
+/***************************************************************
+ *
+ *  Copyright notice
+ *
+ *  (c) 2014 Martin Galler <martin.galler@weboffice.co.at>, Weboffice
+ *           Pooja Patel <pooja.patel@webofficeindia.com>, Weboffice
+ *
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
+
+/**
+ * PropertyInquiryMm
+ */
+class PropertyInquiryMm extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+
+	/**
+	 * propertyId
+	 *
+	 * @var \TYPO3\Property\Domain\Model\Property
+	 */
+	protected $propertyId = NULL;
+
+	/**
+	 * inquirerId
+	 *
+	 * @var \TYPO3\Property\Domain\Model\Inquirer
+	 */
+	protected $inquirerId = NULL;
+
+	/**
+	 * Returns the propertyId
+	 *
+	 * @return \TYPO3\Property\Domain\Model\Property $propertyId
+	 */
+	public function getPropertyId() {
+		return $this->propertyId;
+	}
+
+	/**
+	 * Sets the propertyId
+	 *
+	 * @param \TYPO3\Property\Domain\Model\Property $propertyId
+	 * @return void
+	 */
+	public function setPropertyId(\TYPO3\Property\Domain\Model\Property $propertyId) {
+		$this->propertyId = $propertyId;
+	}
+
+	/**
+	 * Returns the inquirerId
+	 *
+	 * @return \TYPO3\Property\Domain\Model\Inquirer $inquirerId
+	 */
+	public function getInquirerId() {
+		return $this->inquirerId;
+	}
+
+	/**
+	 * Sets the inquirerId
+	 *
+	 * @param \TYPO3\Property\Domain\Model\Inquirer $inquirerId
+	 * @return void
+	 */
+	public function setInquirerId(\TYPO3\Property\Domain\Model\Inquirer $inquirerId) {
+		$this->inquirerId = $inquirerId;
+	}
+
+}

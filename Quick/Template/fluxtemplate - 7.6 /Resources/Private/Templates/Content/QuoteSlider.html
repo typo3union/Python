@@ -1,0 +1,61 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="quoteslide" label="Quote Slider" description="Quote Element" icon="" options="{Fluidcontent: {sorting: 104},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="quoteslide" label="FixTop Slider">
+          <flux:form.object name="Quoteslide" label="Add New Slide">
+                <flux:field.input name="title" label="Title"/>
+                <flux:field.text name="content" label="Content" enableRichText="1"></flux:field.text>
+            </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+     
+      
+       <section class="slice base">
+        <div class="wp-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <div id="carouselTestimonial" class="carousel carousel-testimonials slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                
+                                <f:for each="{quoteslide}" as="quoteslides" iteration="iteration">
+                                        <li data-target="#carouselTestimonial" data-slide-to="{iteration.index}" <f:if condition='{iteration.index} == 0'>class='active'</f:if>></li>
+                                </f:for>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                 <f:if condition="{quoteslide}">
+                                    <f:for each="{quoteslide}" as="quoteslides" iteration="iteration">
+                                            <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+                                                <div class="text-center">
+                                                   
+                                                    <p class="testimonial-text"><f:format.raw>{quoteslides.Quoteslide.content}</f:format.raw></p>
+                                                    <p>
+                                                       {quoteslides.Quoteslide.title}
+                                                    </p>
+                                                    <span class="clearfix"></span>
+                                                </div>
+                                            </div>
+                                    </f:for>
+                                 </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+</f:section>
+</div>

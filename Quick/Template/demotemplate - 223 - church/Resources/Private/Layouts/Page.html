@@ -1,0 +1,37 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page"/>
+<v:page.header>
+  <f:render section="Resources" optional="TRUE" arguments="{_all}"/>
+</v:page.header>
+<f:link.page class="sr-only" section="content">
+  <v:l key="skip_navigation" />
+</f:link.page>
+<div class="header">
+  <div class="navbar-fixed-top">
+    <f:render section="Navigation" partial="Navigation" arguments="{_all}"/>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="icon-bar-menu {v:security.allow(then: 'login-yes', else: 'login-no', anyFrontendUser: 1, anyFrontendUserGroup: 1)}">
+        <v:security.allow anyFrontendUser="TRUE">
+			<f:then>
+				<f:cObject typoscriptObjectPath="lib.eventLocationMenu" />
+			</f:then>
+			<f:else>
+				<f:render section="IconBarNavigation" partial="IconBarNavigation" arguments="{_all}"/>		    	
+			</f:else>
+		</v:security.allow>
+      </div>
+    </div>
+    <f:render section="HeaderContent" optional="TRUE" arguments="{_all}"/>
+  </div>
+</div>
+
+<!--TYPO3SEARCH_begin-->
+<f:render section="Content"/>
+<!--TYPO3SEARCH_end-->
+
+<footer >
+  <f:render section="Footer" partial="Footer" arguments="{_all}"/>
+</footer>
+<v:page.footer> </v:page.footer>

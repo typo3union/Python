@@ -1,0 +1,27 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="about" label="About footer content" description="About footer content Element" icon="" options="{Fluidcontent: {sorting: 108},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+                <flux:field.text name="content" label="Content" enableRichText="1"></flux:field.text>
+                <flux:field.input name="title" label="Button Text"/>
+                <flux:field.input name="link" label="Link">
+                       <flux:wizard.link />
+                     </flux:field.input>
+           
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+     
+                        
+                      <f:format.html>{content}</f:format.html>
+                        
+                       <f:link.page pageUid="{link}" class="btn btn-block btn-base btn-icon fa-check"><span>{title}</span></f:link.page>
+                    
+
+</f:section>
+</div>

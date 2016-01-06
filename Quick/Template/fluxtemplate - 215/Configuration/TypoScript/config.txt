@@ -1,0 +1,140 @@
+#
+# TEMPLATE: config
+# DESCRIPTION: The PAGE CONFIG template. Only page.config settings are done here, like character sets, url and language. 
+#
+
+
+
+config {
+  
+  // Administrator settings
+  admPanel    			= {$config.adminPanel}
+  debug      			= {$config.debug}
+  
+  doctype      			= <!DOCTYPE html> 
+  xmlprologue 			= none
+  xhtml_cleaning 		= all
+
+  // Character sets
+  renderCharset     	= utf-8
+  metaCharset     		= utf-8
+  #additionalHeaders 	= Content-Type:text/html;charset=utf-8
+
+  // Cache settings
+  no_cache 				= 0
+  sendCacheHeaders 		= 1
+  cache_period    		= 43200
+  cache_clearAtMidnight = 1
+        
+  // URL Settings
+  tx_realurl_enable       = 1
+  simulateStaticDocuments = 0
+
+  // Language Settings
+  uniqueLinkVars        = 1
+  linkVars              = L
+  sys_language_uid   	= 0
+  #sys_language_overlay = 1
+  sys_language_overlay  = hideNonTranslated
+  sys_language_mode   	= content_fallback
+  language           	= de
+  locale_all         	= de_DE
+  htmlTag_langKey    	= de
+  
+  // Link settings
+  absRefPrefix          = {$config.absRefPrefix}/
+  prefixLocalAnchors    = all
+  
+  // Remove targets from links
+  intTarget =
+  extTarget =
+
+  // Indexed Search
+  index_enable    		= 1
+  index_externals    	= 1
+
+  // Code cleaning
+  disablePrefixComment  = 1
+  
+  // Move default CSS and JS to external file  
+  removeDefaultJS       = external
+  inlineStyle2TempFile  = 1
+  
+  concatenateJs = 1
+  concatenateCss = 1
+
+  compressJs = 1
+  compressCss = 1
+  
+  minifyJS  = 1
+  minifyCSS = 1
+  
+  concatenateJsAndCss = 1
+  meaningfulTempFilePrefix = 100
+
+  // Protect mail addresses from spamming
+  #spamProtectEmailAddresses = -3
+  #spamProtectEmailAddresses_atSubst = @<span style="display:none;">remove-this.</span>
+  spamProtectEmailAddresses = 1
+  spamProtectEmailAddresses_atSubst = @
+
+  # Disable the border attribute in images
+  disableImgBorderAttr = 1
+  removeGenerator = 1
+  disablePrefixComment = 1
+  sourceopt.enabled = 1
+  sourceopt.removeBlurScript = 1
+  sourceopt.removeGenerator = 1
+
+  // Comment in the <head> tag
+  headerComment ( 
+  	
+  )
+}
+
+page.shortcutIcon ={$filepaths.images}favicon.png
+
+
+
+
+plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
+
+# Remove default TYPO3 Stylesheet.
+# plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
+
+# Allow HTML tags in headers
+lib.stdheader.10.setCurrent.htmlSpecialChars = 0
+
+// Set baseURL setting for http or https
+config.baseURL = http://{$config.domain}/
+[globalString = IENV:TYPO3_SITE_URL=https://{$config.domain}/]
+	config.baseURL = https://{$config.domain}/
+[global]
+
+// Condition to switch the doctype and xml prologue
+[browser = msie]
+	config.doctypeSwitch = 1
+[global]
+
+# Condition to set language according to L POST/GET variable
+# Set German
+[globalVar = GP:L = 1]
+config {
+	htmlTag_langKey = en
+	sys_language_uid = 1
+	language = en
+	locale_all = en_US
+}
+[global]
+
+
+config.sourceopt {
+	enabled = 1	
+	enable_utf-8_support = 1	
+	formatHtml = 2	
+	formatHtml {	
+		tabSize =	
+		debugComment = 0	
+	}
+
+}

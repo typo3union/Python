@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-21T14:08:08Z" product-name="product">
+		<header/>
+		<body>
+			<trans-unit id="tx_product_domain_model_product">
+				<source>Product</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.featured_product">
+				<source>Featured Product</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.season">
+				<source>Season</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.featured_image">
+				<source>Featured Image</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.table_content">
+				<source>Table Content</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category.category_name">
+				<source>Category Name</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category.is_sub">
+				<source>Is Sub</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category.sub_category">
+				<source>Sub Category</source>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category.in_menu">
+				<source>In Menu</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,32 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Partial"/>
+
+	<f:section name="Getthumbimage">
+
+		<v:page.menu entryLevel="{v:variable.typoscript(path: 'lib.menu.main.entryLevel')}" expandAll="FALSE" useShortcutUid="FALSE">	
+				
+		<f:if condition="{menu}">
+		<ul class="list-unstyled thumbimage">
+			<f:for each="{menu}" as="menuPage" iteration="iteration">
+			<li class="{menuPage.class}{f:if(condition: iteration.isFirst, then: 'First')}{f:if(condition: iteration.isLast, then: 'Last')}{f:if(condition: iteration.isEven, then: 'Even')}">
+				<f:if condition="{menuPage.thumbimage}">
+				  <f:then>
+				  	<f:image src="fileadmin/images/navigation/thumbimage/{menuPage.thumbimage}" alt="{menuPage.title} thumbimage" width="30c" height="29c" />
+				  </f:then>
+				  <f:else>
+				    
+				  </f:else>
+				</f:if>
+			</li>
+			</f:for>
+		</ul>		
+		</f:if>		
+						
+		</v:page.menu>
+
+
+	</f:section>
+</div>

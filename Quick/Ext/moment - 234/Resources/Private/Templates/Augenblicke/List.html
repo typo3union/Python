@@ -1,0 +1,105 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <section id="Augenblicke">
+    <div class="main-container clearfix">
+    <div class="container clearfix">
+      <h3>Augenblicke</h3>
+      <div id="owl-demo2" class="owl-carousel pink-slider event_list">
+        <div class="item">
+          <ul>
+            <f:for each="{augenblickes}" as="augenblicke" iteration="iteration">
+             <li> <span class="slide-img">
+              <f:image src="uploads/tx_augenblicke/{augenblicke.images.0}"  alt="{augenblicke.title}"/>
+              </span> <span class="year">{augenblicke.title}</span> <span class="read-more"><a class="read-more" href="javascript:void(0);"  id="{iteration.index}" >Mehr Infos</a></span> </li>
+            <f:if condition='<v:math.modulo a="{iteration.cycle}" b="6" />==0'>
+          </ul>
+        </div>
+        <div class="item">
+          <ul>
+            </f:if>
+            </f:for>
+          </ul>
+        </div>
+      </div>
+      
+      <div id="owl-demo3" class="owl-carousel section-4-detail">
+        <f:for each="{augenblickes}" as="augenblicke" iteration="iteration">
+          <div class="item" id="item_event_{iteration.cycle}">
+            <div class="slider-detail-text"> <span class="title">{augenblicke.title}</span>
+              <p>{augenblicke.subtitle}</p>
+              <f:format.html>{augenblicke.description}</f:format.html>
+            </div>
+            <div class="slider-detail-img">
+              <button type="button" class="close detail-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <span>
+              <f:image src="uploads/tx_augenblicke/{augenblicke.images.0}" alt="{augenblicke.title}"/>
+              </span> <a class="image-link detail-click" href="javascript:void(0);" id="image_detail_event_{iteration.index}" >weitere Bilder</a> </div>
+          </div>
+        </f:for>
+      </div>
+      <input type="hidden" name="currentVal" class="detail-currentVal" value="">
+      
+     <div class="augenblickes-gallery">
+        <f:for each="{augenblickes}" as="augenblicke" iteration="iteration">
+          <div id="owl-demo-gallery-{iteration.index}" class="owl-carousel section-4-thumb owl-theme single-gallery-close_{iteration.index} image_detail_event_{iteration.index} hidden">
+            <div class="item" >
+              <button type="button" class="close gallery-close" data-dismiss="modal" aria-label="Close" style="color:#f18700; font-size:20px;"><span aria-hidden="true">×</span></button>
+              <ul class="small-thumb">
+                <f:for each="{augenblicke.images}" as="image" iteration="iteration2">
+               
+                <f:if condition='<v:math.modulo a="{iteration2.cycle}" b="10" />==0'>
+                
+              </ul>
+            </div>
+            <div class="item">
+              <button type="button" class="close gallery-close" id="close_gallery_event_{iteration.index}" data-dismiss="modal" aria-label="Close" style="color:#f18700; font-size:20px;"><span aria-hidden="true">×</span></button>
+             <ul class="small-thumb">
+                </f:if>
+                <li> <a href="javascript:void(0);"  class="single_slider_event_{iteration.index} {iteration2.index}">
+                  <f:image src="uploads/tx_augenblicke/{image}" alt="image" id="image_{iteration.index}_{iteration2.index}"/>
+                  </a> </li>
+                </f:for>
+              </ul>
+            </div>
+          </div>
+        </f:for>
+        <div> </div>
+      </div>
+      
+      <div class="augenblickes-gallery-single">
+        <f:for each="{augenblickes}" as="augenblicke" iteration="iteration">
+           
+          <div id="single-image-slider-{iteration.index}" class="owl-carousel section-4-thumb-single owl-theme single_slider_event_{iteration.index} hidden">
+             <f:for each="{augenblicke.images}" as="image" iteration="iteration2">
+              <div class="item" > 
+                <button type="button" id="t{iteration.index}_{iteration2.index}"  class="single-gallery-close_{iteration.index}" data-dismiss="modal" aria-label="Close" style="color:#f18700; font-size:20px;"><span aria-hidden="true">×</span></button>
+                <ul>
+                  <li>
+                    <f:image src="uploads/tx_augenblicke/{image}" width="800c" height="700c" alt="image"/>
+                  </li>
+                </ul>
+              </div>
+           </f:for>
+          </div>
+                 
+        </f:for>
+        <div> </div>
+      </div>
+      
+      <input type="hidden" name="currentVal" class="gallery-currentVal" value="">
+      
+    </div>
+    </div>
+  </section>
+</f:section>

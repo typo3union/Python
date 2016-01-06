@@ -1,0 +1,79 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="sliderhome" label="Home slider" description="Home Slider Element" icon="" options="{Fluidcontent: {sorting: 100},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="sliders" label="Home Page Slider">
+          <flux:form.object name="slider" label="Add New Slide">
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+            <flux:field.input name="title" label="Title" />
+            <flux:flexform.field.input name="link" label="Link">
+              <flux:flexform.field.wizard.link />
+            </flux:flexform.field.input>
+            <flux:field.checkbox name="external_link" label="External Link" />
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+    
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide slider" data-ride="carousel"> 
+      <!-- Indicators -->
+      <div class="container" style="overflow:hidden" >
+        <ol class="carousel-indicators">
+          <f:if condition="{sliders}">
+            <f:for each="{sliders}" as="slider" iteration="iteration">
+              <li class="<f:if condition='{iteration.index} == 0'>active</f:if>" data-slide-to="{iteration.index}" data-target="#myCarousel"></li>
+            </f:for>
+          </f:if>
+        </ol>
+      </div>
+      <div class="carousel-inner" role="listbox">
+        <f:if condition="{sliders}">
+          <f:for each="{sliders}" as="slider" iteration="iteration">
+            <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+              <f:image src="uploads/slider_images/{slider.slider.picture}" alt="{slider.slider.picture_alt}"  width="1800c"  height="350c" class="img-responsive"/>
+              <div class="carousel-caption">
+                <f:if condition="{slider.slider.external_link}">
+                  <f:then>
+                    <f:link.external uri="{slider.slider.link}" target="_blank">
+                      <p class="slide-text">
+                        <f:format.raw>{slider.slider.title}</f:format.raw>
+                      </p>
+                    </f:link.external>
+                  </f:then>
+                  <f:else>
+                    <f:if condition="{slider.slider.link}">
+                      <f:then>
+                        <f:link.page pageUid="{slider.slider.link}" >
+                          <p class="slide-text">
+                            <f:format.raw>{slider.slider.title}</f:format.raw>
+                          </p>
+                        </f:link.page>
+                      </f:then>
+                      <f:else>
+                        <p class="slide-text">
+                          <f:format.raw>{slider.slider.title}</f:format.raw>
+                        </p>
+                      </f:else>
+                    </f:if>
+                  </f:else>
+                </f:if>
+              </div>
+            </div>
+          </f:for>
+        </f:if>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <i class="mdi mdi-chevron-left"></i> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <i class="mdi mdi-chevron-right"></i> <span class="sr-only">Next</span> </a> </div>
+    <!-- /.carousel --> 
+  </f:section>
+</div>

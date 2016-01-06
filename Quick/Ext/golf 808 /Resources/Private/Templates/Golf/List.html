@@ -1,0 +1,127 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<f:flashMessages renderMode="div" />
+<section class="section" id="intractive_map_bg">
+			<div class="intractive_link">
+				<ul class="small-loch">
+
+				<f:for each="{golves}" as="golve" iteration="iteration">
+				 <f:if condition="{golve.putting_holes}">
+					<li class="small_{iteration.cycle}">
+							{golve.name}
+						<div class="h_link" >
+						<f:link.action
+										pageUid="{settings.flexform.main.golfdetail}"
+										controller="Golf" action="show"
+										arguments="{golf : golve.uid}" noCacheHash="1">
+										<img src="typo3conf/ext/fluxtemplate/Resources/Public/images/interactive_link_h_icon.png"/><span>{golve.title}</span></f:link.action></div>
+						
+					</li>
+					</f:if>
+					</f:for>
+				</ul>
+				<ul>
+				<f:for each="{golves}" as="golve" iteration="iteration1">
+					 <f:if condition="{golve.putting_holes}">
+						<f:then>
+						</f:then>
+						<f:else>
+					<li class="main_{iteration1.cycle}">
+						{golve.name}
+						<div class="h_link" ><f:link.action
+										pageUid="{settings.flexform.main.golfdetail}"
+										controller="Golf" action="show"
+										arguments="{golf : golve.uid}" noCacheHash="1"><img src="typo3conf/ext/fluxtemplate/Resources/Public/images/interactive_link_h_icon.png"/><span>{golve.title}</span></f:link.action></div>
+					</li>
+					</f:else>
+					 </f:if>
+					</f:for>
+
+				</ul>
+			</div>
+			<div class="image-bg">
+				<f:image src="uploads/tx_golf/{bgimgs}"/>
+			</div>
+<hr class="bottom">
+</section>
+
+	 <div class="container"> 
+		<div class="row"> 
+			<div class="col-sm-12"> 
+				<div class="golf_club_full"> 
+					<div class="h2_title"><f:image src="uploads/tx_golf/{titleimg}"/><h2>{title}</h2> </div>
+						<div class="row"> 
+							
+
+							<f:if condition="{content}">
+        			<f:then>
+        				<f:if condition="{content1}">
+        					<f:then>
+        						<div class="col-sm-6"> 
+									<div class="half_section"><f:format.html>{content}</f:format.html></div>
+								</div>
+								<div class="col-sm-6"> 
+									<div class="half_section"><f:format.html>{content1}</f:format.html></div>
+								</div>
+							</f:then>
+							<f:else>
+								<div class="col-sm-12"> 
+									<div class="half_section"><f:format.html>{content}</f:format.html></div>
+								</div>									
+							</f:else>
+        				</f:if>
+        			</f:then>
+        			<f:else>
+        				<f:if condition="{content1}">
+        					<div class="col-sm-12"> 
+							<div class="half_section"><f:format.html>{content1}</f:format.html></div>
+							</div>
+        				</f:if>
+        			</f:else>
+        		</f:if>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ 		
+
+
+<section class="section_golflist">
+			<div class="container responsive_list">
+				<div class="row">
+				<div class="col-sm-12">
+					<f:for each="{golves}" as="golve" >
+					<div class="col-sm-6">
+						<f:link.action
+														pageUid="{settings.flexform.main.golfdetail}"
+														controller="Golf" action="show"
+														arguments="{golf : golve.uid}" noCacheHash="1">
+						<f:for each="{golve.pictures.sliderImages}" as="pic" iteration="iteration2">
+							<f:if condition="{iteration2.index} == 0">
+				        		<span><f:image src="fileadmin/{pic.imagepath}" width="500c" height="230c"></f:image></span>
+				        	</f:if>
+						</f:for>
+						<h3>{golve.title}</h3>
+							</f:link.action>
+						</div>	
+					</f:for>
+				</div>
+			</div>
+</section>
+			
+</f:section>

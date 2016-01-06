@@ -1,0 +1,14 @@
+<f:if condition="{Event.title}!=''">
+        <div class="date">
+            <f:format.date format="%d. %b. %Y">{Event.start_date}</f:format.date>
+        </div>
+        <div class="termine-time">
+            <f:format.date format="H:i">{Event.start_date}</f:format.date>  <f:translate key='tx_jsevent_domain_model_event.clock' /> - <f:format.date format="H:i">{Event.end_date}</f:format.date> <f:translate key='tx_jsevent_domain_model_event.clock' />
+        </div>
+        <div class="termine-dis">{Event.title}</div>
+        <div class="termine-more">
+            <f:link.action action="event" controller="Event" arguments="{event:Event.uid}" class="more">
+                <f:translate key='tx_jsevent_domain_model_event.more' />
+            </f:link.action>
+        </div>
+</f:if>

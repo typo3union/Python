@@ -1,0 +1,41 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		
+		<flux:form id="interiors" label="Interiors Content Box" description="Interiors Content Box Element" icon="" options="{Fluidcontent: {sorting: 103},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+				<flux:field.input name="title" label="Title" />
+				
+				<flux:field.file name="picture" uploadFolder="uploads/tx_fluxtemplate/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+				<flux:field.input name="picture_alt" label="Alternative Text" />
+				
+				<flux:field.text name="content" label="Content" enableRichText="1"/>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<section class="innenr">
+			<div class="col-md-6 col-sm-6 col-sm-6 text-center">
+				<h3>{title}</h3>
+				<f:format.html>{content}</f:format.html>
+			</div>
+			
+			<div class="col-md-6 col-sm-6 text-right col-sm-6">
+				<div class="row">
+					<f:image src="uploads/tx_fluxtemplate/{picture}" alt="{picture_alt}"  width="511"  height="693" class="img-responsive"/>
+				</div>
+			</div>
+		</section>
+	</f:section>
+	
+</div>

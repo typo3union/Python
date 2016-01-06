@@ -1,0 +1,41 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+ 
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="textimage" label="Text Image Content" description="Text with two images content" icon="" options="{Fluidcontent: {sorting: 105},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:field.input name="name" label="Name" />
+        <flux:field.file name="picture" uploadFolder="uploads/content/" label="Image" allowed="jpg, jpeg, png, gif" showThumbnails="1"/>
+        <flux:field.input name="picture_alt" label="Alternative Text For Image" />
+        <flux:field.file name="logo_image" uploadFolder="uploads/content/" label="Logo Image" allowed="jpg, jpeg, png, gif" showThumbnails="1"/>
+        <flux:field.input name="logo_image_alt" label="Alternative Text For Logo Image" />
+        <flux:field.text name="content" label="Content" enableRichText="1" />
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  
+  <f:section name="Main">
+    <div class="homedetail row clearfix">
+      <div class="col-sm-8 col-md-8 cDetail">
+        <f:format.html>{content}</f:format.html>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <div class="cImageSection">
+          <f:if condition="{logo_image}"><span>
+            <f:image src="uploads/content/{picture}" alt="{picture}"  width="208c" height="237c" />
+            </span> </f:if>
+          <f:if condition="{name}"> <span>{name}</span> </f:if>
+          <f:if condition="{logo_image}"><span class="logobtm">
+            <f:image src="uploads/content/{logo_image}" alt="{logo_image_alt}"  width="200c" height="81c" />
+            </span> </f:if>
+        </div>
+      </div>
+    </div>
+  </f:section>
+</div>

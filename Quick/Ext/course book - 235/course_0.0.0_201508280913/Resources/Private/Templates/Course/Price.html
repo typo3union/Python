@@ -1,0 +1,18 @@
+
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+
+<f:for each="{courses}" as="course">
+	
+	<span class="price">{course.price}</span>
+</f:for>
+
+<f:for each="{courses_innerPrice}" as="p_inner">
+	<span class="price">{p_inner.price}</span>
+</f:for>
+			
+			
+</f:section>

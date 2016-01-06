@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-21T14:08:08Z" product-name="product">
+		<header/>
+		<body>
+			<trans-unit id="category_name.description">
+				<source>categoryName</source>
+			</trans-unit>
+			<trans-unit id="is_sub.description">
+				<source>isSub</source>
+			</trans-unit>
+			<trans-unit id="sub_category.description">
+				<source>subCategory</source>
+			</trans-unit>
+			<trans-unit id="in_menu.description">
+				<source>inMenu</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,106 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="kontakt" label="Kontakt" description="Kontakt Element" icon="" options="{Fluidcontent: {sorting: 114},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        
+             
+        
+         <flux:form.section name="select" label="Country List">
+         <flux:form.object name="select" label="Add New Country">           
+              <flux:field.input name="country" label="Country" />           
+          </flux:form.object>
+        </flux:form.section>
+        
+        
+        <flux:form.section name="kontakt" label="Kontakt Element">
+          <flux:field.input name="main_title" label="Main Title" />
+          <flux:form.object name="kontakt" label="Add New Slide">
+            
+            <flux:field.file name="picture" uploadFolder="uploads/tx_fluxtemplate/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            <flux:field.input name="picture_alt" label="Alternative Text" />
+            
+             <flux:field.input name="country" label="Country" />
+            <flux:field.text name="content" label="Text" enableRichText="1" />
+            <flux:field.input name="Link_gtitle" label="Google Map Link Title" />
+            <flux:field.input name="Link_ctitle" label="Contact Form Link Title" />
+            <flux:field.input name="link" label="Page Link">
+              <flux:wizard.link />
+            </flux:field.input>
+            <flux:field.text name="content_right" label="Right Side Text" enableRichText="1" />
+            
+          </flux:form.object>
+        </flux:form.section>
+   
+        
+        
+      </flux:form.sheet>
+   	 </flux:form>
+  </f:section>
+  
+  <f:section name="Main">
+    <div class="kontakt">
+      <f:if condition="{main_title}">
+        <div class="content-head">
+          <div class="row">
+            <div class="col-sm-12">
+              <h1>{main_title}</h1>
+            </div>
+          </div>
+        </div>
+      </f:if>
+      <div class="row">
+      <div class="col-sm-12 country_list">
+      <div class="selectwrap">
+      <select name="country_select" class="country_select">
+        <f:if condition="{select}">
+        	 <f:for each="{select}" as="selects" iteration="iteration">
+             <option value="{selects.select.country}">{selects.select.country}</option>
+             </f:for>
+        </f:if>
+        </select>
+        </div>
+      </div>
+      </div>
+      <f:if condition="{kontakt}">
+        <f:for each="{kontakt}" as="kontakts" iteration="iteration">
+          <div class="kontakt-row clearfix ALLE ALL {kontakts.kontakt.country}" data="{kontakts.kontakt.country}">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 inr-left-cont">
+                <div class="row">
+                  <div class="col-sm-5 kontakt-img ">
+                    <f:image src="uploads/tx_fluxtemplate/{kontakts.kontakt.picture}" alt="{kontakts.kontakt.picture_alt}" width="300c"  height="201c" />
+                  </div>
+                  <div class="col-sm-7 kontakt-text">
+                    <f:format.raw>{kontakts.kontakt.content}</f:format.raw>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 inr-right-cont">
+                <f:if condition="{kontakts.kontakt.link}">
+                  <f:link.page pageUid="{kontakts.kontakt.link}" class="small-title">&nbsp;<i class="fa fa-angle-double-right"></i>{kontakts.kontakt.Link_gtitle} </f:link.page>
+                </f:if>
+                <f:if condition="{kontakts.kontakt.link}">
+                  <f:link.page pageUid="{kontakts.kontakt.link}" class="small-title">&nbsp;<i class="fa fa-angle-double-right"></i>{kontakts.kontakt.Link_ctitle} </f:link.page>
+                </f:if>
+                <f:if condition="{kontakts.kontakt.content_right}">
+                  <div class="kontakt-links">
+                    <f:format.raw>{kontakts.kontakt.content_right}</f:format.raw>
+                  </div>
+                </f:if>
+              </div>
+            </div>
+          </div>
+        </f:for>
+      </f:if>
+    </div>
+  </f:section>
+  
+</div>

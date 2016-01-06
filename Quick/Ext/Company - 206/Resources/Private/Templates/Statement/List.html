@@ -1,0 +1,50 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="testimonialSection">
+    <div class="statement statementLeft">
+      <div class="authorImages"> <span class="aimage">
+        <f:image src="{leftStatements.image.originalResource.originalFile.uid}" width="140c" height="170c" alt="{leftStatements.name}"/>
+        </span> <span class="authername">{leftStatements.name}</span> </div>
+      <f:format.crop maxCharacters="240" >
+        <f:format.html>{leftStatements.description} </f:format.html>
+      </f:format.crop>
+      <f:link.action action="show" controller="Statement" noCacheHash="1" arguments="{ uid: '{leftStatements.uid}'}" pageUid="{settings.statementSingleView}"  class="readmoreN" ><f:translate key="tx_companymanagement_domain_model_statement.more_link" /></f:link.action>
+    </div>
+    <div class="statement statementcenter">
+      <ul class="<f:if condition='{f:count(subject:"{centerStatements}")} > 1'>bxslidersub</f:if>">
+        <f:for each="{centerStatements}" as="centerStatement">
+          <li>
+            <div class="authorImages"> <span class="aimage">
+              <f:image src="{centerStatement.image.originalResource.originalFile.uid}" width="140c" height="170c" alt="{centerStatement.name}"/>
+              </span> <span class="authername">{centerStatement.name}</span> </div>
+            <f:format.crop maxCharacters="240" >
+              <f:format.html>{centerStatement.description} </f:format.html>
+            </f:format.crop>
+            <f:link.action action="show" controller="Statement"  noCacheHash="1"  arguments="{ uid: '{centerStatement.uid}'}" pageUid="{settings.statementSingleView}"  class="readmoreN" ><f:translate key="tx_companymanagement_domain_model_statement.more_link" /></f:link.action>
+          </li>
+        </f:for>
+      </ul>
+    </div>
+    <div class="statement statementRight">
+      <div class="authorImages"> <span class="aimage">
+        <f:image src="{rightStatements.image.originalResource.originalFile.uid}" width="140c" height="170c" alt="{rightStatements.name}"/>
+        </span> <span class="authername">{rightStatements.name}</span> </div>
+      <f:format.crop maxCharacters="240" >
+        <f:format.html>{rightStatements.description} </f:format.html>
+      </f:format.crop>
+      <f:link.action action="show" controller="Statement" noCacheHash="1" arguments="{ uid: '{rightStatements.uid}'}" pageUid="{settings.statementSingleView}"  class="readmoreN" ><f:translate key="tx_companymanagement_domain_model_statement.more_link" /></f:link.action>
+    </div>
+  </div>
+</f:section>

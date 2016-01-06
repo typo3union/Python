@@ -1,0 +1,48 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="gallery" label="Gallery" description="Gallery Element" icon="" options="{Fluidcontent: {sorting: 103},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:form.section name="galleries" label="Gallery">
+                    <flux:form.object name="gallery" label="Add New Slide">
+                        <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                        <flux:field.input name="picture_alt" label="Alternative Text" />
+                        <flux:field.input name="title" label="Title" />
+                        <flux:field.text name="content" label="Content" />
+                        <flux:field.input name="buttontext" label="Button Text" />
+                        <flux:field.input name="link" label="Link">
+                        <flux:wizard.link />
+                       </flux:field.input>
+                    </flux:form.object>
+                </flux:form.section>
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+
+        <div class="gallery clearfix">
+            <f:if condition="{galleries}">
+                <f:for each="{galleries}" as="gallery" iteration="iteration">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 pdg-nn">
+                        <div class="img-galery">
+                        <f:image src="uploads/slider_images/{gallery.gallery.picture}"  alt="{gallery.gallery.picture_alt}" class="img-responsive" width="427c" height="356c"/>
+                        <div class="gallery-hover">
+                            <h3><f:format.crop maxCharacters="27">{gallery.gallery.title}</f:format.crop></h3>
+                            <p><f:format.crop maxCharacters="75">{gallery.gallery.content}</f:format.crop></p>
+                            <f:link.page pageUid="{gallery.gallery.link}" class="btn btn-default">{gallery.gallery.buttontext}</f:link.page>
+                        </div>
+                        </div>
+                    </div>
+                </f:for>
+            </f:if>
+
+        </div>
+
+    </f:section>
+</div>

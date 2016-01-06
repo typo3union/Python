@@ -1,0 +1,60 @@
+
+plugin.tx_newsletter {
+	view {
+		templateRootPath = {$plugin.tx_newsletter.view.templateRootPath}
+		partialRootPath = {$plugin.tx_newsletter.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_newsletter.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_newsletter.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+ 
+
+}
+
+plugin.tx_newsletter._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-newsletter table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-newsletter table th {
+		font-weight:bold;
+	}
+
+	.tx-newsletter table td {
+		vertical-align:top; 
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+
+
+page.footerData.11 = TEXT
+page.footerData.11.value (	 
+      <script type="text/javascript" src="typo3conf/ext/newsletter/Resources/Public/js/validate.js"></script>
+)
+
+

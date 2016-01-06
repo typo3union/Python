@@ -1,0 +1,129 @@
+<T3DataStructure>
+  <meta>
+  <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+    <main>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>Main Settings</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+          <settings.newsletterStorage>
+            <TCEforms>
+              <label>Storage Page</label>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+              </config>
+            </TCEforms>
+          </settings.newsletterStorage>
+          <settings.mainTitle>
+            <TCEforms>
+              <label>Main Title</label>
+              <config>
+                <type>input</type>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </settings.mainTitle>
+         <settings.text>
+            <TCEforms>
+              <label>Text</label>
+              <config>
+                <type>text</type>
+				<cols>20</cols>
+				 <rows>3</rows>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </settings.text>
+           <settings.link>
+            <TCEforms>
+              <label>Title Link</label>
+              <config>
+            <type>input</type>
+            <eval>trim</eval>
+            <size>60</size>
+            <default></default>
+            <wizards type="array">
+              <_PADDING type="integer">2</_PADDING>
+              <link type="array">
+                <type>popup</type>
+                <title>Link</title>
+                <icon>link_popup.gif</icon>
+                <script>browse_links.php?mode=wizard</script>
+                <JSopenParams>height=500,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+              </link>
+            </wizards>                
+          </config>
+              
+            </TCEforms>
+          </settings.link>
+         
+          <!--<settings.thankyouText>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Thank You Message</label>
+              <config>
+                <type>text</type>
+				<cols>20</cols>
+				 <rows>3</rows>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </settings.thankyouText>
+          <settings.alreadyRegisterText>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Already Register Message</label>
+              <config>
+                <type>text</type>
+				<cols>20</cols>
+				 <rows>3</rows>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </settings.alreadyRegisterText>-->
+           <settings.adminemail>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Admin Email</label>
+              <config>
+                <type>input</type>
+		<eval>trim</eval>
+              </config>
+            </TCEforms>
+          </settings.adminemail>
+          <settings.subject>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Subject</label>
+              <config>
+                <type>input</type>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </settings.subject>
+          <settings.Message>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Message</label>
+              <config>
+                <type>text</type>
+              </config>
+          <defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+         </TCEforms>
+          </settings.Message>
+          
+        </el>
+      </ROOT>
+    </main>
+  </sheets>
+</T3DataStructure>

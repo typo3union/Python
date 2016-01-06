@@ -1,0 +1,55 @@
+ 
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="mapdetail" label="map Detail" description="map Detail" icon="" options="{Fluidcontent: {sorting: 108},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:field.input name="lat" label="Latitude" /> 
+                <flux:field.input name="lon" label="Longitude" /> 
+                <flux:field.input name="zoom" label="Zoom Level" />
+                <flux:field.text name="address" label="Address Text" enableRichText="1"  />
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+        <div id="mapdiv" style="width:100%;height: 450px;"></div>
+   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+  <script>
+    map = new OpenLayers.Map("mapdiv");
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    //var results = new OpenLayers.Layer.Text("My Points", { location:"./checkIns_0_view.txt", projection: map.displayProjection});
+    //map.addLayer(results);
+    var lat = "{lat}";
+    var lon = "{lon}";
+    var query = new OpenLayers.LonLat(lon, lat).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+    var markers = new OpenLayers.Layer.Markers("Markers");
+    map.addLayer(markers);
+    var size = new OpenLayers.Size(21,25);
+    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+    var icon = new OpenLayers.Icon('typo3conf/ext/fluxtemplate/Resources/Public/img/marker.png', size, offset);
+    marker = new OpenLayers.Marker(query, icon);
+    markers.addMarker(marker);
+
+    var zoom= "{zoom}";
+    var text = "{address}";
+    var decoded = $("<div/>").html(text).text();
+    map.setCenter (query, zoom);
+    var popup = new OpenLayers.Popup.FramedCloud("Popup", query, null, decoded, null, true);
+map.addPopup(popup, false);
+$('#Popup_contentDiv').css('width','300px').css('height','70px');
+$('#Popup_close').css('right','0px').css('top','35px');
+$('.olControlAttribution').css('display','none');
+
+  </script>
+        
+    </f:section>
+</div>
+

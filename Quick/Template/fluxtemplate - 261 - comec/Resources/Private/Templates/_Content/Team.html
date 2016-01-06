@@ -1,0 +1,79 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		
+		<flux:form id="teammember" label="Team Member" description="Team Member Element" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+				<flux:form.section name="teamsec" label="Team Member">
+					<flux:form.object name="teamobt" label="Add New Member">
+					
+						<flux:field.input name="membername" label="Name" />
+						<flux:field.input name="designation" label="Designation" />
+						<flux:field.file name="picture" uploadFolder="uploads/tx_fluxtemplate/team/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+						<flux:field.input name="picture_alt" label="Alternative Text" />
+						
+						<flux:field.input name="email" label="Email">
+							<flux:wizard.link />
+						</flux:field.input>
+						<flux:field.input name="emailtitle" label="Email Title" />
+						<flux:field.text name="description" label="Description" enableRichText="1"/>
+						
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		<f:for each="{teamsec}" as="teamsecvalue" iteration="iteration">
+			<div class="col-md-3 text-center">
+			  <div class="teambox">
+				<div class="rel" data-toggle="modal" data-target=".bs-example-modal-lg_{iteration.index}" >
+					<f:image src="uploads/tx_fluxtemplate/team/{teamsecvalue.teamobt.picture}" alt="{teamsecvalue.teamobt.picture_alt}" width="190" height="190"/>
+				  	<div class="mask"><span>+</span></div>
+				</div>
+				<h3>{teamsecvalue.teamobt.membername}</h3>
+				<h4>{teamsecvalue.teamobt.designation}</h4>
+				<f:format.html><f:format.crop maxCharacters="150" append="&nbsp;...">{teamsecvalue.teamobt.description}</f:format.crop></f:format.html>
+			  </div>
+			  <div class="modal fade bs-example-modal-lg_{iteration.index}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					</div>
+					<div class="modal-body">
+					  <div class="row teamtxt">
+						<div class="col-md-3 col-sm-6">
+						 	<div>
+						  		<f:image src="uploads/tx_fluxtemplate/team/{teamsecvalue.teamobt.picture}" alt="{teamsecvalue.teamobt.picture_alt}" width="190" height="190" class="img-responsive"/>
+							</div>
+						  <div class="tmail text-center">
+						  	<f:link.email email="{teamsecvalue.teamobt.email}" >{teamsecvalue.teamobt.emailtitle}</f:link.email>
+							</div>
+						</div>
+						<div class="col-md-9 col-sm-6">
+						  <h4>{teamsecvalue.teamobt.membername}</h4>
+						  <h5>{teamsecvalue.teamobt.designation}</h5>
+						  <hr/>
+						  <f:format.html>{teamsecvalue.teamobt.description}</f:format.html>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</f:for>
+	</f:section>
+	
+</div>

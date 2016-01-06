@@ -1,0 +1,94 @@
+
+<div class="title">
+    <h1>
+        <f:translate key="tx_voucher_domain_model_voucher_list.product_selection" />
+    </h1>
+</div>
+<div class="p_price hidden">
+    <h2>
+        <f:translate key="tx_voucher_domain_model_voucher_list.price_selection" />
+    </h2>
+</div>
+<div class="voucherListSection">
+    <div class="panel-group" id="accordion">
+
+        <f:for each="{vouchers}" as="voucher" iteration="iteration">
+            <div class="panel panel-default" id="v_{voucher.uid}">
+                <div class="panel-heading">
+                    <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse_{iteration.index}" class="accordion-toggle" > <a  >{voucher.title}</a><i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i> </h4>
+                </div>
+                <div id="collapse_{iteration.index}" class="panel-collapse collapse" >
+                    <div class="panel-body">
+                        <div class="voucherLeft">
+                            <f:if condition="{sessionUser.user.id}!='' ">
+                                <div class="voucherRadio">
+                                    <f:if condition="{voucher.price}">
+                                        <f:then>
+                                            <f:form.radio property="voucherTemplate" class="voucherRadio" id="v_{voucher.uid}" value="{voucher.uid}"  />
+                                        </f:then>
+                                        <f:else>
+                                            <f:form.radio property="voucherTemplate" class="voucherRadio" value="{voucher.uid}" id="v_{voucher.uid}"   />
+                                        </f:else>
+                                    </f:if>
+                                    
+                                <f:form.select property="voucherQuantity.{voucher.uid}" class="validate[groupRequired[payments],custom[integer]] voucherQuantity" options="{0:'0',1:'1',2:'2',3:'3',4:'4',5:'5'}"></f:form.select>
+                                </div>
+                            </f:if>
+                             <div class="v_price">
+                                <label>
+                                  <f:translate key="tx_voucher_domain_model_voucher.price" />
+                                </label>
+                                <f:if condition="{voucher.price}">
+
+                                    <f:then><label>&euro;</label><span class="price_tax">{voucher.price}</span>
+                                    <f:form.textfield property="voucherPrice.{voucher.uid}" class="hidden voucherPrice"  value="{voucher.price}" />
+                                  </f:then>
+                                  <f:else>
+                                      <f:if condition="{sessionUser.user.id}=='' ">
+                                                    <f:then>
+                                                         <f:form.textfield property="voucherPrice.{voucher.uid}" class="validate[custom[integer]] voucherPrice"  value="" additionalAttributes="{readonly:''}"  />
+                                                    </f:then>
+                                                    <f:else> <f:form.textfield property="voucherPrice.{voucher.uid}" class="validate[custom[integer]] voucherPrice"  value="" additionalAttributes="{onkeypress: 'return event.charCode >= 48 && event.charCode <= 57'}"  /></f:else>
+                                                
+                                </f:if>
+                                    
+                                  </f:else>
+                                </f:if>
+                              </div>
+                            <f:if condition="{voucher.tax}">
+                                <div class="v_tax">
+                                    <label>
+                                        <f:translate key="tx_voucher_domain_model_voucher.tax" />
+                                    </label>
+                                    <span class="taxx"> {voucher.tax}</span></div>
+                            </f:if>
+                            <f:if condition="{voucher.validTillDate}">
+                                <div class="v_till_date">
+                                    <label>
+                                        <f:translate key="tx_voucher_domain_model_voucher.valid_till_date" />
+                                    </label>
+                                    <f:format.date format="d.m.Y">{voucher.validTillDate}</f:format.date>
+                                </div>
+                            </f:if><br/>
+                            <div class="v_short_description">
+                                <label>
+                                    <f:translate key="tx_voucher_domain_model_voucher.short_description" />
+                                </label>
+                                {voucher.shortDescription}
+                                <br/><br/>
+                                <f:format.html>{voucher.longDescption}</f:format.html>
+                            </div>
+                        </div>
+                        <div class="voucherRight">
+                            <f:if condition="{voucher.image}">
+                                <div class="v_image">
+                                    <f:image src="uploads/tx_voucher/{voucher.image}"  alt="{voucher.title}" width="150" height="200" />
+                                </div>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</div>

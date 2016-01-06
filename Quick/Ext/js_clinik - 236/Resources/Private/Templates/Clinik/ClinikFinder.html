@@ -1,0 +1,56 @@
+<f:layout name='Default'/>
+<f:section name='main'>
+	<f:if condition="{template}==1">
+		<f:then>
+	        <p><f:translate key='tx_jsclinik_domain_model_clinik.message' /></p>
+            <div class="clink-form-section">
+	            <f:form action="clinikFinder" id="facilities">
+	                <f:for each="{facilities}" as="list" iteration="itemIteration">
+						<div class="col-md-6 col-sm-6">
+							<div class="clink-treatment">
+        	                    <h3>{list.title}</h3>
+        	                    <ul>
+									<f:render partial="Template/Facilities" arguments="{Facilities:list.facilities}" />
+        	                    </ul>
+							</div>
+						</div>     
+        	        </f:for>
+					<div class="submit-clinik col-xs-12 clearfix">
+						<span class="submit-cl">
+							<f:form.submit name="clinikFind" additionalAttributes="{class:'submit-clink'}" value="<f:translate key='tx_jsclinik_domain_model_clinik.submit' />" title="<f:translate key='tx_jsclinik_domain_model_clinik.submit' />"  />
+						</span>
+					</div>
+                </f:form>
+            </div>
+		</f:then>
+		<f:else>
+			<f:if condition="{template}=='clinik-location'">
+				<f:then>
+					<p><f:translate key='tx_jsclinik_domain_model_clinik.message' /></p>
+					<div class="row clink-location-section clearfix">
+						<f:render partial="Template/Clinik" arguments="{Facilities:facilities}" />
+                        <div class="col-lg-12 clearfix">
+                            <span class="new-clinik-search">
+                                <f:link.page>
+                                    <f:translate key='tx_jsclinik_domain_model_clinik.new_search' />
+                                </f:link.page>
+                            </span>
+                        </div>
+					</div>
+				</f:then>
+				<f:else>
+					<f:render partial="Error/Template" arguments="{error:template}" />
+	                <f:if condition="{template}=='clinik.no-record'">
+                        <div class="col-lg-12 clearfix">
+                            <span class="new-clinik-search">
+                                <f:link.page>
+                                    <f:translate key='tx_jsclinik_domain_model_clinik.new_search' />
+                                </f:link.page>
+                            </span>
+                        </div>
+                    </f:if>
+                </f:else>
+            </f:if>
+		</f:else>
+	</f:if>
+</f:section>

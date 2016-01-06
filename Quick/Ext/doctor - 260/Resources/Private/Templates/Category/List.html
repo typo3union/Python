@@ -1,0 +1,65 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <div class="row">
+      <div class="col-lg-12 teaser_wrap">
+	 <f:if condition="{catheader}">
+	 <f:then>
+        <h2>{catheader}</h2>
+		</f:then>
+		<f:else>
+			 <h2>Unsere Fachbereiche In Der &Uuml;bersicht</h2>
+		 </f:else>
+		 </f:if>
+        <hr class="red_line">
+		<f:format.html>{catrte}</f:format.html>
+		
+        <div class="row">
+          
+        <f:for each="{catlist}" as="catdata">
+					
+					<div class="col-md-4 min-hit-inner">
+					<f:if condition="{catdata.images.imagepath}">
+          	<div class="inner_dtr">
+			<f:link.action action="list" controller="DoctoreList" arguments="{catid : catdata.uid}"  >
+                <div class="shadow-wrap rel">
+            		<img src="fileadmin{catdata.images.imagepath}"  title="{catdata.images.title}" alt="{catdata.images.title}" class="section img thinborder" />
+                    <div class="inner_text_img">
+                    	<h1>{catdata.name}</h1>
+                    </div>
+                    <div class="shadow"></div>
+                </div>
+			</f:link.action>
+            </div>
+			</f:if>
+            <div class="inner_dtr_pare">
+            	<h4 class="inner_dtr_pare_head"><f:link.action action="list" controller="DoctoreList" arguments="{catid : catdata.uid}"  >{catdata.name}</f:link.action></h4>
+                <h5 class="inner_dtr_pare_head"><f:link.action action="list" controller="DoctoreList" arguments="{catid : catdata.uid}"  >{catdata.subheader}</f:link.action></h5>
+                <p>{catdata.description}</p>
+				<f:link.action action="list" controller="DoctoreList" arguments="{catid : catdata.uid}"   class="inner_dtr_pare_a">&Auml;rzte f&uuml;r {catdata.name}</f:link.action>
+				<f:if condition="{catdata.link}">
+					<a href='<f:uri.page pageUid="{catdata.link}" />' class="inner_dtr_pare_a" >Leistungsverzeichnis</a>
+				</f:if>
+            </div> 
+          </div>
+		</f:for>
+       
+        
+         
+        </div>
+      </div>
+    </div>
+</f:section>

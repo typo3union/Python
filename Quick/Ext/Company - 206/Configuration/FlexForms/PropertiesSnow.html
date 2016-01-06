@@ -1,0 +1,22 @@
+{namespace cs=CS\AldianaWeatherWeb\ViewHelpers}
+    <div class="weather-container">
+        <div class="row weather-row  weather-snow">
+            <div class="col-xs-3">
+                <span class="weather-icon-28-schneehoehe">Schneeh&ouml;he</span> {snowData.0.heightMountain}cm<br>
+                Schneeh&ouml;he Berg
+            </div>
+            <div class="col-xs-3">
+                <span class="weather-icon-28-schneehoehe">Schneeh&ouml;he</span> {snowData.0.heightValley}cm<br>
+                Schneeh&ouml;he Tal
+            </div>
+            <div class="col-xs-3">
+                <span class="weather-icon-28-neuschneehoehe">Neuschneeh&ouml;he</span> {snowData.0.newMountain}cm<br>
+                Neuschnee&shy;h&ouml;he
+            </div>
+            <div class="col-xs-3">
+                <span class="weather-icon-28-schneefallgrenze">Schneefallgrenze</span> {snowData.0.snowLine}m<br>
+                Schneefall&shy;grenze
+            </div>
+        </div>
+    </div>
+

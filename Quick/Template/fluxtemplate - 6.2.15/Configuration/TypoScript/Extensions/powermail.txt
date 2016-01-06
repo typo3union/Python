@@ -1,0 +1,43 @@
+# Powermail custom Typoscript
+plugin.tx_powermail {
+# Powermail Custom Template Path
+
+view {
+# Path to template root (FE)
+templateRootPaths {
+0 = EXT:fluxtemplate/Resources/Private/Templates/Extensions/Powermail/Private/Templates/
+1 = EXT:fluxtemplate/Resources/Private/Templates/Extensions/Powermail/Private/Templates/
+}
+
+# Path to template partials (FE)
+partialRootPaths {
+0 = EXT:fluxtemplate/Resources/Private/Templates/Extensions/Powermail/Private/Partials/
+1 = EXT:fluxtemplate/Resources/Private/Templates/Extensions/Powermail/Private/Partials/
+}
+
+# Path to template layouts (FE)
+layoutRootPaths {
+0 = EXT:fluxtemplate/Resources/Private/Templates/Extensions/Powermail/Private/Layouts/
+1 = EXT:fluxtemplate/Resources/Private/Templates/Extensions/Powermail/Private/Layouts/
+}
+}
+# News Extension custom CSS
+	settings {
+		
+                        skipControllerAndAction = 1
+                }
+	}
+}
+
+page.includeCSS.powermailCssDemo = {$filepaths.extensionsCss}Powermail/Public/Css/CssDemo.css
+
+
+plugin.tx_wtcalculatingcaptcha {
+        # constants
+        number1.minmax =  1,5
+        number2.minmax =  1,5
+        number.notNegative =  1
+}
+
+config.tx_powermail.features.skipDefaultArguments = 1
+plugin.tx_powermail.features.skipDefaultArguments = 1

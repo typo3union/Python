@@ -1,0 +1,90 @@
+# define default Language Label and Flag
+#mod.SHARED {
+#        defaultLanguageFlag = gb
+#        defaultLanguageLabel = English
+#}
+
+mod.SHARED {
+	defaultLanguageLabel = German
+	defaultLanguageFlag = de.gif
+}
+
+RTE.default.init {
+	# define a stylesheet
+	content_css = {$filepaths.css}Screen.css
+}
+
+## Frame ###########################################################################################
+TCEFORM.tt_content.section_frame {
+	removeItems = 1,5,6,10,11,12,20,21
+	addItems.50 = Box
+}
+
+
+
+TCEFORM.tt_content.section_frame{
+	addItems.101 = contact container
+	addItems.102 = address kontakt
+	addItems.103 = Gallery View
+}
+
+# set in setupTS
+# tt_content.stdWrap.innerWrap.cObject {
+#   50 = TEXT
+#   50 {
+#     value = <div class="box">|</div>
+#   }
+# }
+
+## Headings ########################################################################################
+# Rename Headings
+#TCEFORM.tt_content.header_layout.altLabels.0 = Überschrift (pro Seite eine)
+#TCEFORM.tt_content.header_layout.altLabels.2 = Zwischenüberschrift
+#TCEFORM.tt_content.header_layout.altLabels.3 = Unterüberschrift
+
+# Remove unneded Headings
+#TCEFORM.tt_content.header_layout.removeItems = 1,4,5,6
+
+TCEFORM.tt_content.header_layout {
+	altLabels {
+		1 = 1st Heading
+		2 = 2nd Heading
+		3 = 3rd Heading
+		4 = 4th Heading
+		5 = 5th Heading
+	}
+
+	addItems {
+		7 = 1st Heading Middle
+		8 = 1st Heading Left
+		9 = page-heading
+		10 = Header 3 text-center
+	}
+}
+
+
+
+
+# set default Heading to <h2>
+mod.wizards.newContentElement.wizardItems.common.elements.text.tt_content_defValues.header_layout = 3
+mod.wizards.newContentElement.wizardItems.common.elements.textpic.tt_content_defValues.header_layout = 3
+mod.wizards.newContentElement.wizardItems.common.elements.image.tt_content_defValues.header_layout = 3
+
+## new Content Element wizard ######################################################################
+# use tabs
+mod.wizards.newContentElement.renderMode = tabs
+
+# only show text & textpic
+mod.wizards.newContentElement.wizardItems.common.show = text,textpic,image,header
+
+# Pages will NOT have "(copy)" appended:
+TCEMAIN.table.pages.disablePrependAtCopy = 1
+# Content will NOT have "(copy)" appended:
+TCEMAIN.table.tt_content.disablePrependAtCopy = 1
+
+RTE.default {
+	loadConfig = EXT:tinymce_rte/static/standard.ts
+}
+
+# use zoom enlarge as default for new content elements
+# TCAdefaults.tt_content.image_zoom = 1

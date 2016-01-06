@@ -1,0 +1,11 @@
+{namespace n=Tx_News_ViewHelpers}
+
+<f:if condition="{settings.cssFile}">
+	<n:includeFile path="{settings.cssFile}" />
+</f:if>
+
+<div class="news news-single">
+	<div class="col-md-12 col-sm-12 col-xs-12 article">
+		<f:render section="content" />
+	</div>
+</div>

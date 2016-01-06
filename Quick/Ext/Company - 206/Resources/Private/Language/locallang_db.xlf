@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-01-31T14:11:41Z" product-name="company_management">
+		<header/>
+		<body>
+			<trans-unit id="tx_companymanagement_domain_model_company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.detail_link">
+				<source>No Detail Link</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.display_mode">
+				<source>Display Mode</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.access_date">
+				<source>Access Date</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.latest_date">
+				<source>Latest Date (For Display in Latest News)</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_companymanagement_domain_model_company.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.logo">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.main_image">
+				<source>Main Image</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.slider_images">
+				<source>Slider Images</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.contact">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.place">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.telephone">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.website">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.founded">
+				<source>Founded</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.employee">
+				<source>Employee</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.share">
+				<source>Share</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.expert_notice">
+				<source>Export Market</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.branch">
+				<source>Branch</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.gallery">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.video">
+				<source>Video</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.youtube_video">
+				<source>Youtube Video Id</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_companymanagement_domain_model_company.award_date">
+				<source>Award Date</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.award_type">
+				<source>Award Type</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.state_id">
+				<source>State Id</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.company_content_id">
+				<source>Company Content Id</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.company_profile">
+				<source>Company Profile</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.products_and_services">
+				<source>Products And Services</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.chronicle">
+				<source>Chronicle</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.award">
+				<source>Award</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.title1">
+				<source>Überschrift1</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.title2">
+				<source>Überschrift2</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.title3">
+				<source>Überschrift3</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.title4">
+				<source>Überschrift4</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.content1">
+				<source>Content1</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.content2">
+				<source>Content2</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.content3">
+				<source>Content3</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_company.content4">
+				<source>Content4</source>
+			</trans-unit>
+			
+			
+			<trans-unit id="tx_companymanagement_domain_model_companycontent">
+				<source>Company Content</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_companycontent.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_companycontent.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_state">
+				<source>State</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_state.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_state.main_logo">
+				<source>Main Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_state.small_logo">
+				<source>Small Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_state.secondary_logo">
+				<source>Secondary Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_state.historical_logo">
+				<source>Another Small Logo For Historical View</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_state.detail_link">
+				<source>Detail Page Link</source>
+			</trans-unit>
+			
+			
+			<trans-unit id="tx_companymanagement_domain_model_statement">
+				<source>Statement</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_statement.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_statement.designation">
+				<source>Designation</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_companymanagement_domain_model_statement.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_statement.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_statement.statement_type">
+				<source>Statement Type</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_statement.statement_position">
+				<source>Statement Position</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_statement.company_id">
+				<source>Company Id</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_statement.state_id">
+				<source>State Id</source>
+			</trans-unit>			
+			<trans-unit id="tx_companymanagement_domain_model_statement.state_prependtext">
+				<source>State Name</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_companymanagement_domain_model_team">
+				<source>Team</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_team.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_team.designation">
+				<source>Designation</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_team.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_team.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_team.telephone">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_team.mobile">
+				<source>Mobile</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_team.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_companymanagement_domain_model_team.email">
+				<source>Email</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

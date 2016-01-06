@@ -1,0 +1,51 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="Team" label="Team" description="Team Element" icon="" options="{Fluidcontent: {sorting: 110},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="Team" label="Gallery">
+          <flux:form.object name="Team" label="Add New Slide">
+            <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+            <flux:field.input name="title" label="Name" />
+            <flux:field.text name="content" label="Hover Text" enableRichText="1" />
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main">
+    <div class="team-content clearfix">
+      <f:if condition="{Team}">
+        <f:for each="{Team}" as="team" iteration="iteration">
+          <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+            <div class="teambox">
+              <div class="rel" data-toggle="modal" data-target="#myModal-{iteration.index}" >
+                <f:if condition="{team.Team.picture}">
+                  <f:then> <img class="img-circle" alt="Team Member" src="uploads/slider_images/{team.Team.picture}" width="190" height="190" /> </f:then>
+                  <f:else> <img class="img-circle" alt="Team Member" src="typo3conf/ext/fluxtemplate/Resources/Public/img/dummy-team.png" width="190" height="190" /> </f:else>
+                </f:if>
+                <i class="fa fa-search"></i> </div>
+              <h3>{team.Team.title}</h3>
+            </div>
+            <div class="modal fade" id="myModal-{iteration.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content team">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  </div>
+                  <f:format.raw>{team.Team.content}</f:format.raw>
+                </div>
+              </div>
+            </div>
+          </div>
+        </f:for>
+      </f:if>
+    </div>
+  </f:section>
+</div>

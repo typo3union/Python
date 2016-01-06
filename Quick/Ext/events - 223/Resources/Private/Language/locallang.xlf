@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-05-11T09:07:32Z" product-name="events">
+		<header/>
+		<body>
+			<trans-unit id="tx_events_domain_model_event">
+				<source>Event</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_event.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_event.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_event.time">
+				<source>Time</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_event.private">
+				<source>Private</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_event.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_event.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_category.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_location.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_location.icon">
+				<source>Icon</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_location.hovericon">
+				<source>Hovericon</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_location.tableicon">
+				<source>Tableicon</source>
+			</trans-unit>
+			<trans-unit id="tx_events_domain_model_location.user">
+				<source>User</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row clearfix">
+         <div class="back-link">
+            <f:form action="greetingsWishes" id="" additionalParams="{greeting.uriParams}">
+                <f:form.submit name="backeStep2Submit" additionalAttributes="{class:'btn btn-default'}" value="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.back.step2' />" title="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.back.step2' />"  />
+            </f:form>
+        </div>
+        <div class="third-form-step clearfix">
+            <div class="final-item">
+               <f:image src="{greeting.cards.image.uid}" treatIdAsReference="1" width="447c" height="320c" alt="{greeting.cards.title}" />
+            </div>
+            <div class="final-item-text">
+            	<div class="preview">
+                    <div class="name">{greeting.data.header}</div>
+                    <f:format.html>{greeting.data.description}</f:format.html>
+                    <div class="form-bottom-section">
+                        <div class="author-name">
+                        <table>
+                        <tr><td>
+                        <f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.mailContent.von' />:</td> <td>{greeting.data.name}</td></tr>
+                          <tr><td><f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.step3.regard' />:</td> <td> {greeting.data.patient_name}</td></tr>
+                            </table>
+                        </div>
+                        <div class="form-logo">
+                            <f:image src="{settings.logo}" width="103" height="34" alt="{greeting.cards.title}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-btn-form">
+                <f:form action="greetingsWishes" id="" additionalParams="{greeting.uriParams}">
+                    <f:form.submit name="step3Submit" additionalAttributes="{class:'submit-text'}" value="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.step3.submit' />" title="<f:translate key='tx_jsgreetingcards_domain_model_greetingswishes.lbl.step3.submit' />"  />
+                </f:form>
+            </div>
+             
+        </div>
+    </div>
+</div>
+<script>
+jQuery(window).scrollTop(jQuery('.tx-js-greetingcards').offset().top);
+</script>

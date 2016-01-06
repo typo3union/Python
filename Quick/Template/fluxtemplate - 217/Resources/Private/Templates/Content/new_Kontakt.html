@@ -1,0 +1,159 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="new_kontakt" label="New Kontakt" description="New Kontakt Element" icon="" options="{Fluidcontent: {sorting: 118},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:form.section name="kontakt" label="Kontakt Element">
+                    <flux:form.object name="kontakt" label="Add New Slide">
+                        <flux:field.file name="picture" uploadFolder="uploads/tx_fluxtemplate/" label="Upload Image" allowed="jpg, jpeg, png, gif"  showThumbnails="1" />
+                        <flux:field.input name="picture_alt" label="Alternative Text" />
+                        <flux:field.input name="title" label="Title" />
+                          <flux:field.text name="content" label="Text" enableRichText="1" />
+                        <flux:field.input name="Link_gtitle" label="Google Map Link Title" />
+                         <flux:field.input name="Link_ctitle" label="Contact Form Link Title" />
+                      
+                        <flux:field.input name="link" label="Page Link">
+                            <flux:wizard.link />
+                        </flux:field.input>
+                        <flux:field.text name="content_right" label="Right Side Text" enableRichText="1" />
+                    </flux:form.object>
+                </flux:form.section>
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+       	
+		
+        
+        <div id="demo" class="box jplist" >
+	       	<div class="jplist-panel box panel-top">						
+								
+			<select 
+			   class="jplist-select" 
+			   data-control-type="filter-select" 
+			   data-control-name="category-filter" 
+			   data-control-action="filter">
+			   
+				  <option data-path="default">Filter by category</option>
+				  <option data-path=".architecture">Architecture</option>
+				  <option data-path=".christmas">Christmas</option>
+				  <option data-path=".food">Food</option>
+				  <option data-path=".nature">Nature</option>
+				  <option data-path=".other">Other</option>								
+			</select>						
+			
+		</div>		
+        <div class="list box text-shadow">			
+        	
+            <div class="list-item box">		
+			
+				<!-- img -->
+				<div class="img">
+					<img src="img/thumbs/calendar-1.jpg" alt="" title=""/>
+				</div>
+				
+				<!-- data -->
+				<div class="block">
+					<p class="date">05/08/2003</p>
+					<p class="title">Calendar</p>
+					<p class="desc">A calendar is a system of organizing days for social, religious, commercial, or administrative purposes. This is done by giving names to periods of time, typically days, weeks, months, and years. The name given to each day is known as a date. Periods in a calendar (such as years and months) are usually, though not necessarily, synchronized with the cycle of the sun or the moon.</p>
+					<p class="theme">
+						<span class="other">Other</span>
+						<span class="group1">Group 1</span>
+					</p>
+					<p class="like">18 Likes</p>
+				</div>
+			</div>
+            <div class="list-item box">		
+			
+				<!-- img -->
+				<div class="img">
+					<img src="img/thumbs/calendar-1.jpg" alt="" title=""/>
+				</div>
+				
+				<!-- data -->
+				<div class="block">
+					<p class="date">05/08/2003</p>
+					<p class="title">Calendar</p>
+					<p class="desc">A calendar is a system of organizing days for social, religious, commercial, or administrative purposes. This is done by giving names to periods of time, typically days, weeks, months, and years. The name given to each day is known as a date. Periods in a calendar (such as years and months) are usually, though not necessarily, synchronized with the cycle of the sun or the moon.</p>
+					<p class="theme">
+						<span class="other">Other</span>
+						<span class="group1">Group 1</span>
+					</p>
+					<p class="like">18 Likes</p>
+				</div>
+			</div>
+            	<div class="list-item box">					
+				<!-- img -->
+				<div class="img">
+					<img src="img/thumbs/autumn-1.jpg" alt="" title=""/>
+				</div>
+				
+				<!-- data -->
+				<div class="block">
+					<p class="date">01/16/2011</p>
+					<p class="title">Autumn</p>
+					<p class="desc">Autumn or Fall is one of the four temperate seasons. Autumn marks the transition from summer into winter, in September (Northern Hemisphere) or March (Southern Hemisphere) when the arrival of night becomes noticeably earlier. The equinoxes might be expected to be in the middle of their respective seasons, but temperature lag (caused by the thermal latency of the ground and sea) means that seasons appear later than dates calculated from a purely astronomical perspective.</p>
+					
+					<p class="theme">
+						<span class="nature">Nature</span>
+						<span class="group3">Group 3</span>
+					</p>
+					
+					<p class="like">12 Likes</p>
+				</div>
+			</div>
+            
+            <div class="list-item box">					
+				<!-- img -->
+				<div class="img">
+					<img src="img/thumbs/boats-1.jpg" alt="" title=""/>
+				</div>
+				
+				<!-- data -->
+				<div class="block">
+					<p class="date">02/24/2000</p>
+					<p class="title">Boats</p>
+					<p class="desc">A boat is a watercraft of any size designed to float or plane, to provide passage across water. Usually this water will be inland (lakes) or in protected coastal areas. However, boats such as the whaleboat were designed to be operated from a ship in an offshore environment. In naval terms, a boat is a vessel small enough to be carried aboard another vessel (a ship).</p>
+					
+					<p class="theme">
+						<span class="other">Other</span>
+						<span class="group1">Group 1</span>
+					</p>
+					
+					<p class="like">11 Likes</p>
+				</div>
+			</div>
+            <div class="list-item box">					
+				<!-- img -->
+				<div class="img">
+					<img src="img/thumbs/arch-1.jpg" alt="" title=""/>
+				</div>
+				
+				<!-- data -->
+				<div class="block">
+					<p class="date">03/15/2012</p>
+					<p class="title">Arch</p>
+					<p class="desc">An arch is a structure that spans a space and supports a load. Arches appeared as early as the 2nd millennium BC in Mesopotamian brick architecture and their systematic use started with the Ancient Romans who were the first to apply the technique to a wide range of structures.</p>
+					
+					<p class="theme">
+						<span class="architecture">Architecture</span>
+						<span class="group2">Group 2</span>
+					</p>								
+					
+					<p class="like">5 Likes</p>
+				</div>
+			</div>
+        </div>
+		</div>
+		
+
+    </f:section>
+</div>
+

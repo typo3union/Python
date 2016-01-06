@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <f:if condition="{settings.headerInsearchBox}!=''">
+        <h1>{settings.headerInsearchBox}</h1>
+      </f:if>
+      <div class="career-section row clearfix">
+        <f:form action="job" id="searchJob" additionalParams="{search.uriParams}">
+          <div class="col-md-6 col-sm-6 clearfix">
+            <div class="career-dropdown">
+              <f:form.select id="klinik_select" property="klinik" name="klinik"  options="{clinikData}" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 clearfix">
+            <div class="career-search">
+              <f:form.textfield property="search" name="search" value="{search.text}" additionalAttributes="{class:'seacrh-bx', placeholder:'<f:translate key=\'tx_jscareer_domain_model_job.career.search.placeholder\' />'}" />
+              <f:form.submit name="searchSubmit" additionalAttributes="{class:'submit-icon'}" value="" title="<f:translate key='tx_jscareer_domain_model_job.career.search.icon' />"  />
+            </div>
+          </div>
+        </f:form>
+        <div class="hidden activeClinik">{activeClinik}</div>
+      </div>
+    </div>
+  </div>
+</div>

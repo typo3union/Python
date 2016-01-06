@@ -1,0 +1,345 @@
+###
+# TEMPLATE: root_blocks
+# DESCRIPTION: The PAGE BLOCKS ROOT template. Lib (Blocks) templates contain TypoScript to generate the building blocks for your website, except menu's. In this template record are only other template records included.
+###
+
+
+# EXT: lib.right_content
+# DESC: TypoScript template which compiles the contents for the right column on the pages
+
+# Setup each colPos blocks.
+lib.content0 < styles.content.get
+lib.content0.select.where = colPos = 0
+lib.content1 < styles.content.get
+lib.content1.select.where = colPos = 1
+lib.content2 < styles.content.get
+lib.content2.select.where = colPos = 2
+lib.content3 < styles.content.get
+lib.content3.select.where = colPos = 3
+lib.content4 < styles.content.get
+lib.content4.select.where = colPos = 4
+lib.content5 < styles.content.get
+lib.content5.select.where = colPos = 5
+
+
+# Get constant like LOGO, Copyright Text etc.,
+lib.getConstant = TEXT
+lib.getConstant.value = {$config.setConstant}
+
+# Base URL
+lib.baseURL = TEXT
+lib.baseURL.value = {$config.domain}
+
+# Main Logo
+lib.mainLogo = TEXT
+lib.mainLogo.value = {$config.mainLogo}
+
+# Language Menu
+#lib.languageMenu = TEXT
+#lib.languageMenu.value = <ul class="language"><li><a href="#"><img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/oesterreich_g.gif" alt="oesterreich_g" /></a></li><li>$<a href="#"><img class="img-circle" src="typo3conf/ext/fluxtemplate/Resources/Public/images/Flag_of_the_United_Kingdom.png" alt="Flag_of_the_United_Kingdom" /></a></li></ul>
+
+# Main Search  
+lib.searchBox = CONTENT
+lib.searchBox.table =  tt_content
+lib.searchBox.select.pidInList = 12
+lib.searchBox.select.uidInList = 98
+
+# Social Media
+lib.SocialMedia = CONTENT
+lib.SocialMedia.table =  tt_content
+lib.SocialMedia.select.pidInList = 12
+lib.SocialMedia.select.uidInList = 1
+
+# Slider 
+lib.slider = CONTENT
+lib.slider.table =  tt_content
+lib.slider.select.pidInList = 1
+lib.slider.select.uidInList = 3
+
+# Kontakt Box
+lib.kontaktBox = CONTENT
+lib.kontaktBox.table =  tt_content
+lib.kontaktBox.select.pidInList = 12
+lib.kontaktBox.select.uidInList = 4
+
+# Annual Business Directory Box
+lib.annualBox = CONTENT
+lib.annualBox.table =  tt_content
+lib.annualBox.select.pidInList = 12
+lib.annualBox.select.uidInList = 5
+
+# Business Hours Box
+lib.businessHoursBox = CONTENT
+lib.businessHoursBox.table =  tt_content
+lib.businessHoursBox.select.pidInList = 12
+lib.businessHoursBox.select.uidInList = 7
+
+# HomeNewsBox content
+lib.homeNewsBox = CONTENT
+lib.homeNewsBox.table =  tt_content
+lib.homeNewsBox.select.pidInList = 12
+lib.homeNewsBox.select.uidInList = 22
+
+# InnerNewsBox content
+lib.innereNewsBox = CONTENT
+lib.innereNewsBox.table =  tt_content
+lib.innereNewsBox.select.pidInList = 12
+lib.innereNewsBox.select.uidInList = 23
+
+
+# Copyright content
+lib.copyRightText = TEXT
+lib.copyRightText.data = date:U
+lib.copyRightText.strftime = %y
+lib.copyRightText.wrap= {$config.copyRightText} 
+
+
+### Footer Contact 
+content.testimonialContent = CONTENT
+content.testimonialContent.table =  tt_content
+content.testimonialContent.select.pidInList = 19
+content.testimonialContent.select.uidInList = 9
+
+lib.testimonial = CONTENT
+lib.testimonial.table =  tt_content
+lib.testimonial.select.pidInList = 23
+lib.testimonial.select.uidInList = 50
+
+lib.aboutKontakt = CONTENT
+lib.aboutKontakt.table =  tt_content
+lib.aboutKontakt.select.pidInList = 23
+lib.aboutKontakt.select.uidInList = 28
+
+lib.socialmeadia = CONTENT
+lib.socialmeadia.table =  tt_content
+lib.socialmeadia.select.pidInList = 23
+lib.socialmeadia.select.uidInList = 31
+
+lib.newsletter = CONTENT
+lib.newsletter.table =  tt_content
+lib.newsletter.select.pidInList = 29
+lib.newsletter.select.uidInList = 35
+
+### Footer Contact 
+content.footerContact = CONTENT
+content.footerContact.table =  tt_content
+content.footerContact.select.pidInList = 19
+content.footerContact.select.uidInList = 8
+
+
+
+/*
+lib.footerMapElement = CONTENT
+lib.footerMapElement.table =  tt_content
+lib.footerMapElement.select.pidInList = 15
+lib.footerMapElement.select.uidInList = 2
+
+lib.footerSocialMeadiaElement = CONTENT
+lib.footerSocialMeadiaElement.table =  tt_content
+lib.footerSocialMeadiaElement.select.pidInList = 15
+lib.footerSocialMeadiaElement.select.uidInList = 15
+
+# Static content
+lib.inner_left_sidebar < styles.content.get
+lib.inner_left_sidebar {
+	select.where = colPos=0
+	select.pidInList = 1
+}
+
+# Custom TypoScript DB Query
+lib.innerBanner = CONTENT
+lib.innerBanner {
+    table = tt_content
+    select {
+        #pidInList = 10
+        orderBy = sorting
+		where = colPos = 0
+    }
+    renderObj = COA
+    renderObj {
+		10 = TEXT
+		10 {
+			wrap = <div>|</div>
+			field = bodytext
+			parseFunc < lib.parseFunc_RTE
+			stdWrap.ifNull = 
+		}
+		20 = IMAGE
+		20.file {
+		  import = uploads/media/
+		  import.field = image
+		  import.listNum = 0
+		}
+	}
+    wrap = <div class="row"><div class="col-lg-12" id="topimg">|</div></div>
+}
+*/
+
+
+#Header Search Start
+lib.search = COA_INT
+lib.search {
+ 
+ 20 = TEXT
+ 20.typolink.parameter = 20
+ 20.typolink.returnLast = url
+ 20.wrap = <div class="search-form pull-left"><form name="tx_indexedsearch" method="post" action="|" id="searchForm" class="navbar-form">
+  
+ 30 = COA
+ 30 {
+    5 = TEXT
+    5.wrap =  <div class="input-group"><input  name="tx_indexedsearch[sword]" type="text" placeholder="Suchen..." id="q" class="form-control search"><span class="input-group-btn"><button type="submit" name="tx_indexedsearch[submit_button]"  class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button></span>
+   # 5.wrap = <label>Suche:</label><input type="text" id="tx_indexedsearch[sword]" value="" name="tx_indexedsearch[sword]"  ><span class="button"><span class="button"><a href="./search.html">Go!</a></span>
+    10 = TEXT
+    10.value = <input type="hidden" value="0" name="tx_indexedsearch[_sections]">
+    20 = TEXT
+    20.value = <input type="hidden" value="0" name="tx_indexedsearch[pointer]">
+    25 = TEXT
+    25.value = <input type="hidden" value="0" name="tx_indexedsearch[ext]">
+    30 = TEXT
+    30.value = <input type="hidden" value="_" name="tx_indexedsearch[_freeIndexUid]">
+    35 = TEXT
+    35.value = </div></form></div>
+  }
+  
+
+}  
+
+
+
+plugin.tx_indexedsearch.show.rules = 0
+plugin.tx_indexedsearch.show.advancedSearchLink = 0
+ 
+
+
+ plugin.tx_indexedsearch._LOCAL_LANG.de{
+      default_search_word_entry = Search for = Suche nach
+      submit_button_label = Suchen
+      opt_type_0 = Distinct word = Ganzes Wort
+      opt_type_1 = Part of word = Ein Teil des Wortes
+      opt_type_2 = First part of word = Erster Teil des Wortes
+      opt_type_3 = Last part of word = Letzter Teil des Wortes
+      opt_type_10 = Sounds like = Klingt wie
+      opt_type_20 = Sentence = Satz
+      opt_defOp_0 = Aller Wörter (UND)
+      opt_defOp_1 = Aller Wörter (ODER)
+      opt_sections_0 = Ganze Seite
+      opt_sections_-1 = Nur diese Seite
+      opt_sections_-2 = Top + level 1
+      opt_sections_-3 = Level 2 and out
+      opt_freeIndexUid_-1 = Alle, vermischt/gemischt
+      opt_freeIndexUid_-2 = Alle, kategorisiert
+      opt_freeIndexUid_0 = Seiten
+      opt_freeIndexUid_header_-1 = Mixed categories = gemischte/vermischte Kategorien
+      opt_freeIndexUid_header_0 = Website Pages
+      opt_media_-1 = All media = Alle Medien
+      opt_media_0 = Internal pages = Interne Seiten
+      opt_media_-2 = Alle Externen
+      opt_order_rank_flag = Weight/Frequency
+      opt_order_rank_freq = Frequency = Häufigkeit
+      opt_order_rank_first = Close to top
+      opt_order_rank_count = Number of words = Anzahl der Wörter
+      opt_order_mtime = Date Modified = Datum bearbeitet
+      opt_order_title = Document title = Dokumenttitel
+      opt_order_crdate = Creation date = Erstelldatum
+      opt_group_sections = Bereichhierarchie
+      opt_group_flat = Flat list
+      opt_lang_-1 = All languages = Alle Sprachen
+      opt_lang_0 = Default = Voreinstellung
+      opt_desc_0 = Highest first = Höchstes/Höchster zuerst
+      opt_desc_1 = Lowest first = Niedrigstes/Niedrigster zuerst
+      opt_RL1 = Level 1:
+      opt_RL1ALL = All pages on level 1
+      opt_RL2 = - Level 2:
+      opt_RL2ALL = - All pages on level 2
+      form_legend = Suchformular
+      form_searchFor = Suche nach:
+      form_extResume = Extended resume = Erweiterte Vorschau
+      form_atATime = at a time = Zu einem Zeitpunkt
+      form_orderBy = Order by: = Ordnen nach:
+      form_fromSection = From section: = Aus dem Bereich
+      form_freeIndexUid = Category: = Kategorie:
+      form_searchIn = Search in: = Suche in:
+      form_match = Match: = Übereinstimmung
+      form_style = Style: = Stil:
+      rules_header = Rules: = Regeln:
+      rules_text = Only words with 2 or more characters are accepted = Das Wort muss 2 oder mehr Buchstaben enthalten
+Max 200 chars total
+Space is used to split words, "" can be used to search for a whole string (not indexed search then)
+AND, OR and NOT are prefix words, overruling the default operator
++/|/- equals AND, OR and NOT as operators.
+All search words are converted to lowercase.
+      searchFor = Suche nach
+      searchFor_or = or = oder
+      searchFor_and = and = und
+      searchFor_butNot = but not = aber nicht
+      noResults = Keine Resultate.
+      inSection = in the section = in dem Bereich
+      inNsection = in %s section:
+      inNsections = in %s sections:
+      word_page = page
+      word_pages = pages
+      unnamedSection = Andere
+      link_regularSearch = Regular search = normale Suche
+      link_advancedSearch = Advanced search = erweiterte Suche
+      res_path = Pfad
+      res_modified = Überarbeitet
+      res_created = Erstellt:
+      res_size = Größe
+      res_noResume = Notiz: Keine übereinstimmungen gefunden. Die Seitenvorschau kann nicht angezeigt werden.
+      res_otherMatching = übereinstimmende Seiten im gleichen Dokment:
+      res_otherPageAsWell = INFO: There was another page indexed as well... Probably indexed with another or no usergroup.
+      res_memberGroups = Require membership of group numbers %s
+      pi_list_browseresults_prev = &lt; vorherige
+      pi_list_browseresults_page = Seite
+      pi_list_browseresults_next = Nächste &gt;
+      pi_list_browseresults_display = Displaying results ###TAG_BEGIN###%s to %s###TAG_END### out of ###TAG_BEGIN###%s###TAG_END###
+      local_operator_AND = AND = UND
+      local_operator_OR = OR = ODER
+      local_operator_NOT = NOT = NICHT
+      makerating_addToCurrentSearch = Add to current search words = Zu den aktuellen Suchwörtern hinzufügen
+      maketitle_matches = matches = übereinstimmend / übereinstimmende Ergebnisse
+      }
+#Header Search End
+
+#quickMenu Start
+lib.quickMenu = COA
+lib.quickMenu{
+  
+10= HMENU
+10.special = list
+10.special.value = 16 , 15  
+10.1 = TMENU
+10.1 {
+ wrap = <ul class="top-small-menu pull-left">|</ul>
+    noBlur = 1
+    expAll = 1
+    IFSUB = 1  
+    
+    NO {
+      wrapItemAndSub = <li>|<span class="span">&nbsp;&#124;&nbsp;</span></li> || <li>|</li>
+      ATagTitle.field = 1
+     
+    } 
+   ACT = 1
+   ACT{
+      wrapItemAndSub =  <li class="active">|<span class="span">&nbsp;&#124;&nbsp;</span></li> || <li>|</li>
+
+      ATagTitle.field = 1
+      #  ACT = 1       
+       stdWrap.htmlSpecialChars = 1
+       ATagParams = class="active"
+     #  allWrap = <li> | </li>  
+    }
+  
+    IFSUB{
+       wrapItemAndSub = <li>|</li>
+      ATagTitle.field = 1           
+     }        
+  }
+}
+#quickMenu End
+
+
+lib.pagetitle = TEXT
+lib.pagetitle.data = page : title

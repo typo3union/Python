@@ -1,0 +1,162 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Main Settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Display Mode</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="1">
+										<numIndex index="0">Golf List</numIndex>
+										<numIndex index="1">Golf->list</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Golf Detail</numIndex>
+										<numIndex index="1">Golf->show</numIndex>
+									</numIndex>
+									
+
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					
+					<settings.flexform.main.golflist>
+						<TCEforms>
+							<label>Golf ListpageID</label>
+							<!--  <displayCond>FIELD:switchableControllerActions:=:Golf->list</displayCond> -->
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.golflist>
+
+					<settings.flexform.main.golfdetail>
+						<TCEforms>
+							<label>Golf Deatil pageID</label>
+							 <!-- <displayCond>FIELD:switchableControllerActions:=:Golf->show</displayCond> -->
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.golfdetail>
+
+					<settings.flexform.main.golfimg>
+					    <TCEforms type="array">
+					        <label>Image</label>
+					        <config type="array">
+					            <type>group</type>
+					            <internal_type>file</internal_type>
+					            <allowed>jpg,jpeg,png</allowed>
+					            <max_size>10240</max_size>
+					            <uploadfolder>uploads/tx_golf</uploadfolder>
+					            <show_thumbs>1</show_thumbs>
+					            <size>1</size>
+					            <maxitems>1</maxitems>
+					            <minitems>0</minitems>
+					        </config>
+					    </TCEforms>
+					</settings.flexform.main.golfimg>
+					
+					<settings.flexform.main.btnimg>
+					    <TCEforms type="array">
+					        <label>360 View Button Image</label>
+					        <displayCond>FIELD:switchableControllerActions:=:Golf->show</displayCond>
+					        <config type="array">
+					            <type>group</type>
+					            <internal_type>file</internal_type>
+					            <allowed>jpg,jpeg,png</allowed>
+					            <max_size>10240</max_size>
+					            <uploadfolder>uploads/tx_golf</uploadfolder>
+					            <show_thumbs>1</show_thumbs>
+					            <size>1</size>
+					            <maxitems>1</maxitems>
+					            <minitems>0</minitems>
+					        </config>
+					    </TCEforms>
+					</settings.flexform.main.btnimg>
+
+					<settings.flexform.main.titleimg>
+					    <TCEforms type="array">
+					        <label>Title-Image</label>
+					        <config type="array">
+					            <type>group</type>
+					            <internal_type>file</internal_type>
+					            <allowed>jpg,jpeg,png</allowed>
+					            <max_size>10240</max_size>
+					            <uploadfolder>uploads/tx_golf</uploadfolder>
+					            <show_thumbs>1</show_thumbs>
+					            <size>1</size>
+					            <maxitems>1</maxitems>
+					            <minitems>0</minitems>
+					        </config>
+					    </TCEforms>
+					</settings.flexform.main.titleimg>
+
+					 <settings.flexform.main.golftitle> 
+			            <TCEforms> 
+			              <exclude>1</exclude> 
+			              <label>Golf Title</label> 
+			             	<config> 
+			                <type>input</type> 
+			       		    <eval>trim</eval> 
+			              </config> 
+			            </TCEforms> 
+			          </settings.flexform.main.golftitle> 
+
+		           <settings.flexform.main.golfcontent> 
+		            <TCEforms> 
+		              <exclude>1</exclude> 
+		              <label>Left Side Content</label> 
+		               <config> 
+			                <type>text</type> 
+			                <cols>20</cols> 
+			                 <rows>3</rows> 
+			                <eval>trim</eval> 
+			              </config>
+			              <defaultExtras>richtext[bold|italic|subscript|superscript|removeformat|chMode]:rte_transform[flag=rte_enabled|mode=ts_css]</defaultExtras> 
+		            </TCEforms> 
+		          </settings.flexform.main.golfcontent>
+
+		          <settings.flexform.main.golfcontent1> 
+		            <TCEforms> 
+		              <exclude>1</exclude> 
+		              <label>Right Side Content</label> 
+		               <config> 
+			                <type>text</type> 
+			                <cols>20</cols> 
+			                 <rows>3</rows> 
+			                <eval>trim</eval> 
+			              </config> 
+			              <defaultExtras>richtext[bold|italic|subscript|superscript|removeformat|chMode]:rte_transform[flag=rte_enabled|mode=ts_css]</defaultExtras>
+		            </TCEforms> 
+		          </settings.flexform.main.golfcontent1>
+
+				</el>
+			</ROOT>
+		</main>
+
+	</sheets>
+</T3DataStructure>

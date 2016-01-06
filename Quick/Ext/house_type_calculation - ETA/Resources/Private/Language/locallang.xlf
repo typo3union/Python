@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-09-08T09:17:34Z" product-name="house_type_calculation">
+		<header/>
+		<body>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation">
+				<source>House Calculation</source>
+			</trans-unit>
+			
+			<!-- Translations used for labels displayed in FE-->
+
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.back_15">
+				<source>Wir blicken 15 Jahre zurück und wagen 5 Jahre in die Zukunft zu sehen</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.heizte">
+				<source>Ich heiz(t)e mit</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.liter">
+				<source>Liter</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.oil_per_year">
+				<source>Öl pro Jahr</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.image_oil">
+				<source>Bild "schierches" Ölfass</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.cost">
+				<source>das kostet(e) mich</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.euro">
+				<source>Euro</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.per_year">
+				<source>pro Jahr</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.image_euro">
+				<source>Bild Euroscheine</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.compare_with_pallets">
+				<source>verglichen mit Pellets</source>
+			</trans-unit>
+
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.possibly_appealing">
+				<source>es bleiben für MICH evtl. mit ansprechenden</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.image_car_family">
+				<source>Bilder,…Reisen, Auto, Familie</source>
+			</trans-unit>
+
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.comparison_title">
+				<source>Dieser Brennstoffvergleich berücksichtigt folgende Wirkungsgrade: Öl Heizwert 80%; neuer Pelletskessel 90%</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.average_oil_price">
+				<source>Durchschnittspreis ÖL</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.cent">
+				<source>cent/kWh</source>
+			</trans-unit>			
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.average_15_year_price">
+				<source>Durchschnittspreise der letzten 15 Jahre; Quelle: IWO,BMWFW,</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.average_price_pellets">
+				<source>Durchschnittspreis Pellets</source>
+			</trans-unit>
+			<trans-unit id="tx_housetypecalculation_domain_model_housecalculation.fuel_price">
+				<source>Treibstoffpreismonitor, Genol, proPellets Austria</source>
+			</trans-unit>
+
+
+		</body>
+	</file>
+</xliff>

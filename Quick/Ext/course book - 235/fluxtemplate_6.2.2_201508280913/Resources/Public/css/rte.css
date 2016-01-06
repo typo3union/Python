@@ -1,0 +1,13 @@
+p.bluehead a{display: inline-block;
+  text-align: center;
+  padding: 5px 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background: #a31228;
+  line-height: 100%;
+  border: 1px solid #a31228;
+  -webkit-transition: color 300ms ease, background 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+  transition: color 300ms ease, background 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+  -webkit-box-shadow: inset 0 0 0 0 #FFF;
+  box-shadow: inset 0 0 0 0 #FFF;
+}

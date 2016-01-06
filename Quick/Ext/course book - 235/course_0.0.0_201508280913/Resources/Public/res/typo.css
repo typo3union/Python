@@ -1,0 +1,559 @@
+/* $Id$ */
+@media all {
+
+/* @group general styles */
+body {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 75%;
+    color: #414246;
+}
+em {
+    font-style: italic;
+}
+strong {
+    font-weight: bold;
+}
+h1 {
+    font-size: 2.833em;
+    line-height: 1.25em;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #fff;
+}
+h2 {
+    font-size: 2em;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #7f7e8e;
+    line-height: 1.25em;
+}
+h3 {
+    font-size: 1.333em;
+    color: #7f7e8e;
+}
+a {
+    color: #444;
+    text-decoration: underline;
+}
+a:focus,
+a:hover {
+    color: #E21B22;
+}
+button,
+a.button {
+	font-size: 11pt;
+    color: #fff;
+    text-decoration: none;
+}
+p {
+    font-size: 1.05em;
+}
+p.intro {
+    font-size: 1.25em;
+}
+.mandatory {
+    color: #E21B22;
+}
+.error-message {
+        display:block;
+        margin: 0.5em 0 0.5em 0;
+        color: #E21B22;
+}
+/* @end */
+
+
+/* @group utilities */
+a.topLink {
+    text-decoration: none;
+    color: #7F7F8A;
+    text-align: right;
+}
+/* @end */
+
+
+/* @group stage */
+.stageContent p {
+    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+    font-size: 1.5em;
+    color: #fff;
+    line-height: 1.333em;
+    font-weight: normal;
+}
+.stageContent small {
+    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+    font-size: 1.167em;
+    color: #fff;
+}
+/* @end */
+
+/* @group metaNavigation */
+.metaNavigation {
+    font-size: 0.833em;
+}
+.metaNavigation a {
+    color: #afb2b7;
+    text-decoration: none;
+}
+.metaNavigation a:hover {
+    text-decoration: underline;
+}
+/* @end */
+
+
+/* @group navigation */
+.navigation {
+    
+}
+.navigation a {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    color: #7e7d8b;
+    text-decoration: none;
+}
+.navigation a#selected,
+.navigation a:focus,
+.navigation a:hover {
+    color: #E21B22;
+}
+/* @end */
+
+
+/* @group footer */
+#footer,
+#footer a {
+    color: #d1d1d1;
+}
+#footer a {
+    text-decoration: none;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+#footer div.headline {
+    font-weight:    bold;
+    margin-bottom:  0.5em;
+    text-transform: uppercase;
+}
+/* @end */
+
+/* @group reservierung */
+body.kursIndex .stage h1 {
+    color: #7f7e8e;
+    font-size: 2em;
+}
+body.kursIndex .content h2 {
+    font-size: 1.5em;
+}
+
+body.kursIndex th {
+    font-weight: bold;
+}
+body.kursIndex .stage tbody tr:hover td {
+    color: #888;
+}
+body.kursIndex .stage .tablenav td.kursListPrev a,
+body.kursIndex .stage .tablenav td.kursListNext a {
+    text-decoration: none;
+}
+body.kursIndex .stage .tablenav td.kursListPrev a:hover,
+body.kursIndex .stage .tablenav td.kursListNext a:hover {
+    text-decoration: underline;
+}
+body.kursIndex p.kursDescription {
+    font-size: 1.333em;
+    color: #4f4f4f;
+    line-height: 1em;
+}
+    
+/* @end */
+
+
+/* @group produktIndex */
+body.productIndex .stageContent h2 a {
+    color: #e21b20;
+    text-decoration: none;
+}
+body.productIndex .content h2 a {
+    color: #fff;
+    text-decoration: none;
+}
+/* @end */
+
+
+/* @group faq */
+body.faq .stage h1 {
+    color: #7f7e8e;
+    font-size: 2em;
+}
+body.faq h2 {
+    color: #E1152B;
+    font-size: 1.5em;
+}
+body.faq .stage .info .vcard div.tel {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+body.faq .stage .stageContent li {
+    line-height: 1.5em;
+}
+body.faq .stage .stageContent li a {
+    text-decoration: none;
+}
+body.faq .stage .stageContent li a:hover {
+    text-decoration: underline;
+}
+/* @end */
+
+/* @group suche */
+body.suche .stage .textWrapper ul {
+        margin:31px 0 0 0;
+}
+
+body.suche .stage .textWrapper li {
+        margin:0 0 31px 0;
+        line-height: 1.5em;
+}
+
+body.suche .stage .textWrapper div.result li a {
+        color: #E21B22;
+        font-size:1.333em;
+        text-decoration:none;
+        border-bottom:1px #E21B22 dotted;
+
+}
+body.suche .stage .textWrapper ul.pagination {
+        margin: 31px auto 0;
+        text-align:center;
+}
+body.suche .stage .textWrapper ul.pagination li {
+        padding-left: 0.5em;
+        display:inline;
+}
+/* @end */
+
+
+/* @group home */
+body.home .content .teaser ul li {
+    line-height: 1.5em;
+}
+body.home .content .teaser ul li a {
+    text-decoration: none;
+}
+body.home .content .teaser ul li a:hover {
+    text-decoration: underline;
+}
+/* @end */
+
+/* @group context */
+.context ul li {
+    line-height: 1.5em;
+}
+.context ul li a {
+    text-decoration: none;
+}
+.context ul li a:hover {
+    text-decoration: underline;
+}
+/* @end */
+
+
+/* @group charterIndex */
+body.charterIndex .content h2 {
+    font-size: 1.5em;
+    color: #E1152B;
+}
+body.charterIndex .content ul li {
+    line-height: 1.5em;
+}
+body.charterIndex .content ul li a {
+    text-decoration: none;
+}
+body.charterIndex .content ul li a:hover {
+    text-decoration: underline;
+}
+/* @end */
+
+
+/* @group charterRevier */
+body.charterRevier .stage h1 {
+    color: #7f7e8e;
+    font-size: 2em;
+}
+body.charterRevier .stage p {
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #414246;
+}
+body.charterRevier .stage p.info {
+    font-size: 1.333em;
+    color: #414246
+}
+/* @end */
+
+
+/* @group knoten */
+body.knoten .stage h1 {
+    color: #7f7e8e;
+    font-size: 3.5em;
+}
+body.knoten .stage .flash {
+    text-align: center;
+}
+body.knoten .content .weitereKnoten li {
+    line-height: 1.5em;
+}
+body.knoten .content .weitereKnoten li a {
+    text-decoration: none;
+    border-bottom: 1px dotted #444;
+}
+body.knoten .content .weitereKnoten li a:hover {
+    border-bottom-style: solid;
+    border-bottom-color: #e21b22;
+}
+body.knotenIndex h3 {
+    color: #e31a22;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+}   
+p.knoten a {
+    display:block;
+    font-size: 2em;
+    text-decoration: none;
+    color: #9f9daa;
+    padding-top: 170px;
+}
+p.knoten_tall a {
+    padding-top: 234px;
+}       
+/* @end */
+
+
+/* @group jojo */
+body.jojo .content ol li {
+    list-style: outside decimal;
+    line-height: 1.5em;
+}
+/* @end */
+
+
+/* @group kontakt */
+body.error .stage .stageContent h2 {
+  color: #7f7e8e;
+  font-size: 2em;
+  margin-bottom: 27px;
+}
+body.error .stage .stageContent img {
+  margin-right: 12px;
+}
+body.error .stage .stageContent img + p {
+  color: #414246;
+  font-family:"Trebuchet MS",Verdana,Arial,sans-serif;
+  font-size:1.333em;
+  font-weight:normal;
+  line-height:1.333em;
+}
+body.error .stage .stageContent div.solution {
+  margin-top: 12px;
+}
+body.error .stage .stageContent div.solution h2 {
+  color: #e41b21;
+  font-size: 1.667em;
+  margin-bottom: 13px;
+}
+body.error .stage .stageContent p {
+  color: #414246;
+  font-size:1.15em;
+}
+body.error .stage .stageContent li {
+  color: #414246;
+  line-height:1.667em;
+}
+
+
+/* @end */
+
+
+/* @group kontakt */
+body.kontakt .stage h1 {
+    color: #7f7e8e;
+    font-size: 2em;
+}
+body.kontakt label {
+    color: #33363d;
+    font-size: 1.167em;
+}
+body.kontakt legend {
+    color: #7f7e8e;
+    font-size: 1.5em;
+}
+body.kontakt .vcard_hidden {
+    color: #BDBDC4;
+    font-family: 'Trebuchet MS';
+    font-size: 2em;
+    text-align: right;
+    line-height: 1.25em;
+}
+body.kontakt .stage .stageContent .textWrapper .error-message {
+      font-size: 1.167em;
+}
+body.kontakt .stage .stageContent .textWrapper p {
+    color: #414246;
+    font-size: 1.167em;
+}
+/* @end */
+
+
+/* @group logbuch */
+body.logbuch .textWrapper p {
+    color: #414246;
+    font-size: 1em;
+    font-family: Verdana, Arial, sans-serif;
+}
+body.logbuch .textWrapper h1 {
+    color: #E21B20;
+    font-size: 2em;
+    font-family: Verdana, Arial, sans-serif;
+}
+body.logbuch .logNavigation {
+    color: #fff;
+    font-size: 1em;
+    font-family: Verdana, Arial, sans-serif;
+}
+body.logbuch .indexPosts {
+    font-size: 1em;
+    line-height: 1.333em;
+    font-family: Verdana, Arial, sans-serif;
+}
+body.logbuch p.logIntro {
+    font-size: 1.167em;
+}
+body.logbuch ul.logNav {
+    line-height: 1.5em;
+    font-weight: bold;
+}
+body.logbuch ul.logNav ul {
+    font-weight: normal;
+}
+body.logbuch ul.logNav a {
+    text-decoration: none;
+}
+body.logbuch ul.logNav a:hover {
+    text-decoration: underline;
+}
+body.logbuch h2#comments {
+    margin-left: 275px;
+	font-family: Arial, sans-serif;
+	font-size: 1.5em;
+	color: #414246;
+}
+body.logbuch #respond h2 {
+	font-family: Arial, sans-serif;
+	font-size: 1.5em;
+	color: #414246;
+}
+body.logbuch .commentlist li .comment-meta a {
+	font-size: 0.833em;
+	text-decoration: none;
+}
+/* @end */
+
+/* @group kostenbeispiel */
+table#kostenbeispiel caption, table#kostenbeispiel-sks caption {
+    color: #E21B20;
+    font-size: 1.5em;
+}
+table#kostenbeispiel td, table#kostenbeispiel-sks td {
+    line-height: 1.75em;
+}
+table#kostenbeispiel tr.summe td, table#kostenbeispiel-sks tr.summe td {
+    font-weight: bold;
+}
+/* @end */
+
+/* @group literaturliste */
+div#literaturliste h3 {
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+}
+/* @end */
+		
+/* @group reservierung */
+body.reservierung .stageContent .textWrapper p {
+    color: #414246;
+    font-size: 1em;
+    font-family: Verdana, Arial, sans-serif;
+}
+body.reservierung .stageContent .textWrapper h1 {
+    color: #7F7E8C;
+    font-size: 2em;
+    font-family: Verdana, Arial, sans-serif;
+}
+body.reservierung .stage p.info {
+    font-size: 1.333em;
+    color: #414246
+}
+fieldset.kursinfo {
+    color: #ADABB6;
+    font-size: 1.167em;
+}
+div#yachtinfo p {
+    color: #ADABB6;
+    font-size: 1.167em;
+}
+/* @end */
+
+/* @group suche */
+body.suche .stageContent .textWrapper p {
+    color: #414246;
+    font-size: 1em;
+    font-family: Verdana, Arial, sans-serif;
+}
+body.suche .stageContent .textWrapper h1 {
+    position: relative;
+    color: #E21B20;
+    font-size: 2em;
+    font-family: Verdana, Arial, sans-serif;
+}
+body.suche .stage p.info {
+    font-size: 1.333em;
+    color: #414246
+}
+
+/* @end */
+
+/* @group yacht */
+body.yacht caption {
+    color: #e31a22;
+    margin-bottom: 0.1em;
+    font-size: 2em;
+    line-height: 1.25em;
+}    
+body.yacht h2 {
+    color: #e31a22;
+}    
+/* @end */
+
+/* @group OSM Layer
+ * Hotfix für grässliche OSM Bubbles
+*/
+.olPopup div {
+    color: #4f5055;
+}
+/* @end */
+
+/* @group faqAdmin */
+body.faqAdmin {
+    background-color: white;
+    padding: 1em;
+}
+/* @end */
+
+/* @group error */
+body.error .stage h1 {
+    color: #7f7e8e;
+    font-size: 2em;
+}
+body.error .content h2 {
+    font-size: 1.5em;
+}
+/* @end */
+}

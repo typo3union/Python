@@ -1,0 +1,58 @@
+
+<f:layout name="Default" />
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Edit.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<!--
+<f:section name="content">
+<h1>Edit Tour</h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" />
+
+<f:form action="update" name="tour" object="{tour}" >
+<f:render partial="Tour/FormFields" arguments="{tour:tour}" />
+	<f:form.submit value="Save" />
+</f:form>
+</f:section>
+
+-->
+<f:section name="content">
+	
+	<div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Edit Tour Information
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+					<f:form action="update" name="tour" object="{tour}" >
+                        <f:render partial="Tour/FormFields" arguments="{tour:tour}" />
+                        <f:render partial="Tour/Calender" arguments="{tour:tour}" />
+                            <f:form.submit value="Save" class="calenderSubmit" />
+                     </f:form>
+				</div>
+                <!-- /.panel-body -->
+				
+				<div class="panel-footer"><f:link.action action="list">Back to list</f:link.action></div>
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#datetimepicker1').datetimepicker();
+		});
+	</script>
+</f:section>

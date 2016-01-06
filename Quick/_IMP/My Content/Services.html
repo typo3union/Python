@@ -1,0 +1,77 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+<f:section name="Configuration">
+	<flux:form wizardTab="Bootstrap" id="services" icon="{v:extension.path.resources(path: 'Icons/icon-accordion.gif')}">
+		<flux:form.sheet name="panels">
+			<flux:form.section name="panels">
+				<flux:form.object name="panel">
+					<flux:field.file name="image" allowed="png,gif,jpg" uploadFolder="uploads/tx_services" minItems="1" maxItems="1" size="1" />
+					<flux:field.file name="hover_image" allowed="png,gif,jpg" uploadFolder="uploads/tx_services" minItems="1" maxItems="1" size="1" />
+					<flux:field.input name="title" />
+					<flux:field.text name="bodytext"  cols="30" rows="5" enableRichText="false" />
+					 <flux:flexform.field.input name="link">
+						<flux:flexform.field.wizard.link />
+					</flux:flexform.field.input>
+				</flux:form.object>
+			</flux:form.section>
+		</flux:form.sheet>
+		<flux:grid>
+			<f:for each="{panels}" as="panel" iteration="iteration">
+				<flux:grid.row>
+					<flux:grid.column>
+						<flux:form.content name="content.{iteration.index}" label="{f:if(condition: panel.panel.title, then: panel.panel.title, else: 'Content, panel {iteration.cycle}')}" />
+					</flux:grid.column>
+				</flux:grid.row>
+			</f:for>
+		</flux:grid>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<div class="carousel-inner" role="listbox">
+	<f:for each="{panels}" as="panel" iteration="iteration">
+    <div class="item ">
+      <div class="container">
+        <div class="carousel-caption ">
+          <h1>Title : {panel.panel.title}</h1>
+          <p>Text : {panel.panel.bodytext}</p>
+        </div>
+      </div>
+    </div>
+    </f:for>	   
+  </div>
+</f:section>
+
+<f:section name="Main">
+
+<div class="home-services">
+	<div class="container">
+		<f:for each="{panels}" as="panel" iteration="iteration">
+		<div class="col-xs-6 col-sm-3 home-service-block  ">
+			<div class="block-container">
+				<div class="block-hover">
+					<div class="ch-item">
+						<div class="ch-info">
+						  <div class="ch-info-front "><img alt="Image" src="uploads/tx_services/{panel.panel.image}" width="277" height="190" /></div>
+						  <div class="ch-info-back ch-info-front"> <f:link.page pageUid="{panel.panel.link}" > <img src="uploads/tx_services/{panel.panel.hover_image}"  alt="Image" /> </f:link.page>  </div>
+						</div>
+						<h2 >  <f:link.page pageUid="{panel.panel.link}" class="hover-same" >  {panel.panel.title} </f:link.page> </h2>
+						<p >  <f:link.page pageUid="{panel.panel.link}" class="hover-same" >  {panel.panel.bodytext} </f:link.page> </p>
+						<f:link.page pageUid="{panel.panel.link}" class="readmore"> Read more </f:link.page> 
+					</div>
+				</div>
+			</div>
+		</div>
+		</f:for>	
+	</div>
+</div>
+
+</f:section>
+
+</div>

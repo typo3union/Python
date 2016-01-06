@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-25T10:21:24Z" product-name="property">
+		<header/>
+		<body>
+			<trans-unit id="tx_property_domain_model_propertytype">
+				<source>Property Type</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_propertytype.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property">
+				<source>Property</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.subtitle">
+				<source>Subtitle</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.object_type">
+				<source>Objektart</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.pdf">
+				<source>Pdf</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.area">
+				<source>Area</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.bed">
+				<source>Bed</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.bath">
+				<source>Bath</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.floor">
+				<source>Stockwerke</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.garage">
+				<source>Garage</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.room">
+				<source>Zimmeranzahl</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.floor_area">
+				<source>Wohn/Nutzfläche</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.available">
+				<source>Verfügbarkeit</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.heating">
+				<source>Heizung</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.flooring">
+				<source>Flooring</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.expiration">
+				<source>Befristung</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.equipped">
+				<source>Equipped</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.parking">
+				<source>Parkplätze</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.state">
+				<source>State</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.plz">
+				<source>Plz</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.property_type">
+				<source>Objektart</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.building_type">
+				<source>Bautyp </source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_buildingtype">
+				<source>Bautyp </source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_buildingtype.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer">
+				<source>Inquirer</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.telephone">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.message">
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_inquirer.ip">
+				<source>Ip</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_propertyinquirymm">
+				<source>Property Inquiry Mm</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_propertyinquirymm.property_id">
+				<source>Property Id</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_propertyinquirymm.inquirer_id">
+				<source>Inquirer Id</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.basement">
+				<source>Keller</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.balcony">
+				<source>Balkon</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.details">
+				<source>Details</source>
+			</trans-unit>
+			
+			<!-- Detail Page-->
+			
+			<trans-unit id="tx_property_domain_model_property.object_info_title">
+				<source>Objektinformation</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.map">
+				<source>Lage</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.land_area">
+				<source>Grundstücksfläche</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.year_of_construction">
+				<source>Baujahr</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.zustand">
+				<source>Zustand</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.elevator">
+				<source>Fahrstuhl</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.transport">
+				<source>Öffentliche Verkehrsmittel</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.energy">
+				<source>Energieklasse</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.charging">
+				<source>Vergebührung ‐ MV</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.hwb">
+				<source>HWB kwh/m²/Jahr</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.commission">
+				<source>Provision</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.ground">
+				<source>Böden</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.terrase">
+				<source>Terrasse</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.running_cost">
+				<source>Betriebskosten</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.buy">
+				<source>ANFRAGE</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.address">
+				<source>Anschrift</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.property_for">
+				<source>Immobilien zur</source>
+			</trans-unit>
+			
+			<!-- Inquiery Form -->
+			
+			<trans-unit id="tx_property_domain_model_property.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.email">
+				<source>Mailadresse</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.number">
+				<source>Kontaktnummer</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.c_address">
+				<source>Betreff</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.message">
+				<source>Nachricht</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.property">
+				<source>Immobilien</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.submit">
+				<source>Absenden</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.back">
+				<source>Zurück</source>
+			</trans-unit>
+			
+			<!-- Search Page -->			
+			
+			<trans-unit id="tx_property_domain_model_property.property_serch">
+				<source>Immobiliensuche</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.s_property_type">
+				<source>Immobilienart</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.all">
+				<source>Alle</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.s_price">
+				<source>Miet/Kaufpreis</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.region">
+				<source>Region</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.s_property_cat">
+				<source>Nur Immobilien</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.rent">
+				<source>Objekte zur Miete</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.sale">
+				<source> Objekte zum Kauf</source>
+			</trans-unit>
+			<trans-unit id="tx_property_domain_model_property.search">
+				<source>Suche</source>
+			</trans-unit>
+			
+			<!-- Latest Block -->
+				
+			<trans-unit id="tx_property_domain_model_property.latest_property">
+				<source>Neue Immobilien</source>
+			</trans-unit>
+			
+			<!-- List Bloclk -->
+			
+			<trans-unit id="tx_property_domain_model_property.list_property">
+				<source>Immobilienverzeichnis</source>
+			</trans-unit>
+			
+					
+		</body>
+	</file>
+</xliff>

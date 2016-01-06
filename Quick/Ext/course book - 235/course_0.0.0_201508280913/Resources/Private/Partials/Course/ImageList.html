@@ -1,0 +1,12 @@
+
+<div class="gallery clearfix">
+  <f:for each="{course.imgArray}" as="picture">
+    <f:if condition="{picture}">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 pdg-nn zoom-gallery">
+        <f:link.page pageUid="uploads/tx_course/{picture}" title="{course.name}">
+          <f:image src="uploads/tx_course/{picture}" width="395c" height="330c"  alt="{course.name}" title="{course.name}" class="img-responsive" />
+        </f:link.page>
+      </div>
+    </f:if>
+  </f:for>
+</div>

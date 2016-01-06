@@ -1,0 +1,31 @@
+<f:if condition="{Event.description}!=''">
+    <f:then>
+        <div class="news-panel clearfix">
+            <div class="news-img">
+				<f:link.action action="event" controller="Event" arguments="{event:Event.uid}">
+                    <f:if condition="{Event.image}">
+                        <f:image src="{Event.imageReference}" alt="" treatIdAsReference="1" class="icon" width="303" height="207" />
+                    </f:if>
+				</f:link.action>
+            </div>
+            <div class="news-text">{Event.title}</div>
+        
+            <div class="news-detail">
+				<f:link.action action="event" controller="Event" arguments="{event: Event.uid}" title="{Event.title}" class="news-more-heading">
+                    <f:translate key='tx_jsevent_domain_model_event.more' />
+				</f:link.action>
+            </div>
+        </div>
+    </f:then>
+    
+    <f:else>
+        <div class="news-panel clearfix">
+            <div class="news-img">
+                <f:if condition="{Event.image}">
+                    <f:image src="{Event.imageReference}" alt="" treatIdAsReference="1" class="icon" width="303" height="207" />
+                </f:if>
+            </div>
+            <div class="news-text">{Event.title}</div>
+        </div>
+	</f:else>
+</f:if>

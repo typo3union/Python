@@ -1,0 +1,43 @@
+
+<div>
+    <div class="inputRow">
+    
+        <label for="name"><f:translate key="tx_jscareer_domain_model_applicant.label.name" /></label>
+    
+        <f:form.textfield property="name" id="name" name="name" value="" additionalAttributes="{class:'validate', maxlength:'50', placeholder:'<f:translate key=\'tx_jscareer_domain_model_applicant.name.placeholder\' />',mendatory_message:'<f:translate key=\'tx_jscareer_domain_model_applicant.name.blank\' />',valid_message:'<f:translate key=\'tx_jscareer_domain_model_applicant.name.valid\' />'}" />
+        
+        <span></span>
+        
+    </div>
+    
+    <div class="inputRow">
+        
+        <label for="phone"><f:translate key="tx_jscareer_domain_model_applicant.label.phone" /></label>
+    
+        <f:form.textfield property="phone" id="phone" name="phone" value="" additionalAttributes="{class:'validate', maxlength:'50', placeholder:'<f:translate key=\'tx_jscareer_domain_model_applicant.phone.placeholder\' />',mendatory_message:'<f:translate key=\'tx_jscareer_domain_model_applicant.phone.blank\' />',valid_message:'<f:translate key=\'tx_jscareer_domain_model_applicant.phone.valid\' />'}" />
+    
+        <span></span>
+    </div>
+    
+    
+    <div class="inputRow">
+        
+        <label for="email"><f:translate key="tx_jscareer_domain_model_applicant.label.email" /></label>
+    
+        <f:form.textfield property="email" id="email" name="email" value="" additionalAttributes="{class:'validate', maxlength:'50', placeholder:'<f:translate key=\'tx_jscareer_domain_model_applicant.email.placeholder\' />',mendatory_message:'<f:translate key=\'tx_jscareer_domain_model_applicant.email.blank\' />',valid_message:'<f:translate key=\'tx_jscareer_domain_model_applicant.email.valid\' />'}" />
+        
+        <span></span>
+        
+    </div>
+    
+    
+    <div class="inputRow">
+    
+        <label for="resume"><f:translate key="tx_jscareer_domain_model_applicant.label.resume" /></label>
+    
+        <f:form.upload name="resume" property="resume"  additionalAttributes="{class:'validate',id:'resume', mendatory_message:'<f:translate key=\'tx_jscareer_domain_model_applicant.resume.blank\' />',valid_message:'<f:translate key=\'tx_jscareer_domain_model_applicant.resume.valid\' />'}" />
+    
+        <span></span>
+    
+    </div>
+</div>

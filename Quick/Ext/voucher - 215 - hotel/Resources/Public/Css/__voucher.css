@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+.voucherLoginSection { float: left; width: 100%; }
+.alreadyUser,
+.notUser,
+.voucherMessage { box-sizing: border-box; float: left; width: 50%; }
+.alreadyUser{ padding-right: 15px;}
+.notUser{padding-left: 15px;}
+.aftrLoginSection { float: left; width: 100%;margin-top: 20px; }
+
+
+.hidden { display: none; }
+.userForm,.voucherOrderType { display: inline-block; width: 100%; }
+
+.formField,
+.singleField { display: inline-block; width: 100%; margin-bottom: 10px; }
+.formField > label,
+
+.singleField label { display: block; font-weight: normal; float: left; margin-bottom: 4px; padding-right: 10px; text-align: right; width: 150px; }
+.userForm input,
+.vorschau,
+.voucherMessage textarea,
+.voucherRadio input  { 
+	background: transparent none repeat scroll 0 0;
+    border: 2px solid #002951;
+    border-radius: 0;
+    box-shadow: none;
+	float: left; 
+	padding: 6px 12px;
+	width:100%;
+}
+
+.voucherRadio input {width:auto;}
+.genderField input,
+.genderField label { margin-right: 5px; width: auto !important; min-width: auto;}
+.voucherRadio {
+    display: block;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+input.voucherRadio {margin-right:5px;margin-top: 10px;}
+.paymentSection .payment_btn:hover  { opacity: 1; transition: opacity 500ms ease-out 0s; }
+.voucherPolicy { width: 100%;float:left; }
+.singleField input[type="radio"] { float: left; }
+.voucherPayment label{ font-weight:normal;  margin: 0 10px;}
+.valuePriceHide > span { margin-left: 10px;}
+.voucherPayment > .logout,.vorschau,.paymentSection{ margin-top: 10px; }
+.orderSelect {/* padding-right: 2%;*/  margin-top: 15px;}
+
+.singleField.orderType label { float: left; margin-left: 10px; width: auto; }
+.voucherMessage textarea { resize: none;padding: 10px;resize: none; width: 100%; }
+.status.MailSent,
+.status.orderMailSent { background-color: #ACE096;color: #0E7F2C; margin-bottom: 30px; padding: 15px 20px;}
+.status.InvalidLogin,
+.status.paymentFail { background-color: #f7aaaa; color: #ff0202;margin-bottom: 30px; padding: 15px 20px; }
+.status.AlreadyRegister { background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; border: 1px solid transparent; border-radius: 4px; margin-bottom: 20px; padding: 15px; }
+.paymentSection .payment_lbl { float: left;  margin-right: 10px;width: 100%;}
+
+.orderMailSent .downloadVoucher {margin: 8px 0;}
+
+#notUserForm .invoice input[type="checkbox"] { margin-right: 10px;}
+#notUserForm .invoice, #notUserForm .invoice label.invoice {width: auto !important;}
+.previewVoucherTitle{margin: 20px 0 0 0;}
+.previewVoucherTitle ol {float:left;width:100%;list-style-position:inside; margin: 0 0 30px; padding-left: 0; background:#fff; padding: 10px 20px;line-height: 25px;}
+.previewVoucherTitle li {margin: 10px 0;}
+.totalAmount > p { background: #fff;margin-bottom: 2px;padding: 10px 20px;}
+.totalAmount.clearfix { margin-bottom: 30px;}
+.previewOtherData .singleItem {background: #fff;margin-bottom: 2px;padding: 5px 20px;}
+
+.voucherListSection .singleVoucherList .formErrorContent{display:none;}
+.voucherListSection .singleVoucherList:first-child .formErrorContent{display:block;}
+
+/* Accordian CSS */
+.voucherListSection  .panel {background-color: transparent; border: 2px solid #002951;} 
+.voucherListSection .panel-default {border-color: inherit;}
+.voucherListSection .panel-group .panel{border-radius: 0;margin-bottom: 10px;}
+.voucherListSection .panel-default > .panel-heading{background-color: #002951;border-color: #000;border-radius: 0;color: #fff;padding: 0; }
+.voucherListSection .panel-default > .panel-heading a{color:#fff; width: 92%; word-wrap: break-word; display: inline-block;}
+.voucherListSection .panel-default > .panel-heading h4{cursor: pointer;padding: 10px; margin-bottom:0}
+
+.v_title, .v_cat_title, .v_price, .v_tax, .v_short_description, .v_long_description{margin-bottom:10px; display:block} 
+
+.voucherLoginSection h2{margin:30px 0 15px;}
+
+
+.userForm  input.submit, 
+.voucherPayment  input.submit, 
+.voucherSection a.logout,
+.paymentSection .payment_btn,
+a.vorschau , a.back_btn{ 
+	background: #002951 !important;
+	border: 0 none;
+    border-radius: 0;
+    color: #fff;
+    padding: 10px 30px;
+	width:auto;	
+	float: left;
+	margin-bottom:5px;
+}
+
+a.back_btn , .voucherPayment input.submit{margin:10px; }
+
+.userForm  input.submit, 
+.voucherSection a.logout{float:right;}
+input.submit:hover{opacity:0.7}
+
+.voucherPayment  input.submit{margin-right:5px}
+.vorschau {margin-top:20px; }
+.payment_btn {
+    clear: both;
+    display: block;
+    margin: 20px 0;
+}
+
+.userForm input::-moz-placeholder, .voucherMessage textarea::-moz-placeholder  {
+color:#002951;
+opacity:1
+}
+.userForm input:-ms-input-placeholder, .voucherMessage textarea:-ms-input-placeholder {
+color:#002951;
+}
+.userForm input::-webkit-input-placeholder, .voucherMessage textarea::-webkit-input-placeholder {
+color:#002951; 
+}
+.formField, .singleField, .genderField, .voucherPolicy{position:relative}
+.formError { left: 0 !important;position: absolute;}
+p#charCount{clear: both;display: inline-block;float: left;font-size: 11px;margin-bottom: 15px;}
+
+#alreadyUserForm .formField input.submit,
+#notUserForm .singleField  input.submit{height: 46px;}
+#alreadyUserForm .formField input.submit:hover,
+#notUserForm .singleField  input.submit:hover{opacity:1;}
+#alreadyUserForm .formField .login, 
+#notUserForm  .singleField  .regi{position:relative;display: block;float: right;}
+.formField .login:before,
+.singleField  .regi:before{content:""; background:url(../Images/login.jpg) top left no-repeat; position:absolute; left:-51px; top:0; display:block; height: 46px; width: 49px; transition:all 0.7s eas-in-out; opacity:0; visibility:hidden; transition:opacity 0.5s ease-in-out 0s;}
+
+.singleField  .regi:before{background:url(../Images/register.jpg) top left no-repeat;}
+.formField .login:hover:before,
+.singleField  .regi:hover:before{opacity:1; visibility:visible;}
+
+.next-step .back_btn, .next-step .payment_btn {float:left; display:inline-block; margin:10px 10px 10px 0; clear: none;} 
+
+@media (max-width: 767px){
+	.alreadyUser, .notUser, .voucherMessage{width:100%; padding:0}
+}
+
+.voucherSection .title {margin-bottom:40px;}
+.voucherSection .title h1 {margin-bottom:0px;}
+.voucherMessage {margin-top:20px;}
+.errorDiv { background-color: #f7aaaa; border:1px solid #ff0202;/*color: #ff0202; */ padding: 15px 20px; }
+a#p_vorschau{  background: #002951!important; border: 0 none; border-radius: 0;  color: #fff;  padding: 10px 30px;  width: auto;  float: left;  margin-bottom: 5px;}

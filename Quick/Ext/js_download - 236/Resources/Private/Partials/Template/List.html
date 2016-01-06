@@ -1,0 +1,19 @@
+<f:if condition="{Files.media}">
+    <div class="col-md-6 col-sm-6">
+        <f:if condition="{Files.video}=='1'">
+            <f:then>
+                <f:render partial="Template/Video" arguments="{Files:Files}" />
+            </f:then>
+            <f:else>
+                <f:if condition="{Files.mime}=='image'">
+                    <f:then>
+                        <f:render partial="Template/Image" arguments="{Files:Files}" />
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Template/Doc" arguments="{Files:Files}" />
+                    </f:else>
+                </f:if>
+            </f:else>
+        </f:if>
+    </div>
+</f:if>

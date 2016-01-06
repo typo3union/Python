@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-25T10:58:50Z" product-name="candle">
+		<header/>
+		<body>
+			<trans-unit id="tx_candle_domain_model_candle">
+				<source>Candle</source>
+			</trans-unit>
+			<trans-unit id="tx_candle_domain_model_candle.user_name">
+				<source>User Name</source>
+			</trans-unit>
+			<trans-unit id="tx_candle_domain_model_candle.active">
+				<source>Active</source>
+			</trans-unit>
+			<trans-unit id="tx_candle_domain_model_candle.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_candle_domain_model_candle.user_address">
+				<source>User Address</source>
+			</trans-unit>
+			<trans-unit id="tx_candle_domain_model_candle.dedicated_name">
+				<source>Dedicated Name</source>
+			</trans-unit>
+			<trans-unit id="tx_candle_domain_model_candle.message">
+				<source>Message</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

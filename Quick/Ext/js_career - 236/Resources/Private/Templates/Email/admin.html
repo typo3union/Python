@@ -1,0 +1,24 @@
+<f:layout name='Default'/>
+<f:section name='main'>
+
+	<div style='font-family: Arial;'>
+		
+		<f:translate key="LLL:EXT:js_career/Resources/Private/Language/locallang.xlf:tx_jscareer_domain_model_applicant.mailContent.dear.admin" />
+		<br><br>
+		<f:if condition="{mail -> f:count()} > 0">
+			<table>
+				<f:for each="{mail}" as="fields"  iteration="itemIteration">
+					<tr>
+						<td><strong><f:translate key="LLL:EXT:js_career/Resources/Private/Language/locallang.xlf:tx_jscareer_domain_model_applicant.{fields.field}" /></strong></td>
+						<td>: {fields.value}</td>
+					</tr>
+				</f:for>
+			</table>
+			<br><br>
+		</f:if>
+		<f:translate key="LLL:EXT:js_career/Resources/Private/Language/locallang.xlf:tx_jscareer_domain_model_applicant.mailContent.regards" />
+		<br>
+		<f:translate key="LLL:EXT:js_career/Resources/Private/Language/locallang.xlf:tx_jscareer_domain_model_applicant.mailContent.signature" />
+		
+	</div>
+</f:section>

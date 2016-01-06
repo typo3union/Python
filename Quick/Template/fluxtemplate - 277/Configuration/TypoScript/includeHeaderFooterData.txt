@@ -1,0 +1,31 @@
+/*
+page.javascriptLibs {
+	jQuery = 1
+	jQuery.version = latest
+	jQuery.source = local
+	jQuery.noConflict = 1
+#	jQuery.noConflict.namespace = ownNamespace
+}
+*/
+
+page.includeCSS {
+    
+    file001 = {$filepaths.css}main.css
+    file002 = {$filepaths.css}animate.css
+    file003 = {$filepaths.css}custom.css
+}
+
+page.includeJSFooter {
+    
+     file001 = {$filepaths.js}jquery.min.js
+     file002 = {$filepaths.js}bootstrap.min.js
+     file003 = {$filepaths.js}modal.js
+     file004 = {$filepaths.js}popover.js
+     file005 = {$filepaths.js}owl.carousel.js
+     file006 = {$filepaths.js}wow.js
+    #file009 = {$filepaths.js}jquery.backstretch.min.js
+     file007 = {$filepaths.js}custom.js
+     file008 = {$filepaths.js}html5lightbox/html5lightbox.js
+}
+
+page.headTag = <head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">

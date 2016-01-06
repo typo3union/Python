@@ -1,0 +1,86 @@
+
+plugin.tx_jsgreetingcards {
+	view {
+		templateRootPath = {$plugin.tx_jsgreetingcards.view.templateRootPath}
+		partialRootPath = {$plugin.tx_jsgreetingcards.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_jsgreetingcards.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_jsgreetingcards.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_jsgreetingcards._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-js-greetingcards table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-js-greetingcards table th {
+		font-weight:bold;
+	}
+
+	.tx-js-greetingcards table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+
+plugin.tx_jsgreetingcards{
+	settings{
+
+		configuration	= 1
+		
+		uri{
+			javascript = {$plugin.tx_jsgreetingcards.uri.javascript}
+			css = {$plugin.tx_jsgreetingcards.uri.css}
+		}
+		
+		fixImage = {$plugin.tx_jsgreetingcards.settings.fixImage}
+		logo = {$plugin.tx_jsgreetingcards.settings.logo}
+			
+		receiver {
+			enable = {$plugin.tx_jsgreetingcards.settings.receiver.enable}
+			
+			senderName = TEXT
+			senderName.value = {$plugin.tx_jsgreetingcards.settings.receiver.senderName}
+
+			senderEmail = TEXT
+			senderEmail.value = {$plugin.tx_jsgreetingcards.settings.receiver.senderEmail}
+			
+			# Reply address
+			replyToEmail = TEXT
+			replyToEmail.value = {$plugin.tx_jsgreetingcards.settings.receiver.replyToEmail}
+			replyToName = TEXT
+			replyToName.value = {$plugin.tx_jsgreetingcards.settings.receiver.replyToName}
+		}	
+	}
+}
+
+config.tx_jsgreetingcards.features.skipDefaultArguments = 1
+plugin.tx_jsgreetingcards.features.skipDefaultArguments = 1

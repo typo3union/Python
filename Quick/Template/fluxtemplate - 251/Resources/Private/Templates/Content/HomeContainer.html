@@ -1,0 +1,39 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:section name="Configuration">
+    <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+    <flux:form id="HomeContainer" label="Home Container Box" description="Home Container Box Element" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom Elements'}">
+      <flux:form.sheet name="options" label="Options">
+        <flux:form.section name="Boxes" label="Home Container Box">
+          <flux:form.object name="Box" label="Add New Slide">
+            <flux:field.input name="Title" label="Title"/>
+            <flux:field.text name="content" label="Content" enableRichText="1" />
+           
+          </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  
+  <f:section name="Main">
+  <div class="container">
+    <div class="row landingpage-box-container">
+      <f:if condition="{Boxes}">
+        <f:for each="{Boxes}" as="Box" iteration="iteration">
+          <div class="col-md-4 col-sm-6 col-xs-12 landing-box-outside">
+            <div class="landing-box-inside">
+              <f:format.html>{Box.Box.content}</f:format.html>
+            </div>
+          </div>
+        </f:for>
+      </f:if>
+    </div>
+    </div>
+  </f:section>
+  
+</div>

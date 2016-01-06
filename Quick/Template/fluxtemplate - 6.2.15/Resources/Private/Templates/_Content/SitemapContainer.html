@@ -1,0 +1,37 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Content" />
+
+<div xmlns="http://www.w3.org/1999/xhtml" 
+	 xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" 
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Configuration">
+		<v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+		
+		<flux:form label="Sitemap Container" id="sitemapcontainer" description="Sitemap Container Element" icon="" options="{Fluidcontent: {sorting: 108},group: 'Custom elements'}">
+			<flux:grid>
+				<flux:grid.row>
+						<flux:grid.column style="width: %" name="column1" label="Sitemap Container">
+							
+						</flux:grid.column>
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Main">
+		
+		<div class="sitemap">
+			<flux:content.render render="1" area="column1" />
+		</div>
+		
+	</f:section>
+	
+	<f:section name="Preview">
+		<flux:widget.grid />
+	</f:section>
+
+</div>

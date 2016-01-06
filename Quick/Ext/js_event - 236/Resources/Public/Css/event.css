@@ -1,0 +1,81 @@
+/*
+ *  (c) 2015 Jainish Senjaliya <jainish.online@gmail.com>
+ *  All rights reserved
+ *  Basic Layout 
+*/
+
+.tx-js-event {
+}
+
+.tx-js-event .errorMessage {
+	width:88.7%;
+	float:left;
+	background-color: #ffe9e9;
+	border: 1px solid #fbc4c4;
+	padding: 13px 40px 13px 18px;
+	margin-bottom:20px;
+	border-radius:4px;
+}
+.tx-js-event .errorMessage .errorDiv span {
+	color: #de5959;
+	font-size:14px;
+	line-height:18px;
+	width:100%;
+	padding-left:20px;
+	background:url(../Icons/error-icon.png) no-repeat left center;
+	display:block !important;
+}
+.tx-js-event .successMessage {
+	width:93%;
+	float:left;
+	padding:0px;
+	background-color: #EBF6E0;
+	border: 1px solid #b3dc82;
+	margin-bottom:20px;
+	border-radius:4px;
+	padding: 13px 18px 13px 18px;
+}
+.tx-js-event .successMessage span {
+	width:100%;
+	color: #5f9025;
+	font-size:14px;
+	line-height:18px;
+	background:url(../Icons/success_icon.png) no-repeat left center;
+	padding-left:20px;
+}
+.tx-js-event .formLoading {
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background: url("../Images/loading.gif") no-repeat scroll center center #000000 !important;
+	opacity: 0.33;
+	z-index: 111111;
+	display: none;
+}
+
+
+.f3-widget-paginator {
+	width:100%;
+	margin:0px;
+	list-style:none;
+	text-align:center;
+	margin:20px 0 10px 0;
+}
+.f3-widget-paginator li {
+	display:inline-block;
+	margin:0px;
+	padding:6px 10px;
+	border:1px solid #ddd;
+	margin-right:5px;
+}
+.f3-widget-paginator li a {
+	color:#000;
+	text-decoration: none;
+}
+
+.f3-widget-paginator li span {
+	color:#999;
+	cursor: default;
+}

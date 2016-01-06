@@ -1,0 +1,28 @@
+
+<f:layout name="Default" />
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <div class="row">
+    <div class="col-md-3 borderImg">
+      <f:image src="{statements.image.originalResource.originalFile.uid}" width="167" height="204c" alt="{statement.name}"/>
+      <p class="clientname">{statements.name}</p>
+      <f:if condition="{statements.stateId.secondaryLogo.originalResource.originalFile.uid}"><span class="sub-companylogo">
+        <f:image src="{statements.stateId.secondaryLogo.originalResource.originalFile.uid}" width="200c" height="81c" alt="{statements.stateId.name}"/>
+        </span> </f:if>
+    </div>
+    <div class="col-md-9">
+      <div class="homedetail clearfix statementDetail">
+        <f:format.html>{statements.description} </f:format.html>
+      </div>
+    </div>
+  </div>
+</f:section>

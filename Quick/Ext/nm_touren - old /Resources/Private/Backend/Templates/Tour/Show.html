@@ -1,0 +1,51 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<!--<f:section name="content">
+<h1>Single View for Tour</h1>
+
+<f:flashMessages />
+<f:render partial="Tour/Properties" arguments="{tour:tour}" />
+<f:link.action action="list">Back to list</f:link.action><br />
+<f:link.action action="create">New Tour</f:link.action>
+</f:section>-->
+
+
+
+<f:section name="content">
+	
+	<div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Tour Information
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+					<f:render partial="Tour/Properties" arguments="{tour:tour}" />
+				</div>
+                <!-- /.panel-body -->
+				
+				<div class="panel-footer"><f:link.action action="list">Back to list</f:link.action></div>
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#datetimepicker1').datetimepicker();
+		});
+	</script>
+</f:section>

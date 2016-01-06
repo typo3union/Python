@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file target-language="it" datatype="plaintext" original="messages" date="2015-09-01T04:55:49Z" product-name="product">
+		<header/>
+		<body>
+			<trans-unit id="tx_product_domain_model_product">
+				<target>Product</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.featured_product">
+				<target>Featured Product</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.name">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.images">
+				<target>Images</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.description">
+				<target>Description</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.machine_no">
+				<target>Machine No</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.location">
+				<target>Location</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.year">
+				<target>Year</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.rating">
+				<target>Rating</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.category">
+				<target>Category</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category">
+				<target>Category</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_category.name">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="pagination_first">
+				<target>First</target>
+			</trans-unit>
+
+			<trans-unit id="pagination_last">
+				<target>Last</target>
+			</trans-unit>
+
+			<trans-unit id="pagination_previous">
+				<target>Previous</target>
+			</trans-unit>
+
+			<trans-unit id="pagination_next">
+				<target>Next</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.cat">
+				<target>Categoria</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.desc">
+				<target>Descrizione</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.machine">
+				<target>Numero di macchina</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.location">
+				<target>Positione di macchina</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.year">
+				<target>Anno di costruzione</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.company">
+				<target>Azienda</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.firstname">
+				<target>Cognome</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.lastname">
+				<target>Nome</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.address">
+				<target>Indirizzo</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.postal">
+				<target>Codice postale</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.ort">
+				<target>Città</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.land">
+				<target>Nazione</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.email">
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.telephone">
+				<target>Telefono</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.submit">
+				<target>Invia richiesta</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.content">
+				<target>Si siete interessati a questa macchina, si prega di compilare i campi di richiesta.</target>
+			</trans-unit>
+			<trans-unit id="tx_product_domain_model_product.topproduct">
+				<target>Offerta speciale</target>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

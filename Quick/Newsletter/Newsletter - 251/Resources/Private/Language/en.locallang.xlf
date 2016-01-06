@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" target-language="en" datatype="plaintext" original="messages" date="2015-04-15T09:12:40Z" product-name="newsletter">
+		<header/>
+		<body>
+			<trans-unit id="tx_newsletter_domain_model_newsletter">
+				<target>Newsletter</target>
+			</trans-unit>
+
+			<trans-unit id="tx_newsletter_domain_model_newsletter.gender">
+				<target>Gender*</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.company">
+				<target>Company</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.firstname">
+				<target>First Name*</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.name">
+				<target>Name*</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.email">
+				<target>E-Mail-Adresse*</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.require">
+				<target>*Require</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.newsletter">
+				<target>Newsletter</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.bestellen">
+				<target>bestellen</target>
+			</trans-unit>
+
+			<trans-unit id="tx_newsletter_domain_model_newsletter.blank_vorname">
+			    <target>Firstname is require</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.blank_name">
+			    <target>Namen is require</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.blank_email">
+			    <target>E-Mail is require</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.valid_email">
+			    <target>Enter valid email address</target>
+			</trans-unit>
+
+			<trans-unit id="tx_newsletter_domain_model_newsletter.thankYou">
+			    <target>Thank you for your registration!</target>
+			</trans-unit>
+			<trans-unit id="tx_newsletter_domain_model_newsletter.alreadyRegister">
+			    <target>Your E-mail Id is already registered</target>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

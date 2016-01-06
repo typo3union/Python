@@ -1,0 +1,73 @@
+
+ 
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+     <div class="newsletter-box-container">
+           <!--  <div class="col-md-11 col-sm-10 col-xs-10 col-md-push-1 col-sm-push-1 col-xs-push-1">
+                <h1>{settings.mainTitle}<br/>{settings.text}</h1>
+            </div> -->
+          <f:form class="email-form" method="post" action="list"  name="email-form"  id="email-form" >
+           
+              <div class="form-group">
+                <f:if condition="{message}">
+                  <script>
+                    $(window).scrollTop($('.newsletter-box-container').offset().top);
+                  </script>
+                  <f:if condition="{message} == '1'">
+                    <div class="alert alert-success text-center">
+                      <p>
+                        <f:translate key="tx_newsletter_domain_model_newsletter.thankYou" />
+                      </p>
+                    </div>
+                  </f:if>
+                  <f:if condition="{message} == '2'">
+                    <div class="alert alert-success alreday text-center">
+                      <p>
+                        <f:translate key="tx_newsletter_domain_model_newsletter.alreadyRegister" />
+                      </p>
+                    </div>
+                  </f:if>
+                </f:if>
+                <f:if condition="{message} == '3'">
+                  <div class="alert alert-success alreday text-center">
+                    <p>
+                      <f:translate key="tx_newsletter_domain_model_newsletter.valid_email" />
+                    </p>
+                  </div>
+                </f:if>
+            </div>
+               
+            <div class="form-group">
+              <f:form.textfield type="text" name="Vorname" value="" class="form-control validate" additionalAttributes="{maxlength:'50', placeholder:'<f:translate key=\'tx_newsletter_domain_model_newsletter.firstname\' />',mendatory_message:'<f:translate key=\'tx_newsletter_domain_model_newsletter.blank_vorname\' />' }" />
+            </div>
+            <div class="form-group">
+              <f:form.textfield id="email" type="text" name="email" value="" class="form-control validate" additionalAttributes="{maxlength:'50', placeholder:'<f:translate key=\'tx_newsletter_domain_model_newsletter.email\' />',mendatory_message:'<f:translate key=\'tx_newsletter_domain_model_newsletter.blank_email\' />',valid_message:'<f:translate key=\'tx_newsletter_domain_model_newsletter.valid_email\' />'}" />
+            </div>
+                     
+            <div class="form-group">
+                    <f:form.button class="btn btn-default text-uppercase" type="submit" name="submit">
+                       <f:translate key="tx_newsletter_domain_model_newsletter.bestellen" />
+                </f:form.button>
+            </div>
+         
+              
+            </f:form>
+
+          </div>
+
+
+</f:section>
+

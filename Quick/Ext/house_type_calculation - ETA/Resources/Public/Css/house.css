@@ -1,0 +1,47 @@
+.tx-house-type-calculation .main-table-section, .tx-house-type-calculation .first-table { max-width: 960px; margin:0 auto; float: left; width: 100%;}
+.tx-house-type-calculation .left-table-section { margin-right: 0px; float: left; max-width: 100%; width: 100%; position: relative; }
+.tx-house-type-calculation .table-top-head { margin-bottom: 50px; float: left; width: 100%;}
+.tx-house-type-calculation .lable-tag { width: 30%; float: left; font-weight: normal;}
+.tx-house-type-calculation .input-select, select-style { width: 69%; float: left;}
+.tx-house-type-calculation .input-select select, .input-select input { width: 100%; padding: 3px 10px; height: 34px; border-radius: 0px; border:1px solid #bbbbbb; margin-bottom: 10px; line-height: 25px; background: #fff;}
+.tx-house-type-calculation .left-table-section table { width: 100%; margin-top: 20px;}
+.tx-house-type-calculation .left-table-section table, .left-table-section tbody, .left-table-section tr, .left-table-section td, .left-table-section th { border: none; border-collapse:collapse; padding: 0px 10px; font-size: 13px; font-weight: normal;}
+.tx-house-type-calculation .left-table-section th { background: #f8ba03; border: 1px solid #000; border-left: 1px solid #000; border-top:none;}
+.tx-house-type-calculation .left-table-section th br { display: none;}
+.tx-house-type-calculation #estimation tbody tr:nth-child(2n) { background: #95a7b1;}
+.tx-house-type-calculation #estimation tbody tr:nth-child(2n) td { border-right: 1px solid #fff; color: #fff; }
+.tx-house-type-calculation .left-table-section td { padding: 10px;}
+.tx-house-type-calculation .tx-house-type-calculation .calculation-table tr:nth-child(2n) {background:#fff;}
+
+.tx-house-type-calculation .select-style {
+    overflow: hidden;
+    background: #fff url("../Icons/select-bx.png") no-repeat 98% 48%; box-sizing:border-box; border: 1px solid #bbbbbb; margin-bottom: 10px;
+}
+
+.tx-house-type-calculation .select-style select {
+    padding: 5px 8px; padding-right: 25px; overflow: hidden;
+    width: 104%; border:none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none; margin-bottom: 0px;
+}
+
+.tx-house-type-calculation .select-style select:focus {
+    outline: none;
+}
+
+.tx-house-type-calculation table td {border:1px solid #000;}
+.tx-house-type-calculation .display_data {float: left; width: 100%; margin-top: 30px;}
+.tx-house-type-calculation .main_content { margin-bottom: 30px;}
+.tx-house-type-calculation .main_content p { margin-bottom: 10px;}
+
+@media only screen and (max-width: 665px) {
+	.tx-house-type-calculation .first-table { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-bottom: 20px;}
+	.tx-house-type-calculation .main-table-section { min-width: 100%;}
+	.tx-house-type-calculation input#oilNeeded { width: 50px;}
+}
+
+@media only screen and (max-width: 480px) {
+	.tx-house-type-calculation .second-table { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-bottom: 20px; float: left;}
+		.tx-house-type-calculation input#oilNeeded { width: 30px;}
+}

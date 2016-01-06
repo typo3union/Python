@@ -1,0 +1,180 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Main Settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Display Mode</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="1">
+										<numIndex index="0">Product List</numIndex>
+										<numIndex index="1">Product->list</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Product Detail</numIndex>
+										<numIndex index="1">Product->show</numIndex>
+									</numIndex>
+									
+
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					
+					<settings.flexform.main.productlist>
+						<TCEforms>
+							<label>Product ListpageID</label>
+							  <displayCond>FIELD:switchableControllerActions:=:Product->list</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.productlist>
+
+					<settings.flexform.main.productdetail>
+						<TCEforms>
+							<label>Product Deatil pageID</label>
+							 <displayCond>FIELD:switchableControllerActions:=:Product->show</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.productdetail>
+					
+					<settings.flexform.main.productform>
+						<TCEforms>
+							<label>Product Form</label>
+							 <displayCond>FIELD:switchableControllerActions:=:Product->show</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexform.main.productform>
+					</el>
+      </ROOT>
+    </main>    
+    <order>
+      <ROOT>
+        <TCEforms>
+
+          <sheetTitle>Sender</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+				 <settings.flexform.order.recieverEmail>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Admin Email</label>
+              <config>
+                <type>input</type>
+              </config>
+            </TCEforms>
+          </settings.flexform.order.recieverEmail>
+		   <settings.flexform.order.senderEmail>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Sender Email (For Confirmation Mail to User)</label>
+              <config>
+                <type>input</type>
+                <eval>trim,In2code\Powermail\Utility\Tca\EvaluateEmail</eval>
+              </config>
+            </TCEforms>
+          </settings.flexform.order.senderEmail>
+		  
+          <settings.flexform.order.senderName>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Sender Name (For Confirmation Mail to User)</label>
+              <config>
+                <type>input</type>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </settings.flexform.order.senderName>
+         
+          <settings.flexform.order.senderSubject>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Subject for Email to Sender (Empty subject disables mail)</label>
+              <config>
+                <type>input</type>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </settings.flexform.order.senderSubject>
+		<settings.flexform.order.mailBody>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Bodytext for Email to Sender</label>
+              <config>
+                <type>text</type>
+                <default></default>
+              </config>
+              <defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+            </TCEforms>
+          </settings.flexform.order.mailBody>  
+		  <settings.flexform.order.mailBodyAdmin>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>Bodytext for Email to Admin</label>
+              <config>
+                <type>text</type>
+                <default></default>
+              </config>
+              <defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+            </TCEforms>
+          </settings.flexform.order.mailBodyAdmin>            
+				</el>
+			</ROOT>
+		</order>
+<answer>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>Answer Page</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+         <settings.flexform.order.thxMessage>
+						<TCEforms>
+							<exclude>1</exclude>							
+							<label>Text to answer page.</label>
+							<config>
+								<type>text</type>								
+							</config>
+							<defaultExtras>richtext[cut|copy|paste|formatblock|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image|line|chMode]:rte_transform[mode=ts_css]</defaultExtras>
+						</TCEforms>
+					</settings.flexform.order.thxMessage>
+        </el>
+      </ROOT>
+    </answer>
+	
+	</sheets>
+</T3DataStructure>

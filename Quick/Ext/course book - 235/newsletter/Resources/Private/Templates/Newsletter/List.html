@@ -1,0 +1,48 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<div class="news-row  clearfix">
+    <div class="press-news">  
+         <f:if condition="{settings.link}">  
+             <f:then>
+                 <f:link.page pageUid="{settings.link}"><div class="small-title pull-left clearfix"><i class="fa fa-angle-double-right"></i>{settings.mainTitle}</div></f:link.page>
+             </f:then>
+             <f:else>
+                 <div class="small-title pull-left clearfix">{settings.mainTitle}</div>
+             </f:else>
+         </f:if>
+        <br/>
+        
+   
+        <p>{settings.text}</p>
+        <f:form class="email-form" method="post" action="list"  name="email-form"  id="email-form" >
+            <div class="input-group ">
+              		       
+      
+            <span class="email_err"></span>
+               
+                    <f:form.textfield type="text" name="email" placeholder="{settings.emailPlceholder}"  value="" class="form-control" id="email" additionalAttributes="{data-validation: '[EMAIL]'}"  />
+                    <span class="input-group-btn" >
+                        <f:form.submit value="Absenden" class="btn btn-default"  name="submit" />      
+                    </span>
+             <f:if condition="{newsletters.thankyou_message}"><div class="alert alert-success text-center"><p>{settings.thankyouText}</p></div> </f:if>
+   <f:if condition="{newsletters.alreadyRegister_message}"><div class="alert alert-success text-center"><p>{settings.alreadyRegisterText} </p></div> </f:if>  
+            </div>
+          </f:form>
+    </div>		
+</div>
+                        
+</f:section>

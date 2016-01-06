@@ -1,0 +1,68 @@
+ 
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+    <f:section name="Configuration">
+        <v:var.set name="locallangPath" value="{v:var.typoscript(path: 'lib.locallangPath.value')}" />
+        <flux:form id="address" label="Contact Address Detail" description="Contact Address Detail" icon="" options="{Fluidcontent: {sorting: 108},group: 'Custom Elements'}">
+            <flux:form.sheet name="options" label="Options">
+                <flux:field.text name="title" label="Title Text" enableRichText="1" />
+                <flux:field.text name="address" label="Address Text" enableRichText="1"  />
+                <flux:field.input name="number1" label="Number1 Text" /> 
+                <flux:field.input name="number2" label="Number2 Text" /> 
+                <flux:field.input name="email" label="Email Text" />
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    <f:section name="Main">
+        <div class="contact-main">
+
+        <address>
+            <span class="media-heading"><f:format.raw>{title}</f:format.raw></span>
+            <div class="media"> 
+                <div class="media-left">
+                    <span class="fa fa-map-marker"></span>
+                </div>
+                <div class="media-body">
+                    <span><f:format.raw>{address}</f:format.raw> </span>
+                </div>
+            </div>
+        </address>
+        <address>
+            <div class="media"> 
+                <div class="media-left">
+                    <span class="fa fa-phone"></span>
+                </div>
+                <div class="media-body">
+                    <span>{number1}</span>
+                </div>
+            </div>
+        </address>
+        <address>
+            <div class="media"> 
+                <div class="media-left">
+                    <span class="fa fa-print"></span>
+                </div>
+                <div class="media-body">
+                    <span>{number2}</span>
+                </div>
+            </div>
+        </address>
+        <address>
+            <div class="media"> 
+                <div class="media-left">
+                    <span class="fa fa-envelope"></span>
+                </div>
+                <div class="media-body">
+                   <span>{email}</span>
+                </div>
+            </div>
+        </address>
+        </div>
+    </f:section>
+</div>
+

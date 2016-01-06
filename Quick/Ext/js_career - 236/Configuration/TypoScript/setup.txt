@@ -1,0 +1,69 @@
+
+plugin.tx_jscareer {
+	view {
+		templateRootPath = {$plugin.tx_jscareer.view.templateRootPath}
+		partialRootPath = {$plugin.tx_jscareer.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_jscareer.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_jscareer.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_jscareer._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-js-career table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-js-career table th {
+		font-weight:bold;
+	}
+
+	.tx-js-career table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+
+plugin.tx_jscareer{
+	settings{
+
+		configuration	= 1
+		
+		uri{
+			javascript = {$plugin.tx_jscareer.uri.javascript}
+			css = {$plugin.tx_jscareer.uri.css}
+		}
+
+		perpage = {$plugin.tx_jscareer.additional.perpage}
+	}
+}
+
+config.tx_jscareer.features.skipDefaultArguments = 1
+plugin.tx_jscareer.features.skipDefaultArguments = 1

@@ -1,0 +1,1074 @@
+ /* $Id$ */
+@media screen, projection {
+
+/* @group reservierung */
+body.kursIndex .stage div.filters {
+    position: relative;
+	padding: 50px 0 15px 0;
+	height: 30px;
+}	
+body.kursIndex .stage div.filters a,
+body.kursIndex .stage div.filters h1 {
+	padding: 0px;
+	float: left;
+	margin-right: 40px;
+	display: block;
+	height: 30px;
+    vertical-align: bottom;
+}
+body.kursIndex .stage div.filters a {
+	padding-top: 12px;
+}	
+body.kursIndex .stage h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: none;
+    padding: 50px 0 15px 0;
+}
+
+body.kursIndex .stage table {
+    width: 741px;
+    margin-bottom: 20px;
+}
+body.kursIndex .stage th {
+    padding: 10px 12px 10px 12px;
+    background-color: #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+body.kursIndex .stage td {
+    padding: 1px 12px 7px 12px;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+}
+body.kursIndex .stage tr.kursDescriptionFallback td {
+    border-bottom: 1px solid #ebebeb;
+	padding-top: 5px;
+}
+body.kursIndex .stage tr:hover td.dateBegin,	
+body.kursIndex .stage td.dateBegin,
+body.kursIndex .stage tr.locked td.dateBegin {
+    background-color: #cbcbcb;
+    width: 93px;
+}
+body.kursIndex .stage td.dateEnd {
+    width: 93px;
+}
+body.kursIndex .stage td.kurstyp {
+	width: 152px;
+}
+body.kursIndex .stage td.kurstyp .no_of_persons { float: right;
+    margin-right: 33px; }
+body.kursIndex .stage td.four-people {
+	background-image: url(../images/basic/4people.png);
+	background-position: right; background-repeat: no-repeat; }
+body.kursIndex .stage td.six-people {
+    background-image: url(../images/basic/6people.png);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+body.kursIndex .stage td.eight-people {
+    background-image: url(../images/basic/8people.png);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+body.kursIndex .stage tr td.action {
+    padding: 0 12px;
+}
+body.kursIndex .stage tr td.action div {
+    position: relative;
+    top: 4px;
+}
+body.kursIndex .stage tr:hover td,	
+body.kursIndex .stage tr.locked td {
+	background-color: #EDF2F4;
+}
+body.kursIndex .stage .kursList .tablenav td {
+    padding-top: 6px;
+    background-color: #ebebeb;
+}
+body.kursIndex .stage .kursList .tablenav td.kursListPrev,
+body.kursIndex .stage .kursList .tablenav td.kursListNext {
+    background-color: #E1E1E1;
+}
+body.kursIndex .stage .kursList .tablenav td.kursListPrev a,
+body.kursIndex .stage .kursList .tablenav td.kursListNext a {
+    margin-top: .167em;
+    padding-left: 1em;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0 .333em;
+}
+body.kursIndex .stage .kursList .tablenav td.kursListPrev a {
+    background-image: url(../images/basic/arrow_up.gif);
+}
+body.kursIndex .stage .kursList .tablenav td.kursListNext a {
+    background-image: url(../images/basic/arrow_down.gif);
+}
+body.kursIndex .stageContent {
+    margin-bottom: 15px;
+}
+.kursplan {
+	display: none;
+}
+body.kursIndex .calendarSheetSet {
+    clear: both;
+}
+body.kursIndex .calendarSheet {
+    width: 232px;
+    margin: 10px 23px 20px 0;
+    float: left;
+    border: 1px solid #e6e4e5;
+    padding: 0;
+}
+body.kursIndex .kursplan .last { margin-right: 0; }
+body.kursIndex .kursplan .calendarSheet td,
+body.kursIndex .kursplan .calendarSheet th {
+    width: 30px;
+    padding: 3px 0 5px 0;
+    text-align: center;
+}
+body.kursIndex .kursplan .calendarSheet tr.month th {
+    background-color: #e6e4e5;
+}
+body.kursIndex .kursplan .calendarSheet td span {
+    display: block;
+}
+body.kursIndex .kursplan .calendarSheet td.highlight {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 1px 0;
+    background-image: url(../images/basic/calendar_cell-bg.gif);
+}
+body.kursIndex .kursplan .calendarSheet td.abends {
+    background-position: 1px -30px;
+}
+body.kursIndex .kursplan .calendarSheet td.halbtags {
+    background-position: 1px -60px;
+}
+body.kursIndex .kursplan .calendarSheet td.pruefung1 {
+    background-position: 1px -90px;
+}
+body.kursIndex .kursplan .calendarSheet td.pruefung2 {
+    background-position: 1px -120px;
+}
+body.kursIndex .kursplan .calendarSheet td.ganztags_pruefung1 {
+    background-position: 1px -150px;
+}
+body.kursIndex .kursplan .calendarSheet td.abends_pruefung1 {
+    background-position: 1px -180px;
+}
+body.kursIndex .kursplan .calendarSheet td.halbtags_pruefung1 {
+    background-position: 1px -210px;
+}
+body.kursIndex .kursplan .calendarSheet td.schulfrei {
+    background-color: #EFF1F0;
+}
+body.kursIndex .kursplan .form {
+    position: relative;
+    top: 2px;
+    float: right;
+    margin-right: 255px;
+}
+body.kursIndex ul.legende {
+    clear: both;
+}
+body.kursIndex ul.legende li {
+    display: inline;
+    padding: 2px 5px 3px 35px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 1px 0;
+    background-image: url(../images/basic/calendar_cell-bg.gif);
+}
+body.kursIndex ul.legende li.abends {
+    background-position: 1px -30px;
+}
+body.kursIndex ul.legende li.halbtags {
+    background-position: 1px -60px;
+}
+body.kursIndex ul.legende li.pruefung1 {
+    background-position: 1px -90px;
+}
+body.kursIndex ul.legende li.pruefung2 {
+    background-position: 1px -120px;
+}
+body.kursIndex ul.legende li.ganztags_pruefung1 {
+    background-position: 1px -150px;
+}
+body.kursIndex ul.legende li.abends_pruefung1 {
+    background-position: 1px -180px;
+}
+body.kursIndex ul.legende li.halbtags_pruefung1 {
+    background-position: 1px -210px;
+}
+body.kursIndex p.kursDescription {
+	display: none;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    background: transparent url(../images/basic/info_small.png) no-repeat top left;
+    padding-top: 6px;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    min-height: 33px;
+}
+body.kursIndex a.backLink {
+    clear: both;
+    float: right;
+    margin-right: 40px;
+    padding-left: 15px;
+    background: transparent url(../images/basic/arrow_left.png) no-repeat 0 50%;
+}
+/* @end */
+
+/* @group team */
+body.team div.content {
+    clear: both;
+}
+body.team div.content ul li {
+    float: left;
+    margin-bottom: 0.5em;
+}
+body.team div.content ul a {
+    text-decoration: none;
+    font-size: 2em;
+}
+body.team div.content ul li.even a {
+    color: #aaaaaa;
+}
+body.team .stageContent h1 + p {
+    margin-bottom: 1em;
+}
+/* @end */
+
+
+/* @group produktIndex */
+body.productIndex .stageContent .product {
+    position: relative;
+    float: left;
+    width: 476px;
+}
+body.productIndex .stage .stageContent .left {
+    margin-right: 44px;
+}
+body.productIndex .stageContent h2 {
+    position: absolute;
+    top: 37px;
+    left: 33px;
+}
+body.productIndex .stageContent .textBottom p {
+    margin: 0 33px;
+}
+body.productIndex .stageContent {
+    margin-bottom: 65px;
+}
+
+body.productIndex .content .product {
+    width: 302px;
+    float: left;
+    margin-left: 45px;
+}
+body.productIndex .content div.twoColumn {
+    width: 476px;
+    margin-left: 44px;
+}
+body.productIndex .content div.left {
+    clear: both;
+    margin-left: 0;
+}
+body.productIndex .content .product .imgText {
+    position: relative;
+    width: 100%;
+    height: 142px;
+    margin-bottom: 17px;
+}
+body.productIndex .content .twoColumn .imgText {
+    height: 223px;
+}
+
+body.productIndex .content .product .imgText h2 {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: transparent url(../images/basic/stage_bg.png) repeat top left;
+    
+}
+body.productIndex .content .product .imgText h2 a {
+    display: block;
+    margin: 11px 33px;
+}
+
+/* Container für Open Street Map */ 
+#osm_container {
+    position: relative;
+    height: 430px;
+    width: 993px;
+}   
+#osm_disclaimer {
+    position: absolute;
+    right:  10px;
+    bottom: 10px;
+}
+    
+/* @end */
+	
+/* @group Suchseite */ 
+#oss_disclaimer {
+    position: absolute;
+    right:  10px;
+    bottom: 10px;
+}
+/* @end */	
+		
+
+/* @group faq */
+body.faq .stage {
+    padding: 35px 0;
+}
+body.faq .stage .textWrapper {
+    background-color: #fff;
+    padding: 25px 25px 50px 25px;
+}
+body.faq .stage h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: none;
+    padding: 0px 0 15px 0;
+}
+body.faq h2 {
+    margin: 20px 0 15px 0;
+}
+
+body.faq .stage .info {
+    background: transparent url(../images/basic/info_small.png) no-repeat top left;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    min-height: 33px;
+}
+body.faq .stage .info .vcard span,
+body.faq .stage .info .vcard div,
+body.faq .stage .info .vcard a {
+    display: none;
+}
+body.faq .stage .info .vcard div.tel {
+    display: block;
+}
+body.faq .stage .stageContent li ul li {
+    list-style: disc inside;
+}
+body.faq .content ul.answers {
+    padding: 25px 25px 50px 25px;
+}
+body.faq .content ul.answers p {
+    margin-right: 45px;
+}
+body.faq a.backLink {
+    clear: both;
+    float: right;
+    margin-right: 40px;
+    padding-left: 15px;
+    background: transparent url(../images/basic/arrow_left.png) no-repeat 0 50%;
+}
+/* @end */
+
+
+/* @group home */
+body.home .content {
+    margin-top: 50px;
+}
+body.home .content .teaser {
+    width: 314px;
+    float: left;
+    margin-left: 27px;
+    background-color: #EAECEB;
+    min-height: 160px;
+}
+body.home .content div.left {
+    clear: both;
+    margin-left: 0;
+}
+body.home .content .teaser h2 {
+    background-color: #fff;
+    padding-bottom: 5px;
+}
+body.home .content .teaser p {
+    margin: 12px 11px;
+} 
+body.home .content .teaser ul {
+    margin: 9px 11px;
+}
+body.home .content .teaser ul {
+    list-style: inside url(../images/basic/list_arrow_right.png);
+}
+/* @end */
+
+
+/* @group productPage */
+body.productPage h1 {
+    text-align: right;
+}
+body.productPage .content {
+    padding-top: 55px;
+}
+body.productPage p.info {
+    background: transparent url(../images/basic/info_small.png) no-repeat top left;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    min-height: 33px;
+}
+body.productPage p,
+body.productPage h2,
+body.productPage h3 {
+    margin-right: 230px;
+}
+body.productPage table.kostenbeispiel,
+body.productPage table.kostenbeispiel-sks {
+    display: none;
+}
+/* @end */
+
+
+/* @group charterIndex */
+body.charterIndex .content {
+    padding-top: 55px;
+}
+body.charterIndex .content div.teaser {
+    width: 314px;
+    float: left;
+    margin: 0 0 17px 27px;
+    
+}
+body.charterIndex .content div.left {
+    clear: both;
+    margin-left: 0;
+}
+body.charterIndex .content ul li {
+    list-style: inside url(../images/basic/list_arrow_right.png);
+}
+/* @end */
+
+
+/* @group charterRevier */
+body.charterRevier .stage {
+    padding: 35px 0;
+}
+body.charterRevier .stage h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: none;
+    padding: 0px 0 15px 0;
+}
+body.charterRevier h2 {
+    margin: 20px 0 15px 0;
+}
+body.charterRevier .stage p,
+body.charterRevier .stage h1 {
+    width: 930px;
+}
+body.charterRevier .stage p.info {
+    background: transparent url(../images/basic/info.png) no-repeat top left;
+    padding-left: 70px;
+    margin-bottom: 20px;
+    min-height: 53px;
+    width: 870px;
+}
+body.charterRevier .stage button {
+    float: right;
+}
+/* @end */
+
+
+/* @group charter reservierung */
+body.reservierung div.yachttyp {
+    width: 340px;
+    padding-bottom: 20px;
+}
+body.reservierung div.yachttyp div {
+    margin-bottom: 10px;
+}
+body.reservierung div.yachttyp label {
+    width: 69px;
+    float: left;
+    margin-left: 0px;
+}
+body.reservierung div.yachttypJs label {
+    text-indent: -1000em;
+    height: 52px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+body.reservierung div.yachttypJs .labelMotoryacht {
+    background-image: url('../images/basic/motoryacht-inaktiv.png');
+    background-position: 0 15px;
+}
+body.reservierung div.yachttypJs .labelSegelyacht {
+    background-image: url('../images/basic/segelyacht-inaktiv.png');
+}
+body.reservierung div.yachttypJs .labelKatamaran {
+    background-image: url('../images/basic/katamaran-inaktiv.png');
+}
+body.reservierung div.yachttypJs label.labelMotoryachtAktiv {
+    background-image: url('../images/basic/motoryacht-aktiv.png');
+}
+body.reservierung div.yachttypJs label.labelSegelyachtAktiv {
+    background-image: url('../images/basic/segelyacht-aktiv.png');
+}
+body.reservierung div.yachttypJs label.labelKatamaranAktiv {
+    background-image: url('../images/basic/katamaran-aktiv.png');
+}
+body.reservierung div.yachttyp input {
+    float: left;
+}
+body.reservierung div.yachttypJs input {
+    float: left;
+    margin-top: 20px;
+}
+/* @end */
+
+
+/* @group knoten */
+body.knoten .stageContent {
+    padding: 45px 45px 0 45px;
+    background-color: #fff;
+}
+body.knoten .stage h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: none;
+    padding: 0px 0 15px 0;
+}
+body.knoten .stage .flash {
+    height: 430px;
+    width: 996px;
+}
+body.knoten .content {
+    padding-top: 55px;
+}
+body.knoten .content p,
+body.knoten .content ul,
+body.knoten .content h2,
+body.knoten .content h3 {
+    margin-right: 230px;
+}
+body.knoten .content ul.weitereKnoten {
+    padding: 12px 11px;
+    background-color: #EAECEB;
+}
+body.knoten .content .weitereKnoten li {
+    display: inline;
+}
+body.knotenIndex .content {
+    padding-top: 55px;
+}
+p.knoten {
+    width: 306px;
+    height: 206px;
+    float: left;
+    text-align: center;
+    margin-bottom: 26px;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+p.knoten_tall {
+    height: 262px;
+}   
+p.knoten + p.knoten {
+    margin-left: 39px;
+}
+p#achtknoten {
+    background-image: url(../images/knoten/achtknoten.png);
+}       
+p#achtknoten:hover {
+    background-image: url(../images/knoten/achtknoten_hover.png);
+}
+p#doppelter_schotstek {
+    background-image: url(../images/knoten/doppelter_schotstek.png);
+}       
+p#doppelter_schotstek:hover {
+    background-image: url(../images/knoten/doppelter_schotstek_hover.png);
+}       
+p#einfacher_schotstek {
+    background-image: url(../images/knoten/einfacher_schotstek.png);
+}       
+p#einfacher_schotstek:hover {
+    background-image: url(../images/knoten/einfacher_schotstek_hover.png);
+}
+p#eineinhalb_rundtoerns {
+    background-image: url(../images/knoten/eineinhalb_rundtoerns.png);
+    margin-left: 345px;
+}       
+p#eineinhalb_rundtoerns:hover {
+    background-image: url(../images/knoten/eineinhalb_rundtoerns_hover.png);
+}
+p#klampe_belegen {
+    background-image: url(../images/knoten/klampe_belegen.png);
+}       
+p#klampe_belegen:hover {
+    background-image: url(../images/knoten/klampe_belegen_hover.png);
+}
+p#kreuzknoten {
+    background-image: url(../images/knoten/kreuzknoten.png);
+}       
+p#kreuzknoten:hover {
+    background-image: url(../images/knoten/kreuzknoten_hover.png);
+}
+p#palstek {
+    background-image: url(../images/knoten/palstek.png);
+}       
+p#palstek:hover {
+    background-image: url(../images/knoten/palstek_hover.png);
+}
+p#stopperstek {
+    background-image: url(../images/knoten/stopperstek.png);
+}       
+p#stopperstek:hover {
+    background-image: url(../images/knoten/stopperstek_hover.png);
+}
+p#webeleinstek {
+    background-image: url(../images/knoten/webeleinstek.png);
+}       
+p#webeleinstek:hover {
+    background-image: url(../images/knoten/webeleinstek_hover.png);
+}
+p#webeleinstek_slip {
+    background-image: url(../images/knoten/webeleinstek_slip.png);
+}
+p#webeleinstek_slip:hover {
+    background-image: url(../images/knoten/webeleinstek_slip_hover.png);
+}
+/* @end */
+
+
+/* @group jojo */
+body.jojo .content {
+    padding-top: 55px;
+}
+body.jojo .content ol {
+    margin-bottom: 20px;
+}
+body.jojo .content ol li {
+    margin-left: 20px;
+}
+/* @end */
+
+
+/* @group error */
+body.error .stage {
+    padding: 35px 0;
+}
+body.error .stage div.solution {
+  clear:both;
+  padding: 20px 17px;
+  background: #FFFFFF;
+}
+body.error .stage img {
+  float:left;
+}
+
+/* @end */
+
+/* @group kontakt/beschwerde */
+body.kontakt .stage {
+    padding: 35px 0;
+}
+body.kontakt .stage .textWrapper {
+    position: relative;
+    background: #fff url(../images/basic/stamp.gif) no-repeat 835px 50px;
+    padding: 25px 25px 50px 25px;
+}
+body.beschwerde .stage .stageContent .textWrapper {
+    background-image: none;
+}
+body.kontakt .stage .stageContent .textWrapper p {
+    margin-bottom: 1.417em;
+    width: 500px;
+}
+body.kontakt .stage h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: none;
+    padding: 0px 0 15px 0;
+}
+body.kontakt legend {
+    padding: 20px 0 15px 0;
+}
+body.kontakt label {
+    display: block;
+    margin-top: 9px;
+    margin-bottom: 4px;
+}
+body.kontakt textarea {
+    border: 1px solid #DFDFDF;
+    width: 500px;
+    height: 100px;
+}
+body.kontakt .text input {
+    width: 500px;
+    height: 20px;
+    border-top: 1px solid #AAADB2;
+    border-right: 1px solid #E2EBF1;
+    border-bottom: 1px solid #E2EBF1;
+    border-left: 1px solid #E2EBF1;
+}
+body.kontakt button {
+    float: right;
+    position: relative;
+    top: -20px;
+    left: 0;
+    margin-right: 40px;
+}
+body.kontakt a.backLink {
+    clear: both;
+    float: right;
+    margin-right: 40px;
+    padding-left: 15px;
+    background: transparent url(../images/basic/arrow_left.png) no-repeat 0 50%;
+}
+body.kontakt .vcard_hidden {
+    position: absolute;
+    top: 200px;
+    right: 60px;
+}
+body.kontakt .vcard_hidden a.url,
+body.kontakt .vcard_hidden a.email,
+body.kontakt .vcard_hidden .country-name,
+body.kontakt .vcard_hidden .tel {
+    display: none;
+}
+body.kontakt .vcard_hidden .openingHours {
+	margin-top: 1em;
+}
+/* @end */
+
+/* @group logbuch */
+
+body.logbuch .stage {
+    padding: 35px 0;
+}
+body.logbuch .stage .textWrapper {
+    background-color: #fff;
+    padding: 25px 25px 50px 25px;
+}
+body.logbuch .category h2 {
+    display: none;
+}
+body.logbuch .post h1,
+body.logbuch .stage h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: none;
+    padding: 0px 0 15px 0;
+}
+body.logbuch h2 {
+    margin: 20px 0 15px 0;
+}
+body.logbuch .stage .textWrapper img {
+    float: left;
+    margin: 3px 10px 10px 0;
+}
+body.logbuch .entry {
+    clear: both;
+}
+body.logbuch .entry p.imgLeft {
+    float: left;
+    margin-left: 0;
+}
+body.logbuch #respond {
+    margin-left: 275px;
+    float: none;
+	clear: both;
+	margin-top: 25px;
+}
+body.logbuch #respond textarea,
+body.logbuch #respond input.text {
+	width: 300px;
+	margin-bottom: 7px;
+}
+body.logbuch .commentlist {
+    margin-left: 275px;
+	width: 500px;
+}
+body.logbuch .commentlist .says {
+	display: none;
+}
+body.logbuch .commentlist li {
+	margin-bottom: 15px;
+}
+body.logbuch .commentlist li .comment-meta {
+	margin-bottom: 7px;
+}
+body.logbuch .commentnav {
+    margin-left: 275px;
+}
+body.logbuch .commentslink {
+	margin: 7px 0 7px 275px;
+}
+body.logbuch .entry p {
+    margin-left: 275px;
+    float: none;
+}
+body.logbuch .logNavigation {
+    clear: both;
+    padding-top: 40px;
+}
+body.logbuch .logNavigation a {
+    margin: 0 auto;
+    width: 300px;
+    line-height: 1.5em;
+}
+body.logbuch .logNavigation li {
+    float: left;
+}
+body.logbuch .logNavigation li.previous,
+body.logbuch .logNavigation li.next {
+    width: 330px;
+}
+body.logbuch .logNavigation li.next a {
+    float: right;
+    padding-right: 0;
+    padding-left: 15px;
+    background: transparent url(../images/basic/arrow_left.png) no-repeat 0 50%;
+}
+body.logbuch .logNavigation li.next a:hover {
+    background-image: url(../images/basic/arrow_left_rot.png);
+}
+body.logbuch .logNavigation li.previous a {
+    float: left;
+    text-align: right;
+    padding-right: 17px;
+    background: transparent url(../images/basic/list_arrow_right.png) no-repeat right 50%;
+}
+body.logbuch .logNavigation li.previous a:hover {
+    background-image: url(../images/basic/list_arrow_right_red.png);
+}
+body.logbuch .logNavigation li.center {
+    width: 250px;
+    text-align: center;
+}
+body.logbuch .indexPosts .indexPost {
+    float: left;
+    width: 300px;
+    margin: 45px 45px 0 0;
+}
+body.logbuch .indexPosts .left {
+    clear: left;
+}
+body.logbuch .indexPost .img {
+    margin-bottom: 15px;
+}
+body.logbuch .indexPost .img img {
+    float: none;
+    margin: 0 auto;
+}
+body.logbuch .indexPost p.more {
+    margin-top: 15px;
+    text-align: right;
+}
+body.logbuch .indexPost a.button {
+    width: 100px;
+    text-align: left;
+    margin-left: 200px;
+}
+body.logbuch p.logIntro {
+    width: 640px;
+}
+body.logbuch ul.logNav {
+    float: right;
+    width: 215px;
+    background-color: #EAECEB;
+    padding: 20px;
+}
+body.logbuch ul.logNav li {
+    
+}
+body.logbuch ul.logNav li ul {
+    list-style: disc inside url("../images/basic/list_arrow_right_red.png");
+    margin-bottom: 12px;
+}
+
+body.logbuch form#commentform input#submit {
+    position: relative;
+    top: 4.25em;
+    left: 150px;
+}
+body.logbuch p.cptch_block {
+    margin-top: -1em;
+}
+body.logbuch p.cptch_block label {
+    width: 300px;
+}
+/* @end */
+
+
+/* @group reservierung */
+body.reservierung .stageContent {
+    padding: 35px 0;
+}
+body.reservierung .textWrapper {
+    background-color: #fff;
+    min-height: 409px;
+}
+body.reservierung .stage p {
+    margin: 0 25px 25px 25px;
+}
+body.reservierung .stage p.info {
+    background: transparent url(../images/basic/info.png) no-repeat top left;
+    padding-left: 70px;
+    margin-bottom: 20px;
+    min-height: 53px;
+    width: 870px;
+}
+body.reservierung .stageContent h1,
+body.reservierung .stageContent h2 {
+    clear: both;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 15px 0 25px 25px;
+}
+body.reservierung fieldset legend {
+    display: none;
+}
+body.reservierung .columnLeft {
+    float: left;
+    margin-left: 25px;
+}
+body.reservierung .columnRight {
+    float: left;
+    margin-left: 25px;
+    overflow: hidden;
+}
+body.reservierung .columnLeft div,
+body.reservierung .columnRight div {
+    margin-bottom: 7px;
+}
+body.reservierung .columnLeft .checkbox,
+body.reservierung .columnRight .checkbox {
+    float: left;
+}
+body.reservierung .columnLeft label,
+body.reservierung .columnRight label {
+    width: 320px;
+}
+body.reservierung button.additionalPerson {
+    position: absolute;
+    top: 176px;
+    right: 25px;
+}
+body.reservierung .reservierungPerson {
+    float: left;
+    margin: 10px 0 0 25px;
+    height: 60px;
+    padding-left: 60px;
+    background: url('../images/basic/icon_person.png') no-repeat top left;
+}
+body.reservierung #adressdatenSelect {
+    background-color: #EAECEB;
+	width: 100%;
+	margin-top: 10px;
+}
+body.reservierung #adressdatenSelect p {
+	margin:  0 0 0 10px;
+	padding: 10px 0;
+}
+body.reservierung #adressdatenSelect select {
+	width: 300px;
+	margin: 0 10px 0 10px;
+}
+fieldset.kursinfo {
+    border-bottom: 1px solid #EBEBEB;
+    border-top: 1px solid #EBEBEB;
+}
+fieldset.kursinfo div {
+    width: 800px;
+    float: left;
+    margin: 10px 0 6px 25px;
+}
+fieldset.kursinfo button {
+    float: right;
+    margin: 6px 25px 6px 0;
+}
+div#yachtinfo p {
+    width: 800px;
+    float: left;
+    margin: 10px 0 6px 25px;
+}
+div#yachtinfo button {
+    float: right;
+    margin: 6px 25px 6px 0;
+}
+/* @end */
+
+
+/* @group suche */
+body.suche .stage {
+    padding: 35px 0;
+}
+body.suche .stage h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: none;
+    padding: 0px 0 15px 0;
+}
+body.suche .stage .textWrapper {
+    background-color: #fff;
+    padding: 25px 25px 50px 25px;
+}
+    
+/* @end */
+
+/* @groupe yacht */
+body.yacht .content {
+    padding-top: 55px;
+}
+body.yacht table {
+    float: left;
+    margin-right: 5em;
+}
+body.yacht th {
+    font-weight: bold;
+    padding-right: 2em;
+}    
+body.yacht tr {
+    line-height: 1.25em;
+}
+/* @end 
+
+/* @group error */
+body.error .stageContent {
+    padding: 35px 0;
+}
+body.error .textWrapper {
+    background-color: #fff;
+    min-height: 409px;
+}
+body.error .stage p {
+    margin: 0 25px 25px 25px;
+}
+body.error .stage p.info {
+    background: transparent url(../images/basic/info.png) no-repeat top left;
+    padding-left: 70px;
+    margin-bottom: 20px;
+    min-height: 53px;
+    width: 870px;
+}
+body.error .stageContent h1,
+body.error .stageContent h2 {
+    clear: both;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 15px 0 25px 25px;
+}
+/* @end */
+}

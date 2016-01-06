@@ -1,0 +1,46 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="newsDetail">
+    <h2>News</h2>
+    <div class="border-Section clearfix">
+      <f:for each="{news_sort}" as="news">
+        <div class="news-Section-Detail clearfix">
+          <f:if condition="{news.image}">
+            <f:then>
+              <div class="dateSection"><f:translate key="tx_companymanagement_domain_model_news.l_top_company" /></div>
+              <div class="country-flag">
+                <p>{news.name}</p>
+              </div>
+              <f:if condition="{news.image}">
+                  <span class="flag-icon">
+                	  <f:image src="fileadmin/user_upload/{news.image}" class="newsCompanyImage" alt="Image"/>
+                  </span>
+              </f:if>
+              <f:link.action action="show" arguments="{ uid: '{news.uid}'}" pageUid="{settings.companySingleView}"  class="readmoreN"><f:translate key="tx_companymanagement_domain_model_statement.more_link" /></f:link.action>
+            </f:then>
+            <f:else>
+              <div class="dateSection">
+                <f:format.date format="d.m.Y">{news.date}</f:format.date>
+              </div>
+              <p>{news.title}</p>
+              <f:link.action action="detail" controller="News" extensionName="News" noCacheHash="1" arguments="{ news: '{news.uid}'}" pageUid="{settings.newsSingleView}"  class="readmoreN"><f:translate key="tx_companymanagement_domain_model_statement.more_link" /></f:link.action>
+            </f:else>
+          </f:if>
+        </div>
+      </f:for>
+    </div>
+  </div>
+</f:section>
+

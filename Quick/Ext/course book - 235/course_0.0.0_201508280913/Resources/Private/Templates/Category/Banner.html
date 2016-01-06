@@ -1,0 +1,26 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+  <div class="banner clearfix">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <f:for each="{categories}" as="category" >
+          <f:for each="{category.imgArray}" as="picture" iteration="iteration">
+            <div class="item <f:if condition='{iteration.index} == 0'>active</f:if>">
+              <f:if condition="{picture}">
+                <f:then>
+                  <f:image src="uploads/tx_course/{picture}" width="1800c" height="802c"  alt=""  class="img-responsive" />
+                </f:then>
+                <f:else>
+                  <f:image src="uploads/tx_course/{settings.images}" width="1800c" height="802c"  alt=""  class="img-responsive" />
+                </f:else>
+              </f:if>
+            </div>
+          </f:for>
+        </f:for>
+      </div>
+    </div>
+	<div id="btm_scroll">&nbsp;</div>
+  </div>
+</f:section>

@@ -1,0 +1,77 @@
+<div class="all-career-section clearfix">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        <f:translate key='tx_jscareer_domain_model_job.job.title' />
+                    </th>
+                    <th>
+                        <span><img alt="home" src="typo3conf/ext/js_career/Resources/Public/Images/home.png"></span>
+                        <span>
+                            <f:translate key='tx_jscareer_domain_model_job.clinik' />
+                        </span>
+                    </th>
+                    <th>
+	                    <f:link.action action="job" controller="Job" arguments="{order:order.type}" class="{order.type}">
+                            <span><img alt="home" src="typo3conf/ext/js_career/Resources/Public/Images/calender.png"></span>
+                            <span>
+                                <f:translate key='tx_jscareer_domain_model_job.joindate' />
+                            </span>
+                        </f:link.action>
+                    </th>
+                    <th>
+                        <span><img alt="home" src="typo3conf/ext/js_career/Resources/Public/Images/time.png"></span>
+                        <span>
+                            <f:translate key='tx_jscareer_domain_model_job.scope' />
+                        </span>
+                    </th>
+                    <th>&nbsp;</th>
+                </tr>   
+            </thead>
+            <tbody>
+                <f:for each="{jobList}" as="job" iteration="itemIteration">
+                   <tr>
+                        <td>
+                            <f:link.action action="job" controller="Job" arguments="{job: job.uid}">
+                                {job.title}
+                            </f:link.action>
+                        </td>
+                        <td>{job.clinik}</td>
+                        <td>
+                            <f:if condition="{job.ab_sofort}=='1'">
+                                <f:then>
+                                    <f:translate key='tx_jscareer_domain_model_job.absofort' />
+                                </f:then>
+                                <f:else>
+                                	<f:if condition="{job.text_check}=='1'">
+                                        <f:then>
+                                            {job.text}
+                                        </f:then>
+                                        <f:else>
+                                            <f:if condition="{job.join_check}=='1'">
+                                                <f:then>
+                                                    <f:format.date format="d.m.Y">{job.join_date}</f:format.date>
+                                                </f:then>
+                                                <f:else>
+		                                            <f:translate key='tx_jscareer_domain_model_job.absofort' />
+                                                </f:else>  
+                                            </f:if>
+                                        </f:else>  
+                                    </f:if>
+                                </f:else>  
+                            </f:if>
+                    
+                        </td>
+                        <td><f:translate key='tx_jscareer_domain_model_job.timing.I.{job.timing}' /></td>
+                        <td>
+                            <f:link.action action="job" controller="Job" arguments="{job: job.uid}" class="more-clinik">
+                                <f:translate key='tx_jscareer_domain_model_job.moreInfo' />
+                        	</f:link.action>
+                        </td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+    </div>
+</div>

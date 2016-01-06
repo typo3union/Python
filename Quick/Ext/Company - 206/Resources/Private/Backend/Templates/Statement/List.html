@@ -1,0 +1,45 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Statement</h1>
+
+<f:flashMessages />
+
+<table  class="tx_companymanagement" >
+	<tr>
+		<th><f:translate key="tx_companymanagement_domain_model_statement.name" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_statement.description" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_statement.image" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_statement.statement_type" /></th>
+		<th><f:translate key="tx_companymanagement_domain_model_statement.statement_position" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{statements}" as="statement">
+		<tr>
+			<td><f:link.action action="show" arguments="{statement : statement}"> {statement.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{statement : statement}"> {statement.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{statement : statement}"> {statement.image.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{statement : statement}"> {statement.statementType}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{statement : statement}"> {statement.statementPosition}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{statement : statement}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{statement : statement}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Statement</f:link.action>
+</f:section>

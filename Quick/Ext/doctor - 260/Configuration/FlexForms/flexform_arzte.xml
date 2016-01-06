@@ -1,0 +1,37 @@
+<T3DataStructure>
+  <meta>
+    <langDisable>1</langDisable>
+    <!--  <langChildren>1</langChildren>!-->
+  </meta>
+  <sheets >
+    <tab_1>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>Category</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+		   <settings.catheader>
+                    <TCEforms>
+                       <label>Category Header</label>
+                      <config>
+					  	<label>Page</label>
+                    	<type>input</type>
+						<size>40</size>
+						<max>100</max>
+						<eval>trim</eval>
+					  </config>
+                   </TCEforms>
+                  </settings.catheader>
+			
+			
+
+				
+				 
+        </el>
+      </ROOT>
+    </tab_1>
+	
+	
+  </sheets>
+</T3DataStructure>

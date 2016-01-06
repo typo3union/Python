@@ -1,0 +1,93 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="team" label="Team" description="Team Element" icon="" options="{Fluidcontent: {sorting: 105},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+       <flux:field.input name="maintitle" label="Main Title"/>
+        <flux:form.section name="team" label="Team">
+          <flux:form.object name="Team" label="Add New Slide">
+               <flux:field.file name="picture" uploadFolder="uploads/slider_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>
+                <flux:field.input name="alt" label="Alt"/>
+               <flux:field.input name="title" label="Title"/>
+               <flux:field.input name="subtitle" label="Sub Title"/>
+              <flux:field.text name="content" label="Content" enableRichText="1"></flux:field.text>           
+               <flux:field.input name="flink" label="Facebook Link">
+               <flux:wizard.link />
+             </flux:field.input>
+             <flux:field.input name="tlink" label="Twitter Link">
+               <flux:wizard.link />
+             </flux:field.input>
+             <flux:field.input name="Llink" label="Linkdin Link">
+               <flux:wizard.link />
+             </flux:field.input>
+             
+		   </flux:form.object>
+        </flux:form.section>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+
+    <section class="slice bg-white bb animate-hover-slide-3">
+        <div class="wp-section">
+            <div class="container">
+                <div class="section-title-wr">
+                    <h3 class="section-title left"><span>{maintitle}</span></h3>
+                </div>
+                <div class="row">   
+
+	 <div class="team clearfix">
+            <div class="owl-carousel">
+             <f:if condition="{team}">
+             <f:for each="{team}" as="Teams" iteration="iteration">   
+		<div class="item">
+                    <div class="col text-center text-uppercase">
+                       
+                            <div class="default">
+                                <div class="default-inner">
+                                    <f:if condition="{Teams.Team.picture}">
+                                      <f:image src="uploads/slider_images/{Teams.Team.picture}" alt="{Teams.Team.alt}" class="img-responsive" width="226c" height="226c" />
+                                    </f:if>
+                                        <div class="item-hover">
+                                            <div class="border"></div>
+                                            <div class="img-width">
+                                                 <f:if condition="{teams.Team.picture_hover}">
+                                                <f:image src="uploads/slider_image/{teams.Team.picture_hover}" class="img-responsive" width="60c" height="63c" />
+                                                 </f:if>
+                                            </div>
+                                            <div class="desc">
+                                               <ul class="social-icons text-right">
+                                                  <li class="text pull-left">Mehr über:</li>
+                                                   <f:if condition="{Teams.Team.flink}">
+                                                  <li class="facebook"> <f:link.page pageUid="{Teams.Team.flink}"><i class="fa fa-facebook"></i></f:link.page></li></f:if>
+                                                   <f:if condition="{Teams.Team.tlink}">
+                                                  <li class="twitter"> <f:link.page pageUid="{Teams.Team.tlink}"><i class="fa fa-twitter"></i></f:link.page></li></f:if>
+                                                   <f:if condition="{Teams.Team.Llink}">
+                                                  <li class="linkedin"><f:link.page pageUid="{Teams.Team.Llink}"><i class="fa fa-linkedin"></i></f:link.page></li></f:if>
+                                              </ul>
+                                            </div>
+                                        </div>
+                                </div>
+                            <span class="name"> <h2>{Teams.Team.title}<small>{Teams.Team.subtitle}</small></h2></span>
+                            <span class="desc"> <f:format.html>{Teams.Team.content}</f:format.html></span>
+                         </div>
+                        
+                    </div>
+                </div>
+           
+            </f:for>
+            </f:if>
+                 </div>
+      </div>
+
+                    
+           </div>
+            </div>
+        </div>
+    </section>
+
+</f:section>
+</div>

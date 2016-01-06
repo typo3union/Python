@@ -1,0 +1,22 @@
+
+plugin.tx_jsdownload {
+	view {
+		# cat=plugin.tx_jsdownload/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:js_download/Resources/Private/Templates/
+		# cat=plugin.tx_jsdownload/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:js_download/Resources/Private/Partials/
+		# cat=plugin.tx_jsdownload/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:js_download/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_jsdownload//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+// File List Settings
+plugin.tx_jsdownload.settings{
+	basePath	= fileadmin
+}

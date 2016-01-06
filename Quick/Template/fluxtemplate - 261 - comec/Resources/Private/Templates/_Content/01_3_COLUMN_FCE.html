@@ -1,0 +1,44 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form label="Three Column FCE" description="Three Column FCE Content Element" wizardTab="Bootstrap" id="3column" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}" >
+				<flux:field.input name="header1" label="Header"/>
+				<flux:field.text name="header2" label="Sub Header"/>				
+				<flux:grid>
+					<flux:grid.row>
+							<flux:grid.column style="width: 33%" name="column1" label="33%">
+							</flux:grid.column>
+							<flux:grid.column style="width: 33%" name="column2" label="33%" >
+							</flux:grid.column>	
+							<flux:grid.column style="width: 33%" name="column3" label="33%">
+							</flux:grid.column>							
+					</flux:grid.row>				
+				</flux:grid>						
+	</flux:form>
+</f:section>
+
+<f:section name="Main">
+
+				<header class="major">
+					<h2>{header1}</h2>
+					<span class="byline">{header2}</span>
+				</header>
+				<div class="row no-collapse-1">
+					<section class="4u">							
+						<flux:content.render render="1" area="column1" />
+					</section>
+					<section class="4u">
+						<flux:content.render render="1" area="column2" />
+					</section>
+					<section class="4u">
+						<flux:content.render render="1" area="column3" />
+					</section>				
+				</div>
+</f:section>
+
+<f:section name="Preview">
+	<flux:widget.grid />
+</f:section>

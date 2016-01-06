@@ -1,0 +1,29 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+<f:section name="main">
+  <f:flashMessages renderMode="div" />
+   
+  <f:for each="{courses}" as="course">
+    <v:page.header.title title="{course.name} - Segelschule BSM" whitespaceString=" " setIndexedDocTitle="1">{course.name} - Segelschule BSM</v:page.header.title>  
+    <div class="content-center clearfix">
+      <div class="page-header text-center">
+        <h2>{course.name}</h2>
+        <h4>{course.organiser}</h4>
+      </div>
+      <div class="description clearfix">
+        <div class="pdg-lt two_column_split">
+          <f:format.html>{course.shorttext}</f:format.html>
+        </div>
+        <f:if condition="{course.video}">
+          <div class="youtubeVideo">
+            <v:media.youtube  videoId="{course.video}"  width="700" height="450px" ></v:media.youtube>
+          </div>
+        </f:if>
+      </div>
+    </div>
+    </div>
+    <f:render partial="Course/Properties" arguments="{course:course}" />
+    <f:render partial="Course/ImageList" arguments="{course:course}" />
+  </f:for>
+  <f:render partial="Course/RelatedCourses" arguments="{related_courses:related_courses}" />
+</f:section>

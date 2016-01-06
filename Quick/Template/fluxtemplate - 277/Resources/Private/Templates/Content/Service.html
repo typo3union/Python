@@ -1,0 +1,107 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form label="service" id="Service" description="Service" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+					<flux:field.file name="limg" uploadFolder="uploads/tx_service/" label="Upload Image For Left side Background" allowed="jpg, jpeg, png, gif"/>					
+						<flux:field.input name="ltitle" label="Title for left side" />
+						<flux:field.text name="lcontent" label="Content for left side" enableRichText="1"></flux:field.text>	
+						<flux:field.file name="rimg" uploadFolder="uploads/tx_service/" label="Upload Image For Right side Background" allowed="jpg, jpeg, png, gif"/>	
+						<flux:field.input name="rtitle" label="Title for Right side" />
+						<flux:field.text name="rcontent" label="Content for Right side" enableRichText="1"></flux:field.text>	
+						<flux:field.input name="link_title" label="Link Title" />
+						<flux:field.input name="llink" label="Link For left Side">
+			            <flux:wizard.link />
+			           </flux:field.input>
+			           <flux:field.input name="rlink" label="Link for Right Side">
+			            <flux:wizard.link />
+			           </flux:field.input>
+						
+			</flux:form.sheet>	
+		</flux:form>
+	</f:section>
+
+<f:section name="Main">
+   <div class="services clearfix">
+                <div class="col-sm-6 left-module l-r-height wow bounceInLeft" style="background-image:url(uploads/tx_service/{limg})">
+                    <div class="col-sm-6 pull-right">
+                        <article class="page-header">
+	                        <f:if condition="{ltitle}">
+	                        <f:format.crop maxCharacters="40" respectWordBoundaries="false"><h2 class="text-uppercase">{ltitle}</h2></f:format.crop>
+	                        </f:if>
+                        </article>
+                         <div class="list-unstyled col-sm-12">
+							<f:if condition="{lcontent}">
+                         		<f:format.raw>{lcontent}</f:format.raw>
+                        	</f:if>
+                         </div>
+                        <f:link.page pageUid="{llink}" class="text-uppercase btn btn-default">{link_title}</f:link.page>
+                    </div>
+                </div>
+                <div class="col-sm-6 right-module l-r-height wow bounceInRight" style="background-image:url(uploads/tx_service/{rimg})">
+                    <div class="col-sm-6 clearfix">
+                        <article class="page-header">
+                        	<f:if condition="{rtitle}">
+	                        	<f:format.crop maxCharacters="40" respectWordBoundaries="false"><h2 class="text-uppercase">{rtitle}</h2></f:format.crop>
+                        	</f:if>
+                        </article> 
+                        <div class="list-unstyled col-sm-12">
+	                        <f:if condition="{rcontent}">
+		                        <f:format.raw>{rcontent}</f:format.raw>
+	                        </f:if>
+	                    </div>
+                        <f:link.page pageUid="{rlink}" class="text-uppercase btn btn-default">{link_title}</f:link.page>
+                    </div>
+                </div>
+            </div><!--end services-->
+
+</f:section>
+	
+	<f:section name="Preview">
+			<table>
+			<tr>
+				<td width='50%'>
+					<f:if condition="{ltitle}">
+						<f:then>
+							<h2 class="text-uppercase">{ltitle}</h2>
+						</f:then>
+						<f:else>
+							<h2>Please Insert Left Title</h2>
+						</f:else>
+					</f:if>
+					<f:if condition="{lcontent}">
+						<f:then>
+							<f:format.raw>{lcontent}</f:format.raw>
+						</f:then>
+						<f:else>
+							<h2>Please Insert Left Content</h2>
+						</f:else>
+					</f:if>
+				</td>
+				<td>
+					<f:if condition="{rtitle}">
+						<f:then>
+							<h2 class="text-uppercase">{rtitle}</h2>
+						</f:then>
+						<f:else>
+							<h2>Please Insert Right Title</h2>
+						</f:else>
+					</f:if>
+					<f:if condition="{rcontent}">
+						<f:then>
+							<f:format.raw>{rcontent}</f:format.raw>
+						</f:then>
+						<f:else>
+							<h2>Please Insert Right Content</h2>
+						</f:else>
+					</f:if>
+			    </td>
+			</tr>
+			</table>
+	
+    </f:section>
+</div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-02T14:57:20Z" product-name="js_clinik">
+		<header/>
+		<body>
+			<trans-unit id="clinikfinder.plugin-title">
+				<source>Clinik Finder</source>
+			</trans-unit>
+			<trans-unit id="clinikfinder.plugin-description">
+				<source>Find clinik by facilities.</source>
+			</trans-unit>
+			<trans-unit id="footerMap.plugin-title">
+				<source>Google Map With Clinik List</source>
+			</trans-unit>
+			<trans-unit id="footerMap.plugin-description">
+				<source>Search clinik via google map.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

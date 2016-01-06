@@ -1,0 +1,174 @@
+{namespace cs=CS\AldianaWeatherWeb\ViewHelpers}
+
+    <!-- module 1 / daily -->
+        <div class="day-spacer"></div>
+        <div class="row weather-row weather-daily">
+            <div class="col-sm-3 date">
+                {cs:variable(obj: settings.days, prop: data.day)}
+                <br class="hidden-xs">
+                <f:format.date format="d.m.Y">{data.date}</f:format.date>
+            </div>
+            <div class="col-sm-9">
+                <div class="row weather-row">
+                    <div class="col-xs-3 today">
+                        <div title="{cs:variable(obj: settings.titles, prop: data.wxMorning)}">
+                            <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: data.wxMorning)}">{cs:variable(obj: settings.titles, prop: data.wxMorning)}</span>
+                            morgens
+                        </div>
+                    </div>
+                    <div class="col-xs-3 today">
+                        <div title="{cs:variable(obj: settings.titles, prop: data.wxDay)}">
+                            <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: data.wxDay)}">{cs:variable(obj: settings.titles, prop: data.wxDay)}</span>
+                            mittags
+                        </div>
+                    </div>
+                    <div class="col-xs-3 today">
+                        <div title="{cs:variable(obj: settings.titles, prop: data.wxEvening)}">
+                            <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: data.wxEvening)}">{cs:variable(obj: settings.titles, prop: data.wxEvening)}</span>
+                            abends
+                        </div>
+                    </div>
+                    <div class="col-xs-3 today">
+                        <div title="{cs:variable(obj: settings.titles, prop: data.wxNight)}">
+                            <span class="weather-icon-48-{cs:variable(obj: settings.weatherClassnames, prop: data.wxNight)}">{cs:variable(obj: settings.titles, prop: data.wxNight)}</span>
+                            nachts
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- module 2 / min-max -->
+        <div class="row weather-row weather-min-max">
+            <div class="col-sm-12">
+                <div class="row weather-row">
+                    <div class="col-xs-4">
+                        <span class="weather-icon-28-temperaturmax">Höchsttemperatur</span> <span class="dont-break">max. {data.tMax}&deg;C</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="weather-icon-28-temperaturmin">Mindesttemperatur</span> <span class="dont-break">min. {data.tMin}&deg;C</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="weather-icon-28-windrichtung" title="{cs:variable(obj: settings.windDirections.title, prop: data.windDirection)}">Windrichtung</span> <span class="dont-break">{cs:variable(obj: settings.windDirections.short, prop: data.windDirection)} / {data.windSpeed} km/h</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+<!--
+<table class="tx-aldiana-weather" >
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.club_id" />
+		</td>
+		<td>
+			{data.clubId}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.club_name" />
+		</td>
+		<td>
+			{data.clubName}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.date" />
+		</td>
+		<td>
+			{data.date -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.day" />
+		</td>
+		<td>
+			{data.day}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.symbol" />
+		</td>
+		<td>
+			{data.symbol}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.t_min" />
+		</td>
+		<td>
+			{data.tMin}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.t_max" />
+		</td>
+		<td>
+			{data.tMax}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.rain" />
+		</td>
+		<td>
+			{data.rain}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wind_direction" />
+		</td>
+		<td>
+			{data.windDirection}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wind_speed" />
+		</td>
+		<td>
+			{data.windSpeed}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wx_morning" />
+		</td>
+		<td>
+			{data.wxMorning}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wx_day" />
+		</td>
+		<td>
+			{data.wxDay}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wx_evening" />
+		</td>
+		<td>
+			{data.wxEvening}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_aldianaweatherweb_domain_model_data.wx_night" />
+		</td>
+		<td>
+			{data.wxNight}
+		</td>
+	</tr>
+</table>
+-->
+    

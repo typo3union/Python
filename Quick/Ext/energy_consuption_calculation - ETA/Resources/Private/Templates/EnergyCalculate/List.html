@@ -1,0 +1,204 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+	<div class="main-table-section">
+         <div class="left-table-section" id="left-table-section">
+            <div id="estimation" class="display" style="display: block;">
+               <div class="table-top-head">
+                  <div class="lable-tag"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.bausubstanz" /></div>
+                  <div class="input-select select-style">
+                    <select onchange="updateUsage()" id="consumption">
+                      <option selected="selected" value="0"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.bitte_auswahlen" /></option>
+                      <f:for each="{bausubstanzList}" as="bausubstan" iteration="iteration1" > 
+                          <option value="{iteration1.cycle}">{bausubstan}</option>
+                      </f:for>                        
+                     </select>
+                  </div>
+                  <div class="lable-tag"><f:format.printf arguments="{0:'<sup>2</sup>'}"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.beheizte_wohnflache"  /></f:format.printf></div>
+                  <div class="input-select">
+                     <input name="area" id="area" onchange="updateHeatingArea();calculate()" type="textfield">
+                  </div>
+               </div>
+               <table style="text-align: left;" id="table1" border="1" cellpadding="2" cellspacing="2">
+                  <thead>
+                     <tr>
+                        <th></th>
+                        <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.heat_consumption" /></th>
+                        <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.hotel_consumption" /></th>
+                        <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.kg_consumption" /></th>
+                        <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.euro_saving_15_hotel" /></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+               		<f:for each="{houseList}" as="house">
+               		 <tr>
+               			<td>{house}</td>
+               			<td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>€ 0</td>
+               	 	</tr>
+					</f:for>
+				  </tbody>
+				  </table>
+               
+            </div>
+            <div id="conversion" class="display" style="display: none;">
+               <p><f:format.printf arguments="{0:'<sup>2</sup>'}"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.heated_area"  /></f:format.printf><input name="area2" id="area2" class="TFConversion" onchange="calculateConversion2()" type="textfield"></p>
+               <div class="calculation-table">
+               <table>
+                  <tbody>
+                     <tr>
+                        <td>
+                           <table id="con2">
+                              <tbody>
+                                 <tr>
+                                    <td></td>
+                                    <td><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.anual_energy" /></td>
+                                 </tr>
+                                 <tr>
+                                    <td nowrap="nowrap" width="120">
+                                       <select id="efficiency" onchange="calculateConversion2()">
+                                          <option selected="selected" value="90"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.calculate_option_1" /></option>
+                                          <option value="80"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.calculate_option_2" /></option>
+                                          <option value="70"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.calculate_option_3" /></option>
+                                          <option value="65"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.calculate_option_4" /></option>
+                                       </select>
+                                    </td>
+                                    <td nowrap="nowrap"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.boiler_effiency" /></td>
+                                 </tr>
+                                 <tr>
+                                    <td></td>
+                                    <td><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.kwh_currently_used" /></td>
+                                 </tr>
+                                 <tr>
+                                    <td><input name="effUse" id="effUse" class="TFConversion" onchange="calculateConversion2()" value="5" type="textfield"></td>
+                                    <td>
+                                       <nobr><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.new_boiler" /></nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td></td>
+                                    <td>
+                                       <nobr><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.heating_load" /></nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td></td>
+                                    <td>
+                                       <nobr><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.boiler_size" /></nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                 </tr>
+                                 <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                 </tr>
+                                 <tr>
+                                    <td></td>
+                                    <td>
+                                       <nobr><f:format.printf arguments="{0:'<sup>2</sup>'}"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.co2_area_based_building_heat_year"  /></f:format.printf></nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td></td>
+                                    <td>
+                                       <nobr><f:format.printf arguments="{0:'<sup>2</sup>'}"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.year_based_energy"  /></f:format.printf></nobr>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <td>
+                           <table id="con1" border="1">
+                              <tbody>
+                                 <tr>
+                                    <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.brennstoffart" /></th>
+                                    <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.letztjahriger_verbrauch" /></th>
+                                    <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.einheit" /></th>
+                                    <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.kesselart" /></th>
+                                    <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.heizwert_einheit" /></th>
+                                    <th>
+                                      <f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.price" />
+                                       <p>
+                                          <select id="country" onchange="totalprice();showCountryPrices();">
+                                             <option selected="selected" value="1"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.osterreich" /></option>
+                                             <option value="2"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.deutschland" /></option>
+                                          </select>
+                                       </p>
+                                    </th>
+                                    <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.cent" /></th>
+                                    <th><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.warme_menge_kWh" /></th>
+                                 </tr>
+                                 
+                                 <f:for each="{fuelList}" as="fuel" >                                
+									<f:for each="{fuel.fuelDetail}" as="fuelIndetail" iteration="iteration" >										
+								       	<tr>
+											     		<td>{fuelIndetail.title}</td>                                  
+		                                    <td><input value="0" name="amount0" class="TFConversion" onchange="calculateConversion()" type="textfield"></td>
+		                                    <td>{fuelIndetail.unit}</td>
+		                                    <td>{fuelIndetail.material}</td>
+		                                    <td id="fuelValue{fuelIndetail.check_val}">{fuelIndetail.calorificValue}</td>
+		                                    <td>€&nbsp;<input id="price{fuelIndetail.check_val}" value="{fuelIndetail.austriaPrice}" class="TFConversion" onchange="calculateConversion()" type="textfield"><input id="gprice{fuelIndetail.check_val}" value="{fuelIndetail.germanyPrice}" class="TFConversion gprice" onchange="calculateConversion()" type="hidden"></td>
+		                                    <td>0</td>
+		                                    <td>0</td>
+	                                	 </tr>			
+									</f:for>
+
+                                 </f:for>
+                                
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               </div>
+            </div>            
+            </div>
+         </div>
+         <div id="chart_div"></div>  
+         <div class="right-tab-section">
+            <span style="" id="header">
+               <ul>
+                  <li onclick="display('page1')" id="page1"><a href="javascript:void(0)"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.calculation_by_surface" /></a></li>
+                  <li onclick="gprice();display('page2');" id="page2"><a href="javascript:void(0);"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.calculation_based_on_last_year" /></a></li>
+                  <li onclick="display('page3')" id="page3"><a href="javascript:void(0);" ><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.heating" /></li>
+                  <li onclick="display('page4')" id="page4"><a href="javascript:void(0);"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.fuel_cost_15_year" /></a></li>
+                  <li onclick="display('page5')" id="page5"><a href="javascript:void(0);"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.fuel_cost_per_year" /></a></li>
+                  <li onclick="display('page6')" id="page6"><a href="javascript:void(0);"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.stock_quantity_per_year" /></a></li>
+                  <li onclick="display('page7')" id="page7"><a href="javascript:void(0);"><f:format.printf arguments="{0:'<sup>2</sup>'}"><f:translate key="tx_energyconsuptioncalculation_domain_model_energycalculate.co2_15_year"  /></f:format.printf></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         
+              
+
+
+
+
+
+</f:section>

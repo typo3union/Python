@@ -1,0 +1,82 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+
+
+<v:page.header.title title="{karriere.title}" whitespaceString=" " setIndexedDocTitle="1">
+	<!-- tag content - may be ignored! -->
+</v:page.header.title>
+<div class="left">
+	
+	<f:if condition="{karriere.image}"><f:image src="{karriere.image.originalResource.publicUrl}" width="260c"   /></f:if>
+	<p class="textSpecial">{karriere.title}<br>{karriere.subtitle}</p>
+	<f:if condition="{karriere.files}">
+		<div class="download_pdf">
+			<a href="{karriere.files.originalResource.publicUrl}" class="download" target="_blank">Download PDF</a>
+		</div>
+	</f:if>
+</div>
+
+<div class="right">
+	
+		<f:if condition="{karriere.cat} == 3">
+			<f:then>
+				<h3 class="prodtitle">{karriere.subtitle}</h3>
+			</f:then>
+			<f:else>
+				<h3 class="prodtitle">{karriere.title}</h3>
+			</f:else>
+		</f:if>
+	<f:format.html>{karriere.description}</f:format.html>
+	
+
+<table class="tx-karriere" style="display:none;">
+	<tr>
+		<td>
+			<f:translate key="tx_karriere_domain_model_karriere.title" />
+		</td>
+		<td>
+		{karriere.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_karriere_domain_model_karriere.subtitle" />
+		</td>
+		<td>
+		{karriere.subtitle}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_karriere_domain_model_karriere.preview" />
+		</td>
+		<td>
+				<f:image src="{karriere.preview.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_karriere_domain_model_karriere.image" />
+		</td>
+		<td>
+				<f:image src="{karriere.image.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_karriere_domain_model_karriere.files" />
+		</td>
+		<td>
+				<a href="{karriere.files.originalResource.publicUrl}">
+					{karriere.files.originalResource.name}
+				</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_karriere_domain_model_karriere.description" />
+		</td>
+		<td>
+		{karriere.description}
+		</td>
+	</tr>
+</table>

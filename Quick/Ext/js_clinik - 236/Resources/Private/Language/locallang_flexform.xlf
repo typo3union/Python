@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-10T16:15:06Z" product-name="competition">
+		<header/>
+		<body>
+						
+			<trans-unit id="flexform.setting.general">
+				<source>General Settings</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.setting.template">
+				<source>Template</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.choose">
+				<source>Please choose ...</source>
+			</trans-unit>	
+
+			<trans-unit id="flexform.orderBy">
+				<source>Order by</source>
+			</trans-unit>		
+			
+			<trans-unit id="flexform.orderBy.title">
+				<source>Title</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.orderBy.filename">
+				<source>File name</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.orderBy.uid">
+				<source>Record ID</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.orderBy.crdate">
+				<source>Creation Date</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.orderBy.tstamp">
+				<source>Last Modified first</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.choose.ascending">
+				<source>Ascending</source>
+			</trans-unit>			
+
+			<trans-unit id="flexform.choose.descending">
+				<source>Descending</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.clinik">
+				<source>Current Clinik Activate in footer Google Map</source>
+			</trans-unit>	
+
+			<trans-unit id="flexform.storagePID">
+				<source>Starting Point</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.sheetDisplay">
+				<source>Display properties</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.mapWidth">
+				<source>Map width (only visible to the frontend view!)</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.mapHeight">
+				<source>Map height (only visible to the frontend view!)</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.mapType">
+				<source>Map type</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.mapTypeRoadmap">
+				<source>Roadmap</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.mapTypeTerrain">
+				<source>Terrain</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.mapTypeHybrid">
+				<source>Hybrid</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.mapTypeSatellite">
+				<source>Satellite</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.scaleLevel">
+				<source>Zoom level</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.navigationControl">
+				<source>Navigation controls</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.navigationControlDefault">
+				<source>Default</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.navigationControlSmall">
+				<source>Small controls</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.navigationControlZoomPan">
+				<source>Bigger controls</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.navigationControlAndroid">
+				<source>Small controls (used in Android)</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

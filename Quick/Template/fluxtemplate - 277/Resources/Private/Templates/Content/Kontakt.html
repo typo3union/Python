@@ -1,0 +1,73 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form label="Kontakt page Content" id="kontaktcontent" description="Kontakt page Content with google map links" icon="" options="{Fluidcontent: {sorting: 109},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+								
+				<flux:form.section name="kontakts" label="Page Content">
+					<flux:form.object name="kontaktsObj" label="Add New Content">
+						<flux:field.text name="content" label="Add Content" enableRichText="1"></flux:field.text> 
+						<flux:field.file name="LeftPicture" uploadFolder="uploads/google_map_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>			
+						<flux:field.input name="alt_titleleft" label="Alternative Title for left image" />
+
+						<flux:field.file name="RightPicture" uploadFolder="uploads/google_map_images/" label="Upload Image" allowed="jpg, jpeg, png, gif"/>	
+						<flux:field.input name="alt_titleright" label="Alternative Title for right image" />
+						<flux:field.input name="Maplink" label="Google Map Link">
+			            	<flux:wizard.link />
+			            </flux:field.input>
+					</flux:form.object>
+				</flux:form.section>
+
+			</flux:form.sheet>	
+		</flux:form>
+	</f:section>
+
+<f:section name="Main">
+   
+    <div class="kontakt-wrap">
+       
+        <f:if condition="{kontakts}">
+	        <f:for each="{kontakts}" as="Data" iteration="itaration">
+	        <div class="kontakt-list clearfix"> 
+	            <div class="col-sm-6 kontakt-text">
+	            	<f:if condition="{Data.kontaktsObj.content}">
+		               <f:format.html>{Data.kontaktsObj.content}</f:format.html>
+	            	</f:if>
+	            </div>
+	            <div class="col-sm-3 kontakt-img ">
+	            	<f:if condition="{Data.kontaktsObj.LeftPicture}">
+		            	<f:image src="uploads/google_map_images/{Data.kontaktsObj.LeftPicture}" alt="{Data.kontaktsObj.alt_titleleft}" width="250c" height="170c"/>
+	            	</f:if>
+	            </div>
+	            <div class="col-sm-3 kontakt-img ">
+	            <f:link.page pageUid="{Data.kontaktsObj.Maplink}" target="_blank">
+		            <f:if condition="{Data.kontaktsObj.RightPicture}">
+		            	<f:image src="uploads/google_map_images/{Data.kontaktsObj.RightPicture}" alt="{Data.kontaktsObj.alt_titleright}" width="250c" height="170c"/>
+		            </f:if>
+	            </f:link.page>
+	            </div>
+	         </div> 
+	        </f:for>
+        </f:if>
+	 </div>
+
+</f:section>
+	
+	<f:section name="Preview">
+	
+	<f:if condition='{f:count(subject:"{kontakts}")} == 0'>
+	<f:then>
+		<h3>Records Inserted</h3>
+	</f:then>
+	<f:else>
+		<h3>Total <f:count>{kontakts}</f:count> Record Inserted</h3>
+	</f:else>
+	</f:if>
+
+	</f:section>
+
+</div>

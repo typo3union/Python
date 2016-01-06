@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-10T16:15:06Z" product-name="competition">
+		<header/>
+		<body>
+						
+			<trans-unit id="flexforms_general.generalSetting">
+				<source>General Settings</source>
+			</trans-unit>
+
+			<trans-unit id="flexforms_general.storagePID">
+				<source>Starting Point</source>
+			</trans-unit>
+
+			<trans-unit id="flexforms_general.limit">
+				<source>Max records displayed</source>
+			</trans-unit>
+			
+			<trans-unit id="flexforms_general.categories">
+				<source>Category</source>
+			</trans-unit>
+			
+			<trans-unit id="flexforms_general.paginate">
+				<source>Show the pagination</source>
+			</trans-unit>
+
+			<trans-unit id="flexforms_general.recordPerPage">
+				<source>Show 'n' record per page</source>
+			</trans-unit>
+			
+			<trans-unit id="flexforms_general.listPage">
+				<source>Link for List page</source>
+			</trans-unit>
+			
+			<trans-unit id="flexforms_general.template.setting">
+				<source>Template</source>
+			</trans-unit>
+			
+			<trans-unit id="flexforms_general.template.list">
+				<source>Template name for List page - [ Inside Partial Folder ] - By default it will "List"</source>
+			</trans-unit>
+
+			<trans-unit id="flexforms_general.template.detail">
+				<source>Template name for Detail page - [ Inside Partial Folder ] - By default it will "Detail"</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

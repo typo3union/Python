@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-14T16:15:06Z" product-name="house_type_calculation">
+		<header/>
+		<body>
+						
+			<trans-unit id="flexform.setting.general">
+				<source>General Settings</source>
+			</trans-unit>
+			<trans-unit id="flexform.contentDisplay">
+				<source>Content Display</source>
+			</trans-unit>			
+			<trans-unit id="flexform.newContent">
+				<source>Add Content</source>
+			</trans-unit>			
+			<trans-unit id="flexform.content">
+				<source>Content</source>
+			</trans-unit>		
+			<trans-unit id="flexform.image">
+				<source>Grapth Image</source>
+			</trans-unit>			
+			<trans-unit id="flexform.averageOilPrice">
+				<source>Durchschnittspreis ÖL</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.averagePelletsPrice">
+				<source>Durchschnittspreis Pellets</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,99 @@
+
+// unterer Abstand entfernen
+div.csc-textpic .csc-textpic-imagewrap .csc-textpic-image {
+	margin-bottom: 0px;
+}
+
+
+
+DIV.csc-textpic-above DIV.csc-textpic-imagewrap,
+DIV.csc-textpic-below DIV.csc-textpic-imagewrap,
+DIV.csc-textpic DIV.csc-textpic-imagewrap UL LI,
+DIV.csc-textpic DIV.csc-textpic-imagewrap DL.csc-textpic-image {
+	float: none;
+}
+
+.csc-header-alignment-center { text-align: center; }
+.csc-header-alignment-right { text-align: right; }
+.csc-header-alignment-left { text-align: left; }
+
+/* Clear floats after csc-textpic and after csc-textpic-imagerow */
+	DIV.csc-textpic, DIV.csc-textpic DIV.csc-textpic-imagerow, UL.csc-uploads LI { overflow: hidden; }
+
+
+.csc-textpic-intext-left-wrap .csc-textpic-imagewrap {
+	margin-right: 20px;
+}
+.csc-textpic-intext-left-wrap .csc-textpic-text {
+	padding-left: 15px;
+}
+.csc-textpic-intext-right-wrap .csc-textpic-imagewrap {
+	margin-left: 20px !important;
+}
+
+.csc-textpic-intext-right-wrap .csc-textpic-imagewrap {
+	float: right !important;   /* um spanX CSS Einstellungen zu überlagern */
+}
+
+DIV.csc-textpic DIV.csc-textpic-imagecolumn {
+}
+
+
+DIV.csc-textpic-border DIV.csc-textpic-imagewrap FIGURE {
+	border: 1px solid #CCCCCC;
+	padding: 5px 5px;
+}
+
+
+/* Settings for figure and figcaption (HTML5) */
+
+DIV.csc-textpic .csc-textpic-imagewrap FIGURE, DIV.csc-textpic FIGURE.csc-textpic-imagewrap { margin: 0; display: block; }
+
+
+/* Captions */
+FIGCAPTION.csc-textpic-caption { display: block; }
+.csc-textpic-caption { text-align: left; caption-side: bottom; }
+DIV.csc-textpic-caption-c .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-c { text-align: center; }
+DIV.csc-textpic-caption-r .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-r { text-align: right; }
+DIV.csc-textpic-caption-l .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-l { text-align: left; }
+
+
+/* For Firefox. Hat sonst Probleme in Verbindung mit dem display: table */
+/*
+DIV.csc-textpic .csc-textpic-imagewrap FIGURE img, DIV.csc-textpic FIGURE.csc-textpic-imagewrap img { width: 100%; }
+*/
+
+DIV.csc-textpic-imagecolumn {
+	margin-right: 0;  /* Abstand wird von bootstrap realisiert */
+}
+
+.csc-textpic-center {
+	text-align: center;
+
+	img {
+		margin: 0 auto;
+	}
+}
+
+
+.csc-margin-after {
+	margin-bottom: 30px;
+}
+
+.csc-textpic-center img {
+	margin: 0 auto;
+}
+
+
+
+/* Fix for buttons groups */
+.btn-group > div {
+	display: inline;
+}
+
+/* Abstand unter den Bildern in der Smartphone-Ansicht */
+@media (max-width: @grid-float-breakpoint) {
+	.csc-textpic .csc-textpic-imagewrap {
+		margin-bottom: 20px;
+	}
+}

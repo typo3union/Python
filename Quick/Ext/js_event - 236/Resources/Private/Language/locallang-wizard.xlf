@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-02T14:57:20Z" product-name="js_event">
+		<header/>
+		<body>
+			<trans-unit id="plugin-title">
+				<source>Event</source>
+			</trans-unit>
+			<trans-unit id="plugin-description">
+				<source>Event Management.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

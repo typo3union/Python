@@ -1,0 +1,95 @@
+{namespace pg=Product\Product\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects. If
+you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml: Resources: Private:
+Templates: List.html: keep Otherwise your changes will be overwritten
+the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+	<f:flashMessages renderMode="div" />
+
+	<main class="container">
+	<div class="row">
+
+		<aside class="col-sm-3">
+			<div class="sidebar-module module clearfix">
+				<div class="gradient"></div>
+				<span class="module-head"><f:translate key='tx_product_domain_model_product.cat'/></span>
+				<ul>
+					<f:for each="{categories}" as="category">
+						<li><f:link.action
+								pageUid="{settings.flexform.main.productlist}"
+								controller="Product" action="list"
+								arguments="{category : category.uid}" noCacheHash="1">{category.name}</f:link.action></li>
+					</f:for>
+				</ul>
+			</div>
+
+			<div class="sidebar-module-2 module clearfix">
+				<span class="module-head"><f:translate key='tx_product_domain_model_product.topproduct'/></span>
+				<f:for each="{featureproduct}" as="fproduct">
+					<div class="module-listing">
+						<figure>
+							<f:image src="uploads/tx_product/{fproduct.first_img}"
+										class="img-responsive" width="251" height="133" />
+						</figure>
+						<ul>
+						<f:link.action pageUid="{settings.flexform.main.productdetail}"
+										controller="Product" action="show"
+										arguments="{product : fproduct.uid}" noCacheHash="1">
+										<li>{fproduct.name}</li>
+									</f:link.action>
+							
+						</ul>
+					</div>
+				</f:for>
+			</div>
+		</aside>
+		<!-- Left bar-->
+
+		<div class=" col-sm-9 rt">
+			<div class="content">
+				<div class="grid row">
+			
+<pg:Paginate objects="{products}" as="paginatedObjekt" configuration="{itemsPerPage: 12, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 4, maximumVisiblePages: 3}">
+				
+					<f:for each="{paginatedObjekt}" as="product">
+						<div class="col-sm-4">
+							<div class="grid-box">
+								<figure>
+							
+									<f:image src="uploads/tx_product/{product.first_img}"
+										class="img-responsive" width="251" height="133" />
+								
+								</figure>
+								<div class="rating">
+									<f:link.action pageUid="{settings.flexform.main.productdetail}"
+										controller="Product" action="show"
+										arguments="{product : product.uid}" noCacheHash="1">
+										<span>{product.name}</span>
+									</f:link.action>
+									<div title="5 Stars" class="rating-stars">
+												★★★★★
+												<f:if condition='{product.rating} == 0'><div style="width: 0%;" class="single-rate">★★★★★</div></f:if>
+												<f:if condition='{product.rating} == 1'><div style="width: 20%;" class="single-rate">★★★★★</div></f:if>
+												<f:if condition='{product.rating} == 2'><div style="width: 40%;" class="single-rate">★★★★★</div></f:if>
+												<f:if condition='{product.rating} == 3'><div style="width: 60%;" class="single-rate">★★★★★</div></f:if>
+												<f:if condition='{product.rating} == 4'><div style="width: 80%;" class="single-rate">★★★★★</div></f:if>
+												<f:if condition='{product.rating} == 5'><div style="width: 100%;" class="single-rate">★★★★★</div></f:if>
+											</div>
+								</div>
+							</div>
+						</div>
+					</f:for>
+					</pg:Paginate>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+
+
+</f:section>

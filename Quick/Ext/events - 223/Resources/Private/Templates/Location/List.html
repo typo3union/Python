@@ -1,0 +1,41 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+
+  <ul class="list-unstyled afterloginMenu">
+    <f:for each="{locations}" as="location" iteration="iteration">
+       <li id="li_{iteration.index}" <f:if condition="{iteration.index}==0">class='active firstMenu hidden'</f:if> >
+        <f:if condition='{location.icon.originalResource.originalFile.uid}'>
+        
+         <span class="icon-default">
+          <f:image src="{location.icon.originalResource.originalFile.uid}" alt="{location.title}"   />
+          </span> </f:if>
+        <f:if condition='{location.hovericon.originalResource.originalFile.uid}'> <span class="icon-default-hov">
+          <f:image src="{location.hovericon.originalResource.originalFile.uid}"alt="{location.title}"   />
+          </span> </f:if>
+          <f:if condition="{iteration.index}==0">
+          	<a href="javascript:void(0);"><span class="name-default"> {location.title}</span> <span class="after-login">Interner Bereich</span> </a>
+          </f:if>
+       	
+       </li>
+    </f:for>
+  </ul>
+  
+  <div class="hidden activemenu">
+  	<f:for each="{locationIds}" as="locationId" iteration="iteration">
+    	    <div id="li_{iteration.index}">{locationId}</div>
+    </f:for>
+  </div>
+  
+  
+</f:section>

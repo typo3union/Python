@@ -1,0 +1,21 @@
+# EXT: plugin.fe_login
+# DESC: Login box
+
+plugin.tx_felogin_pi1 {
+	#storagePid				= 1
+	templateFile 			= {$filepaths.extensionsView}Felogin/felogin.html
+	#showForgotPasswordLink 	= 1
+	#showPermaLogin 			= 1
+	#redirectMode 			= groupLogin, userLogin, login, logout, loginError
+	#redirectPageLogin 		= 1
+	#redirectPageLoginError	= 1
+	#redirectPageLogout		= 1
+	
+	#_LOCAL_LANG.default {
+	#	ll_welcome_message = 
+	#	ll_error_message = Invalid username or password.
+	#	ll_forgot_reset_message = Please enter your email address. Instructions for resetting the password will be immediately emailed to you.
+	#	ll_forgot_reset_message_emailSent = An email has been sent to the address stored in your account and contains a link to reset your password.
+	#	ll_change_password_notvalid_message = Your Password has been changed successfully.
+	#}
+}

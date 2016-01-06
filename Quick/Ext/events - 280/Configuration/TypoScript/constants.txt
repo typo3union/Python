@@ -1,0 +1,15 @@
+
+plugin.tx_events_events {
+	view {
+		# cat=plugin.tx_events_events/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:events/Resources/Private/Templates/
+		# cat=plugin.tx_events_events/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:events/Resources/Private/Partials/
+		# cat=plugin.tx_events_events/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:events/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_events_events//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

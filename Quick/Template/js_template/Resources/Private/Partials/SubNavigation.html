@@ -1,0 +1,80 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Partial"/>
+
+	<f:section name="SubNavigation">
+		<!-- submenu navigation, collapsible -->
+		<v:page.menu entryLevel="{v:variable.typoscript(path: 'lib.menu.sub.entryLevel')}"  expandAll="false" useShortcutUid="FALSE">
+			<f:if condition="{menu}">
+				<nav role="navigation" class="bs-sidenav affix-top">
+					<ul class="nav nav-list">
+						<f:for each="{menu}" as="menuPage" iteration="iteration">
+							<v:switch value="{menuPage.doktype}">
+								<v:case case="199" break="true">
+									<li class="disabled">
+										<i class="fa fa-chevron-right"></i>
+										<f:if condition="{iteration.isFirst}" else="&nbsp;&nbsp;"/>
+										<span class="navbar-text" style="color: #bbbbbb">{menuPage.title}:</span>
+										&nbsp;
+									</li>
+								</v:case>
+								<v:case case="default" break="true">
+									<li class="{menuPage.class}">
+										<a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{menuPage.link}" class="{menuPage.class}">
+											<f:if condition="{menuPage.nav_title}">
+												<f:then>{menuPage.nav_title}</f:then>
+												<f:else>{menuPage.title}</f:else>
+											</f:if>
+										</a>
+										<!-- Sub menu -->
+										<f:if condition="{menuPage.active}">
+										
+											<v:page.menu pageUid="{menuPage.uid}" includeSpacers="false" expandAll="false">
+												<f:if condition="{menu}">
+													<ul class="nav nav-list">
+
+														<f:for each="{menu}" as="subMenuPage" iteration="subIteration">
+															<li class="{subMenuPage.class}">
+																<a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{subMenuPage.link}" class="{subMenuPage.class}">
+																	<f:if condition="{subMenuPage.nav_title}">
+																		<f:then>{subMenuPage.nav_title}</f:then>
+																		<f:else>{subMenuPage.title}</f:else>
+																	</f:if>
+																</a>
+																<!-- Sub-sub menu -->
+																<v:page.menu pageUid="{subMenuPage.uid}" includeSpacers="false" expandAll="false">
+																	<f:if condition="{menu}">
+																		<f:for each="{menu}" as="subSubMenuPage" iteration="subSubIteration">
+
+																			<ul class="nav nav-list">
+																				<li class="{subSubMenuPage.class} subSubMenuIndent">
+																					<a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{subSubMenuPage.link}" class="{subSubMenuPage.class}">
+																						<f:if condition="{subSubMenuPage.nav_title}">
+																							<f:then>{subSubMenuPage.nav_title}</f:then>
+																							<f:else>{subSubMenuPage.title}</f:else>
+																						</f:if>
+																					</a>
+																				</li>
+																			</ul>
+																		</f:for>
+																	</f:if>
+																</v:page.menu>
+															</li>
+														</f:for>
+													</ul>
+												</f:if>
+											</v:page.menu>
+										</f:if>
+									</li>
+								</v:case>
+							</v:switch>
+						</f:for>
+					</ul>
+				</nav>
+			</f:if>
+		</v:page.menu>
+	</f:section>
+
+</div>

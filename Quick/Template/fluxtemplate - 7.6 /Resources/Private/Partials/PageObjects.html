@@ -1,0 +1,77 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:section name="Header">
+  
+         <div id="divHeaderWrapper">
+            <header class="header-standard-2">     
+              <!-- MAIN NAV -->
+              <div class="navbar navbar-wp navbar-arrow mega-nav" role="navigation">
+                  <div class="container">
+                      <div class="navbar-header">
+                         
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                              <i class="fa fa-bars icon-custom"></i>
+                          </button>
+
+                          
+                          <f:link.page pageUid="1"><img src="{f:cObject(typoscriptObjectPath: 'lib.mainLogo')}" alt="company Logo" ></f:link.page>
+                              
+                          </a>
+                      </div>
+                      <div class="navbar-collapse collapse">
+                            <f:cObject typoscriptObjectPath="menu.main_menu" />
+                              
+                      </div><!--/.nav-collapse -->
+                  </div>
+              </div>
+          </header>  
+    </div>
+
+</f:section>
+
+<f:section name="Footer">
+ 
+     <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="col">
+                       <f:cObject typoscriptObjectPath="content.footer" />
+                     </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="col">
+                         <f:cObject typoscriptObjectPath="content.loginForm" />
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="col col-social-icons">
+                        <f:cObject typoscriptObjectPath="content.social" />
+                    </div>
+                </div>
+
+                 <div class="col-md-3">
+                    <div class="col">
+                        <f:cObject typoscriptObjectPath="content.about" />
+                       
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="row">
+                <div class="col-lg-9 copyright">
+                     <f:cObject typoscriptObjectPath="content.copyright" />
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    
+</f:section>
+</div>

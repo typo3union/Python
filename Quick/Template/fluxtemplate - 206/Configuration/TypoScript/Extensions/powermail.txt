@@ -1,0 +1,33 @@
+# Powermail custom Typoscript
+plugin.tx_powermail {
+	# Powermail Custom Template Path
+	
+	view {
+		# Path to template root (FE)
+		templateRootPath = {$filepaths.extensionsView}Powermail/Private/Templates/
+		
+		# Path to template partials (FE)
+		partialRootPath = {$filepaths.extensionsView}Powermail/Private/Partials/
+		
+		# Path to template layouts (FE)
+		layoutRootPath = {$filepaths.extensionsView}Powermail/Private/Layouts/
+	}
+	settings{
+		setup{
+		cuur_id= 10
+		}
+	}
+}
+
+page.includeCSS.powermailCssDemo = {$filepaths.extensionsCss}Powermail/Public/Css/CssDemo.css
+#page.includeCSS.powermailCssDemo = 
+
+
+plugin.tx_wtcalculatingcaptcha {
+        # constants
+        number1.minmax =  1,5
+        number2.minmax =  1,5
+        number.notNegative =  1
+}
+
+plugin.tx_powermail.settings.setup.spamshield.indicator.honeypod = 0

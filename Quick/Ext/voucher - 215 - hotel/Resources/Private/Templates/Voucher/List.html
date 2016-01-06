@@ -1,0 +1,69 @@
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+  <div class="voucherSection">
+    <f:if condition="{vouchers}">
+      <f:if condition="{status}=='MailSent'">
+        <div class="status MailSent"><f:translate key="tx_voucher_domain_model_voucher_status.MailSent" /></div>
+      </f:if>
+         
+          <f:if condition="{status}=='InvalidLogin'">
+        <div class="status InvalidLogin"><f:translate key="tx_voucher_domain_model_voucher_status.InvalidLogin" /></div>
+      </f:if>
+      <f:if condition="{status}=='AlreadyRegister'">
+        <div class="status AlreadyRegister"><f:translate key="tx_voucher_domain_model_voucher_status.AlreadyRegister" /></div>
+      </f:if>
+      
+      <f:if condition="{status}=='paymentFail'">
+        <div class="status paymentFail"><f:translate key="tx_voucher_domain_model_voucher_status.paymentFail" /></div>
+      </f:if>
+       <f:if condition="{status}=='OrderMailSent'">
+       <div class="status orderMailSent"><f:translate key="tx_voucher_domain_model_voucher_status.orderMailSent" />  
+        
+            <f:for each="{sessionQvoucher.voucher}" as="singlevoucher">
+                <f:for each="{singlevoucher.file}" as="fileDownload" iteration="iteration">  
+                	<f:if condition="{fileDownload}">  
+<!--                 		<div class="downloadVoucher"><a href="{fileDownload}" download >Voucher_{iteration.cycle}.pdf</a></div>-->
+                        <div class="downloadVoucher"><a href="{fileDownload}" download >{singlevoucher.title}.pdf</a></div>
+                  </f:if>
+                </f:for>
+            </f:for>
+        </div> 
+      </f:if>
+      <f:if condition="{sessionUser.user.id}=='' ">
+        <f:then>
+         <f:form method="post" name="voucherForm" class="voucherForm" id="voucherForm"  action="list">
+          <f:render partial="Voucher/VoucherList"  arguments="{vouchers: vouchers,sessionUser : sessionUser,taxdata:taxdata,check:1}"/>
+        
+           </f:form>
+          <f:render partial="Voucher/LoginForm" />
+        </f:then>
+        <f:else>
+          <f:if condition="{status}!='paymentPreview'">
+            <f:then>
+           	 <div class="top_logout clearfix"> <a href="javascript:void(0);" class="logout" ><f:translate key="tx_voucher_domain_model_voucher_after_login.logout" /></a> </div>
+              <f:form method="post" name="voucherForm" class="voucherForm" id="voucherForm"  action="list">
+                <f:render partial="Voucher/VoucherList"  arguments="{vouchers: vouchers,sessionUser : sessionUser,taxdata:taxdata}"/>
+                <f:render partial="Voucher/AfterLoginForm"  arguments="{url: url,registerUserData : registerUserData,file : file,vouchers: vouchers}" />
+              </f:form>
+            </f:then>
+            <f:else>
+                 <div class="top_logout clearfix"> <a href="javascript:void(0);" class="logout" ><f:translate key="tx_voucher_domain_model_voucher_after_login.logout" /></a> </div>
+              	<f:render partial="Voucher/PaymentPreview"  arguments="{vouchers: vouchers,registerUserData : registerUserData ,voucherTemplateData : voucherTemplateData ,url : url,sessionQvoucher:sessionQvoucher,sessionUser:sessionUser}"/>
+            </f:else>
+          </f:if>           
+        </f:else>
+      </f:if>
+    </f:if>
+  </div>
+</f:section>

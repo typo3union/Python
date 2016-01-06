@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-10T07:44:14Z" product-name="js_greetingcards">
+		<header/>
+		<body>
+			<trans-unit id="plugin-title">
+				<source>Greeting Card</source>
+			</trans-unit>
+			<trans-unit id="plugin-description">
+				<source>This extension to manage Greeting Card for patients</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

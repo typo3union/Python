@@ -1,0 +1,28 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+  <f:layout name="Content" />
+  <f:section name="Configuration">
+    <flux:form id="TitleFce" label="TitleFce" description="TitleFce Element" icon="" options="{Fluidcontent: {sorting: 112},group: 'Custom elements'}">
+      <flux:form.sheet name="options" label="Options">
+          <flux:field.input name="Text" label="Text"/>
+      </flux:form.sheet>
+    </flux:form>
+  </f:section>
+  <f:section name="Main"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <f:if condition="{Text}">
+                <div class="title"> 
+                 <img src="typo3conf/ext/fluxtemplate/Resources/Public/images/img-2.png"/>
+                  {Text}                  
+                </div>   
+                </f:if>  
+              </div>
+             </div>
+            </div>  
+  </f:section>
+</div>
+

@@ -1,0 +1,24 @@
+
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:section name="main">
+<div class="csvUpload">
+   <f:if condition="{status}==1"><div class="alert alert-success">Die Daten wurden erfolgreich gespeichert.</div></f:if>
+   <f:if condition="{status}==2"><div class="alert alert-danger">Bitte benutzen Sie ein Dokument im CSV Format.</div></f:if>
+
+<p> Klicken Sie auf "Datei auswählen", wählen Sie die gewünschte Datei aus und klicken Sie auf "Upload"</p>
+<form enctype='multipart/form-data' action='http://www.kempten-west-katholisch.de/index.php?id=229' method='post'>
+<input size='50' type='file' name='filename'><br />
+<input type='submit' name='submit' value='Upload'></form>
+
+</div>
+</f:section>

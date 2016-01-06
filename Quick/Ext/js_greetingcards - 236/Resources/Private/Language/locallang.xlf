@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-09-12T10:26:48Z" product-name="js_greetingcards">
+		<header/>
+		<body>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingcards">
+				<source>Greeting Cards</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingcards.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingcards.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes">
+				<source>Greetings Wishes</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.header">
+				<source>Anrede</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.patient_name">
+				<source>Patient Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.room">
+				<source>Room</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.generated_pdf">
+				<source>Generated Pdf</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.admin_name">
+				<source>Admin Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.admin_email">
+				<source>Admin Email</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.mail_subject">
+				<source>Mail Subject</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.creation_date">
+				<source>Creation Date</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.sender_ip">
+				<source>Sender Ip</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.user_agent">
+				<source>User Agent</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.marketing_referer_domain">
+				<source>Referer Domain</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.marketing_referer">
+				<source>Referer</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.page">
+				<source>Page</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.marketing_mobile_device">
+				<source>Mobile Device</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.marketing_frontend_language">
+				<source>Frontend Language</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.marketing_browser_language">
+				<source>Browser Language</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.card">
+				<source>Card</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step1">
+				<source>Schritt 1</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2">
+				<source>Schritt 2</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step3">
+				<source>Schritt 3</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.goto.step2">
+				<source>weiter zu Schritt 2</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.goto.step3">
+				<source>weiter zu Schritt 3</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.back.step1">
+				<source>zurück zu Schritt 1</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.back.step2">
+				<source>zurück zu Schritt 2</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.chooseDesign">
+				<source>Wählen Sie eines unserer Motive</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2.name">
+				<source>Ihr Name</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2.patient_name">
+				<source>Name des Patienten</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2.room">
+				<source>Station/Zimmer</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step2.description">
+				<source>Ihre Genesungswünsche (max. 500 Zeichen)</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.required.field.alert">
+				<source>Bitte füllen Sie alle Pflichtfelder aus. Die fehlenden Felder haben wir für Sie rot markiert.</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.required.field.radio">
+				<source>Choose any greeting card.</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step3.regard">
+				<source>an</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step3.regardName">
+				<source>an weboffice.at</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.lbl.step3.submit">
+				<source>Senden</source>
+			</trans-unit>
+			<trans-unit id="errors.include_template">
+				<source>Are you sure that you have included the "Main" static template?</source>
+			</trans-unit>
+			<trans-unit id="errors.pid">
+				<source>Please configure your Starting Point in plugin option</source>
+			</trans-unit>
+			<trans-unit id="errors.storagePID">
+				<source>Please configure your storage folder in plugin option</source>
+			</trans-unit>
+			<trans-unit id="errors.no-record">
+				<source>Greeting card not found</source>
+			</trans-unit>
+			<trans-unit id="success.thanks">
+				<source>Thanks for Greeting.</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.mailContent.dear.admin">
+				<source>Sehr geehrtes Enzensbergteam</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.mailContent.content1">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.mailContent.content2">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.mailContent.regards">
+				<source>mit freundlichen Grüßen</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.mailContent.signature">
+				<source>Enzensberg</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.mailContent.von">
+				<source>Von</source>
+			</trans-unit>
+			<trans-unit id="tx_jsgreetingcards_domain_model_greetingswishes.mailContent.foldheredown">
+				<source>Hier nach unten falten</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

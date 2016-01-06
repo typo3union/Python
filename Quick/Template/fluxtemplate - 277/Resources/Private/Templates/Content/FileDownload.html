@@ -1,0 +1,91 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="Filedownload" label="Download Files" description="Display File Size With File Download Link" icon="" options="{Fluidcontent: {sorting: 126},group: 'Custom elements'}">
+			<flux:form.sheet name="elements" label="Elements">
+				<flux:form.section name="elements">
+
+					<flux:form.object name="image" label="PDFs">
+						<flux:field.file name="file" label="PDF file" allowed="pdf" showThumbnails="TRUE" />
+						<flux:field.input name="title" label="Title of File" required="1" />
+					</flux:form.object>
+
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<h3>
+			PDFs: {elements -> f:count()}
+		</h3>
+		<p>
+			<f:for each="{elements}" as="element" iteration="iteration">
+
+				<f:for each="{element}" as="elementData" iteration="fileiteration">
+					<f:if condition="{elementData.file}">
+						<f:then>
+							<div>
+
+								<v:variable.set name="filebytes" value="{v:media.size(path: elementData.file)}" />
+								<v:variable.set name="filekb" value="{v:math.division(a: filebytes, b: '1000')}" />
+
+								<f:if condition="{elementData.title}">
+									<f:then>
+										<f:format.raw>
+											{elementData.title}
+										</f:format.raw>
+										.pdf
+									</f:then>
+								</f:if>
+
+							</div>
+						</f:then>
+					</f:if>
+				</f:for>
+
+			</f:for>
+		</p>
+	</f:section>
+
+	<f:section name="Main">
+		<div class="pdflist row">
+			<f:for each="{elements}" as="element" iteration="iteration">
+
+				<f:for each="{element}" key="elementType" as="elementData" iteration="fileiteration">
+					<f:render section="{elementType -> v:format.case(case: 'ucfirst')}" arguments="{_all}" />
+				</f:for>
+
+			</f:for>
+		</div>
+	</f:section>
+
+	<f:section name="Image">
+		<f:if condition="{elementData.file}">
+			<f:then>
+				<div class="col-md-3 col-sm-4 col-sx-2">
+					
+					<v:variable.set name="filebytes" value="{v:media.size(path: elementData.file)}" />
+					<v:variable.set name="filekb" value="{v:math.division(a: filebytes, b: '1000')}" />
+
+					<div class="newsbox height">
+						<div class="pdf-icon"></div>
+						<a class="pdf-upload" href="{elementData.file}" target="_blank">						
+						<f:if condition="{elementData.title}">
+							<f:then>								
+								<f:format.crop maxCharacters="20" respectWordBoundaries="false">{elementData.title -> f:format.raw()}</f:format.crop>
+							</f:then>
+						</f:if>
+						</a>
+						<span class="pdf-size">{filekb}K</span>
+					</div>
+				</div>
+			</f:then>
+		</f:if>
+
+	</f:section>
+</div>

@@ -1,0 +1,58 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form label="Footerlink" id="Footerlink" description="Footer Link" icon="" options="{Fluidcontent: {sorting: 106},group: 'Custom elements'}">
+			<flux:form.sheet name="options" label="Options">
+						
+						<flux:field.text name="content" label="Links" enableRichText="1" defaultExtras="richtext:rte_transform[flag=rte_enabled|mode=ts_css]"></flux:field.text>	
+						<flux:field.input name="link_title" label="Link Title" />
+						<flux:field.input name="link" label="Link For button">
+			            <flux:wizard.link />
+			           </flux:field.input>
+			          
+			</flux:form.sheet>	
+		</flux:form>
+	</f:section>
+
+<f:section name="Main">
+                                    
+	<div class="list-unstyled">
+		<f:if condition="{content}">
+			<f:format.html>{content}</f:format.html>
+		</f:if>
+	</div>
+	<div class="text-left footer-link text-uppercase btn" >
+	       <f:link.page pageUid="{link}" >{link_title}</f:link.page>
+	</div>
+
+</f:section>
+	
+<f:section name="Preview">
+	<div class="col-sm-6 right-bar">
+            <div class="list-unstyled">
+            <f:if condition="{content}">
+            	<f:then>
+            		<f:format.raw>{content}</f:format.raw>
+            	</f:then>
+            	<f:else>
+            		<h2>Please insert Content</h2>
+            	</f:else>
+            </f:if>
+            </div>
+            <div class="text-left footer-link text-uppercase">
+                <f:if condition="{link}">
+                	<f:then>
+                   		<f:link.page pageUid="{link}">{link_title}</f:link.page>
+                	</f:then>
+					<f:else>
+						<h2>Please insert link</h2>
+					</f:else>
+                </f:if>   
+            </div>
+    </div>
+    </f:section>
+</div>
